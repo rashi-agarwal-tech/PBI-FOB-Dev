@@ -1,0 +1,2180 @@
+table Orders
+	lineageTag: 2f0f557e-da5d-41ac-ae85-8e99a691c3ef
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 6e1aa835-2e91-41c7-a908-faadc1a540fd
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 0c974156-721e-4f30-9e5c-97c26038f859
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 3383a07e-c85b-41cc-9246-6fb35adbc1b6
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesOrderPool_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 73274667-38d8-4b2c-9e6c-be2b8c7aa1bc
+		summarizeBy: none
+		sourceColumn: SalesOrderPool_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: bbff945e-1b0e-409b-936a-3764c5d4fded
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Order Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e882702d-ceb5-47f2-a919-844837cd86ef
+		summarizeBy: none
+		sourceColumn: Sales Order Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALESORDERPOOLID_SOH
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: a8cdb5b5-5c6a-4b40-b363-c64fbeca64fc
+		summarizeBy: none
+		sourceColumn: SALESORDERPOOLID_SOH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDEREDSALESQUANTITY_SOL
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Units
+		lineageTag: c547040a-a7d7-486e-85a8-87b17cd68dec
+		summarizeBy: none
+		sourceColumn: ORDEREDSALESQUANTITY_SOL
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Requested Shipping Date_SOL'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		sourceProviderType: date
+		displayFolder: zz_Misc
+		lineageTag: a0a8d08c-1be0-4135-99a1-fe53c1a51b45
+		summarizeBy: none
+		sourceColumn: Requested Shipping Date_SOL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'DM Agent'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d1363d60-23f6-45ab-9bf1-a241512a37d3
+		summarizeBy: none
+		sourceColumn: DM Agent
+
+		annotation SummarizationSetBy = Automatic
+
+	column RETURNORDERNUMBER_ROH
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: a8a734c2-e064-43cd-86d4-121cbed3efbe
+		summarizeBy: none
+		sourceColumn: RETURNORDERNUMBER_ROH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RMA Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 1890cd4f-4fa2-4bfe-8963-012685036dbd
+		summarizeBy: none
+		sourceColumn: RMA Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column RETURNEDSALESQUANTITY_ROL
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Units
+		lineageTag: 4b2347e8-2913-4bc1-a8f3-1b98ffe5b6b8
+		summarizeBy: none
+		sourceColumn: RETURNEDSALESQUANTITY_ROL
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UTILIZEDCASHDISC_CS
+		dataType: decimal
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Values
+		lineageTag: f29cbf74-a3ff-4c0e-8a93-216da4ab826c
+		summarizeBy: none
+		sourceColumn: UTILIZEDCASHDISC_CS
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AREPRICESINCLUDINGSALESTAX_SOH
+		dataType: boolean
+		isHidden
+		sourceProviderType: bit
+		displayFolder: zz_Misc
+		lineageTag: d7a48753-2b88-400b-8d71-0afa55628cb6
+		summarizeBy: none
+		sourceColumn: AREPRICESINCLUDINGSALESTAX_SOH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Barcode
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6b17c7a8-2810-462d-9167-f22d76875e68
+		summarizeBy: none
+		sourceColumn: Barcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: e16d5c94-364c-40f5-a8f6-235915650b23
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column REMAININVENTPHYSICAL_SOL
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Units
+		lineageTag: 6c58c3c8-4843-4c57-a8a5-e94d87602d9f
+		summarizeBy: none
+		sourceColumn: REMAININVENTPHYSICAL_SOL
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Order Line'
+		dataType: int64
+		formatString: " 0"
+		sourceProviderType: decimal(38, 5)
+		lineageTag: 7bbb27d9-ad0a-41e0-b287-e0c3124071d5
+		summarizeBy: none
+		sourceColumn: Order Line
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Selling Status'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: 7fabd59a-9d34-41e3-b99f-ac1a0ebc4e5f
+		summarizeBy: none
+		sourceColumn: Selling Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Source
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: d28272fd-a26d-4f63-9370-e05bec33dfb0
+		summarizeBy: none
+		sourceColumn: Source
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Seasonal Product Status'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 92f35585-3f03-4f5b-aa85-618aafabcf42
+		summarizeBy: none
+		sourceColumn: Seasonal Product Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Web Order #'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 2. eCom Details
+		lineageTag: 747ef3f1-a644-4c7c-af3b-69d622951af5
+		summarizeBy: none
+		sourceColumn: Web Order #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Promo Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 2. eCom Details
+		lineageTag: 626b6f79-5137-45f5-9fee-abd6da13cafa
+		summarizeBy: none
+		sourceColumn: Promo Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column WebSiteCode
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 2. eCom Details
+		lineageTag: e9735739-5a36-4dab-9c13-5d3ae518b987
+		summarizeBy: none
+		sourceColumn: WebSiteCode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order DateTime'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		displayFolder: 2. eCom Details
+		lineageTag: 08ade29f-660e-451d-ad1d-50eeb750661d
+		summarizeBy: none
+		sourceColumn: Order DateTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column DDS
+		dataType: boolean
+		isHidden
+		sourceProviderType: bit
+		displayFolder: zz_Misc
+		lineageTag: de8a063f-2b96-4714-9692-95bcc847f857
+		summarizeBy: none
+		sourceColumn: DDS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 693dc2e8-7d03-4235-99f5-45588aa21af8
+		summarizeBy: none
+		sourceColumn: Size
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: fead97ac-be99-44d5-9fc3-d012f9859338
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Student Discount'
+		dataType: boolean
+		sourceProviderType: bit
+		lineageTag: 5526350f-544d-499c-96c2-40e823e18742
+		summarizeBy: none
+		sourceColumn: Student Discount
+
+		annotation SummarizationSetBy = Automatic
+
+	column Goodwill
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bit
+		lineageTag: ca254040-4f98-4595-bdf7-eb5854ebf8fb
+		summarizeBy: none
+		sourceColumn: Goodwill
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Display
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bit
+		lineageTag: dec266d5-5eae-453b-a179-82deb8938386
+		summarizeBy: none
+		sourceColumn: Display
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Employee
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bit
+		lineageTag: ebbf95b2-b3de-442a-92a2-7e0a05280708
+		summarizeBy: none
+		sourceColumn: Employee
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Marketing
+		dataType: int64
+		formatString: 0
+		sourceProviderType: bit
+		lineageTag: 1e9696f6-b583-4038-ac39-dc6bf4dd7843
+		summarizeBy: none
+		sourceColumn: Marketing
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Staff Uniform'
+		dataType: boolean
+		sourceProviderType: bit
+		lineageTag: 49eda320-b9dc-4565-bdb5-2aae3f322f23
+		summarizeBy: none
+		sourceColumn: Staff Uniform
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDEREDSALESQUANTITY_SOL_ZEROS
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Units
+		lineageTag: e079e414-8ad6-4456-9000-a55de3fe0ea4
+		summarizeBy: none
+		sourceColumn: ORDEREDSALESQUANTITY_SOL_ZEROS
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SO_PO_ID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: a5204069-0e01-47b8-b42a-745aa4742239
+		summarizeBy: none
+		sourceColumn: SO_PO_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesOrderNumber_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: ba1a4a53-db1d-49b6-a9c1-9f9f8fad6e3c
+		summarizeBy: none
+		sourceColumn: SalesOrderNumber_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cancellation Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: 0732696d-5da7-425f-8a08-cded6e25151c
+		summarizeBy: none
+		sourceColumn: Cancellation Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Analysis'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 3. Finance Dimensions
+		lineageTag: 2f42b231-8c3a-4153-bfac-e7a93555518b
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Analysis
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Channel'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 3. Finance Dimensions
+		lineageTag: 69231c8c-6a3b-4cb0-9868-76f534bc3276
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Cost Centre'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 3. Finance Dimensions
+		lineageTag: 60fe8564-1d72-41a9-8398-7156399f8f84
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Cost Centre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Country'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 3. Finance Dimensions
+		lineageTag: 389dc8df-3cc6-4298-809a-1b37c295d629
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Selling Status'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 3. Finance Dimensions
+		lineageTag: b4a474a4-8451-4dd6-a724-688ffbfd290a
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Selling Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Free Text Invoice Reference'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b2773594-554b-4cb6-b658-68870fe6e0c7
+		summarizeBy: none
+		sourceColumn: Free Text Invoice Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Free Text Invoice Reason Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 1a29b42c-febf-4216-9d0f-c7efe0615011
+		summarizeBy: none
+		sourceColumn: Free Text Invoice Reason Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Free Text Invoice Reason Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b71f7bb5-b420-4a38-8162-184988f0b82e
+		summarizeBy: none
+		sourceColumn: Free Text Invoice Reason Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column DELIVERYDATE_SOL
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		displayFolder: zz_Misc
+		lineageTag: b5e0e9a1-a9e3-4132-8ce4-4c1bf41210bc
+		summarizeBy: none
+		sourceColumn: DELIVERYDATE_SOL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Order Sales Representative'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 220128d1-88e0-409b-b2b8-13160d9d0c4e
+		summarizeBy: none
+		sourceColumn: Order Sales Representative
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Program'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 61d76ffd-cecb-418e-b35d-fd60c803e003
+		summarizeBy: none
+		sourceColumn: Sales Program
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status - Order Entry'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: 1f485e62-b4ea-4fd0-a2c1-1b37804524e7
+		summarizeBy: none
+		sourceColumn: Selling Status - Order Entry
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HDMORDERTYPEID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 0a0c7674-06e5-454d-ab51-f6712e16dab7
+		summarizeBy: none
+		sourceColumn: HDMORDERTYPEID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: bfc98871-64e3-4807-8120-148cbd3222f2
+		summarizeBy: none
+		sourceColumn: Invoice Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Season'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 413f26cb-dceb-4b80-ad3d-901e39de8791
+		summarizeBy: none
+		sourceColumn: Order Season
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unit Price'
+		dataType: decimal
+		isHidden
+		sourceProviderType: decimal(38, 4)
+		displayFolder: zz_Values
+		lineageTag: 280b4f85-a33a-43a7-97f5-2c634d6e3bbb
+		summarizeBy: none
+		sourceColumn: Unit Price
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column isCarrierBag
+		dataType: boolean
+		isHidden
+		sourceProviderType: bit
+		displayFolder: zz_Misc
+		lineageTag: 58e41259-2bed-47bc-b403-8f8af645b093
+		summarizeBy: none
+		sourceColumn: isCarrierBag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVOICEDATE_SIL
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: datetime2
+		displayFolder: zz_Misc
+		lineageTag: a89c4197-f491-46d9-a8ae-666e4657583a
+		summarizeBy: none
+		sourceColumn: INVOICEDATE_SIL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HeaderDiscount_CONS_GBP
+		dataType: decimal
+		isHidden
+		sourceProviderType: decimal(38, 12)
+		displayFolder: zz_Values
+		lineageTag: c7ba8eac-99c7-4a53-b8cb-d881c8323045
+		summarizeBy: none
+		sourceColumn: HeaderDiscount_CONS_GBP
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LineDiscount_CONS_GBP
+		dataType: decimal
+		isHidden
+		sourceProviderType: double
+		displayFolder: zz_Values
+		lineageTag: 5d7ae56c-9b4e-4d7b-b435-4ae149f19ef4
+		summarizeBy: none
+		sourceColumn: LineDiscount_CONS_GBP
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Transaction Type'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 3cc3b736-91e7-4e48-848a-3c8358c75cd3
+		summarizeBy: none
+		sourceColumn: Transaction Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChargeTotalExcTax_CONS_GBP
+		dataType: decimal
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Values
+		lineageTag: 1c99479c-0422-4240-9289-843b322f6459
+		summarizeBy: none
+		sourceColumn: ChargeTotalExcTax_CONS_GBP
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COSTAMOUNTPOSTED_SILCS
+		dataType: decimal
+		isHidden
+		sourceProviderType: decimal(34, 11)
+		displayFolder: zz_Values
+		lineageTag: e1842def-9317-4e75-abe0-21fde46b0f7b
+		summarizeBy: none
+		sourceColumn: COSTAMOUNTPOSTED_SILCS
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Discount
+		dataType: decimal
+		isHidden
+		sourceProviderType: double
+		lineageTag: 1655cac7-061a-4cfc-b0c8-46f51b70a67a
+		summarizeBy: none
+		sourceColumn: Discount
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ITEMNUMBER_SOL_ROL
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 0d4820cf-cbda-4a15-9cf4-534c325c52a3
+		summarizeBy: none
+		sourceColumn: ITEMNUMBER_SOL_ROL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LINEAMOUNT_SIL_CONS_GBP
+		dataType: decimal
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Values
+		lineageTag: 444d41d9-ffea-4475-9c30-08818f8a5058
+		summarizeBy: none
+		sourceColumn: LINEAMOUNT_SIL_CONS_GBP
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LINEAMOUNT_SOL_CONS_GBP
+		dataType: decimal
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Values
+		lineageTag: ac2dea4b-3dc1-4d72-bb18-d4f42974badf
+		summarizeBy: none
+		sourceColumn: LINEAMOUNT_SOL_CONS_GBP
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INVOICEDQUANTITY_SIL
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Units
+		lineageTag: a6ec774f-cbf3-4286-8c0e-aadfa28fb5f7
+		summarizeBy: none
+		sourceColumn: INVOICEDQUANTITY_SIL
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: e05dfef1-230e-46bb-9326-d8e68680e31a
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Time_Key
+		dataType: string
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Keys
+		lineageTag: be8c98cb-979a-4679-9d64-945c8bf43866
+		summarizeBy: none
+		sourceColumn: Time_Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 29285268-2958-494b-844d-3480a05bf6ac
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Revenue Affecting?'
+		dataType: string
+		sourceProviderType: bit
+		lineageTag: 99da9dd4-ae1c-4c20-988b-ba509cfdc05c
+		summarizeBy: none
+		sourceColumn: Is Revenue Affecting?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Status'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: b97fbd18-f1bf-41ee-8119-f55f90c20a93
+		summarizeBy: none
+		sourceColumn: Transaction Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tax_CONS_GBP
+		dataType: decimal
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Values
+		lineageTag: 822b9da9-5689-483e-ae77-b1a5c46de825
+		summarizeBy: none
+		sourceColumn: Tax_CONS_GBP
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Return Reason'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 48242375-cdeb-4589-9506-e5eb43e4ebbc
+		summarizeBy: none
+		sourceColumn: Return Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column RETURNEDSALESQUANTITY_ROL_ZEROS
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Units
+		lineageTag: 5261fd8f-bac4-4161-b99a-7c5d0b16e12c
+		summarizeBy: none
+		sourceColumn: RETURNEDSALESQUANTITY_ROL_ZEROS
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Linked Sales Order Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4b8c8308-a186-4ffd-b028-055758edb346
+		summarizeBy: none
+		sourceColumn: Linked Sales Order Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region Sub Channel'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2b5ccc34-53e9-4502-8384-50c6a06048de
+		summarizeBy: none
+		sourceColumn: Region Sub Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateMaster =
+			IF (
+			    ISBLANK ( 'Orders'[INVOICEDATE_SIL] ),
+			    'Orders'[DELIVERYDATE_SOL],
+			    'Orders'[INVOICEDATE_SIL]
+			)
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: 8c35776c-ede7-466c-a739-3403ea6c5180
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period Orderbook Status Sort' =
+			
+			var custh = SWITCH(related(Customer[Customer On Hold Status]),blank(),"Clear","No","Clear","Held")
+			var lfd = IF((Orders[Pick Complete Product Units]+Orders[Pick Activated Product Units]+Orders[Reserved Product Units])=Orders[Open Product Units],TODAY(),Orders[Fill Date - Order])
+			var req = Orders[DELIVERYDATE_SOL]
+			var HELD = if(OR(NOT(Orders[Hold Code]=BLANK()),custh="Held"),"Held",BLANK())
+			var cnx = switch(Orders[Cancel Risk Order Status],"Missing Cancel","Yes","Past Cancel","Yes",blank())
+			var sot = left(Orders[Sales Order Type],5)
+			var ProductUnits = (Orders[Allocated Product Units] - Orders[Allocated Product Units Late])+Orders[Reserved Product Units]+Orders[Pick Activated Product Units]+Orders[Pick Complete Product Units]
+			var fulfil = VALUE(RELATED(Customer[Order Fullfillment %]))
+			var pcdat = if(req<[firstpdate],"02",if(req<[lastpdate],"01","04"))
+			
+			return
+			
+			if(Orders[Source]="D365_Open",
+			if(sot="Frame",if(req<[lastpdate], if(lfd<[lastpdate],"03","06"),"10"),
+			if((Orders[Pick Complete Product Units]+Orders[Pick Activated Product Units])=Orders[Open Product Units],pcdat,
+			if(req<([lastpdate]),
+			if(HELD="Held","07",
+			if(cnx="Yes","08",
+			if(lfd<=[lastpdate],pcdat,
+			if(and(ProductUnits>(Orders[Open Product Units]*0.7),fulfil<100),"05","06")))),
+			if(and(lfd<[lastpdate],(req-29)<[lastpdate]),if(or(cnx="Yes", HELD="Held"),"10","04"),"10")))),
+			if('Orders'[INVOICEDATE_SIL]<[firstpdate],"11","09"))
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: f286c6a8-7342-434c-ae09-fee7b1e72929
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender = IF(ISBLANK(RELATED('Retail Demographics'[Gender])), "Unknown", RELATED('Retail Demographics'[Gender]))
+		dataType: string
+		displayFolder: 1. Retail Details
+		lineageTag: c81acd9f-cf22-44b8-a8fa-64538e7f64be
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age = IF(ISBLANK(RELATED('Retail Demographics'[Age])), "Unknown", RELATED('Retail Demographics'[Age]))
+		dataType: string
+		displayFolder: 1. Retail Details
+		lineageTag: 8541b16c-2572-4d29-9761-930aa50c4dd8
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Digital Doc Shop Transaction?' = if(FORMAT(Orders[DDS],"")="0","NO","YES")
+		dataType: string
+		displayFolder: 1. Retail Details
+		lineageTag: 7022487f-2352-4fe0-841b-bb09aa1a516b
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period Orderbook Status' =
+			
+			var custh = SWITCH(related(Customer[Customer On Hold Status]),blank(),"Clear","No","Clear","Held")
+			var lfd = IF((Orders[Pick Complete Product Units]+Orders[Pick Activated Product Units]+Orders[Reserved Product Units])=Orders[Open Product Units],TODAY(),Orders[Fill Date - Order])
+			var req = Orders[DELIVERYDATE_SOL]
+			var HELD = if(OR(NOT(Orders[Hold Code]=BLANK()),custh="Held"),"Held",BLANK())
+			var cnx = switch(Orders[Cancel Risk Order Status],"Missing Cancel","Yes","Past Cancel","Yes",blank())
+			var sot = left(Orders[Sales Order Type],5)
+			var ProductUnits = (Orders[Allocated Product Units] - Orders[Allocated Product Units Late])+Orders[Reserved Product Units]+Orders[Pick Activated Product Units]+Orders[Pick Complete Product Units]
+			var fulfil = VALUE(RELATED(Customer[Order Fullfillment %]))
+			var pcdat = if(req<[firstpdate],"Roll-In",if(req<[lastpdate],"Available","Pull Fwd"))
+			
+			return
+			
+			if(Orders[Source]="D365_Open",
+			if(sot="Frame",if(req<[lastpdate], if(lfd<[lastpdate],"Framework","Roll-Out"),"Future"),
+			if((Orders[Pick Complete Product Units]+Orders[Pick Activated Product Units])=Orders[Open Product Units],pcdat,
+			if(req<([lastpdate]),
+			if(HELD="Held","On-Hold",
+			if(cnx="Yes","Cancel",
+			if(lfd<=[lastpdate],pcdat,
+			if(and(ProductUnits>(Orders[Open Product Units]*0.7),fulfil<100),"Partial","Roll-Out")))),
+			if(and(lfd<[lastpdate],(req-29)<[lastpdate]),if(or(cnx="Yes", HELD="Held"),"Future","Pull Fwd"),"Future")))),
+			if('Orders'[INVOICEDATE_SIL]<[firstpdate],"Past","Complete"))
+		dataType: string
+		displayFolder: 4. US
+		lineageTag: 000fc8ec-63ac-4f63-b7a3-af5564523606
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Open Product Units' = CALCULATE(sum(Orders[Open Units Col]),ALLEXCEPT(Orders,'Orders'[Sales Order Number],Orders[Product_Key]))
+		dataType: int64
+		isHidden
+		displayFolder: 4. US
+		lineageTag: 4789d6fd-3910-4a56-8ad9-79380c92befc
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pick Complete Product Units' =
+			CALCULATE (
+			    [Pick Complete Units],
+			    ALLEXCEPT ( Orders, 'Orders'[Sales Order Number], Orders[Product_Key] )
+			)
+		dataType: int64
+		isHidden
+		displayFolder: 4. US
+		lineageTag: d3f185ab-8bd1-4fde-9574-ad17124754c2
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocated Product Units' = CALCULATE([Allocated Units],ALLEXCEPT(Orders,'Orders'[Sales Order Number],Orders[Product_Key]))
+		dataType: int64
+		isHidden
+		displayFolder: 4. US
+		lineageTag: 1a372fdd-0ea2-421d-a011-ef4b892d909c
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Allocated Product Units Late' = CALCULATE([3.3 Allocated Units Late],ALLEXCEPT(Orders,'Orders'[Sales Order Number],Orders[Product_Key]))
+		dataType: int64
+		isHidden
+		displayFolder: 4. US
+		lineageTag: bd8cb1fd-0b9d-4bc1-a081-f9ba30c17f47
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Reserved Product Units' = CALCULATE([4. Reserved Intake Units],ALLEXCEPT(Orders,'Orders'[Sales Order Number],Orders[Product_Key]))
+		dataType: int64
+		isHidden
+		displayFolder: 4. US
+		lineageTag: c00340c9-9ae2-433e-a4e2-2e5e10b635e0
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pick Activated Product Units' = CALCULATE([Pick Activated Units],ALLEXCEPT(Orders,'Orders'[Sales Order Number],Orders[Product_Key]))
+		dataType: int64
+		isHidden
+		displayFolder: 4. US
+		lineageTag: b4ff86af-a94a-4b93-9758-bb5cab040b51
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cancel Risk Order Status' =
+			var pickunits = Orders[Pick Activated Product Units]+Orders[Pick Complete Product Units]
+			var lfd = if(divide(Orders[Allocated Product Units]+Orders[Reserved Product Units]+pickunits,Orders[Open Product Units])=1,Orders[Fill Date - Order],today()+180)
+			var produnits = (Orders[Allocated Product Units]-Orders[Allocated Product Units Late])+Orders[Reserved Product Units]+pickunits
+			var fulfil = VALUE(related(Customer[Order Fullfillment %]))
+			var cnx = Orders[Cancellation Date]
+			var miss1 = if(lfd>cnx,if(fulfil<100,if(produnits<(Orders[Open Product Units]*0.7),"miss","part")))
+			var miss2 = if(lfd>cnx,if(fulfil>=100,if(produnits<Orders[Open Product Units],"miss","full")))
+			
+			return
+			
+			if(Orders[Source]="D365_Open",
+			if(pickunits>(Orders[Open Product Units]*0.7),"In-Pick",
+			if(cnx<5,"No Cancel",
+			if(today()>cnx,"Past Cancel",
+			if(and(cnx<today()+5,lfd<=cnx),"At-Risk",
+			if(or(miss1="miss",miss2="miss"),"Missing Cancel",
+			if(or(lfd<=(cnx-5),produnits=Orders[Open Product Units]),"Safe",
+			if(lfd<=cnx,"At-Risk",
+			if(miss1="part","Partial","Missing Cancel")))))))),"Complete")
+		dataType: string
+		displayFolder: 4. US
+		lineageTag: d6759616-ae43-41b7-974f-9b78623f4062
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Available w/c' =
+			var pickunits = Orders[Pick Act Units col]+Orders[Pick Comp Units col]
+			var lfd = IF(Orders[Open Product Units]=Orders[Pick Complete Product Units],TODAY(),Orders[Fill Date - Order])
+			var lfdavail = lfd - (WEEKDAY(lfd,2)+1)
+			var pickc = Orders[Pick Complete Product units]
+			var picka = Orders[Pick Activated Product units]
+			var res = Orders[Reserved Product units]
+			var alloc = Orders[Allocated product units]
+			var availyr = if(year(lfdavail)=year(today()),"Avail. w/c ","Avail w/c ")
+			var availdate = availyr & FORMAT(lfdavail,"mm/dd")
+			var fulfil = VALUE(RELATED(Customer[Order Fullfillment %]))
+			var OpenQty = if(VALUE(RELATED(Customer[Order Fullfillment %]))<100,Orders[Open Product units]*0.7,Orders[Open Product units])
+			var PicOpenQty = Orders[Open Product units]*0.7
+			
+			return
+			
+			if(Orders[Source]="D365_Open",
+			if(pickc>PicOpenQty,"...Pick Completed",
+			if((picka+pickc)>PicOpenQty,"..Pick Activated",
+			if((picka+pickc+res)>OpenQty,".Reserved",
+			if(lfd<5,"No Avail Date",availdate)))),"Invoiced")
+		dataType: string
+		displayFolder: 4. US
+		lineageTag: ae785ed1-8c6f-45f6-961b-811e53b6c55e
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Discount Bucket' =
+			SWITCH (
+			    TRUE (),
+			    OR (
+			        Orders[Total Discount % Col] = 0,
+			        ISBLANK ( Orders[Total Discount % Col] )
+			    ), "0 %",
+			    AND ( Orders[Total Discount % Col] > 0, Orders[Total Discount % Col] <= .1 ), "0-10 %",
+			    AND ( Orders[Total Discount % Col] > .10, Orders[Total Discount % Col] < .25 ), "11-24 %",
+			    AND ( Orders[Total Discount % Col] >= .25, Orders[Total Discount % Col] < .4 ), "25-39 %",
+			    AND ( Orders[Total Discount % Col] >= .40, Orders[Total Discount % Col] < .6 ), "40-59 %",
+			    AND ( Orders[Total Discount % Col] >= .60, Orders[Total Discount % Col] < 1 ), "60-99 %",
+			    Orders[Total Discount % Col] = 1, "Free",
+			    "no bucket"
+			)
+		dataType: string
+		lineageTag: a3248416-f218-40b5-bfe3-6db12eb35b9e
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column Season =
+			IF (
+			    OR (
+			        ISBLANK ( Orders[Order Season] ),
+			        AND (
+			            IFERROR ( SEARCH ( "AW", Orders[Order Season] ), 0 ) < 1,
+			            IFERROR ( SEARCH ( "SS", Orders[Order Season] ), 0 ) < 1
+			        )
+			    ),
+			    IF (
+			        OR ( Orders[SALESORDERPOOLID_SOH] = "EO", Orders[SALESORDERPOOLID_SOH] = "RO" ),
+			        SWITCH (
+			            TRUE (),
+			            AND ( MONTH ( Orders[DateMaster] ) >= 7, MONTH ( Orders[DateMaster] ) <= 12 ), "AW" & RIGHT ( YEAR ( Orders[DateMaster] ), 2 ),
+			            AND ( MONTH ( Orders[DateMaster] ) >= 1, MONTH ( Orders[DateMaster] ) <= 6 ), "SS" & RIGHT ( YEAR ( Orders[DateMaster] ), 2 ),
+			            BLANK ()
+			        ),
+			        IF (
+			            AND (
+			                Orders[SALESORDERPOOLID_SOH] = "DD",
+			                NOT ( RELATED ( Warehouse[Warehouse ID] ) = "USDOMDD" )
+			            ),
+			            SWITCH (
+			                TRUE (),
+			                AND ( MONTH ( Orders[DateMaster] ) >= 4, MONTH ( Orders[DateMaster] ) <= 11 ), "AW" & RIGHT ( YEAR ( Orders[DateMaster] ), 2 ),
+			                AND ( MONTH ( Orders[DateMaster] ) >= 12, MONTH ( Orders[DateMaster] ) <= 12 ),
+			                    "SS"
+			                        & RIGHT ( YEAR ( Orders[DateMaster] ) + 1, 2 ),
+			                AND ( MONTH ( Orders[DateMaster] ) >= 1, MONTH ( Orders[DateMaster] ) <= 3 ), "SS" & RIGHT ( YEAR ( Orders[DateMaster] ), 2 ),
+			                BLANK ()
+			            ),
+			            SWITCH (
+			                TRUE (),
+			                AND ( MONTH ( Orders[DateMaster] ) >= 12, MONTH ( Orders[DateMaster] ) <= 12 ),
+			                    "SS"
+			                        & RIGHT ( YEAR ( Orders[DateMaster] ) + 1, 2 ),
+			                AND ( MONTH ( Orders[DateMaster] ) >= 1, MONTH ( Orders[DateMaster] ) <= 5 ), "SS" & RIGHT ( YEAR ( Orders[DateMaster] ), 2 ),
+			                AND ( MONTH ( Orders[DateMaster] ) >= 6, MONTH ( Orders[DateMaster] ) <= 11 ), "AW" & RIGHT ( YEAR ( Orders[DateMaster] ), 2 ),
+			                BLANK ()
+			            ) --CT Update to align with B2B & D2C, was previously if ([SALESORDERPOOLID_SOH] = "DD", switch ( TRUE () , AND ( month(Orders[DateMaster]) >= 4 ,    month(Orders[DateMaster]) <= 9 ), "AW" & right(YEAR(Orders[DateMaster]),2) , AND ( month(Orders[DateMaster]) >= 10 ,    month(Orders[DateMaster]) <= 12 ), "SS" & right(YEAR(Orders[DateMaster])+1,2) , AND ( month(Orders[DateMaster]) >= 1 ,    month(Orders[DateMaster]) <= 3 ), "SS" & right(YEAR(Orders[DateMaster]),2) , blank()), switch ( TRUE () , AND ( month(Orders[DateMaster]) >= 1 ,    month(Orders[DateMaster]) <= 6 ), "SS" & right(YEAR(Orders[DateMaster]),2) ,AND ( month(Orders[DateMaster]) >= 7 ,    month(Orders[DateMaster]) <= 12 ), "AW" & right(YEAR(Orders[DateMaster]),2)  ,blank()
+			        )
+			    ),
+			    Orders[Order Season]
+			)
+		dataType: string
+		lineageTag: 53b6f4c8-7d26-44fb-a369-ee654a05de49
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Seasonal Ranged?' = IF(Orders[Seasonal Product Status]="Unranged","Unranged","Ranged")
+		dataType: string
+		lineageTag: 369c8d56-a0bf-4d18-97cd-66599b4d1302
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fill Date - Line' = IF(Orders[SALESORDERPOOLID_SOH]="DD",Orders[PO Confirmed Delivery Date],RELATED('Bridge InventTransID'[SRMaxDateTmp]))
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 444b13f3-a2fa-48a1-abba-f6c1a908b78c
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Confirmed Delivery Date' = LOOKUPVALUE('Purchase Orders'[CONFIRMEDDELIVERYDATE],'Purchase Orders'[SO_PO_ID],Orders[SO_PO_ID])
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a2a4ca36-948f-482f-a0b3-42da68e6aba3
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fill Date - Order' = CALCULATE(MAX(Orders[Fill Date - Line]),ALLEXCEPT(Orders,'Orders'[Sales Order Number],Orders[Product_Key]))
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: d8d7531e-146b-40e5-983a-3a500cec1ccf
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hold Code' = RELATED('Hold Code Trans'[HOLDCODEDESCRIPTION])
+		dataType: string
+		lineageTag: 98bb0a26-f687-41c8-9bcf-4ac1e5008161
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Period Orderbook Availability' =
+			var Feat = SWITCH(Orders[Period Orderbook Status],"Period Available","feature","Pull Forward","feature","Roll-Out","feature","Cancel Risk","feature","On Hold","feature","other")
+			var lfdavail = Orders[Fill Date - Order] - WEEKDAY(Orders[Fill Date - Order],2) +1
+			var OpenQty = Orders[Open Units Col]*0.95
+			var pickc = Orders[Pick Comp Units Col]
+			var picka = Orders[Pick Act Units Col]
+			var res = Orders[Res Units Col]
+			var availdate = "Available w/c "&FORMAT(lfdavail,"m/d")
+			
+			return
+			if(Feat="Feature",
+			if(pickc>OpenQty,"...Pick Completed",
+			if((picka+pickc)>OpenQty,"..Pick Activated",
+			 if(res>OpenQty,".Reserved",availdate))))
+		dataType: string
+		lineageTag: 3e13b7b9-a2d2-432e-a142-7b445004acee
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start Ship Date' = Orders[DELIVERYDATE_SOL]
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 91c090a9-84a4-4bd2-ae27-82687a5aed35
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Order Type' = RELATED('Sales Order Type'[DESCRIPTION])
+		dataType: string
+		lineageTag: 8733e970-ea99-425b-bdd4-6beff6b0b7a4
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cancel Risk Order Status Sort' =
+			var pickunits = Orders[Pick Activated Product Units]+Orders[Pick Complete Product Units]
+			var lfd = if(divide(Orders[Allocated Product Units]+Orders[Reserved Product Units]+pickunits,Orders[Open Product Units])=1,Orders[Fill Date - Order],today()+180)
+			var produnits = (Orders[Allocated Product Units]-Orders[Allocated Product Units Late])+Orders[Reserved Product Units]+pickunits
+			var fulfil = VALUE(related(Customer[Order Fullfillment %]))
+			var cnx = Orders[Cancellation Date]
+			var miss1 = if(lfd>cnx,if(fulfil<100,if(produnits<(Orders[Open Product Units]*0.7),"miss","part")))
+			var miss2 = if(lfd>cnx,if(fulfil>=100,if(produnits<Orders[Open Product Units],"miss","full")))
+			
+			return
+			
+			if(Orders[Source]="D365_Open",
+			if(pickunits>(Orders[Open Product Units]*0.7),"01",
+			if(cnx<5,"07",
+			if(today()>cnx,"05",
+			if(and(cnx<today()+5,lfd<=cnx),"03",
+			if(or(miss1="miss",miss2="miss"),"06",
+			if(or(lfd<=(cnx-5),produnits=Orders[Open Product Units]),"02",
+			if(lfd<=cnx,"03",
+			if(miss1="part","04","06")))))))),"08")
+		dataType: string
+		lineageTag: 87c94903-9a90-434a-a6bd-c21695d4cfc0
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Returned Units Col' =
+			IF (
+			    AND (
+			        Orders[Transaction Type] = "Return",
+			        Orders[Transaction Status] = "Invoiced"
+			    ),
+			    IF (
+			        Orders[INVOICEDQUANTITY_SIL] <> 0,
+			        ABS ( Orders[INVOICEDQUANTITY_SIL] ),
+			        ABS ( Orders[RETURNEDSALESQUANTITY_ROL_ZEROS] )
+			    ),
+			    BLANK ()
+			)
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		displayFolder: zz_Units
+		lineageTag: 08279f94-4a97-4be4-b811-ca5b3eadadea
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Pick Comp Units Col' =
+			IF (
+			    NOT ( ISBLANK ( Orders[RMA Number] ) ),
+			    BLANK (),
+			    VAR SHIPPED =
+			        CALCULATE ( SUM ( 'Sales Packing Slip'[Shipped Qty] ) )
+			    VAR PICKED =
+			        CALCULATE ( SUM ( Pick[Pick Qty] ), Pick[HandlingStatusDesc] = "Complete" )
+			    VAR sminusp =
+			        CALCULATE (
+			            PICKED - SHIPPED,
+			            'Order Type'[Order Type ID] IN { "CO", "FO", "IO", "MTO", "PR", "SO", "UNK" }
+			        )
+			    VAR spin =
+			        IF ( sminusp > 0, sminusp, BLANK () )
+			    RETURN
+			        IF ( Orders[Source] = "D365_Open", spin, BLANK () )
+			)
+			--CT update to handle returns, was previously
+			--VAR SHIPPED = CALCULATE(SUM('Sales Packing Slip'[Shipped Qty]))
+			--VAR PICKED = calculate(sum(Pick[Pick Qty]), Pick[HandlingStatusDesc] = "Complete")
+			--var sminusp = CALCULATE(PICKED-SHIPPED,'Order Type'[Order Type ID] IN {"CO", "FO", "IO", "MTO", "PR", "SO", "UNK"})
+			--var spin = if(sminusp>0,sminusp,blank())
+			--RETURN
+			--IF(Orders[Source]="D365_Open",spin,BLANK())
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 34e1be02-b20b-4218-bb60-b717b750d068
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pick Act Units Col' = ```
+			IF (
+			    NOT ( ISBLANK ( Orders[RMA Number] ) ),
+			    BLANK (),
+			    VAR pickact =
+			        CALCULATE ( SUM ( Pick[Pick Qty] ), Pick[HandlingStatusDesc] = "Activated" )
+			    RETURN
+			        IF ( Orders[Source] = "D365_Open", pickact, BLANK () )
+			)
+			--CT update to handle returns, was previously 
+			--var pickact = calculate(sum(Pick[Pick Qty]), Pick[HandlingStatusDesc] = "Activated")
+			--return
+			--if(Orders[Source]="D365_Open",pickact,blank())
+			```
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: c2b3d9a2-5906-402a-b8e3-44f5675e722f
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Res Units Col' =
+			IF (
+			    NOT ( ISBLANK ( Orders[RMA Number] ) ),
+			    BLANK (),
+			    VAR res =
+			        CALCULATE ( SUM ( SmartRes[QtyReserved] ) )
+			    VAR RES1 = RES - Orders[Pick Act Units Col]
+			    RETURN
+			        IF ( Orders[Source] = "D365_Open", RES1, BLANK () )
+			)
+			--CT update to include returns filter, was previously var res = calculate(sum(SmartRes[QtyReserved])) VAR RES1 = RES-Orders[Pick Act Units Col] return if(Orders[Source]="D365_Open",RES1,blank())
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 1006a40f-9953-443b-a481-9ce0a8b45209
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cancelled Units Col' =
+			IF (
+			    Orders[Transaction Status] = "Cancelled",
+			    Orders[ORDEREDSALESQUANTITY_SOL],
+			    BLANK ()
+			)
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: c055a6fc-3d96-42da-9900-007c62a2e59b
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net Units Col' = Orders[Open Units Col] + Orders[Invoiced Units Col] - Orders[Returned Units Col]
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		displayFolder: zz_Units
+		lineageTag: 6e3e4be3-22f5-4ae6-a9c9-ba6aca590860
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Open Units Col' =
+			IF (
+			    AND ( Orders[Transaction Type] = "Sale", Orders[Transaction Status] = "Open" ),
+			    Orders[REMAININVENTPHYSICAL_SOL],
+			    BLANK ()
+			)
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		displayFolder: zz_Units
+		lineageTag: fa947181-a21f-449d-a708-2cf5490640a5
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Ordered Units Col' =
+			IF (
+			    Orders[Returned Units Col] > 0,
+			    BLANK (),
+			    Orders[ORDEREDSALESQUANTITY_SOL_ZEROS]
+			)
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: da12e8fb-2d6e-4c2c-b888-e817a92df3d9
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Invoiced Units Col' =
+			IF (
+			    AND (
+			        Orders[Transaction Type] = "Sale",
+			        Orders[Transaction Status] = "Invoiced"
+			    ),
+			    Orders[INVOICEDQUANTITY_SIL],
+			    BLANK ()
+			)
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 285bbd44-3682-4c76-ab56-08c205a89f35
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Open Units Pct' =
+			IF (
+			    AND ( Orders[Transaction Type] = "Sale", Orders[Transaction Status] = "Open" ),
+			    DIVIDE (
+			        Orders[REMAININVENTPHYSICAL_SOL],
+			        Orders[ORDEREDSALESQUANTITY_SOL],
+			        BLANK ()
+			    ),
+			    BLANK ()
+			)
+		dataType: decimal
+		isHidden
+		formatString: #,##0.00
+		displayFolder: zz_Units
+		lineageTag: fa2997b8-26f5-45b3-b21f-e7a952843b80
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Returned COGs Col' =
+			IF (
+			    Orders[Transaction Type] = "Return",
+			    Orders[COSTAMOUNTPOSTED_SILCS],
+			    BLANK ()
+			)
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: ebb885e2-5a3d-486e-95f3-bb7a2a9feb07
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Discount % Col' =
+			DIVIDE ( Orders[Discount], Orders[Unit Price] * Orders[Ordered Units Col], 0 )
+			//Divide(
+			//  ( [Invoiced Discounts Col] + [Open Discounts Col]) ,
+			//  ( [Invoiced Full Price]  + [Open Full Price] ) ,
+			//  blank ()
+			//  )
+		dataType: decimal
+		isHidden
+		formatString: " 0.00%;-0.00%;0.00%"
+		displayFolder: zz_Values
+		lineageTag: 96150515-8d90-432a-9944-8000c093f245
+		summarizeBy: sum
+
+		changedProperty = DataType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Returned Tax Col' = IF ( Orders[Returned Units Col] > 0, Orders[Tax_CONS_GBP], BLANK () )
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 360e1b5d-7ad8-4480-ab6c-cbffdc6694fc
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Settlement Discount_SIL' = DIVIDE ( Orders[UTILIZEDCASHDISC_CS], Orders[INVOICEDQUANTITY_SIL] ) * Orders[Invoiced Units Col]
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: fc8a4ffd-5c8d-40f2-90f4-f68db9110c84
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Full Price (inc tax) Cancelled Col' =
+			IF (
+			    Orders[AREPRICESINCLUDINGSALESTAX_SOH] = TRUE,
+			    ( Orders[Unit Price] * Orders[Cancelled Units Col] ),
+			    BLANK ()
+			)
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 4490696d-dea5-4f16-b1ba-aa037b5477e2
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Discounts (inc tax) Cancelled Col' =
+			VAR DiscountSubject = Orders[Cancelled Units Col]
+			VAR AvailDiscount = Orders[Discount]
+			VAR TotalLineUnits = Orders[ORDEREDSALESQUANTITY_SOL]
+			RETURN
+			    DIVIDE ( AvailDiscount, TotalLineUnits ) * DiscountSubject
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 67d0f131-4dbf-4409-bf01-693fbbf6e1dd
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cancelled Net Value Col' =
+			VAR MAIN =
+			    IF (
+			        Orders[Cancelled Units Col] > 0,
+			        IF (
+			            Orders[AREPRICESINCLUDINGSALESTAX_SOH] = TRUE,
+			            Orders[Full Price (inc tax) Cancelled Col] - Orders[Discounts (inc tax) Cancelled Col],
+			            ( Orders[Cancelled Units Col] * Orders[NetUnitPrice] )
+			        ),
+			        BLANK ()
+			    )
+			RETURN
+			    MAIN
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: c16a96b9-30f6-438f-87f1-5b29efdfb391
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Invoiced Discounts Col Cons GBP' =
+			IF (
+			    Orders[Invoiced Units Col] > 0,
+			    Orders[HeaderDiscount_CONS_GBP] + Orders[LineDiscount_CONS_GBP],
+			    BLANK ()
+			)
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: fe8a19ea-759e-4cfb-9bfa-a1eb91752a48
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Returned Discounts Col Cons GBP' =
+			IF (
+			    OR (
+			        Orders[Transaction Type] = "Return",
+			        Orders[Source] = "AX_Invoiced_US"
+			            && Orders[LINEAMOUNT_SIL_CONS_GBP] < 0
+			            && Orders[Returned Units Col] = 0
+			    ),
+			    Orders[HeaderDiscount_CONS_GBP] + Orders[LineDiscount_CONS_GBP],
+			    BLANK ()
+			)
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: bc56affd-ff16-4c6e-9d80-172f385759b2
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Returned Net Value Col Cons GBP' =
+			IF (
+			    AND (
+			        Orders[Transaction Type] = "Return",
+			        Orders[Transaction Status] = "Invoiced"
+			    ),
+			    ABS ( Orders[LINEAMOUNT_SIL_CONS_GBP] + Orders[HeaderDiscount_CONS_GBP] ),
+			    BLANK ()
+			)
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 040302e9-b239-4a6d-8fee-59920f598601
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'eCom Demand Value Col' =
+			VAR main = ( Orders[Unit Price] * Orders[Ordered Units Col] ) - Orders[Discount]
+			RETURN
+			    IF ( main > 0, main, BLANK () )
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 635b6c41-d2d3-4a9e-b93e-0f7214686582
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Full Price (inc tax) Invoiced Col' =
+			IF (
+			    Orders[AREPRICESINCLUDINGSALESTAX_SOH] = TRUE,
+			    IF (
+			        Orders[Source] = "AX_Invoiced_US"
+			            && Orders[LINEAMOUNT_SIL_CONS_GBP] > 0
+			            && Orders[Invoiced Units Col] = 0,
+			        Orders[LINEAMOUNT_SIL_CONS_GBP],
+			        ( Orders[Unit Price] * Orders[Invoiced Units Col] )
+			    ),
+			    BLANK ()
+			)
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 7ab9fe1e-9ba1-4f22-8c81-9366c4e560b0
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NetUnitPrice =
+			VAR AvailDiscount = Orders[Discount]
+			VAR TotalLineUnits = Orders[ORDEREDSALESQUANTITY_SOL]
+			VAR UNITDISCOUNT =
+			    DIVIDE ( AvailDiscount, TotalLineUnits )
+			VAR NetUnitPrice =
+			    Orders[Unit Price] - ABS ( UNITDISCOUNT )
+			RETURN
+			    IF ( NetUnitPrice > 0, NetUnitPrice, BLANK () )
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 2d40ffa9-355d-4f74-a9a1-ae4dd15191fe
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Open Net Value Col Cons GBP' =
+			IF (
+			    AND (
+			        Orders[Transaction Status] = "Open",
+			        Orders[REMAININVENTPHYSICAL_SOL] > 0
+			    ),
+			    ( ( Orders[LINEAMOUNT_SOL_CONS_GBP] - Orders[HeaderDiscount_CONS_GBP] ) * Orders[Open Units Pct] ),
+			    BLANK ()
+			)
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 7a87cecc-b230-4e54-8738-4bb03c7909d0
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Invoiced Charges Col Cons GBP' =
+			IF (
+			    Orders[Transaction Status] = "Invoiced",
+			    Orders[ChargeTotalExcTax_CONS_GBP],
+			    BLANK ()
+			)
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: f25ebfaf-048c-4fce-bb1a-1fae4bb6ef62
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Invoiced COGs Col' =
+			IF (
+			    AND (
+			        ISBLANK ( Orders[RETURNEDSALESQUANTITY_ROL] ),
+			        Orders[INVOICEDQUANTITY_SIL] > 0
+			    ),
+			    ROUND ( Orders[COSTAMOUNTPOSTED_SILCS], 2 ) * -1,
+			    BLANK ()
+			)
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 68aec981-6080-4593-8618-b54ed8e9e2ba
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Invoiced Net Value Col Cons GBP' =
+			IF (
+			    AND (
+			        Orders[Transaction Type] IN { "Sale", "Charge" },
+			        Orders[Transaction Status] = "Invoiced"
+			    ),
+			     ( Orders[LINEAMOUNT_SIL_CONS_GBP] - Orders[HeaderDiscount_CONS_GBP] ) + Orders[ChargeTotalExcTax_CONS_GBP],
+			    BLANK ()
+			)
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: bc891a2d-c531-4856-9b16-35af43479467
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Invoiced Tax Col' =
+			IF (
+			    AND (
+			        'Orders'[Transaction Status] = "Invoiced",
+			        ISBLANK ( Orders[Returned Units Col] )
+			    ),
+			    'Orders'[Tax_CONS_GBP],
+			    BLANK ()
+			)
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: f97e33c0-fefc-46a1-9fe7-f4888da62eaa
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Returned Net Value Col Cons GBP (inc tax)' =
+			IF (
+			    AND (
+			        Orders[Transaction Type] = "Return",
+			        Orders[Transaction Status] = "Invoiced"
+			    ),
+			    Orders[Returned Net Value Col Cons GBP] + ABS ( Orders[Tax_CONS_GBP] ),
+			    BLANK ()
+			)
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 79410fd2-870f-4745-939c-250bceadb050
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Invoiced Full Value Col Cons GBP' =
+			VAR CHGS = Orders[Invoiced Charges Col Cons GBP]
+			VAR MAIN =
+			    IF (
+			        AND ( ISBLANK ( Orders[Returned Units Col] ), Orders[INVOICEDQUANTITY_SIL] > 0 ),
+			        Orders[LINEAMOUNT_SIL_CONS_GBP] + Orders[LineDiscount_CONS_GBP],
+			        BLANK ()
+			    )
+			VAR INVONLY =
+			    IF (
+			        ISBLANK ( Orders[RETURNORDERNUMBER_ROH] ),
+			        Orders[LINEAMOUNT_SIL_CONS_GBP] + Orders[LineDiscount_CONS_GBP],
+			        BLANK ()
+			    )
+			RETURN
+			    IF ( ISBLANK ( Orders[Sales Order Number] ), INVONLY, MAIN + CHGS )
+		dataType: decimal
+		isHidden
+		formatString: 0.00
+		displayFolder: zz_Values
+		lineageTag: 07aff435-9d04-463c-b458-e32dec1ac23c
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Returned Full Value Col Cons GBP' =
+			IF (
+			    OR (
+			        Orders[Transaction Type] = "Return",
+			        Orders[Source] = "AX_Invoiced_US"
+			            && Orders[LINEAMOUNT_SIL_CONS_GBP] < 0
+			            && Orders[Returned Units Col] = 0
+			    ),
+			    ABS ( Orders[LINEAMOUNT_SIL_CONS_GBP] - Orders[LineDiscount_CONS_GBP] ),
+			    BLANK ()
+			)
+		dataType: decimal
+		isHidden
+		formatString: 0.00
+		displayFolder: zz_Values
+		lineageTag: da848bbd-3742-4c22-a222-f706c42be52f
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Ordered Net Value Col Cons GBP' =
+			VAR TotalOrderDiscount =
+			    CALCULATE (
+			        SUM ( Orders[HeaderDiscount_CONS_GBP] ),
+			        ALLEXCEPT (
+			            Orders,
+			            Orders[Company_Key],
+			            Orders[Sales Order Number],
+			            Orders[Order Line],
+			            Orders[Transaction Type]
+			        )
+			    )
+			RETURN
+			    IF (
+			        AND (
+			            Orders[Transaction Type] = "Sale",
+			            Orders[ORDEREDSALESQUANTITY_SOL_ZEROS] > 0
+			        ),
+			        Orders[LINEAMOUNT_SOL_CONS_GBP] - TotalOrderDiscount,
+			        BLANK ()
+			    )
+		dataType: decimal
+		isHidden
+		formatString: #,##0.00
+		displayFolder: zz_Values
+		lineageTag: 207cf4e3-f967-4843-bd20-5bd08551bb35
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Website = related(Website[Website])
+		dataType: string
+		displayFolder: 2. eCom Details
+		lineageTag: 80a18a99-c05c-4b2d-b36f-4c7a62050b92
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Promo Code?' = if(Orders[Promo Code]=blank(),"No","Yes")
+		dataType: string
+		displayFolder: 2. eCom Details
+		lineageTag: 7c8a792b-9b88-472a-bc34-d88997bd5334
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Orders = m
+		mode: import
+		source = ```
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_FACT_SALES",Kind="View"]}[Data],  
+				    #"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
+				    #"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
+				    #"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
+				    #"Kept First Rows" = Table.FirstN(#"ReplaceValueTrue",NumberOfRows),
+				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else  #"ReplaceValueTrue"
+				in
+				    ParameterFilter
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

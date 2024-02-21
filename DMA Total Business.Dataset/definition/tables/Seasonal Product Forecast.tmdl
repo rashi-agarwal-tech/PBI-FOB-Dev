@@ -1,0 +1,73 @@
+table 'Seasonal Product Forecast'
+	isHidden
+	lineageTag: fd2025a6-4d86-4cbb-877a-c0f1254ca852
+
+	column Date_key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c7482264-4884-48d3-9e30-dd49ede821ad
+		summarizeBy: none
+		sourceColumn: Date_key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 24933d1d-614c-49a3-b1dc-ee1ae83c4216
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: e37a98ae-84dd-4d45-8b6a-657a64285b81
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Quantity'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: d0c49f60-26aa-4d51-b6f0-2f0b3fe3dd31
+		summarizeBy: none
+		sourceColumn: Forecast Quantity
+
+		changedProperty = DataType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Seasonal Product Forecast' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_AZURE_PRODUCT_SEASONAL_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_AZURE_PRODUCT_SEASONAL",Kind="View"]}[Data]
+				in
+				    TB_BFN_VW_AZURE_PRODUCT_SEASONAL_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

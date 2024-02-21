@@ -1,0 +1,118 @@
+table 'Customer Sell Out US'
+	isHidden
+	lineageTag: 0c571580-9a54-462f-bfe9-86973fd1e15c
+
+	column To_Date_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5d1c6959-fa22-4ed7-8d40-cf389a8a0416
+		summarizeBy: none
+		sourceColumn: To_Date_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: e28bbb46-da7d-4869-8403-be618ed7a11f
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d8913eed-1939-41db-bdfb-101a2c334cec
+		summarizeBy: none
+		sourceColumn: To Date
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Qty Sold'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: a7495ad8-fbaf-470b-b9bd-c98cf9bc527e
+		summarizeBy: none
+		sourceColumn: Qty Sold
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Qty On Hand'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: ca1ffd53-aaba-4ede-89cd-8e34ff5a65de
+		summarizeBy: none
+		sourceColumn: Qty On Hand
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: b69c7a5b-e536-4a61-8ae8-31f1d69211a9
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company ID'
+		dataType: string
+		isHidden
+		sourceProviderType: decimal(18, 5)
+		lineageTag: 19578dda-a939-4f63-bfab-32f3ff90bbec
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Customer Sell Out US' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_US_WHOLESALE_SELL_OUT_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_US_WHOLESALE_SELL_OUT",Kind="View"]}[Data],
+				    #"Kept First Rows" = Table.FirstN(TB_BFN_VW_US_WHOLESALE_SELL_OUT_View,NumberOfRows),
+				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else TB_BFN_VW_US_WHOLESALE_SELL_OUT_View
+				in
+				    ParameterFilter
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

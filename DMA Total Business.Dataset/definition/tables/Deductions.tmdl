@@ -1,0 +1,107 @@
+table Deductions
+	lineageTag: 15504bce-6e47-47fc-9d0b-4712717ad2df
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 93ac98a7-5dab-41a3-8627-1af5771699f7
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 6d90ac67-755c-4eda-a101-f7b90ac13873
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: de8beee1-5b46-4b95-b875-c57717bfd652
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Write Off Reason'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 51bfe5b9-5948-4dd8-8bac-48900e9ceb16
+		summarizeBy: none
+		sourceColumn: Write Off Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 884db04a-597d-45b5-ae1a-41c3efbc5f3d
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Voucher Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: fc72e9fd-521a-4d6c-8127-802dfde2bc44
+		summarizeBy: none
+		sourceColumn: Voucher Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount_CONS_GBP
+		dataType: decimal
+		isHidden
+		formatString: #,##0.00
+		sourceProviderType: decimal(38, 2)
+		lineageTag: 113e7588-6d8e-4630-815d-71d45e45a8da
+		summarizeBy: none
+		sourceColumn: Amount_CONS_GBP
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Source
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a2865d7f-d430-49ce-9723-942f6cd6448c
+		summarizeBy: none
+		sourceColumn: Source
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Deductions = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_D365_FACT_DEDUCTION_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_FACT_DEDUCTION",Kind="View"]}[Data]
+				in
+				    TB_BFN_VW_D365_FACT_DEDUCTION_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

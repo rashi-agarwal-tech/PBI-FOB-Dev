@@ -1,0 +1,82 @@
+table 'Adjustments CoGS'
+	isHidden
+	lineageTag: 8cf76aa4-e404-49ac-8683-9d7056f86e8b
+
+	column 'Amount at Constant Rate'
+		dataType: decimal
+		isHidden
+		sourceProviderType: decimal(38, 4)
+		displayFolder: zz_Value
+		lineageTag: e62fb29f-0696-4a3f-a239-36aff64c6eb2
+		summarizeBy: none
+		sourceColumn: Amount at Constant Rate
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AccountingDate_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: dbb2765a-45ff-446b-941b-46445241cba5
+		summarizeBy: none
+		sourceColumn: AccountingDate_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 62885872-30dd-4aa8-a8eb-b0a032f7b885
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Channel_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 0a94511a-1f3d-4c7d-82a3-76f9733025e4
+		summarizeBy: none
+		sourceColumn: Channel_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Adjustments CoGS' = m
+		mode: import
+		source = ```
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_D365FACTASE_COGS_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365FACTASE_COGS",Kind="View"]}[Data],
+				    #"Filtered Rows1"   = Table.SelectRows(TB_BFN_VW_D365FACTASE_COGS_View, each [TransactionTypeDesc] <> "Sales" and [MAINACCOUNTID] >= "50001" and [MAINACCOUNTID] <= "50059"),
+				    #"Selected Columns" = Table.SelectColumns(#"Filtered Rows1",{"AccountingDate_Key", "Channel_Key", "Company_Key", "Amount at Constant Rate"}),  
+				   #"Kept First Rows" = Table.FirstN(#"Selected Columns",NumberOfRows),
+				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Selected Columns"
+				in
+				    ParameterFilter
+				```
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

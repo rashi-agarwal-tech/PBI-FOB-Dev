@@ -1,0 +1,45 @@
+table Channel
+	isHidden
+	lineageTag: db5f6c24-dddd-463d-b800-a280a993c53e
+
+	column 'Channel ID'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0424610a-842d-487a-bcb2-1150a03b71c8
+		summarizeBy: none
+		sourceColumn: Channel ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Channel
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5579e74b-3add-45d9-b5f3-91b31133886d
+		summarizeBy: none
+		sourceColumn: Channel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Channel = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_CHANNEL_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_CHANNEL",Kind="View"]}[Data]
+				in
+				    TB_BFN_CHANNEL_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,36 @@
+table BridgeSalesOrderNumber
+	isHidden
+	lineageTag: 26118574-4f90-4567-9434-c477c470fe47
+
+	column 'Sales Order Number'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 351508f9-c29e-44f6-886b-856b28fb3a7f
+		summarizeBy: none
+		sourceColumn: Sales Order Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition BridgeSalesOrderNumber = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_D365_DIM_SALES_ORDER_NUMBER_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_DIM_SALES_ORDER_NUMBER",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(TB_BFN_VW_D365_DIM_SALES_ORDER_NUMBER_View, each [Sales Order Number] <> null and [Sales Order Number] <> ""),
+				    #"Kept First Rows" = Table.FirstN(#"Filtered Rows",NumberOfRows),
+				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Filtered Rows"
+				in
+				    ParameterFilter
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

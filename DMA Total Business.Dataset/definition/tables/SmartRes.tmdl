@@ -1,0 +1,213 @@
+table SmartRes
+	lineageTag: c866145a-c102-4eac-ab5b-85cba54927af
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 7318d155-5542-4b1d-a6cf-7a01ed5b0697
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company ID'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: af487b30-326f-42e6-9979-1e265c77b75b
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(6)
+		displayFolder: zz_Misc
+		lineageTag: f00fa903-5f5e-4bed-88d5-45f29da3746b
+		summarizeBy: none
+		sourceColumn: Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QtyAllocated
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(32, 6)
+		displayFolder: zz_Values
+		lineageTag: 66740ae1-d3ad-424b-9c7f-c29873cd64e1
+		summarizeBy: none
+		sourceColumn: QtyAllocated
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: datetime2
+		displayFolder: zz_Misc
+		lineageTag: 33ad0114-8f45-43ef-862b-a05373d924ca
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QtyReserved
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(32, 6)
+		displayFolder: zz_Values
+		lineageTag: 8296c7fd-dae1-44e2-ac7a-3be9d38cba90
+		summarizeBy: none
+		sourceColumn: QtyReserved
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: a1922ace-794a-439d-8f03-da60b430eeda
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 6eb5e3bc-8899-42d8-bd83-9ca1ea0509ee
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		sourceProviderType: decimal(1, 0)
+		displayFolder: zz_Keys
+		lineageTag: e5c74dea-1d1e-4cda-9610-dd6f55d23fe7
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status'
+		dataType: string
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Keys
+		lineageTag: 6d9ff0f9-64b4-4d18-9fbe-97dad8f1c510
+		summarizeBy: none
+		sourceColumn: Selling Status
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column QtyOutstanding
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(32, 6)
+		displayFolder: zz_Values
+		lineageTag: a68efefb-5811-4554-ae0d-31ee80c5402b
+		summarizeBy: none
+		sourceColumn: QtyOutstanding
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INVENTLOCATIONID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a51ebdca-d373-47c6-b924-95fc99fa57ea
+		summarizeBy: none
+		sourceColumn: INVENTLOCATIONID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Channel ID' = RELATED ( Warehouse[Warehouse Channel] )
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: c66e24ad-57f5-4cb5-b9a7-a85312ff2dc4
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinancialChannel = RELATED ( Warehouse[FinancialChannel] )
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 91352bab-432b-4e06-9033-fffbc3d94bd7
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SmartRes = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_D365_FACT_FSB_IM_RESV_OPEN_UNPIVOTED_WITH_SALES_ORDERS_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_FACT_FSB_IM_RESV_OPEN_UNPIVOTED_WITH_SALES_ORDERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(TB_BFN_VW_D365_FACT_FSB_IM_RESV_OPEN_UNPIVOTED_WITH_SALES_ORDERS_View, each List.Contains({"FRB2B01", "UKB2B01", "UKB2B03", "NLB2B01", "NLB2B02", "NLB2B03", "USB2B01"}, [INVENTLOCATIONID]))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

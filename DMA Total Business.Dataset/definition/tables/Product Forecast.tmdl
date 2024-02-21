@@ -1,0 +1,33 @@
+table 'Product Forecast'
+	isHidden
+	lineageTag: bbaf7ef3-e775-4286-9ceb-eb8d0bbe013f
+
+	column 'Product Code'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d1b00ae1-09d5-4a9f-9a94-399427752407
+		summarizeBy: none
+		sourceColumn: Product Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Product Forecast' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_DIMFORECAST_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_DIMFORECAST",Kind="View"]}[Data]
+				in
+				    TB_BFN_VW_DIMFORECAST_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,54 @@
+table 'Retail Demographics'
+	lineageTag: f654ce44-3dc4-422c-bdd9-eb6a36f31973
+
+	column 'Sales Order Number'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: bc11598c-a0af-4062-a37a-ce975147c787
+		summarizeBy: none
+		sourceColumn: Sales Order Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5e7da966-f6a2-4b88-8d80-221a33ad6d9d
+		summarizeBy: none
+		sourceColumn: Gender
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3fb71b9e-3381-4658-87ab-033dfa64f88e
+		summarizeBy: none
+		sourceColumn: Age
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Retail Demographics' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_D365_FACT_RETAIL_TRANSACTION_DEMOGRAPHICS_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_FACT_RETAIL_TRANSACTION_DEMOGRAPHICS",Kind="View"]}[Data]
+				in
+				    TB_BFN_VW_D365_FACT_RETAIL_TRANSACTION_DEMOGRAPHICS_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

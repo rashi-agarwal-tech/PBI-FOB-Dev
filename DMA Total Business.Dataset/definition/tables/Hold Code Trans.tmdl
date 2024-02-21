@@ -1,0 +1,45 @@
+table 'Hold Code Trans'
+	isHidden
+	lineageTag: 246b8669-da8b-4775-9059-0e88c9dbf68e
+
+	column SalesOrderNumber_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e84503f2-4aa5-4a70-b33e-c1c8e0fcca97
+		summarizeBy: none
+		sourceColumn: SalesOrderNumber_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HOLDCODEDESCRIPTION
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: acfb7ed5-ff8c-429a-8b45-9bb95ec26095
+		summarizeBy: none
+		sourceColumn: HOLDCODEDESCRIPTION
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Hold Code Trans' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_D365_FACT_DMR_MCR_HOLD_CODE_TRANS_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_FACT_DMR_MCR_HOLD_CODE_TRANS",Kind="View"]}[Data]
+				in
+				    TB_BFN_VW_D365_FACT_DMR_MCR_HOLD_CODE_TRANS_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

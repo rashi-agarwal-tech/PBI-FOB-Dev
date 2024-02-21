@@ -1,0 +1,72 @@
+table 'Display Currency'
+	lineageTag: 978bb92f-050c-4fd3-8edd-0e9121bc02c9
+
+	column 'Currency Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 17198ad1-9e9b-4e98-af92-84c937ba4e6f
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Currency Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0b021d45-eecc-4813-b114-f0edfff71621
+		summarizeBy: none
+		sourceColumn: Currency Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column XRMultiplier =
+			IF (
+			    'Display Currency'[Currency Code] = "GBP",
+			    1,
+			    LOOKUPVALUE (
+			        'Exchange Rates'[RATE],
+			        'Exchange Rates'[FROMCURRENCY], "GBP",
+			        'Exchange Rates'[RATETYPENAME], "BUDGET",
+			        'Exchange Rates'[TOCURRENCY], 'Display Currency'[Currency Code]
+			    )
+			)
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: dbe8cf3d-3e91-4104-8cfc-59fcd66872f9
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NAME
+		dataType: string
+		isHidden
+		lineageTag: c8813c1f-de35-4676-b622-f4be37e709dc
+		summarizeBy: none
+		sourceColumn: NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Display Currency' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_D365DIMCURRENCY_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365DIMCURRENCY",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(TB_BFN_VW_D365DIMCURRENCY_View, each ([NAME] = "Canadian Dollar" or [NAME] = "Euro" or [NAME] = "Hong Kong Dollar" or [NAME] = "Pound Sterling" or [NAME] = "Singapore Dollar" or [NAME] = "US Dollar" or [NAME] = "Won" or [NAME] = "Yen"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

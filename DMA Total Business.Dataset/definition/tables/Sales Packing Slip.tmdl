@@ -1,0 +1,61 @@
+table 'Sales Packing Slip'
+	isHidden
+	lineageTag: 82e12ccd-ceda-4013-a461-08a815f234d3
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b9b179d4-1e31-4603-a2e0-fdf73640d4b9
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shipped Qty'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 62e09325-95c6-4808-a01f-bb51fc482d89
+		summarizeBy: none
+		sourceColumn: Shipped Qty
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Date_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b09d0404-eda2-45f6-bd79-ae438a450c38
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sales Packing Slip' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_D365_FACT_SALES_PACKING_SLIP_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_FACT_SALES_PACKING_SLIP",Kind="View"]}[Data]
+				in
+				    TB_BFN_VW_D365_FACT_SALES_PACKING_SLIP_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,90 @@
+table 'Exchange Rates'
+	isHidden
+	lineageTag: 209abe5b-0f16-485e-9429-3789c73c4498
+
+	column FROMCURRENCY
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ef4dce69-9406-4518-9c5a-638b2942bced
+		summarizeBy: none
+		sourceColumn: FROMCURRENCY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOCURRENCY
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 90b3b544-77a1-4e3a-9906-e618d2f3d353
+		summarizeBy: none
+		sourceColumn: TOCURRENCY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RATETYPENAME
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f61525ef-1a18-4d57-b9cf-33fe9c226608
+		summarizeBy: none
+		sourceColumn: RATETYPENAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RATE
+		dataType: decimal
+		isHidden
+		sourceProviderType: decimal(16, 6)
+		lineageTag: 55607b2b-119b-4b6c-88ac-bbdf43693e84
+		summarizeBy: none
+		sourceColumn: RATE
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DATE
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 5902bc59-3ea0-41f6-ad71-ef7e94f583a2
+		summarizeBy: none
+		sourceColumn: DATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'Exchange Rates' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_D365FACTCURRENCYEXCHANGERATE2_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365FACTCURRENCYEXCHANGERATE2",Kind="View"]}[Data],
+				    #"Changed Type"   = Table.TransformColumnTypes(TB_BFN_VW_D365FACTCURRENCYEXCHANGERATE2_View,{{"DATE", type date}}),
+				    #"Filtered Rows"  = Table.SelectRows(#"Changed Type",  each [RATETYPENAME] = "BUDGET"),
+				    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [DATE] = DateTime.Date(DateTime.LocalNow()))
+				in
+				    #"Filtered Rows1"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
