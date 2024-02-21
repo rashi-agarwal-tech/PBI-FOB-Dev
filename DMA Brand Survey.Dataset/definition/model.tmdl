@@ -1,0 +1,76 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Datasource_Server","Datasource_Database","Datasource_Schema","Datasource_Warehouse","Datasource_Date_Schema","Datasource_Date_Database","Boost","Brand Name","Category Name","Country","Answer","Question","Age Range","Wave","Shop","City","Gender","Familiarity","Attitude Answer","Attitude Question","Respondent","Category","Q26","Q27","Q15","Q16","Q19","Q20","Q9","Style Lookbooks","Q28","Brand","Q14","Full Footwear Brands","Q13","Q34","Q35","Q53","Q49","Q39","Q40","Q72","Q73","Q65","Q66","Q69","Dim Date","Q33","Attitude","Image","D7","D8","Q32","Q54","Q55","Customer Segment","Sample Size"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.126.927.0 (24.02)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Boost
+ref table 'Brand Name'
+ref table 'Category Name'
+ref table Country
+ref table Answer
+ref table Question
+ref table 'Age Range'
+ref table Wave
+ref table DateTableTemplate_cd8f1a23-1419-49b4-957a-f1525d3e9ba0
+ref table Shop
+ref table City
+ref table Gender
+ref table Familiarity
+ref table 'Attitude Answer'
+ref table 'Attitude Question'
+ref table Respondent
+ref table Category
+ref table Q26
+ref table Q27
+ref table Q15
+ref table Q16
+ref table Q19
+ref table Q20
+ref table Q9
+ref table 'Style Lookbooks'
+ref table Q28
+ref table Brand
+ref table Q14
+ref table 'Full Footwear Brands'
+ref table Q13
+ref table Q34
+ref table Q35
+ref table Q53
+ref table Q49
+ref table Q39
+ref table Q40
+ref table Q72
+ref table Q73
+ref table Q65
+ref table Q66
+ref table Q69
+ref table 'Dim Date'
+ref table LocalDateTable_00e417d1-1914-42dd-bfc3-b3c6b5c6ab65
+ref table LocalDateTable_b87130e6-e6af-42b9-804f-133ffe587582
+ref table LocalDateTable_36751eb9-b29d-429b-a3e5-d5e721e6216e
+ref table LocalDateTable_b658729c-7866-4dbd-abe6-4f2795bc1788
+ref table LocalDateTable_3856437a-dd0a-43a3-846d-6a9f7da5954b
+ref table Q33
+ref table Attitude
+ref table Image
+ref table LocalDateTable_a8986a6a-47ab-44a5-ba84-1caf03854241
+ref table D7
+ref table D8
+ref table Q32
+ref table Q54
+ref table Q55
+ref table 'Customer Segment'
+ref table LocalDateTable_4a88bc7d-23ff-407b-834f-c69995275557
+ref table 'Sample Size'
+

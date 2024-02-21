@@ -1,0 +1,54 @@
+table Q72
+	lineageTag: 6c933a9a-7c6c-4b79-817b-75cdf31cbb23
+
+	column UNIQUEID
+		dataType: double
+		lineageTag: 9a1cc31b-0f98-469b-aaca-5c245e0cf1f6
+		summarizeBy: none
+		sourceColumn: UNIQUEID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Q72
+		dataType: string
+		lineageTag: f73697b3-b333-4f17-9477-e933ae1835b8
+		summarizeBy: none
+		sourceColumn: Q72
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q72_ANSWER
+		dataType: double
+		lineageTag: 39b06180-2152-4ba4-86f5-ee5c9d5000b3
+		summarizeBy: sum
+		sourceColumn: Q72_ANSWER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Q72_96_OTHER
+		dataType: string
+		lineageTag: 306e6472-d328-4246-b1df-1cd1d32c4fe0
+		summarizeBy: none
+		sourceColumn: Q72_96_OTHER
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Q72-5b8e999c-b822-4021-9b6e-b6c9c24c3d66 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_Q72_View = BS_Schema{[Name="BRANDSURVEY_Q72",Kind="Table"]}[Data]
+				in
+				    VW_Q72_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

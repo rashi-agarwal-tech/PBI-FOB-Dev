@@ -1,0 +1,42 @@
+table 'Category Name'
+	lineageTag: f093c598-fe6f-4c9d-89f9-dd0c5a0420bc
+
+	column CATEGORY_CODE
+		dataType: double
+		isNullable: false
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 8b162787-d91e-4eb9-ad98-a5c61fbdec86
+		summarizeBy: none
+		sourceColumn: CATEGORY_CODE
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column CATEGORY_LABEL
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4c88427e-be6c-4f07-9dab-c0cbffc82af4
+		summarizeBy: none
+		sourceColumn: CATEGORY_LABEL
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Category Name-d72be4dd-8492-4085-b91b-d8fc5d28f812' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_DIM_CATEGORY_View = BS_Schema{[Name="BRANDSURVEY_DIM_CATEGORY",Kind="Table"]}[Data]
+				in
+				    VW_DIM_CATEGORY_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

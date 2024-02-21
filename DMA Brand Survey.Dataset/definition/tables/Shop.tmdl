@@ -1,0 +1,91 @@
+table Shop
+	lineageTag: 2caaf82a-08f1-4c18-8a66-ef31916837c3
+
+	column UNIQUEID
+		dataType: double
+		formatString: 0
+		lineageTag: 3de24e79-4034-4322-ad51-0aa501278202
+		summarizeBy: none
+		sourceColumn: UNIQUEID
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column DATE_KEY
+		dataType: string
+		lineageTag: 885d38c6-eafa-4022-9e52-c986e67e3f05
+		summarizeBy: none
+		sourceColumn: DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESPID
+		dataType: double
+		formatString: 0
+		lineageTag: f6a0b9f1-2973-4e07-bdcd-9828c818c52e
+		summarizeBy: none
+		sourceColumn: RESPID
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column SHOP
+		dataType: double
+		formatString: 0
+		lineageTag: 7f124d6d-e6cf-4187-96ed-4f01ca53900f
+		summarizeBy: none
+		sourceColumn: SHOP
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'Shop Label'
+		dataType: string
+		lineageTag: ec1c461f-84c2-4666-8a4c-774709ae422c
+		summarizeBy: none
+		sourceColumn: Shop Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q62
+		dataType: string
+		lineageTag: 7754b9ea-5263-46cb-bf99-a15a7fcc022a
+		summarizeBy: none
+		sourceColumn: Q62
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q63
+		dataType: string
+		lineageTag: d2deb80c-bbad-4f95-83eb-32e1ff1cb87b
+		summarizeBy: none
+		sourceColumn: Q63
+
+		annotation SummarizationSetBy = Automatic
+
+	column SHOP_KEY
+		dataType: string
+		lineageTag: 15606970-2324-4410-9169-80fad9892ef4
+		summarizeBy: none
+		sourceColumn: SHOP_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Shop-3ca16261-daf3-4212-b192-9d4fc7ef1d99 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_SHOP_View = BS_Schema{[Name="BRANDSURVEY_FACT_SHOP",Kind="Table"]}[Data]
+				in
+				    VW_SHOP_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

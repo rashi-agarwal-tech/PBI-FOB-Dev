@@ -1,0 +1,115 @@
+table 'Full Footwear Brands'
+	lineageTag: c90c1453-8892-45ad-9bd1-37b960539212
+
+	column FootwearBrand
+		dataType: string
+		lineageTag: b7291403-57f6-443a-898d-7d5296113596
+		summarizeBy: none
+		sourceColumn: FootwearBrand
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Full Footwear Brands-f23f403c-ca1b-4ba1-9679-7a8b15864d21' = m
+		mode: import
+		source =
+				let
+				    Source = #table({"Footwear Brand"},
+				{
+				{"Accessorize"},
+				{"Adidas"},
+				{"Alexander McQueen"},
+				{"Amazon"},
+				{"Armani"},
+				{"Asda"},
+				{"Asics"},
+				{"Asos"},
+				{"Balenciaga"},
+				{"Barbour"},
+				{"Ben Sherman"},
+				{"Bench"},
+				{"Billabong"},
+				{"Birkenstock"},
+				{"Blundstone"},
+				{"Boohoo.com"},
+				{"Calvin Klein"},
+				{"Camper"},
+				{"Caterpillar"},
+				{"Catwalk"},
+				{"Clarks"},
+				{"Converse"},
+				{"Crocs"},
+				{"Dr. Martens"},
+				{"Dune"},
+				{"Ecco"},
+				{"Fila"},
+				{"Fly"},
+				{"Hunter"},
+				{"Irregular Choice"},
+				{"Kurt Geiger"},
+				{"Marks & Spencers"},
+				{"Merrell"},
+				{"New Balance"},
+				{"New Look"},
+				{"Next"},
+				{"Nike"},
+				{"Office"},
+				{"Other"},
+				{"Palladium"},
+				{"Panama Jack"},
+				{"Primark"},
+				{"Puma"},
+				{"Red Wing"},
+				{"Reebok"},
+				{"River Island"},
+				{"RM Williams"},
+				{"Schuh"},
+				{"Skechers"},
+				{"Steve Madden"},
+				{"Timberland"},
+				{"Tommy Hilfiger"},
+				{"Top Shop"},
+				{"UGG"},
+				{"Vagabond"},
+				{"Vans"},
+				{"Windsor Smith"},
+				{"Zara"},
+				{"361"},
+				{"Anta"},
+				{"Bally"},
+				{"Bata"},
+				{"Belle"},
+				{"Camel"},
+				{"Chanel"},
+				{"Christian Louboutin"},
+				{"Danner"},
+				{"Decathlon"},
+				{"Deichmann"},
+				{"Diadora"},
+				{"George Cox"},
+				{"Geox"},
+				{"Gucci"},
+				{"Havaianas"},
+				{"Hawkins"},
+				{"Hush Puppies"},
+				{"Jordan"},
+				{"Keen"},
+				{"Lining"},
+				{"Louis Vuitton"},
+				{"Lululemon"},
+				{"Mizuno"},
+				{"Nine West"},
+				{"North Face"},
+				{"Prada"},
+				{"Tamaris"},
+				{"Tata"},
+				{"Teva"},
+				{"Under Armour"},
+				{"Valentino"}
+				}),
+				    #"Renamed Columns" = Table.RenameColumns(Source,{{"Footwear Brand", "FootwearBrand"}}),
+				    Custom1 = Table.TransformColumnTypes(#"Renamed Columns",{{"FootwearBrand", type text}})
+				in
+				    Custom1
+
+	annotation PBI_ResultType = Table
+

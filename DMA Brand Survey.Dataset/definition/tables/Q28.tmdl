@@ -1,0 +1,64 @@
+table Q28
+	lineageTag: c8917466-5e25-4a6d-9e92-b9bc93b09610
+
+	column DATE_KEY
+		dataType: string
+		lineageTag: 35e068a4-d4a1-47f0-98d8-954070e4220f
+		summarizeBy: none
+		sourceColumn: DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND
+		dataType: double
+		lineageTag: e46a83d4-8e3d-4e62-82c1-00348ed3acc7
+		summarizeBy: none
+		sourceColumn: BRAND
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Q28
+		dataType: string
+		lineageTag: 7169c0f1-35e7-4126-8685-b73405e9933e
+		summarizeBy: none
+		sourceColumn: Q28
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q28_ANSWER
+		dataType: double
+		lineageTag: 5719ce04-0448-46ea-b9a0-c5f5bcc51f7e
+		summarizeBy: sum
+		sourceColumn: Q28_ANSWER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UNIQUEID
+		dataType: double
+		lineageTag: 5cdfb938-31bc-42cd-af4f-69fff0ce0bbe
+		summarizeBy: none
+		sourceColumn: UNIQUEID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Q28-3142793a-a7bc-49ab-bc19-872c7ac0c74a = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_Q28_View = BS_Schema{[Name="BRANDSURVEY_Q28",Kind="Table"]}[Data]
+				in
+				    VW_Q28_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,55 @@
+table 'Style Lookbooks'
+	lineageTag: 8216d864-ae9d-4c75-88e6-cb8ffcfbb759
+
+	column Q9
+		dataType: string
+		lineageTag: 5c50a08f-f82b-4b7b-b3fb-f5771bbf81ac
+		summarizeBy: none
+		sourceColumn: Q9
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q9_Order
+		dataType: string
+		lineageTag: f622228b-d158-4aeb-b861-1f2b3da44b39
+		summarizeBy: none
+		sourceColumn: Q9_Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Lookbook Link'
+		dataType: string
+		lineageTag: 9b7294ee-466e-4839-bf88-5b17f2f16882
+		summarizeBy: none
+		sourceColumn: Style Lookbook Link
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Lookbooks'
+		dataType: string
+		lineageTag: 747e0580-872c-437a-b642-2ade280e5008
+		summarizeBy: none
+		sourceColumn: Style Lookbooks
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Style Lookbooks-bcd853fc-5500-4bc6-9beb-f488e691d757' = m
+		mode: import
+		source =
+				let
+				    Source = #table({"Q9","Q9_Order","Style Lookbook Link","Style Lookbooks"},
+				{{"Q9_1",1,"https://i1.adis.ws/i/drmartens/OCTOBER%202019%20Boho","Boho"},
+				{"Q9_10",10,"https://i1.adis.ws/i/drmartens/OCTOBER%202019%20Smart","Smart"},
+				{"Q9_2",2,"https://i1.adis.ws/i/drmartens/OCTOBER%202019%20Casual","Casual"},
+				{"Q9_3",3,"https://i1.adis.ws/i/drmartens/OCTOBER%202019%20Colour%20pop","Colour Pop"},
+				{"Q9_4",4,"https://i1.adis.ws/i/drmartens/OCTOBER%202019%20Grunge%20Rock","Grunge Rock"},
+				{"Q9_5",5,"https://i1.adis.ws/i/drmartens/OCTOBER%202019%20Heritage","Heritage"},
+				{"Q9_6",6,"https://i1.adis.ws/i/drmartens/OCTOBER%202019%20Hipster","Hipster"},
+				{"Q9_7",7,"https://i1.adis.ws/i/drmartens/OCTOBER%202019%20Hypebeast","Hypebeast"},
+				{"Q9_8",8,"https://i1.adis.ws/i/drmartens/OCTOBER%202019%20Punk%20Goth","Punk Goth"},
+				{"Q9_9",9,"https://i1.adis.ws/i/drmartens/OCTOBER%202019%20Skater","Skater"}})
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+

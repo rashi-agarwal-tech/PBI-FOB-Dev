@@ -1,0 +1,52 @@
+table City
+	lineageTag: 96100d31-29b3-49d2-b61f-bc6f87f1159d
+
+	column CITY_KEY
+		dataType: string
+		lineageTag: 433252a0-1e7d-4517-9779-fdff7ba948bc
+		summarizeBy: none
+		sourceColumn: CITY_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CITY_COLUMN
+		dataType: string
+		lineageTag: 76f54ec1-31de-41b6-8c24-78525dd5ff66
+		summarizeBy: none
+		sourceColumn: CITY_COLUMN
+
+		annotation SummarizationSetBy = Automatic
+
+	column CITY_CODE
+		dataType: double
+		lineageTag: 7be929e3-0c37-4cea-9d1a-eccf4658504d
+		summarizeBy: none
+		sourceColumn: CITY_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CITY_NAME
+		dataType: string
+		lineageTag: b7a31afb-04c2-4770-b5e8-e10d3930d582
+		summarizeBy: none
+		sourceColumn: CITY_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	partition City-8494e388-1aae-4cad-b63a-89b04c9cda23 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_DIM_CITY_View = BS_Schema{[Name="BRANDSURVEY_DIM_CITY",Kind="Table"]}[Data]
+				in
+				    VW_DIM_CITY_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

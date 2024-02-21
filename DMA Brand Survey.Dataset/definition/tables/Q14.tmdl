@@ -1,0 +1,110 @@
+table Q14
+	lineageTag: 14a173d5-146d-4742-a9e7-5af4353b9d77
+
+	column DATE_KEY
+		dataType: string
+		lineageTag: 4fbb0144-0e6e-4e61-b69e-fac4474190fc
+		summarizeBy: none
+		sourceColumn: DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIQUEID
+		dataType: double
+		formatString: 0
+		lineageTag: 991686bc-b786-4c58-b8e2-0f9dbecabacb
+		summarizeBy: none
+		sourceColumn: UNIQUEID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column CATEGORY
+		dataType: double
+		lineageTag: 8d264a82-3339-4758-b47c-c1c69b9875c1
+		summarizeBy: none
+		sourceColumn: CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Q14
+		dataType: string
+		lineageTag: 5c40b80f-2ca3-435f-812a-a781d187861d
+		summarizeBy: none
+		sourceColumn: Q14
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q14_ANSWER
+		dataType: string
+		lineageTag: 56739048-fdfd-41bd-b422-60081190e392
+		summarizeBy: none
+		sourceColumn: Q14_ANSWER
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Full Footwear Brands.FootwearBrand'
+		dataType: string
+		lineageTag: e26159f2-864c-493a-b2fe-c760256e4e7a
+		summarizeBy: none
+		sourceColumn: Full Footwear Brands.FootwearBrand
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Footwear Brand clean' =
+			if( [Q14_ANSWER] in {"Doc Martens","DR Martens",
+			"Doc Martins","doc Martin","dc Martin","dc Martins","dc Marten","Doc Marten","D M","Doc martains","D Martains","D Martens","Dc marteens","dcMartens","DE MARTENS","de martin","De. Martin","Di Martens","Dk Martens","Do marten","Do Martin","Doc Mart","Doc martans","Doc Marteens","Doc marteins","Doc Martian","Doc Martian’s","Doc martians","Doc martiens","Doc martten","DOC. Martens","Doc.Martens","Doch Martens","Dock martens","dock martin","Dock Martins","dockmartin","Dockmartins","docmartain","Docmarteen's","Docmarteens","Docmarten","DocMartens","Docmartins","docmartys","docs martins","Docter Martens","docter martin","doctor marteens","Doctor Marten","Doctor martens","doctor martin","Doctor Martin's","doctor martins","Dog martines","Dog Martins","Dokter Martens","Donc martens","Dorr. Martens","Dott martin","Dott martins","Dott. Martens","Dott. Martin","Dott. Martins","dott.martins","dottor marteens","Dottor Marten's","Dottor martens","Dottor martin","Dottor Martins","dr  marten","dr  martens","Dr Martains","dr marteen","DR MARTEENS","Dr marteins","dr marten","Dr marten boots","DR MARTEN'S","Dr Martena","Dr Martend","Dr martenes","Dr Martian","Dr Martian’s","Dr martians","dr martin","Dr Martin's","Dr Martin’s","dr martinbs","Dr Martind","Dr martines","dr martins","dr martrn","Dr Martyn’s","dr mmart","dr.  martens","Dr. Marteens","Dr. Marten","Dr. Marten's","Dr. Martens","Dr. Martenss","Dr. Marthens","Dr. Martin","Dr. Martin's","dr. martine","Dr. Martins","Dr. Martis","Dr.marteens","Dr.Marten","dr.marten's","Dr.Martens","dr.martenz","Dr.Martin","dr.martins","dr?martain","DrMarten","Drmartens","drmartin","DrMartin's","Drmartins","Drvmartins","dtr. martiens","dtt martens","fr.martens","J B Martin","Jb martin","k mart","k-mart","Kmart","La Martina","lamartina","Marteens","MARTELINI","marten","marten's","Martens","Marti","Martileni","martin","Martina","Martineli","martinell","Martinelli","Martini","Martinlli","martinrli","martins","MONO-MART","Mr Martens","Mr martin","New martins","She martens","DC martens","DM","DMs","DM's","Doc","Doc Marten's","Doc Martin's","Docs","Docs Martens","Doc Marten's","Doc Marteen"},"Dr. Martens",
+			if( [Q14_ANSWER] in {"Cat","Cat Footwear"},"Caterpillar",
+			if( [Q14_ANSWER] ="Birkenstock’s","Birkenstock",
+			if( [Q14_ANSWER] in {"Havaiana","Havainas","Havianas","Haviannas","Hawaianas","Hawainas"},"Havaianas",
+			if( [Q14_ANSWER] in {"Nero Giardino","Nerogiardini"},"Nero Giardini",
+			if( [Q14_ANSWER] in {"M&S","M & S","M and S"},"Marks & Spencers",
+			if( [Q14_ANSWER] in {"Deichman"},"Deichmann",
+			if( [Q14_ANSWER] in {"Calvin","Calvin Clain"},"Calvin Klein",[Q14_ANSWER])
+			)))))))
+		dataType: string
+		lineageTag: e77182cf-380b-4942-9612-d325d705c314
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Footwear Brand' = if(ISBLANK([Full Footwear Brands.FootwearBrand]) ,[Footwear Brand clean],[Full Footwear Brands.FootwearBrand])
+		dataType: string
+		lineageTag: 383dd405-76cb-4f02-9656-e7cefe034094
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q14_ANSWER_UNTRANSLATED
+		dataType: string
+		lineageTag: 2f1c9808-2353-4023-a2f0-ed74e6b76efd
+		summarizeBy: none
+		sourceColumn: Q14_ANSWER_UNTRANSLATED
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Q14-4cfd2175-bc41-4650-90b4-7c83240332bb = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_Q14_View = BS_Schema{[Name="BRANDSURVEY_Q14",Kind="Table"]}[Data],
+				    Custom1 = VW_Q14_View,
+				    #"Merged Queries" = Table.FuzzyNestedJoin(Custom1, {"Q14_ANSWER"}, #"Full Footwear Brands", {"FootwearBrand"}, "Full Footwear Brands", JoinKind.LeftOuter, [IgnoreCase=true, IgnoreSpace=true, Threshold=0.7]),
+				    #"Expanded Full Footwear Brands" = Table.ExpandTableColumn(#"Merged Queries", "Full Footwear Brands", {"FootwearBrand"}, {"Full Footwear Brands.FootwearBrand"}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Expanded Full Footwear Brands","Doc Martens","Dr. Martens",Replacer.ReplaceText,{"Full Footwear Brands.FootwearBrand"}),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Replaced Value",{{"Full Footwear Brands.FootwearBrand", Text.Proper, type text}, {"Q14_ANSWER", Text.Proper, type text}})
+				in
+				    #"Capitalized Each Word"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
