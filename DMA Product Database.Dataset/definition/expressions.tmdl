@@ -1,0 +1,34 @@
+/// Parameter to limit the number of rows when developing, should be set to 0 in the service as this will incliude all rows.
+expression NumberOfRows = 1 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
+	lineageTag: ff0d8d1f-85d3-4679-94ec-0cf0ff824a55
+	queryGroup: Parameters
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Number
+
+/// Snowflake Setup
+expression Datasource_Server = "drmartensprod.west-europe.azure.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 85854f0e-4560-4407-a46b-122f005aeece
+	queryGroup: Parameters
+
+	annotation PBI_ResultType = Text
+
+expression Datasource_Warehouse = "REPORTER" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 1a8bfb8d-6f0d-40a0-a4be-795e5ed57f85
+	queryGroup: Parameters
+
+	annotation PBI_ResultType = Text
+
+expression Datasource_Database = "PRESENTATION" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: eae0f331-cf79-4f84-8595-aaf92c012c84
+	queryGroup: Parameters
+
+	annotation PBI_ResultType = Text
+
+expression Datasource_Schema = "BFN_PRESENTATION" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 57fd1008-5a72-40fe-a372-081125612b7f
+	queryGroup: Parameters
+
+	annotation PBI_ResultType = Text
+

@@ -1,0 +1,51 @@
+table CHANNELS
+	lineageTag: b04de479-af63-45a0-893d-df5fae1e8a33
+
+	column 'Channel ID'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 25b061f2-0e7a-4374-a02b-9014cd138ab0
+		summarizeBy: none
+		sourceColumn: Channel ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Channel Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c6ab7ad5-7e65-41c7-beee-1cd6b93d0ac8
+		summarizeBy: none
+		sourceColumn: Channel Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Channel Group'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4a8873b5-1eeb-4755-9ccf-47bd440bb932
+		summarizeBy: none
+		sourceColumn: Channel Group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CHANNELS-5523b9ca-daa8-48b6-9a74-56a60324b0a2 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    PRODUCT_BFN_VW_D365DIMCHANNEL_View = BFN_PRESENTATION_Schema{[Name="PRODUCT_BFN_VW_D365DIMCHANNEL",Kind="View"]}[Data]
+				in
+				    PRODUCT_BFN_VW_D365DIMCHANNEL_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

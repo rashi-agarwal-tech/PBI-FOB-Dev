@@ -1,0 +1,255 @@
+table CUSTOMERS
+	lineageTag: 88523ba2-578c-4fba-b9eb-89bdf2d88bce
+
+	column 'Customer ID'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 1bf18b70-7ece-49f8-b7a0-53d61ec678f2
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 63c00b32-4348-4624-907a-92e1405ef432
+		summarizeBy: none
+		sourceColumn: Customer Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Sub Segment'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3dffbb04-655d-4ea1-b00f-0a686005eb17
+		summarizeBy: none
+		sourceColumn: Customer Sub Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 16300636-3a8c-4d6c-9ab1-4bd494cb7f9a
+		summarizeBy: none
+		sourceColumn: Customer Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Segment'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d9513f76-8041-4385-9abb-85fa2424486e
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 797b2edb-5ba0-4098-bade-2f5f860aedc6
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Centre Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 915278c6-2dff-4a80-9229-9c01d44eb164
+		summarizeBy: none
+		sourceColumn: Cost Centre Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Centre'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 33058b8b-a9c8-4649-824e-36f6c682419a
+		summarizeBy: none
+		sourceColumn: Cost Centre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Group'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 9e02dfb7-a150-4c34-950f-ab56482546c6
+		summarizeBy: none
+		sourceColumn: Customer Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Sub Group'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2ab884c9-1b0a-4d8e-b9ef-d331e01a6ad9
+		summarizeBy: none
+		sourceColumn: Customer Sub Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Model'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d87fecbc-c295-4dc4-b3f1-b1e2f22a12b9
+		summarizeBy: none
+		sourceColumn: Business Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Group ID'
+		dataType: string
+		sourceProviderType: decimal(38, 5)
+		lineageTag: 097d239a-abb1-4e57-bdff-bf0cbf4294a5
+		summarizeBy: none
+		sourceColumn: Customer Group ID
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerPD_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: d559853d-f8e2-42cc-803d-9f7a151e8bfd
+		summarizeBy: none
+		sourceColumn: CustomerPD_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Closing Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: c785f138-67fb-47d1-a155-6cacb49ec623
+		summarizeBy: none
+		sourceColumn: Closing Date
+
+		variation Variation
+			isDefault
+			relationship: 268ee66c-885b-404c-ba67-dabdf3983c16
+			defaultHierarchy: LocalDateTable_ec9ded96-de4c-4a69-8a4a-5fa78f800087.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FP-MD Flag'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 65f21c5d-b757-4001-94fe-90b21ab320e1
+		summarizeBy: none
+		sourceColumn: FP-MD Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line Of Business'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0e229dbb-72f9-4144-9daa-e970b98c673f
+		summarizeBy: none
+		sourceColumn: Line Of Business
+
+		annotation SummarizationSetBy = Automatic
+
+	column FINANCIALCOUNTRY
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 1bdd76b7-5ced-4b63-bdb9-52dfd741d7ee
+		summarizeBy: none
+		sourceColumn: FINANCIALCOUNTRY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Sub Group Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: dd7722b1-3797-433f-b85c-3c7932d36bef
+		summarizeBy: none
+		sourceColumn: Customer Sub Group Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opening Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: aee83fcd-cd18-4f67-87b3-7140ef1b90d7
+		summarizeBy: none
+		sourceColumn: Opening Date
+
+		variation Variation
+			isDefault
+			relationship: 3ad23207-6e41-49e8-aa9a-639b059dfee5
+			defaultHierarchy: LocalDateTable_cdec6acf-a1d5-4109-9d95-8e9ad7d8b9b0.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retail Status' =
+			VAR fyear =
+			    IF ( MONTH ( TODAY () ) < 4, YEAR ( TODAY () ) - 1, YEAR ( TODAY () ) )
+			VAR BTFY =
+			    DATE ( fyear, 4, 1 )
+			VAR fyear1 =
+			    IF ( MONTH ( TODAY () ) < 4, YEAR ( TODAY () ) - 2, YEAR ( TODAY () ) - 1 )
+			VAR BLFY =
+			    DATE ( fyear1, 4, 1 )
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        AND (
+			            CUSTOMERS[Closing Date] <= [Yesterday],
+			            NOT ( ISBLANK ( CUSTOMERS[Closing Date] ) )
+			        ), "Closed",
+			        CUSTOMERS[Closing Date] > [Yesterday], "Closing",
+			        AND (
+			            DATEDIFF ( CUSTOMERS[Opening Date], CUSTOMERS[Closing Date], MONTH ) < 24,
+			            NOT ( ISBLANK ( CUSTOMERS[Closing Date] ) )
+			        ), "Popup",
+			        ISBLANK ( CUSTOMERS[Opening Date] ), "New",
+			        CUSTOMERS[Opening Date] < BLFY, "LFL",
+			        CUSTOMERS[Opening Date] < BTFY, "Maturing",
+			        CUSTOMERS[Opening Date] > BTFY, "New",
+			        "Other"
+			    )
+		dataType: string
+		lineageTag: e0168238-8d13-43d4-b173-bf344ad0a502
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CUSTOMERS-cab5fe37-db26-4539-b6f7-1fbf9a8935de = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    PRODUCT_BFN_VW_D365_DIM_CUSTOMER_PD_View = BFN_PRESENTATION_Schema{[Name="PRODUCT_BFN_VW_D365_DIM_CUSTOMER_PD",Kind="View"]}[Data],
+				    #"ReplaceValueNull"   = Table.ReplaceValue(PRODUCT_BFN_VW_D365_DIM_CUSTOMER_PD_View ,null  ,"Active" ,Replacer.ReplaceValue,{"Status"}),
+				    #"ReplaceValueFalse"  = Table.ReplaceValue(#"ReplaceValueNull"   ,false ,"Active" ,Replacer.ReplaceValue,{"Status"}),
+				    #"ReplaceValueTrue"   = Table.ReplaceValue(#"ReplaceValueFalse"  ,true  ,"Closed" ,Replacer.ReplaceValue,{"Status"})
+				in
+				    #"ReplaceValueTrue"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

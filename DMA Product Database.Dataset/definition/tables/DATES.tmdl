@@ -1,0 +1,194 @@
+table DATES
+	lineageTag: a7af99ee-32c3-4be3-86fe-0094e76bda51
+
+	column Date_Key
+		dataType: int64
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 83cde315-da6c-45a2-92df-d3ee0d66f540
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Selling Season'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d17db300-a069-49cb-be4d-902430b27a73
+		summarizeBy: none
+		sourceColumn: Selling Season
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Period Number'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 12a8e6aa-c66b-4364-bab4-43a97f109ea5
+		summarizeBy: none
+		sourceColumn: Fiscal Period Number
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Fiscal Period'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: ac413a6e-7817-418d-aac4-9bea2b4f327f
+		summarizeBy: none
+		sourceColumn: Fiscal Period
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Fiscal Year'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 66cd736e-5732-4768-b84d-52c8803bfdba
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 55ff9d95-18f9-4dea-859f-553496ac8373
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Yesterday?'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(3)
+		lineageTag: 3e24588b-d6c1-40a4-a46f-b9ea06b68681
+		summarizeBy: none
+		sourceColumn: - Is Yesterday?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: d3828c6d-e3d8-4d82-a33b-b0c0da7b75f0
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 8620827d-b545-4bb1-9f1c-2fd19b3b01ff
+			defaultHierarchy: LocalDateTable_2a6d78f3-19ca-40f0-a512-2c6eabbad524.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 19088cc7-b55a-4e8f-85f0-712e92928b07
+		summarizeBy: none
+		sourceColumn: Fiscal Month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Half'
+		dataType: string
+		sourceProviderType: nvarchar(2)
+		lineageTag: 815e4019-0dc7-4981-9369-0b10e2cc2310
+		summarizeBy: none
+		sourceColumn: Calendar Half
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week No'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: a33ef5c9-360b-4f51-8fec-9ab22a446770
+		summarizeBy: none
+		sourceColumn: Week No
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'GB Fiscal Month'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 947cfb93-fc44-4c16-9994-ff7a50242cd5
+		summarizeBy: none
+		sourceColumn: GB Fiscal Month
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'GB Fiscal Year'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 9fe16a0e-653f-4bb9-8c2a-90aefded5c07
+		summarizeBy: none
+		sourceColumn: GB Fiscal Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DATES-705e445f-a090-47f2-9d01-3b5147c436fc = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    PRODUCT_BFN_VW_DIMDATE_View = BFN_PRESENTATION_Schema{[Name="PRODUCT_BFN_VW_DIMDATE",Kind="View"]}[Data]
+				in
+				    PRODUCT_BFN_VW_DIMDATE_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

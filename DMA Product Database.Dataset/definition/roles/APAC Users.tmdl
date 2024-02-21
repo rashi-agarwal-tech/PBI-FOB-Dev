@@ -1,0 +1,7 @@
+role 'APAC Users'
+	modelPermission: read
+
+	tablePermission COMPANIES = COMPANIES[Company ID] IN { "273", "272", "275", "274", "270", "271", "281" }
+
+	annotation PBI_Id = 2fde81aa080e47ae8303db5e7aa20bac
+

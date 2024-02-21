@@ -1,0 +1,7 @@
+role 'CN Users'
+	modelPermission: read
+
+	tablePermission COMPANIES = [Company ID] IN { "270", "271", "281" }
+
+	annotation PBI_Id = ca51c6cf356543b0b30d04d856c39247
+
