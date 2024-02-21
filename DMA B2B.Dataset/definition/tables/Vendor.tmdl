@@ -1,0 +1,71 @@
+table Vendor
+	isHidden
+	lineageTag: 6a3b8c95-c94f-4f45-aae2-0b8e4f38e98c
+
+	column VENDORACCOUNTNUMBER
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 8584c3f2-891d-40e9-b412-ca0819c3ffa2
+		summarizeBy: none
+		sourceColumn: VENDORACCOUNTNUMBER
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column VENDORORGANIZATIONNAME
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 77c76375-d2a5-4316-92fd-991baac19cc7
+		summarizeBy: none
+		sourceColumn: VENDORORGANIZATIONNAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ADDRESSCOUNTRYREGIONISOCODE
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: b2ac2191-bc91-4c5f-9617-d36d9e1ce7da
+		summarizeBy: none
+		sourceColumn: ADDRESSCOUNTRYREGIONISOCODE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vendor_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 438ff1bf-2494-4c47-b42d-39c53cd9336c
+		summarizeBy: none
+		sourceColumn: Vendor_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Vendor-47acdb47-8573-4ff9-b54e-d0aebc8889bb = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VW_D365DIMVENDOR_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_D365DIMVENDOR",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(BFN_VW_D365DIMVENDOR_View, each [VENDORACCOUNTNUMBER] <> null and [VENDORACCOUNTNUMBER] <> "" and [VENDORACCOUNTNUMBER] <> "ICS242R"),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Filtered Rows",{{"VENDORORGANIZATIONNAME", Text.Proper, type text}})
+				in
+				    #"Capitalized Each Word"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

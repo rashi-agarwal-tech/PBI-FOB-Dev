@@ -1,0 +1,197 @@
+table SmartRes
+	lineageTag: 432d71e7-a6eb-44c8-8569-ee7d2edfdb73
+
+	column INVENTTRANSID
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 53e6a66a-38ee-45f2-99ee-ae1080a1b9f6
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSDATE
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		displayFolder: zz_Misc
+		lineageTag: 933bbb48-6ba1-4f92-b48c-3e3716610830
+		summarizeBy: none
+		sourceColumn: TRANSDATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusOLD
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: b5a92ed8-85c5-4e21-8ca3-3540edce1b4a
+		summarizeBy: none
+		sourceColumn: StatusOLD
+
+		annotation SummarizationSetBy = Automatic
+
+	column QtyAllocated
+		dataType: int64
+		sourceProviderType: decimal(32, 6)
+		displayFolder: zz_Values
+		lineageTag: a8837936-30f6-40f9-af6f-44acac85d951
+		summarizeBy: none
+		sourceColumn: QtyAllocated
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QtyReserved
+		dataType: int64
+		sourceProviderType: decimal(32, 6)
+		displayFolder: zz_Values
+		lineageTag: f15bb515-97ae-437c-89d9-5c5149d03b1a
+		summarizeBy: none
+		sourceColumn: QtyReserved
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Date_Key
+		dataType: int64
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Keys
+		lineageTag: 49b81282-7006-4d48-8417-4d14eb7a2af3
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Product_Key
+		dataType: string
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 6459aad2-47a8-4815-958d-039b645a0f7b
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company_Key
+		dataType: string
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 54e5300d-7e9d-463c-9a2e-56371e136145
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column QtyOutstanding
+		dataType: int64
+		sourceProviderType: decimal(32, 6)
+		displayFolder: zz_Values
+		lineageTag: 6e770949-5f46-4c6f-9105-14b3e4bd2b79
+		summarizeBy: none
+		sourceColumn: QtyOutstanding
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Available Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		displayFolder: zz_Values
+		lineageTag: 2f6d9264-a338-472a-8f33-5d75e67de25a
+		summarizeBy: none
+		sourceColumn: Available Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delay Buckets Sort' =
+			VAR dayslate =
+			    DATEDIFF ( SmartRes[TRANSDATE], SmartRes[Available Date], DAY )
+			RETURN
+			    IF (
+			        SmartRes[TRANSDATE] < SmartRes[Available Date],
+			        IF (
+			            SmartRes[StatusOLD] = "Red",
+			            SWITCH (
+			                TRUE (),
+			                dayslate <= 7, "01",
+			                AND ( dayslate > 7, dayslate <= 14 ), "02",
+			                AND ( dayslate > 14, dayslate <= 21 ), "03",
+			                AND ( dayslate > 21, dayslate <= 28 ), "04",
+			                "05"
+			            ),
+			            "07"
+			        ),
+			        "06"
+			    )
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 1400cdc5-9920-412b-a80d-291e81c49293
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delay Buckets' =
+			VAR dayslate =
+			    DATEDIFF ( SmartRes[TRANSDATE], SmartRes[Available Date], DAY )
+			RETURN
+			    IF (
+			        SmartRes[TRANSDATE] < SmartRes[Available Date],
+			        IF (
+			            SmartRes[StatusOLD] = "Red",
+			            SWITCH (
+			                TRUE (),
+			                dayslate <= 7, "<=7 Days late",
+			                AND ( dayslate > 7, dayslate <= 14 ), "8-14 Days late",
+			                AND ( dayslate > 14, dayslate <= 21 ), "15-21 Days late",
+			                AND ( dayslate > 21, dayslate <= 28 ), "22-28 Days late",
+			                AND ( dayslate > 28, dayslate <= 56 ), "29-56 Days (1-2 months) late",
+			                AND ( dayslate > 56, dayslate <= 84 ), "57-84 Days (2-3 months) late",
+			                AND ( dayslate > 84, dayslate <= 168 ), "85-168 Days (3-6 months) late",
+			                "> 168 days (6 months) late"
+			            ),
+			            BLANK ()
+			        ),
+			        "Future Trans Date"
+			    )
+		dataType: string
+		lineageTag: f565f443-e694-4480-9ce9-49aff22c369e
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SmartRes-27031a7c-ae4e-412a-b45b-c23b526f231c = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VW_D365_FACT_FSB_IM_RESV_OPEN_UNPIVOTED_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_D365_FACT_FSB_IM_RESV_OPEN_UNPIVOTED",Kind="View"]}[Data]
+				in
+				    BFN_VW_D365_FACT_FSB_IM_RESV_OPEN_UNPIVOTED_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

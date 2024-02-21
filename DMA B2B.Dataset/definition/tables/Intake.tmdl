@@ -1,0 +1,138 @@
+table Intake
+	isHidden
+	lineageTag: ba07e47a-14d9-4d5c-bf2d-1acfb7a01888
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: bb149c6a-6c9e-453a-82a1-b465fd7a3d3f
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 5096c14e-368a-46bc-b647-e431eabc2d11
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 7461ef7e-0d5c-438d-868f-b876118d2822
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		displayFolder: zz_Misc
+		lineageTag: ba25e44f-3c13-4f27-8420-b78e2c2f0eaa
+		summarizeBy: none
+		sourceColumn: DATE
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column AVAILDATE
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		displayFolder: zz_Misc
+		lineageTag: e952ce32-e5bb-4615-a87e-ad2711f04873
+		summarizeBy: none
+		sourceColumn: AVAILDATE
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTYFREE
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Values
+		lineageTag: aae6008e-80c0-433c-a58c-90554f45269b
+		summarizeBy: none
+		sourceColumn: QTYFREE
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INVENTLOCATIONID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: f598ce68-b155-4c49-9d9a-6f40fb310f59
+		summarizeBy: none
+		sourceColumn: INVENTLOCATIONID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECEIPTTYPE
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: dadab409-cb38-4acb-bfc1-9520c9f25c75
+		summarizeBy: sum
+		sourceColumn: RECEIPTTYPE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Intake-55d6da77-0918-4643-a796-2fe54591717b = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VW_D365_FACTFSBIMRESVRECEIPTPROFILE_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_D365_FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],
+				    FilterToday = DateTime.Date(DateTime.LocalNow()),
+				    #"Filtered Rows"  = Table.SelectRows(BFN_VW_D365_FACTFSBIMRESVRECEIPTPROFILE_View, each List.Contains({"FRB2B01", "UKB2B01", "NLB2B01", "NLB2B02", "NLB2BFR", "NLB2B03", "UKB2B03", "USB2B01", "UKB2BRG01", "UKB2BRG02", "HKB2B01", "CAB2BBC01", "CAB2BBC02", "JPB2B01", "UKB2BNH01", "UKNH-FRZ", "UKB2BNH03", "UKD2CNH01", "UKRETNH01", "UKRETNH02", "UKRETNH03", "UKNH-REWORK"},[INVENTLOCATIONID]) and ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and [DATE] = FilterToday )
+				in
+				    #"Filtered Rows"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

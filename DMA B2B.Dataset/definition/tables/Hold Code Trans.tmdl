@@ -1,0 +1,74 @@
+table 'Hold Code Trans'
+	isHidden
+	lineageTag: cae1b1a3-8718-4161-9081-9b1886e8dd8a
+
+	column SalesOrderNumber_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 6bca5f98-3322-4268-ae21-4a262069e58c
+		summarizeBy: none
+		sourceColumn: SalesOrderNumber_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HOLDCODEDESCRIPTION
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: ad4b7435-a158-4c15-8b79-085fea1aec7d
+		summarizeBy: none
+		sourceColumn: HOLDCODEDESCRIPTION
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MCRHOLDUSER
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 72e94b4c-3586-4f19-8017-eff5f9672c8a
+		summarizeBy: none
+		sourceColumn: MCRHOLDUSER
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MCRHOLDDATETIME
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: datetime2
+		displayFolder: zz_Misc
+		lineageTag: 47fe0681-f0c3-4c81-9fd0-ccfc90823000
+		summarizeBy: none
+		sourceColumn: MCRHOLDDATETIME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Hold Code Trans-1f3ba0eb-4651-4633-b43e-7d7887fe26ef' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VW_D365_FACT_DMR_MCR_HOLD_CODE_TRANS_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_D365_FACT_DMR_MCR_HOLD_CODE_TRANS",Kind="View"]}[Data]
+				in
+				    BFN_VW_D365_FACT_DMR_MCR_HOLD_CODE_TRANS_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

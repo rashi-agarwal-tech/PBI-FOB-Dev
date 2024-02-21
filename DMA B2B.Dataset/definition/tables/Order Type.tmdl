@@ -1,0 +1,54 @@
+table 'Order Type'
+	lineageTag: 67de66cf-bf2e-412a-be0c-1661ba5db82e
+
+	column SalesOrderPool_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 1ee26889-fcb3-4a9f-8f26-d0961fa89657
+		summarizeBy: none
+		sourceColumn: SalesOrderPool_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type'
+		dataType: string
+		lineageTag: 54dd4684-3328-4373-963d-8b4482e93287
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type ID'
+		dataType: string
+		lineageTag: 9a32cf2b-b614-45a3-8ba3-5169a50d5da7
+		summarizeBy: none
+		sourceColumn: Order Type ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Channel'
+		dataType: string
+		lineageTag: c937090b-fb9a-4eca-8c2d-b4c73a015d8b
+		summarizeBy: none
+		sourceColumn: Order Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Order Type-6d4eeb57-92a3-4c81-8448-b9fbb42ac50d' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VWD365DIMSALESORDERPOOL_View = BFN_PRESENTATION_Schema{[Name="BFN_VWD365DIMSALESORDERPOOL",Kind="View"]}[Data]
+				in
+				    BFN_VWD365DIMSALESORDERPOOL_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

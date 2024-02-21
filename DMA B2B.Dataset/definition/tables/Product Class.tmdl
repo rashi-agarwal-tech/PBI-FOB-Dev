@@ -1,0 +1,70 @@
+table 'Product Class'
+	lineageTag: b84ef533-8efb-4ced-b287-ae18c92539c1
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: bdf163e5-4914-4f38-9d10-bf83e674b6fe
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class'
+		dataType: string
+		lineageTag: d9ac7236-ec2a-4e6d-8d52-d6518874a9b9
+		summarizeBy: none
+		sourceColumn: Product Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class Code'
+		dataType: string
+		lineageTag: 8fe1eeb3-e4b8-432c-b67d-997aafd8db96
+		summarizeBy: none
+		sourceColumn: Product Class Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class Group'
+		dataType: string
+		lineageTag: 02cb6c6c-5bac-408b-8f2c-45c288f74df1
+		summarizeBy: none
+		sourceColumn: Product Class Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class Sort'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: f6edf564-a625-44d6-8c33-4896dd42292c
+		summarizeBy: none
+		sourceColumn: Product Class Sort
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Product Class-1817bc0a-314d-4ea9-9ace-5c1479140729' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VW_D365DIMPRODUCTCLASS_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_D365DIMPRODUCTCLASS",Kind="View"]}[Data]
+				in
+				    BFN_VW_D365DIMPRODUCTCLASS_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

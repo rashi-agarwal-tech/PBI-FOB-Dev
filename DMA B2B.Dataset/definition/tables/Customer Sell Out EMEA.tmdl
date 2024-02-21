@@ -1,0 +1,191 @@
+table 'Customer Sell Out EMEA'
+	isHidden
+	lineageTag: 3af036ce-069a-4ee0-b73b-62b35b8aa342
+
+	column 'Customer Gender'
+		dataType: string
+		isHidden
+		lineageTag: 24f1227e-8838-4dee-a195-d9386358ea4f
+		summarizeBy: none
+		sourceColumn: Customer Gender
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name'
+		dataType: string
+		isHidden
+		lineageTag: 7a238f16-837f-4979-8714-592ac1d14d19
+		summarizeBy: none
+		sourceColumn: Customer Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stock
+		dataType: int64
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 266f2311-52c0-469c-8b20-60dd9f890dba
+		summarizeBy: none
+		sourceColumn: Stock
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Customer Department'
+		dataType: string
+		isHidden
+		lineageTag: a28714c7-ca94-407a-b0bf-4e04ef452896
+		summarizeBy: none
+		sourceColumn: Customer Department
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NetSalesUnits
+		dataType: int64
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 573c20e0-376b-46cc-a78b-b808fc5a1bbb
+		summarizeBy: none
+		sourceColumn: NetSalesUnits
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Date_Key
+		dataType: int64
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 6220e5c8-6dbd-4b71-a248-b368161ef0e3
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Product_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 6a0a7eca-b765-4733-bf4b-1b5f0f452a30
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: c5ff3890-f6c4-4afb-bab1-a5e8136714d4
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Demand Net Sales Units'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 633cdbf3-0b32-42ad-a8cb-06ace094585c
+		summarizeBy: none
+		sourceColumn: Demand Net Sales Units
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Demand Actual Sales Units'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: aebfa1df-df1c-435a-befe-f0be7b518567
+		summarizeBy: none
+		sourceColumn: Demand Actual Sales Units
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'YoY Align'
+		dataType: string
+		isHidden
+		lineageTag: bc319c88-6a26-4727-aa03-552ca0d5a48b
+		summarizeBy: none
+		sourceColumn: YoY Align
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SellingStatus
+		dataType: string
+		isHidden
+		lineageTag: 276d3586-9c8c-4130-8c71-33d4813e790b
+		summarizeBy: none
+		sourceColumn: SellingStatus
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Website
+		dataType: string
+		isHidden
+		lineageTag: 3f2d9284-179f-4c61-a443-862c5f8da3a8
+		summarizeBy: none
+		sourceColumn: Website
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Customer Sell Out EMEA-2b054d62-c131-469e-be43-ac4afd98e589' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VW_UK_WHOLESALE_SELL_THROUGH_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_UK_WHOLESALE_SELL_THROUGH",Kind="View"]}[Data]
+				in
+				    BFN_VW_UK_WHOLESALE_SELL_THROUGH_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+

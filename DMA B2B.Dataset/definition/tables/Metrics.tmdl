@@ -1,0 +1,3892 @@
+table Metrics
+	lineageTag: 736bd1e8-0939-4577-a749-4ebf445b6c75
+
+	measure 'Open Units' =
+			VAR main =
+			    CALCULATE ( SUM ( Orders[Open Units Col] ) )
+			RETURN
+			    IF ( main > 0, main, BLANK () )
+		formatString: " #,##0"
+		displayFolder: 02. Open
+		lineageTag: 3dde201c-645d-4fab-96c5-10be485a7ace
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Open Full Value' =
+			IF (
+			    SUM ( Orders[Open Full Value Col Cons GBP] ) = 0,
+			    BLANK (),
+			    SUM ( Orders[Open Full Value Col Cons GBP] ) * [XR]
+			)
+		formatString: " #,0.00"
+		displayFolder: 02. Open
+		lineageTag: 81268695-4ff9-4410-a47c-093d725fb2bb
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Open Discounts' =
+			IF (
+			    SUM ( Orders[Open Discounts Col Cons GBP] ) = 0,
+			    BLANK (),
+			    SUM ( Orders[Open Discounts Col Cons GBP] ) * [XR]
+			)
+		formatString: " #,0.00"
+		displayFolder: 02. Open
+		lineageTag: 7c06e941-9ca4-4172-beaa-b90e089eb821
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Open Charges' = SUM ( Orders[Open Charges Col Cons GBP] ) * [XR]
+		formatString: " #,0.00"
+		displayFolder: 02. Open
+		lineageTag: fda53c0a-1780-49bc-8a3a-deaa78089369
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Open Net Value' =
+			SUM ( Orders[Open Net Value Col Cons GBP] ) * [XR]
+			//SUM ( Orders[Open Net Value Col] ) * [XR]
+		formatString: " #,0.00"
+		displayFolder: 02. Open
+		lineageTag: b37ad367-9436-4b6e-ab2b-81bf493de84f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'All Picked' = CALCULATE ( SUM ( Pick[Pick Qty] ), Pick[HandlingStatusDesc] = "Complete" )
+		formatString: " #,0"
+		isHidden
+		displayFolder: 02. Open
+		lineageTag: d8c200fa-d755-45c9-abe4-4f9b1a2ce88b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Open CoGS' =
+			var main = SUM(Orders[Open CoGS Col])
+			
+			return
+			
+			if(main>0,main,blank())
+		formatString: " 0.00"
+		displayFolder: 02. Open
+		lineageTag: ae3af25d-8a51-4a33-98fa-e3ada7bf9c3d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Pre-Cancel Units' = ```
+			var nondd = CALCULATE([Open Units],
+			                FILTER('Allocation Details', 'Allocation Details'[Allocation Date] < 'Allocation Details'[SO Cancel Risk Date]), 
+			                FILTER('Order Type', 'Order Type'[Order Type ID] <> "DD")
+			            )
+			var dd = CALCULATE([Open Units], 
+			            FILTER(Orders, Orders[DD Pre-Post? ] = "Pre"), 
+			            FILTER('Order Type', 'Order Type'[Order Type ID] = "DD") 
+			         )
+			
+			var main = nondd  + dd
+			
+			return
+			IF(main=0, BLANK(), main)
+			```
+		formatString: " #,0"
+		displayFolder: 02. Open\Open Breakdown\US
+		lineageTag: add9ad58-1259-439e-bc33-0d9cd93ec405
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Post-Cancel Units' = ```
+			var main = [Open Units] - [Pre-Cancel Units] 
+			return
+			IF(main=0, BLANK(), main)
+			```
+		formatString: " #,0"
+		displayFolder: 02. Open\Open Breakdown\US
+		lineageTag: 10d742e0-639d-4f28-8705-7acdfef316e8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Cancel Risk Fulfilment %' = DIVIDE([Pre-Cancel Units], [Open Units])
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 02. Open\Open Breakdown\US
+		lineageTag: f804dd04-060d-4db9-a9d1-dda51a9ab0e9
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Pre-Cancel Net Value' = ```
+			var nondd = CALCULATE([Open Net Value],
+			                FILTER('Allocation Details', 'Allocation Details'[Allocation Date] < 'Allocation Details'[SO Cancel Risk Date]), 
+			                FILTER('Order Type', 'Order Type'[Order Type ID] <> "DD")
+			            )
+			var dd = CALCULATE([Open Net Value], 
+			            FILTER(Orders, Orders[DD Pre-Post? ] = "Pre"), 
+			            FILTER('Order Type', 'Order Type'[Order Type ID] = "DD") 
+			         )
+			
+			var main = nondd  + dd
+			
+			return
+			IF(main=0, BLANK(), main)
+			```
+		formatString: #,0.00
+		displayFolder: 02. Open\Open Breakdown\US
+		lineageTag: 2a85af08-fa74-4b0b-a1aa-2e0967526a31
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Post-Cancel Net Value' = ```
+			var main = [Open Net Value] - [Pre-Cancel Net Value] 
+			return
+			IF(main=0, BLANK(), main)
+			```
+		formatString: #,0.00
+		displayFolder: 02. Open\Open Breakdown\US
+		lineageTag: 00be2df0-7686-4c6a-af2e-f0e489f94b52
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Allocated Units' =
+			VAR Allocated = [Allocated Units Late]+[Allocated Units On-Time] + [Allocated Units Arrived]
+			
+			RETURN
+			IF( Allocated = 0,BLANK(), Allocated )
+		formatString: " #,0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: a0192c06-93cf-4ee0-bae2-0133e1fbf144
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Reserved Units' =
+			var xxx = sum(Orders[Res Units Col])
+			
+			Return
+			
+			if( xxx> 0, xxx,blank())
+		formatString: " #,0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: cf33a230-d98d-4eb3-958e-796e4a55aad5
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Outstanding Units' =
+			var os = sum('Orders'[SmartRes Outstanding Units Col])
+			
+			return
+			
+			if (os=0,blank(),os)
+			
+			--var os = sum('Orders'[O/S Units Col])
+		formatString: " #,0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: a8a56c53-be1e-41e0-8cb6-82952f35ab8f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Outstanding Net Value' = ```
+			VAR main = sum(Orders[SmartRes Outstanding Value Col]) * [XR]
+			
+			return
+			
+			if (main=0,blank(),main)
+			
+			
+			--VAR main = sum(Orders[O/S Value Col]) * [XR]
+			
+			
+			-- CT update, was previously VAR main = sum(Orders[SmartRes Outstanding Units Col]) * [XR] return if (main=0,blank(),main)
+			
+			```
+		formatString: " #,0.00"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 671227b4-517a-4dda-b8be-f0302c9ef20c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Reserved Net Value' =
+			var main = sum(Orders[Res Value Col]) * [XR]
+			
+			return
+			
+			if(main>0,main,blank())
+			
+			--var main = sum(Orders[Reserved Value Col]) * [XR]
+		formatString: " #,0.00"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: b990ae85-6802-4bd7-a258-af93dc42fa05
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Allocated Net Value' =
+			var main = [Allocated Late Net Value]+[Allocated On-Time Net Value] + [Allocated Arrived Net Value]
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 4e06d2b7-f4dc-4f85-bd1c-8aa06425dbc9
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Picked Complete Net Value' =
+			VAR main =
+			    SUM ( Orders[Pick Comp Value Col] ) * [XR]
+			RETURN
+			    IF ( main > 0, main, BLANK () )
+		formatString: " #,0.00"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 0e7e55a7-e521-437e-abea-6ccc259b658b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Picked Activated Net Value' =
+			VAR main =
+			    SUM ( Orders[Pick Act Value Col] ) * [XR]
+			RETURN
+			    IF ( main > 0, main, BLANK () )
+		formatString: " #,0.00"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: a452874f-90c8-4116-849a-6d395085aa66
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Allocated Units On-Time' =
+			var alloc1 = sum(Orders[Alloc Units Ontime Col])
+			
+			return
+			if(alloc1=0,blank(),alloc1)
+		formatString: " #,0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: d6ceaba4-e600-4110-ae02-10b9f57c93ec
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Allocated Units Late' =
+			var alloc1 = sum(Orders[Alloc Units Late Col])
+			
+			return
+			if(alloc1=0,blank(),alloc1)
+		formatString: " #,0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 90654a4e-b03b-4679-b11f-1221bd7d38e0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Last Fill Date' = MAX ( Orders[Last Fill Date] )
+		formatString: Short Date
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 516096f2-9c1a-4296-a75b-bcd6f075aeb7
+
+	measure 'Pick Complete Units' =
+			VAR PC1 =
+			    SUM ( Orders[Pick Comp Units Col] )
+			RETURN
+			    IF ( PC1 > 0, PC1, BLANK () )
+		formatString: " #,0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 2faa5408-cbf4-4ca1-8a42-130cf685e46f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Pick Activated Units' =
+			VAR PC1 =
+			    SUM ( Orders[Pick Act Units Col] )
+			RETURN
+			    IF ( PC1 > 0, PC1, BLANK () )
+		formatString: " #,0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 9595d4a9-a480-4cab-a5b3-74692507712a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Allocated Late Net Value' =
+			var main1 = SUM(Orders[Alloc Late Value Col])*[XR]
+			
+			return
+			
+			if (main1=0,blank(),main1)
+			
+			
+			--var main = divide([Allocated Net Value],[Allocated Units],blank())
+			--var main1 = main*[Allocated Units Late]
+		formatString: " #,0.00"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: d493b6fa-9c25-4ec1-8ee1-2d209d63ff9e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Allocated On-Time Net Value' =
+			var main1= sum(Orders[Alloc OntimeValue Col])*[XR]
+			
+			return
+			
+			if (main1=0,blank(),main1)
+			
+			
+			--var main = divide([Allocated Net Value],[Allocated Units],blank())
+			--var main1 = main*[Allocated Units On-Time]
+		formatString: " #,0.00"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: a2fffd64-270e-4d03-b0bb-c41ddbc894bb
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Allocated Units Arrived' =
+			var alloc1 = sum(Orders[Alloc Units Arrived Col])
+			
+			return
+			if(alloc1=0,blank(),alloc1)
+		formatString: " #,0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 1e5f4326-866b-4444-b684-a5163e966597
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Allocated Arrived Net Value' =
+			var main1 = SUM(Orders[Alloc Arrived Value Col])*[XR]
+			
+			return
+			
+			if (main1=0,blank(),main1)
+		formatString: " #,0.00"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: a1b1981f-8055-4a38-9ed8-88815fd51e9e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Allocated Units Outside Of Time Fence' =
+			var alloc1 = sum(Orders[Alloc Units Outside Of Time Fence Col])
+			
+			return
+			if(alloc1=0,blank(),alloc1)
+		formatString: " #,0.00"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 57511da4-6b6f-4fef-aefb-74438085c9a5
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Allocated Outside Of Time Fence Net Value' =
+			var main1 = SUM(Orders[Alloc Outside Of Time Fence Value Col])*[XR]
+			
+			return
+			
+			if (main1=0,blank(),main1)
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 1565e570-4158-4431-bde9-38f96b9cf22f
+
+	measure '% Fulfilment' = DIVIDE(([Reserved Units] + [Allocated Units Arrived]), ([Open Units] - [Pick Activated Units] - [Pick Complete Units]))
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 7f6803f8-6400-407c-9659-89761faaa4ab
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Allocated Detail Units' =
+			CALCULATE (
+			    CALCULATE (
+			        SUM ( 'Allocation Details'[ALLOCATIONQTY] ),
+			        CROSSFILTER ( 'Orders'[Date_Key], 'Date'[Date Key], NONE )
+			    ),
+			    USERELATIONSHIP ( 'Allocation Details'[Date_Key], 'Date'[Date Key] )
+			)
+		formatString: " #,##0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: f44f4e2a-4d9d-45df-9886-b848b24aa6e6
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Allocated Units Late by Delay Buckets' = CALCULATE([Allocated Units Late], FILTER(SmartRes, SmartRes[StatusOLD] = "Red"))
+		formatString: " #,0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 60aa72c5-77a3-409c-9527-a3eb72737270
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoiced Units' = SUM ( Orders[Invoiced Units Col] )
+		formatString: " #,0"
+		displayFolder: 03. Invoiced
+		lineageTag: 4a14513c-583b-4b81-afc8-0960742113bb
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoiced Full Value' =
+			SUM ( Orders[Invoiced Full Value Col Cons GBP] ) * [XR]
+			//sum(Orders[Invoiced Full Price]) *[XR]
+		formatString: " #,##0.00"
+		displayFolder: 03. Invoiced
+		lineageTag: c0cb18aa-b60c-4ce0-bd42-ac823020cf0e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoiced Discounts' =
+			SUM ( Orders[Invoiced Discounts Col Cons GBP] ) * [XR]
+			//SUM ( Orders[Invoiced Discounts Col] ) * [XR]
+		formatString: " #,0.00"
+		displayFolder: 03. Invoiced
+		lineageTag: 59e1060a-1372-4da9-aaa7-bf3266225355
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoiced Charges' = SUM ( Orders[Invoiced Charges Col Cons GBP] ) * [XR]
+		formatString: " #,0.00"
+		displayFolder: 03. Invoiced
+		lineageTag: 089676dd-7089-4a47-b516-dbc2ae6e3a99
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoiced Net Value' =
+			SUM ( Orders[Invoiced Net Value Col Cons GBP] ) * [XR]
+			//SUM ( Orders[Invoiced Net Value Col] ) * [XR]
+		formatString: " #,0.00"
+		displayFolder: 03. Invoiced
+		lineageTag: 58fc7e4d-f413-4307-9d70-c81f33cfe0b1
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoiced COGs' = sum(Orders[Invoiced COGs Col]) *[XR]
+		formatString: " #,0.00"
+		displayFolder: 03. Invoiced
+		lineageTag: 2c0a9296-f2bb-412f-9f6e-eeb9a550833c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Units LW' = ```
+			CALCULATE (
+			    [Returned Units],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			    FILTER (
+			        ALL ( 'Date' ),
+			        MAX ( 'Date'[WeekIndex] )
+			            = 'Date'[WeekIndex] + 1
+			    )
+			)
+			```
+		displayFolder: 04. Returns\vs.\vs LW
+		lineageTag: b2b7ca83-5c70-499d-a721-6869decf0a78
+
+	measure 'Returned Units vs LW %' = divide ( ([Returned Units] - [Returned Units LW])  ,  [Returned Units LW]  )
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 04. Returns\vs.\vs LW
+		lineageTag: bc06a4d2-4a34-4154-b308-dea6950cc53b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Net Value LW' = ```
+			CALCULATE (
+			    [Returned Net Value],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			    FILTER (
+			        ALL ( 'Date' ),
+			        MAX ( 'Date'[WeekIndex] )
+			            = 'Date'[WeekIndex] + 1
+			    )
+			)
+			```
+		displayFolder: 04. Returns\vs.\vs LW
+		lineageTag: 2f6061ed-17c2-4388-a7e0-16f11cb0fff2
+
+	measure 'Returned Net Value vs LW %' = divide ( ([Returned Net Value] - [Returned Net Value LW])  ,  [Returned Net Value LW]  )
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 04. Returns\vs.\vs LW
+		lineageTag: 211304da-4f9f-4ac2-91b7-c2fe1d1530a2
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Units LY' = ```
+			CALCULATE (
+			       [Returned Units],
+			                FILTER (
+			                  ALL ( 'Date' ),
+			                  CONTAINS(
+			                  VALUES ( 'Date'[ Last Year Date] ),
+			                    'Date'[ Last Year Date],
+			                    'Date'[ Date] ) 
+			        )
+			    )
+			```
+		formatString: #,0
+		displayFolder: 04. Returns\vs.\vs LY
+		lineageTag: f28c8ce2-df05-45ac-a85e-c28485d6b2b9
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Units vs LY %' = divide ( ([Returned Units] - [Returned Units LY])  ,  [Returned Units LY]  )
+		formatString: " 0.00%;-0.00%;0.00%"
+		displayFolder: 04. Returns\vs.\vs LY
+		lineageTag: 7dd00857-235d-406b-96b1-9ebfca735b71
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Net Value LY' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Returned Net Value],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: " #,0.00"
+		displayFolder: 04. Returns\vs.\vs LY
+		lineageTag: 1eb7e7d8-b086-4baf-b5ed-01151b0ac93d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Net Value vs LY %' = divide ( ([Returned Net Value] - [Returned Net Value LY])  ,  [Returned Net Value LY]  )
+		formatString: " 0.00%;-0.00%;0.00%"
+		displayFolder: 04. Returns\vs.\vs LY
+		lineageTag: bb512e66-d037-4a55-ae3a-7f5457597fa3
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned % LY' = ```
+			CALCULATE (
+			       [Returned %],
+			                FILTER (
+			                  ALL ( 'Date' ),
+			                  CONTAINS(
+			                  VALUES ( 'Date'[ Last Year Date] ),
+			                    'Date'[ Last Year Date],
+			                    'Date'[ Date] ) 
+			        )
+			    )
+			```
+		formatString: #,0.0%;-#,0.0%;#,0.0%
+		displayFolder: 04. Returns\vs.\vs LY
+		lineageTag: b9309525-9d4d-44c9-be4f-badbe1aad4f1
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Units LFY' = ```
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Returned Units], 
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			       [Returned Units],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+			```
+		formatString: " #,0"
+		displayFolder: 04. Returns\vs.\vs EMEA LFY
+		lineageTag: 13b6495f-4fa6-466e-b4f1-85fbcc3365de
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Units vs LFY %' = divide ( ([Returned Units] - [Returned Units LFY])  ,  [Returned Units LFY]  )
+		formatString: " 0.00%;-0.00%;0.00%"
+		displayFolder: 04. Returns\vs.\vs EMEA LFY
+		lineageTag: 168409d1-5c30-44c4-a344-7173368466ed
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Net Value LFY' = ```
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Returned Net Value], 
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			       [Returned Net Value],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+			```
+		formatString: " #,0.00"
+		displayFolder: 04. Returns\vs.\vs EMEA LFY
+		lineageTag: 76840c50-21f4-435f-b996-ebba250cce1d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Net Value vs LFY %' = divide ( ([Returned Net Value] - [Returned Net Value LFY])  ,  [Returned Net Value LFY]  )
+		formatString: " 0.00%;-0.00%;0.00%"
+		displayFolder: 04. Returns\vs.\vs EMEA LFY
+		lineageTag: 401cb9ae-7f3f-48a1-8e5c-f97d7009663e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned % LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Returned %],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Returned %],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		formatString: " #,0.0%;-#,0.0%;#,0.0%"
+		displayFolder: 04. Returns\vs.\vs EMEA LFY
+		lineageTag: 2b368433-743a-40eb-8c50-d807ff05d553
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Units US LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			       [Returned Units],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			       [Returned Units],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		displayFolder: 04. Returns\vs.\vs US LFY
+		lineageTag: 457bae3b-463d-4fa6-a0f5-e8111b9c986b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Returned Net Value US LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Returned Net Value],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Returned Net Value],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		displayFolder: 04. Returns\vs.\vs US LFY
+		lineageTag: f9e7e49a-294a-4a95-8d64-9b9423d8c417
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Returned % US LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Returned %],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Returned %],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		displayFolder: 04. Returns\vs.\vs US LFY
+		lineageTag: 531010c5-ff5e-46e1-b2f0-cf5b572e5c02
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Returned Units' = sum(Orders[Returned Units Col])
+		formatString: " #,0"
+		displayFolder: 04. Returns
+		lineageTag: 78818cf5-8567-47ed-b185-29fcac48e084
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Full Value' = sum(Orders[Returned Full Price]) *[XR]
+		formatString: " #,0.00"
+		displayFolder: 04. Returns
+		lineageTag: 0d922816-a986-43b7-b591-e3fe488ca49b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Discounts' =
+			SUM ( Orders[Returned Discounts Col Cons GBP] ) * [XR]
+			//SUM ( Orders[Returned Discounts Col] ) * [XR]
+		formatString: " #,0.00"
+		displayFolder: 04. Returns
+		lineageTag: d587dc61-0f23-4a29-a48b-b34e69e19358
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Net Value' =
+			SUM ( Orders[Returned Net Value Col Cons GBP] ) * [XR]
+			//SUM ( Orders[Returned Net Value Col] ) * [XR]
+		formatString: " #,0.00"
+		displayFolder: 04. Returns
+		lineageTag: b291aaba-2438-4a7d-be8f-2a1451a1729e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned COGs' = sum(Orders[Returned COGs Col]) *[XR]
+		formatString: " #,0.00"
+		displayFolder: 04. Returns
+		lineageTag: 3981b1aa-8359-4d5c-a5cb-970bbfbc9d5d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned %' = divide(sum(Orders[Returned Units Col]), sum(Orders[Invoiced Units Col]))
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 04. Returns
+		lineageTag: edd6c309-0e51-46c7-b85e-e3b95a75f982
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Return Units' = sum(Orders[Return Units Col])
+		formatString: " #,0"
+		displayFolder: 04. Returns
+		lineageTag: 176e07dd-2352-49e7-a895-a93faf33b1a4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Return Net Value' =
+			SUM ( Orders[Return Net Value Col Cons GBP] ) * [XR]
+			//SUM ( Orders[Return Net Value Col] ) * [XR]
+		formatString: " #,0.00"
+		displayFolder: 04. Returns
+		lineageTag: 68f4854b-7306-421f-816b-9160bf3afad5
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Return Full Value' = sum(Orders[Return Full Price]) *[XR]
+		formatString: " #,##0.00"
+		displayFolder: 04. Returns
+		lineageTag: ed952c07-9dda-4624-9ea1-ca6513f276f5
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Return Discounts' =
+			SUM ( Orders[Return Discounts Col Cons GBP] ) * [XR]
+			//SUM ( Orders[Return Discounts Col] ) * [XR]
+		formatString: " #,0.00"
+		displayFolder: 04. Returns
+		lineageTag: b9e6bba3-dfe9-4bdb-a9ab-05901ffebc14
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Return %' = divide(sum(Orders[Return Units Col]), sum(Orders[Invoiced Units Col]))
+		formatString: " 0.0"
+		displayFolder: 04. Returns
+		lineageTag: 093daca9-cb79-41c1-ba84-96b359b5c420
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Open Return Units' =
+			var main = SUM ( 'Orders'[Open Return Units Col] )
+			
+			return
+			
+			IF(main = 0, BLANK(), main)
+		formatString: " #,0"
+		displayFolder: 04. Returns
+		lineageTag: cea30e9b-422b-497d-b895-d0657aca891f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Open Return Net Value' = SUM ( 'Orders'[Open Return Net Value Col Cons GBP] ) * [XR]
+		formatString: " #,0.00"
+		displayFolder: 04. Returns
+		lineageTag: 7c87b6ab-d737-4f3b-a1fe-47a68821a37e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Open Return Full Value' = SUM ( 'Orders'[Open Return Full Value Col Cons GBP] ) * [XR]
+		formatString: " #,##0.00"
+		displayFolder: 04. Returns
+		lineageTag: d809ff2d-3798-4f3d-9091-9dcc2c60112f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Open Return Discounts' = SUM ( 'Orders'[Open Return Discounts Col Cons GBP] ) * [XR]
+		formatString: " #,##0.00"
+		displayFolder: 04. Returns
+		lineageTag: fbf13689-3cba-4755-9514-74783fbf7791
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Open Return CoGS' = SUM ( 'Orders'[Open Return CoGS Col] ) * [XR]
+		formatString: " #,##0.00"
+		displayFolder: 04. Returns
+		lineageTag: b66c9325-f12a-416e-bd89-2e30cd53e35e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Units LY' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Net Units],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: " #,0"
+		displayFolder: 05. Net\vs.\vs LY
+		lineageTag: e9d3d649-2a4d-423c-a51c-951f74feecd0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Units vs LY %' = divide ( ([Net Units] - [Net Units LY])  ,  [Net Units LY]  )
+		formatString: " #,0.0%;-#,0.0%;#,0.0%"
+		displayFolder: 05. Net\vs.\vs LY
+		lineageTag: 97a7df8e-3d19-41bb-8855-af152c04a876
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Units % of LY' = divide( [Net Units] , [Net Units LY] )
+		formatString: " #,0.0%;-#,0.0%;#,0.0%"
+		displayFolder: 05. Net\vs.\vs LY
+		lineageTag: 2b87ddb7-53df-4e46-95a3-69272971b170
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Units vs LFY %' = divide ( ([Net Units] - [Net Units LFY])  ,  [Net Units LFY]  )
+		formatString: " #,0.0%;-#,0.0%;#,0.0%"
+		displayFolder: 05. Net\vs.\vs EMEA LFY
+		lineageTag: 6140eed3-aeb0-41ba-a747-8bde4d4cf936
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Units LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			       [Net Units],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Net Units],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		formatString: " #,0"
+		displayFolder: 05. Net\vs.\vs EMEA LFY
+		lineageTag: 42885211-7e43-48fe-bb05-d35c2604963b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Units' = SUM ( Orders[Net Units Col] )
+		formatString: " #,0"
+		displayFolder: 05. Net
+		lineageTag: 3c2171f7-4e5e-4a9d-9955-77ead051eca4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Full Value' = ([Open Full Value] + [Invoiced Full Value] - [Returned Full Value])
+		formatString: " #,0.00"
+		displayFolder: 05. Net
+		lineageTag: c3502892-5442-49a1-98e8-5e94585ee4c8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Discounts' = ( [Open Discounts] + [Invoiced Discounts] - [Returned Discounts] )
+		formatString: " #,0.00"
+		displayFolder: 05. Net
+		lineageTag: a542b527-979a-4422-b876-879157317365
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Charges' = [Open Charges] + [Invoiced Charges]
+		formatString: " #,0.00"
+		displayFolder: 05. Net
+		lineageTag: 12afd4f2-a7b9-4888-bc54-eec05b6162eb
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Value' = [Open Net Value] + [Invoiced Net Value] - [Returned Net Value] - [Write-Offs (non-MDF)]
+		formatString: " #,0.00"
+		displayFolder: 05. Net
+		lineageTag: dc387bad-2401-4863-abc8-ae7bb6f5326c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Open Invoiced Units' = [Open Units] + [Invoiced Units]
+		formatString: " #,0"
+		displayFolder: 05. Net
+		lineageTag: ed0c0e7c-4587-40f3-9ea9-41fce05b02d6
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Open Invoiced Net Value' = [Open Net Value] + [Invoiced Net Value]
+		formatString: " #,0"
+		displayFolder: 05. Net
+		lineageTag: 9f068edc-e878-45ff-90b4-ce9dc664a925
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'FC Returned Units' = SUM ( Forecast[Returned Units] )
+		formatString: " #,0.00"
+		isHidden
+		displayFolder: 06. Total\vs.\FC Calcs
+		lineageTag: e980dddc-1a48-4f66-a027-8e2f48d5e6b0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ACP vs LFY %' = divide ( ([ACP] - [ACP LFY])  ,  [ACP LFY]  )
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 5e453051-c724-4254-93c6-a323cdc7a2e5
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'FC Invoiced Units' = ```
+			SUM ( Forecast[Invoiced Units] )
+			
+			```
+		formatString: " #,0.00"
+		isHidden
+		displayFolder: 06. Total\vs.\FC Calcs
+		lineageTag: 398a4038-30f7-4442-9970-f05a307adfa0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'FC Total Net Value' = SUM ( Forecast[Total Net Value] ) * [XR]
+		formatString: " #,0.00"
+		isHidden
+		displayFolder: 06. Total\vs.\FC Calcs
+		lineageTag: b28f9e4a-f39e-455f-8dc3-296a03b340f0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure LatestForecastVersion =
+			VAR MaxForecastRank =
+			    MAX ( Forecast[FCRanker] )
+			VAR LatestForecast =
+			    IF (
+			        HASONEFILTER ( Forecast[Forecast Version] ),
+			        MAX ( Forecast[Forecast Version] ),
+			        CALCULATE (
+			            MAX ( Forecast[Forecast Version] ),
+			            FILTER ( Forecast, Forecast[FCRanker] = MaxForecastRank )
+			        )
+			    )
+			RETURN
+			    LatestForecast
+		isHidden
+		displayFolder: 06. Total\vs.\FC Calcs
+		lineageTag: 0f81ff07-4473-4cd8-a988-def6731579f4
+
+	measure 'FC Total CoGS' = SUM ( Forecast[Total COGS]) * [XR]
+		formatString: " #,0.00"
+		isHidden
+		displayFolder: 06. Total\vs.\FC Calcs
+		lineageTag: b4711c53-76c5-460b-a257-ad4c5ffd5379
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units LY' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Total Units],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),             
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: " #,0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 53b2e3a3-34bb-497e-8653-8adb8911fe83
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units vs LY %' = divide ( ([Total Units] - [Total Units LY])  ,  [Total Units LY]  )
+		formatString: " 0.00%;-0.00%;0.00%"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 21a0d1bb-61f7-4362-93df-23b062031ca9
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units LY-1' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Total Units],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 2
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: " #,0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 428cd19d-ee16-493b-bb60-422657e4b9db
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units vs LY -1 %' = divide ( ([Total Units] - [Total Units LY-1])  ,  [Total Units LY-1]  )
+		formatString: " 0.00%;-0.00%;0.00%"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 92a5af55-3aff-4f56-8c68-90352a4585d6
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value LY' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Total Net Value],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 2d7925d0-a8eb-4169-ae17-68b5c061c631
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value vs LY %' = divide ( ([Total Net Value] - [Total Net Value LY])  ,  [Total Net Value LY]  )
+		formatString: " +0%;(0%);-"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 2a6f7edd-3c2f-4a02-b000-9c36f816cb5b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value LY-1' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Total Net Value],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 2
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 47fab480-f57b-4a0b-88b5-c9924c5aee0d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value vs LY -1 %' = divide ( ([Total Net Value] - [Total Net Value LY-1])  ,  [Total Units LY-1]  )
+		formatString: " +0%;(0%);-"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 801634a2-8276-473e-88e4-2124bba4994e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin LY' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Gross Margin],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 99297060-9da2-4ae6-83ce-0796585e651a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin vs LY %' = divide ( ([Gross Margin] - [Gross Margin LY])  ,  [Gross Margin LY]  )
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: e1f1d252-cec2-440e-a7db-0e3c779c4cc4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin % LY' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Gross Margin %],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: c4dbf2a3-053f-4685-acf6-0cc149002123
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin % vs LY %' = divide ( ([Gross Margin %] - [Gross Margin % LY])  ,  [Gross Margin % LY]  )
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 5c638b6b-d302-4afd-84fd-a457463921b1
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Buy In Margin % LY' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Buy In Margin %] ,
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 2526567c-f631-4021-9b55-8f84ca3895b0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Buy In Margin LY' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Buy In Margin] ,
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 896e5711-ab3d-40a8-adec-6be3f087fbae
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Buy In Margin vs LY %' = divide ( ([Buy In Margin] - [Buy In Margin LY])  ,  [Buy In Margin LY]  )
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 7091b5dd-db1c-4525-ba4d-6243e908f1ad
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Buy In Margin % vs LY %' = divide ( ([Buy In Margin %] - [Buy In Margin % LY])  ,  [Buy In Margin % LY]  )
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 02ac1643-3b52-4912-aa25-74bbf154993e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ASP LY' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [ASP] ,
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 0fe25275-68f1-420b-9500-712e72b8047f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ACP LY' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [ACP] ,
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: ea4c0b3c-79dc-405a-86bd-c22be37bd9a1
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ASP vs LY %' = divide ( ([ASP] - [ASP LY])  ,  [ASP LY]  )
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 522ab147-1883-4344-a2ba-b92fb033c77e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ACP vs LY %' = divide ( ([ACP] - [ACP LY])  ,  [ACP LY]  )
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: ec8ef39c-c74b-4d1b-8c71-fb2da22f637e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value % of LY' = divide( [Total Net Value] , [Total Net Value LY] )
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 5e5c40ef-fa51-4cd6-bec8-0f2c68b164fa
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units % of LY' = divide( [Total Units] , [Total Units LY] )
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: eac7ac5e-6552-4405-956b-00cdbdb784bc
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin (ex Sett Disc) LY' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Gross Margin (ex Sett Disc)],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 8751e62d-22fa-4da9-a2de-616120773250
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin (ex Sett Disc) vs LY %' = divide ( ([Gross Margin (ex Sett Disc)]- [Gross Margin (ex Sett Disc) LY])  ,  [Gross Margin (ex Sett Disc) LY] )
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 36faba44-0f9f-4175-860d-1a45802405f8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			       [Total Units],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			       [Total Units],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		formatString: " #,0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 826ff8ee-7f55-43eb-aa4a-219c2ed1fcc8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units vs LFY %' = divide ( ([Total Units] - [Total Units LFY])  ,  [Total Units LFY]  )
+		formatString: " 0.00%;-0.00%;0.00%"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 97e1118c-f52c-447a-a916-1687eab78d42
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units LFY-1' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Total Units],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 2
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Total Units],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Two Year Date ] ),
+			                'Date'[ Two Year Date ], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		formatString: " #,0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 06475f71-9f74-42de-a124-a888b61f01a8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units vs LFY -1 %' =
+			divide ( ([Total Units] - [Total Units LFY-1])  ,  [Total Units LFY-1]  )
+			
+			--CT update, was previously Total Units vs LFY -1 %:= divide ( ([Total Units] - [Total Units LFY-1])  ,  [Total Units LFY]  )
+		formatString: " 0.00%;-0.00%;0.00%"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 61eaae86-72b4-4914-a45a-03610819066f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			       [Total Net Value],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Total Net Value],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: f61df8d9-f085-46c0-8df9-c2f059728ec0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value vs LFY %' = divide ( ([Total Net Value] - [Total Net Value LFY])  ,  [Total Net Value LFY]  )
+		formatString: " +0%;(0%);-"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: dd06daa4-2166-420d-a101-59dc23e240dc
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value LFY-1' = ```
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Total Net Value],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 2
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Total Net Value], 
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Two Year Date ] ),
+			                'Date'[ Two Year Date ], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+			```
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: b5df4e31-0260-4026-af2a-8e3402d7765c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value vs LFY -1 %' = divide ( ([Total Net Value] - [Total Net Value LFY-1])  ,  [Total Net Value LFY-1]  )
+		formatString: " +0%;(0%);-"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 2c9dbd8f-6317-4ce9-9b92-7d49d31943e4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			       [Gross Margin],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			       [Gross Margin],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: ef9c3bfa-39de-416b-b2d3-4286f9ecd2c7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin vs LFY %' = divide ( ([Gross Margin] - [Gross Margin LFY])  ,  [Gross Margin LFY]  )
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: e2464e46-0db2-4285-9a94-b5c3915c83b0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin % LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Gross Margin %],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Gross Margin %],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 3482078f-ac2d-4b1d-bb16-2e39a30c239f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin % vs LFY %' = divide ( ([Gross Margin %] - [Gross Margin % LFY])  ,  [Gross Margin % LFY]  )
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 126ffa1b-a482-406c-873a-d732719e92eb
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Buy In Margin LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Buy In Margin],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Buy In Margin],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 2b0792d5-35ab-4c6c-9014-a89a1578c390
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Buy In Margin % LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Buy In Margin %],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Buy In Margin %],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: bf1d2c51-e3f6-4a15-be31-944ca33be54d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Buy In Margin vs LFY %' = divide ( ([Buy In Margin] - [Buy In Margin LFY])  ,  [Buy In Margin LFY]  )
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 821a4563-a848-4cdc-8ab7-9e91026b6e3a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Buy In Margin % vs LFY %' = divide ( ([Buy In Margin %] - [Buy In Margin % LFY])  ,  [Buy In Margin % LFY]  )
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: d38e0ac9-ebb2-4be2-a0f5-082804767edf
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ASP LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			       [ASP],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			      [ASP],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: fb477322-365d-4efb-9b3d-fe059f39e333
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ACP LFY' = ```
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			       [ACP],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [ACP], 
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+			```
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: a6538607-628e-4974-bd26-4e4c1fe8e445
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ASP vs LFY %' = divide ( ([ASP] - [ASP LFY])  ,  [ASP LFY]  )
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: b4d5ac7f-c0b3-4d68-b975-0851346e0923
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units % of LFY' = divide( [Total Units] , [Total Units LFY] )
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 61639659-d7b0-4f18-876d-06509b884142
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value % of LFY' = divide( [Total Net Value] , [Total Net Value LFY] )
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: cad20174-ea25-4375-aca0-d9dc53b5a433
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin (ex Sett Disc) LFY' = ```
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Gross Margin (ex Sett Disc)], 
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Gross Margin (ex Sett Disc)], 
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+			```
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 72caf5b3-82d3-47df-923c-67741b16975e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin (ex Sett Disc) vs LFY %' = divide ( ([Gross Margin (ex Sett Disc)] - [Gross Margin (ex Sett Disc) LFY])  ,  [Gross Margin (ex Sett Disc) LFY] )
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 89c9f105-931c-4101-ade9-636c2f887b12
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Discount % LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Discount %],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Discount %],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 739d46e0-2285-4946-97ff-02c40c763ac1
+
+	measure 'Total Units PY' = ```
+			IF (
+			    HASONEVALUE('Date'[Fiscal Year] ),
+			
+			      CALCULATE (
+			        ROUND([Total Units],2),
+			                All ('Date'),
+			                FILTER (
+			                  ALL ( 'Date' ),
+			                  'Date'[Financial Year] = VALUES ( 'Date'[Financial Year] ) - 1
+			                  && CONTAINS(
+			                  VALUES ('Date'),
+			                    'Date'[Fiscal Period Number],
+			                    'Date'[Fiscal Period Number]) 
+			        )
+			    )
+			    ,
+			   BLANK()
+			)
+			```
+		formatString: #,0
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 9ca72789-e414-4662-a7f2-8eed05b8b8c0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value PY' = ```
+			IF (
+			    HASONEVALUE('Date'[Fiscal Year] ),
+			
+			      CALCULATE (
+			        ROUND([Total Net Value],2),
+			                All ('Date'),
+			                FILTER (
+			                  ALL ( 'Date' ),
+			                  'Date'[Financial Year] = VALUES ( 'Date'[Financial Year] ) - 1
+			                  && CONTAINS(
+			                  VALUES ('Date'),
+			                    'Date'[Fiscal Period Number],
+			                    'Date'[Fiscal Period Number]) 
+			        )
+			    )
+			    ,
+			   BLANK()
+			)
+			```
+		formatString: #,0.00
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: a9b98836-4f14-4386-a405-c94bd354e339
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ASP PY' = ```
+			IF (
+			    HASONEVALUE('Date'[Fiscal Year] ),
+			
+			      CALCULATE (
+			        ROUND([ASP],2),
+			                All ('Date'),
+			                FILTER (
+			                  ALL ( 'Date' ),
+			                  'Date'[Financial Year] = VALUES ( 'Date'[Financial Year] ) - 1
+			                  && CONTAINS(
+			                  VALUES ('Date'),
+			                    'Date'[Fiscal Period Number],
+			                    'Date'[Fiscal Period Number]) 
+			        )
+			    )
+			    ,
+			   BLANK()
+			)
+			```
+		formatString: #,0.00
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 6f0b83a4-916d-439b-b03f-2ad62958e620
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Buy In Margin % PY' = ```
+			IF (
+			    HASONEVALUE('Date'[Fiscal Year] ),
+			
+			      CALCULATE (
+			        ROUND([Buy In Margin %],2),
+			                All ('Date'),
+			                FILTER (
+			                  ALL ( 'Date' ),
+			                  'Date'[Financial Year] = VALUES ( 'Date'[Financial Year] ) - 1
+			                  && CONTAINS(
+			                  VALUES ('Date'),
+			                    'Date'[Fiscal Period Number],
+			                    'Date'[Fiscal Period Number]) 
+			        )
+			    )
+			    ,
+			   BLANK()
+			)
+			```
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 4d2bb783-880c-4b50-a562-999a9bd44b14
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin % PY' = ```
+			IF (
+			    HASONEVALUE('Date'[Fiscal Year] ),
+			
+			      CALCULATE (
+			        ROUND([Buy In Margin %],2),
+			                All ('Date'),
+			                FILTER (
+			                  ALL ( 'Date' ),
+			                  'Date'[Financial Year] = VALUES ( 'Date'[Financial Year] ) - 1
+			                  && CONTAINS(
+			                  VALUES ('Date'),
+			                    'Date'[Fiscal Period Number],
+			                    'Date'[Fiscal Period Number]) 
+			        )
+			    )
+			    ,
+			   BLANK()
+			)
+			```
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: f6985f08-736e-493e-8174-99b3d6fbc851
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value Budget' = ```
+			CALCULATE([FC Total Net Value],all(Forecast[Forecast Version]),all('Forecast Version'[Forecast Version]),'Forecast Version'[Forecast Version]="Budget")
+			
+			-- CT update, was previously Total Net Value Budget:=CALCULATE ([FC Total Net Value],FILTER ( Forecast, Forecast[Forecast Version] = "Budget" ))
+			
+			```
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: f674e973-aa87-4f9d-85e2-968d3463d772
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value vs Bud %' =
+			DIVIDE (
+			    [Total Net Value] - [Total Net Value Budget],
+			    [Total Net Value Budget]
+			)
+		formatString: " +0%;(0%);-"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: 259eab76-f8a4-45d0-838c-bc725f817130
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units Budget' =
+			CALCULATE (
+			    [FC Invoiced Units] - [FC Returned Units],
+			    FILTER ( Forecast, Forecast[Forecast Version] = "Budget" )
+			)
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: 5eab6fa9-cb88-450a-8087-2c60d0aea3cc
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units vs Bud %' = DIVIDE ( [Total Units] - [Total Units Budget], [Total Units Budget] )
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: 404bb3ee-ddb2-41b4-8ca4-9c5f4104fa42
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total CoGS Budget' = CALCULATE([FC Total CoGS],all(Forecast[Forecast Version]),all('Forecast Version'[Forecast Version]),'Forecast Version'[Forecast Version]="Budget")
+		formatString: " #,0.00"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: 4277bdd7-ed2b-4d64-b545-116770a84cd0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoiced Units Budget' = ```
+			CALCULATE([FC Invoiced Units],all(Forecast[Forecast Version]),all('Forecast Version'[Forecast Version]),'Forecast Version'[Forecast Version]="Budget")
+			
+			```
+		formatString: " #,0"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: b61cb4b5-4462-4adf-b952-d4f916b3e5d9
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Units Budget' = CALCULATE([FC Returned Units],all(Forecast[Forecast Version]),all('Forecast Version'[Forecast Version]),'Forecast Version'[Forecast Version]="Budget")
+		formatString: " #,0"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: cf141cc3-c73f-4ec9-a695-4ab28ceadc76
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total CoGS vs Bud %' = DIVIDE ( [Total CoGS] - [Total CoGS Budget], [Total CoGS Budget] )
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: 0c4129bb-11d7-4370-8373-e7abd0a18ad5
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoiced Units vs Bud %' = DIVIDE ( [Invoiced Units] - [Invoiced Units Budget], [Invoiced Units Budget] )
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: 7813c943-5b78-4bfa-bafd-1797b541c135
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Units vs Bud %' = DIVIDE ( [Returned Units] - [Returned Units Budget], [Returned Units Budget] )
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: c6ed5508-6d94-4996-8249-c831943524f4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value Forecast' = ```
+			VAR Fcst = [LatestForecastVersion]
+			RETURN
+			
+			CALCULATE (
+			    [FC Total Net Value],
+			    Forecast[Forecast Version] = Fcst )
+			
+			
+			
+			```
+		formatString: #,0.00
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: be6b6f9d-d649-47e6-8720-744bc59ee369
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value vs Fcst %' =
+			DIVIDE (
+			    [Total Net Value] - [Total Net Value Forecast],
+			    [Total Net Value Forecast]
+			)
+		formatString: " +0%;(0%);-"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: 8192b5a1-561c-4249-8583-06fd6d2faee7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units Forecast' =
+			VAR Fcst = [LatestForecastVersion]
+			RETURN
+			
+			CALCULATE (
+			    [FC Invoiced Units] - [FC Returned Units],
+			    Forecast[Forecast Version] = Fcst )
+		formatString: " #,0"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: ac0048c3-6996-4503-9db3-c7e381b5a29f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units vs Fcst %' = DIVIDE ( [Total Units] - [Total Units Forecast], [Total Units Forecast] )
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: aeccac2d-1b45-426e-a479-a908badd0001
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total CoGS Forecast' =
+			VAR Fcst = [LatestForecastVersion]
+			RETURN
+			
+			CALCULATE (
+			    [FC Total CoGS],
+			    Forecast[Forecast Version] = Fcst )
+		formatString: #,0.00
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: 65b250b8-60bf-4935-ab72-d9538d0b09aa
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoiced Units Forecast' =
+			VAR Fcst = [LatestForecastVersion]
+			RETURN
+			
+			CALCULATE (
+			    [FC Invoiced Units],
+			    Forecast[Forecast Version] = Fcst )
+		formatString: " #,0"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: b4c3021a-151e-4b13-8ee0-37805c49d4e0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Units Forecast' =
+			VAR Fcst = [LatestForecastVersion]
+			RETURN
+			
+			CALCULATE (
+			    [FC Returned Units],
+			    Forecast[Forecast Version] = Fcst )
+		formatString: " #,0"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: 0480535f-55e5-400f-985a-584ce8d2859e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total CoGS vs Fcst %' = DIVIDE ( [Total COGs] - [Total CoGS Forecast], [Total CoGS Forecast] )
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: 81f66179-d4d3-4993-85b3-273139542965
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoiced Units vs Fcst %' =
+			DIVIDE (
+			    [Invoiced Units] - [Invoiced Units Forecast],
+			    [Invoiced Units Forecast]
+			)
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: bc99b2e3-009e-4fed-8dcf-445704e14630
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Units vs Fcst %' =
+			DIVIDE (
+			    [Returned Units] - [Returned Units Forecast],
+			    [Returned Units Forecast]
+			)
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: cf8f2036-0f75-4613-9518-607348044266
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ASP vs Forecast %' = ```
+			DIVIDE([ASP] , [ASP Forecast]) -1
+			
+			```
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: d69b9900-4c7e-426e-93f4-d92b53443da2
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ASP (Footwear) Forecast' = DIVIDE([Total Net Value Forecast], CALCULATE([Total Units Forecast],Products[Product Major] = "Footwear"))
+		formatString: " 0.00"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: a9ab2399-6ab7-4ae9-a721-49009ec75eb1
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ASP (Footwear) vs Forecast %' = DIVIDE ( [ASP (Footwear)], [ASP (Footwear) Forecast] ) - 1
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: ff3be5ff-7b05-4594-b3be-97580fd6789b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ASP Forecast' = divide ( [Total Net Value Forecast] ,  [Total Units Forecast] )
+		formatString: " 0.00"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: 4864ae76-2c29-46ff-8862-bc57bea5508e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units LW' = ```
+			CALCULATE (
+			    [Total Units],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			    FILTER (
+			        ALL ( 'Date' ),
+			        MAX ( 'Date'[WeekIndex] )
+			            = 'Date'[WeekIndex] + 1
+			    )
+			)
+			```
+		displayFolder: 06. Total\vs.\vs LW
+		lineageTag: 2a0e5998-ca4f-4c0c-9e5a-b21627c25158
+
+	measure 'Total Units vs LW %' = divide ( ([Total Units] - [Total Units LW])  ,  [Total Units LW]  )
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total\vs.\vs LW
+		lineageTag: 627a7b13-d580-4db2-ba65-9f837a377536
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Units' = [Invoiced Units] - [Returned Units]
+		formatString: " #,0"
+		displayFolder: 06. Total
+		lineageTag: e34e86c4-31d7-4500-9ff3-7f94005941d8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Full Value' = [Invoiced Full Value] - [Returned Full Value]
+		formatString: #,##0.00
+		displayFolder: 06. Total
+		lineageTag: 0d5c9818-5e2c-4169-a61e-c5e61cc1fe12
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Discounts' = ([Invoiced Discounts] - [Returned Discounts])
+		formatString: #,##0.00
+		displayFolder: 06. Total
+		lineageTag: 246e4f66-f5b0-4759-adcb-e4e5d5480167
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Charges' = [Invoiced Charges]
+		formatString: " #,0.00"
+		displayFolder: 06. Total
+		lineageTag: 53da0abe-6f07-4cec-b106-f7a232544e55
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Sett Discount' = SUM ( Orders[Settlement Discount_SIL] ) * [XR]
+		formatString: " #,0.00"
+		displayFolder: 06. Total
+		lineageTag: 56d06bf5-300b-49e5-8dbd-db82726b86c6
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total COGs' = [Invoiced COGs] - [Returned COGs]
+		formatString: " #,0.00"
+		displayFolder: 06. Total
+		lineageTag: d8a14303-2c91-4b38-9e53-78de33b256f8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin' = [Total Net Value] - [Total Sett Discount] - [Total COGs]
+		formatString: " #,0.00"
+		displayFolder: 06. Total
+		lineageTag: cd9556f6-329e-4200-ab0f-93d8d8898d6d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin %' = divide([Gross Margin] ,[Total Net Value])
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total
+		lineageTag: 01078eab-353d-4326-9a66-5242239d7d56
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Buy In Margin %' = divide([Buy In Margin] ,[Total Full Value])
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total
+		lineageTag: 1a58bc45-b0a7-4b76-ae29-96218a4a767d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Buy In Margin' = [Total Full Value] - [Total COGs]
+		formatString: " #,0.00"
+		displayFolder: 06. Total
+		lineageTag: a3f74db6-acf0-4c15-a517-887ef3e3217f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Discount %' = DIVIDE ( [Total Discounts], ROUNDDOWN ( [Total Full Value], 0 ) )
+		formatString: " 0.00%;-0.00%;0.00%"
+		displayFolder: 06. Total
+		lineageTag: 4878ba9c-f6ae-4044-a080-5a45ca51e58d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure ASP = divide ( [Total Net Value] ,  [Total Units] )
+		formatString: " 0.00"
+		displayFolder: 06. Total
+		lineageTag: c08d5055-afc3-4e3e-8614-bc45ba94c96d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure ACP = divide ( [Total COGs] , [Total Units] )
+		formatString: " 0.00"
+		displayFolder: 06. Total
+		lineageTag: e97bb9ea-13ae-4346-993d-30665be8ee73
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Av Unit Price' = AVERAGE(Orders[Unit Price]) * [XR]
+		formatString: " #,0.00"
+		displayFolder: 06. Total
+		lineageTag: 54feb64c-5768-4865-830f-04914f159dfa
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Net Value' = [Invoiced Net Value] - ABS ( [Returned Net Value] ) - [Write-Offs (non-MDF)]
+		formatString: " #,0.00"
+		displayFolder: 06. Total
+		lineageTag: 488b8bcf-30d5-4a4d-8652-902a5b2e2c54
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin (ex Sett Disc)' = [Total Net Value] - [Total COGs]
+		formatString: " #,0.00"
+		displayFolder: 06. Total
+		lineageTag: 83c02b1d-dbef-4e1e-b28e-0e944f887eb4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Margin % (ex Sett Disc)' = divide([Gross Margin (ex Sett Disc)] ,[Total Net Value])
+		formatString: " 0.0%;-0.0%;0.0%"
+		displayFolder: 06. Total
+		lineageTag: b0076e65-bcf2-4cfe-9cbc-330b4d359714
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ASP (Footwear)' =
+			VAR NetValue =
+			    CALCULATE (
+			        [Total Net Value],
+			        FILTER (
+			            Products,
+			            NOT ( Products[Product General] IN { "Marketing", "Materials & Supplies" } )
+			        )
+			    )
+			VAR Units =
+			    CALCULATE ( [Total Units], Products[Product General] = "Footwear" )
+			RETURN
+			    DIVIDE ( NetValue, Units )
+		formatString: " 0.00"
+		displayFolder: 06. Total
+		lineageTag: ae7acd84-984c-44a4-ae88-9cbca9b12192
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'ACP US LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [ACP],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			         [ACP],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: ebcfd4d7-8d17-4040-8429-a6c852f11d08
+
+	measure 'ACP US LFY-1' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [ACP],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 2
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			      [ACP],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Two Year Date ] ),
+			                'Date'[ Two Year Date ], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 006bdc68-e6d2-440d-a919-ffdae85ecdbe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'ASP US LFY' = ```
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [ASP], 
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [ASP], 
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+			```
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 5df6cd8f-dd57-493b-a637-2e6b6b370a65
+
+	measure 'ASP US LFY-1' = ```
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [ASP],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 2
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			         [ASP], 
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Two Year Date ] ),
+			                'Date'[ Two Year Date ], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+			```
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 591bb522-205e-499a-8970-4465b8577c9f
+
+	measure 'Gross Margin US LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			       [Gross Margin],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			       [Gross Margin],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 4ac5034b-7003-4294-9afb-7e83412415c0
+
+	measure 'Gross Margin US LFY-1' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			      [Gross Margin],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 2
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			       [Gross Margin],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Two Year Date ] ),
+			                'Date'[ Two Year Date ], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 4b059b43-b64c-4186-a3bf-06e9ff978849
+
+	measure 'Gross Margin % US LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Gross Margin %],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Gross Margin %],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: dac8e0c9-cd83-43bb-a291-d6e230f45d61
+
+	measure 'Gross Margin % US LFY-1' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Gross Margin %],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 2
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Gross Margin %],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Two Year Date ] ),
+			                'Date'[ Two Year Date ], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 3b0615fa-7a28-4f70-9569-4db6ac570a86
+
+	measure 'Total Units US LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			      [Total Units],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Total Units],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: e14af039-48a3-4e72-ad5d-c530b03837f3
+
+	measure 'Total Units US LFY-1' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			       [Total Units],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 2
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			       [Total Units],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Two Year Date ] ),
+			                'Date'[ Two Year Date ], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 28ad6658-e1e5-4dd0-b4c4-b518a6ab430a
+
+	measure 'Total Net Value US LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Total Net Value],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Total Net Value],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 95bc239b-705d-4a78-bfab-2fa24734c40b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Net Value US LFY-1' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			      [Total Net Value],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 2
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			       [Total Net Value],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Two Year Date ] ),
+			                'Date'[ Two Year Date ], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 67fecb9a-ada0-4b4d-972b-2271f2e00960
+
+	measure 'Discount % US LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal US Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			        [Discount %],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal US Period Number], 'Date'[Fiscal US Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			        [Discount %],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 17a77fa0-1063-4fd5-8218-8b82ae98d0b8
+
+	measure 'Cancelled Units by Canc Date LY' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Cancelled Units by Canc Date],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: #,0
+		displayFolder: 07. Cancelled\.vs\LY
+		lineageTag: 08d2095b-6eba-4105-a920-01aabb288ec4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Cancelled Net Value by Canc Date LY' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Cancelled Net Value by Canc Date],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: 0.00
+		displayFolder: 07. Cancelled\.vs\LY
+		lineageTag: 54995388-2d29-48ee-a33d-d5387c029bca
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Cancelled Units' = sum(Orders[Cancelled Units Col])
+		formatString: " #,0"
+		displayFolder: 07. Cancelled
+		lineageTag: 59ebb5bd-a2ad-4591-ae60-a5f70c04b357
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Cancelled Net Value' = SUM ( Orders[Cancelled Net Value Col Cons GBP] ) * [XR]
+		formatString: " #,0.00"
+		displayFolder: 07. Cancelled
+		lineageTag: 42c69770-3f98-41ea-9410-8c54128e2d2b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Cancelled Units by Canc Date' = calculate ( [Cancelled Units] , USERELATIONSHIP(Orders[Cancellation Date],'Date'[ Date]))
+		formatString: " #,0"
+		displayFolder: 07. Cancelled
+		lineageTag: 36f29ab3-3b42-4f62-bee4-c637227c4a7f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Cancelled Net Value by Canc Date' = calculate ( [Cancelled Net Value] , USERELATIONSHIP(Orders[Cancellation Date],'Date'[ Date]))
+		formatString: " #,0.00"
+		displayFolder: 07. Cancelled
+		lineageTag: ee63898d-b27d-48c4-a35e-c3c4c6030437
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Customer Closing Stock LY' = ```
+			CALCULATE (
+			       [Customer Closing Stock],
+			                FILTER (
+			                  ALL ( 'Date' ),
+			                  CONTAINS(
+			                  VALUES ( 'Date'[ Last Year Date] ),
+			                    'Date'[ Last Year Date],
+			                    'Date'[ Date] ) 
+			        )
+			    )
+			```
+		formatString: #,0
+		isHidden
+		displayFolder: 11. Others\Sell Out\EMEA\vs LY
+		lineageTag: 3af7c8e2-bc76-4164-bf25-d8e71575a5f6
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sell Out Units LY' =
+			CALCULATE(
+			    [Net Sell Out Units],
+			    SAMEPERIODLASTYEAR('Date'[ Date]))
+		formatString: " #,0"
+		isHidden
+		displayFolder: 11. Others\Sell Out\EMEA\vs LY
+		lineageTag: 10cbd372-24eb-43a2-8035-0ea12603bdc0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Demand Sell Out Units LY' =
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Demand Sell Out Units],
+			        ALL ( 'Date' ),
+			        ALL ( 'Date Slicer'[Date Slicer] ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year]
+			                = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year], 'Date'[Day # of Year]
+			                )
+			        )
+			    ),
+			    BLANK ()
+			)
+		formatString: " #,0"
+		isHidden
+		displayFolder: 11. Others\Sell Out\EMEA\vs LY
+		lineageTag: 151a9650-4bab-4909-827f-5134e0ad8d57
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sell Out Units vs LY %' = DIVIDE ( [Net Sell Out Units], [Net Sell Out Units LY] - 1 )
+		formatString: " #,0.0%;-#,0.0%;#,0.0%"
+		isHidden
+		displayFolder: 11. Others\Sell Out\EMEA\vs LY
+		lineageTag: e23437ea-b395-4d2d-b933-dee12d288fa0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Demand Sell Out Units vs LY %' = DIVIDE ( [Demand Sell Out Units], [Demand Sell Out Units LY] - 1 )
+		formatString: " #,0.0%;-#,0.0%;#,0.0%"
+		isHidden
+		displayFolder: 11. Others\Sell Out\EMEA\vs LY
+		lineageTag: 2b7a01bb-1d04-4c77-9ab2-3654ddb97b21
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sell Out Units LW' =
+			CALCULATE (
+			    [Net Sell Out Units],
+			    ALL ( 'Date' ),
+			    ALL ( 'Date Slicer'[Date Slicer] ),
+			    FILTER ( ALL ( 'Date' ), MAX ( 'Date'[WeekIndex] ) = 'Date'[WeekIndex] + 1 )
+			)
+		formatString: " #,0"
+		isHidden
+		displayFolder: 11. Others\Sell Out\EMEA\vs LW
+		lineageTag: 7c1b9db2-0b28-4e6d-9c2d-93be37486994
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Customer Weeks Cover' = DIVIDE ( [Customer Closing Stock], [Net Sell Out Units] )
+		formatString: " 0.0"
+		isHidden
+		displayFolder: 11. Others\Sell Out\EMEA\vs LW
+		lineageTag: 05c9d392-934d-4b2e-8731-434bcea3ff65
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Customer Closing Stock' = SUM ( 'Customer Sell Out EMEA'[Stock] )
+		formatString: " #,0"
+		isHidden
+		displayFolder: 11. Others\Sell Out\EMEA
+		lineageTag: 69c8a99c-137d-407e-b991-bde123bb7ee3
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Net Sell Out Units' = SUM ( 'Customer Sell Out EMEA'[NetSalesUnits] )
+		formatString: " #,0"
+		isHidden
+		displayFolder: 11. Others\Sell Out\EMEA
+		lineageTag: f6fb47c8-e338-4fcf-beea-ba21ad0ed318
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Estimated Net Sell Out Units' = 0
+		formatString: " #,0"
+		isHidden
+		displayFolder: 11. Others\Sell Out\EMEA
+		lineageTag: 8fa0db31-9b2b-4137-9581-4d506bae8aa6
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Demand Sell Out Units' = SUM ( 'Customer Sell Out EMEA'[Demand Actual Sales Units] )
+		formatString: " #,0"
+		isHidden
+		displayFolder: 11. Others\Sell Out\EMEA
+		lineageTag: f8492816-dbfa-4b0e-b62a-b5b8e91b094a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Estimated Net Demand Sell Out Units' = SUM ( 'Customer Sell Out EMEA'[Demand Net Sales Units] )
+		formatString: " #,0"
+		isHidden
+		displayFolder: 11. Others\Sell Out\EMEA
+		lineageTag: c388e072-6539-41b2-889d-5415d5cf7be2
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Seasonal Product FC Units' = SUM('Seasonal Product Forecast'[Forecast Quantity])
+		formatString: " #,0"
+		displayFolder: 11. Others\1. Seasonal Product FC
+		lineageTag: bc7ac82b-6040-46b1-93f8-a533f4a78cad
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Framework Order Consumption %' =
+			CALCULATE (
+			    DIVIDE (
+			        SUM ( Orders[CALLEDOFFQUANTITY] ),
+			        SUM ( Orders[ORDEREDSALESQUANTITY_SOL_ZEROS] )
+			    ),
+			    FILTER ( Orders, Orders[HDMORDERTYPEID] = "F01" ),
+			    FILTER ( Orders, NOT 'Orders'[Cancellation Reason Code] IN { "EE", "IE" } )
+			)
+		formatString: " #,0%;-#,0%;#,0%"
+		displayFolder: 11. Others\3. Framework Order
+		lineageTag: 122951c2-1fec-4187-a430-f84fb281be3f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Write-Offs (non-MDF)' =
+			VAR Filtered =
+			    IF (
+			        ISFILTERED ( Orders ) || ISFILTERED ( 'Order Type' )
+			            || ISFILTERED ( 'Selling Status - Invoice' )
+			            || ISFILTERED ( 'Selling Status - Order Entry' )
+			            || ISFILTERED ( 'Product Class' )
+			            || ISFILTERED ( Size )
+			            || ISFILTERED ( Products )
+			            || ISFILTERED ( 'Invoice Number' ),
+			        TRUE (),
+			        FALSE ()
+			    )
+			VAR main =
+			    SUM ( 'Deductions'[Amount_CONS_GBP] ) * [XR]
+			RETURN
+			    IF ( main = 0 || Filtered, BLANK (), main )
+		formatString: " #,##0.00"
+		displayFolder: 11. Others\2. Deductions
+		lineageTag: 4941dbf7-8b59-4c7c-bbc2-187680d90e1b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure XR = ```
+			if(
+			    OR(HASONEFILTER('Display Currency'[Currency Name]),HASONEFILTER('Display Currency'[Currency Code])), 
+			    if ( FIRSTNONBLANK('Display Currency'[Currency Code],1)="999",
+			        1,
+			        sum('Display Currency'[XRMultiplier]) ),
+			1
+			)
+			```
+		isHidden
+		displayFolder: 11. Others
+		lineageTag: 43e2c5dc-6cff-47f3-bdc6-d4d38e2701f4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Req. Inv Days' = AVERAGE(Orders[Req. vs Inv Days])
+		formatString: " 0.0"
+		displayFolder: 11. Others
+		lineageTag: 9cbcb956-816a-46ee-90b0-875fa9724d06
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Avg Order Duration' = average(Orders[Order Duration])
+		formatString: " 0.0"
+		displayFolder: 11. Others
+		lineageTag: 6a4ec1e1-ff5c-4036-a566-71da99c432aa
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Shipped Units' = sum('Sales Packing Slip'[Shipped Qty])
+		formatString: " #,0"
+		displayFolder: 11. Others
+		lineageTag: 2eead023-1367-4486-91a8-fde2630b46cd
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Requested Order Duration' = AVERAGE(Orders[Requested Order Duration Col])
+		formatString: " 0.00"
+		displayFolder: 11. Others
+		lineageTag: e95b1c93-b073-4347-b6db-69de0b436f32
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Shipped Net Value' = ```
+			SUM ( Orders[Shipped Net Value Col] ) * [XR]
+			
+			
+			```
+		formatString: " #,0.00"
+		displayFolder: 11. Others
+		lineageTag: fc7fc30e-54f1-4db7-b1b6-937e916057a7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Orderbook Conversion %' = ```
+			Var FNBMonth     = FIRSTDATE('Date'[ Date]) 
+			Var LNBMonth     = LASTDATE ('Date'[ Date]) 
+			Var OrderedNV    = CALCULATE([Net Value], DATESBETWEEN(Orders[Requested Shipping Date], FNBMonth, LNBMonth ) )
+			Var InvoicedNV   = CALCULATE([Net Value], 
+			                        DATESBETWEEN(Orders[Requested Shipping Date], FNBMonth, LNBMonth ), 
+			                        DATESBETWEEN(Orders[Invoice Date], FNBMonth, LNBMonth ) )
+			
+			Var Main = divide(InvoicedNV,OrderedNV)
+			
+			Return
+			Main
+			```
+		formatString: " 0%;-0%;0%"
+		displayFolder: 11. Others
+		lineageTag: edd39a73-bf57-4b36-8e82-6aa21073e2b8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Max. Net Weight' = MAX ( 'Product Weights'[Net Weight] )
+		formatString: " #,##0.000"
+		displayFolder: 11. Others
+		lineageTag: eeac33c0-97ea-412b-bb5c-0d040ff7832d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Max. Pack Weight' = MAX ( 'Product Weights'[Pack Weight] )
+		formatString: " #,##0.000"
+		displayFolder: 11. Others
+		lineageTag: 90351b93-b9a5-4253-9b59-274cda9c14f0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Units by OE Date LY' = ```
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Ordered Units by OE Date],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: " #,0"
+		displayFolder: 01. Ordered\vs.\vs LY
+		lineageTag: a30cca4c-cb83-4e67-9424-642ffe55ac22
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Net Value by OE Date LY' = ```
+			
+			IF (
+			    HASONEVALUE ( 'Date'[Year] ),
+			    CALCULATE (
+			        [Ordered Net Value by OE Date],
+			        All ('Date'),
+			        All ('Date Slicer'[Date Slicer]),   
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Year] = VALUES ( 'Date'[Year] ) - 1
+			                && CONTAINS(
+			                    VALUES ( 'Date'[Day # of Year] ),
+			                    'Date'[Day # of Year],
+			                    'Date'[Day # of Year] ) 
+			        )
+			    ),
+			    BLANK ()
+			)
+			```
+		formatString: " 0.00"
+		displayFolder: 01. Ordered\vs.\vs LY
+		lineageTag: a7dd5cbd-257c-40df-9b15-36e9159c78ba
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Units by OE Date vs LY %' = divide ( ([Ordered Units by OE Date] - [Ordered Units by OE Date LY])  ,  [Ordered Units by OE Date LY])
+		formatString: " 0.00%;-0.00%;0.00%"
+		displayFolder: 01. Ordered\vs.\vs LY
+		lineageTag: 4f0d3e56-33a9-491f-bcb3-34871ea3c09e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Net Value by OE Date vs LY %' = divide ( ([Ordered Net Value by OE Date] - [Ordered Net Value by OE Date LY])  ,  [Ordered Net Value by OE Date LY])
+		formatString: " 0.00%;-0.00%;0.00%"
+		displayFolder: 01. Ordered\vs.\vs LY
+		lineageTag: 13151930-7d7b-46aa-af4e-dc719477a6ac
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Units by OE Date LFY' =
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			       [Ordered Units by OE Date],
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			      [Total Net Value],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+		formatString: #,0
+		displayFolder: 01. Ordered\vs.\vs EMEA LFY
+		lineageTag: cf8fad90-9cde-4f37-96c2-f8c563d126a6
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Net Value by OE Date LFY' = ```
+			IF (
+			    HASONEFILTER ( 'Date'[Fiscal Year] )
+			        && HASONEFILTER ( 'Date'[Is Week Filter (544)] ),
+			    CALCULATE (
+			         [Ordered Net Value by OE Date], 
+			        ALL ( 'Date' ),
+			        FILTER (
+			            ALL ( 'Date' ),
+			            'Date'[Financial Year]
+			                = VALUES ( 'Date'[Financial Year] ) - 1
+			                && CONTAINS (
+			                    VALUES ( 'Date' ),
+			                    'Date'[Fiscal Period Number], 'Date'[Fiscal Period Number]
+			                )
+			        )
+			    ),
+			    CALCULATE (
+			       [Total Net Value],
+			        FILTER (
+			            ALL ( 'Date' ),
+			            CONTAINS (
+			                VALUES ( 'Date'[ Last Year Date] ),
+			                'Date'[ Last Year Date], 'Date'[ Date]
+			            )
+			        )
+			    )
+			)
+			```
+		formatString: 0.00
+		displayFolder: 01. Ordered\vs.\vs EMEA LFY
+		lineageTag: 7b6e2215-ac7a-49a1-8537-6e31d14a6b7f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Units by OE Date vs LFY %' =
+			
+			
+			divide ( ([Ordered Units by OE Date] - [Ordered Units by OE Date LFY])  ,  [Ordered Units by OE Date LFY])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 01. Ordered\vs.\vs EMEA LFY
+		lineageTag: 3156391d-11c4-4156-9e7a-02ce55a1a824
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Net Value by OE Date vs LFY %' =
+			
+			
+			divide ( ([Ordered Net Value by OE Date] - [Ordered Net Value by OE Date LFY])  ,  [Ordered Net Value by OE Date LFY])
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 01. Ordered\vs.\vs EMEA LFY
+		lineageTag: 1c80c477-723d-4705-888d-7d790d3eb866
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Units' = sum('Orders'[Ordered Units Col])
+		formatString: " #,0"
+		displayFolder: 01. Ordered
+		lineageTag: 7fc4d447-6136-477b-8dca-79f18aa35a30
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Units by OE Date' = calculate ( [Ordered Units] , USERELATIONSHIP(Orders[Order Entry Date], 'Date'[ Date]))
+		formatString: " #,0"
+		displayFolder: 01. Ordered
+		lineageTag: 1a848c2c-cce1-4eda-83e7-381a41aa4969
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Net Value by OE Date' =
+			CALCULATE (
+			    SUM ( 'Orders'[Ordered Net Value Col Cons GBP] ) * [XR],
+			    USERELATIONSHIP ( Orders[Order Entry Date], 'Date'[ Date] )
+			)
+		formatString: " #,0.00"
+		displayFolder: 01. Ordered
+		lineageTag: 17678c17-dc47-4199-802a-d6a18213ca63
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Net Value' = SUM ( 'Orders'[Ordered Net Value Col Cons GBP] ) * [XR]
+		formatString: " #,0.00"
+		displayFolder: 01. Ordered
+		lineageTag: c27f1b34-c3e6-456b-8485-b38a5aa262cd
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Units by Req Ship Date' = calculate ([Ordered Units] , USERELATIONSHIP(Orders[Requested Shipping Date],'Date'[ Date]))
+		formatString: " #,0"
+		isHidden
+		displayFolder: 01. Ordered
+		lineageTag: e1f4d080-b1d3-492c-b26d-33a1d62170b7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Net Value by Req Ship Date' = calculate ([Ordered Net Value] , USERELATIONSHIP(Orders[Requested Shipping Date],'Date'[ Date]))
+		formatString: " #,0.00"
+		isHidden
+		displayFolder: 01. Ordered
+		lineageTag: 734ad73c-fde7-4a0c-a2f1-a629d2883f99
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Units by Start Ship Date' =
+			CALCULATE (
+			    [Ordered Units],
+			    USERELATIONSHIP ( 'Orders'[Start Ship Date], 'Date'[ Date] )
+			)
+		formatString: " #,0"
+		displayFolder: 01. Ordered
+		lineageTag: 1084fa89-d37c-4a79-ac06-49e36902aff8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Ordered Net Value by Start Ship Date' =
+			CALCULATE (
+			    [Ordered Net Value],
+			    USERELATIONSHIP ( 'Orders'[Start Ship Date], 'Date'[ Date] )
+			)
+		formatString: " #,0.00"
+		displayFolder: 01. Ordered
+		lineageTag: 520a0012-3e82-404f-87a4-5a03fcff1735
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'On Hand Available To Sell' =
+			CALCULATE (
+			    SUM ( 'On Hand Stock'[AVAILABLEONHANDQUANTITY] ),
+			    'On Hand Stock'[SnapShot Date] = TODAY ()
+			)
+		formatString: " #,0"
+		displayFolder: 10. Stock
+		lineageTag: f1fc997f-595b-4fec-bd2d-4b1a6af133ec
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Intake Available to Sell' =
+			VAR last =
+			    CALCULATE ( LASTDATE ( 'Intake'[DATE] ), ALL ( 'Intake' ) )
+			RETURN
+			    CALCULATE ( SUM ( 'Intake'[QTYFREE] ), 'Intake'[DATE] = last )
+		formatString: " #,0"
+		displayFolder: 10. Stock
+		lineageTag: 2281c841-ce4a-4911-88b8-c64225cccc75
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Customer Ageing 0-30 Days' =
+			var main = SUM('Customer Ageing'[AGINGPERIOD2]) * [XR]
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: 07fe0742-422c-4c71-81ae-0dcabdd688ff
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Customer Ageing 31-60 Days' =
+			var main = SUM('Customer Ageing'[AGINGPERIOD3]) * [XR]
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: 272a4941-ab15-4b30-aaf6-2f5e0774cd82
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Customer Ageing 61-90 Days' =
+			var main = SUM('Customer Ageing'[AGINGPERIOD4]) * [XR]
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: 7be25cca-34bc-432b-b8ef-d1d1ad9e2cbf
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Customer Ageing 90+ Days' = ```
+			var main = SUM('Customer Ageing'[AGINGPERIOD5]) * [XR]
+			
+			return
+			
+			if(main=0,blank(),main)
+			
+			```
+		formatString: " #,0.00"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: 070dec86-ed3f-48d1-a8b5-bcea15649404
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Customer Ageing Current Balance' =
+			var main = SUM('Customer Ageing'[AGINGPERIOD1]) * [XR]
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: 3bb261e8-ebf0-46fe-83eb-4830ca9feb00
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Customer Ageing Balance' =
+			var main = SUM('Customer Ageing'[All Ageing Periods]) * [XR]
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: 476eccd4-353b-48ec-b03d-7072c936d155
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Number of Open Invoices' = ```
+			var main = SUM('Customer Ageing'[NUMOPENINVOICES])
+			
+			return
+			
+			if(main=0,blank(),main)
+			
+			```
+		formatString: " 0"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: 65bd1432-c658-4347-bc3d-1d9576d36f54
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Last Payment Amount' =
+			var main = SUM('Customer Ageing'[LASTPAYMENTAMOUNT]) * [XR]
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: f3f26f99-2ea7-4ab9-a12d-94fdcfb5dad5
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoice Value' =
+			var main = SUM ( 'Accounts Receivable'[AMOUNT_CONS_GBP] ) * [XR]
+			
+			return
+			if (main=0,blank(),main)
+		formatString: " #,##0.00"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 4ffd8626-1821-40a2-b6b9-701649bc802c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoice Settle Value' =
+			var main = SUM ( 'Accounts Receivable'[SETTLEAMOUNT_CONS_GBP] ) * [XR]
+			
+			return
+			if (main=0,blank(),main)
+		formatString: " #,##0.00"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: d331d95b-08bc-4024-a6a2-6c9143bb80ea
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoice Dispute Value' =
+			var main = SUM('Accounts Receivable'[DISP_AMOUNT_CONS_GBP]) * [XR]
+			return
+			if (main=0,blank(),main)
+		formatString: " #,##0.00"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: f25be5fb-314f-479c-8385-5520cb3e3cd7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoice Outstanding Value by Due Date' =
+			var main = CALCULATE (
+			    SUMX (
+			        'Accounts Receivable',
+			        'Accounts Receivable'[AMOUNT_CONS_GBP] - 'Accounts Receivable'[SETTLEAMOUNT_CONS_GBP]
+			    ),
+			    USERELATIONSHIP ( 'Accounts Receivable'[DueDate_Key], 'Date'[Date Key] )
+			) * [XR]
+			
+			return
+			if (main=0,blank(),main)
+		formatString: " #,##0.00"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 5914d6bb-ea0f-44da-9532-118d46b51127
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoice Outstanding Value by Trans Date' =
+			var main = SUMX (
+			    'Accounts Receivable',
+			    'Accounts Receivable'[AMOUNT_CONS_GBP] - 'Accounts Receivable'[SETTLEAMOUNT_CONS_GBP]
+			) * [XR]
+			
+			return
+			if (main=0,blank(),main)
+		formatString: " #,##0.00"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 39cb57c0-ab31-42fa-8032-fb50322cad58
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure ADP = ```
+			var main=
+			DIVIDE(
+			    CALCULATE(
+			        sum('Accounts Receivable'[InvValue*DaysToPay]),
+			        USERELATIONSHIP('Accounts Receivable'[ClosedDate_Key],'Date'[Date Key]),
+			        'Accounts Receivable'[Transaction Type]="Sales",
+			        'Accounts Receivable'[ClosedDate_Key]<> BLANK(),
+			        'Accounts Receivable'[ClosedDate_Key]<>0)  
+			    ,
+			    (CALCULATE(
+			        sum('Accounts Receivable'[AMOUNT_CONS_GBP]),
+			        USERELATIONSHIP('Accounts Receivable'[ClosedDate_Key],'Date'[Date Key]),
+			        'Accounts Receivable'[Transaction Type]="Sales",
+			        'Accounts Receivable'[ClosedDate_Key]<> BLANK(),
+			        'Accounts Receivable'[ClosedDate_Key]<>0
+			        )
+			    )*[XR]
+			    )
+			
+			return
+			if (main=0,blank(),main)
+			```
+		formatString: 0
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 0837e386-1cb6-459c-9125-ffa503608125
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure ADD = ```
+			var main=
+			DIVIDE(
+			CALCULATE(
+			    sum('Accounts Receivable'[InvValue*DaysDelinquent]),
+			    USERELATIONSHIP('Accounts Receivable'[ClosedDate_Key],'Date'[Date Key]),
+			    'Accounts Receivable'[Transaction Type]="Sales",
+			    'Accounts Receivable'[ClosedDate_Key]<> BLANK(),
+			    'Accounts Receivable'[ClosedDate_Key]<>0)  
+			,
+			(CALCULATE(
+			   sum('Accounts Receivable'[AMOUNT_CONS_GBP]),
+			    USERELATIONSHIP('Accounts Receivable'[ClosedDate_Key],'Date'[Date Key]),
+			    'Accounts Receivable'[Transaction Type]="Sales",
+			    'Accounts Receivable'[ClosedDate_Key]<> BLANK(),
+			    'Accounts Receivable'[ClosedDate_Key]<>0
+			    )
+			)*[XR]
+			    )
+			
+			return
+			if (main=0,blank(),main)
+			
+			```
+		formatString: 0
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 146724b5-271d-4db7-a4d7-68cc87bbaad7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoice Value by Expected Payment Date' = ```
+			var main = CALCULATE(
+			SUM ( 'Accounts Receivable'[AMOUNT_CONS_GBP] ),
+			USERELATIONSHIP('Accounts Receivable'[Expected Payment Date],'Date'[ Date])
+			)
+			* [XR]
+			
+			return
+			if (main=0,blank(),main)
+			
+			```
+		displayFolder: 08. Accounts Receivable
+		lineageTag: f460c7c9-e352-465a-a7da-3dea03797981
+
+	measure 'Invoice Outstanding Value by Expected Payment Date' =
+			var main = CALCULATE (
+			    SUMX (
+			        'Accounts Receivable',
+			        'Accounts Receivable'[AMOUNT_CONS_GBP] - 'Accounts Receivable'[SETTLEAMOUNT_CONS_GBP]
+			    ),
+			    USERELATIONSHIP('Accounts Receivable'[Expected Payment Date],'Date'[ Date])
+			) * [XR]
+			
+			return
+			if (main=0,blank(),main)
+		formatString: " #,##0.00"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: caa02464-e8e3-4332-b401-f2ac04f6decd
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Last Payment Date' = IF(MAX('Customer Ageing'[LASTPAYMENTDATE])=DATE(1900,1,1),BLANK(),MAX('Customer Ageing'[LASTPAYMENTDATE]))
+		formatString: Short Date
+		displayFolder: 08. Accounts Receivable
+		lineageTag: f66b8af0-8c89-4b23-9c6b-e9103c86ec06
+
+	measure 'Invoice Outstanding Value by Inv Acct Expected Payment Date' =
+			VAR main =
+			    CALCULATE (
+			        SUMX (
+			            'Accounts Receivable',
+			            'Accounts Receivable'[AMOUNT_CONS_GBP] - 'Accounts Receivable'[SETTLEAMOUNT_CONS_GBP]
+			        ),
+			        USERELATIONSHIP ( 'Accounts Receivable'[Invoice Acct Expected Payment Date], 'Date'[ Date] )
+			    ) * [XR]
+			RETURN
+			    IF ( main = 0, BLANK (), main )
+		formatString: " #,##0.00"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: bf955cc6-8c62-4f66-8576-3810a9ff0327
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Invoice Value by Inv Acct Expected Payment Date' =
+			VAR main =
+			    CALCULATE (
+			        SUM ( 'Accounts Receivable'[AMOUNT_CONS_GBP] ),
+			        USERELATIONSHIP ( 'Accounts Receivable'[Invoice Acct Expected Payment Date], 'Date'[ Date] )
+			    ) * [XR]
+			RETURN
+			    IF ( main = 0, BLANK (), main )
+		displayFolder: 08. Accounts Receivable
+		lineageTag: b7085a16-3956-428e-a018-5b9e53b4bbea
+
+	measure 'CoGS Manual Finance Adjustments' = SUM ( 'Adjustments CoGS'[Amount at Constant Rate] ) * [XR]
+		formatString: " #,##0.00"
+		displayFolder: 09. Finance Adjustments
+		lineageTag: 789f418e-9fcd-42e7-b72b-2954d4909b8c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Sales Manual Finance Adjustments' = SUM ( 'Adjustments Sales'[Amount at Constant Rate] ) * [XR]
+		formatString: " #,##0.00"
+		displayFolder: 09. Finance Adjustments
+		lineageTag: c016ba0c-c97b-4417-9918-ce806cf46abc
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure lastpdate =
+			
+			var fisper = LOOKUPVALUE('Date'[Fiscal US Year-Period],'Date'[ Date],today()-1)
+			return
+			calculate(LASTDATE('Date'[ Date]),all('Date'),'Date'[Fiscal US Year-Period]=fisper)
+		formatString: General Date
+		isHidden
+		lineageTag: 72e7d033-57ad-4f52-880a-34427c03df35
+
+	measure 'Invoice Value (Transaction)' =
+			
+			VAR main = SUM ( 'Accounts Receivable'[AMOUNT_TRANS] )
+			RETURN
+			    IF ( main = 0, BLANK (), main )
+		formatString: " #,##0.00"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 458dd59b-8618-418e-a7d7-1556b386fe95
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Cancelled Payment' = ```
+			
+			    CALCULATE (
+			        [Invoice Value (Transaction)],
+			        CONTAINSSTRING ( 'Accounts Receivable'[Voucher], "ARCL" )
+			    )
+			```
+		isHidden
+		lineageTag: 823e8961-7801-4166-9bb6-d4a83a26d893
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Fulfilment Buckets' = ```
+			var fbuckets = CALCULATE([% Fulfilment], ALLEXCEPT(Orders, Orders[Sales Order Number]))
+			
+			return 
+			
+			IF(fbuckets < 0.25, "1- 00-24% Fulfilment",
+			    IF(AND(fbuckets >= 0.25, fbuckets < 0.50), "2- 25-49% Fulfilment",
+			        IF(AND(fbuckets >= 0.50, fbuckets < 0.84), "3- 50-84% Fulfilment",
+			           IF(AND(fbuckets >= 0.85, fbuckets < 1.00), "4- 85-99% Fulfilment",
+			              IF(fbuckets = 1.00, "5- 100% Fulfilment",
+			                    IF(fbuckets > 1.00, "Over 100% Fulfilment", "6- No Bucket")
+			     ))))       
+			)
+			```
+		isHidden
+		lineageTag: b9695bfa-8f05-4d7a-923e-cd5d6b95c362
+
+	measure firstpdate =
+			
+			var fisper = LOOKUPVALUE('Date'[Fiscal US Year-Period],'Date'[ Date],today()-1)
+			return
+			calculate(FIRSTDATE('Date'[ Date]),all('Date'),'Date'[Fiscal US Year-Period]=fisper)
+		formatString: General Date
+		isHidden
+		lineageTag: 4616b97e-b544-43bc-9294-4d28a3424361
+
+	measure 'Net Units % of LFY' = divide( [Net Units] , [Net Units LFY] )
+		formatString: " #,0.0%;-#,0.0%;#,0.0%"
+		displayFolder: 05. Net\vs.\vs EMEA LFY
+		lineageTag: fc630aec-7d7f-433b-b6a7-1530e2d34688
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Returned Net Value PY' = ```
+			IF (
+			    HASONEVALUE('Date'[Fiscal Year] ),
+			
+			      CALCULATE (
+			        ROUND([Returned Net Value],2),
+			                All ('Date'),
+			                FILTER (
+			                  ALL ( 'Date' ),
+			                  'Date'[Financial Year] = VALUES ( 'Date'[Financial Year] ) - 1
+			                  && CONTAINS(
+			                  VALUES ('Date'),
+			                    'Date'[Fiscal Period Number],
+			                    'Date'[Fiscal Period Number]) 
+			        )
+			    )
+			    ,
+			   BLANK()
+			)
+			```
+		formatString: #,0.00
+		displayFolder: 04. Returns\vs.\vs EMEA LFY
+		lineageTag: 59fedcb4-cec8-4801-a009-482996377096
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Column
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 16027cc0-6dfa-4595-844d-bc888161746c
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Metrics-ec349e54-dc8b-4d7e-8bf6-4377b5dcc4dd = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 952603cea86a4f9394ebba1fc0e1e3b4
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

@@ -1,0 +1,221 @@
+table 'Customer Ageing'
+	lineageTag: abff8b57-a913-487e-b2ca-a28412db2ffd
+
+	column Date_Key
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(18, 5)
+		displayFolder: zz_Keys
+		lineageTag: 60e0f116-e943-4519-a013-5c364f4b6e0a
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: cf30a3d6-8b88-40a4-9322-63ef2ba50578
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 69ea7b75-f2d9-405d-8951-1665b6499bc2
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMPANY
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: cfe5abc4-2449-44e6-9fec-7431bb51c3ed
+		summarizeBy: none
+		sourceColumn: COMPANY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AGINGPERIOD1
+		dataType: double
+		isHidden
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: 5dea1a22-b0ae-4b5d-b268-d222d8fec549
+		summarizeBy: none
+		sourceColumn: AGINGPERIOD1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column AGINGPERIOD2
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: 8e5cf1ea-9a6e-4dce-bc0b-10d83d9620f7
+		summarizeBy: none
+		sourceColumn: AGINGPERIOD2
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AGINGPERIOD3
+		dataType: double
+		isHidden
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: de9dc845-c685-46d0-8d28-efbc070403b5
+		summarizeBy: none
+		sourceColumn: AGINGPERIOD3
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column AGINGPERIOD4
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: c9c69b07-2e11-455e-aa8a-f24d241f313b
+		summarizeBy: none
+		sourceColumn: AGINGPERIOD4
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AGINGPERIOD5
+		dataType: double
+		isHidden
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: 0a51d903-ac7a-4639-8cf4-0892399b0fc5
+		summarizeBy: none
+		sourceColumn: AGINGPERIOD5
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column AGINGPERIOD6
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: 45965dc1-6dcb-45e5-9015-f1b3acf77b9b
+		summarizeBy: none
+		sourceColumn: AGINGPERIOD6
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LASTPAYMENTAMOUNT
+		dataType: double
+		isHidden
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: fd8d73d5-9737-40b7-add7-eef90cd7431e
+		summarizeBy: none
+		sourceColumn: LASTPAYMENTAMOUNT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column LASTPAYMENTDATE
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: datetime2
+		displayFolder: zz_Misc
+		lineageTag: 871f1c6f-147e-401a-85e1-9823d6d93ff5
+		summarizeBy: none
+		sourceColumn: LASTPAYMENTDATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NUMOPENINVOICES
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Misc
+		lineageTag: fc735747-9357-4a22-af4b-efddffb5548d
+		summarizeBy: none
+		sourceColumn: NUMOPENINVOICES
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'All Ageing Periods' = 'Customer Ageing'[AGINGPERIOD1] + 'Customer Ageing'[AGINGPERIOD2] + 'Customer Ageing'[AGINGPERIOD3] + 'Customer Ageing'[AGINGPERIOD4] + 'Customer Ageing'[AGINGPERIOD5] + 'Customer Ageing'[AGINGPERIOD6]
+		dataType: double
+		isHidden
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		displayFolder: zz_Misc
+		lineageTag: f9f763c3-9f59-4272-973e-a1f06bcd2b24
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	partition 'Customer Ageing-470008f6-a9dd-4d17-8e94-79b6d27c1d15' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VW_D365_FACT_CUST_AGING_ENTITY_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_D365_FACT_CUST_AGING_ENTITY",Kind="View"]}[Data]
+				in
+				    BFN_VW_D365_FACT_CUST_AGING_ENTITY_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

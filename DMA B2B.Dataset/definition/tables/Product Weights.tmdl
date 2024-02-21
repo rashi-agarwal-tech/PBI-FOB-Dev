@@ -1,0 +1,79 @@
+table 'Product Weights'
+	isHidden
+	lineageTag: be19eb8a-9cb5-4c48-b610-f0b54ed0375c
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 5632b5c8-ab12-4175-ae5c-c2706ff23017
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net Weight'
+		dataType: decimal
+		isHidden
+		sourceProviderType: decimal(18, 3)
+		lineageTag: f57e3b6e-6d12-4ff4-a524-a40daac1cf54
+		summarizeBy: none
+		sourceColumn: Net Weight
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pack Weight'
+		dataType: decimal
+		isHidden
+		sourceProviderType: decimal(6, 3)
+		lineageTag: 35489a68-5711-49aa-86cf-bbfa6f807339
+		summarizeBy: none
+		sourceColumn: Pack Weight
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: b72f4f1c-b1a0-4dff-bbaf-fc772e7456b2
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Product Weights-4f06bfbd-395b-43cb-8474-9e1a71e8ddac' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VW_PPM_FACT_PRODUCT_WEIGHTS_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_PPM_FACT_PRODUCT_WEIGHTS",Kind="View"]}[Data]
+				in
+				    BFN_VW_PPM_FACT_PRODUCT_WEIGHTS_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

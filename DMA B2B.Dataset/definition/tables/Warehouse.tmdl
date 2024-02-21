@@ -1,0 +1,56 @@
+table Warehouse
+	lineageTag: b264f3a7-54d9-4b42-bb83-0fe4bd7521d9
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		lineageTag: efe3d316-77ea-4dd7-9d50-bb5b9f4b6fc5
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinancialChannel
+		dataType: string
+		isHidden
+		lineageTag: c5d2545c-d8c2-4e92-ac45-183e387c7188
+		summarizeBy: none
+		sourceColumn: FinancialChannel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse ID'
+		dataType: string
+		lineageTag: 9a1f8fce-847d-4823-9b8e-200fcf2cc442
+		summarizeBy: none
+		sourceColumn: Warehouse ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse Group'
+		dataType: string
+		lineageTag: 0571f160-8868-4d9e-933d-6b4bdc2cd493
+		summarizeBy: none
+		sourceColumn: Warehouse Group
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Warehouse-030954ac-09eb-4c75-bdaa-d09d1a4e3776 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VW_D365DIMWAREHOUSE_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_D365DIMWAREHOUSE",Kind="View"]}[Data]
+				in
+				    BFN_VW_D365DIMWAREHOUSE_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

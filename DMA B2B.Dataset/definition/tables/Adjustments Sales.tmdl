@@ -1,0 +1,132 @@
+table 'Adjustments Sales'
+	isHidden
+	lineageTag: 9d98ceac-32ab-489b-9e18-3f45f8cdb1ee
+
+	column 'Amount at Constant Rate'
+		dataType: decimal
+		isHidden
+		formatString: #,##0.00
+		sourceProviderType: decimal(38, 2)
+		displayFolder: zz_Values
+		lineageTag: b81d7895-73d8-4b30-a867-82e227dc99e6
+		summarizeBy: none
+		sourceColumn: Amount at Constant Rate
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column AccountingDate_Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 0a7abae3-bf7d-43fc-9597-eca17688e62e
+		summarizeBy: none
+		sourceColumn: AccountingDate_Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 359818a7-a407-4d66-b97c-409252c84efe
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Channel_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 2b577360-1888-4376-8eb1-e70a8f2ca6da
+		summarizeBy: none
+		sourceColumn: Channel_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransactionTypeDesc
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6afe3ef2-3939-4aec-be92-65bbde4fc582
+		summarizeBy: none
+		sourceColumn: TransactionTypeDesc
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHANNEL
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 110f88e9-d3e0-460d-9fe8-9c4130c0292b
+		summarizeBy: none
+		sourceColumn: CHANNEL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MAINACCOUNTID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3f861057-4e74-4064-98f4-116e4715b4cc
+		summarizeBy: none
+		sourceColumn: MAINACCOUNTID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEDGERNAME
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a77c8f9a-503a-41ae-90b6-42875bf51aec
+		summarizeBy: none
+		sourceColumn: LEDGERNAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Adjustments Sales-3ad84ca9-7446-42c8-8c6d-10f563b65c22' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VW_D365FACTASE_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_D365FACTASE",Kind="View"]}[Data],
+				    #"Filtered Rows1"   = Table.SelectRows(BFN_VW_D365FACTASE_View, each [TransactionTypeDesc] <> "Sales" and List.Contains({103,104},[CHANNEL]) and [MAINACCOUNTID] >= "40001" and [MAINACCOUNTID] <= "49999" and [LEDGERNAME] <> "884"),
+				    #"Kept First Rows" = Table.FirstN(#"Filtered Rows1",NumberOfRows),
+				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Filtered Rows1"
+				in
+				    ParameterFilter
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
