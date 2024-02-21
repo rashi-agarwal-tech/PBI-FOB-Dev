@@ -1,0 +1,213 @@
+table 'Asset Book'
+	lineageTag: 4cf49d45-0412-415d-a598-215d9d084f1e
+
+	column AssetBook_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 61ac3fc6-a4f9-41e7-90a6-432264f40294
+		summarizeBy: none
+		sourceColumn: AssetBook_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FA Book Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 1f8562e7-1751-445f-bddb-b96c22d7d744
+		summarizeBy: none
+		sourceColumn: FA Book Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fin Dim On Book - Channel'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Financial Dimensions
+		lineageTag: 10a202b2-c83b-463d-9736-e9a74703c857
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6830a572-055a-40b9-9eee-c871fb154b08
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fin Dim On Book - Analysis Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Financial Dimensions
+		lineageTag: 1e1bf47f-4143-4d3a-86fd-64025a57aa57
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Analysis Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fin Dim On Book - Country'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Financial Dimensions
+		lineageTag: 9b94cc9b-80c2-4da6-98ff-2aa911acbdc5
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fin Dim On Book - Cost Centre'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Financial Dimensions
+		lineageTag: 6fcb08b7-f71e-4fda-b331-5ee3590ac9df
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Cost Centre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calculate Depreciation (Y/N)'
+		dataType: string
+		sourceProviderType: bit
+		lineageTag: eac8d544-22d7-40d5-9f89-18447bb9ecf9
+		summarizeBy: none
+		sourceColumn: Calculate Depreciation (Y/N)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Acquisition Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 1a757f17-9539-4176-893c-644ba1ee47d1
+		summarizeBy: none
+		sourceColumn: Acquisition Date
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Placed in Service Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 1f6881f5-d17f-44e9-b398-b97d40524c7a
+		summarizeBy: none
+		sourceColumn: Placed in Service Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Total Depreciation Periods'
+		dataType: int64
+		formatString: #,0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 6e15524f-f790-4553-8cb3-11a7e26f0b8b
+		summarizeBy: none
+		sourceColumn: Total Depreciation Periods
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Depreciation Periods Remaining'
+		dataType: int64
+		formatString: #,0
+		sourceProviderType: decimal(16, 2)
+		lineageTag: 3654e851-bbf6-4dbb-a602-4f6fd03fbc1c
+		summarizeBy: none
+		sourceColumn: Depreciation Periods Remaining
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Disposal Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 758dbcb5-cd25-4977-bd4e-d6e03351160d
+		summarizeBy: none
+		sourceColumn: Disposal Date
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Acquisition Value'
+		dataType: decimal
+		formatString: 0.00
+		sourceProviderType: decimal(16, 2)
+		lineageTag: df10443c-9004-4ceb-879f-ac5200613322
+		summarizeBy: none
+		sourceColumn: Acquisition Value
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Fin Dim On Book - Analysis Code Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Financial Dimensions
+		lineageTag: 33f008b2-6207-4299-b8ec-4e93a3ca5a1b
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Analysis Code Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fin Dim On Book - Channel Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Financial Dimensions
+		lineageTag: 09aa3f99-3af3-4e66-8f74-25a4f0af5135
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Channel Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fin Dim On Book - Cost Centre Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Financial Dimensions
+		lineageTag: 08694549-79e5-4648-b4fa-cd2fb7580ba8
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Cost Centre Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fin Dim On Book - Country Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Financial Dimensions
+		lineageTag: 34c59c49-c804-4071-a455-b16f872ec4f7
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Country Description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Asset Book' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    FA_BFN_VW_D365_DIM_ASSET_BOOK_View = BFN_PRESENTATION_Schema{[Name="FA_BFN_VW_D365_DIM_ASSET_BOOK",Kind="View"]}[Data],
+				    #"ReplaceValueNull"  = Table.ReplaceValue(FA_BFN_VW_D365_DIM_ASSET_BOOK_View ,null  ,"No" ,Replacer.ReplaceValue,{"Calculate Depreciation (Y/N)"}),
+				    #"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull"     ,false ,"No" ,Replacer.ReplaceValue,{"Calculate Depreciation (Y/N)"}),
+				    #"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse"    ,true  ,"Yes",Replacer.ReplaceValue,{"Calculate Depreciation (Y/N)"})
+				in
+				    #"ReplaceValueTrue"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,49 @@
+table 'Asset Group'
+	lineageTag: 8a6b6808-72db-45c2-aecd-aa652ad348b3
+
+	column AssetGroup_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 5c570322-9deb-4144-91fa-6fadb4815c9b
+		summarizeBy: none
+		sourceColumn: AssetGroup_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Asset Group Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d158a6df-ac5e-4ee0-b3d7-be85b210314a
+		summarizeBy: none
+		sourceColumn: Asset Group Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Asset Group ID'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 71b2350f-c511-4951-9fa8-73a671ea8a1c
+		summarizeBy: none
+		sourceColumn: Asset Group ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Asset Group' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    FA_BFN_VW_D365_DIM_ASSET_GROUP_View = BFN_PRESENTATION_Schema{[Name="FA_BFN_VW_D365_DIM_ASSET_GROUP",Kind="View"]}[Data]
+				in
+				    FA_BFN_VW_D365_DIM_ASSET_GROUP_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

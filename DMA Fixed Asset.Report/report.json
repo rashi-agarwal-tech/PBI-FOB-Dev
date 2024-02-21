@@ -1,0 +1,51 @@
+{
+  "config": "{\"version\":\"5.47\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY23SU08\",\"version\":\"5.48\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY23SU08",
+            "path": "BaseThemes/CY23SU08.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"8fd2e4d166a030831383\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9,\"y\":354,\"width\":631,\"height\":344,\"z\":1000,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Financial Channel.Channel Description\"},{\"queryRef\":\"Financial Channel.Channel ID\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Financial Channel\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Channel Description\"},\"Name\":\"Financial Channel.Channel Description\",\"NativeReferenceName\":\"Channel Description\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Channel ID\"},\"Name\":\"Financial Channel.Channel ID\",\"NativeReferenceName\":\"Channel ID\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 344.00,
+          "width": 631.00,
+          "x": 9.00,
+          "y": 354.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"9a69168c46b0030c9310\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.43952802359882,\"y\":0,\"z\":0,\"width\":630.5604719764012,\"height\":343.5988200589971,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Financial Channel.Channel ID1\"},{\"queryRef\":\"Financial Channel.Channel Description1\"},{\"queryRef\":\"Metrics.Amount Average\"},{\"queryRef\":\"Metrics.Amount Constant\"},{\"queryRef\":\"Metrics.Amount Local\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Metrics\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"Financial Channel\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Amount Average\"},\"Name\":\"Metrics.Amount Average\",\"NativeReferenceName\":\"Amount Average\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Amount Constant\"},\"Name\":\"Metrics.Amount Constant\",\"NativeReferenceName\":\"Amount Constant\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Amount Local\"},\"Name\":\"Metrics.Amount Local\",\"NativeReferenceName\":\"Amount Local\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Channel ID\"},\"Name\":\"Financial Channel.Channel ID1\",\"NativeReferenceName\":\"Channel ID\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Channel Description\"},\"Name\":\"Financial Channel.Channel Description1\",\"NativeReferenceName\":\"Channel Description\"}]},\"queryOptions\":{\"keepProjectionOrder\":true},\"showAllRoles\":[\"Values\"],\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 343.60,
+          "width": 630.56,
+          "x": 9.44,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

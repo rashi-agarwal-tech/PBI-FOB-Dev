@@ -1,0 +1,49 @@
+table Country
+	lineageTag: 43f53033-a790-41a4-ba48-23b35e0fbbac
+
+	column Country_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 38a091f1-139b-4d6d-803b-c65e30f32db3
+		summarizeBy: none
+		sourceColumn: Country_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 610b5d0d-79fd-4900-a7de-d0960c830cd2
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Country Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b888cbb6-360c-4c9f-afd9-e7f860127fd3
+		summarizeBy: none
+		sourceColumn: Country Description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Country = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    FA_BFN_VW_D365DIMCOUNTRY_View = BFN_PRESENTATION_Schema{[Name="FA_BFN_VW_D365DIMCOUNTRY",Kind="View"]}[Data]
+				in
+				    FA_BFN_VW_D365DIMCOUNTRY_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

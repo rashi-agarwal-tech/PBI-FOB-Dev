@@ -1,0 +1,85 @@
+table 'Cost Centre'
+	lineageTag: b94b7f10-c3cf-4784-9ad3-5b8bdde01aa3
+
+	column CostCentre_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 814849ff-e349-4d57-8d83-fdddbab1184d
+		summarizeBy: none
+		sourceColumn: CostCentre_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Centre'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6dea79d8-2145-4d11-a124-d4deb44d036c
+		summarizeBy: none
+		sourceColumn: Cost Centre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Centre Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2514e5f0-ad2c-47e0-8782-7b90c691a7f9
+		summarizeBy: none
+		sourceColumn: Cost Centre Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Centre Owner'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d7743598-31e9-4a6e-b137-f1f4f623e258
+		summarizeBy: none
+		sourceColumn: Cost Centre Owner
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Centre Set'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5a279422-a44f-40d1-bf4d-7d125fd21743
+		summarizeBy: none
+		sourceColumn: Cost Centre Set
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Centre Retail Store Status'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4020326b-753e-444e-b2fb-85de9f9afc7e
+		summarizeBy: none
+		sourceColumn: Cost Centre Retail Store Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Centre Group'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 62b8cda1-81f4-4a68-8bad-0e8459364d00
+		summarizeBy: none
+		sourceColumn: Cost Centre Group
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Cost Centre' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    FA_BFN_VW_D365DIMCOSTCENTRE_View = BFN_PRESENTATION_Schema{[Name="FA_BFN_VW_D365DIMCOSTCENTRE",Kind="View"]}[Data]
+				in
+				    FA_BFN_VW_D365DIMCOSTCENTRE_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
