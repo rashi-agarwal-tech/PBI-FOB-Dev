@@ -1,0 +1,51 @@
+table 'Refit Slicer'
+	lineageTag: 369544d0-006f-48b1-be27-7e4de5996d8d
+
+	column 'Refit Exclusion'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c425a60a-88b1-4825-aed9-eccb6c37be1d
+		summarizeBy: none
+		sourceColumn: Refit Exclusion
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refit Exclusion?'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: feb46a24-1c28-4457-afa5-2c7f154b3e46
+		summarizeBy: none
+		sourceColumn: Refit Exclusion?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refit Slicer'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: af80b211-936f-4448-8d30-73ecc965e992
+		summarizeBy: none
+		sourceColumn: Refit Slicer
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Refit Slicer-a0331d01-468f-45db-92a8-8fe9776b9b35' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_REFIT_SLICE_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_REFIT_SLICE",Kind="View"]}[Data]
+				in
+				    D2C_BFN_REFIT_SLICE_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

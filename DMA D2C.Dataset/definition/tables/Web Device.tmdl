@@ -1,0 +1,39 @@
+table 'Web Device'
+	lineageTag: 813704e2-0e0c-4433-9d5d-b70d0998d1e1
+
+	column Device
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8fbcd3f5-ca14-4a8f-93cd-ab3929a9067c
+		summarizeBy: none
+		sourceColumn: Device
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeviceCategory_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 6a06b688-eb15-4d5b-8b5a-db5579a0e489
+		summarizeBy: none
+		sourceColumn: DeviceCategory_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Web Device-3828d91f-12a4-469e-b3c7-e7eceef6e907' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_WEB_DIM_DEVICE_CATEGORY_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_WEB_DIM_DEVICE_CATEGORY",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_WEB_DIM_DEVICE_CATEGORY_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

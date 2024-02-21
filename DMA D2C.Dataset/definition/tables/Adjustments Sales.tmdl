@@ -1,0 +1,82 @@
+table 'Adjustments Sales'
+	isHidden
+	lineageTag: 67465962-0371-4f11-b7df-ca8e1124a89f
+
+	column 'Amount at Constant Rate'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 2)
+		displayFolder: zz_Values
+		lineageTag: 89f703c4-4df5-4ebd-9122-708265237731
+		summarizeBy: none
+		sourceColumn: Amount at Constant Rate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AccountingDate_Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: d9c7a796-2ca2-4465-b0e3-a7cdcf95655d
+		summarizeBy: none
+		sourceColumn: AccountingDate_Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 3da8f434-0783-4c70-a69b-b894a5cfb985
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Channel_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 6f9aea91-0f30-470f-af53-1c34442ae58c
+		summarizeBy: none
+		sourceColumn: Channel_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Adjustments Sales-c2746ff6-fdf9-42b4-94f9-4d401819e53b' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365FACTASE_ADJUSTMENT_SALES_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365FACTASE_ADJUSTMENT_SALES",Kind="View"]}[Data],
+				    #"Filtered Rows1"   = Table.SelectRows(D2C_BFN_VW_D365FACTASE_ADJUSTMENT_SALES_View, each [TransactionTypeDesc] <> "Sales" and List.Contains({101,102},[CHANNEL]) and [MAINACCOUNTID] >= "40001" and [MAINACCOUNTID] <= "49999" and [LEDGERNAME] <> "884"),
+				    #"Selected Columns" = Table.SelectColumns(#"Filtered Rows1",{"AccountingDate_Key", "Channel_Key", "Company_Key", "Amount at Constant Rate"}),
+				    #"Kept First Rows" = Table.FirstN(#"Selected Columns",NumberOfRows),
+				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Selected Columns"
+				in
+				    ParameterFilter
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

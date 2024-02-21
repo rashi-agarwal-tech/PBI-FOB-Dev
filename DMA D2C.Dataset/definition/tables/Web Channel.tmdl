@@ -1,0 +1,34 @@
+table 'Web Channel'
+	lineageTag: 51f343ef-aa2e-4769-9e09-61fa23eb65d3
+
+	column 'Acquisition Channel'
+		dataType: string
+		lineageTag: 6d50e356-4d7f-4492-8f0a-09a313a15bf7
+		summarizeBy: none
+		sourceColumn: Acquisition Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChannelGrouping_Key
+		dataType: string
+		lineageTag: 0b998578-cf3c-4ccd-84b8-5cde4b9588e2
+		summarizeBy: none
+		sourceColumn: ChannelGrouping_Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Web Channel-55ec49c1-aec4-4538-abad-aabe5d441a6f' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_WEB_DIM_CHANNEL_GROUP_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_WEB_DIM_CHANNEL_GROUP",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_WEB_DIM_CHANNEL_GROUP_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

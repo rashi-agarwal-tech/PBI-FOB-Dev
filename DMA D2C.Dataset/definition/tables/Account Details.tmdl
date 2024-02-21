@@ -1,0 +1,506 @@
+table 'Account Details'
+	lineageTag: 503736fe-eaa7-44eb-bbe9-04f196fe09de
+
+	column RetailStore_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: 2b8d88a3-1a05-43c7-86d7-1fdce16bc8f7
+		summarizeBy: none
+		sourceColumn: RetailStore_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column STOREID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 158d21d2-c4fd-4077-b649-fb56dcb698f2
+		summarizeBy: none
+		sourceColumn: STOREID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Store Attributes
+		lineageTag: 20a0e78d-1efc-49b7-92ac-304abc78c6eb
+		summarizeBy: none
+		sourceColumn: Store Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Store Attributes
+		lineageTag: 5a6a897a-78e5-42aa-933d-9c0b32245ef4
+		summarizeBy: none
+		sourceColumn: Store Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Overall Store Grade'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Store Attributes
+		lineageTag: 342247ad-9a7b-4621-b6cc-dbf4d8573b32
+		summarizeBy: none
+		sourceColumn: Overall Store Grade
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Regional Channel'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Store Attributes
+		lineageTag: a2155393-d773-4fc4-8db6-bd6fb2874435
+		summarizeBy: none
+		sourceColumn: Regional Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Location'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Store Attributes
+		lineageTag: 6832949f-9fed-4f8e-8fa8-e6a007666f25
+		summarizeBy: none
+		sourceColumn: Store Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Status'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Store Attributes
+		lineageTag: 7084ba4c-318d-4eb9-a7a0-bd7f7a460513
+		summarizeBy: none
+		sourceColumn: Store Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Store Attributes
+		lineageTag: 52790a82-b44c-45ab-8dd8-7fb38ca2b6eb
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Store Attributes
+		lineageTag: 47249af5-4a20-4221-aa17-d71a98eaf654
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Area
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Store Attributes
+		lineageTag: 02448c79-86a3-4671-ad20-e9811335f216
+		summarizeBy: none
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Opening Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		displayFolder: Store Attributes
+		lineageTag: 945a96b3-ece7-4c2e-bd90-d4d9e6974b3a
+		summarizeBy: none
+		sourceColumn: Opening Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Closing Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		displayFolder: Store Attributes
+		lineageTag: 1e83e2aa-43eb-4bff-9aba-cc1aefe031c0
+		summarizeBy: none
+		sourceColumn: Closing Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Gross Sq Ft'
+		dataType: int64
+		formatString: #,##0
+		sourceProviderType: double
+		displayFolder: Store Attributes
+		lineageTag: 11886891-2cdb-4fcb-924e-471d411dbc26
+		summarizeBy: none
+		sourceColumn: Gross Sq Ft
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Gross Sqm'
+		dataType: int64
+		formatString: #,##0
+		sourceProviderType: double
+		displayFolder: Store Attributes
+		lineageTag: c920c8d8-19ec-444b-9026-51b2a1b8bdef
+		summarizeBy: none
+		sourceColumn: Gross Sqm
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Linear Ft'
+		dataType: int64
+		formatString: #,##0
+		sourceProviderType: double
+		displayFolder: Store Attributes
+		lineageTag: 82ea4ffc-77a8-47eb-9f16-72f96d21302f
+		summarizeBy: none
+		sourceColumn: Linear Ft
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Latitude
+		dataType: double
+		formatString: #,##0.000000
+		sourceProviderType: double
+		displayFolder: Store Attributes
+		lineageTag: e86a158e-84cd-4c3d-900a-2e2570f25a7e
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Longtitude
+		dataType: double
+		formatString: #,##0.000000
+		sourceProviderType: double
+		displayFolder: Store Attributes
+		lineageTag: 90da4b15-93db-4bd2-83b6-129a0c68f271
+		summarizeBy: none
+		sourceColumn: Longtitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Footwear SKU Capacity'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: Store Attributes
+		lineageTag: 5a18d8ce-34a6-4286-b75b-cf6a719ea314
+		summarizeBy: none
+		sourceColumn: Footwear SKU Capacity
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Price Profile'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Store Attributes
+		lineageTag: c1a375f2-e1d0-470e-adb3-47246ff021c0
+		summarizeBy: none
+		sourceColumn: Price Profile
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Regional Manager'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Store Attributes
+		lineageTag: e2f18606-6856-4208-8773-f1da8700ef70
+		summarizeBy: none
+		sourceColumn: Regional Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tourist Level'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Store Attributes
+		lineageTag: a26614e4-50d0-495e-8af9-844518b62585
+		summarizeBy: none
+		sourceColumn: Tourist Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Image'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Store Attributes
+		lineageTag: dc36fbfe-c955-4618-aba6-c339fd594acb
+		summarizeBy: none
+		sourceColumn: Store Image
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Centre'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Store Attributes
+		lineageTag: 46315da3-a1fd-410a-8568-78a3e49be00c
+		summarizeBy: none
+		sourceColumn: Cost Centre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Maturity (current) Sort' =
+			VAR fyear =
+			    IF ( MONTH ( TODAY () ) < 4, YEAR ( TODAY () ) - 1, YEAR ( TODAY () ) )
+			VAR BTFY =
+			    DATE ( fyear, 4, 1 )
+			VAR fyear1 =
+			    IF ( MONTH ( TODAY () ) < 4, YEAR ( TODAY () ) - 2, YEAR ( TODAY () ) - 1 )
+			VAR BLFY =
+			    DATE ( fyear1, 4, 1 )
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        AND (
+			            'Account Details'[Closing Date] <= [Yesterday],
+			            NOT ( ISBLANK ( 'Account Details'[Closing Date] ) )
+			        ), 7,
+			        'Account Details'[Closing Date] > [Yesterday], 6,
+			        AND (
+			            DATEDIFF (
+			                'Account Details'[Opening Date],
+			                'Account Details'[Closing Date],
+			                MONTH
+			            ) < 24,
+			            NOT ( ISBLANK ( 'Account Details'[Closing Date] ) )
+			        ), 4,
+			        ISBLANK ( 'Account Details'[Opening Date] ), 3,
+			        'Account Details'[Opening Date] < BLFY, 1,
+			        'Account Details'[Opening Date] < BTFY, 2,
+			        'Account Details'[Opening Date] > BTFY, 3,
+			        5
+			    )
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Misc
+		lineageTag: 0400e6dc-3562-4d58-bd57-e3e25a5d1589
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Maturity (current)' =
+			VAR fyear =
+			    IF ( MONTH ( TODAY () ) < 4, YEAR ( TODAY () ) - 1, YEAR ( TODAY () ) )
+			VAR BTFY =
+			    DATE ( fyear, 4, 1 )
+			VAR fyear1 =
+			    IF ( MONTH ( TODAY () ) < 4, YEAR ( TODAY () ) - 2, YEAR ( TODAY () ) - 1 )
+			VAR BLFY =
+			    DATE ( fyear1, 4, 1 )
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        AND (
+			            'Account Details'[Closing Date] <= [Yesterday],
+			            NOT ( ISBLANK ( 'Account Details'[Closing Date] ) )
+			        ), "Closed",
+			        'Account Details'[Closing Date] > [Yesterday], "Closing",
+			        AND (
+			            DATEDIFF (
+			                'Account Details'[Opening Date],
+			                'Account Details'[Closing Date],
+			                MONTH
+			            ) < 24,
+			            NOT ( ISBLANK ( 'Account Details'[Closing Date] ) )
+			        ), "Popup",
+			        ISBLANK ( 'Account Details'[Opening Date] ), "New",
+			        'Account Details'[Opening Date] < BLFY, "LFL",
+			        'Account Details'[Opening Date] < BTFY, "Maturing",
+			        'Account Details'[Opening Date] > BTFY, "New",
+			        "Other"
+			    )
+			--'Account Details'[Closing Date] > BLFY, "Closed",
+			-- var fyear = if(month(today())<4,year(today())-1,year(today()))
+			--VAR BTFY = date(fyear,4,1)
+			--var fyear1 = if(month(today())<4,year(today())-2,year(today()-1))
+			--VAR BLFY = date(fyear1,4,1)
+			--return
+			--switch (
+			--  True(),
+			--  and( DATEDIFF('Account Details'[Opening Date],'Account Details'[Closing Date],MONTH) < 24, NOT(isblank('Account Details'[Closing Date]))), "Popup",
+			--  'Account Details'[Closing Date] > [Yesterday], "Closing",
+			--  'Account Details'[Closing Date] > BLFY, "Closed",
+			--  'Account Details'[Opening Date] < BLFY, "LFL",
+			--  'Account Details'[Opening Date] < BTFY, "Maturing",
+			--  'Account Details'[Opening Date] > BTFY, "New",
+			--  "Other"
+			--  ))
+		dataType: string
+		displayFolder: Store Attributes
+		lineageTag: 59f18171-5236-4f91-891b-437ffe7cddb5
+		summarizeBy: none
+		isDataTypeInferred
+		sortByColumn: 'Store Maturity (current) Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Maturity (LY)' =
+			VAR fyear =
+			    IF ( MONTH ( TODAY () ) < 4, YEAR ( TODAY () ) - 2, YEAR ( TODAY () ) - 1 )
+			VAR BTFY =
+			    DATE ( fyear, 4, 1 )
+			VAR fyear1 =
+			    IF ( MONTH ( TODAY () ) < 4, YEAR ( TODAY () ) - 3, YEAR ( TODAY () ) - 2 )
+			VAR BLFY =
+			    DATE ( fyear1, 4, 1 )
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        AND (
+			            'Account Details'[Closing Date] <= [Yesterday],
+			            NOT ( ISBLANK ( 'Account Details'[Closing Date] ) )
+			        ), "Closed",
+			        'Account Details'[Closing Date] > [Yesterday], "Closing",
+			        AND (
+			            DATEDIFF (
+			                'Account Details'[Opening Date],
+			                'Account Details'[Closing Date],
+			                MONTH
+			            ) < 24,
+			            NOT ( ISBLANK ( 'Account Details'[Closing Date] ) )
+			        ), "Popup",
+			        ISBLANK ( 'Account Details'[Opening Date] ), "New",
+			        'Account Details'[Opening Date] < BLFY, "LFL",
+			        'Account Details'[Opening Date] < BTFY, "Maturing",
+			        'Account Details'[Opening Date] > BTFY, "New",
+			        "Other"
+			    )
+			--'Account Details'[Closing Date] > BLFY, "Closed",
+			-- var fyear = if(month(today())<4,year(today())-1,year(today()))
+			--VAR BTFY = date(fyear,4,1)
+			--var fyear1 = if(month(today())<4,year(today())-2,year(today()-1))
+			--VAR BLFY = date(fyear1,4,1)
+			--return
+			--switch (
+			--  True(),
+			--  and( DATEDIFF('Account Details'[Opening Date],'Account Details'[Closing Date],MONTH) < 24, NOT(isblank('Account Details'[Closing Date]))), "Popup",
+			--  'Account Details'[Closing Date] > [Yesterday], "Closing",
+			--  'Account Details'[Closing Date] > BLFY, "Closed",
+			--  'Account Details'[Opening Date] < BLFY, "LFL",
+			--  'Account Details'[Opening Date] < BTFY, "Maturing",
+			--  'Account Details'[Opening Date] > BTFY, "New",
+			--  "Other"
+			--  ))
+		dataType: string
+		displayFolder: Store Attributes
+		lineageTag: 6c1abdb0-f0ce-490f-ab55-4902691fe27b
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Maturity (LY-1)' =
+			VAR fyear =
+			    IF ( MONTH ( TODAY () ) < 4, YEAR ( TODAY () ) - 3, YEAR ( TODAY () ) - 2 )
+			VAR BTFY =
+			    DATE ( fyear, 4, 1 )
+			VAR fyear1 =
+			    IF ( MONTH ( TODAY () ) < 4, YEAR ( TODAY () ) - 4, YEAR ( TODAY () ) - 3 )
+			VAR BLFY =
+			    DATE ( fyear1, 4, 1 )
+			RETURN
+			    SWITCH (
+			        TRUE (),
+			        AND (
+			            'Account Details'[Closing Date] <= [Yesterday],
+			            NOT ( ISBLANK ( 'Account Details'[Closing Date] ) )
+			        ), "Closed",
+			        'Account Details'[Closing Date] > [Yesterday], "Closing",
+			        AND (
+			            DATEDIFF (
+			                'Account Details'[Opening Date],
+			                'Account Details'[Closing Date],
+			                MONTH
+			            ) < 24,
+			            NOT ( ISBLANK ( 'Account Details'[Closing Date] ) )
+			        ), "Popup",
+			        ISBLANK ( 'Account Details'[Opening Date] ), "New",
+			        'Account Details'[Opening Date] < BLFY, "LFL",
+			        'Account Details'[Opening Date] < BTFY, "Maturing",
+			        'Account Details'[Opening Date] > BTFY, "New",
+			        "Other"
+			    )
+			--'Account Details'[Closing Date] > BLFY, "Closed",
+			-- var fyear = if(month(today())<4,year(today())-1,year(today()))
+			--VAR BTFY = date(fyear,4,1)
+			--var fyear1 = if(month(today())<4,year(today())-2,year(today()-1))
+			--VAR BLFY = date(fyear1,4,1)
+			--return
+			--switch (
+			--  True(),
+			--  and( DATEDIFF('Account Details'[Opening Date],'Account Details'[Closing Date],MONTH) < 24, NOT(isblank('Account Details'[Closing Date]))), "Popup",
+			--  'Account Details'[Closing Date] > [Yesterday], "Closing",
+			--  'Account Details'[Closing Date] > BLFY, "Closed",
+			--  'Account Details'[Opening Date] < BLFY, "LFL",
+			--  'Account Details'[Opening Date] < BTFY, "Maturing",
+			--  'Account Details'[Opening Date] > BTFY, "New",
+			--  "Other"
+			--  ))
+		dataType: string
+		displayFolder: Store Attributes
+		lineageTag: 2474c294-eebb-4d42-99ed-0c1f702a170f
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Account Details-51e23b5a-aea9-4171-81c1-7d1242ac0cbe' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365DIMRETAILSTORE_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365DIMRETAILSTORE",Kind="View"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(D2C_BFN_VW_D365DIMRETAILSTORE_View, {{"Footwear SKU Capacity", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,155 @@
+table Warehouse
+	lineageTag: 4a176e54-c88b-405f-b057-cbddd0d86d4b
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 15176e00-cfec-44c2-9040-0d28fd17a1d6
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse Name'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: f4d6abe0-1b46-428f-81d8-3cbaec1b6532
+		summarizeBy: none
+		sourceColumn: Warehouse Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Site ID'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: c8ddaad5-80a6-4743-92b1-492c2cc54e42
+		summarizeBy: none
+		sourceColumn: Site ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse ID'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 92bcda24-5e35-44b9-b91f-8303c5313c7c
+		summarizeBy: none
+		sourceColumn: Warehouse ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PARENTSTOREID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: a4448de2-2319-4a5d-9e6b-be9e86646e0b
+		summarizeBy: none
+		sourceColumn: PARENTSTOREID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Retail Warehouse?'
+		dataType: int64
+		formatString: #,##0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 33487818-e043-4699-83df-6c1ded5ef4e8
+		summarizeBy: none
+		sourceColumn: Is Retail Warehouse?
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Warehouse Group'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f1198326-8c87-469d-aace-be32f042a300
+		summarizeBy: none
+		sourceColumn: Warehouse Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse Sub-Group'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e85c6b9b-f22d-47aa-9c9e-bc3547453882
+		summarizeBy: none
+		sourceColumn: Warehouse Sub-Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse Channel'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0a9911da-7cef-4314-96dc-be34de57c761
+		summarizeBy: none
+		sourceColumn: Warehouse Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse Region'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ef5efe7d-5dae-489c-b07c-4acea9a3134e
+		summarizeBy: none
+		sourceColumn: Warehouse Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse Sub-Region'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 83dfbe4a-d4d4-4a31-8d0b-58d48eaf83e9
+		summarizeBy: none
+		sourceColumn: Warehouse Sub-Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinancialChannel
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 279e77df-11d8-4d9e-b889-e5f628e38f7d
+		summarizeBy: none
+		sourceColumn: FinancialChannel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Warehouse-40631eee-dfe3-475c-bd9a-c73f48f75f8f = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365DIMWAREHOUSE_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365DIMWAREHOUSE",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_D365DIMWAREHOUSE_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

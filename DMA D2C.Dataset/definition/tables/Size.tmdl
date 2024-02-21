@@ -1,0 +1,60 @@
+table Size
+	lineageTag: b1fd9b46-c29b-40db-8d35-49bda642c078
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: 61848227-8686-4959-8e34-9d69523012e8
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 17ee8590-027a-4a32-9405-4a6c853b4af7
+		summarizeBy: none
+		sourceColumn: Size
+		sortByColumn: DisplayOrder
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column DisplayOrder
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Misc
+		lineageTag: 48e76ca4-13b2-4b16-acee-d0e1dc165c69
+		summarizeBy: none
+		sourceColumn: DisplayOrder
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Size-d856559b-12af-4285-866f-44f25a820453 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365DIMSIZE_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365DIMSIZE",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_D365DIMSIZE_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

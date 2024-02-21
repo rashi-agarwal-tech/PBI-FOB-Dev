@@ -1,0 +1,89 @@
+table 'Seasonal Product Forecast'
+	isHidden
+	lineageTag: ce7b92df-8946-4b05-a6b0-3afa30435f58
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 44072b7b-faea-4f1c-8fd3-762973d8426d
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Key'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 789e7dfa-7cb7-4c28-aa2a-65ad22d96bb5
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Key'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 711089ea-f8f8-4252-ba89-bfd4627c4903
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Quantity'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 7c167f1d-9bad-4500-9816-8d9d54e595bb
+		summarizeBy: none
+		sourceColumn: Forecast Quantity
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORDER_TYPE
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8cc6348b-a7f3-4101-9d56-bcff488dbff1
+		summarizeBy: none
+		sourceColumn: ORDER_TYPE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Seasonal Product Forecast-2e476fa5-453e-4235-88f1-781521e60847' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_AZURE_PRODUCT_SEASONAL_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_AZURE_PRODUCT_SEASONAL",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_AZURE_PRODUCT_SEASONAL_View, each ([ORDER_TYPE] = "eCom" or [ORDER_TYPE] = "Retail"))
+				in
+				    #"Filtered Rows"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

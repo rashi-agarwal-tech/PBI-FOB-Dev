@@ -1,0 +1,75 @@
+table Territory
+	lineageTag: 1817e326-a1b2-4970-a8ff-7bdfc2925cb5
+
+	column Territory_Key
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Keys
+		lineageTag: 8de3c35c-d3e8-46d9-88d0-891d7bd7424a
+		summarizeBy: none
+		sourceColumn: Territory_Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Country Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: efe63c63-4c08-4e49-82ad-cd7365d960df
+		summarizeBy: none
+		sourceColumn: Country Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Country Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ab8374ac-996b-419e-ae72-0d00ecd8a31f
+		summarizeBy: none
+		sourceColumn: Country Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: df326ff2-b17f-430b-b4a0-4f69929adc53
+		summarizeBy: none
+		sourceColumn: Region
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Territory Region'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3384d89b-7a70-4dc9-bbaa-58014f96de49
+		summarizeBy: none
+		sourceColumn: Territory Region
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Territory-4cc129ea-d999-49b3-99b6-80bcb4fac14f = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_DIM_D365TERRITORY_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_DIM_D365TERRITORY",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_DIM_D365TERRITORY_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

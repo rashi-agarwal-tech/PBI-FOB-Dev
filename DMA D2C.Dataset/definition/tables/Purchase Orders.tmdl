@@ -1,0 +1,234 @@
+table 'Purchase Orders'
+	isHidden
+	lineageTag: e97189ba-e149-405d-90c8-a949b089e3c3
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 4090dd9a-28d2-4e69-b3b7-44658c45d610
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 9a122737-2fac-4e3b-8953-a2c301cba583
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: d1267326-e13e-4247-b7e3-c1f7a6b17f0f
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 23068c06-254a-4a91-b0cb-75a7a97de4c8
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATAAREAID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e230a047-fb29-4c34-823b-faa60cd71972
+		summarizeBy: none
+		sourceColumn: DATAAREAID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SELLINGSTATUS
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: cf5ada19-1ee1-4486-a324-ac7a8c5b49ed
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderedUnits
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		sourceProviderType: decimal(33, 0)
+		lineageTag: bf64cd2f-9b40-476c-86e9-1b44f6fac4fd
+		summarizeBy: none
+		sourceColumn: OrderedUnits
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column CONFIRMEDDELIVERYDATEOld
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 41a4d3f7-6af3-4a84-8de9-6814454e0ace
+		summarizeBy: none
+		sourceColumn: CONFIRMEDDELIVERYDATEOld
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Receiving Warehouse ID'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 46154d68-e024-43dd-80ba-93670771042b
+		summarizeBy: none
+		sourceColumn: Receiving Warehouse ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Open PO Qty'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 0ffae862-ed89-4eea-8fe6-8f1f353269f4
+		summarizeBy: none
+		sourceColumn: Open PO Qty
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column REQUESTED_DELIVERY_DATE
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 727c321d-b46d-4ee7-bbf4-ad063c0c5ea7
+		summarizeBy: none
+		sourceColumn: REQUESTED_DELIVERY_DATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'PO Region Assignment' =
+			IF (
+			    'Purchase Orders'[Receiving Warehouse ID] IN { "NLRET01", "NLD2C01", "NLB2B01" },
+			    "239",
+			    'Purchase Orders'[DATAAREAID]
+			)
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 3f77d5bb-42a6-4532-923b-0ea3c71921d2
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Channel' = RELATED(Warehouse[Warehouse Channel])
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 12a1d97f-89fc-4d3e-97bb-a12fc31ad3bb
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinancialChannel = RELATED ( Warehouse[FinancialChannel] )
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: a04e0e54-c93a-44f6-be36-72014c83ba73
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Confirmed Delivery Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: f3db0da8-b68e-4ea3-a98f-dfe4171895ea
+		summarizeBy: none
+		sourceColumn: Confirmed Delivery Date
+
+		changedProperty = DataType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Purchase Orders-bc3477ca-6fd2-42d2-a2ee-17653f33cb81' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365FACTPURCHASEORDER_PURCHASEORDERLINE_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365FACTPURCHASEORDER_PURCHASEORDERLINE",Kind="View"]}[Data],
+				    #"Changed Type"    = Table.TransformColumnTypes(D2C_BFN_VW_D365FACTPURCHASEORDER_PURCHASEORDERLINE_View,{{"Confirmed Delivery Date", type date}}),
+				    #"Added Column"    = Table.AddColumn(#"Changed Type", "ConfirmedDeliveryDateMod", each if [Confirmed Delivery Date] = #date(1900, 1, 1) then [REQUESTED_DELIVERY_DATE] else [Confirmed Delivery Date]),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Column",{{"Confirmed Delivery Date", "CONFIRMEDDELIVERYDATEOld"}, {"ConfirmedDeliveryDateMod", "ConfirmedDeliveryDate"}}),
+				    #"Filtered Rows"   = Table.SelectRows(#"Renamed Columns", each List.Contains({"NLRET01", "NLRET03", "NLD2C01", "UKRET01", "UKRET02", "UKRET02", "UKD2C01", "UKRETRG01", "UKRETRG02", "UKD2CRG01", "USRET01", "USRETNJ01", "USD2CNJ01", "USRETLA01", "USD2CLA01", "HKD2C01", "HKRET01", "UKRETNH01"}, [Receiving Warehouse ID])),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Filtered Rows",{{"ConfirmedDeliveryDate", "Confirmed Delivery Date"}})
+				in
+				    #"Renamed Columns1"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

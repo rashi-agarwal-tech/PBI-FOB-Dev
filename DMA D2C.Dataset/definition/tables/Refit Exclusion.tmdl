@@ -1,0 +1,58 @@
+table 'Refit Exclusion'
+	isHidden
+	lineageTag: c4ce2340-f4e6-46ba-aa2d-f1ec7aa4f22f
+
+	column 'Store Number'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2aa4aa5a-fbb2-4999-83e5-e662327bff87
+		summarizeBy: none
+		sourceColumn: Store Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Exclusion Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: 104faf79-de24-4d0e-93b0-2cc64beb4612
+		summarizeBy: none
+		sourceColumn: Exclusion Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreDateKey = FORMAT ( 'Refit Exclusion'[Exclusion Date], "YYYYMMDD" ) & "-" & 'Refit Exclusion'[Store Number]
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: f54b7e0f-574d-4b04-a0f8-d498e3c3eb9d
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Refit Exclusion-c27c7800-fe7e-47b2-acb2-855b592eef74' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_AZURE_REFIT_EXCLUSION_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_AZURE_REFIT_EXCLUSION",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_AZURE_REFIT_EXCLUSION_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

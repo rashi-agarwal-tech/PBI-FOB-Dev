@@ -1,0 +1,145 @@
+table Footfall
+	isHidden
+	lineageTag: 599ae319-9f8b-4ddf-957e-0b9913636837
+
+	column Site_Name
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: bb07fd3b-9ac0-4b66-8932-0af421a21f5b
+		summarizeBy: none
+		sourceColumn: Site_Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: eb66d961-1ab9-42be-a005-a6442319daa4
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customers
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 12a8f12e-a69e-46d8-957f-73e53b7d0c40
+		summarizeBy: none
+		sourceColumn: Customers
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Time_Key
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Keys
+		lineageTag: f1078507-e775-4fc7-bb9c-61c8c930dc7d
+		summarizeBy: none
+		sourceColumn: Time_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RetailStore_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: eb1ab4d7-12b3-4ab2-9c5e-0a79e901cc57
+		summarizeBy: none
+		sourceColumn: RetailStore_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: f45f2431-0836-4d19-950a-324dcf005f8c
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PassbyTraffic
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		lineageTag: ce656d6d-4b7b-493c-8d47-1d1c5128d689
+		summarizeBy: none
+		sourceColumn: PassbyTraffic
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column StoreDateKey = FORMAT ( Footfall[Date], "YYYYMMDD" ) & "-" & Footfall[Site_Name]
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 154c5c51-ffe2-4d9d-9e0f-ac0efb15f237
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RefitExclusion =
+			IF (
+			    NOT ISBLANK ( RELATED ( 'Refit Exclusion'[StoreDateKey] ) ),
+			    "Refit",
+			    "No Refit"
+			)
+		dataType: string
+		isHidden
+		lineageTag: 10997b0b-b848-41cd-9c6c-d0f57c839d9c
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Footfall-313784c0-ae34-4a9e-a3d7-0762d559f6f0 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_FACT_CW_FOOTFALL_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_CW_FOOTFALL",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_FACT_CW_FOOTFALL_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

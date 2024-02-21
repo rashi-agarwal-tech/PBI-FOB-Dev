@@ -1,0 +1,784 @@
+table 'Date - Order Date'
+	lineageTag: ad3753fe-658b-4353-8b6c-9b706e06e205
+
+	column 'Order Day Of Week'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: 413b5c31-1bd2-493f-932b-7fb6014328b1
+		summarizeBy: none
+		sourceColumn: Order Day Of Week
+		sortByColumn: 'Order Day # of Week'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Day # of Week'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Calendar Dates
+		lineageTag: 8ab2947d-ca2c-4ff6-b3b6-f11ef09ca954
+		summarizeBy: none
+		sourceColumn: Order Day # of Week
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Order Day # of Month'
+		dataType: int64
+		formatString: #,##0
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Calendar Dates
+		lineageTag: d798c9fc-2737-4321-ab3c-c3e01ec2428d
+		summarizeBy: none
+		sourceColumn: Order Day # of Month
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Order Day # of Year'
+		dataType: int64
+		formatString: #,##0
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Calendar Dates
+		lineageTag: 716a1a64-1feb-4009-b5b9-706696403611
+		summarizeBy: none
+		sourceColumn: Order Day # of Year
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Order Fiscal Year'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 851929e6-1d4d-41de-bbba-5d032cddeb0e
+		summarizeBy: none
+		sourceColumn: Order Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal Quarter'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 765d8498-b83c-4b20-8488-01a85faf327f
+		summarizeBy: none
+		sourceColumn: Order Fiscal Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal Period Long Name'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 3034125f-c8a2-49b3-977e-c8eef8641a7a
+		summarizeBy: none
+		sourceColumn: Order Fiscal Period Long Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal Period Number'
+		dataType: int64
+		formatString: #,##0
+		sourceProviderType: decimal(38, 0)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 4cde7fd3-ddf7-4485-8e11-07bddde415c9
+		summarizeBy: none
+		sourceColumn: Order Fiscal Period Number
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Order Fiscal Week #'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: fd06aec9-1017-45c7-a713-ac9a0fe0014a
+		summarizeBy: none
+		sourceColumn: Order Fiscal Week #
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Order Fiscal Day #'
+		dataType: int64
+		formatString: " 0"
+		sourceProviderType: decimal(38, 0)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: e83b3001-522c-46d7-86cf-99ac6469dd06
+		summarizeBy: none
+		sourceColumn: Order Fiscal Day #
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column '- Is Order UK Bank Holiday?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: Calendar Dates
+		lineageTag: 05bd2a00-2133-41af-9dc1-110c326b5162
+		summarizeBy: none
+		sourceColumn: - Is Order UK Bank Holiday?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Order Black Friday?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: Calendar Dates
+		lineageTag: c19d6617-4b43-4d44-80d8-79a30987411d
+		summarizeBy: none
+		sourceColumn: - Is Order Black Friday?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Order Leap Year'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: Calendar Dates
+		lineageTag: 2a87aa39-a3e7-4419-a219-7b37f25cfb9d
+		summarizeBy: none
+		sourceColumn: - Is Order Leap Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Order End of Month'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: Calendar Dates
+		lineageTag: 1b506602-264c-490b-b4c0-5d72c9aa2373
+		summarizeBy: none
+		sourceColumn: - Is Order End of Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Order End of Period'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 21ad7003-e029-4fd3-a25b-0de9a17b6072
+		summarizeBy: none
+		sourceColumn: - Is Order End of Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Order End of Quarter'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 2e2838f9-e913-46e1-ba4b-1e50cb910ebc
+		summarizeBy: none
+		sourceColumn: - Is Order End of Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Order Fiscal Point In Time?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 68127d74-5f25-4877-9698-9e86af1c8374
+		summarizeBy: none
+		sourceColumn: - Is Order Fiscal Point In Time?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Order Yesterday'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: Calendar Dates
+		lineageTag: 65123f92-5f98-471c-841c-7d6abefd50a4
+		summarizeBy: none
+		sourceColumn: - Is Order Yesterday
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Order Today'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: Calendar Dates
+		lineageTag: 23b0d38f-5921-44dd-967d-81f64fd8df68
+		summarizeBy: none
+		sourceColumn: - Is Order Today
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Order Week'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: 0d9f27aa-9e7b-4e8f-96df-b91aeb1db58e
+		summarizeBy: none
+		sourceColumn: - Is Order Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Order Month'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: f702719f-432f-4431-aebe-8ce52683f5dc
+		summarizeBy: none
+		sourceColumn: - Is Order Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal Week Number (544)'
+		dataType: int64
+		formatString: " #,##0"
+		sourceProviderType: decimal(38, 0)
+		displayFolder: 544 Dates
+		lineageTag: 083a55fd-09f2-4adc-9abc-d4061a06ab8a
+		summarizeBy: none
+		sourceColumn: Order Fiscal Week Number (544)
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Order Fiscal Period Number (544)'
+		dataType: int64
+		formatString: " #,##0"
+		sourceProviderType: decimal(38, 0)
+		displayFolder: 544 Dates
+		lineageTag: b69d0df6-ae48-4e8f-9676-0bc75dc61276
+		summarizeBy: none
+		sourceColumn: Order Fiscal Period Number (544)
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Order Fiscal Quarter (544)'
+		dataType: int64
+		formatString: " #,##0"
+		sourceProviderType: decimal(38, 0)
+		displayFolder: 544 Dates
+		lineageTag: 257b9043-4407-4196-afa1-d543f5afda9e
+		summarizeBy: none
+		sourceColumn: Order Fiscal Quarter (544)
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Order Fiscal Half (544)'
+		dataType: int64
+		formatString: #,##0
+		sourceProviderType: decimal(38, 0)
+		displayFolder: 544 Dates
+		lineageTag: 175a52bb-788b-430f-8e40-c0cdfe58645d
+		summarizeBy: none
+		sourceColumn: Order Fiscal Half (544)
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column ' Order Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: 167f0d36-715c-4e78-8023-595f03ce32ea
+		summarizeBy: none
+		sourceColumn: " Order Date"
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Order End of US Period?'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: d8b8e8b7-8201-4dee-860e-e209dee8e49f
+		summarizeBy: none
+		sourceColumn: - Is Order End of US Period?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Order End of US Quarter?'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: a35e09da-3b7b-4518-ab62-ee07b19c8a24
+		summarizeBy: none
+		sourceColumn: - Is Order End of US Quarter?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal US Period'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: 02b8b96c-71a1-43a0-8a31-5dfd7c038bea
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal US Quarter'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: 97f33637-a95c-4ce4-afa4-418923c00a02
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal US Day #'
+		dataType: int64
+		formatString: " 0"
+		sourceProviderType: decimal(38, 0)
+		displayFolder: US Fiscal Dates
+		lineageTag: 2c7e4f19-27f0-410e-a04e-cac9d444433c
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Day #
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Order Fiscal US Period Number'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		displayFolder: US Fiscal Dates
+		lineageTag: e1be127e-8539-4b60-8226-084cb576dcfd
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Period Number
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Order Fiscal US Week #'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		displayFolder: US Fiscal Dates
+		lineageTag: 4f4a0074-d2de-4770-b7cc-17bbdb8eca68
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Week #
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Order Fiscal US Year'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: 55325df9-efc8-4347-92b0-9d0555cd4f50
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal US Year Number'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		displayFolder: US Fiscal Dates
+		lineageTag: 97d4c1da-7a4c-450c-8796-49d845e09642
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Year Number
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Order Fiscal US Year Period'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: 83786dda-b448-4a65-819d-b08016703f88
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Year Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal US Year-Week'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: f8756f24-d53a-43d2-a877-9001c3c94454
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Year-Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Order US Fiscal Point in Time?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: US Fiscal Dates
+		lineageTag: 93da345a-0a7d-41df-9967-18e49cdbf8f6
+		summarizeBy: none
+		sourceColumn: - Is Order US Fiscal Point in Time?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Week Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: fe0a61fa-254c-4bb6-b608-db2d91fad4a0
+		summarizeBy: none
+		sourceColumn: Order Week Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Mon'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: fd66a072-be7d-4e54-aa7c-35d79b78f09b
+		summarizeBy: none
+		sourceColumn: Order Mon
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Year'
+		dataType: int64
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Calendar Dates
+		lineageTag: b632d929-6f07-451e-951f-b6c0ca9d2153
+		summarizeBy: none
+		sourceColumn: Order Year
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Order Year-Week'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: 7e1f87b9-dc1b-4c7b-8ef5-66ea8e1a8f8c
+		summarizeBy: none
+		sourceColumn: Order Year-Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Year Month'
+		dataType: int64
+		formatString: #,##0
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Calendar Dates
+		lineageTag: 51737dec-f0f1-460e-889d-010842cc320f
+		summarizeBy: none
+		sourceColumn: Order Year Month
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Order Half'
+		dataType: string
+		sourceProviderType: nvarchar(2)
+		displayFolder: Calendar Dates
+		lineageTag: 879084ad-7207-4a5b-830d-268da4a90814
+		summarizeBy: none
+		sourceColumn: Order Half
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Year Half'
+		dataType: string
+		sourceProviderType: nvarchar(9)
+		displayFolder: Calendar Dates
+		lineageTag: e5ffebbb-88c4-4047-a1e9-376afbce4f58
+		summarizeBy: none
+		sourceColumn: Order Year Half
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Year Quarter'
+		dataType: string
+		sourceProviderType: nvarchar(2)
+		displayFolder: Calendar Dates
+		lineageTag: 87f43d97-8e05-43b3-b01f-3782ae794c8b
+		summarizeBy: none
+		sourceColumn: Order Year Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Quarter'
+		dataType: string
+		sourceProviderType: nvarchar(9)
+		displayFolder: Calendar Dates
+		lineageTag: 2e77c911-befc-4a79-9e2f-ada125164ec5
+		summarizeBy: none
+		sourceColumn: Order Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal Year-Period'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: f4db506b-a400-4943-b5f7-96d457af31b7
+		summarizeBy: none
+		sourceColumn: Order Fiscal Year-Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal Year-Week'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 3b980e75-38f5-48cd-ae9b-f4f7763a1a0d
+		summarizeBy: none
+		sourceColumn: Order Fiscal Year-Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Weekday or Weekend?'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: 2b3931ba-2e3a-47fb-88f3-842f5bfe8298
+		summarizeBy: none
+		sourceColumn: Order Weekday or Weekend?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal Year Number'
+		dataType: int64
+		formatString: " 0"
+		sourceProviderType: decimal(38, 0)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 2a302efb-bb86-4302-8db2-2caec6600d0a
+		summarizeBy: none
+		sourceColumn: Order Fiscal Year Number
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Order Relative Week'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: 155c9340-9e8f-4873-a44b-85db9bd72d65
+		summarizeBy: none
+		sourceColumn: Order Relative Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Relative Month'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: b9ff8065-a78d-4ff4-a4b8-ab0959cac3c2
+		summarizeBy: none
+		sourceColumn: Order Relative Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Relative Year'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: 3675653e-4041-4d6a-b11b-72c08ae3a3c2
+		summarizeBy: none
+		sourceColumn: Order Relative Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Relative Fiscal Week'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 6566ae09-3cc2-4d7c-bc83-2cea4c1e1fda
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Relative Fiscal Period'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 12e66372-781d-41fa-aec0-4ee12b80e4d2
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Relative Fiscal Year'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 40f529b7-432e-4842-9b5c-57c1c7f7d1ce
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal Year (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: c8944e99-9070-46af-be79-f929eb88976f
+		summarizeBy: none
+		sourceColumn: Order Fiscal Year (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal Year-Week (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: 953358ec-fb8a-473d-bea2-9691948daf1d
+		summarizeBy: none
+		sourceColumn: Order Fiscal Year-Week (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Relative Fiscal Period (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: bfcf4734-8385-4769-8802-4afb5080e24e
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal Period (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Relative Fiscal Year (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: 61014c0d-b31f-400a-8452-ab4f87ba2de0
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal Year (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Relative Fiscal US Period'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: 1e48493a-a119-4f07-94f0-ff6fc4c90cfa
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal US Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Relative Fiscal US Week'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: dec76ee9-544d-4731-934e-4cb1c83a1886
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal US Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Relative Fiscal US Year'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: b42b7e3b-229a-4569-ae56-975d2e3c7141
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal US Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal Year-Period (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: 82962308-fec2-4eb0-869f-68e298476781
+		summarizeBy: none
+		sourceColumn: Order Fiscal Year-Period (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Month-Year' =
+			'Date - Order Date'[Order Mon] & "-"
+			    & RIGHT ( 'Date - Order Date'[Order Year], 2 )
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 9ea19fad-2e88-4e8f-82cb-6a3ee22ec01c
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fiscal Period' = "F" & RIGHT ( 'Date - Order Date'[Order Fiscal Period Long Name], 3 )
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: ec982f34-1006-4bfe-8899-875d94fbc81f
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Date - Order Date-f70f8d3e-7634-4db2-b11f-99e26fe2045c' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_DIMDATE_ORDER_DATE_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_DIMDATE_ORDER_DATE",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_DIMDATE_ORDER_DATE_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,562 @@
+table Availability
+	isHidden
+	lineageTag: 11882033-3c56-4635-911f-243a55ea4ca0
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Key
+		lineageTag: a659fdda-630e-4526-bb81-6cbffd748447
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Key
+		lineageTag: 839a600e-74c5-41d0-8fcb-6196bed481a4
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Key
+		lineageTag: 387e54d2-5814-40db-a381-06a1a0da640c
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Key
+		lineageTag: 23f83907-d9a3-4280-9996-9790c7776d53
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		displayFolder: zz_Key
+		lineageTag: efd5a9fb-aca9-424b-874a-92269b7c014a
+		summarizeBy: none
+		sourceColumn: DATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column OnHandUnits
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Value
+		lineageTag: c444ac3e-7866-42a3-ad0c-924ecb641d41
+		summarizeBy: none
+		sourceColumn: OnHandUnits
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ItemCoverage
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Value
+		lineageTag: 7c6c2f35-26ce-4ade-b2eb-d07c3bf599bb
+		summarizeBy: none
+		sourceColumn: ItemCoverage
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column InvoicedUnits
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Value
+		lineageTag: d03b114a-9211-478c-8ee4-391cc0cd283a
+		summarizeBy: none
+		sourceColumn: InvoicedUnits
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column InTransit
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Value
+		lineageTag: e7602013-4144-44dc-afe2-89ef7a695bc6
+		summarizeBy: none
+		sourceColumn: InTransit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RetailWarehouseOnHand
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Value
+		lineageTag: e8b766aa-9ad8-46ac-a1dd-d9069e511d7b
+		summarizeBy: none
+		sourceColumn: RetailWarehouseOnHand
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SELLINGSTATUS
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Key
+		lineageTag: e6984ded-635e-463a-b220-2f3206bfcfba
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ReservedOnHandUnits
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Value
+		lineageTag: 0796dc1a-7ee7-492a-b703-bd75e5e76161
+		summarizeBy: none
+		sourceColumn: ReservedOnHandUnits
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AvailableOnHandUnits
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Value
+		lineageTag: 26330c9a-8b01-4ef3-99ce-1197c223a771
+		summarizeBy: none
+		sourceColumn: AvailableOnHandUnits
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OrderedQuantity
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Value
+		lineageTag: ebf04c3a-0ba2-4fed-b284-0415e63952f8
+		summarizeBy: none
+		sourceColumn: OrderedQuantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MAXIMUMONHANDINVENTORYQUANTITY
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Value
+		lineageTag: 9f488e28-e6f9-418f-a4d8-ec914a62aef3
+		summarizeBy: none
+		sourceColumn: MAXIMUMONHANDINVENTORYQUANTITY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WH_Channel
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Key
+		lineageTag: 5432223b-abd2-4f9c-97ca-57d71db50512
+		summarizeBy: none
+		sourceColumn: WH_Channel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: 7d3a5b4d-3bad-4501-b4ab-983a567c0f1b
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AMOUNT
+		dataType: double
+		isHidden
+		formatString: #,##0.00
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Value
+		lineageTag: dc5bf4e9-9d39-42e6-ad03-bf08a640e162
+		summarizeBy: none
+		sourceColumn: AMOUNT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column QTY
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Value
+		lineageTag: 1436b0d8-00f6-404e-9387-64663e525bc1
+		summarizeBy: none
+		sourceColumn: QTY
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Selling Status - Order Entry'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: 88dbd9cb-171d-472e-b39a-fd9bd68cab1e
+		summarizeBy: none
+		sourceColumn: Selling Status - Order Entry
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CompanyProductSize_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: 40916861-b76a-4ee2-a565-a19f033cf10d
+		summarizeBy: none
+		sourceColumn: CompanyProductSize_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ITEMNUMBER
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: d7560fd6-655e-432a-9a62-32a3becfeeda
+		summarizeBy: none
+		sourceColumn: ITEMNUMBER
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinancialChannel = RELATED ( Warehouse[FinancialChannel] )
+		dataType: string
+		isHidden
+		displayFolder: zz_Key
+		lineageTag: bec34f4f-cde6-4866-ae47-6b85144009b5
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ranged? =
+			IF (
+			    AND (
+			        Availability[ItemCoverage] > 0,
+			        Availability[WH_Channel] IN { "Retail", "eCom" }
+			    ),
+			    TRUE,
+			    FALSE
+			)
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: zz_Misc
+		lineageTag: 3c816591-a496-4076-89f7-a95b05ebe06b
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retail Negative Stock?' =
+			IF (
+			    Availability[Retail Store Warehouse?] <> 1,
+			    BLANK (),
+			    IF ( Availability[OnHandUnits] < 0, "Yes", "No" )
+			)
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 76ae0118-a761-42a3-9281-f230fe688c8c
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retail Store Warehouse?' = RELATED ( Warehouse[Is Retail Warehouse?] )
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 80529116-91ae-437b-82ee-0c47cad1247a
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Stock Out?' =
+			IF (
+			    AND ( Availability[Ranged?] = TRUE, Availability[OnHandUnits] = 0 ),
+			    1,
+			    BLANK ()
+			)
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Misc
+		lineageTag: 50e39685-a96e-4fc2-8eb7-4dc214fda774
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column Stocked? =
+			IF (
+			    Availability[OnHandUnits] > 0
+			        && Availability[Retail Store Warehouse?] = 1
+			        && Availability[ItemCoverage] > 0,
+			    1,
+			    0
+			)
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Misc
+		lineageTag: dba9f16d-2600-46cd-8871-569ecbcb84bd
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'In Transit Max' =
+			IF (
+			    Availability[Ranged?] = TRUE,
+			    IF (
+			        Availability[On Hand Max] >= Availability[ItemCoverage],
+			        BLANK (),
+			        IF (
+			            Availability[InTransit] >= Availability[ItemCoverage],
+			            Availability[ItemCoverage],
+			            Availability[InTransit]
+			        )
+			    ),
+			    BLANK ()
+			)
+		dataType: double
+		isHidden
+		displayFolder: zz_Value
+		lineageTag: c73f84aa-6def-4a78-ac90-91e2fb08ae73
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'On Hand Max' =
+			IF (
+			    Availability[Ranged?] = TRUE,
+			    IF (
+			        Availability[OnHandUnits] >= Availability[ItemCoverage],
+			        Availability[ItemCoverage],
+			        Availability[OnHandUnits]
+			    ),
+			    BLANK ()
+			)
+		dataType: double
+		isHidden
+		displayFolder: zz_Value
+		lineageTag: 7be2a8e9-241e-4ea6-8c78-d517bb286b5d
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'OnHandUnits Value' =
+			Availability[OnHandUnits]
+			    * RELATED ( 'Products'[Current Selling Price (excl. VAT)] )
+		dataType: double
+		isHidden
+		formatString: #,##0.00
+		displayFolder: zz_Value
+		lineageTag: e5d92165-6cbe-429f-a259-272eebf5cc78
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column OOS =
+			IF (
+			    Availability[Ranged?] = TRUE,
+			    Availability[ItemCoverage] - Availability[On Hand Max] - Availability[In Transit Max] - Availability[Retail Warehouse On Hand Max],
+			    BLANK ()
+			)
+		dataType: double
+		isHidden
+		displayFolder: zz_Value
+		lineageTag: 9f8b25e9-3022-4b47-9244-0866fac31f35
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Retail Warehouse On Hand Max' =
+			IF (
+			    Availability[Ranged?] = TRUE,
+			    IF (
+			        ( Availability[On Hand Max] + Availability[In Transit Max] ) >= Availability[ItemCoverage],
+			        0,
+			        IF (
+			            ( Availability[On Hand Max] + Availability[In Transit Max] + Availability[RetailWarehouseOnHand] ) <= Availability[ItemCoverage],
+			            Availability[RetailWarehouseOnHand],
+			            Availability[ItemCoverage] - ( Availability[In Transit Max] + Availability[On Hand Max] )
+			        )
+			    ),
+			    BLANK ()
+			)
+		dataType: int64
+		isHidden
+		displayFolder: zz_Value
+		lineageTag: bd41b6dd-3410-4c34-a23c-b5a7e87d2386
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Availability-7ecbeeb3-1078-47dd-a4f0-d67f11faf016 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
+				    #"Kept First Rows" = Table.FirstN(#"Filtered Rows",NumberOfRows),
+				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Filtered Rows",
+				    #"Filtered Rows1" = Table.SelectRows(ParameterFilter, each [DATE] >= RangeStart and [DATE] < RangeEnd)
+				in
+				    #"Filtered Rows1"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

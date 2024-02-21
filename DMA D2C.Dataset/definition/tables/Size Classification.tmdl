@@ -1,0 +1,45 @@
+table 'Size Classification'
+	isHidden
+	lineageTag: a0b74063-e81e-46b7-9b3b-e81487c32761
+
+	column CompanyProductSize_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a5d22e94-e56c-42d1-9d3a-b02b41a7b812
+		summarizeBy: none
+		sourceColumn: CompanyProductSize_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Core/Fringe
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(6)
+		lineageTag: 52d22e37-18c7-4d2a-a5da-cd76bddaaad4
+		summarizeBy: none
+		sourceColumn: Core/Fringe
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Size Classification-b3b5c463-87ad-4d4d-bf14-861f3d0fd0b1' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365_FACT_PRODUCT_SIZE_FRINGE_CORE_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_PRODUCT_SIZE_FRINGE_CORE",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_D365_FACT_PRODUCT_SIZE_FRINGE_CORE_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

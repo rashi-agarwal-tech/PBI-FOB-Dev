@@ -1,0 +1,91 @@
+table 'Display Currency'
+	lineageTag: 2f761178-0f35-428b-85c8-44941ff4a872
+
+	column 'Currency Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8d65addf-39d6-4636-9aff-61dda9008201
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Currency Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3da6ddea-9d1a-486e-b8b2-2e3d7030f263
+		summarizeBy: none
+		sourceColumn: Currency Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Currency Symbol'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 9dd48427-5df4-4d66-be2b-05077b118fc9
+		summarizeBy: none
+		sourceColumn: Currency Symbol
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NAME
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 50d420d4-ef53-434b-b4bd-02dd15874b97
+		summarizeBy: none
+		sourceColumn: NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column XRMultiplier =
+			IF (
+			    'Display Currency'[Currency Code] = "GBP",
+			    1,
+			    LOOKUPVALUE (
+			        'Exchange Rates'[RATE],
+			        'Exchange Rates'[FROMCURRENCY], "GBP",
+			        'Exchange Rates'[RATETYPENAME], "BUDGET",
+			        'Exchange Rates'[TOCURRENCY], 'Display Currency'[Currency Code]
+			    )
+			)
+		dataType: double
+		isHidden
+		formatString: #,##0.00
+		displayFolder: zz_Misc
+		lineageTag: 046b528f-fc75-4b67-90ee-f3c89144453a
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	partition 'Display Currency-6f3f9d5b-dea4-495c-aed2-1b654642e037' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    #"Extra Currencies" = #table({"NAME", "Currency Code", "Currency Name", "Currency Symbol"}, {{ "Constant (GBP)", "GBP_CONS", "Constant (GBP)", "£"},{ "Closing (GBP)", "GBP_CLOS", "Closing (GBP)", "£"},{ "Transaction Currency", "TRANS", "Transaction Currency", ""}}),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365DIMCURRENCY_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365DIMCURRENCY",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365DIMCURRENCY_View, each List.Contains({"Canadian Dollar", "Euro", "Hong Kong Dollar", "Pound Sterling", "Singapore Dollar", "US Dollar", "Won", "Yen"},[NAME]))
+				    ,#"Appended Query" = Table.Combine({#"Filtered Rows", #"Extra Currencies"})
+				
+				in
+				    #"Appended Query"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

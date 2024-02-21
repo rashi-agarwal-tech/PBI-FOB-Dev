@@ -1,0 +1,59 @@
+table 'Retail Demographics'
+	isHidden
+	lineageTag: d8689213-59a7-4986-9ae0-3fa0129c2c5e
+
+	column SALESORDERID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2f383fe6-19da-4498-a867-35095327b81d
+		summarizeBy: none
+		sourceColumn: SALESORDERID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2dea925d-388a-4a8f-9971-d5b1733ee77c
+		summarizeBy: none
+		sourceColumn: Gender
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 95f79684-3404-40b6-aab7-b82c1c73d9f3
+		summarizeBy: none
+		sourceColumn: Age
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Retail Demographics-c340f4d5-ee54-4b85-873b-0689b2276625' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365_FACT_RETAIL_TRANSACTION_DEMOGRAPHICS_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_RETAIL_TRANSACTION_DEMOGRAPHICS",Kind="View"]}[Data],
+				    #"Kept First Rows" = Table.FirstN(D2C_BFN_VW_D365_FACT_RETAIL_TRANSACTION_DEMOGRAPHICS_View,NumberOfRows),
+				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else D2C_BFN_VW_D365_FACT_RETAIL_TRANSACTION_DEMOGRAPHICS_View
+				in
+				    ParameterFilter
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,69 @@
+table 'Website Name'
+	isHidden
+	lineageTag: c71b653e-bc9f-492a-8eeb-0ca77d48a060
+
+	column GAViewID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a52836fe-eb45-491d-a9be-6f3ec8f382f1
+		summarizeBy: none
+		sourceColumn: GAViewID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Website
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 399b1051-5b74-4bbe-8e65-92845f8ff693
+		summarizeBy: none
+		sourceColumn: Website
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column WebsiteCode
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c2071a66-674b-45e2-b854-80047db271df
+		summarizeBy: none
+		sourceColumn: WebsiteCode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CompanyRegion
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 74dcc300-b4f2-4213-b45d-b9067c0a18da
+		summarizeBy: none
+		sourceColumn: CompanyRegion
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Website Name-90f801f6-ae21-4dae-aa44-414318b385e3' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_GA_DIM_WEBSITE_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_GA_DIM_WEBSITE",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_GA_DIM_WEBSITE_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

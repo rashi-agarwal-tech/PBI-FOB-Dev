@@ -1,0 +1,86 @@
+table 'Ecom Email Marketing'
+	lineageTag: 379ede4d-ddda-431c-a845-089178d2a6f9
+
+	column EmailWebsiteCode_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: f9f4d7d9-ac96-4ff8-b344-2b5abcb1a90f
+		summarizeBy: none
+		sourceColumn: EmailWebsiteCode_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Email Hash'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0b7bf0a1-9070-4beb-a139-ecafdf32e92e
+		summarizeBy: none
+		sourceColumn: Email Hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 354234e2-324a-40af-86a8-cd3206854d41
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Created'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: 94ec87d6-a319-407a-a159-8484d6e5f505
+		summarizeBy: none
+		sourceColumn: Date Created
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gender Preference'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f4c42da2-76f4-4731-83c8-52f85c091ecd
+		summarizeBy: none
+		sourceColumn: Gender Preference
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Signup Source'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6035d87e-422b-4cf4-a06b-88a8b6c6dbf0
+		summarizeBy: none
+		sourceColumn: Signup Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'File Source'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 7ab0dc1e-952a-4ba1-bfa8-9bc13773f316
+		summarizeBy: none
+		sourceColumn: File Source
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Ecom Email Marketing-56b39a61-2503-497b-a9e4-11c7d2a5d602' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_DIM_BRONTO_ECOM_MARKETING_EMAIL_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_DIM_BRONTO_ECOM_MARKETING_EMAIL",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_DIM_BRONTO_ECOM_MARKETING_EMAIL_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

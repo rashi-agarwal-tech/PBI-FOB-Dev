@@ -1,0 +1,95 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup Parameters
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["Regions","Pick","GA Demand FC","Hours Worked","Order Taker","Seasonal Product Forecast","Refit Exclusion","Store Activity FC","Forecast","Bridge InventTransID","Retail Demographics","Retail Payment Details","Retail Payment Methods","Orders","Financial Channel","Region","Display Currency","Customer","Product Class","Selling Status - Invoice","Selling Status - Order Entry","Account Details","Size","Warehouse","Adjustments CoGS","Adjustments Sales","Exchange Rates","Purchase Orders","Order Type","Ecom Email Marketing","Products","Time","Date","Date - Order Date","Date Slicer","Google Analytics Ads","Google Analytics","Google Analytics Goals","GA Country","Website Name","Open eCom Return Info","Product Weights","Web Channel","Web Device","Website","BridgeSalesOrderNumber","Size Classification","SmartRes","Availability","Footfall","Forecast Version","Refit Slicer","Channel","Territory","Seasonal Product Info","Forecast Additional Ecom","Forecast Ecom Demand","TMALL","NumberOfRows","RangeStart","RangeEnd","Datasource_Server","Datasource_Warehouse","Datasource_Database","Datasource_Schema"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.126.927.0 (24.02)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Regions
+ref table Pick
+ref table 'GA Demand FC'
+ref table 'Hours Worked'
+ref table 'Order Taker'
+ref table 'Seasonal Product Forecast'
+ref table 'Refit Exclusion'
+ref table 'Store Activity FC'
+ref table Forecast
+ref table 'Bridge InventTransID'
+ref table 'Retail Demographics'
+ref table 'Retail Payment Details'
+ref table 'Retail Payment Methods'
+ref table Orders
+ref table 'Financial Channel'
+ref table Region
+ref table 'Display Currency'
+ref table Customer
+ref table 'Product Class'
+ref table 'Selling Status - Invoice'
+ref table 'Selling Status - Order Entry'
+ref table 'Account Details'
+ref table Size
+ref table Warehouse
+ref table 'Adjustments CoGS'
+ref table 'Adjustments Sales'
+ref table 'Exchange Rates'
+ref table 'Purchase Orders'
+ref table 'Order Type'
+ref table 'Ecom Email Marketing'
+ref table Products
+ref table Time
+ref table Date
+ref table 'Date - Order Date'
+ref table 'Date Slicer'
+ref table 'Google Analytics Ads'
+ref table 'Google Analytics'
+ref table 'Google Analytics Goals'
+ref table 'GA Country'
+ref table 'Website Name'
+ref table 'Open eCom Return Info'
+ref table 'Product Weights'
+ref table 'Web Channel'
+ref table 'Web Device'
+ref table Website
+ref table BridgeSalesOrderNumber
+ref table 'Size Classification'
+ref table SmartRes
+ref table Availability
+ref table Footfall
+ref table 'Forecast Version'
+ref table 'Refit Slicer'
+ref table Channel
+ref table Territory
+ref table 'Seasonal Product Info'
+ref table 'Forecast Additional Ecom'
+ref table 'Forecast Ecom Demand'
+ref table TMALL
+ref table 'Model Refresh Time'
+ref table Metrics
+ref table 'Net Transactions'
+
+ref role Admin
+ref role 'NA Users'
+ref role 'NA Users - Global'
+ref role 'EMEA Retail Stores'
+ref role 'JP Users'
+ref role 'AsiaPac Users'
+ref role 'HK Users'
+ref role 'EMEA Users'
+ref role 'EMEA Users - Global'
+ref role 'CN Users'
+ref role 'HK Users - Global'
+ref role 'JP Users - Global'
+

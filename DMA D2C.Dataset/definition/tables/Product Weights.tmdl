@@ -1,0 +1,75 @@
+table 'Product Weights'
+	isHidden
+	lineageTag: fb0b26a8-dcf2-4f9a-be34-4b3d5cab5f54
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: e2682f78-29e4-4214-8cdf-fb33996e0e3f
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net Weight'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(18, 3)
+		lineageTag: 0435d697-879e-4421-a12d-4c0f0770e1bf
+		summarizeBy: none
+		sourceColumn: Net Weight
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pack Weight'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(6, 3)
+		lineageTag: 16e98fcf-38b7-4865-b0c4-423f779d107f
+		summarizeBy: none
+		sourceColumn: Pack Weight
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 282da72c-9abd-405b-a539-eea16a019201
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Product Weights-26130b73-d966-42e5-901b-0e6edbb81e67' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_PPM_FACT_PRODUCT_WEIGHTS_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_PPM_FACT_PRODUCT_WEIGHTS",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_PPM_FACT_PRODUCT_WEIGHTS_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
