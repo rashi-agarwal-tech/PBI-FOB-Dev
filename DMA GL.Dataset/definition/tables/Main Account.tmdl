@@ -1,0 +1,222 @@
+table 'Main Account'
+	lineageTag: d97b497f-52f6-43a0-8463-84a99b18069a
+
+	column MainAccount_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 26025ad0-2877-4e81-8b3d-bb931a93af29
+		summarizeBy: none
+		sourceColumn: MainAccount_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Main Account Category'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f11d0ab1-0865-4e5b-8c3f-25b4c56d4f82
+		summarizeBy: none
+		sourceColumn: Main Account Category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Default Currency'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 71da406d-b700-40dc-8f10-ad371bfdb947
+		summarizeBy: none
+		sourceColumn: Default Currency
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Debit / Credit Default '
+		dataType: double
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 83033f33-a858-4bd8-acc3-7c86511e87de
+		summarizeBy: none
+		sourceColumn: "Debit / Credit Default "
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column 'Chart of Accounts Rec ID'
+		dataType: double
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 8754ab74-abaf-4ba7-aca9-82406783f62b
+		summarizeBy: none
+		sourceColumn: Chart of Accounts Rec ID
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column 'Main Account'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b6e9a8e5-f225-41b2-843a-ad24f35cc3d9
+		summarizeBy: none
+		sourceColumn: Main Account
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Main Account Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 23b48f0f-067a-4226-bf2e-2ba63b4482ad
+		summarizeBy: none
+		sourceColumn: Main Account Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Chart of Accounts'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 05066c89-2bd3-45b8-9826-713acab7a0af
+		summarizeBy: none
+		sourceColumn: Chart of Accounts
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Reporting Exchange Rate Type '
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6002822b-086d-4593-8a1a-c29ea999a42e
+		summarizeBy: none
+		sourceColumn: "Financial Reporting Exchange Rate Type "
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Do Not Allow Manual Entry'
+		dataType: double
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 5609dd28-748b-433d-8663-e1851ea4bf56
+		summarizeBy: none
+		sourceColumn: Do Not Allow Manual Entry
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column 'Is Suspended?'
+		dataType: double
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 0af80a19-f3c5-4906-b5ea-f2af704a2749
+		summarizeBy: none
+		sourceColumn: Is Suspended?
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column 'Main Account Rec ID'
+		dataType: double
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: d70b8053-2f49-493c-aacc-06df33148c54
+		summarizeBy: none
+		sourceColumn: Main Account Rec ID
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column 'Main Account Category Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: cfd0a963-920e-4253-a960-3193e8173778
+		summarizeBy: none
+		sourceColumn: Main Account Category Description
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Balance Sheet / P&L'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f4f8bbed-3a82-4c82-8bb2-fb74214429ab
+		summarizeBy: none
+		sourceColumn: Balance Sheet / P&L
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Type 1'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b1c49d11-b6b5-434a-b02a-676f68997c54
+		summarizeBy: none
+		sourceColumn: Cost Type 1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Type 2'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: fcbad1d8-72c4-4df9-acaa-9da07a5391ef
+		summarizeBy: none
+		sourceColumn: Cost Type 2
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Report Type'
+		dataType: double
+		lineageTag: c0a7cb30-7c05-41fa-b1d8-84b75fe21ee0
+		summarizeBy: sum
+		sourceColumn: Report Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Main Account-29add3da-cc81-4fe6-93cc-4cae45e7c02c' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_BFN_D365DIMMAINACCOUNT_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365DIMMAINACCOUNT",Kind="View"]}[Data]
+				in
+				    VW_BFN_D365DIMMAINACCOUNT_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

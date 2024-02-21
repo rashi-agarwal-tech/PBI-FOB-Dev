@@ -1,0 +1,66 @@
+table Vendor
+	lineageTag: b3a4ff4d-5842-4d2b-903f-0c74e76cb8cb
+
+	column Vendor_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 6e1ab532-e19d-41e1-b119-9ba93e699d74
+		summarizeBy: none
+		sourceColumn: Vendor_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vendor
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 630e301f-0300-4a57-927c-79c4ce27f79d
+		summarizeBy: none
+		sourceColumn: Vendor
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Currency Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 1566d5db-3200-48be-b532-f1bac174ffe9
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Group ID'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: afeaf46a-c4c2-4812-bd14-5f2402fc42b4
+		summarizeBy: none
+		sourceColumn: Vendor Group ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 67a17d64-7917-4c6f-87a5-cec7342f5ea8
+		summarizeBy: none
+		sourceColumn: Vendor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Vendor-df0d339e-cd3e-44b8-bdcd-20f505fcbfb7 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_BFN_D365DIMVENDOR_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365DIMVENDOR",Kind="View"]}[Data]
+				in
+				    VW_BFN_D365DIMVENDOR_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

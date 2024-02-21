@@ -1,0 +1,147 @@
+table Budget
+	isHidden
+	lineageTag: 7d066b26-d98f-4313-a4b0-4e01f7fd2955
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 99b6ed83-f4d7-4337-9625-839b24ba8a0c
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Channel_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 035526e7-bed6-475a-ad8c-da883334ca6c
+		summarizeBy: none
+		sourceColumn: Channel_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CostCentre_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 35edc600-48c1-4173-bee2-c792ed5da180
+		summarizeBy: none
+		sourceColumn: CostCentre_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MainAccount_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 60431344-da6b-42d5-a205-a9b311eb6af8
+		summarizeBy: none
+		sourceColumn: MainAccount_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 84015925-c214-4996-975e-fe8d8abb69ff
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AMOUNT_CONS_GBP
+		dataType: double
+		isHidden
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		sourceProviderType: decimal(38, 12)
+		lineageTag: 33632cbd-c663-48d2-b2b6-54b285dba4d0
+		summarizeBy: none
+		sourceColumn: AMOUNT_CONS_GBP
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column AMOUNT_TRANS
+		dataType: double
+		isHidden
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		sourceProviderType: decimal(33, 6)
+		lineageTag: 16c5aeb4-eaaa-4e2a-b5b2-e03cd13d67be
+		summarizeBy: none
+		sourceColumn: AMOUNT_TRANS
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column Analysis_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: aa4ad37a-3197-404f-9698-a2cbd829bfcd
+		summarizeBy: none
+		sourceColumn: Analysis_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 75f0cc3f-5fd5-4dab-b7b3-8f6fd370c333
+		summarizeBy: none
+		sourceColumn: Country_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Budget Model ID'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 15b96a4a-7b54-4b28-a649-cc293f32d1a7
+		summarizeBy: none
+		sourceColumn: Budget Model ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Budget-11522050-407c-4f3f-a6e0-d641739dd3ad = m
+		mode: directQuery
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_BFN_BUDGETREGISTERENTRYSTAGING_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365BUDGETREGISTERENTRY",Kind="View"]}[Data]
+				in
+				    VW_BFN_BUDGETREGISTERENTRYSTAGING_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,36 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Datasource_Server","Datasource_Warehouse","Datasource_Database","Datasource_Schema","Budget","Channel","Analysis","Region","Cost Centre","Country","Main Account","Retail Store","General Ledger Fact","Comparatives","Metrics","Vendor","Selling Status","Date"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.126.927.0 (24.02)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Budget
+ref table Channel
+ref table Analysis
+ref table Region
+ref table 'Cost Centre'
+ref table Country
+ref table 'Main Account'
+ref table 'Retail Store'
+ref table 'General Ledger Fact'
+ref table Comparatives
+ref table Metrics
+ref table DateTableTemplate_819c5eb5-ea1e-4aac-88dc-1b9a8bddc486
+ref table Vendor
+ref table 'Selling Status'
+ref table Date
+ref table LocalDateTable_15a61531-2f83-4334-b812-b54509bc2adf
+ref table LocalDateTable_559773a9-e646-4489-943f-6cbbf73e6eaa
+ref table LocalDateTable_efc13eb0-0bc3-4ab7-a1d8-efca5d1e47ec
+ref table LocalDateTable_920ba5b5-af16-4bf5-b770-8c43525fb3e6
+

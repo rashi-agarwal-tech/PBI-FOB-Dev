@@ -1,0 +1,48 @@
+table 'Selling Status'
+	lineageTag: 4beb414a-15ae-490a-89be-24a423d05417
+
+	column SellingStatus_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: da049b9b-dce4-4462-8ce5-c8c71cbaa395
+		summarizeBy: none
+		sourceColumn: SellingStatus_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 89b896fd-402e-4938-96bf-510bf084e43d
+		summarizeBy: none
+		sourceColumn: Selling Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6b96de5c-afb0-4567-93c5-5ff5577b67ab
+		summarizeBy: none
+		sourceColumn: Selling Status Description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Selling Status-050209df-8ddc-414f-975e-7421200a7c38' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_BFN_D365DIMSELLINGSTATUS_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365DIMSELLINGSTATUS",Kind="View"]}[Data]
+				in
+				    VW_BFN_D365DIMSELLINGSTATUS_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

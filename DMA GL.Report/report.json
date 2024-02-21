@@ -1,0 +1,105 @@
+{
+  "config": "{\"version\":\"5.43\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY23SU04\",\"version\":\"5.43\",\"type\":2},\"customTheme\":{\"name\":\"AccessibleCityPark\",\"version\":\"5.43\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"exportDataMode\":1,\"pauseQueries\":false},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "ReportSection6d355c294c39ac5d7455",
+      "config": "{}",
+      "name": "Pod",
+      "parameters": "[{\"name\":\"Param_Filter4e4d29498dfd767b1b6e\",\"boundFilter\":\"Filter4e4d29498dfd767b1b6e\",\"fieldExpr\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Metrics\"}},\"Property\":\"Amount (Actual) US LFYP\"}}}]",
+      "type": 1
+    }
+  ],
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "AccessibleCityPark",
+            "path": "BuiltInThemes/AccessibleCityPark.json",
+            "type": 201
+          },
+          {
+            "name": "CY23SU04",
+            "path": "BaseThemes/CY23SU04.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"Filter4e4d29498dfd767b1b6e\",\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Metrics\"}},\"Property\":\"Amount (Actual) US LFYP\"}},\"type\":\"Categorical\",\"howCreated\":5}]",
+      "height": 720.00,
+      "name": "ReportSection6d355c294c39ac5d7455",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"82a30a84b70c50348a5c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":570,\"width\":280,\"height\":150,\"z\":3000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 150.00,
+          "width": 280.00,
+          "x": 10.00,
+          "y": 570.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"aaf9483bed8420162640\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"width\":280,\"height\":280,\"z\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 10.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"b00d1896a1194f4d9582\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"width\":100,\"height\":40,\"z\":2000}}],\"singleVisual\":{\"visualType\":\"actionButton\",\"drillFilterOtherVisuals\":true,\"objects\":{\"icon\":[{\"properties\":{\"shapeType\":{\"expr\":{\"Literal\":{\"Value\":\"'back'\"}}}},\"selector\":{\"id\":\"default\"}}]},\"vcObjects\":{\"visualLink\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"type\":{\"expr\":{\"Literal\":{\"Value\":\"'Back'\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 100.00,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"de1761a5f89b30e799a9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":290,\"width\":280,\"height\":280,\"z\":1000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Metrics.Amount (Actual) US LFYP\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Metrics\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Amount (Actual) US LFYP\"},\"Name\":\"Metrics.Amount (Actual) US LFYP\",\"NativeReferenceName\":\"Amount (Actual) US LFYP\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 10.00,
+          "y": 290.00,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 3",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSectiondaa08b03d66cae7fef65",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"c3dbd73d4471d2fb1a2b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":19.631901840490798,\"y\":219.87730061349694,\"z\":0,\"width\":1148.4662576687117,\"height\":280.08179959100204}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Values\":[{\"queryRef\":\"Metrics.Amount (Actual)\"},{\"queryRef\":\"Metrics.Amount (GBC Constant)\"},{\"queryRef\":\"Metrics.Amount (Local)\"},{\"queryRef\":\"Metrics.Amount (Transaction)\"},{\"queryRef\":\"Metrics.Budget (GBC Constant)\"},{\"queryRef\":\"Metrics.Budget (Local)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Metrics\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Amount (Actual)\"},\"Name\":\"Metrics.Amount (Actual)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Amount (GBC Constant)\"},\"Name\":\"Metrics.Amount (GBC Constant)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Amount (Transaction)\"},\"Name\":\"Metrics.Amount (Transaction)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Budget (GBC Constant)\"},\"Name\":\"Metrics.Budget (GBC Constant)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Budget (Local)\"},\"Name\":\"Metrics.Budget (Local)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Amount (Local)\"},\"Name\":\"Metrics.Amount (Local)\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 280.08,
+          "width": 1148.47,
+          "x": 19.63,
+          "y": 219.88,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ],
+  "theme": "AccessibleCityPark"
+}

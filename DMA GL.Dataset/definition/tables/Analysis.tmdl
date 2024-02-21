@@ -1,0 +1,52 @@
+table Analysis
+	lineageTag: b46d9e77-dd42-4905-9da5-8e82cd33d950
+
+	column Analysis_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: cde9aabb-45ce-4161-b081-2e71b3677bfd
+		summarizeBy: none
+		sourceColumn: Analysis_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Analysis
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: be3418de-bc96-43c4-898d-1b9cc89800c3
+		summarizeBy: none
+		sourceColumn: Analysis
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Analysis Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 16e13490-c165-489d-87d3-f29f1cd1ad02
+		summarizeBy: none
+		sourceColumn: Analysis Description
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Analysis-db1408fc-3586-4937-8218-86ff588a1370 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_BFN_D365DIMANALYSIS_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365DIMANALYSIS",Kind="View"]}[Data]
+				in
+				    VW_BFN_D365DIMANALYSIS_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

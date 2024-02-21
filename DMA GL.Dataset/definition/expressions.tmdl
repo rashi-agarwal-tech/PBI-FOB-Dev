@@ -1,0 +1,23 @@
+/// Snowflake Setup
+expression Datasource_Server = "drmartensprod.west-europe.azure.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 2105f1cf-f482-48cb-b78c-b5627cbd23eb
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression Datasource_Warehouse = "REPORTER" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 533beccf-97ba-4569-9e6f-0f59d32e995e
+
+	annotation PBI_ResultType = Text
+
+expression Datasource_Database = "PRESENTATION" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: a188bce8-ff5e-4332-92f3-43c7e1b01e4c
+
+	annotation PBI_ResultType = Text
+
+expression Datasource_Schema = "BFN_PRESENTATION" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: b11b062e-5919-4a39-9ba0-b4a12d0ade1f
+
+	annotation PBI_ResultType = Text
+
