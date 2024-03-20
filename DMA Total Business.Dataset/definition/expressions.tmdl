@@ -1,4 +1,4 @@
-expression NumberOfRows = 1000 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
+expression NumberOfRows = 0 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
 	lineageTag: e5983265-e67c-4c38-ad9a-ce13ad1a6b57
 	queryGroup: Parameters
 
@@ -7,7 +7,7 @@ expression NumberOfRows = 1000 meta [IsParameterQuery=true, Type="Number", IsPar
 	annotation PBI_ResultType = Number
 
 /// Snowflake Setup
-expression Datasource_Server = "drmartensprod.west-europe.azure.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression Datasource_Server = "drmartensdev.west-europe.azure.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: b88fdd43-9591-484b-88e0-0d19ee51b2a4
 	queryGroup: Parameters
 

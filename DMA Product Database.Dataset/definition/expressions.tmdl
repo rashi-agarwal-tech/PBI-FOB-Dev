@@ -1,5 +1,5 @@
 /// Parameter to limit the number of rows when developing, should be set to 0 in the service as this will incliude all rows.
-expression NumberOfRows = 1 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
+expression NumberOfRows = 0 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
 	lineageTag: ff0d8d1f-85d3-4679-94ec-0cf0ff824a55
 	queryGroup: Parameters
 
@@ -8,7 +8,7 @@ expression NumberOfRows = 1 meta [IsParameterQuery=true, Type="Number", IsParame
 	annotation PBI_ResultType = Number
 
 /// Snowflake Setup
-expression Datasource_Server = "drmartensprod.west-europe.azure.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression Datasource_Server = "drmartensdev.west-europe.azure.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 85854f0e-4560-4407-a46b-122f005aeece
 	queryGroup: Parameters
 

@@ -2392,19 +2392,70 @@ table Orders
 
 		annotation SummarizationSetBy = Automatic
 
-	partition Orders-e76190d4-14ef-467e-b5ad-e5b189c314bf = m
+	partition FY2021 = m
 		mode: import
-		source = ```
+		dataView: full
+		source =
 				let
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
-				    #"Kept First Rows" = Table.FirstN(D2C_BFN_VW_D365_FACT_SALES_View,NumberOfRows),
-				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else D2C_BFN_VW_D365_FACT_SALES_View 
+				    InvoiceDateSIL_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [INVOICEDATE_SIL] >= #datetime(2024, 4, 1,0,0,0) and [INVOICEDATE_SIL] < #datetime(2025, 4, 1,0,0,0))
 				in
-				    ParameterFilter
-				```
+				    InvoiceDateSIL_Filter
+
+	partition FY2024 = m
+		mode: import
+		dataView: full
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+				    InvoiceDateSIL_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [INVOICEDATE_SIL] >= #datetime(2023, 4, 1,0,0,0) and [INVOICEDATE_SIL] < #datetime(2024, 4, 1,0,0,0))
+				in
+				    InvoiceDateSIL_Filter
+
+	partition FY2023 = m
+		mode: import
+		dataView: full
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+				    InvoiceDateSIL_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [INVOICEDATE_SIL] >= #datetime(2022, 4, 1,0,0,0) and [INVOICEDATE_SIL] < #datetime(2023, 4, 1,0,0,0))
+				in
+				    InvoiceDateSIL_Filter
+
+	partition FY2022 = m
+		mode: import
+		dataView: full
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+				    InvoiceDateSIL_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [INVOICEDATE_SIL] >= #datetime(2021, 4, 1,0,0,0) and [INVOICEDATE_SIL] < #datetime(2022, 4, 1,0,0,0))
+				in
+				    InvoiceDateSIL_Filter
+
+	partition FY2025 = m
+		mode: import
+		dataView: full
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+				    InvoiceDateSIL_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [INVOICEDATE_SIL] >= #datetime(2024, 4, 1,0,0,0) and [INVOICEDATE_SIL] < #datetime(2025, 4, 1,0,0,0))
+				in
+				    InvoiceDateSIL_Filter
 
 	annotation PBI_ResultType = Table
 

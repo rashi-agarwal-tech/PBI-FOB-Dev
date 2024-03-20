@@ -1,4 +1,4 @@
-expression NumberOfRows = 1 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
+expression NumberOfRows = 0 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
 	lineageTag: e884e3a3-b1d0-47b5-b1c2-05e6238c7cd5
 	queryGroup: Parameters
 
@@ -56,7 +56,7 @@ expression Datasource_Schema = "BFN_PRESENTATION" meta [IsParameterQuery=true, T
 	annotation PBI_ResultType = Text
 
 /// Snowflake Setup
-expression Orders_View = "D2C_BFN_VW_D365_FACT_SALES" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression Orders_View = "D2C_BFN_VW_D365_FACT_SALES_CALC" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 99d30e0e-c10b-4b9f-ae2a-14d046fd8b65
 	queryGroup: Parameters
 
