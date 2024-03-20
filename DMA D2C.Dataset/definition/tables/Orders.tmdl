@@ -324,7 +324,8 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column Goodwill?
-		dataType: string
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
 		displayFolder: 1. Retail Details\Transaction Types
 		lineageTag: 3599ff72-6a7d-447d-b621-fbfa95ac887e
 		summarizeBy: none
@@ -333,7 +334,8 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'Display Order?'
-		dataType: string
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
 		displayFolder: 1. Retail Details\Transaction Types
 		lineageTag: 4f9c2813-7c2a-4731-a085-b83f8e7888df
 		summarizeBy: none
@@ -342,7 +344,8 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'Employee Discount?'
-		dataType: string
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
 		displayFolder: 1. Retail Details\Transaction Types
 		lineageTag: 53c03912-9a06-4af6-b091-2e305973302a
 		summarizeBy: none
@@ -351,7 +354,8 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column Marketing?
-		dataType: string
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
 		displayFolder: 1. Retail Details\Transaction Types
 		lineageTag: fd734e9f-3d78-41a3-8465-a306fe5c654e
 		summarizeBy: none
@@ -360,7 +364,8 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'Staff Uniform?'
-		dataType: string
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
 		displayFolder: 1. Retail Details\Transaction Types
 		lineageTag: b8f8a4a4-b36a-4b51-afd0-6476d9859c67
 		summarizeBy: none
@@ -472,7 +477,8 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'Student Discount?'
-		dataType: string
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
 		displayFolder: 1. Retail Details\Transaction Types
 		lineageTag: 9c6846c5-05d4-4f50-b9e1-05256c6e4e20
 		summarizeBy: none
@@ -665,7 +671,8 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'Marketing Promo'
-		dataType: string
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
 		displayFolder: 1. Retail Details\Transaction Types
 		lineageTag: c2fde59c-1a7e-4023-a434-20dc6a80d480
 		summarizeBy: none
@@ -874,7 +881,8 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'Digital Doc Shop Transaction?'
-		dataType: string
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
 		displayFolder: 1. Retail Details
 		lineageTag: 15259b00-3228-4ecd-97fe-e2474c382297
 		summarizeBy: none
@@ -986,7 +994,8 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'Is Revenue Affecting?'
-		dataType: string
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: a5639b9f-bdd7-4c6b-8ae5-e0bcd46e43d9
 		summarizeBy: none
 		sourceColumn: Is Revenue Affecting?
@@ -1165,7 +1174,8 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'eCom New/Returning?'
-		dataType: string
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
 		displayFolder: 2. eCom Details
 		lineageTag: 61457809-4796-4fbd-8573-847be575b251
 		summarizeBy: none
@@ -1185,8 +1195,6 @@ table Orders
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
 
 	column 'Region Sub Channel'
 		dataType: string
@@ -2158,11 +2166,9 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'Digital Doc Shop' = IF ( Orders[Digital Doc Shop Transaction?] = "Yes", "DDS", "Store" )
-		dataType: string
 		displayFolder: 1. Retail Details
 		lineageTag: 3740d52b-fc1f-49e5-99a8-015c7eca7b2f
 		summarizeBy: none
-		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2355,7 +2361,8 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column HDMSALESPRICELINEPERCENTOVERRIDE
-		dataType: string
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: 5f117573-4943-40d0-8c1f-5b070478628b
 		summarizeBy: none
 		sourceColumn: HDMSALESPRICELINEPERCENTOVERRIDE
@@ -2377,25 +2384,13 @@ table Orders
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column HDMSALESPRICEMANUALOVERRIDE
-		dataType: string
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
 		lineageTag: 74ffaa3c-a97f-4d32-a27b-d407015f07c4
 		summarizeBy: none
 		sourceColumn: HDMSALESPRICEMANUALOVERRIDE
 
 		annotation SummarizationSetBy = Automatic
-
-	column 'Invoiced COGs Col'
-		dataType: double
-		isHidden
-		lineageTag: 4592a5d4-b2bd-4bac-89b7-e73cae21fd1d
-		summarizeBy: sum
-		sourceColumn: Invoiced COGs Col
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition Orders-e76190d4-14ef-467e-b5ad-e5b189c314bf = m
 		mode: import
@@ -2404,7 +2399,7 @@ table Orders
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_SALES_CALC",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
 				    #"Kept First Rows" = Table.FirstN(D2C_BFN_VW_D365_FACT_SALES_View,NumberOfRows),
 				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else D2C_BFN_VW_D365_FACT_SALES_View 
 				in

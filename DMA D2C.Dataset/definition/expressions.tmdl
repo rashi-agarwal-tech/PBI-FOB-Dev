@@ -55,3 +55,12 @@ expression Datasource_Schema = "BFN_PRESENTATION" meta [IsParameterQuery=true, T
 
 	annotation PBI_ResultType = Text
 
+/// Snowflake Setup
+expression Orders_View = "D2C_BFN_VW_D365_FACT_SALES" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 99d30e0e-c10b-4b9f-ae2a-14d046fd8b65
+	queryGroup: Parameters
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
