@@ -23,7 +23,7 @@ expression RangeEnd = #date(2023, 1, 1) meta [IsParameterQuery=true, Type="Date"
 	annotation PBI_ResultType = Date
 
 /// Snowflake Setup
-expression Datasource_Server = "drmartensprod.west-europe.azure.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression Datasource_Server = "drmartensdev.west-europe.azure.snowflakecomputing.com" meta [IsParameterQuery=true, List={"drmartensdev.west-europe.azure.snowflakecomputing.com", "drmartensuat.west-europe.azure.snowflakecomputing.com", "drmartensprod.west-europe.azure.snowflakecomputing.com"}, DefaultValue="drmartensdev.west-europe.azure.snowflakecomputing.com", Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 8854d207-ef02-4a06-a910-d997a78826e9
 	queryGroup: Parameters
 

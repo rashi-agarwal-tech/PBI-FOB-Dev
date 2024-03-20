@@ -164,14 +164,12 @@ table Products
 		annotation SummarizationSetBy = Automatic
 
 	column 'Company ID'
-		dataType: double
+		dataType: string
 		lineageTag: b7f5b1e8-216d-47fb-81cf-e757d903ac46
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: Company ID
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Product Sub-Type'
 		dataType: string
@@ -594,7 +592,7 @@ table Products
 				in
 				    #"ReplaceValueTrue"
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 
 	annotation PBI_NavigationStepName = Navigation
 
