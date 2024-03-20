@@ -1736,28 +1736,6 @@ table Orders
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Invoiced COGs Col' =
-			IF (
-			    AND (
-			        ISBLANK ( Orders[RETURNEDSALESQUANTITY_ROL_ZEROS] ),
-			        Orders[INVOICEDQUANTITY_SIL] > 0
-			    ),
-			    ROUND ( Orders[COSTAMOUNTPOSTED_SILCS], 2 ) * -1,
-			    BLANK ()
-			)
-		dataType: double
-		isHidden
-		displayFolder: zz_Values
-		lineageTag: 484d96e9-b465-4a68-8f8c-173151ca7ea9
-		summarizeBy: sum
-		isDataTypeInferred
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Invoiced Discounts Col Cons GBP' =
 			IF (
 			    Orders[Invoiced Units Col] > 0,
@@ -2406,6 +2384,19 @@ table Orders
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Invoiced COGs Col'
+		dataType: double
+		isHidden
+		lineageTag: 4592a5d4-b2bd-4bac-89b7-e73cae21fd1d
+		summarizeBy: sum
+		sourceColumn: Invoiced COGs Col
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition Orders-e76190d4-14ef-467e-b5ad-e5b189c314bf = m
 		mode: import
 		source = ```
@@ -2413,26 +2404,14 @@ table Orders
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_SALES",Kind="View"]}[Data],
-				    //#"Removed Other Columns" = Table.SelectColumns(D2C_BFN_VW_D365_FACT_SALES_View,{"Date_Key", "Product_Key", "Product_Class_Key", "Size_Key", "Warehouse_Key", "Company_Key", "SalesOrderPool_Key", "Customer_Key", "Time_Key", "Territory_Key", "SALESORDERNUMBER_SOH", "CUSTOMERSORDERREFERENCE_SOH", "DELIVERYMODECODE_SOH", "AREPRICESINCLUDINGSALESTAX_SOH", "CUSTOMERPAYMENTMETHODNAME_SOH", "SALESORDERPOOLID_SOH", "ORDERTAKERPERSONNELNUMBER_SOH", "DELIVERYADDRESSCOUNTRYREGIONID_SOH", "DELIVERYADDRESSSTATEID_SOL", "DELIVERYADDRESSCITY_SOL", "DELIVERYADDRESSSTREET_SOL", "DELIVERYADDRESSZIPCODE_SOH", "CancelRiskDate", "EMAIL_ROH", "EMAIL_ROH_HASH", "ITEMNUMBER_SOL_ROL", "REQUESTEDSHIPPINGDATE_SOL", "SHIPPINGWAREHOUSEID_SOL", "LINENUM_SOL", "REMAININVENTPHYSICAL_SOL", "REMAININVENTPHYSICAL_SOL_ZEROS", "DELIVERYADDRESSDESCRIPTION_SOL", "RMANUMBER_ROL", "RETURNSALESQUANTITY_ROL_ZEROS", "RETURNDISPOSITIONCODE_ROL", "RETURNEDSALESQUANTITY_ROL_ZEROS", "INVOICEDQUANTITY_SIL", "INVOICEDATE_SIL", "CURRENCYCODE_SOH_ROH", "LINEAMOUNT_SOL_CONS_GBP", "LINEAMOUNT_SIL_CONS_GBP", "COSTAMOUNTPOSTED_SILCS", "INVOICENUMBER_SIH", "INVOICECUSTOMERACCOUNTNUMBER_SIH", "CHARGEDESCRIPTION_SILCHS", "Hybris_InvoiceNumber", "Hybris_PromoCode", "Hybris_WebSiteCode", "Hybris_OrderDateTime", "Hybris_AffiliateID", "BARCODE", "SELLINGSTATUS", "SELLINGSTATUS_OrderEntry", "DDS", "Source", "TransactionType", "TransactionStatus", "LINESTATUS_SOL_ROL", "INVENTORYLOTID_SOL_ROL", "Discount", "HeaderDiscount_CONS_GBP", "LineDiscount_CONS_GBP", "ChargeTotalExcTax_CONS_GBP", "Tax_CONS_GBP", "StudentDiscount", "Goodwill", "Display", "Employee", "Marketing", "MarketingPromo", "StaffUniform", "SALESASSOCIATE", "SO_PO_ID", "FinancialAnalysis", "FinancialChannel", "FinancialCostCentre", "FinancialCountry", "FinancialSellingStatus", "RETURNREASONS_ECOMDESC", "FullPriceorClearance", "FullPriceorClearanceSort", "ORDEREDSALESQUANTITY_SOL", "ORDEREDSALESQUANTITY_SOL_ZEROS", "EcomMultipleSizeOrderFlag", "PromotionType", "RETAILRETURNREASON", "HDMSALESSEASONCODE", "UnitPrice_CONS_GBP", "isCarrierBag", "HDMSALESPRICELINEPERCENTOVERRIDE", "HDMSALESPRICEMANUALOVERRIDE", "DELIVERYDATE_SOL", "CompanyProductSize_Key", "IsNewEcomCustomer", "DELIVERYADDRESSREGION", "isHistorical", "isRevenue", "HDMCANCELREASONDATE_SOL", "HDMCANCELREASONUSERNAME_SOL", "DaysSinceLastEcomOrder", "EcomOrderFrequency", "ReturnReason", "CancellationReasonCode", "CancellationReasonDescription", "CUSTOMERREQUISITIONNUMBER_SOH", "RetailFaultyReturnsInformation", "SALESORDERCREATEDDATETIME_SOH", "RegionSubChannel", "CHARGECODE"}),
-				    //#"Removed Other Columns" = Table.SelectColumns(D2C_BFN_VW_D365_FACT_SALES_View,{"INVOICEDQUANTITY_SIL","LineDiscount_CONS_GBP","RETURNSALESQUANTITY_ROL_ZEROS","Tax_CONS_GBP","REMAININVENTPHYSICAL_SOL","LINESTATUS_SOL_ROL","Date_Key","RETURNDISPOSITIONCODE_ROL","Source","REMAININVENTPHYSICAL_SOL_ZEROS","SalesOrderPool_Key","HeaderDiscount_CONS_GBP","Customer_Key","Company_Key","ChargeTotalExcTax_CONS_GBP","INVENTORYLOTID_SOL_ROL","AREPRICESINCLUDINGSALESTAX_SOH","EcomMultipleSizeOrderFlag","ITEMNUMBER_SOL_ROL","HDMSALESPRICELINEPERCENTOVERRIDE","Product_Class_Key","DELIVERYDATE_SOL","isCarrierBag","ORDEREDSALESQUANTITY_SOL","DELIVERYADDRESSDESCRIPTION_SOL","Time_Key","ORDEREDSALESQUANTITY_SOL_ZEROS","CURRENCYCODE_SOH_ROH","REQUESTEDSHIPPINGDATE_SOL","isHistorical","SO_PO_ID","LINEAMOUNT_SOL_CONS_GBP","Size_Key","RETURNEDSALESQUANTITY_ROL_ZEROS","Product_Key","INVOICEDATE_SIL","Territory_Key","Discount","COSTAMOUNTPOSTED_SILCS","SALESORDERCREATEDDATETIME_SOH","INVOICECUSTOMERACCOUNTNUMBER_SIH","LINEAMOUNT_SIL_CONS_GBP","Warehouse_Key","CompanyProductSize_Key","SALESORDERPOOLID_SOH"}),
-				    //#"Filtered Rows"      = Table.SelectRows(#"Removed Other Columns", each List.Contains({"101", "102"},[FinancialChannel]) and List.Contains({1,2,3},[isHistorical]) and [Date_Key] >= Filter3Years),
-				
-				    //#"ReplaceValueNull1"  = Table.ReplaceValue(#"Filtered Rows"      , null  , "No" , Replacer.ReplaceValue,{"Student Discount?", "Goodwill?", "Display Order?", "Employee Discount?", "Marketing?", "Marketing Promo", "Staff Uniform?", "Digital Doc Shop Transaction?", "HDMSALESPRICELINEPERCENTOVERRIDE", "HDMSALESPRICEMANUALOVERRIDE", "Is Revenue Affecting?"}),
-				    #"ReplaceValueNull1"  = Table.ReplaceValue(D2C_BFN_VW_D365_FACT_SALES_View      , null  , "No" , Replacer.ReplaceValue,{"Student Discount?", "Goodwill?", "Display Order?", "Employee Discount?", "Marketing?", "Marketing Promo", "Staff Uniform?", "Digital Doc Shop Transaction?", "HDMSALESPRICELINEPERCENTOVERRIDE", "HDMSALESPRICEMANUALOVERRIDE", "Is Revenue Affecting?"}),
-				    #"ReplaceValueFalse"  = Table.ReplaceValue(#"ReplaceValueNull1"  , false , "No" , Replacer.ReplaceValue,{"Student Discount?", "Goodwill?", "Display Order?", "Employee Discount?", "Marketing?", "Marketing Promo", "Staff Uniform?", "Digital Doc Shop Transaction?", "HDMSALESPRICELINEPERCENTOVERRIDE", "HDMSALESPRICEMANUALOVERRIDE", "Is Revenue Affecting?"}),
-				    #"ReplaceValueTrue"   = Table.ReplaceValue(#"ReplaceValueFalse"  , true  , "Yes", Replacer.ReplaceValue,{"Student Discount?", "Goodwill?", "Display Order?", "Employee Discount?", "Marketing?", "Marketing Promo", "Staff Uniform?", "Digital Doc Shop Transaction?", "HDMSALESPRICELINEPERCENTOVERRIDE", "HDMSALESPRICEMANUALOVERRIDE", "Is Revenue Affecting?"}),
-				
-				    #"ReplaceValueNull2"        = Table.ReplaceValue(#"ReplaceValueTrue"     , null  , "Returning"  , Replacer.ReplaceValue,{"eCom New/Returning?"}),
-				    #"ReplaceValueReturning"    = Table.ReplaceValue(#"ReplaceValueNull2"    , false , "Returning"  , Replacer.ReplaceValue,{"eCom New/Returning?"}),
-				    #"ReplaceValueNew"          = Table.ReplaceValue(#"ReplaceValueReturning", true  , "New"        , Replacer.ReplaceValue,{"eCom New/Returning?"}),
-				    
-				    #"ReplaceValueDate"         = Table.TransformColumnTypes(ReplaceValueReturning,{{"SALESORDERCREATEDDATETIME_SOH", type date}}),
-				    #"Kept First Rows" = Table.FirstN(#"ReplaceValueDate",NumberOfRows),
-				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"ReplaceValueDate" 
+				    D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_SALES_CALC",Kind="View"]}[Data],
+				    #"Kept First Rows" = Table.FirstN(D2C_BFN_VW_D365_FACT_SALES_View,NumberOfRows),
+				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else D2C_BFN_VW_D365_FACT_SALES_View 
 				in
 				    ParameterFilter
 				```
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 
