@@ -324,52 +324,57 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column Goodwill?
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
+		dataType: string
 		displayFolder: 1. Retail Details\Transaction Types
 		lineageTag: 3599ff72-6a7d-447d-b621-fbfa95ac887e
 		summarizeBy: none
 		sourceColumn: Goodwill?
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Display Order?'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
+		dataType: string
 		displayFolder: 1. Retail Details\Transaction Types
 		lineageTag: 4f9c2813-7c2a-4731-a085-b83f8e7888df
 		summarizeBy: none
 		sourceColumn: Display Order?
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Employee Discount?'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
+		dataType: string
 		displayFolder: 1. Retail Details\Transaction Types
 		lineageTag: 53c03912-9a06-4af6-b091-2e305973302a
 		summarizeBy: none
 		sourceColumn: Employee Discount?
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 	column Marketing?
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
+		dataType: string
 		displayFolder: 1. Retail Details\Transaction Types
 		lineageTag: fd734e9f-3d78-41a3-8465-a306fe5c654e
 		summarizeBy: none
 		sourceColumn: Marketing?
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Staff Uniform?'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
+		dataType: string
 		displayFolder: 1. Retail Details\Transaction Types
 		lineageTag: b8f8a4a4-b36a-4b51-afd0-6476d9859c67
 		summarizeBy: none
 		sourceColumn: Staff Uniform?
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -477,12 +482,13 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'Student Discount?'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
+		dataType: string
 		displayFolder: 1. Retail Details\Transaction Types
 		lineageTag: 9c6846c5-05d4-4f50-b9e1-05256c6e4e20
 		summarizeBy: none
 		sourceColumn: Student Discount?
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -671,12 +677,13 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'Marketing Promo'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
+		dataType: string
 		displayFolder: 1. Retail Details\Transaction Types
 		lineageTag: c2fde59c-1a7e-4023-a434-20dc6a80d480
 		summarizeBy: none
 		sourceColumn: Marketing Promo
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -881,12 +888,13 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'Digital Doc Shop Transaction?'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
+		dataType: string
 		displayFolder: 1. Retail Details
 		lineageTag: 15259b00-3228-4ecd-97fe-e2474c382297
 		summarizeBy: none
 		sourceColumn: Digital Doc Shop Transaction?
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -994,11 +1002,12 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'Is Revenue Affecting?'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
+		dataType: string
 		lineageTag: a5639b9f-bdd7-4c6b-8ae5-e0bcd46e43d9
 		summarizeBy: none
 		sourceColumn: Is Revenue Affecting?
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1174,12 +1183,13 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'eCom New/Returning?'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
+		dataType: string
 		displayFolder: 2. eCom Details
 		lineageTag: 61457809-4796-4fbd-8573-847be575b251
 		summarizeBy: none
 		sourceColumn: eCom New/Returning?
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2166,9 +2176,11 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'Digital Doc Shop' = IF ( Orders[Digital Doc Shop Transaction?] = "Yes", "DDS", "Store" )
+		dataType: string
 		displayFolder: 1. Retail Details
 		lineageTag: 3740d52b-fc1f-49e5-99a8-015c7eca7b2f
 		summarizeBy: none
+		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2361,11 +2373,12 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column HDMSALESPRICELINEPERCENTOVERRIDE
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
+		dataType: string
 		lineageTag: 5f117573-4943-40d0-8c1f-5b070478628b
 		summarizeBy: none
 		sourceColumn: HDMSALESPRICELINEPERCENTOVERRIDE
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -2384,11 +2397,12 @@ table Orders
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column HDMSALESPRICEMANUALOVERRIDE
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
+		dataType: string
 		lineageTag: 74ffaa3c-a97f-4d32-a27b-d407015f07c4
 		summarizeBy: none
 		sourceColumn: HDMSALESPRICEMANUALOVERRIDE
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
