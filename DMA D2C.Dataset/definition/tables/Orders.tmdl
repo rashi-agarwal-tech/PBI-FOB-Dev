@@ -1206,6 +1206,8 @@ table Orders
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column 'Region Sub Channel'
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
@@ -2175,15 +2177,6 @@ table Orders
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Digital Doc Shop' = IF ( Orders[Digital Doc Shop Transaction?] = "Yes", "DDS", "Store" )
-		dataType: string
-		displayFolder: 1. Retail Details
-		lineageTag: 3740d52b-fc1f-49e5-99a8-015c7eca7b2f
-		summarizeBy: none
-		isDataTypeInferred
-
-		annotation SummarizationSetBy = Automatic
-
 	column Gender = IF(ISBLANK(RELATED('Retail Demographics'[Gender])), "Unknown", RELATED('Retail Demographics'[Gender]))
 		dataType: string
 		displayFolder: 1. Retail Details
@@ -2406,6 +2399,23 @@ table Orders
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Digital Doc Shop'
+		dataType: string
+		lineageTag: 0da190ef-6cdf-4c71-a518-334bbbff3370
+		summarizeBy: none
+		sourceColumn: Digital Doc Shop
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoiced COGs Col'
+		dataType: double
+		lineageTag: f52ee2e1-a78b-464b-a74b-81a0028f659c
+		summarizeBy: sum
+		sourceColumn: Invoiced COGs Col
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition FY2021 = m
 		mode: import
