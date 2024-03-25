@@ -1064,7 +1064,7 @@ table Metrics
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	measure 'FC Total Net Value' = SUM ( Forecast[Total Net Value] ) * [XR]
+	measure 'FC Total Net Value' = SUM ( Forecast[Total Net Value] )
 		formatString: " #,0.00"
 		isHidden
 		displayFolder: 06. Total\vs.\FC Calcs
