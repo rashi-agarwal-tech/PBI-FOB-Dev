@@ -1,0 +1,18 @@
+    partition Orders-39af9956-215a-44c3-9d0a-63347e20b3d0 = m
+    mode: import
+    source =
+            let
+                Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+                PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+                BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+                VW_BFN_D365FACTSALES_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_D365FACTSALES",Kind="View"]}[Data],
+                #"Filtered Rows1"     = Table.SelectRows(VW_BFN_D365FACTSALES_View, each List.Contains({"103", "104"},[FinancialChannel]) and [isCarrierBag] = false ),
+                #"ReplaceValueNull"  = Table.ReplaceValue(#"Filtered Rows1"    , null  , "No" , Replacer.ReplaceValue ,{"EDI Prices for Approval", "Manual Prices for Approval", "EDI Order?", "Drop Ship Order?", "VR Link Order?", "MDA Mandatory", "Label Received?", "Label Requested?", "Credit Limit Hold", "Is Revenue Affecting?"}),
+                #"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false , "No" , Replacer.ReplaceValue ,{"EDI Prices for Approval", "Manual Prices for Approval", "EDI Order?", "Drop Ship Order?", "VR Link Order?", "MDA Mandatory", "Label Received?", "Label Requested?", "Credit Limit Hold", "Is Revenue Affecting?"}),
+                #"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  , "Yes", Replacer.ReplaceValue ,{"EDI Prices for Approval", "Manual Prices for Approval", "EDI Order?", "Drop Ship Order?", "VR Link Order?", "MDA Mandatory", "Label Received?", "Label Requested?", "Credit Limit Hold", "Is Revenue Affecting?"}),
+                #"Changed Type1"     = Table.TransformColumnTypes(#"ReplaceValueTrue",{{"Order Entry Date", type date}}),
+                #"Filtered Rows2" = Table.SelectRows(#"Changed Type1", each [isHistorical] = 1 or [isHistorical] = 2 or [isHistorical] = 3),
+                #"Kept First Rows" = Table.FirstN(#"Filtered Rows2",NumberOfRows),
+                ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Filtered Rows2"
+            in
+                ParameterFilter
