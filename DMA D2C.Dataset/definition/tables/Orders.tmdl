@@ -902,7 +902,7 @@ table Orders
 		dataType: int64
 		isHidden
 		formatString: 0
-		sourceProviderType: nvarchar(16777216)
+		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Keys
 		lineageTag: f9ba0f51-a753-4abc-a90c-bb813d55592e
 		summarizeBy: none
@@ -2386,7 +2386,7 @@ table Orders
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
-				    Date_Key_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [DATE_KEY] >= 20210330 and [DATE_KEY] < 20210401)
+				    Date_Key_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [Date_Key] >= 20210330 and [Date_Key] < 20210401)
 				in
 					Date_Key_Filter
 
@@ -2399,7 +2399,7 @@ table Orders
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
-					Date_Key_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [DATE_KEY] >= 20210401 and [DATE_KEY] < 20220401)
+					Date_Key_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [Date_Key] >= 20210401 and [Date_Key] < 20220401)
 				in
 					Date_Key_Filter
 
@@ -2412,7 +2412,7 @@ table Orders
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
-					Date_Key_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [DATE_KEY] >= 20220401 and [DATE_KEY] < 20230401)
+					Date_Key_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [Date_Key] >= 20220401 and [Date_Key] < 20230401)
 				in
 					Date_Key_Filter
 	partition FY2024 = m
@@ -2424,7 +2424,7 @@ table Orders
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
-				    Date_Key_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [DATE_KEY] >= 20230401 and [DATE_KEY] < 20240401)
+				    Date_Key_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [Date_Key] >= 20230401 and [Date_Key] < 20240401)
 				in
 					Date_Key_Filter
 
@@ -2437,7 +2437,7 @@ table Orders
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
-				    Date_Key_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [DATE_KEY] >= 20240401 and [DATE_KEY] < 20250401)
+				    Date_Key_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [Date_Key] >= 20240401 and [Date_Key] < 20250401)
 				in
 					Date_Key_Filter
 
