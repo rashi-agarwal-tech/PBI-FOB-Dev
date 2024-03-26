@@ -4,6 +4,8 @@ expression NumberOfRows = 0 meta [IsParameterQuery=true, Type="Number", IsParame
 
 	annotation PBI_ResultType = Number
 
+	annotation PBI_NavigationStepName = Navigation
+
 /// Snowflake Setup
 expression Datasource_Server = "drmartensdev.west-europe.azure.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 56266212-23af-4c9d-9a5b-3c4ac3c4a57b
