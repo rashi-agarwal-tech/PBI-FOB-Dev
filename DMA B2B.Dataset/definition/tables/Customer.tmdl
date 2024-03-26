@@ -558,14 +558,14 @@ table Customer
 		annotation SummarizationSetBy = Automatic
 
 	column 'Invoice Acct Credit Limit'
-		dataType: double
+		dataType: string
 		lineageTag: e565d060-ffd4-4992-ad37-173d18d485ff
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Invoice Acct Credit Limit
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = DataType
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation SummarizationSetBy = Automatic
 
 	column 'Invoice Acct Name (Local Language)'
 		dataType: string
