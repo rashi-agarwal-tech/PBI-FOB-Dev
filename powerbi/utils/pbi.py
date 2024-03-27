@@ -11,24 +11,26 @@ REPORT_DIR = PROJECT_DIR / "reports"
 
 @app.command()
 def swap_partitions(original: bool = True):
-    for _dir in PARTITIONS_DIR.iterdir():
-        for table_dir in _dir.iterdir():
-            tmdl_file = _dir / f"{REPORT_DIR}.Dataset" / "definition" / "tables" / table_dir.name / f"{table_dir.name}.tmdl"
+    for partition_dir in PARTITIONS_DIR.iterdir():
+        for table_dir in partition_dir.iterdir():
+            tmdl_file = REPORT_DIR / f"{partition_dir.name}.Dataset" / "definition" / "tables" / f"{table_dir.name}.tmdl"
             line_no, tmdl_str, partitions_str = remove_partitions(tmdl_file)
-            default_partition = True if len(partitions_str[1]) > 52 else False
+            default_partition = True if len(partitions_str.split(" ")[1]) > 38 else False
             if not default_partition:
                 (table_dir / "partitions.tmdl").write_text(partitions_str)
             partition_file = (table_dir / "original.tmdl") if original else (table_dir / "partitions.tmdl")
             partitions_str = partition_file.read_text()
             tmdl_final_text = add_partitions(tmdl_str, partitions_str, line_no)
-            print(tmdl_final_text)
+            tmdl_file.write_text(tmdl_final_text)
 
 
 def add_partitions(tmdl_text: str, partitions_text: str, line_no: int):
     tmdl_lines = tmdl_text.split("\n")
     partitions_lines = partitions_text.split("\n")
+    if partitions_lines[0] in ('', '\n'):
+        partitions_lines = partitions_lines[1:]
     final_lines = tmdl_lines[0:line_no] + partitions_lines + tmdl_lines[line_no:] 
-    return "".join(final_lines)
+    return "\n".join(final_lines)
 
 
 def remove_partitions(file: Path):
@@ -51,12 +53,22 @@ def remove_partitions(file: Path):
                 output.append(l)
             else:
                 partitions.append(l)
-    
+    partitions = remove_duplicate_blanks(partitions)
     return min(first_partition), "".join(output), "".join(partitions)
 
 
+def remove_duplicate_blanks(partitions: list) -> list:
+    found = False
+    clean_partitions = []
+    for p in partitions:
+        if p == '\n' and found:
+            continue
+        clean_partitions.append(p)
+        if p == '\n':
+            found = True
+        else:
+            found = False
+    return clean_partitions
 
 if __name__ == "__main__":
-    # line_no, tmdl = remove_partitions(file = report_dir / "DMA D2C.Dataset" / "definition" / "tables" / "Orders.tmdl")
-    # add_partitions(line_no, tmdl)
     app()

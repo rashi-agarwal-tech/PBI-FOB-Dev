@@ -1,14 +1,14 @@
-    partition Availability-7ecbeeb3-1078-47dd-a4f0-d67f11faf016 = m
-        mode: import
-        source =
-                let
-                    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
-                    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
-                    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-                    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
-                    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
-                    #"Kept First Rows" = Table.FirstN(#"Filtered Rows",NumberOfRows),
-                    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Filtered Rows",
-                    #"Filtered Rows1" = Table.SelectRows(ParameterFilter, each [DATE] >= RangeStart and [DATE] < RangeEnd)
-                in
-                    #"Filtered Rows1"
+	partition Availability-7ecbeeb3-1078-47dd-a4f0-d67f11faf016 = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
+					#"Kept First Rows" = Table.FirstN(#"Filtered Rows",NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Filtered Rows",
+					#"Filtered Rows1" = Table.SelectRows(ParameterFilter, each [DATE] >= RangeStart and [DATE] < RangeEnd)
+				in
+					#"Filtered Rows1"
