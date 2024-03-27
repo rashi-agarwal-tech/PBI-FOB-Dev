@@ -308,10 +308,6 @@ relationship 971d4eb5-8201-4786-aca5-86e65459101f
 	fromColumn: Orders.Date_Key
 	toColumn: Date.'Date Key'
 
-relationship 15a37802-bf1b-45a8-83f8-256ca3984144
-	fromColumn: Orders.'DateMaster Order'
-	toColumn: 'Date - Order Date'.' Order Date'
-
 relationship 6ad5f947-31bf-456c-a651-c25abaae1791
 	fromColumn: Orders.'DM Agent'
 	toColumn: 'Order Taker'.'DM Agent'
@@ -328,10 +324,6 @@ relationship c3ba5122-75f1-4e1a-8df8-548ecee83da0
 	isActive: false
 	fromColumn: Orders.'Order DateTime'
 	toColumn: Date.' Date'
-
-relationship 9c34928c-5189-497d-baac-e282e8edfcae
-	fromColumn: Orders.OrdersEmailWebsiteCode_Key
-	toColumn: 'Ecom Email Marketing'.EmailWebsiteCode_Key
 
 relationship ae06bd93-cc34-4944-bcc2-d7d938f03ec1
 	fromColumn: Orders.Product_Class_Key
@@ -609,4 +601,12 @@ relationship cba25b11-d9c4-48ca-a311-b585a01fa82f
 	isActive: false
 	fromColumn: 'Google Analytics Goals'.ChannelGrouping_Key
 	toColumn: 'Web Channel'.ChannelGrouping_Key
+
+relationship 15a37802-bf1b-45a8-83f8-256ca3984144
+	fromColumn: Orders.'DateMaster Order'
+	toColumn: 'Date - Order Date'.' Order Date'
+
+relationship 9c34928c-5189-497d-baac-e282e8edfcae
+	fromColumn: Orders.OrdersEmailWebsiteCode_Key
+	toColumn: 'Ecom Email Marketing'.EmailWebsiteCode_Key
 
