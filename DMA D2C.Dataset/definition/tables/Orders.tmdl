@@ -2386,7 +2386,7 @@ table Orders
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
-				    Date_Key_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [Date_Key] >= 20210330 and [Date_Key] < 20210401)
+				    Date_Key_Filter = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each [Date_Key] >= 20200330 and [Date_Key] < 20210401)
 				in
 					Date_Key_Filter
 
