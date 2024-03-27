@@ -1,0 +1,45 @@
+table 'Sales Order Type'
+	isHidden
+	lineageTag: e4d60697-a00c-47e5-a682-b1b408b5baaf
+
+	column DESCRIPTION
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: c4a5c6fc-a7df-4bdb-bf54-bfe1a1b9cefd
+		summarizeBy: none
+		sourceColumn: DESCRIPTION
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDERTYPEID
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: d4bbd399-c100-4f3e-873e-c6d2e8da44b6
+		summarizeBy: none
+		sourceColumn: ORDERTYPEID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sales Order Type-d86b95ca-05ab-4d9a-92ad-15bf551337ec' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VW_D365DIMSALESORDERTYPE_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_D365DIMSALESORDERTYPE",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(BFN_VW_D365DIMSALESORDERTYPE_View, each ([ORDERTYPEID] <> null)),
+				    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [ORDERTYPEID] <> "")
+				in
+				    #"Filtered Rows1"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

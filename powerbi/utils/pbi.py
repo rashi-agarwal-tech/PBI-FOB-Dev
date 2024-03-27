@@ -1,0 +1,62 @@
+import typer
+import yaml
+from pathlib import Path
+import re
+
+app = typer.Typer()
+
+PROJECT_DIR = Path(__file__).parent.parent
+PARTITIONS_DIR = PROJECT_DIR / "partitions"
+REPORT_DIR = PROJECT_DIR / "reports"
+
+@app.command()
+def swap_partitions(original: bool = True):
+    for _dir in PARTITIONS_DIR.iterdir():
+        for table_dir in _dir.iterdir():
+            tmdl_file = _dir / f"{REPORT_DIR}.Dataset" / "definition" / "tables" / table_dir.name / f"{table_dir.name}.tmdl"
+            line_no, tmdl_str, partitions_str = remove_partitions(tmdl_file)
+            default_partition = True if len(partitions_str[1]) > 52 else False
+            if not default_partition:
+                (table_dir / "partitions.tmdl").write_text(partitions_str)
+            partition_file = (table_dir / "original.tmdl") if original else (table_dir / "partitions.tmdl")
+            partitions_str = partition_file.read_text()
+            tmdl_final_text = add_partitions(tmdl_str, partitions_str, line_no)
+            print(tmdl_final_text)
+
+
+def add_partitions(tmdl_text: str, partitions_text: str, line_no: int):
+    tmdl_lines = tmdl_text.split("\n")
+    partitions_lines = partitions_text.split("\n")
+    final_lines = tmdl_lines[0:line_no] + partitions_lines + tmdl_lines[line_no:] 
+    return "".join(final_lines)
+
+
+def remove_partitions(file: Path):
+    output = []
+    partitions = []
+    first_partition = []
+    with open(file) as f:
+        lines = f.readlines()
+        found = False
+        for i, l in enumerate(lines):
+            if found:
+                matched = re.search(r"^\t\w", l)
+                if matched:
+                    found = False 
+            if l.startswith("\tpartition "):
+                partitions.append("\n")
+                first_partition.append(i)
+                found = True
+            if not found:
+                output.append(l)
+            else:
+                partitions.append(l)
+    
+    return min(first_partition), "".join(output), "".join(partitions)
+
+
+
+if __name__ == "__main__":
+    # line_no, tmdl = remove_partitions(file = report_dir / "DMA D2C.Dataset" / "definition" / "tables" / "Orders.tmdl")
+    # add_partitions(line_no, tmdl)
+    app()

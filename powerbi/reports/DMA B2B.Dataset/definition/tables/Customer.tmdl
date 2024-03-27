@@ -1,0 +1,715 @@
+table Customer
+	lineageTag: 4420175f-4faa-42ec-8040-8069dd739deb
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 8ac86adc-29da-417b-a591-ef9006aa4b39
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DELIVERYADDRESSCOUNTRYREGIONISOCODE
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 0647684e-94b8-4cce-852b-90beabc48a8d
+		summarizeBy: none
+		sourceColumn: DELIVERYADDRESSCOUNTRYREGIONISOCODE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Acct No'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6ad18ca7-3704-4aa5-842d-7e0d54d19fa9
+		summarizeBy: none
+		sourceColumn: Customer Acct No
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales District'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 9a8f7b7e-006c-493b-a0bf-d81cdb029447
+		summarizeBy: none
+		sourceColumn: Sales District
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Credit Rating'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0d757bdc-99e0-44f0-b925-75e9f1595256
+		summarizeBy: none
+		sourceColumn: Credit Rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Credit Limit'
+		dataType: double
+		formatString: " #,##0.00"
+		sourceProviderType: decimal(32, 6)
+		lineageTag: a17e0a6b-6f1f-4746-873d-17690f84dd9a
+		summarizeBy: none
+		sourceColumn: Credit Limit
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column SALESORDERPOOLID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: f32b9370-72f8-4d1d-8b28-ee114c728d23
+		summarizeBy: none
+		sourceColumn: SALESORDERPOOLID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Terms'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f676103c-8974-4702-8245-70b682271fe5
+		summarizeBy: none
+		sourceColumn: Payment Terms
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Method'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 20936efc-97b6-4c83-ae9f-610387e32af7
+		summarizeBy: none
+		sourceColumn: Payment Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 29468f30-e905-4549-8f0c-a397423fc26a
+		summarizeBy: none
+		sourceColumn: Customer Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column NAMEALIAS
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: c28920a4-da56-4517-800d-36b576af2fdc
+		summarizeBy: none
+		sourceColumn: NAMEALIAS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line Of Business'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f747c519-527d-4163-8e0c-15e7ccb8e3c1
+		summarizeBy: none
+		sourceColumn: Line Of Business
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Segment'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2089dbe5-4c08-47be-a5cd-796f81c9a530
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Sub Segment'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 78910e70-7dc5-42b6-bbc7-da03194d6b5b
+		summarizeBy: none
+		sourceColumn: Customer Sub Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Classification'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 577b8a62-0d08-42d0-b547-acb4c523109a
+		summarizeBy: none
+		sourceColumn: Customer Classification
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Fullfillment %'
+		dataType: double
+		formatString: 0
+		sourceProviderType: decimal(32, 6)
+		lineageTag: d536784b-50fa-4e36-8c5e-a4892a845aed
+		summarizeBy: none
+		sourceColumn: Order Fullfillment %
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Customer Group'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a2312713-0a35-424a-8dc2-3a40a75b9176
+		summarizeBy: none
+		sourceColumn: Customer Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Manager'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2a262f73-58d3-4b65-951e-75f41071ce34
+		summarizeBy: none
+		sourceColumn: Account Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer On Hold Status'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 59ab8c3c-3836-4dce-8d30-3a71b0d31696
+		summarizeBy: none
+		sourceColumn: Customer On Hold Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Invoice Address Street'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: bbc93d2b-1c9f-4868-9926-393f89dc0902
+		summarizeBy: none
+		sourceColumn: Customer Invoice Address Street
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Invoice Address City'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b7c13536-8c30-436c-8b88-8e6aae7c6cd6
+		summarizeBy: none
+		sourceColumn: Customer Invoice Address City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Channel'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ccffc176-af8e-4b14-b6c1-9c3dba85e877
+		summarizeBy: none
+		sourceColumn: Customer Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Region Channel'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ed9fbde8-8f51-485d-8552-1cd808b65f22
+		summarizeBy: none
+		sourceColumn: Customer Region Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'VAS Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 578b9b92-3073-4a4a-beae-ddd7aad2791f
+		summarizeBy: none
+		sourceColumn: VAS Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Acct No'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a2a64ce2-9339-4a0d-961b-d39d9cd7041d
+		summarizeBy: none
+		sourceColumn: Invoice Acct No
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Acct No (Original)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0a2f5bb0-e1e7-4b11-9f5d-ae4b802f87fc
+		summarizeBy: none
+		sourceColumn: Customer Acct No (Original)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Invoice Address Zip Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 189e70f3-b4a8-414e-b981-feb6d242c592
+		summarizeBy: none
+		sourceColumn: Customer Invoice Address Zip Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Channel'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 1. Finance Dimensions
+		lineageTag: 49de81df-9266-4e32-ab61-ed0ef7d2d2fd
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Cost Centre'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 1. Finance Dimensions
+		lineageTag: 2abb454b-1846-44f6-9f84-eb40f7001ebf
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Cost Centre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Country'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 1. Finance Dimensions
+		lineageTag: 570f107c-1f55-4f4e-a29d-6d974579af8f
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Known-As'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 99158d49-3fab-4e0c-84dd-9a52250f950d
+		summarizeBy: none
+		sourceColumn: Customer Known-As
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Delivery Sequence'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: afdcf8c7-ff6c-4c82-9e98-1e22830440a4
+		summarizeBy: none
+		sourceColumn: Customer Delivery Sequence
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Delivery Ship To Location ID'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b2127cd4-c5eb-40b6-a247-b3933abc8517
+		summarizeBy: none
+		sourceColumn: Customer Delivery Ship To Location ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Delivery Mode'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3b182c3a-7412-45d1-9504-31128b16aea8
+		summarizeBy: none
+		sourceColumn: Customer Delivery Mode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Address Region Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 47992ee3-1e40-4ee0-a570-399d5ece4660
+		summarizeBy: none
+		sourceColumn: Customer Address Region Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Primary Email'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a0805702-e13d-4f14-8518-394645091a03
+		summarizeBy: none
+		sourceColumn: Customer Primary Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Primary Phone'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 9861212f-1686-43ad-aea1-631092485c5e
+		summarizeBy: none
+		sourceColumn: Customer Primary Phone
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Sales Currency Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e3e5abda-f1ab-4994-9bda-6dd8f087ff0e
+		summarizeBy: none
+		sourceColumn: Customer Sales Currency Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Total Discount Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: fc6fa757-74a8-4891-87d1-1282e583a633
+		summarizeBy: none
+		sourceColumn: Customer Total Discount Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Cash Discount'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6012cc4d-bb4d-4c08-849c-f792d277fa6f
+		summarizeBy: none
+		sourceColumn: Customer Cash Discount
+
+		annotation SummarizationSetBy = Automatic
+
+	column DELIVERYADDRESSSTREET
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: efe4a819-6ce4-43ce-8066-fa9f76f46612
+		summarizeBy: none
+		sourceColumn: DELIVERYADDRESSSTREET
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DELIVERYADDRESSCITY
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 56df2fcb-5b05-4d59-851e-738ecc06c0e1
+		summarizeBy: none
+		sourceColumn: DELIVERYADDRESSCITY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mandatory MDA Reference'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 5bd280da-bc45-44ab-a787-8628da7c358b
+		summarizeBy: none
+		sourceColumn: Mandatory MDA Reference
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Address'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: a78fbb91-e704-49c9-987c-8720cd36b93e
+		summarizeBy: none
+		sourceColumn: Delivery Address
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DELIVERYADDRESSZIPCODE
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 0e660fdf-e590-4b00-a2cf-3f9b76269c93
+		summarizeBy: none
+		sourceColumn: DELIVERYADDRESSZIPCODE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Discount Group'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0c399825-a556-4ace-9c22-184403efc070
+		summarizeBy: none
+		sourceColumn: Customer Discount Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Chain'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a3f8c347-ce29-4d3f-9089-6f94ba9459df
+		summarizeBy: none
+		sourceColumn: Company Chain
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Price Group'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 157a931f-134a-42ea-a7de-55bf958bc1e1
+		summarizeBy: none
+		sourceColumn: Customer Price Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Invoice State'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 27b6a718-1132-4c4d-87ed-350996675bbd
+		summarizeBy: none
+		sourceColumn: Customer Invoice State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warehouse
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: bcacca3e-1dcf-414a-964f-83c281e1ea77
+		summarizeBy: none
+		sourceColumn: Warehouse
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 9ee29a21-daac-4d68-b9a1-fcf9dd2f114f
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company ID'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 53b56939-f2be-48d4-aa63-c6fabae0bda7
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Linked Customer Account'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e2a0d4bc-a43e-48e2-8960-b073d7ad0642
+		summarizeBy: none
+		sourceColumn: Linked Customer Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Acct Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2b7c0901-623f-4df9-a0ad-b01de6d96b69
+		summarizeBy: none
+		sourceColumn: Invoice Acct Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Acct Hold Status'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 14ac0859-a374-440e-bfa8-3b2c6243c984
+		summarizeBy: none
+		sourceColumn: Invoice Acct Hold Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Acct Payment Terms'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6b329b4b-38fd-4491-9a21-abe579b74f2c
+		summarizeBy: none
+		sourceColumn: Invoice Acct Payment Terms
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Acct Credit Limit'
+		dataType: string
+		lineageTag: e565d060-ffd4-4992-ad37-173d18d485ff
+		summarizeBy: none
+		sourceColumn: Invoice Acct Credit Limit
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Acct Name (Local Language)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d5489d33-7a4b-4d47-a976-40af30737d67
+		summarizeBy: none
+		sourceColumn: Invoice Acct Name (Local Language)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'VAS Required?' = IF ( Customer[VAS Number] = "", "NO", "YES" )
+		dataType: string
+		lineageTag: 3a1cb42d-922f-455e-af2b-e4a3ee0da6e9
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Acct (Grouped)' = IF ( Customer[Company Chain] <> "", BLANK (), Customer[Customer Acct No] )
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: fa717887-3945-4948-821f-934bae2fd28b
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name (Grouped)' =
+			IF (
+			                  Customer[Company Chain] <> "",
+			                  Customer[Company Chain],
+			                  Customer[Customer Name]
+			              )
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 92550331-9bb3-4661-8752-2f815f2d3a63
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Customer ADP' =
+			DIVIDE (
+			                  CALCULATE (
+			                      SUM ( 'Accounts Receivable'[InvValue*DaysToPay] ),
+			                      USERELATIONSHIP ( 'Accounts Receivable'[ClosedDate_Key], 'Date'[Date Key] ),
+			                      'Accounts Receivable'[Transaction Type] = "Sales",
+			                      DATESBETWEEN (
+			                          'Accounts Receivable'[Invoice Closed Date],
+			                          TODAY () - 180,
+			                          TODAY ()
+			                      )
+			                  ),
+			                  (
+			                      CALCULATE (
+			                          SUM ( 'Accounts Receivable'[AMOUNT_CONS_GBP] ),
+			                          USERELATIONSHIP ( 'Accounts Receivable'[ClosedDate_Key], 'Date'[Date Key] ),
+			                          DATESBETWEEN (
+			                              'Accounts Receivable'[Invoice Closed Date],
+			                              TODAY () - 180,
+			                              TODAY ()
+			                          ),
+			                          'Accounts Receivable'[Transaction Type] = "Sales"
+			                      )
+			                  ) * [XR]
+			              )
+		dataType: int64
+		formatString: " #,##0"
+		lineageTag: d459b627-58e5-4d7a-89a1-e4caf9c21ecf
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Invoice Acct Current ADP' =
+			DIVIDE (
+			    CALCULATE (
+			        SUM ( 'Accounts Receivable'[InvValue*DaysToPay] ),
+			        USERELATIONSHIP ( 'Accounts Receivable'[ClosedDate_Key], 'Date'[Date Key] ),
+			        'Accounts Receivable'[Transaction Type] = "Sales",
+			        DATESBETWEEN (
+			            'Accounts Receivable'[Invoice Closed Date],
+			            TODAY () - 180,
+			            TODAY ()
+			        ),
+			        ALLEXCEPT ( Customer, Customer[Invoice Acct No] )
+			    ),
+			    (
+			        CALCULATE (
+			            SUM ( 'Accounts Receivable'[AMOUNT_CONS_GBP] ),
+			            USERELATIONSHIP ( 'Accounts Receivable'[ClosedDate_Key], 'Date'[Date Key] ),
+			            DATESBETWEEN (
+			                'Accounts Receivable'[Invoice Closed Date],
+			                TODAY () - 180,
+			                TODAY ()
+			            ),
+			            'Accounts Receivable'[Transaction Type] = "Sales",
+			            ALLEXCEPT ( Customer, Customer[Invoice Acct No] )
+			        )
+			    ) * [XR]
+			)
+		dataType: int64
+		formatString: " 0"
+		lineageTag: b599e074-0330-4798-b116-e94807d83a98
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Order Management Rep'
+		dataType: string
+		lineageTag: 63fb37d5-ee0e-4fce-a022-db1019ebf018
+		summarizeBy: none
+		sourceColumn: Order Management Rep
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Customer-fb301a50-a61c-4330-8737-6d68704c2e63 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VW_D365DIMCUSTOMER_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_D365DIMCUSTOMER",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(BFN_VW_D365DIMCUSTOMER_View, each not List.Contains({"ECOMM", "EMPLOY", "INTERCO", "RETAIL"},[Customer Group])),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows",{{"Mandatory MDA Reference", type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type",null,"No",Replacer.ReplaceValue,{"Mandatory MDA Reference"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","false","No",Replacer.ReplaceText,{"Mandatory MDA Reference"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","true","Yes",Replacer.ReplaceText,{"Mandatory MDA Reference"})
+				in
+				    #"Replaced Value2"
+
+	annotation PBI_ResultType = Table
+

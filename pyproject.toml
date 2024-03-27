@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "powerbi"
+version = "0.1.0"
+description = ""
+authors = ["martin.kingston <martin.kingston@drmartens.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+pbi = "powerbi.utils.pbi:app"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typer = "^0.11.0"
+pyyaml = "^6.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

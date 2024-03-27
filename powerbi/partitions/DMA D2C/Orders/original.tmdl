@@ -1,0 +1,12 @@
+    partition Orders-e76190d4-14ef-467e-b5ad-e5b189c314bf = m
+        mode: import
+        source =
+            let
+                Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+                PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+                BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+                D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+                #"Kept First Rows" = Table.FirstN(D2C_BFN_VW_D365_FACT_SALES_View,NumberOfRows),
+                ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else D2C_BFN_VW_D365_FACT_SALES_View
+            in
+                ParameterFilter

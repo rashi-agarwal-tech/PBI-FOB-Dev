@@ -1,0 +1,37 @@
+table 'Forecast Version'
+	lineageTag: 655de098-2c57-4b8d-8e09-c7219cdcd738
+
+	column 'Forecast Version'
+		dataType: string
+		lineageTag: 7c8aacd2-976f-4574-b080-961cd4f476fa
+		summarizeBy: none
+		sourceColumn: Forecast Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Version Order'
+		dataType: int64
+		displayFolder: zz_Misc
+		lineageTag: a281d0e9-23c8-4bf9-a0d9-a00890556524
+		summarizeBy: none
+		sourceColumn: Forecast Version Order
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Forecast Version-4f9283d6-ec14-4d3e-abf7-eb827530d939' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_FORECAST_VERSION_View = BFN_PRESENTATION_Schema{[Name="BFN_FORECAST_VERSION",Kind="View"]}[Data]
+				in
+				    BFN_FORECAST_VERSION_View
+
+	annotation PBI_ResultType = Table
+

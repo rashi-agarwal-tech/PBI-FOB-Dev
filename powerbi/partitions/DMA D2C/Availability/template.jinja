@@ -1,0 +1,11 @@
+	partition 'CY{{}}' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
+					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date({{ start_year }}, {{ start_month }}, {{ start_day }}) and [DATE] < #date({{ end_year }}, {{ end_month }}, {{ end_day }}))
+				in
+					PartitionFilter

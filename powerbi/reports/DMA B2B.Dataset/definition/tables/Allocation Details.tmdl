@@ -1,0 +1,95 @@
+table 'Allocation Details'
+	lineageTag: cc81e6b6-4825-46cc-a9d3-77f6101863cd
+
+	column ALLOCATIONQTY
+		dataType: int64
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 233ba09f-9caf-40ee-af1b-a8bc00463b12
+		summarizeBy: none
+		sourceColumn: ALLOCATIONQTY
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: c4865e28-d80b-49ad-a0b3-a65436bb5356
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Misc
+		lineageTag: dfe2d1db-e060-46aa-aeb5-8ee1996df29a
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocation Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 0691a8b7-1085-4071-9fce-2b182d8eaf4c
+		summarizeBy: none
+		sourceColumn: Allocation Date
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocation Type'
+		dataType: string
+		lineageTag: 37fed1cd-c6b1-418f-b894-aa48afcabf3a
+		summarizeBy: none
+		sourceColumn: Allocation Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SO Cancel Risk Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 61fcddb0-d8ab-49b4-8bde-b0d4f69211ff
+		summarizeBy: none
+		sourceColumn: SO Cancel Risk Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Alloc Date Prior Cancel Risk?' = IF(DATEDIFF('Allocation Details'[Allocation Date],'Allocation Details'[SO Cancel Risk Date], DAY) > 0, "Yes", "No")
+		dataType: string
+		lineageTag: 723abe85-ffc1-45b7-b7f1-d4630d0bb0ae
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Allocation Details-0d966eae-8e33-431e-b5c6-9100379d1d49' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_DIM_D365DMR_FSB_IMRESV_ALLOCATION_DETAILS_View = BFN_PRESENTATION_Schema{[Name="BFN_DIM_D365DMR_FSB_IMRESV_ALLOCATION_DETAILS",Kind="View"]}[Data]
+				in
+				    BFN_DIM_D365DMR_FSB_IMRESV_ALLOCATION_DETAILS_View
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,193 @@
+table 'Purchase Orders'
+	isHidden
+	lineageTag: 16e7eb85-e423-4ffd-af7f-93870454589e
+
+	column 'PO Number'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: bfe1bf90-4b05-4d1f-b184-800309c942e9
+		summarizeBy: none
+		sourceColumn: PO Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice or Account No'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5a37c8be-54cd-4728-84c7-f3ab58195f24
+		summarizeBy: none
+		sourceColumn: Invoice or Account No
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'ETD Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 8c34f67e-b85f-48c6-8868-5903acf7f798
+		summarizeBy: none
+		sourceColumn: ETD Date
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Confirmed Delivery Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: b0041b49-38cc-4065-9d98-c6962db2a629
+		summarizeBy: none
+		sourceColumn: Confirmed Delivery Date
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: bcff82dc-a486-4482-be61-c2816343d6b9
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Open PO Qty'
+		dataType: int64
+		isHidden
+		formatString: " #,##0"
+		sourceProviderType: decimal(38, 0)
+		lineageTag: dd3d3878-c794-4dba-8ff6-08ca03db928e
+		summarizeBy: none
+		sourceColumn: Open PO Qty
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column SO_PO_ID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: dd67dac5-0419-48f8-ba10-662760e2dcb8
+		summarizeBy: none
+		sourceColumn: SO_PO_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ex-Factory Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 131e8486-5f25-4de3-8e7a-c9a371e41b26
+		summarizeBy: none
+		sourceColumn: Ex-Factory Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Vendor_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 5b3e65a7-b3e5-4133-be85-30b53ce2eee1
+		summarizeBy: none
+		sourceColumn: Vendor_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contractual Ex-Factory Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 823d806a-7fbf-48da-95cc-4b8339416a1b
+		summarizeBy: none
+		sourceColumn: Contractual Ex-Factory Date
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column AvailableShipDate
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: 4a0fba60-1a09-43a9-9469-193eead56c9d
+		summarizeBy: none
+		sourceColumn: AvailableShipDate
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinancialChannel = RELATED ( 'Warehouse'[FinancialChannel] )
+		dataType: string
+		displayFolder: zz_Keys
+		lineageTag: 266f4a97-7637-49ac-83ba-65f4f63c6d36
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		lineageTag: a0941296-d2b2-45e0-86d3-6c9acc69b32f
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Purchase Orders-7bc21253-b538-4ba7-94dd-a4b284538293' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VW_D365FACTPURCHASEORDER_PURCHASEORDERLINE_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_D365FACTPURCHASEORDER_PURCHASEORDERLINE",Kind="View"]}[Data],
+				    #"Filtered Rows"   = Table.SelectRows(BFN_VW_D365FACTPURCHASEORDER_PURCHASEORDERLINE_View, each [INVENTTRANSID] <> null and [INVENTTRANSID] <> "" and [SO_PO_ID] <> null and [SO_PO_ID] <> "")
+				in
+				    #"Filtered Rows"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
