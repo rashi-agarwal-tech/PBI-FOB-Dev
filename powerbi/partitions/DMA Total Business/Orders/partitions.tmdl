@@ -11,9 +11,9 @@
 					#"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
-					InvoiceDateSIL_Filter = Table.SelectRows(#"ReplaceValueTrue", each [INVOICEDATE_SIL] >= #datetime(2023, 4, 1,0,0,0) and [INVOICEDATE_SIL] < #datetime(2024, 4, 1,0,0,0))
+					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20220401 and [Date_Key] < 20230401)
 				in
-					InvoiceDateSIL_Filter
+					Date_Key_Filter
 				```
 
 	partition FY2023 = m
@@ -28,9 +28,9 @@
 					#"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
-					InvoiceDateSIL_Filter = Table.SelectRows(#"ReplaceValueTrue", each [INVOICEDATE_SIL] >= #datetime(2022, 4, 1,0,0,0) and [INVOICEDATE_SIL] < #datetime(2023, 4, 1,0,0,0))
+					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20220401 and [Date_Key] < 20230401)
 				in
-					InvoiceDateSIL_Filter
+					Date_Key_Filter
 				```
 
 	partition FY2022 = m
@@ -45,9 +45,9 @@
 					#"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
-					InvoiceDateSIL_Filter = Table.SelectRows(#"ReplaceValueTrue", each [INVOICEDATE_SIL] >= #datetime(2021, 4, 1,0,0,0) and [INVOICEDATE_SIL] < #datetime(2022, 4, 1,0,0,0))
+					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20210401 and [Date_Key] < 20220401)
 				in
-					InvoiceDateSIL_Filter
+					Date_Key_Filter
 				```
 
 	partition FY2021 = m
@@ -62,8 +62,8 @@
 					#"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
-					InvoiceDateSIL_Filter = Table.SelectRows(#"ReplaceValueTrue", each [INVOICEDATE_SIL] >= #datetime(2020, 3, 30,0,0,0) and [INVOICEDATE_SIL] < #datetime(2021, 4, 1,0,0,0))
+					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20200330 and [Date_Key] < 20210401)
 				in
-					InvoiceDateSIL_Filter
+					Date_Key_Filter
 				```
 
