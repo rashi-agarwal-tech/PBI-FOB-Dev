@@ -11,7 +11,8 @@ REPORT_DIR = PROJECT_DIR / "reports"
 
 @app.command()
 def swap_partitions(original: bool = True):
-    set_number_of_rows(1000 if original else 0)
+    set_variable("NumberOfRows", "1000" if original else "0")
+    set_variable("Datasource_Server", '"drmartensdev.west-europe.azure.snowflakecomputing.com"')
     for partition_dir in PARTITIONS_DIR.iterdir():
         for table_dir in partition_dir.iterdir():
             tmdl_file = REPORT_DIR / f"{partition_dir.name}.Dataset" / "definition" / "tables" / f"{table_dir.name}.tmdl"
@@ -71,23 +72,19 @@ def remove_duplicate_blanks(partitions: list) -> list:
             found = False
     return clean_partitions
 
-def set_number_of_rows(rows: int=0):
+
+def set_variable(variable: str, value: str):
     for f in REPORT_DIR.glob("**/expressions.tmdl"):
         tmdl = f.read_text()
         token = tmdl.split(" ")
         tmdl_out = []
         for i, t in enumerate(token):
-            if i > 2 and token[i-2] == "NumberOfRows" and token[i-1] == "=":
-                tmdl_out.append(str(rows))
+            if i > 2 and token[i-2] == variable and token[i-1] == "=":
+                tmdl_out.append(value)
             else:
                 tmdl_out.append(t)
         f.write_text(" ".join(tmdl_out))
                     
-
-
-
-
-    # expression NumberOfRows = 0 meta
 
 if __name__ == "__main__":
     app()
