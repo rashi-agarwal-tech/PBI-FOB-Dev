@@ -1,13 +1,10 @@
 import typer
-import yaml
 from pathlib import Path
+from powerbi.utils.constants import REPORT_DIR, PARTITIONS_DIR
 import re
+from pprint import pp
 
 app = typer.Typer()
-
-PROJECT_DIR = Path(__file__).parent.parent
-PARTITIONS_DIR = PROJECT_DIR / "partitions"
-REPORT_DIR = PROJECT_DIR / "reports"
 
 @app.command()
 def swap_partitions(original: bool = True):
@@ -85,6 +82,47 @@ def set_variable(variable: str, value: str):
                 tmdl_out.append(t)
         f.write_text(" ".join(tmdl_out))
                     
+def get_tables() -> dict:
+    tables = {}
+    for f in REPORT_DIR.glob("**/tables/*.tmdl"):
+        report = f.parent.parent.parent.stem
+        table = f.stem
+        partitions = get_partitions(f)
+        if tables.get(report) is None:
+            tables[report] = {table: partitions}
+        else:
+            tables[report] = tables[report] | {table: partitions} if tables.get(report) else {table: partitions}
+
+    return tables
+
+def get_partitions(file) -> list:
+    partitions = []
+    with open(file) as f:
+        lines = f.readlines()
+        for line in lines:
+            if line.startswith("\tpartition "):
+                partitions.append(line.split("=")[0][11:-1].strip("'"))
+    return partitions
+
+@app.command()
+def partitions():
+    pp(get_multi_partitions())
+
+def get_multi_partitions():
+    models = get_tables()
+    result = {}
+    for m, tbls in models.items():
+        for t, p in tbls.items():
+            if len(p) > 1:
+                if result.get(m) is None:
+                    result[m] = {t: p}
+                else:
+                    result[m] = result[m] | {t: p} if result.get(m) else {t: p}
+    return result
+
+def update_partitions():
+    partitions = get_multi_partitions()
+    
 
 if __name__ == "__main__":
     app()
