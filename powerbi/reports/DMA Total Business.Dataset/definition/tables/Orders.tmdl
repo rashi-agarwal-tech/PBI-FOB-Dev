@@ -2186,7 +2186,7 @@ table Orders
 					#"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
-					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20230401 and [Date_Key] < 20240401)
+					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20230403 and [Date_Key] < 20240401)
 				in
 					Date_Key_Filter
 				```
@@ -2203,7 +2203,7 @@ table Orders
 					#"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
-					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20220401 and [Date_Key] < 20230401)
+					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20220328 and [Date_Key] < 20230403)
 				in
 					Date_Key_Filter
 				```
@@ -2220,7 +2220,7 @@ table Orders
 					#"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
-					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20210401 and [Date_Key] < 20220401)
+					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20210329 and [Date_Key] < 20220328)
 				in
 					Date_Key_Filter
 				```
@@ -2237,7 +2237,7 @@ table Orders
 					#"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
-					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20200330 and [Date_Key] < 20210401)
+					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20200330 and [Date_Key] < 20210329)
 				in
 					Date_Key_Filter
 				```
