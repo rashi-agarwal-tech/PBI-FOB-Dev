@@ -554,11 +554,14 @@ table Orders
 
 	column 'Delivery Address Street'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: 4. Delivery Address
 		lineageTag: d93b023b-bfeb-437c-861c-d145999b063c
 		summarizeBy: none
 		sourceColumn: Delivery Address Street
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1286,10 +1289,12 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column RefitExclusion = IF(NOT ISBLANK(RELATED('Refit Exclusion'[StoreDateKey])), "Refit", "No Refit")
+		dataType: string
 		isHidden
 		displayFolder: zz_Misc
 		lineageTag: a0332d76-8dc2-4125-a6b0-9462ce90bc05
 		summarizeBy: none
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 
@@ -2153,3 +2158,4 @@ table Orders
 	annotation PBI_ResultType = Table
 
 	annotation PBI_NavigationStepName = Navigation
+
