@@ -44,7 +44,7 @@ table 'Financial Channel'
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    D2C_BFN_VW_D365DIMCHANNEL_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365DIMCHANNEL",Kind="View"]}[Data],
-				    #"Filtered Rows"     = Table.SelectRows(D2C_BFN_VW_D365DIMCHANNEL_View, each List.Contains({"101", "102"},[Channel]))
+				    #"Filtered Rows"     = Table.SelectRows(D2C_BFN_VW_D365DIMCHANNEL_View, each List.Contains({"101", "102", "108"},[Channel]))
 				in
 				    #"Filtered Rows"
 
