@@ -2094,11 +2094,12 @@ table Orders
 		dataView: full
 		source =
 				let
-				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
-				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
-				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[FinancialChannel])),
-				    Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20200330 and [Date_Key] < 20210329)
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[#"Finance Dimension - Channel"])),
+					Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20200330 and [Date_Key] < 20210329)
 				in
 					Date_Key_Filter
 
@@ -2110,8 +2111,9 @@ table Orders
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[FinancialChannel])),
-				    Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20210329 and [Date_Key] < 20220328)
+					D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[#"Finance Dimension - Channel"])),
+					Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20210329 and [Date_Key] < 20220328)
 				in
 					Date_Key_Filter
 
@@ -2123,8 +2125,9 @@ table Orders
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[FinancialChannel])),
-				    Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20220328 and [Date_Key] < 20230403)
+					D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[#"Finance Dimension - Channel"])),
+					Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20220328 and [Date_Key] < 20230403)
 				in
 					Date_Key_Filter
 
@@ -2133,11 +2136,12 @@ table Orders
 		dataView: full
 		source =
 				let
-				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
-				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
-				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[FinancialChannel])),
-				    Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20230403 and [Date_Key] < 20240401)
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[#"Finance Dimension - Channel"])),
+					Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20230403 and [Date_Key] < 20240401)
 				in
 					Date_Key_Filter
 
@@ -2146,12 +2150,12 @@ table Orders
 		dataView: full
 		source =
 				let
-				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
-				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
-				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
-					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102", "108"},[FinancialChannel])),
-				    Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20240401 and [Date_Key] < 20250331)
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102", "108"},[#"Finance Dimension - Channel"])),
+					Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20240401 and [Date_Key] < 20250331)
 				in
 					Date_Key_Filter
 
