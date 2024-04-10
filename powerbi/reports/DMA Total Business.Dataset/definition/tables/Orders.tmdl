@@ -2165,8 +2165,9 @@ table Orders
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					TB_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_FACT_SALES",Kind="View"]}[Data],  
-					#"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
+					TB_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_FACT_SALES",Kind="View"]}[Data], 
+					#"Filtered Rows" = Table.SelectRows(TB_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102", "108"},[FinancialChannel])), 
+					#"ReplaceValueNull"  = Table.ReplaceValue(#"Filtered Rows"    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20240401 and [Date_Key] < 20250401)
@@ -2183,7 +2184,8 @@ table Orders
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					TB_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_FACT_SALES",Kind="View"]}[Data],  
-					#"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
+					#"Filtered Rows" = Table.SelectRows(TB_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[FinancialChannel])), 
+					#"ReplaceValueNull"  = Table.ReplaceValue(#"Filtered Rows"    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20230403 and [Date_Key] < 20240401)
@@ -2199,8 +2201,9 @@ table Orders
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					TB_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_FACT_SALES",Kind="View"]}[Data],  
-					#"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
+					TB_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_FACT_SALES",Kind="View"]}[Data], 
+					#"Filtered Rows" = Table.SelectRows(TB_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[FinancialChannel])), 
+					#"ReplaceValueNull"  = Table.ReplaceValue(#"Filtered Rows"    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20220328 and [Date_Key] < 20230403)
@@ -2217,7 +2220,8 @@ table Orders
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					TB_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_FACT_SALES",Kind="View"]}[Data],  
-					#"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
+					#"Filtered Rows" = Table.SelectRows(TB_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[FinancialChannel])), 
+					#"ReplaceValueNull"  = Table.ReplaceValue(#"Filtered Rows"    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20210329 and [Date_Key] < 20220328)
@@ -2234,7 +2238,8 @@ table Orders
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					TB_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_FACT_SALES",Kind="View"]}[Data],  
-					#"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
+					#"Filtered Rows" = Table.SelectRows(TB_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[FinancialChannel])), 
+					#"ReplaceValueNull"  = Table.ReplaceValue(#"Filtered Rows"    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20200330 and [Date_Key] < 20210329)
