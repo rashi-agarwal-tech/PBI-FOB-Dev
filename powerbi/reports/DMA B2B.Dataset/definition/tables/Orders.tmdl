@@ -861,17 +861,6 @@ table Orders
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Delivery Address Street'
-		dataType: string
-		displayFolder: 4. Delivery Address
-		lineageTag: 25c866a9-b223-4ea8-990a-26fea255ed7c
-		summarizeBy: none
-		sourceColumn: Delivery Address Street
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Start Ship Date'
 		dataType: dateTime
 		formatString: Short Date

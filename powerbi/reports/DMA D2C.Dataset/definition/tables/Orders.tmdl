@@ -552,19 +552,6 @@ table Orders
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Delivery Address Street'
-		dataType: string
-		isHidden
-		sourceProviderType: nvarchar(16777216)
-		displayFolder: 4. Delivery Address
-		lineageTag: d93b023b-bfeb-437c-861c-d145999b063c
-		summarizeBy: none
-		sourceColumn: Delivery Address Street
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Charge Description Line'
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
@@ -1960,12 +1947,14 @@ table Orders
 
 	column 'DateMaster Order'
 		dataType: dateTime
-		formatString: General Date
+		formatString: Long Date
 		lineageTag: 0056c9b4-c868-4526-94bf-d70740be9466
 		summarizeBy: none
 		sourceColumn: DateMaster Order
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	column 'Discounts (inc tax) Open Col'
 		dataType: double
@@ -2158,6 +2147,7 @@ table Orders
 					Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20240401 and [Date_Key] < 20250331)
 				in
 					Date_Key_Filter
+
 
 	annotation PBI_ResultType = Table
 

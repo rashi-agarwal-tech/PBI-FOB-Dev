@@ -194,15 +194,6 @@ table Customer
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Customer Invoice Address Street'
-		dataType: string
-		sourceProviderType: nvarchar(16777216)
-		lineageTag: bbc93d2b-1c9f-4868-9926-393f89dc0902
-		summarizeBy: none
-		sourceColumn: Customer Invoice Address Street
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Customer Invoice Address City'
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
@@ -386,19 +377,6 @@ table Customer
 
 		annotation SummarizationSetBy = Automatic
 
-	column DELIVERYADDRESSSTREET
-		dataType: string
-		isHidden
-		sourceProviderType: nvarchar(16777216)
-		displayFolder: zz_Misc
-		lineageTag: efe4a819-6ce4-43ce-8066-fa9f76f46612
-		summarizeBy: none
-		sourceColumn: DELIVERYADDRESSSTREET
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column DELIVERYADDRESSCITY
 		dataType: string
 		isHidden
@@ -563,8 +541,6 @@ table Customer
 		summarizeBy: none
 		sourceColumn: Invoice Acct Credit Limit
 
-		changedProperty = DataType
-
 		annotation SummarizationSetBy = Automatic
 
 	column 'Invoice Acct Name (Local Language)'
@@ -692,6 +668,28 @@ table Customer
 		lineageTag: 63fb37d5-ee0e-4fce-a022-db1019ebf018
 		summarizeBy: none
 		sourceColumn: Order Management Rep
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Invoice Address Street'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: bbc93d2b-1c9f-4868-9926-393f89dc0902
+		summarizeBy: none
+		sourceColumn: Customer Invoice Address Street
+
+		annotation SummarizationSetBy = Automatic
+
+	column DELIVERYADDRESSSTREET
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: efe4a819-6ce4-43ce-8066-fa9f76f46612
+		summarizeBy: none
+		sourceColumn: DELIVERYADDRESSSTREET
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
