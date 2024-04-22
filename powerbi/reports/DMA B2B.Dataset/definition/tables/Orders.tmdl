@@ -338,7 +338,7 @@ table Orders
 
 	column 'Cancellation Date'
 		dataType: dateTime
-		formatString: Long Date
+		formatString: dd/mm/yy
 		lineageTag: e9106605-66da-4c97-a0cb-0a4e1b7be096
 		summarizeBy: none
 		sourceColumn: Cancellation Date
@@ -348,6 +348,8 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column 'Order Entry Date'
 		dataType: dateTime
