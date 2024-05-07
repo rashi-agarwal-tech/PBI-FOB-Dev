@@ -3,6 +3,7 @@ from pathlib import Path
 from powerbi.utils.constants import REPORT_DIR, PARTITIONS_DIR
 import re
 from pprint import pp
+import networkx as nx
 
 app = typer.Typer()
 
@@ -141,8 +142,7 @@ def partitions():
 
 # am i using this and is it now broken.
 def get_multi_partitions():
-    raise NotImplementedError
-    models = print_models()
+    models = get_models()
     result = {}
     for m, tbls in models.items():
         for t, p in tbls.items():
@@ -153,16 +153,22 @@ def get_multi_partitions():
                     result[m] = result[m] | {t: p} if result.get(m) else {t: p}
     return result
 
+@app.command()
+def test():
+    return "testing"
 
 def update_partitions():
     partitions = get_multi_partitions()
 
 
 @app.command()
-def print_models(write: bool = False) -> dict:
+def print_models(write: bool = False):
+    pp(get_models(write))
+
+def get_models(write: bool = False) -> dict:
     models = {}
     sn_table_mapper = {}
-    params = model_parameters()
+    params = get_model_parameters()
     for f in REPORT_DIR.glob("**/tables/*.tmdl"):
         model = f.parent.parent.parent.stem
         table = f.stem
@@ -184,11 +190,14 @@ def print_models(write: bool = False) -> dict:
             )
     if write:
         write_tables(models, sn_table_mapper)
-    pp(models)
+    return models
 
 
 @app.command()
-def model_parameters() -> dict:
+def print_params():
+    pp(get_model_parameters)
+
+def get_model_parameters() -> dict:
     params = {}
     for f in REPORT_DIR.glob("**/expressions.tmdl"):
         params[f.parent.parent.stem] = {}
@@ -248,5 +257,119 @@ def order_tables():
         f.write_text("\n".join(lines))
 
 
+def get_relationships(model: str) -> list[dict]:
+    relationships = []
+    for f in REPORT_DIR.glob(f"**/{model}.Dataset/**/relationships.tmdl"):
+        relations = f.read_text().split("relationship")
+        for r in relations:
+            if "isActive" not in r and r != "":
+                t = r.split("\n")[1:]
+                t[0].split(" ")[1]
+                from_tbl_col = [
+                    " ".join(l.split(" ")[1:]) for l in t if "fromColumn" in l
+                ][0]
+                from_tbl, from_col = [
+                    c.strip("'").strip('"') for c in from_tbl_col.split(".")
+                ]
+                toColumn = [" ".join(l.split(" ")[1:]) for l in t if "toColumn" in l][0]
+                to_tbl, to_col = [c.strip("'").strip('"') for c in toColumn.split(".")]
+                relationships.append(
+                    {
+                        "source_tbl": from_tbl,
+                        "source_column": from_col,
+                        "dest_tbl": to_tbl,
+                        "dest_column": to_col,
+                        "join_str": (
+                            to_col if from_col == to_col else f"{from_col} = {to_col}"
+                        ),
+                    }
+                )
+    return relationships
+
+
+@app.command()
+def get_relation_between(model, table_a, table_b, graph:bool= False):
+    G = create_relationship_graph(model)
+    nodes = nx.shortest_path(G, table_a, table_b, 5)
+    if graph:
+        plot_relationships(G.subgraph(nodes), f"{model}: {table_a} to {table_b}" ) 
+    else:
+        print_relationship_between(G, nodes)
+
+
+
+def print_relationship_between(G, nodes):
+    labels = [G.get_edge_data(*e)["columns"] for e in nodes_to_edges(nodes)]
+    relationship_str = ["|"]
+    for n in range(0, len(nodes) - 1, 1):
+        relationship_str.append(f"{nodes[n]}|- ({labels[n]}) -|")
+    relationship_str.append(f"{nodes[-1:][0]}|")
+    return print("".join(relationship_str))
+
+
+@app.command()
+def plot_table_relationships(model, table:str=None):
+    G = create_relationship_graph(model)
+    if table:
+        plot_relationships(get_neighbors_graph(G, table), f"{model}: {table}")
+    else:
+        plot_relationships(G, f"{model}")
+
+
+def create_relationship_graph(model) -> nx.Graph:
+    relationships = get_relationships(model)
+    G = nx.Graph()
+    G.add_edges_from(
+        [
+            (r["source_tbl"], r["dest_tbl"], {"columns": r["join_str"]})
+            for r in relationships
+        ]
+    )
+    return G
+
+
+def get_neighbors_graph(G: nx.Graph, table: str):
+    nodes = [n for n in nx.neighbors(G, table)] + [table]
+    return nx.subgraph(G, nodes)
+
+
+def plot_relationships(G: nx.Graph, title: str = "Table Plot"):
+    import matplotlib.pyplot as plt
+
+    pos = nx.spring_layout(G)
+    fig = plt.figure(1, figsize=(15, 15), dpi=60)
+    fig.canvas.manager.set_window_title(title)
+    nx.draw_networkx(
+        G,
+        pos,
+        arrowsize=0,
+        arrowstyle="|-|",
+        arrows=True,
+        alpha=0.5,
+        node_size=1500,
+        with_labels=True,
+    )
+    # column_labels = [ for e in G.edges()]
+    column_labels = {e: G.get_edge_data(*e)["columns"] for e in G.edges()}
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=column_labels)
+    plt.show()
+
+
+def get_nx_neighbors(graph):
+    neighbors = {n for n in nx.neighbors(graph, "Orders")}
+    for n in [n for n in nx.neighbors(graph, "Orders")]:
+        neighbors = neighbors | {i for i in nx.neighbors(graph, n)}
+    return neighbors
+
+
+def nodes_to_edges(nodes: list) -> list[tuple]:
+    edges = []
+    for n in range(0, len(nodes) - 1, 1):
+        edges.append((nodes[n], nodes[n + 1]))
+    return edges
+
+
 if __name__ == "__main__":
     app()
+    # plot_table_relationships("DMA D2C", "Orders")
+    # get_relation_between("DMA D2C", "Orders", "Website")
