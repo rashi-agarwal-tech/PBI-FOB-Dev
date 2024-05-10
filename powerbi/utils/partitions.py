@@ -56,14 +56,16 @@ def get_current_fin_year_int() -> int:
 def get_current_year(financial: bool = False) -> int:
     return fy.FiscalYear.current()._fiscal_year if financial else datetime.now().year
 
+# Define a standard partition name... This is the only way we can consitantly pick up the latest partition date...
+# {FY|CY}YYYY{M|P}MM{W}WW
 class Partition:
     def __init__(self, template: str, frequency: Literal["WEEK", "MONTH", "YEAR"] = "YEAR", calendar:Literal["FINANCIAL", "CALENDAR"] = "CALENDAR"):
         self.frequency = frequency
         self.calendar = calendar
         self.template = template
 
-    def get_partition():
-        pass
+    def get_partition(self):
+        return f"\tpartition FY2023 = m\n\t\tmode: import\n\t\t: full\n\t\tsource = ```\n{self.partition}"
     # FY|CY2023M|W01
 
     def get_new_partition_periods(self, existing_partitions: list):
@@ -71,7 +73,15 @@ class Partition:
         if self.frequency == "YEAR":
             year = get_current_year() if self.calendar == "FINANCIAL"else get_current_year(True)
 
+    @abstract
+    def partition(year: str, month: str, day: str):
+        """
 
+        Args:
+            year (str): This is either the
+            month (str): _description_
+            week (str): _description_
+        """
             
 
 

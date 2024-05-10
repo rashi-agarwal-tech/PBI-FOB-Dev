@@ -3,9 +3,8 @@ table 'Website Name'
 	lineageTag: c71b653e-bc9f-492a-8eeb-0ca77d48a060
 
 	column GAViewID
-		dataType: string
+		dataType: double
 		isHidden
-		sourceProviderType: nvarchar(16777216)
 		lineageTag: a52836fe-eb45-491d-a9be-6f3ec8f382f1
 		summarizeBy: none
 		sourceColumn: GAViewID
@@ -13,6 +12,8 @@ table 'Website Name'
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Website
 		dataType: string

@@ -179,10 +179,6 @@ relationship 006b1ab1-b1db-4354-a6c5-390c227d4951
 	fromColumn: 'GA Demand FC'.Date
 	toColumn: Date.' Date'
 
-relationship 6b05918f-635f-480b-924f-fac3ef49a76b
-	fromColumn: 'GA Demand FC'.Device
-	toColumn: 'Web Device'.Device
-
 relationship 437d008b-748a-4b93-b7ff-f0bb97bd2916
 	fromColumn: 'GA Demand FC'.'Forecast Version'
 	toColumn: 'Forecast Version'.'Forecast Version'
@@ -524,12 +520,6 @@ relationship 12f34960-a31f-4b02-9ca9-12dfecb08607
 relationship 57642cb4-76b3-42ac-825a-e08a3a243f2a
 	fromColumn: Warehouse.PARENTSTOREID
 	toColumn: 'Account Details'.STOREID
-
-relationship ce677e8f-f22f-45e4-ba55-8b506606c445
-	crossFilteringBehavior: bothDirections
-	fromCardinality: one
-	fromColumn: 'Website Name'.Website
-	toColumn: Website.WebsiteNameJoin
 
 relationship a1a48201-376f-4b08-8e11-012a72f11a0b
 	fromColumn: Availability.FinancialChannel
