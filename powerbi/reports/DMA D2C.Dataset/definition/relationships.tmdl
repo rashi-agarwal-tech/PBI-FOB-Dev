@@ -596,3 +596,8 @@ relationship 0c2c750d-a183-4df9-bc2e-94de9b11ca44
 	fromColumn: Orders.StoreDateKey
 	toColumn: 'Refit Exclusion'.StoreDateKey
 
+relationship d8c3a264-09d3-4cc4-bffd-dfeda029bed5
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Website Name'.Website
+	toColumn: Website.WebsiteNameJoin
+

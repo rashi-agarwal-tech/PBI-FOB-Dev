@@ -2,15 +2,11 @@ expression NumberOfRows = 0 meta [IsParameterQuery=true, Type="Number", IsParame
 	lineageTag: e884e3a3-b1d0-47b5-b1c2-05e6238c7cd5
 	queryGroup: Parameters
 
-	annotation PBI_NavigationStepName = Navigation
-
 	annotation PBI_ResultType = Number
 
 expression RangeStart = #date(2022, 1, 1) meta [IsParameterQuery=true, Type="Date", IsParameterQueryRequired=true]
 	lineageTag: a4b734ea-622d-48a7-91fe-8ecf360fd357
 	queryGroup: Parameters
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Date
 
@@ -18,16 +14,12 @@ expression RangeEnd = #date(2023, 1, 1) meta [IsParameterQuery=true, Type="Date"
 	lineageTag: e15730cb-8b7c-42ac-852f-c1258957edd2
 	queryGroup: Parameters
 
-	annotation PBI_NavigationStepName = Navigation
-
 	annotation PBI_ResultType = Date
 
 /// Snowflake Setup
 expression Datasource_Server = "drmartensdev.west-europe.azure.snowflakecomputing.com" meta [IsParameterQuery=true, List={"drmartensdev.west-europe.azure.snowflakecomputing.com", "drmartensuat.west-europe.azure.snowflakecomputing.com", "drmartensprod.west-europe.azure.snowflakecomputing.com"}, DefaultValue="drmartensdev.west-europe.azure.snowflakecomputing.com", Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 8854d207-ef02-4a06-a910-d997a78826e9
 	queryGroup: Parameters
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Text
 
@@ -42,8 +34,6 @@ expression Datasource_Database = "PRESENTATION" meta [IsParameterQuery=true, Typ
 	lineageTag: 479d0157-2b50-4f74-9f49-3d47a8655315
 	queryGroup: Parameters
 
-	annotation PBI_NavigationStepName = Navigation
-
 	annotation PBI_ResultType = Text
 
 /// Snowflake Setup
@@ -51,16 +41,12 @@ expression Datasource_Schema = "BFN_PRESENTATION" meta [IsParameterQuery=true, T
 	lineageTag: abb24abc-92e6-43ab-8dab-0e7a4fd1fe49
 	queryGroup: Parameters
 
-	annotation PBI_NavigationStepName = Navigation
-
 	annotation PBI_ResultType = Text
 
 /// Snowflake Setup
 expression Orders_View = "D2C_BFN_VW_D365_FACT_SALES" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 99d30e0e-c10b-4b9f-ae2a-14d046fd8b65
 	queryGroup: Parameters
-
-	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Text
 

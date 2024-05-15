@@ -539,7 +539,6 @@ table Availability
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-
 	partition 'CY2025 12' = m
 		source =
 				let
@@ -1116,7 +1115,6 @@ table Availability
 				in
 					PartitionFilter
 
-
 	partition 'CY2021 12' = m
 		source =
 				let
@@ -1260,6 +1258,7 @@ table Availability
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 1, 1) and [DATE] < #date(2021, 2, 1))
 				in
 					PartitionFilter
+
 
 	annotation PBI_ResultType = Table
 
