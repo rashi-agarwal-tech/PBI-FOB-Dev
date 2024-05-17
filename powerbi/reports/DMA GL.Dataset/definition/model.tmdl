@@ -6,11 +6,11 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["Analysis", "Budget", "Channel", "Comparatives", "Cost Centre", "Country", "Datasource_Database", "Datasource_Schema", "Datasource_Server", "Datasource_Warehouse", "Date", "General Ledger Fact", "Main Account", "Metrics", "Region", "Retail Store", "Selling Status", "Vendor"]
+annotation PBI_QueryOrder = ["Analysis","Budget","Channel","Comparatives","Cost Centre","Country","Datasource_Database","Datasource_Schema","Datasource_Server","Datasource_Warehouse","Date","General Ledger Fact","Main Account","Metrics","Region","Retail Store","Selling Status","Vendor"]
 
-annotation __PBI_TimeIntelligenceEnabled = 1
+annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBIDesktopVersion = 2.126.927.0 (24.02)
+annotation PBIDesktopVersion = 2.128.1177.0 (24.04)
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -25,12 +25,23 @@ ref table 'Retail Store'
 ref table 'General Ledger Fact'
 ref table Comparatives
 ref table Metrics
-ref table DateTableTemplate_819c5eb5-ea1e-4aac-88dc-1b9a8bddc486
 ref table Vendor
 ref table 'Selling Status'
 ref table Date
-ref table LocalDateTable_15a61531-2f83-4334-b812-b54509bc2adf
-ref table LocalDateTable_559773a9-e646-4489-943f-6cbbf73e6eaa
-ref table LocalDateTable_efc13eb0-0bc3-4ab7-a1d8-efca5d1e47ec
-ref table LocalDateTable_920ba5b5-af16-4bf5-b770-8c43525fb3e6
+
+ref role 'JP Users'
+ref role Users
+ref role 'EMEA Users - Global'
+ref role 'EMEA Users'
+ref role Admin
+ref role PUGs
+ref role ITAndDigitalCostCentres
+ref role 'APAC Users'
+ref role 'CN Users'
+ref role 'HK Users'
+ref role 'HK Users - Global'
+ref role 'EMEA Retail Stores'
+ref role 'JP Users - Global'
+ref role 'NA Users - Global'
+ref role 'NA Users'
 

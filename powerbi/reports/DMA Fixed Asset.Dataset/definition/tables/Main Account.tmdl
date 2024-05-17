@@ -99,14 +99,12 @@ table 'Main Account'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Report Type'
-		dataType: double
+		dataType: string
 		lineageTag: 11fe049e-89c0-4c44-84b7-4af6aecf3bdf
 		summarizeBy: none
 		sourceColumn: Report Type
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition 'Main Account' = m
 		mode: import

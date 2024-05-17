@@ -1,0 +1,9 @@
+role 'CN Users'
+	modelPermission: read
+
+	tablePermission 'General Ledger Fact' = [LEDGERNAME] IN {"270"}
+
+	tablePermission Region = [Company ID] IN {"270"}
+
+	annotation PBI_Id = 84b8d6f497dd40b7888e9a04d4f39e74
+

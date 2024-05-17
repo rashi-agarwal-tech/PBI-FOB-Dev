@@ -194,16 +194,14 @@ table 'Main Account'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Report Type'
-		dataType: double
+		dataType: string
 		lineageTag: c0a7cb30-7c05-41fa-b1d8-84b75fe21ee0
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Report Type
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition 'Main Account-29add3da-cc81-4fe6-93cc-4cae45e7c02c' = m
 		mode: import
@@ -217,6 +215,4 @@ table 'Main Account'
 				    VW_BFN_D365DIMMAINACCOUNT_View
 
 	annotation PBI_ResultType = Table
-
-	annotation PBI_NavigationStepName = Navigation
 
