@@ -6,7 +6,7 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["Analysis","Budget","Channel","Comparatives","Cost Centre","Country","Datasource_Database","Datasource_Schema","Datasource_Server","Datasource_Warehouse","Date","General Ledger Fact","Main Account","Metrics","Region","Retail Store","Selling Status","Vendor"]
+annotation PBI_QueryOrder = ["Datasource_Database","Datasource_Schema","Datasource_Server","Datasource_Warehouse","Analysis","Budget","Channel","Comparatives","Cost Centre","Country","Date","General Ledger Fact","Main Account","Metrics","Region","Retail Store","Selling Status","Vendor"]
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
@@ -36,7 +36,6 @@ ref role 'EMEA Users'
 ref role Admin
 ref role PUGs
 ref role ITAndDigitalCostCentres
-ref role 'APAC Users'
 ref role 'CN Users'
 ref role 'HK Users'
 ref role 'HK Users - Global'
@@ -44,4 +43,5 @@ ref role 'EMEA Retail Stores'
 ref role 'JP Users - Global'
 ref role 'NA Users - Global'
 ref role 'NA Users'
+ref role 'AsiaPac Users'
 
