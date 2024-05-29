@@ -5413,8 +5413,8 @@ table Metrics
 			            "NoOfReturn", COUNTROWS(filter(Orders,Orders[Transaction Type]="Return")),
 			            "MinReturnDate", CALCULATE(min('Date - Order Date'[ Order Date]), Orders[Transaction Type]="Return"),
 			            "MaxSaleDate", CALCULATE(max('Date - Order Date'[ Order Date]), Orders[Transaction Type]="Sale"),
-			            "max_sale_size", CALCULATE(max(Orders[Size_Key]),Orders[Transaction Type]="Sale"),
-			            "max_return_size", CALCULATE(max(Orders[Size_Key]),Orders[Transaction Type]="Return")
+			            "max_sale_size", CALCULATE(max(Size[DisplayOrder]),Orders[Transaction Type]="Sale"),
+			            "max_return_size", CALCULATE(max(Size[DisplayOrder]),Orders[Transaction Type]="Return")
 			                ),
 			        [Total Trans]>=2 && [NoOfSale]=2 && [NoOfReturn]=1 && [Net Value]>15 && [MinReturnDate]<[MaxSaleDate] && [max_sale_size]>[max_return_size]
 			        )
