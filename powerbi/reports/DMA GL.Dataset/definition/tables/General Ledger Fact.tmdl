@@ -495,7 +495,8 @@ table 'General Ledger Fact'
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    VW_BFN_D365FACTASE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365FACTASE",Kind="View"]}[Data]
+				    VW_BFN_D365FACTASE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365FACTASE",Kind="View"]}[Data],
+				    #"Uppercased Text" = Table.TransformColumns(VW_BFN_D365FACTASE_View,{{"Currency", Text.Upper, type text}})
 				in
 				    VW_BFN_D365FACTASE_View
 
