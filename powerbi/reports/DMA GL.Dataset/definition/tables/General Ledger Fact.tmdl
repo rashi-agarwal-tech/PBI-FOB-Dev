@@ -498,7 +498,7 @@ table 'General Ledger Fact'
 				    VW_BFN_D365FACTASE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365FACTASE",Kind="View"]}[Data],
 				    #"Uppercased Text" = Table.TransformColumns(VW_BFN_D365FACTASE_View,{{"Currency", Text.Upper, type text}})
 				in
-				    VW_BFN_D365FACTASE_View
+				    #"Uppercased Text"
 
 	annotation PBI_ResultType = Table
 
