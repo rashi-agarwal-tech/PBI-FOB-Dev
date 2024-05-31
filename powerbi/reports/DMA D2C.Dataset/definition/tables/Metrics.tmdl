@@ -5427,9 +5427,9 @@ table Metrics
 			        Orders[Sales Order Number],
 			        "Total Trans", COUNTROWS(Orders),
 			        "Invoice-Return", [Invoiced Net Value]-[Returned Net Value],
-			        "size_cnt", DISTINCTCOUNT(Size[Size_Key]),
-			        "sale_size", CALCULATE(min(Orders[Size_Key]),Orders[Transaction Type]="Sale"),
-			        "return_size", CALCULATE(min(Orders[Size_Key]),Orders[Transaction Type]="Return"),
+			        "size_cnt", DISTINCTCOUNT(Size[DisplayOrder]),
+			        "sale_size", CALCULATE(min(Size[DisplayOrder]),Orders[Transaction Type]="Sale"),
+			        "return_size", CALCULATE(min(Size[DisplayOrder]),Orders[Transaction Type]="Return"),
 			       "NoOfSale", COUNTROWS(filter(Orders,Orders[Transaction Type]="Sale")),
 			        "NoOfReturn", COUNTROWS(filter(Orders,Orders[Transaction Type]="Return"))
 			            ),
