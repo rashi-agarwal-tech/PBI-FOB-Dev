@@ -4899,7 +4899,7 @@ table Metrics
 			            TmpEcomOrders,
 			            Orders[Sales Order Number],
 			            Orders[ITEMNUMBER_SOL_ROL],
-			            Orders[Size_Key]
+			            Size[Size_Key]
 			        )
 			    )
 			VAR ItemCount =
@@ -5172,8 +5172,8 @@ table Metrics
 			            "NoOfReturn", COUNTROWS(filter(Orders,Orders[Transaction Type]="Return")),
 			            "MinReturnDate", CALCULATE(min('Date - Order Date'[ Order Date]), Orders[Transaction Type]="Return"),
 			            "MaxSaleDate", CALCULATE(max('Date - Order Date'[ Order Date]), Orders[Transaction Type]="Sale"),
-			            "min_sale_size", CALCULATE(min(Orders[Size_Key]),Orders[Transaction Type]="Sale"),
-			            "min_return_size", CALCULATE(min(Orders[Size_Key]),Orders[Transaction Type]="Return")
+			            "min_sale_size", CALCULATE(min(Size[Size_Key]),Orders[Transaction Type]="Sale"),
+			            "min_return_size", CALCULATE(min(Size[Size_Key]),Orders[Transaction Type]="Return")
 			                ),
 			        [Total Trans]>=2 && [NoOfSale]=2 && [NoOfReturn]=1 && [Net Value]>15 && [MinReturnDate]<[MaxSaleDate] && [min_sale_size]< [min_return_size]
 			        )
@@ -5186,9 +5186,9 @@ table Metrics
 			        Orders[Sales Order Number],
 			        "Total Trans", COUNTROWS(Orders),
 			        "Invoice-Return", [Invoiced Net Value]-[Returned Net Value],
-			        "size_cnt", DISTINCTCOUNT(Size[Size_Key]),
-			        "sale_size", CALCULATE(min(Orders[Size_Key]),Orders[Transaction Type]="Sale"),
-			        "return_size", CALCULATE(min(Orders[Size_Key]),Orders[Transaction Type]="Return"),
+			        "size_cnt", DISTINCTCOUNT(Size[DisplayOrder]),
+			        "sale_size", CALCULATE(min(Size[DisplayOrder]),Orders[Transaction Type]="Sale"),
+			        "return_size", CALCULATE(min(Size[DisplayOrder]),Orders[Transaction Type]="Return"),
 			        "Return Trans", CALCULATE(COUNTROWS(Orders), Orders[Transaction Type]="Return")
 			            ),
 			    [Total Trans]>=2 && [Invoice-Return]>15  && [Return Trans]=1 && [size_cnt]>1 && [sale_size]<>[return_size]
