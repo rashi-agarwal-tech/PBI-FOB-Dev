@@ -261,13 +261,15 @@ table 'Google Analytics'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Transaction Revenue (GBP)' = 'Google Analytics'[TransactionRevenue] * 'Google Analytics'[XR to GBP]
-		dataType: double
+		dataType: decimal
 		isHidden
+		formatString: 0.000000
 		lineageTag: 10016dc5-2f49-43c5-915c-cba694255ffc
 		summarizeBy: none
-		isDataTypeInferred
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
 
@@ -290,17 +292,17 @@ table 'Google Analytics'
 			        )
 			    )
 			)
-		dataType: double
+		dataType: decimal
 		isHidden
+		formatString: 0.000000
 		lineageTag: eb7a0e87-d1b4-47d1-b79c-bddbce55605c
 		summarizeBy: none
-		isDataTypeInferred
 
 		changedProperty = IsHidden
 
-		annotation SummarizationSetBy = User
+		changedProperty = DataType
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation SummarizationSetBy = User
 
 	partition 'Google Analytics-286fb001-a1c4-445e-b50f-c8e1872063c9' = m
 		mode: import
