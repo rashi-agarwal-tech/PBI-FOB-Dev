@@ -36,7 +36,7 @@ table Channel
 		annotation SummarizationSetBy = Automatic
 
 	partition Channel-8675e837-93e6-4bb9-be4a-7efda69e8f72 = m
-		mode: import
+		mode: directQuery
 		source =
 				let
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),

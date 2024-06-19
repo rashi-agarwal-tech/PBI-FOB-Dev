@@ -36,7 +36,7 @@ table Analysis
 		annotation SummarizationSetBy = Automatic
 
 	partition Analysis-db1408fc-3586-4937-8218-86ff588a1370 = m
-		mode: import
+		mode: directQuery
 		source =
 				let
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),

@@ -50,7 +50,7 @@ table Vendor
 		annotation SummarizationSetBy = Automatic
 
 	partition Vendor-df0d339e-cd3e-44b8-bdcd-20f505fcbfb7 = m
-		mode: import
+		mode: directQuery
 		source =
 				let
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),

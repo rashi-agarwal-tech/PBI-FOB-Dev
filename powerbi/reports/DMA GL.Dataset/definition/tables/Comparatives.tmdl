@@ -13,7 +13,7 @@ table Comparatives
 		annotation SummarizationSetBy = Automatic
 
 	partition Comparatives-c2c46cc5-0347-46d7-9f71-5001731d813b = m
-		mode: import
+		mode: directQuery
 		source =
 				let
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),

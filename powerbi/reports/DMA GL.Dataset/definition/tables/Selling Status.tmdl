@@ -32,7 +32,7 @@ table 'Selling Status'
 		annotation SummarizationSetBy = Automatic
 
 	partition 'Selling Status-050209df-8ddc-414f-975e-7421200a7c38' = m
-		mode: import
+		mode: directQuery
 		source =
 				let
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),

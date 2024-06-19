@@ -907,7 +907,7 @@ table Date
 		annotation SummarizationSetBy = Automatic
 
 	partition Date-954ac077-243e-48cd-92a6-a9e063f8af2a = m
-		mode: import
+		mode: directQuery
 		source =
 				let
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),

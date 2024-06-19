@@ -80,7 +80,7 @@ table 'Cost Centre'
 		annotation SummarizationSetBy = Automatic
 
 	partition 'Cost Centre-496829b7-9b64-4cf4-8b4b-97d77f90d510' = m
-		mode: import
+		mode: directQuery
 		source =
 				let
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
