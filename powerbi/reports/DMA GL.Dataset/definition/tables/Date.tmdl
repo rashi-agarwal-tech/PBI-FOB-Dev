@@ -913,9 +913,12 @@ table Date
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    VW_BFN_DIMDATE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_DIMDATE",Kind="View"]}[Data]
+				    VW_BFN_DIMDATE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_DIMDATE",Kind="View"]}[Data],
+				    remove_zero = Table.ReplaceValue(VW_BFN_DIMDATE_View, "0", null, Replacer.ReplaceValue, {"DATE_KEY"})
 				in
-				    VW_BFN_DIMDATE_View
+				    remove_zero
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 
