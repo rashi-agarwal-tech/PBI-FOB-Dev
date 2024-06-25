@@ -380,7 +380,7 @@ table 'Google Analytics Goals'
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_GOAL_COMPLETIONS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_GOAL_COMPLETIONS_CURRENT_MONTH",Kind="View"]}[Data]
+				    D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_GOAL_COMPLETIONS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_GOAL_COMPLETIONS_QUARTERS",Kind="View"]}[Data]
 				in
 				    D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_GOAL_COMPLETIONS_CURRENT_MONTH_View
 
