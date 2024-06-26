@@ -783,42 +783,6 @@ table Date
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Financial Year' = 'Date'[Fiscal Year Number]
-		dataType: double
-		isHidden
-		formatString: 0
-		displayFolder: EMEA Fiscal Dates
-		lineageTag: 3ab9d8b7-10b4-4db5-9dad-3de7b766e730
-		summarizeBy: none
-
-		changedProperty = IsHidden
-
-		changedProperty = FormatString
-
-		changedProperty = DataType
-
-		annotation SummarizationSetBy = User
-
-	column 'Fiscal Period' = "F" & RIGHT ( 'Date'[Fiscal Period - Year], 3 )
-		dataType: string
-		displayFolder: EMEA Fiscal Dates
-		lineageTag: e9e23440-fd73-479e-a2ce-6ed79ed8ba48
-		summarizeBy: none
-		isDataTypeInferred
-
-		annotation SummarizationSetBy = Automatic
-
-	column Month-Year =
-			'Date'[Mon] & "-"
-			    & RIGHT ( 'Date'[Year], 2 )
-		dataType: string
-		displayFolder: Calendar Dates
-		lineageTag: e3255725-d541-4af6-8810-2af7449be184
-		summarizeBy: none
-		isDataTypeInferred
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Exclude 53rd Week'
 		dataType: string
 		lineageTag: 641b339d-f2b1-49fc-898c-e7aa1fde83b6
@@ -906,6 +870,39 @@ table Date
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Financial Year'
+		dataType: double
+		isHidden
+		formatString: 0
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 3ab9d8b7-10b4-4db5-9dad-3de7b766e730
+		summarizeBy: none
+		sourceColumn: Financial Year
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Period'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: e9e23440-fd73-479e-a2ce-6ed79ed8ba48
+		summarizeBy: none
+		sourceColumn: Fiscal Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month-Year
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: e3255725-d541-4af6-8810-2af7449be184
+		summarizeBy: none
+		sourceColumn: Month-Year
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Date-954ac077-243e-48cd-92a6-a9e063f8af2a = m
 		mode: directQuery
 		source =
@@ -913,12 +910,11 @@ table Date
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    VW_BFN_DIMDATE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_DIMDATE",Kind="View"]}[Data],
-				    remove_zero = Table.ReplaceValue(VW_BFN_DIMDATE_View, "0", null, Replacer.ReplaceValue, {"DATE_KEY"})
+				    VW_BFN_DIMDATE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_DIMDATE_GL",Kind="View"]}[Data],
+					remove_zero = Table.ReplaceValue(VW_BFN_DIMDATE_View, "0", null, Replacer.ReplaceValue, {"DATE_KEY"})
 				in
-				    remove_zero
+					remove_zero
 
 	annotation PBI_ResultType = Table
 
 	annotation PBI_NavigationStepName = Navigation
-
