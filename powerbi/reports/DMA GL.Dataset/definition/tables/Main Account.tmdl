@@ -204,7 +204,7 @@ table 'Main Account'
 		annotation SummarizationSetBy = Automatic
 
 	partition 'Main Account-29add3da-cc81-4fe6-93cc-4cae45e7c02c' = m
-		mode: directQuery
+		mode: import
 		source =
 				let
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),

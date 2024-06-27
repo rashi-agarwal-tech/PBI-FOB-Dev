@@ -1,0 +1,14 @@
+	partition 'General Ledger Fact-bf6ecc72-4fc7-48ef-8414-6042cacc2471' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					VW_BFN_D365FACTASE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365FACTASE",Kind="View"]}[Data],
+					#"Uppercased Text" = Table.TransformColumns(VW_BFN_D365FACTASE_View,{{"Currency", Text.Upper, type text}}),
+					#"Kept First Rows" = Table.FirstN(#"Uppercased Text",NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else VW_BFN_D365FACTASE_View
+				in
+					ParameterFilter
+	

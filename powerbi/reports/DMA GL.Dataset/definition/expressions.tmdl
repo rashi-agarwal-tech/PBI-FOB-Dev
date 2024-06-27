@@ -21,3 +21,10 @@ expression Datasource_Schema = "BFN_PRESENTATION" meta [IsParameterQuery=true, T
 
 	annotation PBI_ResultType = Text
 
+expression NumberOfRows = 0 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
+	lineageTag: 7f99956b-aa3f-4ebc-85f1-e477f7c681b7
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Number
+

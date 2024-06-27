@@ -290,15 +290,16 @@ table 'Retail Store'
 		annotation SummarizationSetBy = Automatic
 
 	partition 'Retail Store-645ba6a9-6f1f-420c-a1e8-e49195dbfade' = m
-		mode: directQuery
+		mode: import
 		source =
 				let
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    VW_BFN_D365DIMRETAILSTORE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365DIMRETAILSTORE",Kind="View"]}[Data]
+				    VW_BFN_D365DIMRETAILSTORE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365DIMRETAILSTORE",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(VW_BFN_D365DIMRETAILSTORE_View, each [CostCentre_Key] <> null and [CostCentre_Key] <> "")
 				in
-				    VW_BFN_D365DIMRETAILSTORE_View
+				    #"Filtered Rows"
 
 	annotation PBI_ResultType = Table
 

@@ -129,7 +129,7 @@ table Budget
 		annotation SummarizationSetBy = Automatic
 
 	partition Budget-11522050-407c-4f3f-a6e0-d641739dd3ad = m
-		mode: directQuery
+		mode: import
 		source =
 				let
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
@@ -142,6 +142,4 @@ table Budget
 	changedProperty = IsHidden
 
 	annotation PBI_ResultType = Table
-
-	annotation PBI_NavigationStepName = Navigation
 

@@ -36,7 +36,7 @@ table Country
 		annotation SummarizationSetBy = Automatic
 
 	partition Country-96370c0d-7f27-4753-8587-a18c96dd3b53 = m
-		mode: directQuery
+		mode: import
 		source =
 				let
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),

@@ -58,7 +58,7 @@ table Region
 		annotation SummarizationSetBy = Automatic
 
 	partition Region-2f54c97e-e334-47f9-a950-1aadcf08023e = m
-		mode: directQuery
+		mode: import
 		source =
 				let
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),

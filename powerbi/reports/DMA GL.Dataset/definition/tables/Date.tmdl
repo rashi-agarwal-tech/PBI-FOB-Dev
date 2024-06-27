@@ -904,17 +904,19 @@ table Date
 		annotation SummarizationSetBy = Automatic
 
 	partition Date-954ac077-243e-48cd-92a6-a9e063f8af2a = m
-		mode: directQuery
+		mode: import
 		source =
 				let
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    VW_BFN_DIMDATE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_DIMDATE_GL",Kind="View"]}[Data],
-					remove_zero = Table.ReplaceValue(VW_BFN_DIMDATE_View, "0", null, Replacer.ReplaceValue, {"DATE_KEY"})
+					remove_zero = Table.ReplaceValue(VW_BFN_DIMDATE_View, "0", null, Replacer.ReplaceValue, {"DATE_KEY"}),
+				    #"Filtered Rows" = Table.SelectRows(remove_zero, each [DATE_KEY] <> null and [DATE_KEY] <> "")
 				in
-					remove_zero
+					#"Filtered Rows"
 
 	annotation PBI_ResultType = Table
 
 	annotation PBI_NavigationStepName = Navigation
+
