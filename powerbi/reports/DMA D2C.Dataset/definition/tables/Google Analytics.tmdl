@@ -168,8 +168,9 @@ table 'Google Analytics'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'SessionDuration Col'
-		dataType: int64
+		dataType: decimal
 		isHidden
+		formatString: 0.00
 		sourceProviderType: decimal(10, 1)
 		lineageTag: 3b7d7238-9d25-425a-a364-ca24b0c2028e
 		summarizeBy: none
@@ -180,8 +181,6 @@ table 'Google Analytics'
 		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column GAViewID
 		dataType: string
