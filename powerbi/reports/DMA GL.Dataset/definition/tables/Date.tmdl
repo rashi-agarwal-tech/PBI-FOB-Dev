@@ -508,8 +508,9 @@ table Date
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Period Number (544)'
-		dataType: string
-		sourceProviderType: nvarchar(24)
+		dataType: double
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
 		displayFolder: 544 Dates
 		lineageTag: 7b478e52-00aa-4f58-b12b-312b7d4811ac
 		summarizeBy: none
