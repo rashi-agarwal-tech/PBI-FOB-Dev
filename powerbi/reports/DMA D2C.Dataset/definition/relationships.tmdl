@@ -575,12 +575,10 @@ relationship f23ab4b3-ccee-4954-96ce-32c24c0a93c9
 	toColumn: Channel.'Channel ID'
 
 relationship 93c76699-7ed2-41df-8569-436793159e41
-	crossFilteringBehavior: bothDirections
 	fromColumn: 'Google Analytics'.ChannelGrouping_Key
 	toColumn: 'Web Channel'.ChannelGrouping_Key
 
 relationship cba25b11-d9c4-48ca-a311-b585a01fa82f
-	isActive: false
 	fromColumn: 'Google Analytics Goals'.ChannelGrouping_Key
 	toColumn: 'Web Channel'.ChannelGrouping_Key
 
@@ -600,4 +598,8 @@ relationship d8c3a264-09d3-4cc4-bffd-dfeda029bed5
 	crossFilteringBehavior: bothDirections
 	fromColumn: 'Website Name'.Website
 	toColumn: Website.WebsiteNameJoin
+
+relationship d40651e8-1612-4590-b3c0-f942e153bdef
+	fromColumn: TMALL.ChannelId
+	toColumn: 'Web Channel'.ChannelGrouping_Key
 
