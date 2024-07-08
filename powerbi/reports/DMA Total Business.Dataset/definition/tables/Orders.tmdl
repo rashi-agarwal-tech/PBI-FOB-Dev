@@ -2157,6 +2157,23 @@ table Orders
 
 		annotation SummarizationSetBy = Automatic
 
+	partition FY2026 = m
+		mode: import
+		dataView: full
+		source = ```
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					TB_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_FACT_SALES",Kind="View"]}[Data], 
+					#"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
+					#"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
+					#"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
+					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20250331 and [Date_Key] < 20260401)
+				in
+					Date_Key_Filter
+				```
+				
 	partition FY2025 = m
 		mode: import
 		dataView: full
@@ -2169,7 +2186,7 @@ table Orders
 					#"ReplaceValueNull"  = Table.ReplaceValue(TB_BFN_VW_D365_FACT_SALES_View    , null  ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueFalse" = Table.ReplaceValue(#"ReplaceValueNull" , false ,"No" ,Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
 					#"ReplaceValueTrue"  = Table.ReplaceValue(#"ReplaceValueFalse", true  ,"Yes",Replacer.ReplaceValue,{"Is Revenue Affecting?"}),
-					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20240401 and [Date_Key] < 20250401)
+					Date_Key_Filter = Table.SelectRows(#"ReplaceValueTrue", each [Date_Key] >= 20240401 and [Date_Key] < 20250331)
 				in
 					Date_Key_Filter
 				```
