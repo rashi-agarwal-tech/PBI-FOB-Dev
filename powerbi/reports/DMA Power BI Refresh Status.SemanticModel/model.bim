@@ -1,0 +1,1451 @@
+{
+  "compatibilityLevel": 1567,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.128.1177.0 (24.04)"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"VW_POWERBI_REFRESH_STATUS (DEV)\",\"VW_POWERBI_REFRESH_STATUS (PROD)\",\"Time Zone Conversion\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-GB",
+    "tables": [
+      {
+        "name": "VW_POWERBI_REFRESH_STATUS (DEV)",
+        "changedProperties": [
+          {
+            "property": "IsHidden"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Status Refresh DT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "fc59be5f-510b-4a7e-b734-1f58b35788b7",
+            "sourceColumn": "Status Refresh DT",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Status Refresh Time",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Time"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Time",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "8f22e839-632b-407d-81fc-e4043399a815",
+            "sourceColumn": "Status Refresh Time",
+            "sourceProviderType": "time",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Airflow DAG Start DT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "5d2678c7-4a1b-45a4-b874-4162f37f1908",
+            "sourceColumn": "Airflow DAG Start DT",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "2a779b52-fb06-485c-ae2e-7506cdcad647",
+            "sourceColumn": "Status",
+            "sourceProviderType": "nvarchar(16777216)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Model Status Order Number",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "f5b38be1-e2ba-4a48-b31d-229f976a2764",
+            "sourceColumn": "Model Status Order Number",
+            "sourceProviderType": "decimal(18, 0)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Model Status Refresh Order Number",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "4a688e22-0c1f-46d1-a935-58b4daab63c6",
+            "sourceColumn": "Model Status Refresh Order Number",
+            "sourceProviderType": "decimal(18, 0)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Model Refresh Start Time",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Time"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Time",
+            "isHidden": true,
+            "lineageTag": "6f2dcfb5-9be2-45a7-8c71-c0b600fd7b6e",
+            "sourceColumn": "Model Refresh Start Time",
+            "sourceProviderType": "time",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Region Refresh Number",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "5dd506e5-6a55-4970-81b5-701b4e841916",
+            "sourceColumn": "Region Refresh Number",
+            "sourceProviderType": "decimal(18, 0)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Airflow Scheudle Id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "0fd570fb-aba2-4249-919a-b6f6420a46c7",
+            "sourceColumn": "Airflow Scheudle Id",
+            "sourceProviderType": "nvarchar(16777216)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Environment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "4dae9a45-b93c-4a49-905b-140627b8779e",
+            "sourceColumn": "Environment",
+            "sourceProviderType": "nvarchar(16777216)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Model Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "cc281684-52e3-4a47-91a0-2cf39617ac84",
+            "sourceColumn": "Model Name",
+            "sourceProviderType": "nvarchar(16777216)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Region",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "bf9d5515-62fb-43f3-88a9-247add1ec29f",
+            "sourceColumn": "Region",
+            "sourceProviderType": "nvarchar(7)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SLA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Time"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Time",
+            "isHidden": true,
+            "lineageTag": "fe338c33-7dc8-4b58-92c0-841773c438a5",
+            "sourceColumn": "SLA",
+            "sourceProviderType": "time",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SLA Delta",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "c2a06ca1-4880-42ef-bca9-60168967be91",
+            "sourceColumn": "SLA Delta",
+            "sourceProviderType": "decimal(9, 0)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Refresh Execution Time",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "747a8d95-09c7-4ded-9c16-228ec397325c",
+            "sourceColumn": "Refresh Execution Time",
+            "sourceProviderType": "decimal(9, 0)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Environment Short",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "e0e61824-7cd2-4be3-9237-762ce52a231c",
+            "sourceColumn": "Environment Short",
+            "sourceProviderType": "nvarchar(16777216)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SLA DT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "72308851-15fa-45dc-bdac-8d1661e7afa4",
+            "sourceColumn": "SLA DT",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Status DT Local",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "fbdb17e2-3ee0-44d9-97ec-904c087ff51c",
+            "sourceColumn": "Status DT Local",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Local Time Zone",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "3b56edd1-a0c3-48b3-a48c-6e83770fd03e",
+            "sourceColumn": "Local Time Zone",
+            "sourceProviderType": "nvarchar(14)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Start DT Local",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "771f1554-0ab9-47e2-92a4-59aa95c7422f",
+            "sourceColumn": "Start DT Local",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Start Date Local",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "056f7316-619a-4716-a4f4-2b49e41af348",
+            "sourceColumn": "Start Date Local",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "d2c48793-0289-4749-984b-c601707c3943",
+        "partitions": [
+          {
+            "name": "VW_POWERBI_REFRESH_STATUS (DEV)",
+            "mode": "directQuery",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Snowflake.Databases(\"drmartensdev.west-europe.azure.snowflakecomputing.com\",\"REPORTER\"),",
+                "    MONITORING_Database = Source{[Name=\"MONITORING\",Kind=\"Database\"]}[Data],",
+                "    LOGS_Schema = MONITORING_Database{[Name=\"LOGS\",Kind=\"Schema\"]}[Data],",
+                "    VW_POWERBI_REFRESH_STATUS_View = LOGS_Schema{[Name=\"VW_POWERBI_REFRESH_STATUS\",Kind=\"View\"]}[Data]",
+                "in",
+                "    VW_POWERBI_REFRESH_STATUS_View"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "VW_POWERBI_REFRESH_STATUS (PROD)",
+        "changedProperties": [
+          {
+            "property": "IsHidden"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Status Refresh DT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "9b6e009a-3df2-4dfa-af3f-ef33fe365be8",
+            "sourceColumn": "Status Refresh DT",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Status Refresh Time",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Time"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Time",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "29afe457-8413-4ab5-872c-9f4b031aa144",
+            "sourceColumn": "Status Refresh Time",
+            "sourceProviderType": "time",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Airflow DAG Start DT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "5ef9634b-6e16-4c9f-b921-59b4df52accd",
+            "sourceColumn": "Airflow DAG Start DT",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "6c51a6eb-096a-4ac6-9c15-feb260941a8d",
+            "sourceColumn": "Status",
+            "sourceProviderType": "nvarchar(16777216)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Model Status Order Number",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "7d8ab6c0-fea7-4fc4-ab40-694af7595bfb",
+            "sourceColumn": "Model Status Order Number",
+            "sourceProviderType": "decimal(18, 0)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Model Status Refresh Order Number",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "fa88eb47-b03d-4a28-8066-0346c71bacc3",
+            "sourceColumn": "Model Status Refresh Order Number",
+            "sourceProviderType": "decimal(18, 0)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Model Refresh Start Time",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Time"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Time",
+            "isHidden": true,
+            "lineageTag": "183ec433-e1b0-4727-a411-44cc90a8d7d0",
+            "sourceColumn": "Model Refresh Start Time",
+            "sourceProviderType": "time",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Region Refresh Number",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "bda4b5a1-9242-4216-8de0-5ca6b24b0b78",
+            "sourceColumn": "Region Refresh Number",
+            "sourceProviderType": "decimal(18, 0)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Airflow Scheudle Id",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "715a6b78-e963-498e-ae1b-a1a9c9338b0f",
+            "sourceColumn": "Airflow Scheudle Id",
+            "sourceProviderType": "nvarchar(16777216)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Environment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "45042b10-cf38-446f-b436-fd87d85e08dc",
+            "sourceColumn": "Environment",
+            "sourceProviderType": "nvarchar(16777216)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Model Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "79e3eb01-4c10-4728-aec0-14a047df739b",
+            "sourceColumn": "Model Name",
+            "sourceProviderType": "nvarchar(16777216)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Region",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "string",
+            "isHidden": true,
+            "isNullable": false,
+            "lineageTag": "d603f0c0-1a0d-49e6-86b8-7bb5a2c37951",
+            "sourceColumn": "Region",
+            "sourceProviderType": "nvarchar(7)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SLA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Time"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Time",
+            "isHidden": true,
+            "lineageTag": "e8aa508b-db65-46b6-a7e5-13f7703bba02",
+            "sourceColumn": "SLA",
+            "sourceProviderType": "time",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SLA Delta",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "8eb37319-b924-419a-844b-7dd35e6600b9",
+            "sourceColumn": "SLA Delta",
+            "sourceProviderType": "decimal(9, 0)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Refresh Execution Time",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "changedProperties": [
+              {
+                "property": "IsHidden"
+              }
+            ],
+            "dataType": "double",
+            "isHidden": true,
+            "lineageTag": "f4738b45-9f72-4380-bcaf-6d2349a1d338",
+            "sourceColumn": "Refresh Execution Time",
+            "sourceProviderType": "decimal(9, 0)",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Environment Short",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "35d64971-3b55-4190-86e3-2f2c7f098a19",
+            "sourceColumn": "Environment Short",
+            "sourceProviderType": "nvarchar(16777216)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "SLA DT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "df45fdb8-0058-40b0-aabc-5a31892a0cfb",
+            "sourceColumn": "SLA DT",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Status DT Local",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "e378a587-18f7-483c-9319-f17047c9a527",
+            "sourceColumn": "Status DT Local",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Local Time Zone",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isNullable": false,
+            "lineageTag": "3028c5cc-de5f-402f-96d0-c7697933e5bb",
+            "sourceColumn": "Local Time Zone",
+            "sourceProviderType": "nvarchar(14)",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Start DT Local",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "lineageTag": "9d470c2a-aa30-4e28-ad52-b970657183a8",
+            "sourceColumn": "Start DT Local",
+            "sourceProviderType": "datetime2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Start Date Local",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "c9026c29-b53b-445f-8dda-d30142a9f509",
+            "sourceColumn": "Start Date Local",
+            "sourceProviderType": "date",
+            "summarizeBy": "none"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "db5364a1-9a2c-46de-9bfc-198f62127fc9",
+        "partitions": [
+          {
+            "name": "VW_POWERBI_REFRESH_STATUS (PROD)",
+            "mode": "directQuery",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Snowflake.Databases(\"drmartensprod.west-europe.azure.snowflakecomputing.com\",\"REPORTER\"),",
+                "    MONITORING_Database = Source{[Name=\"MONITORING\",Kind=\"Database\"]}[Data],",
+                "    LOGS_Schema = MONITORING_Database{[Name=\"LOGS\",Kind=\"Schema\"]}[Data],",
+                "    VW_POWERBI_REFRESH_STATUS_View = LOGS_Schema{[Name=\"VW_POWERBI_REFRESH_STATUS\",Kind=\"View\"]}[Data]",
+                "in",
+                "    VW_POWERBI_REFRESH_STATUS_View"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Power BI Model Refresh Status",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "53fc540a46874c958766cabcf3af0dda"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Status Refresh DT",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "dd/mm/yyyy hh:nn:ss",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "fb7ffbea-ce7e-436a-834c-88282ecba979",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Status Refresh DT]",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Status Refresh Time",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Time"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Time",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "22a65dc3-250b-49b8-a40a-d8fb8f13033f",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Status Refresh Time]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Airflow DAG Start DT",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "yyyy-mm-dd hh:nn:ss",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "09a4dbe5-47a4-4101-bcb7-2bdf72c7e0db",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Airflow DAG Start DT]",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "4675c7a7-324c-4d74-888d-73f5dda5db97",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Status]",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Model Status Order Number",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "ec2ec89d-90af-4488-92a5-3fb6295ddb76",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Model Status Order Number]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Model Status Refresh Order Number",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "8cd37586-8b29-4c55-8173-32fda6823904",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Model Status Refresh Order Number]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Model Refresh Start Time",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Time"
+              },
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Time",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "7dbd78cf-f565-4883-b72c-37696e3254f0",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Model Refresh Start Time]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Region Refresh Number",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isNameInferred": true,
+            "lineageTag": "7c8fe75c-2015-4694-a57c-8d615712d48f",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Region Refresh Number]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Airflow Scheudle Id",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "131e563d-3bbf-4c68-802b-4ca66afce0b0",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Airflow Scheudle Id]",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Environment",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "bc409fc3-80f8-42c0-9b8e-ac35672f3f83",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Environment]",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Model Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "8c54e148-717f-4235-81db-4023ea965c61",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Model Name]",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Region",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "d4d714c0-8f42-4beb-a5c6-e6b587e78d4a",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Region]",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "SLA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Time"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "hh:nn",
+            "isNameInferred": true,
+            "lineageTag": "b80e5ec4-f923-4087-a415-b4ca37324c4b",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[SLA]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "SLA Delta",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "d3209ab7-39d9-4f6a-bfad-8f7cc75618be",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[SLA Delta]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Refresh Execution Time",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "double",
+            "formatString": "0",
+            "isNameInferred": true,
+            "lineageTag": "0907ce0e-dbd0-4eed-afc2-07143fc3e6d9",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Refresh Execution Time]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Environment Short",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "4b434f02-b827-4657-bce8-aa3d50f0d989",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Environment Short]",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "SLA DT",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "dd/mm/yyyy hh:nn:ss",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "ea7c4c15-c074-4b20-b56c-e0554175d07c",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[SLA DT]",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Status DT Local",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isDateTimeCustom\":true}"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "dd/mm/yyyy hh:nn:ss",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "91690ca7-3ab2-48f9-8e56-d0149fb5a2b8",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Status DT Local]",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Local Time Zone",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "75efd643-2d24-46e7-adb9-defd9568c933",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Local Time Zone]",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Start DT Local",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "b6ab2731-c2f7-454f-a960-f13023063d8c",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Start DT Local]",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Start Date Local",
+            "dataType": "dateTime",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "56f58f2b-d929-46cb-a7e5-0ad53ffd5cb6",
+            "sourceColumn": "VW_POWERBI_REFRESH_STATUS (DEV)[Start Date Local]",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Airflow DAG Start DT Dynamic",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "dateTime",
+            "expression": "SWITCH(SELECTEDVALUE('Time Zone Conversion'[Time Zone], \"utc\"), \"utc\", [Airflow DAG Start DT], \"local\", 'Power BI Model Refresh Status'[Start DT Local])",
+            "formatString": "General Date",
+            "isDataTypeInferred": true,
+            "lineageTag": "2bb2a6f3-f18f-4d77-bac6-1a9239e95198",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "917c7682-eb5f-4170-a5f7-ea9cf6dc22b6",
+        "partitions": [
+          {
+            "name": "Power BI Model Refresh Status",
+            "mode": "import",
+            "source": {
+              "expression": "UNION('VW_POWERBI_REFRESH_STATUS (DEV)', 'VW_POWERBI_REFRESH_STATUS (PROD)')",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Time Zone Conversion",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Time Zone",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "eadb1894-1339-481d-be9a-b7730d3934e5",
+            "sourceColumn": "Time Zone",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "09c78dd8-f312-45c1-8edc-bb2b9de6b017",
+        "partitions": [
+          {
+            "name": "Time Zone Conversion",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText(\"i45WyslPTsxRitWJViotSVaKjQUA\", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#\"Time Zone\" = _t]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Source,{{\"Time Zone\", type text}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "TZ",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "37441c9be087403697c558871dd64695"
+          }
+        ],
+        "columns": [
+          {
+            "name": "TZ",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "isNameInferred": false,
+            "lineageTag": "f382dfb7-00bb-4142-8833-02ad8a0b235a",
+            "relatedColumnDetails": {
+              "groupByColumns": [
+                {
+                  "groupingColumn": "TZ Fields"
+                }
+              ]
+            },
+            "sortByColumn": "TZ Order",
+            "sourceColumn": "[Value1]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "TZ Fields",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "extendedProperties": [
+              {
+                "name": "ParameterMetadata",
+                "type": "json",
+                "value": {
+                  "kind": 2,
+                  "version": 3
+                }
+              }
+            ],
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "4cc92470-9b08-454e-b52f-e1c3ecbbea6c",
+            "sortByColumn": "TZ Order",
+            "sourceColumn": "[Value2]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "TZ Order",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "863e265e-64ac-48e2-a4dd-8d01d3ba4b69",
+            "sourceColumn": "[Value3]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "edd6994c-5774-4d24-9e99-f1411f191b06",
+        "partitions": [
+          {
+            "name": "TZ",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "{",
+                "    (\"Airflow DAG Start DT\", NAMEOF('Power BI Model Refresh Status'[Airflow DAG Start DT]), 0),",
+                "    (\"Status DT Local\", NAMEOF('Power BI Model Refresh Status'[Status DT Local]), 1)",
+                "}"
+              ],
+              "type": "calculated"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
