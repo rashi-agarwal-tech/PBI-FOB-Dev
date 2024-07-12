@@ -22,6 +22,14 @@ table 'Web Device'
 
 		annotation SummarizationSetBy = Automatic
 
+	column DeviceJoin
+		dataType: string
+		lineageTag: 4ccadd21-92d6-4e52-9970-07c3b54e7653
+		summarizeBy: none
+		sourceColumn: DeviceJoin
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'Web Device-3828d91f-12a4-469e-b3c7-e7eceef6e907' = m
 		mode: import
 		source =
@@ -29,9 +37,12 @@ table 'Web Device'
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_WEB_DIM_DEVICE_CATEGORY_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_WEB_DIM_DEVICE_CATEGORY",Kind="View"]}[Data]
+				    D2C_BFN_VW_WEB_DIM_DEVICE_CATEGORY_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_WEB_DIM_DEVICE_CATEGORY",Kind="View"]}[Data],
+				    #"Added Custom" = Table.AddColumn(D2C_BFN_VW_WEB_DIM_DEVICE_CATEGORY_View, "DeviceJoin", each if [Device] = null then "" else [Device])
 				in
-				    D2C_BFN_VW_WEB_DIM_DEVICE_CATEGORY_View
+				    #"Added Custom"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

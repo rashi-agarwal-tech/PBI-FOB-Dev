@@ -119,6 +119,22 @@ table 'GA Demand FC'
 
 		annotation SummarizationSetBy = Automatic
 
+	column Currency
+		dataType: string
+		lineageTag: a9fd8f2c-3f4c-43dd-90de-6e2bbb2efcf3
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeviceJoin
+		dataType: string
+		lineageTag: c404b00a-ebab-4cb0-9df4-c64ed8c5ef55
+		summarizeBy: none
+		sourceColumn: DeviceJoin
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'GA Demand FC-a5549c1f-5e61-4273-b91a-8c07ed8804aa' = m
 		mode: import
 		source =
@@ -127,12 +143,15 @@ table 'GA Demand FC'
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    D2C_BFN_VW_AZURE_GA_DEMAND_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_AZURE_GA_DEMAND",Kind="View"]}[Data],
-				    #"Replaced Value" = Table.ReplaceValue(D2C_BFN_VW_AZURE_GA_DEMAND_View,"B2C","DM",Replacer.ReplaceText,{"Website"})
+				    #"Replaced Value" = Table.ReplaceValue(D2C_BFN_VW_AZURE_GA_DEMAND_View,"B2C","DM",Replacer.ReplaceText,{"Website"}),
+				    #"Added Custom" = Table.AddColumn(#"Replaced Value", "DeviceJoin", each if [Device] = null then "" else [Device])
 				
 				in
-				    #"Replaced Value"
+				    #"Added Custom"
 
 	changedProperty = IsHidden
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

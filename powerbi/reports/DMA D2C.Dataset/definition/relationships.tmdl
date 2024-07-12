@@ -603,3 +603,11 @@ relationship d40651e8-1612-4590-b3c0-f942e153bdef
 	fromColumn: TMALL.ChannelId
 	toColumn: 'Web Channel'.ChannelGrouping_Key
 
+relationship 7e71ae0c-500f-4023-9cf1-ec7fdf5323b7
+	fromColumn: 'GA Demand FC'.Website
+	toColumn: 'Website Name'.'Website Unquie'
+
+relationship AutoDetected_bbdab7b0-06dd-47f6-8803-b1ac767e94f7
+	fromColumn: 'GA Demand FC'.DeviceJoin
+	toColumn: 'Web Device'.DeviceJoin
+

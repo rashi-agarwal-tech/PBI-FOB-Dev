@@ -51,6 +51,14 @@ table 'Website Name'
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Website Unquie'
+		dataType: string
+		lineageTag: d980172b-d92f-42ed-9d7a-df11deff740b
+		summarizeBy: none
+		sourceColumn: Website Unquie
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'Website Name-90f801f6-ae21-4dae-aa44-414318b385e3' = m
 		mode: import
 		source =
@@ -58,11 +66,14 @@ table 'Website Name'
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_GA_DIM_WEBSITE_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_GA_DIM_WEBSITE",Kind="View"]}[Data]
+				    D2C_BFN_VW_GA_DIM_WEBSITE_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_GA_DIM_WEBSITE",Kind="View"]}[Data],
+				    #"Added Custom" = Table.AddColumn(D2C_BFN_VW_GA_DIM_WEBSITE_View, "Website Unquie", each if Text.EndsWith([WebsiteCode], "-NA") then [Website] & "-NA" else [Website])
 				in
-				    D2C_BFN_VW_GA_DIM_WEBSITE_View
+				    #"Added Custom"
 
 	changedProperty = IsHidden
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 
