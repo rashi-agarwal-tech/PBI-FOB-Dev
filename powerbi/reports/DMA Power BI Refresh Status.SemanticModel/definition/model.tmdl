@@ -11,11 +11,14 @@ annotation PBIDesktopVersion = 2.128.1177.0 (24.04)
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["VW_POWERBI_REFRESH_STATUS (DEV)","VW_POWERBI_REFRESH_STATUS (PROD)","Power BI Model Refresh Status"]
+annotation PBI_QueryOrder = ["VW_POWERBI_REFRESH_STATUS (DEV)","VW_POWERBI_REFRESH_STATUS (UAT)","VW_POWERBI_REFRESH_STATUS (PROD)","Power BI Model Refresh Status","Feild Descriptions"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
 ref table 'VW_POWERBI_REFRESH_STATUS (DEV)'
 ref table 'VW_POWERBI_REFRESH_STATUS (PROD)'
 ref table 'Power BI Model Refresh Status'
+ref table 'SLA Delta Measures'
+ref table 'VW_POWERBI_REFRESH_STATUS (UAT)'
+ref table 'Feild Descriptions'
 

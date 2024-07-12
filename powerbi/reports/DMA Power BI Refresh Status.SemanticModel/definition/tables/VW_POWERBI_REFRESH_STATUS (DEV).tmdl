@@ -281,13 +281,15 @@ table 'VW_POWERBI_REFRESH_STATUS (DEV)'
 		source =
 				let
 				    Source = Snowflake.Databases("drmartensdev.west-europe.azure.snowflakecomputing.com","REPORTER"),
-				    MONITORING_Database = Source{[Name="MONITORING",Kind="Database"]}[Data],
-				    LOGS_Schema = MONITORING_Database{[Name="LOGS",Kind="Schema"]}[Data],
-				    VW_POWERBI_REFRESH_STATUS_View = LOGS_Schema{[Name="VW_POWERBI_REFRESH_STATUS",Kind="View"]}[Data]
+				    Database = Source{[Name="PRESENTATION",Kind="Database"]}[Data],
+				    Schema = Database{[Name="BFN_PRESENTATION",Kind="Schema"]}[Data],
+				    VW_POWERBI_REFRESH_STATUS_View = Schema{[Name="VW_BFN_POWERBI_REFRESH_STATUS",Kind="View"]}[Data]
 				in
 				    VW_POWERBI_REFRESH_STATUS_View
 
 	changedProperty = IsHidden
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

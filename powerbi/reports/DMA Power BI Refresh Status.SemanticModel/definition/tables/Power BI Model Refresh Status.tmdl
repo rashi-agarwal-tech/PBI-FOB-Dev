@@ -1,60 +1,103 @@
 table 'Power BI Model Refresh Status'
 	lineageTag: 917c7682-eb5f-4170-a5f7-ea9cf6dc22b6
 
-	column 'Status Refresh DT'
+	measure 'SLA Delta (7 day avg)' =
+			CALCULATE(
+			        AVERAGE('Power BI Model Refresh Status'[SLA Delta]),
+			        'Power BI Model Refresh Status'[Region Refresh Number] < 21
+			    )
+		lineageTag: b9d6f45d-1581-4aea-9ebc-a8044f9a73fc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'SLA Delta (sum)' = SUM('Power BI Model Refresh Status'[SLA Delta])
+		lineageTag: 1abbe802-29dc-49b9-bc75-bd84bf2d12fe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'SLA Delta Latest' = CALCULATE(SUM('Power BI Model Refresh Status'[SLA Delta]), 'Power BI Model Refresh Status'[Region Refresh Number] <4)
+		lineageTag: f485248f-87c3-4be6-b0c5-360f883b9fd5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'SLA Delta  (7 day min)' =
+			CALCULATE(
+			        MIN('Power BI Model Refresh Status'[SLA Delta]),
+			        'Power BI Model Refresh Status'[Region Refresh Number] < 21
+			    )
+		lineageTag: 6566325a-4934-4570-a029-3bba6f8fe66e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'SLA Delta (7 day max)' =
+			CALCULATE(
+			        MAX('Power BI Model Refresh Status'[SLA Delta]),
+			        'Power BI Model Refresh Status'[Region Refresh Number] < 21
+			    )
+		lineageTag: 4727d651-6d28-41b3-96ae-90637c220469
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Model Refresh Status DT (UTC)'
 		dataType: dateTime
 		formatString: dd/mm/yyyy hh:nn:ss
 		lineageTag: fb7ffbea-ce7e-436a-834c-88282ecba979
-		sourceColumn: Status Refresh DT
+		sourceColumn: Model Refresh Status DT (UTC)
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
-	column 'Status Refresh Time'
+	column 'Model Refresh Status Time (UTC)'
 		dataType: dateTime
 		formatString: Long Time
 		lineageTag: 22a65dc3-250b-49b8-a40a-d8fb8f13033f
 		summarizeBy: none
-		sourceColumn: Status Refresh Time
+		sourceColumn: Model Refresh Status Time (UTC)
 
 		annotation UnderlyingDateTimeDataType = Time
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Airflow DAG Start DT'
+	column 'Airflow DAG Start DT (UTC)'
 		dataType: dateTime
 		formatString: dd/mm/yyyy hh:nn:ss
 		lineageTag: 09a4dbe5-47a4-4101-bcb7-2bdf72c7e0db
-		sourceColumn: Airflow DAG Start DT
+		sourceColumn: Airflow DAG Start DT (UTC)
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
-	column Status
+	column 'Model Refresh Status'
 		dataType: string
 		lineageTag: 4675c7a7-324c-4d74-888d-73f5dda5db97
-		sourceColumn: Status
+		sourceColumn: Model Refresh Status
 
 	column 'Model Status Order Number'
 		dataType: double
+		isHidden
 		lineageTag: ec2ec89d-90af-4488-92a5-3fb6295ddb76
 		summarizeBy: none
 		sourceColumn: Model Status Order Number
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = User
 
 	column 'Model Status Refresh Order Number'
 		dataType: double
+		isHidden
 		lineageTag: 8cd37586-8b29-4c55-8173-32fda6823904
 		summarizeBy: none
 		sourceColumn: Model Status Refresh Order Number
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = User
 
-	column 'Model Refresh Start Time'
+	column 'Model Refresh Start Time (UTC)'
 		dataType: dateTime
 		formatString: Long Time
 		lineageTag: 7dbd78cf-f565-4883-b72c-37696e3254f0
 		summarizeBy: none
-		sourceColumn: Model Refresh Start Time
+		sourceColumn: Model Refresh Start Time (UTC)
 
 		annotation UnderlyingDateTimeDataType = Time
 
@@ -89,12 +132,12 @@ table 'Power BI Model Refresh Status'
 		lineageTag: d4d714c0-8f42-4beb-a5c6-e6b587e78d4a
 		sourceColumn: Region
 
-	column SLA
+	column 'SLA Time (Local)'
 		dataType: dateTime
 		formatString: hh:nn
 		lineageTag: b80e5ec4-f923-4087-a415-b4ca37324c4b
 		summarizeBy: none
-		sourceColumn: SLA
+		sourceColumn: SLA Time (Local)
 
 		annotation SummarizationSetBy = Automatic
 
@@ -110,12 +153,12 @@ table 'Power BI Model Refresh Status'
 
 		annotation SummarizationSetBy = User
 
-	column 'Refresh Execution Time'
+	column 'Model Refresh Execution Time (m)'
 		dataType: double
 		formatString: 0
 		lineageTag: 0907ce0e-dbd0-4eed-afc2-07143fc3e6d9
 		summarizeBy: none
-		sourceColumn: Refresh Execution Time
+		sourceColumn: Model Refresh Execution Time (m)
 
 		annotation SummarizationSetBy = User
 
@@ -124,41 +167,41 @@ table 'Power BI Model Refresh Status'
 		lineageTag: 4b434f02-b827-4657-bce8-aa3d50f0d989
 		sourceColumn: Environment Short
 
-	column 'SLA DT'
+	column 'SLA DT (Local)'
 		dataType: dateTime
 		formatString: dd/mm/yyyy hh:nn:ss
 		lineageTag: ea7c4c15-c074-4b20-b56c-e0554175d07c
-		sourceColumn: SLA DT
+		sourceColumn: SLA DT (Local)
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
-	column 'Status DT Local'
+	column 'Model Refresh Status DT (Local)'
 		dataType: dateTime
 		formatString: dd/mm/yyyy hh:nn:ss
 		lineageTag: 91690ca7-3ab2-48f9-8e56-d0149fb5a2b8
-		sourceColumn: Status DT Local
+		sourceColumn: Model Refresh Status DT (Local)
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
-	column 'Local Time Zone'
+	column 'Refresh Local Time Zone'
 		dataType: string
 		lineageTag: 75efd643-2d24-46e7-adb9-defd9568c933
-		sourceColumn: Local Time Zone
+		sourceColumn: Refresh Local Time Zone
 
-	column 'Start DT Local'
+	column 'Airflow DAG Start DT (Local)'
 		dataType: dateTime
 		formatString: dd/mm/yyyy hh:nn:ss
 		lineageTag: b6ab2731-c2f7-454f-a960-f13023063d8c
-		sourceColumn: Start DT Local
+		sourceColumn: Airflow DAG Start DT (Local)
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
-	column 'Start Date Local'
+	column 'Airflow DAG Start Date (Local)'
 		dataType: dateTime
 		formatString: Long Date
 		lineageTag: 56f58f2b-d929-46cb-a7e5-0ad53ffd5cb6
 		summarizeBy: none
-		sourceColumn: Start Date Local
+		sourceColumn: Airflow DAG Start Date (Local)
 
 		annotation UnderlyingDateTimeDataType = Date
 
@@ -168,9 +211,10 @@ table 'Power BI Model Refresh Status'
 		mode: import
 		source =
 				let
-				    Source = Table.Combine({#"VW_POWERBI_REFRESH_STATUS (PROD)", #"VW_POWERBI_REFRESH_STATUS (DEV)"})
+				    Source = Table.Combine({#"VW_POWERBI_REFRESH_STATUS (PROD)", #"VW_POWERBI_REFRESH_STATUS (UAT)", #"VW_POWERBI_REFRESH_STATUS (DEV)"}),
+				    #"Renamed Columns" = Table.RenameColumns(Source,{{"Start DT Local", "Airflow DAG Start DT (Local)"}, {"Airflow DAG Start DT", "Airflow DAG Start DT (UTC)"}, {"Start Date Local", "Airflow DAG Start Date (Local)"}, {"Status", "Model Refresh Status"}, {"Status DT Local", "Model Refresh Status DT (Local)"}, {"Status Refresh DT", "Model Refresh Status DT (UTC)"}, {"Status Refresh Time", "Model Refresh Status Time (UTC)"}, {"Model Refresh Start Time", "Model Refresh Start Time (UTC)"}, {"Refresh Execution Time", "Model Refresh Execution Time (m)"}, {"SLA", "SLA Time (Local)"}, {"SLA DT", "SLA DT (Local)"}, {"Local Time Zone", "Refresh Local Time Zone"}})
 				in
-				    Source
+				    #"Renamed Columns"
 
 	annotation PBI_ResultType = Table
 

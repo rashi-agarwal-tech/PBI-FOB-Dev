@@ -1,0 +1,32 @@
+table 'Feild Descriptions'
+	lineageTag: 46c6f880-2326-4aaf-822b-f1b378cfb278
+
+	column 'Field Name'
+		dataType: string
+		lineageTag: f1bce993-85c6-4ee9-93b1-9687b5af8b45
+		summarizeBy: none
+		sourceColumn: Field Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Field Description'
+		dataType: string
+		lineageTag: f62ad847-560a-48ce-9795-af572e05ab33
+		summarizeBy: none
+		sourceColumn: Field Description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Feild Descriptions' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("xVVNT9wwEP0roz2BFFXi1HMKqxYJKGKXSxEHbzJJLPyxdZwN9Nd3bMfZZEkQ3RZV2kM2sd978+Z5/PCwWF2lcIHCMjj5DDl7AbYrTxfJYl0h5Lwo0KDKEDZoW0QFll6z0iDm4HZaLhG4AslVY7GmzWhYSR81PfjFgtUWPHL9afGYjAjrRkYqqy0Tf054CHnF6KU9Wn6ho2gHAwYLg3V1SBKdol1RPj1y2cgjKN9lVMfHnns+9vzP+a51jgLuQs2wssw2NVys4eR+fd4ngowBpvIAqwuPVIelEuuaeu9NZCA9WjSUIMKWX1rhG3Rrt2ZI+Pc8KTeF0C1cpF8di7Fv12QrZj1UobXdGq76GEDLaqfBWLKWHB1xJbSH10C/EhWdASFeYEtOGyy5VvMVdxoOSusKDrVtkKsyiiBqJ7Xlwn0AYqbFCRSMC8wTMI1SbjXZkWm5FUhah+Sdzd9NTtpuGrlBQwq+8TxH1ZXgoZloKReOoUayQ8PZBEqsZAaNl0qbuWZTG171uje070EwIHpOMmIryP5b3RLrl8tAcOd97hl6MamitRZLWqr8OzBMPTmLHL72yju3Y1AiR2G0jJOAqN15ScgdW8FZ15O5URGRVlmFTS4QLvOuxEbxnw2dRzLI8oITeYiLK2/z0ksIcaZmbKlynjWCmTHDUu240UoSTIeM+zd+e1vxrPIKYz1W6yfYCpZRWENuIMddAvfp2mdqa/QoKzdMYgeu2P4URt+n0znsRrc5HIEZUVSjZb4fI2UJLK+XKWlbeWnpbXq+H4ohOFc6YyJGZzjpAh/dJgeDoJ+nr6+HwXwcjtGezE+Hg2nUNX58cqfSvnzGrLHOgiBcjmYbt6Ex+7hPxzwBVtN9GWMXV1Q0kw5O+iAbsKq0+YiEeC/XE00YD9M3ujF724wgP34uRgWeNnToB+3u+Pv/kXrynI+vllEBx14uPmFeUu8bnMxoPX3P5TOh1UmbUPu/RD7+Bg==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Field Name" = _t, #"Field Description" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Field Name", type text}, {"Field Description", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
