@@ -38,6 +38,16 @@ table 'Power BI Model Refresh Status'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Change detection Maximum for Model Refresh Status DT (UTC)' = MAX('Power BI Model Refresh Status'[Model Refresh Status DT (UTC)])
+		formatString: General Date
+		lineageTag: dcc1f12f-fce5-43db-8528-4dd5eb7353cd
+
+		extendedProperty ChangeDetectionMetadata =
+				{
+				  "version": 0,
+				  "refreshInterval": "PT5M"
+				}
+
 	column 'Model Refresh Status DT (UTC)'
 		dataType: dateTime
 		formatString: dd/mm/yyyy hh:nn:ss
