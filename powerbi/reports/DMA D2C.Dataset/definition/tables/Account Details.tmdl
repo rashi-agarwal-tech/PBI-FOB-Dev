@@ -496,9 +496,12 @@ table 'Account Details'
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    D2C_BFN_VW_D365DIMRETAILSTORE_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365DIMRETAILSTORE",Kind="View"]}[Data],
-				    #"Changed Type" = Table.TransformColumnTypes(D2C_BFN_VW_D365DIMRETAILSTORE_View, {{"Footwear SKU Capacity", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(D2C_BFN_VW_D365DIMRETAILSTORE_View, {{"Footwear SKU Capacity", Int64.Type}}),
+				    #"Removed Duplicates" = Table.Distinct(#"Changed Type", {"RetailStore_Key"})
 				in
-				    #"Changed Type"
+				    #"Removed Duplicates"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

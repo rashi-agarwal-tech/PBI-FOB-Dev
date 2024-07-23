@@ -384,8 +384,9 @@ table 'Account Details'
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    TB_BFN_VW_D365DIMRETAILSTORE_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365DIMRETAILSTORE",Kind="View"]}[Data],
 				    #"Changed Type" = Table.TransformColumnTypes(TB_BFN_VW_D365DIMRETAILSTORE_View,{{"Footwear SKU Capacity", Int64.Type}}),
-				    #"Kept First Rows" = Table.FirstN(#"Changed Type",NumberOfRows),
-				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Changed Type"
+					#"Removed Duplicates" = Table.Distinct(#"Changed Type", {"RetailStore_Key"}),
+				    #"Kept First Rows" = Table.FirstN(#"Removed Duplicates",NumberOfRows),
+				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Removed Duplicates"
 				in
 				    ParameterFilter
 
