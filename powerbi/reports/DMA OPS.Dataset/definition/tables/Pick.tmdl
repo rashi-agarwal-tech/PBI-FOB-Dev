@@ -1,0 +1,222 @@
+table Pick
+	lineageTag: 7ffc1545-650e-4aa6-bc8c-efbfe7ea5379
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: 27d2fe1d-50f7-4561-afa1-c1b67083271b
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: 58d3acd4-9813-4465-83f9-5611575eeeec
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: e2756c33-68ce-4bba-a35e-aa5323bd4e87
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: 90349599-cd3d-42c9-a100-310889a2c677
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 4a34307e-7492-44c9-8ae0-381998d96e28
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: 05051002-185f-457d-a7b4-38f09ca86e82
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'D365 Order #'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: be90955e-fb64-4a16-b908-17c64d476c75
+		summarizeBy: none
+		sourceColumn: D365 Order #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pick QTY'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Misc
+		lineageTag: f9e697d6-4741-48d6-ae8b-00a09f0e8d5b
+		summarizeBy: sum
+		sourceColumn: Pick QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pick Status'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3d85cc3a-fe24-4fe0-9d1c-0a744e43a8ab
+		summarizeBy: none
+		sourceColumn: Pick Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pick Route ID'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e350f0e9-ac71-41b3-9efa-9b0b4fb638be
+		summarizeBy: none
+		sourceColumn: Pick Route ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: 9cebeef5-02ef-4b80-89a3-4ddad108286f
+		summarizeBy: none
+		sourceColumn: Selling Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'JBA Order #'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3460fabc-9ff2-4645-990f-c8309cb4c5c8
+		summarizeBy: none
+		sourceColumn: JBA Order #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pick Time'
+		dataType: dateTime
+		formatString: Long Time
+		sourceProviderType: time
+		lineageTag: 64f5ce4a-6d3e-4af5-afde-31d825504697
+		summarizeBy: none
+		sourceColumn: Pick Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Web Order #'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3146b5c5-70aa-4f11-bdc3-fd4a303d445d
+		summarizeBy: none
+		sourceColumn: Web Order #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Despatch Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 3b7f01c1-52ba-4f2a-9033-c5c4ead2fe30
+		summarizeBy: none
+		sourceColumn: Despatch Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Pick Creation Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: 97509a4d-64a6-42f9-8c15-62cebe2e525c
+		summarizeBy: none
+		sourceColumn: Pick Creation Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pick Completion Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: 29611d66-bff8-4e29-b63d-83643b83edb1
+		summarizeBy: none
+		sourceColumn: Pick Completion Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pick Order Category'
+		dataType: string
+		sourceProviderType: nvarchar(20)
+		lineageTag: 60e9abdf-f0d1-4791-adb6-f9f45b2fb02e
+		summarizeBy: none
+		sourceColumn: Pick Order Category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Pick = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTPICKINGLIST",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+

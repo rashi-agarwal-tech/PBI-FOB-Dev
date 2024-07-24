@@ -1,0 +1,67 @@
+table 'Bridge PPM Supplier PO'
+	isHidden
+	lineageTag: 9620f4ad-de3c-452b-9236-02679f7d8825
+
+	column 'PO Number'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8aaf4dd4-a936-47c1-af27-27cda0a62b6d
+		summarizeBy: none
+		sourceColumn: PO Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supplier_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: b4dbce2a-ea95-40c4-a6af-260b1a7222b7
+		summarizeBy: none
+		sourceColumn: Supplier_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Supplier Name'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: dc7d9a7e-f20a-4a0a-8c63-42645080aee9
+		summarizeBy: none
+		sourceColumn: Supplier Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Supplier Country'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b9dd22b9-200d-4854-bf1d-439c93673891
+		summarizeBy: none
+		sourceColumn: Supplier Country
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Bridge PPM Supplier PO' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_PPMDIMBRIDGEPOSUPPLIER",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	changedProperty = IsHidden
+

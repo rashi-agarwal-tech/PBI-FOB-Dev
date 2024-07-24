@@ -1,0 +1,225 @@
+relationship d684a712-1324-49a0-a956-17797fd6ec1d
+	fromColumn: Movements.Product_Key
+	toColumn: Products.Product_Key
+
+relationship c45b895e-d758-4b1c-989a-245dcacd617e
+	fromColumn: Movements.Size_Key
+	toColumn: Size.Size_Key
+
+relationship dcdef90f-9e8c-4381-9a96-f8ad45d3a99d
+	fromColumn: Movements.Customer_Key
+	toColumn: Customer.Customer_Key
+
+relationship 3e5b53db-6a56-4992-afe3-45b8268ac48c
+	fromColumn: Pick.Warehouse_Key
+	toColumn: Warehouse.Warehouse_Key
+
+relationship 88dfcf65-40ca-4153-af8c-88a5096d9422
+	fromColumn: Availability.Warehouse_Key
+	toColumn: Warehouse.Warehouse_Key
+
+relationship 941d60c5-158a-4bb3-8924-bc315eecd0b4
+	fromColumn: Intake.Size_Key
+	toColumn: Size.Size_Key
+
+relationship c5bcd1ec-2f87-4d7b-8043-a41375852f6b
+	fromColumn: Availability.Size_Key
+	toColumn: Size.Size_Key
+
+relationship 39016d9a-6c02-46ce-8ffc-9ee5877c3340
+	fromColumn: Availability.Product_Key
+	toColumn: Products.Product_Key
+
+relationship b9b026bf-f6ef-450b-9b7a-c86f4806ac1f
+	fromColumn: Intake.Product_Key
+	toColumn: Products.Product_Key
+
+relationship a011e3df-99bd-4a20-a52d-645414d2dc0f
+	fromColumn: Pick.'Selling Status'
+	toColumn: 'Selling Status - Invoice'.'Selling Status'
+
+relationship a49ea891-f1de-43fc-9336-7ec41c3d246e
+	fromColumn: Intake.'Selling Status'
+	toColumn: 'Selling Status - Invoice'.'Selling Status'
+
+relationship 476882aa-c6af-48ba-b0ca-bc73758ba9b4
+	fromColumn: Movements.'Selling Status-Invoice Entry'
+	toColumn: 'Selling Status - Invoice'.'Selling Status'
+
+relationship e9ea33c3-5a88-4226-838d-99729acd6fe3
+	fromColumn: Movements.Date_Key
+	toColumn: Date.'Date Key'
+
+relationship 55f112f1-862f-44e0-8744-2e9935ab0608
+	fromColumn: Pick.Date_Key
+	toColumn: Date.'Date Key'
+
+relationship 04fee53e-7f60-4cf2-85b3-966fe0ca2b68
+	fromColumn: Intake.'Warehouse ID'
+	toColumn: Warehouse.'Warehouse ID'
+
+relationship 3e1fb789-3efc-4dfa-a224-a62ad18f4257
+	fromColumn: Adjustments.Warehouse_Key
+	toColumn: Warehouse.Warehouse_Key
+
+relationship 03a49eef-ce10-4197-aa0b-bd1932d68369
+	fromColumn: Pick.Size_Key
+	toColumn: Size.Size_Key
+
+relationship 1e3ce050-e987-4288-9cf7-74bba3fd2681
+	fromColumn: Adjustments.Size_Key
+	toColumn: Size.Size_Key
+
+relationship 90519be1-c5f6-49f1-bb1c-70d121519138
+	fromColumn: Adjustments.Product_Key
+	toColumn: Products.Product_Key
+
+relationship b12657db-9811-4634-bb2b-f776fcfe7f34
+	fromColumn: Pick.Product_Key
+	toColumn: Products.Product_Key
+
+relationship 295ab833-1111-4b2d-9e89-8b527802d5e0
+	fromColumn: Adjustments.'Transaction Date'
+	toColumn: Date.Date
+
+relationship e385f9d6-ae87-41dc-a650-ef00ec4e38fb
+	fromColumn: Intake.'Delivery Date'
+	toColumn: Date.Date
+
+relationship e02379de-9768-49b8-bc2e-6cc962fb0bb8
+	isActive: false
+	fromColumn: Intake.Date_Key
+	toColumn: Date.'Date Key'
+
+relationship c75d590c-b1d8-44ed-9d57-8b1e9d0b82bb
+	fromColumn: Movements.Vendor_Key
+	toColumn: Vendor.Vendor_Key
+
+relationship 08a1827c-6b03-4029-8c36-125d7ad26564
+	fromColumn: Movements.Warehouse_Key_Desp
+	toColumn: 'From Warehouse'.Warehouse_Key
+
+relationship 228f5c00-1440-407f-a437-12eab56b410e
+	fromColumn: Movements.Warehouse_Key_Rec
+	toColumn: 'To Warehouse'.Warehouse_Key
+
+relationship b86d75a8-80a6-4f8f-b954-1f54a3fe7614
+	fromColumn: Movements.Product_Class_Key
+	toColumn: 'Product Class'.Product_Class_Key
+
+relationship 8bf185a8-6d52-48a1-a087-08ec18d52dfa
+	fromColumn: Pick.Product_Class_Key
+	toColumn: 'Product Class'.Product_Class_Key
+
+relationship ed53a79c-7992-490c-a584-4fe4d0f8462f
+	fromColumn: Adjustments.Product_Class_Key
+	toColumn: 'Product Class'.Product_Class_Key
+
+relationship b0540bc1-872e-45a5-a316-c4d313d897b0
+	fromColumn: Availability.Product_Class_Key
+	toColumn: 'Product Class'.Product_Class_Key
+
+relationship 05ef6fc4-cb57-4239-aade-14641541a38f
+	fromColumn: Intake.Product_Class_Key
+	toColumn: 'Product Class'.Product_Class_Key
+
+relationship 90c3ae7d-a2dd-438e-bda9-803b83c4fed0
+	isActive: false
+	fromColumn: Movements.SO_Requested_Ship_Date_Key
+	toColumn: Date.'Date Key'
+
+relationship 03275420-9808-46b1-bc07-2953d8fd212b
+	fromColumn: Movements.SO_HDM_Order_Type_ID
+	toColumn: 'Sales Order Type'.ORDERTYPEID
+
+relationship 46bce74c-2771-403a-aad4-cb0a9febc16f
+	fromColumn: Movements.Warehouse_Key
+	toColumn: Warehouse.Warehouse_Key
+
+relationship 86cedb57-395f-4675-b780-cc44f204d66f
+	fromColumn: Movements.'Selling Status Order Entry'
+	toColumn: 'Selling Status - Order Entry'.'Selling Status'
+
+relationship 507dd990-8cf8-4b49-b613-264ff5d18a5b
+	fromColumn: 'Allocation Details'.Invent_Trans_ID
+	toColumn: 'Bridge InventTransID'.INVENTTRANSID
+
+relationship 9b564582-5856-4677-8fb3-53878b980ad8
+	isActive: false
+	fromColumn: 'Allocation Details'.Date_Key
+	toColumn: Date.'Date Key'
+
+relationship c2835454-6833-4ed9-ae98-64dc02b3fe5c
+	fromColumn: Movements.Invent_Trans_ID
+	toColumn: 'Bridge InventTransID'.INVENTTRANSID
+
+relationship 3fa17e0a-6b2f-4bde-926f-85341e3ebfa7
+	fromColumn: 'Products - Last PO'.Size_Key
+	toColumn: Size.Size_Key
+
+relationship 404c5b74-fc32-4984-a903-1a2650b8ab79
+	fromColumn: 'Products - Last PO'.Product_Key
+	toColumn: Products.Product_Key
+
+relationship 057d140c-34c0-473e-9143-c4d9e01db569
+	fromColumn: 'Products - Last PO'.Warehouse_Key
+	toColumn: Warehouse.Warehouse_Key
+
+relationship e04535c9-415e-491a-a12c-30c1351fbbee
+	fromColumn: 'Global Product Forecast'.Product_Key
+	toColumn: Products.Product_Key
+
+relationship ac3d888d-a2dd-4ec2-bb2a-0e373991e280
+	fromColumn: 'Customer Sell Out US'.Product_Key
+	toColumn: Products.Product_Key
+
+relationship e0ef1489-9cad-4cdf-ac98-765709303501
+	fromColumn: 'Customer Sell Out US'.Customer_Key
+	toColumn: Customer.Customer_Key
+
+relationship 388f49df-8e1f-47e5-8820-9231ca4b429d
+	fromColumn: Movements.HDM_INT_ETD_Date_Key
+	toColumn: 'PO ETD Date'.HDMIntETDDate_Key
+
+relationship 2e8db648-a3a8-4215-ae98-9cd2be81a9ce
+	fromColumn: Movements.Sales_Order_Pool_Key
+	toColumn: 'Sales Order Pool'.SalesOrderPool_Key
+
+relationship fa359f7c-6177-4230-9a35-ac36d4652bf3
+	fromColumn: Movements.'Related PO#'
+	toColumn: 'Bridge PPM Supplier PO'.'PO Number'
+
+relationship 5054730d-1811-4dc3-b18f-47d1ec0bcb2b
+	isActive: false
+	fromColumn: Intake.AVAILDATE
+	toColumn: Date.Date
+
+relationship 5c18ffa3-5d42-4a92-a0e3-00307d09a188
+	fromColumn: 'Product Weights'.Product_Key
+	toColumn: Products.Product_Key
+
+relationship 1e1b57f4-8095-475d-b1bf-fd4b8017c5c3
+	fromColumn: 'Product Weights'.Size_Key
+	toColumn: Size.Size_Key
+
+relationship 68b4924a-f193-4f6b-9a2d-b1b70f2c8a68
+	fromColumn: Movements.New_Purchase_Season_Key
+	toColumn: 'Purchase Season'.Season_Key
+
+relationship 971fdb56-224f-403c-a51e-e5e003b10e10
+	fromColumn: 'Products - Last PO SKU'.Product_Key
+	toColumn: Products.Product_Key
+
+relationship 7e807b3d-9d61-475b-9333-3bd995b38bde
+	fromColumn: 'Products - Last PO SKU'.Size_Key
+	toColumn: Size.Size_Key
+
+relationship 0ad87144-72e5-4059-b5dc-9fc3f8c1ccef
+	fromColumn: Availability.SELLINGSTATUS
+	toColumn: 'Selling Status - Invoice'.'Selling Status'
+
+relationship 01a10e20-bc7d-484f-8449-3f32b4982ce6
+	isActive: false
+	fromColumn: Availability.NextDate
+	toColumn: Date.Date
+

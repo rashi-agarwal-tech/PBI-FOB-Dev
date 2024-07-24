@@ -1,0 +1,60 @@
+table 'Purchase Season'
+	lineageTag: 5a40e605-0fcb-4ac3-b334-5f3998ea64b7
+
+	column Season_Key
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(18, 0)
+		lineageTag: 123e11f6-40bb-47e3-af37-53236462d7eb
+		summarizeBy: none
+		sourceColumn: Season_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Season
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8d0710f7-1436-4810-b062-a7f06ea372bf
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Season Long Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8cd573aa-bc71-4a8b-8460-48387d224688
+		summarizeBy: none
+		sourceColumn: Season Long Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Season Year'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 780557d7-26db-43fa-b6c4-e260e66ab7fb
+		summarizeBy: none
+		sourceColumn: Season Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Purchase Season' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_DIMDATESEASON",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+

@@ -1,0 +1,30 @@
+expression Datasource_Server = "drmartensdev.west-europe.azure.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: 3f552f31-7e0f-4d27-baa7-e8769e6f36c6
+	queryGroup: Parameters
+
+	annotation PBI_ResultType = Text
+
+expression Datasource_Warehouse = "REPORTER" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: 26cb3b93-74f7-4187-ae8c-4c6445e44b87
+	queryGroup: Parameters
+
+	annotation PBI_ResultType = Text
+
+expression Datasource_Database = "PRESENTATION" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: 3e370da8-bbdf-489e-ba79-2a70df540bd7
+	queryGroup: Parameters
+
+	annotation PBI_ResultType = Text
+
+expression Datasource_Schema = "BFN_PRESENTATION" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: cf655d61-3a69-47e4-b64f-d85c75a74a0e
+	queryGroup: Parameters
+
+	annotation PBI_ResultType = Text
+
+expression NumberOfRows = 0 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
+	lineageTag: 49f55a7a-24ef-40a1-b0f3-1437fda41dde
+	queryGroup: Parameters
+
+	annotation PBI_ResultType = Number
+

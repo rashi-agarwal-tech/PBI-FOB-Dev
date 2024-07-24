@@ -1,0 +1,27 @@
+
+	partition 'Intake History' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],
+					FilterDatesBefore = Date.AddMonths(DateTime.Date(DateTime.LocalNow()),-3),
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and [DATE] < FilterDatesBefore )
+				in
+					#"Filtered Rows"
+
+	partition 'Intake Current' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],
+					FilterDatesBefore = Date.AddMonths(DateTime.Date(DateTime.LocalNow()),-3),
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and [DATE] >= FilterDatesBefore )
+				in
+					#"Filtered Rows"	 
+

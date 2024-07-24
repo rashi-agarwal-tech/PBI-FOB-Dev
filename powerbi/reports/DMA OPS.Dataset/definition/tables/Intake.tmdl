@@ -1,0 +1,195 @@
+table Intake
+	isHidden
+	lineageTag: 486140a3-4c3a-4324-8302-2915347fdb3c
+
+	column Date_Key
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 48417f44-a4b2-4742-ac25-b9bebe313508
+		summarizeBy: count
+		sourceColumn: Date_Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c37c3a30-124c-4087-a348-305687b56434
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 32d8c581-c5ee-41f1-857e-3d563beff1ed
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c9d42323-540f-480c-a55b-8f728035b469
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Snapshot Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 9daf6a2f-8ce4-4c01-b0f7-9c15c329e689
+		summarizeBy: none
+		sourceColumn: Snapshot Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column QTYFREE
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		lineageTag: 3ee5f59d-6237-4e5c-a215-12061efaf8e3
+		summarizeBy: sum
+		sourceColumn: QTYFREE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Delivery Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 1fb1fb1f-842f-4779-ae91-87351712a4db
+		summarizeBy: none
+		sourceColumn: Delivery Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Warehouse ID'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5226b5cb-235f-4023-9e1b-02cb04cf1363
+		summarizeBy: none
+		sourceColumn: Warehouse ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		lineageTag: 52d72e4e-8c7e-4472-b9a3-2dc6379b1b1d
+		summarizeBy: none
+		sourceColumn: Selling Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 54ba7adf-3af1-4b14-b18d-5ac1c26406fd
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AVAILDATE
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: f55361df-a63c-4a42-8e73-8bf3c99e4d3e
+		summarizeBy: none
+		sourceColumn: AVAILDATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column RECEIPTTYPE
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: ff99ba8c-8759-4379-b51f-a671dc14e05d
+		summarizeBy: sum
+		sourceColumn: RECEIPTTYPE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Intake History' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],
+					FilterDatesBefore = Date.AddMonths(DateTime.Date(DateTime.LocalNow()),-3),
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and [Snapshot Date] < FilterDatesBefore )
+				in
+					#"Filtered Rows"
+
+	partition 'Intake Current' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],
+					FilterDatesBefore = Date.AddMonths(DateTime.Date(DateTime.LocalNow()),-3),
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and [Snapshot Date] >= FilterDatesBefore )
+				in
+					#"Filtered Rows"	
+
+	changedProperty = IsHidden
+

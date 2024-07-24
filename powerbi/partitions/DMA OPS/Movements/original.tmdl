@@ -1,0 +1,12 @@
+	partition Movements_asdjhkjdshfkjwqerieoiwequrokjskldfh = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter

@@ -1,0 +1,635 @@
+table Availability
+	isHidden
+	lineageTag: ea8ea58e-bf4b-488e-8dc9-d3dcf9cd4c8c
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: bd27e709-48ed-44f2-ac34-60bc95c78b94
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: d5b261cb-9762-41a1-86e0-29a274fc8a85
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 56a3ab72-6c31-408b-895d-ed5584620aec
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 6704d1e8-eb9a-4516-8bab-00e0b6eec883
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: b1e8a3e0-e700-4055-8319-a2d113013992
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTY
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: f0069b3b-25dd-4ce5-999b-1c3139def69c
+		summarizeBy: sum
+		sourceColumn: QTY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DATE
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: b5ae22f3-fa5d-41a2-9962-bf2f99952c6d
+		summarizeBy: none
+		sourceColumn: DATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column OnHandUnits
+		dataType: double
+		isHidden
+		lineageTag: 9b17b015-01bf-45bd-91ec-55e5472d631f
+		summarizeBy: sum
+		sourceColumn: OnHandUnits
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ItemCoverage
+		dataType: double
+		isHidden
+		lineageTag: 44f6793f-9880-4340-89d4-968106bd8a7a
+		summarizeBy: sum
+		sourceColumn: ItemCoverage
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column InvoicedUnits
+		dataType: double
+		isHidden
+		lineageTag: 0b751b55-ad13-4f7c-a688-c7932d97de9a
+		summarizeBy: sum
+		sourceColumn: InvoicedUnits
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column InTransit
+		dataType: double
+		isHidden
+		lineageTag: 046d1204-153c-4632-a5b4-304248465b8c
+		summarizeBy: sum
+		sourceColumn: InTransit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RetailWarehouseOnHand
+		dataType: double
+		isHidden
+		lineageTag: 423cf670-7c66-4ed9-aba3-9ca90f6dcb7d
+		summarizeBy: sum
+		sourceColumn: RetailWarehouseOnHand
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SELLINGSTATUS
+		dataType: double
+		isHidden
+		lineageTag: a110688a-d763-49a7-82dd-b05c72f85035
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ReservedOnHandUnits
+		dataType: double
+		isHidden
+		lineageTag: bd8d5c67-cbe0-4fc1-bc78-f0500d3ba219
+		summarizeBy: sum
+		sourceColumn: ReservedOnHandUnits
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AvailableOnHandUnits
+		dataType: double
+		isHidden
+		lineageTag: 7dcc3904-e308-4692-b3bc-16a9402e7fa8
+		summarizeBy: sum
+		sourceColumn: AvailableOnHandUnits
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OrderedQuantity
+		dataType: double
+		isHidden
+		lineageTag: e3883d90-bf7d-4309-b708-c46154e7b6b1
+		summarizeBy: sum
+		sourceColumn: OrderedQuantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MAXIMUMONHANDINVENTORYQUANTITY
+		dataType: double
+		isHidden
+		lineageTag: ee2f6ea0-a46b-49db-9648-45ad8b451000
+		summarizeBy: sum
+		sourceColumn: MAXIMUMONHANDINVENTORYQUANTITY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WH_Channel
+		dataType: string
+		isHidden
+		lineageTag: 38882e79-ff1e-40b7-99c1-2a2607172c29
+		summarizeBy: none
+		sourceColumn: WH_Channel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: 5988feb9-9731-40e3-91ce-85744abfb7c2
+		summarizeBy: sum
+		sourceColumn: AMOUNT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Selling Status - Order Entry'
+		dataType: double
+		isHidden
+		lineageTag: d5789891-099e-4f07-a41f-b7d8c79d2d21
+		summarizeBy: sum
+		sourceColumn: Selling Status - Order Entry
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CompanyProductSize_Key
+		dataType: string
+		isHidden
+		lineageTag: fda1a057-fedc-4e00-9a60-546734f498bc
+		summarizeBy: none
+		sourceColumn: CompanyProductSize_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ITEMNUMBER
+		dataType: string
+		isHidden
+		lineageTag: 40fd169d-0ad7-489f-aff4-344cd8e1dcc1
+		summarizeBy: none
+		sourceColumn: ITEMNUMBER
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column NextDate = DATEADD ( Availability[DATE], 1, DAY )
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 44101abd-b622-4abd-ade9-15d6387a42de
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	
+	partition 'CY2024 08' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 8, 1) and [DATE] < #date(2024, 9, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2024 07' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 7, 1) and [DATE] < #date(2024, 8, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2024 Q2' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 4, 1) and [DATE] < #date(2024, 07, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2024 Q1' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 1, 1) and [DATE] < #date(2024, 04, 1))
+				in
+				    PartitionFilter
+	
+	partition 'CY2023 Q4' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 10, 1) and [DATE] < #date(2024, 1, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2023 Q3' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 7, 1) and [DATE] < #date(2023, 10, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2023 Q2' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 4, 1) and [DATE] < #date(2023, 07, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2023 Q1' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 1, 1) and [DATE] < #date(2023, 04, 1))
+				in
+				    PartitionFilter
+	
+	partition 'CY2022 Q4' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 10, 1) and [DATE] < #date(2023, 1, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2022 Q3' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 7, 1) and [DATE] < #date(2022, 10, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2022 Q2' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 4, 1) and [DATE] < #date(2022, 07, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2022 Q1' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 1, 1) and [DATE] < #date(2022, 04, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2021 Q4' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 10, 1) and [DATE] < #date(2022, 1, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2021 Q3' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 7, 1) and [DATE] < #date(2021, 10, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2021 Q2' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 4, 1) and [DATE] < #date(2021, 07, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2021 Q1' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 1, 1) and [DATE] < #date(2021, 04, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2020 Q4' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2020, 10, 1) and [DATE] < #date(2021, 1, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2020 Q3' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2020, 7, 1) and [DATE] < #date(2020, 10, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2020 Q2' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2020, 4, 1) and [DATE] < #date(2020, 07, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2020 Q1' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2020, 1, 1) and [DATE] < #date(2020, 04, 1))
+				in
+				    PartitionFilter				
+	
+	partition 'CY2019 Q4' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2019, 10, 1) and [DATE] < #date(2020, 1, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2019 Q3' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2019, 7, 1) and [DATE] < #date(2019, 10, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2019 Q2' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2019, 4, 1) and [DATE] < #date(2019, 07, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2019 Q1' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2019, 1, 1) and [DATE] < #date(2019, 04, 1))
+				in
+				    PartitionFilter
+	
+	partition 'CY2018 Q4' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2019, 10, 1) and [DATE] < #date(2019, 1, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2018 Q3' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2018, 7, 1) and [DATE] < #date(2018, 10, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2018 Q2' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2018, 4, 1) and [DATE] < #date(2018, 07, 1))
+				in
+				    PartitionFilter
+
+	partition 'CY2018 Q1' = m
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each List.Contains({"Rewair"},[WH_Channel])),
+				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2018, 1, 1) and [DATE] < #date(2018, 04, 1))
+				in
+				    PartitionFilter
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

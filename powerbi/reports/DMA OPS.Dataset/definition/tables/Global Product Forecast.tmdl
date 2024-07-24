@@ -1,0 +1,83 @@
+table 'Global Product Forecast'
+	isHidden
+	lineageTag: 6b8915c0-4f3b-48af-b715-2198e9c9a7d6
+
+	column Global_Product_Forecast_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: f6cd282d-944d-4b96-bf1b-976d1a74f96e
+		summarizeBy: none
+		sourceColumn: Global_Product_Forecast_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a9615441-0558-40ec-9997-6496d786f911
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Intro_Month
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0ccd5a1d-f15f-4383-94f3-4383c133bd13
+		summarizeBy: none
+		sourceColumn: Intro_Month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SRP (GBP)'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(18, 5)
+		lineageTag: e9766150-8e40-416b-a8dd-38177c7da121
+		summarizeBy: sum
+		sourceColumn: SRP (GBP)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Forecast Value'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(19, 5)
+		lineageTag: 135582ef-bd24-40c6-bf83-6eb34ba5d923
+		summarizeBy: sum
+		sourceColumn: Forecast Value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Global Product Forecast' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_AZUREGLOBALPRODUCTFORECAST",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	changedProperty = IsHidden
+

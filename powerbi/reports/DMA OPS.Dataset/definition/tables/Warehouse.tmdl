@@ -1,0 +1,131 @@
+table Warehouse
+	lineageTag: e36f5888-5437-4c8e-b209-de4651587000
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 49658cb0-5e12-4db6-8367-f8c82ecdff6b
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 9872ea62-3fb4-4510-ae63-ad94ac02161a
+		summarizeBy: none
+		sourceColumn: Warehouse Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Site ID'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e4f0917d-afde-4ce0-ade7-bc573cfac50c
+		summarizeBy: none
+		sourceColumn: Site ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse ID'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0133e311-c6ba-429a-9143-26ed95c2ea75
+		summarizeBy: none
+		sourceColumn: Warehouse ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parent Store ID'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3458dd86-def7-4dbc-8feb-87fe7d696a4b
+		summarizeBy: none
+		sourceColumn: Parent Store ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Retail Warehouse?'
+		dataType: double
+		sourceProviderType: decimal(38, 5)
+		lineageTag: 00378335-1e46-4be7-b20d-17a0a8412e5e
+		summarizeBy: none
+		sourceColumn: Is Retail Warehouse?
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Warehouse Group'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: bb7f5445-a02c-47ab-93dd-aa37b05cc8fc
+		summarizeBy: none
+		sourceColumn: Warehouse Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse Sub-Group'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2926e499-081e-4072-bd98-af780f69d96c
+		summarizeBy: none
+		sourceColumn: Warehouse Sub-Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse Channel'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: fdb3b2d2-403d-4875-b132-cf74a7da063a
+		summarizeBy: none
+		sourceColumn: Warehouse Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse Region'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0992ced1-e130-4cf9-956d-a5931da6d014
+		summarizeBy: none
+		sourceColumn: Warehouse Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse Sub-Region'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: be3f73fc-a758-41b4-ad7f-da7b12be8bf0
+		summarizeBy: none
+		sourceColumn: Warehouse Sub-Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinancialChannel
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c8958694-fbb2-4dba-bd49-2fa4851a57c2
+		summarizeBy: none
+		sourceColumn: FinancialChannel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Warehouse = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365DIMWAREHOUSE",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	annotation PBI_ResultType = Table
+

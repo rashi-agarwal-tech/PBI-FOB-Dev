@@ -1,0 +1,11 @@
+role 'EMEA Test'
+	modelPermission: read
+
+	tablePermission Warehouse = [Warehouse Region] == "EMEA"
+
+	tablePermission 'To Warehouse' = [Warehouse Region] == "EMEA"
+
+	tablePermission 'From Warehouse' = [Warehouse Region] == "EMEA"
+
+	annotation PBI_Id = 771a87f63f6648e9a76058842f11355d
+

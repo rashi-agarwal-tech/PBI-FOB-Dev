@@ -1,0 +1,66 @@
+table 'Model Refresh Time'
+	lineageTag: cb73c261-9c2a-40e5-a775-e8fa79956316
+
+	column Season_Key
+		dataType: double
+		isHidden
+		lineageTag: e155b2b6-85b6-4c3d-98fe-35dc21f8ef62
+		summarizeBy: count
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Purchase Season[Season_Key]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Season
+		dataType: string
+		isHidden
+		lineageTag: 8f0e15bd-a376-4460-b55d-899852604792
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Purchase Season[Season]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Season Long Name'
+		dataType: string
+		isHidden
+		lineageTag: 34979a4e-98c1-4cb2-8972-9aba804c6169
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Purchase Season[Season Long Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Season Year'
+		dataType: string
+		isHidden
+		lineageTag: aae21664-f0c4-4b4f-be86-4db58008ace2
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Purchase Season[Season Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Time' = NOW()
+		dataType: dateTime
+		formatString: dd MMMM yyyy hh:mm AM/PM
+		lineageTag: 40a356ad-8fc9-4ef1-9c9c-1e7af81660bd
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	partition 'Model Refresh Time' = calculated
+		mode: import
+		source = 'Purchase Season'
+
+	annotation PBI_Id = c2bcf745f7b448178e7cd88f6aaf023d
+

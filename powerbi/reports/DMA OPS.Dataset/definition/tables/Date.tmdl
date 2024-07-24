@@ -1,0 +1,916 @@
+table Date
+	lineageTag: de2fd9e6-95df-48fe-89dc-802ae4657bb0
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4d66ba83-9d53-4c62-a199-569158ca953a
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Month Number'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Calendar Dates
+		lineageTag: 7c7d2708-05c3-466d-8075-292af58ad9cc
+		summarizeBy: none
+		sourceColumn: Calendar Month Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: b7e96fbf-dc09-4eec-8b46-39557ab40dc5
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year-Week'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 19bd56bd-18c2-4fac-bb9b-f57544aeeae8
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column Season
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 329676a7-072b-4442-b3b7-2f9a91d81f4a
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Fiscal Point in Time?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 58b578a9-5234-458f-9aff-9c2736706ee8
+		summarizeBy: none
+		sourceColumn: - Is Fiscal Point in Time?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: b2967786-3e46-4e52-8f6e-9871209aca21
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Full Date'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		displayFolder: Calendar Dates
+		lineageTag: 89afaa09-61d2-43c5-9b00-6f737f3e8b01
+		summarizeBy: none
+		sourceColumn: Full Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Of Week'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: 3bcdef60-78c1-4f85-8ca0-097548eebe18
+		summarizeBy: none
+		sourceColumn: Day Of Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day # of Week'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Calendar Dates
+		lineageTag: 9168c8b0-33f0-4e23-bb78-c81e4e6f8383
+		summarizeBy: sum
+		sourceColumn: Day # of Week
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Day # of Month'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Calendar Dates
+		lineageTag: 9f4447b5-d0f2-43f9-bea8-83f5dd08bff5
+		summarizeBy: none
+		sourceColumn: Day # of Month
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Day # of Year'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Calendar Dates
+		lineageTag: e56b0eba-d311-413a-af7d-380a10eb35e9
+		summarizeBy: none
+		sourceColumn: Day # of Year
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Week Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: 0efc8d61-6052-4e36-a139-f20b33d760f1
+		summarizeBy: none
+		sourceColumn: Week Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mon
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: ea18dfbe-0940-47a6-88de-95dea8a45357
+		summarizeBy: none
+		sourceColumn: Mon
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: e95d913f-bea2-441f-8852-6754c010b4ef
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Calendar Dates
+		lineageTag: 8d8a98bb-cbbc-477e-bba2-d5683960fea9
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Month-Yearold
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Calendar Dates
+		lineageTag: 497b5823-ab5b-4377-94d5-e979b3b366cd
+		summarizeBy: sum
+		sourceColumn: Month-Yearold
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Quarter'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 718a0ec7-da95-4eb8-8f9f-5bae5c19fdbb
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year-Period'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: c94a06c0-c6b1-4826-97d7-e339e0a3441b
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Period - Year'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 096ee86a-1616-4264-b089-3a325b5c9a6f
+		summarizeBy: none
+		sourceColumn: Fiscal Period - Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Week #'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 52fd85de-a881-4612-842f-21cc6f19f34a
+		summarizeBy: none
+		sourceColumn: Fiscal Week #
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Day #'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: a0dbf7ac-d9c5-4f0f-b546-17a02db5db72
+		summarizeBy: none
+		sourceColumn: Fiscal Day #
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Is UK Bank Holiday?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 02967d05-a874-44d2-b26c-607d9f95ec98
+		summarizeBy: none
+		sourceColumn: Is UK Bank Holiday?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Black Friday?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: Calendar Dates
+		lineageTag: 01403d31-d4f2-4f34-a589-95624265dbcf
+		summarizeBy: none
+		sourceColumn: - Is Black Friday?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Weekend?'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: 62793bab-10a0-4544-b306-50cf7d927af7
+		summarizeBy: none
+		sourceColumn: - Is Weekend?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Leap Year?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: Calendar Dates
+		lineageTag: d181c876-9a62-463d-a965-bca4951c16bd
+		summarizeBy: none
+		sourceColumn: - Is Leap Year?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End of Month?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: Calendar Dates
+		lineageTag: c74f4946-1a71-4387-81f5-ea472d792625
+		summarizeBy: none
+		sourceColumn: - Is End of Month?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Point in Time?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: Calendar Dates
+		lineageTag: c16bb7b8-13c4-4e6b-b3a8-a7b47de2597b
+		summarizeBy: none
+		sourceColumn: - Is Point in Time?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End of Period?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: c54701df-d3fc-412b-8410-8cd304812bf4
+		summarizeBy: none
+		sourceColumn: - Is End of Period?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End of Quarter?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 60cf859d-fa5a-4680-ab17-170f9797eb45
+		summarizeBy: none
+		sourceColumn: - Is End of Quarter?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Period Number'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 9aefb99d-ad4d-4f38-815a-c8d6feae4224
+		summarizeBy: none
+		sourceColumn: Fiscal Period Number
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year Number'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 83ff3665-bc03-4d22-bbd0-b8157472ddad
+		summarizeBy: none
+		sourceColumn: Fiscal Year Number
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year-Week
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: 3077fd50-e9b8-4f3e-81bf-648f2c6dc7e9
+		summarizeBy: none
+		sourceColumn: Year-Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Week Number'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Calendar Dates
+		lineageTag: 36774ecc-7c42-44fb-bb9f-077b698082ce
+		summarizeBy: none
+		sourceColumn: Calendar Week Number
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Half
+		dataType: string
+		sourceProviderType: nvarchar(2)
+		displayFolder: Calendar Dates
+		lineageTag: 153430dd-8e95-4f6a-a387-febaaf4be3a1
+		summarizeBy: none
+		sourceColumn: Half
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Half'
+		dataType: string
+		sourceProviderType: nvarchar(9)
+		displayFolder: Calendar Dates
+		lineageTag: 066c8d99-26ac-4fde-acc6-e13364f144f9
+		summarizeBy: none
+		sourceColumn: Year Half
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		sourceProviderType: nvarchar(2)
+		displayFolder: Calendar Dates
+		lineageTag: f15b67d3-93e1-4ac1-97a6-71ae69722cf8
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Quarter'
+		dataType: string
+		sourceProviderType: nvarchar(9)
+		displayFolder: Calendar Dates
+		lineageTag: 69dc7ec5-28ab-4142-b482-8a2911ec804f
+		summarizeBy: none
+		sourceColumn: Year Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Week'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: ac9587d1-f140-4851-b5ae-ec07822c8ac9
+		summarizeBy: none
+		sourceColumn: Relative Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Month'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: 526c667a-17e4-4d11-b843-28d07d3bc620
+		summarizeBy: none
+		sourceColumn: Relative Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Year'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: cc9d2dce-62c4-4e45-ae22-a97a59c92c1d
+		summarizeBy: none
+		sourceColumn: Relative Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Week'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 9a44778a-632c-4e96-94c5-b9b79c49e957
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Period'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 91616e83-affa-446a-816a-a6383dd5ff35
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Year'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e5550db6-a9b7-4eee-b6c8-6801a86661d6
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Yesterday?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: Calendar Dates
+		lineageTag: 870b6a02-c174-45e0-b2c0-399d349aef05
+		summarizeBy: none
+		sourceColumn: - Is Yesterday?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Today?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: Calendar Dates
+		lineageTag: fa062615-5afe-4649-ac28-109c75041312
+		summarizeBy: none
+		sourceColumn: - Is Today?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Week?'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: c305c26f-db61-4381-b3dd-a10c2cc43729
+		summarizeBy: none
+		sourceColumn: - Is Week?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Month?'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Calendar Dates
+		lineageTag: 28ca6a3b-305c-4cb5-8657-2769eb5f73db
+		summarizeBy: none
+		sourceColumn: - Is Month?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reporting Year'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Calendar Dates
+		lineageTag: 791603b2-9a04-4598-8a8e-9e1ec724306f
+		summarizeBy: sum
+		sourceColumn: Reporting Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Reporting Cal Week Index'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 59040ab3-2ff2-4dad-8676-c7a385d14417
+		summarizeBy: none
+		sourceColumn: Reporting Cal Week Index
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Period Number (544)'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: 544 Dates
+		lineageTag: 6cb42a29-8a6a-49c4-85d4-588f6161dd81
+		summarizeBy: none
+		sourceColumn: Fiscal Period Number (544)
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Quarter (544)'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: 544 Dates
+		lineageTag: fb4ac026-bae6-412a-b760-08e9e7a6b380
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter (544)
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Half (544)'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: 544 Dates
+		lineageTag: bc9efcab-7d05-48e6-b7a5-5f0c50eb1ece
+		summarizeBy: none
+		sourceColumn: Fiscal Half (544)
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: f88aef14-bc3b-448c-b6e9-b7e486885ddd
+		summarizeBy: none
+		sourceColumn: Fiscal Year (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year Number (544)'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: 544 Dates
+		lineageTag: 6ad75694-de08-497c-920e-6134dc4f3bc9
+		summarizeBy: none
+		sourceColumn: Fiscal Year Number (544)
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Week Number (544)'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: 544 Dates
+		lineageTag: 1596232f-ae07-42f1-bdb9-12179db7349a
+		summarizeBy: none
+		sourceColumn: Fiscal Week Number (544)
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year-Week (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: 82036025-c2b9-4231-bb67-3f24fe833026
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Week (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Period (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: 7fc0edb8-5f2e-49a7-a7a1-6905b1daa5b6
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Period (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Year (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: e6e72c01-d047-4a37-9d87-6a7634817c8b
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Year (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End of US Period?'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: 0584c255-2b18-4cb0-8fa8-817f4a6e38f8
+		summarizeBy: none
+		sourceColumn: - Is End of US Period?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End of US Quarter?'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: 9f534482-5b42-41c5-9e77-70f2d05365bf
+		summarizeBy: none
+		sourceColumn: - Is End of US Quarter?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is US Fiscal Point in Time?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		displayFolder: US Fiscal Dates
+		lineageTag: eb7c2e1e-a52f-4dc9-9932-a660079fc057
+		summarizeBy: none
+		sourceColumn: - Is US Fiscal Point in Time?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal US Period'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: 89dab80a-f8e6-4b08-8556-1d26f4c8de74
+		summarizeBy: none
+		sourceColumn: Relative Fiscal US Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal US Week'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: 520ceba1-fa08-42f2-b622-4c7dbe57c59a
+		summarizeBy: none
+		sourceColumn: Relative Fiscal US Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal US Year'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: 06883771-a2ec-48d7-b270-57d63cf6aa44
+		summarizeBy: none
+		sourceColumn: Relative Fiscal US Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal US Period'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: ac32d577-5c75-4157-be49-e91f27d5fb91
+		summarizeBy: none
+		sourceColumn: Fiscal US Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal US Quarter'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: 39e526ea-bff2-4101-ad9b-8b9340191d49
+		summarizeBy: none
+		sourceColumn: Fiscal US Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal US Period Number'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: US Fiscal Dates
+		lineageTag: 2410c401-197c-4786-8d2f-2ac38aeccc75
+		summarizeBy: none
+		sourceColumn: Fiscal US Period Number
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal US Year'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: c9823fde-2670-4f33-8e28-ae7f005efe34
+		summarizeBy: none
+		sourceColumn: Fiscal US Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal US Year Number'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: US Fiscal Dates
+		lineageTag: 6c24be33-cf7d-45ee-a4a3-4afa69a96085
+		summarizeBy: none
+		sourceColumn: Fiscal US Year Number
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal US Day #'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: US Fiscal Dates
+		lineageTag: 8bec1e75-c3af-4ede-8c54-03dc7863229d
+		summarizeBy: none
+		sourceColumn: Fiscal US Day #
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal US Week #'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: US Fiscal Dates
+		lineageTag: 80373292-ee73-4e7a-86d2-3b3463ca6099
+		summarizeBy: none
+		sourceColumn: Fiscal US Week #
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal US Year-Period'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: cb85451b-3dbc-4977-900c-488f622b550f
+		summarizeBy: none
+		sourceColumn: Fiscal US Year-Period
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal US Year-Week'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: US Fiscal Dates
+		lineageTag: f056c47b-50ed-4bdc-81ea-bf6eca01984f
+		summarizeBy: none
+		sourceColumn: Fiscal US Year-Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year-Period (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: 49c7dc0e-6c0f-42f9-a7b9-4311d5b6c24c
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Period (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Week Sort'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ec2c9927-c76e-4cda-acc1-e84f4e670772
+		summarizeBy: none
+		sourceColumn: Relative Week Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Last Year Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: eafab420-53f3-4e02-8cd6-204f8f1b210e
+		summarizeBy: none
+		sourceColumn: " Last Year Date"
+
+		changedProperty = DataType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Exclude 53rd Week (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: a6fdbc03-256a-46db-9779-773bbc382fb9
+		summarizeBy: none
+		sourceColumn: Exclude 53rd Week (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Two Year Date '
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 1dfc054d-57e9-4b0a-a26b-b4556958a9bf
+		summarizeBy: none
+		sourceColumn: " Two Year Date "
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Week Filter (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: 522de8c7-0b0b-4572-8eb3-d54a25608f47
+		summarizeBy: none
+		sourceColumn: Is Week Filter (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month-Year =
+			'Date'[Mon] & "-"
+			    & RIGHT ( 'Date'[Year], 2 )
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 0b61ce50-56b0-4356-9b03-e4021ae5c03d
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Commencing Date' = 'Date'[Date]  - WEEKDAY('Date'[Date],2) +1
+		dataType: dateTime
+		formatString: General Date
+		displayFolder: Calendar Dates
+		lineageTag: 32363680-c06b-44f7-93a9-62f9bf62f93e
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Commencing Date Name' = FORMAT('Date'[Week Commencing Date], "dd-MMM")
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: cc081d7b-ab57-4f3f-8d8e-0b3d517f20ad
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Period' = "F" & RIGHT ( 'Date'[Fiscal Period - Year], 3 )
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 3d0b330c-977a-467c-bfa1-89ff7becb970
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_DIMDATE",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View,
+				    #"Renamed Columns" = Table.RenameColumns(ParameterFilter,{{"- Is UK Bank Holiday?", "Is UK Bank Holiday?"}})
+				in
+					#"Renamed Columns"
+

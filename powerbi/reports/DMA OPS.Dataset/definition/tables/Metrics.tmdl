@@ -1,0 +1,960 @@
+table Metrics
+	lineageTag: ec9fc16d-be5f-45b9-91c9-8b9ff852b499
+
+	measure '2. Intake Available Units' =
+			
+			
+			var ldate = calculate(LASTDATE(Intake[SnapShot Date]),ALL(Products),all(Size),all(Warehouse),all('Date'))
+			var main = CALCULATE(sum(Intake[QTYFREE]),Intake[SnapShot Date]=ldate)
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Inventory Levels\z Availability
+		lineageTag: 4ed204df-88f2-4366-87a4-9b1ae25eb691
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '3. Intake Ordered Available Units' =
+			var ldate = calculate(LASTDATE(Intake[SnapShot Date]),ALL(Products),all(Size),all(Warehouse),all('Date'))
+			var main = CALCULATE(sum(Intake[QTYFREE]),Intake[SnapShot Date]=ldate,USERELATIONSHIP(Intake[Date_Key],'Date'[Date Key]))
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Inventory Levels\z Availability
+		lineageTag: 7310a397-9312-442e-80ec-75eea5435e6c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '4. Cumulative Available Units' = ```
+			
+			
+			/* establishes the date from the availability table from which to pull the on-hand stock */
+			var availsnapshotdate = calculate(LASTDATE(Availability[DATE]),ALL(Availability))
+			
+			/* fixes the on hand stock figure */
+			var curonhand = calculate([1. On Hand Available Units],filter(all(Availability[DATE]),Availability[DATE]=availsnapshotdate))
+			
+			/* establishes the date from the intake table from which to take the availability snapshot */
+			var intakesnapshotdate = calculate(LASTDATE(Intake[SnapShot Date]),all(Intake))
+			
+			/* pulls in current available units against all dates */
+			var alldatesavail = CALCULATE(sum(Availability[AvailableOnHandUnits]),filter(all('Date'),availsnapshotdate='Date'[Date]))
+			
+			/* pulls intake units at the last snapshot */
+			var lastestintake = CALCULATE(sum(Intake[QTYFREE]),Intake[SnapShot Date]=intakesnapshotdate)
+			
+			/* pulls intake units at the last snapshot unbound by size */
+			var lastestintakeallsize = CALCULATE(sum(Intake[QTYFREE]),Intake[SnapShot Date]=intakesnapshotdate,ALL(SIZE))
+			
+			/* makes the intake cumulative */
+			var cumintake = calculate(sum(Intake[QTYFREE]),filter(ALL('Date'),'Date'[Date]<=max('Date'[Date])),Intake[SnapShot Date]=intakesnapshotdate)
+			
+			/* fixed currentstock position against all future intake available dates */
+			var fixedstock = if(OR(availsnapshotdate=MIN('Date'[Date]),lastestintakeallsize>0),alldatesavail,curonhand)
+			
+			/* brings in cumulative intake against days when we are receiving available stock of the product */
+			var cumintake2 = if(OR(availsnapshotdate=MIN('Date'[Date]),lastestintakeallsize>0),cumintake,blank())
+			
+			return
+			
+			cumintake2+fixedstock
+			
+			```
+		formatString: " #,0"
+		displayFolder: Inventory Levels\z Availability
+		lineageTag: 218ff9db-1375-4870-a50b-4bb465c6222c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '1. On Hand Available Units' =
+			var ldate = calculate(LASTDATE(Availability[DATE]),ALL(Products),all(Size),all(Warehouse),all('Selling Status - Invoice'))
+			var main = CALCULATE(SUM(Availability[AvailableOnHandUnits]),Availability[DATE]=ldate)
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Inventory Levels\z Availability
+		lineageTag: 50b66a52-931e-4ca6-bb41-7d0f4b17564a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Unit Cost' =
+			VAR ldate =
+			    CALCULATE (
+			        LASTDATE ( Availability[DATE] ),
+			        ALL ( Products ),
+			        ALL ( Size ),
+			        ALL ( Warehouse ),
+			        ALL ( 'Selling Status - Invoice' )
+			    )
+			VAR main =
+			    DIVIDE (
+			        CALCULATE (
+			            SUM ( Availability[AMOUNT] ),
+			            'Date'[Date] >= VALUE ( "27/05/2019" ),
+			            Availability[DATE] = ldate
+			        ),
+			        CALCULATE (
+			            SUM ( Availability[QTY] ),
+			            'Date'[Date] >= VALUE ( "27/05/2019" ),
+			            Availability[DATE] = ldate
+			        )
+			    )
+			RETURN
+			    IF ( main = 0, BLANK (), main )
+		formatString: " #,0.00"
+		displayFolder: Inventory Levels
+		lineageTag: f37d9649-8307-4863-b765-ff8503861829
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Item Coverage (Maximum)' =
+			
+			var ldate = calculate(LASTDATE(Availability[DATE]),ALL(Products),all(Size),all(Warehouse),all('Selling Status - Invoice'))
+			var main = CALCULATE(SUM(Availability[MAXIMUMONHANDINVENTORYQUANTITY]),Availability[DATE]=ldate)
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Inventory Levels
+		lineageTag: c21eec01-af50-442c-adc4-04e874f17523
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Item Coverage' =
+			var ldate = calculate(LASTDATE(Availability[DATE]),ALL(Products),all(Size),all(Warehouse),all('Selling Status - Invoice'))
+			var main = CALCULATE(SUM(Availability[ItemCoverage]),Availability[DATE]=ldate)
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Inventory Levels
+		lineageTag: 3bf632bd-694f-4364-85f0-164b66608aa4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '0. On Hand Stock Units' =
+			var ldate = calculate(LASTDATE(Availability[DATE]),ALL(Products),all(Warehouse),all(Size))
+			var main = CALCULATE(SUM(Availability[QTY]),Availability[DATE]=ldate)
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Inventory Levels
+		lineageTag: f91786e4-70f3-4901-aada-774ffb7f4669
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '0. On Hand Stock Value' = ```
+			var ldate = calculate(LASTDATE(Availability[DATE]),ALL(Products),all(Size),all(Warehouse),all('Selling Status - Invoice')) 
+			
+			var main = CALCULATE(SUM(Availability[AMOUNT]),Availability[DATE]=ldate) 
+			
+			return if(main=0,blank(),main)
+			
+			```
+		formatString: " #,0.00"
+		displayFolder: Inventory Levels
+		lineageTag: de2078b2-6a42-4fc4-92a8-8e1cc7569ac0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Opening Stock' =
+			VAR ldate =
+			    CALCULATE (
+			        LASTDATE ( Availability[DATE] ),
+			        ALL ( Products ),
+			        ALL ( Warehouse ),
+			        ALL ( Size )
+			    )
+			VAR qty =
+			    CALCULATE (
+			        CALCULATE (
+			            SUM ( Availability[QTY] ),
+			            USERELATIONSHIP ( Availability[NextDate], 'Date'[Date] ),
+			            'Date'[Date] = ldate
+			        )
+			    )
+			VAR main =
+			    IF ( SELECTEDVALUE ( 'Date'[Date] ) > TODAY (), 0, qty )
+			RETURN
+			    IF ( main = 0, BLANK (), main )
+		formatString: " #,##0"
+		displayFolder: Inventory Levels
+		lineageTag: 52a03ff9-9932-4b0b-9353-6833e3bf93b1
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Pick Units' = ```
+			var main = calculate(sum(Pick[Pick QTY]))
+			return
+			
+			if(main=0,blank(),main)
+			
+			```
+		formatString: " #,0"
+		displayFolder: Pick Detail
+		lineageTag: 54a54c49-c3fd-4b45-ad26-8a001b25efa1
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Count of Pick Orders' =
+			
+			var main = CALCULATE(DISTINCTCOUNT(Pick[JBA Order #]),FILTER('Pick',Pick[JBA Order #]<>BLANK()))
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: #,0
+		displayFolder: Pick Detail
+		lineageTag: b2f48005-0a03-45b0-909e-eb21843ba735
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Pick Units/Order' = DIVIDE([Pick Units],[Count of Pick Orders])
+		formatString: " 0.0"
+		displayFolder: Pick Detail
+		lineageTag: 71c11bc8-3945-4f89-bde1-77bbe8a240b9
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure XR =
+			
+			IF (
+			    OR (
+			        HASONEFILTER ( 'Display Currency'[Currency Name] ),
+			        HASONEFILTER ( 'Display Currency'[Currency Code] )
+			    ),
+			    IF (
+			        FIRSTNONBLANK ( 'Display Currency'[Currency Code], 1 ) = "999",
+			        1,
+			        SUM ( 'Display Currency'[XRMultiplier] )
+			    ),
+			    1
+			)
+		isHidden
+		displayFolder: Internal
+		lineageTag: 43fd59a8-fff1-4b60-a733-7049082bc8ae
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Adjustment Inventory Units' =
+			
+			var main = calculate(sum(Adjustments[Inventory Quantity]))
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Adjustments
+		lineageTag: 5e8a4324-fc75-4aa2-a1a2-e0d3177171c8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Adjustment Value' =
+			
+			var main = calculate(sum(Adjustments[Cost Amount])*[XR])
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: Adjustments
+		lineageTag: 77951c18-9925-4934-bf7b-822c9b50d0da
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Adjustments Counted Units' = sum(Adjustments[Counted Quantity])
+		formatString: " #,0"
+		displayFolder: Adjustments
+		lineageTag: 5f90905a-7d59-4f55-a216-44daf268ff86
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Adjustment On Hand Units' = sum(Adjustments[On hand Quantity])
+		formatString: " #,0"
+		displayFolder: Adjustments
+		lineageTag: caa679cb-c629-4546-b16a-aad111783bbb
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Adjustment Adjusted Units' = sum(Adjustments[Adjustment Quantity])
+		formatString: " #,0"
+		displayFolder: Adjustments
+		lineageTag: 0a2007fa-01ca-4d07-89a5-543d2d8a2c14
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '0. Open Return Units' =
+			
+			var main = calculate(sum(Movements[Open Return Units]))
+			return if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements\Returns
+		lineageTag: e59a73f0-2a06-4b17-9da9-765e9cddbdc4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '1. Complete Return Units' =
+			var main = calculate(sum(Movements[Complete Return Units]))
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements\Returns
+		lineageTag: 20b6e4f2-1cad-4fd5-9d9f-ec5b1918a5ff
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '0. Open Return Amount' =
+			var main = calculate(sum(Movements[Open Return Amount])*[XR])
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements\Returns
+		lineageTag: c8cbb299-e34f-470b-bf1c-38e192b7538a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '1. Complete Return Amount' =
+			var main = calculate(sum(Movements[Complete Return Amount])*[XR])
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements\Returns
+		lineageTag: a42a027c-9fcc-4a08-a8c9-d5a594306f5a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'PO Amount' =
+			
+			var main = SUM(Movements[PO Amount])
+			
+			return if(main=0,BLANK(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements\Intake\PO Values
+		lineageTag: ef8b9a97-9ef9-47ca-b6a5-afd9c0ab8a0b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'PO Charges' =
+			var main = SUM(Movements[PO Charges])
+			
+			return if(main=0,BLANK(),main)
+		displayFolder: Movements\Intake\PO Values
+		lineageTag: dee704de-6526-4b6a-ac5b-aa41f8d3fde2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total PO Value inc Charges' = [PO Amount] + [PO Charges]
+		displayFolder: Movements\Intake\PO Values
+		lineageTag: 1f39567e-2786-4226-a6f1-d559f14e2b0e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '0. Open Intake Units' =
+			var main = calculate(sum(Movements[Open Intake Units]))
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements\Intake
+		lineageTag: 8e51725a-2d32-43ea-989d-03b9c4ab4c6c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '1. Received Intake Units' =
+			var main = calculate(sum(Movements[Received Intake Units]))
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements\Intake
+		lineageTag: 9538eeb6-c5c7-40a6-85f0-d7767b16b11c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '2. Cancelled Intake Units' =
+			var main = calculate(sum(Movements[Cancelled Intake Units]))
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements\Intake
+		lineageTag: abff1748-ba7e-46ad-976c-b999a2e130aa
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '0. Open Intake Amount' =
+			var main = calculate(sum(Movements[Open Intake Amount])*[XR])
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements\Intake
+		lineageTag: 1ddae412-f3dd-4536-82a7-96087ceaebfe
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '1. Received Intake Amount' =
+			var main = calculate(sum(Movements[Received Intake Amount])*[XR])
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements\Intake
+		lineageTag: 812e9794-991e-4d2d-b168-f3395fe0a0a1
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '2. Cancelled Intake Amount' =
+			var main = calculate(sum(Movements[Cancelled Intake Amount])*[XR])
+			
+			return
+			
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements\Intake
+		lineageTag: e069f716-8bd0-48cb-b4e1-bcfdc25f5a5b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '3. Ordered Intake Amount' = ```
+			
+			VAR main =
+			    CALCULATE ( SUM ( Movements[Ordered Intake Amount] ) * [XR] )
+			RETURN
+			    IF ( main = 0, BLANK (), main )
+				
+			```
+		formatString: " #,0.00"
+		displayFolder: Movements\Intake
+		lineageTag: ac8d1d43-652e-4983-bb48-b4563015edf7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '3. Ordered Intake Units' =
+			
+			VAR main =
+			    CALCULATE ( SUM ( Movements[Ordered Intake Units] ) )
+			RETURN
+			    IF ( main = 0, BLANK (), main )
+		formatString: " #,0"
+		displayFolder: Movements\Intake
+		lineageTag: adc430c8-e89b-4356-83bb-13eb80cc3e07
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '2. Outstanding Units' =
+			
+			var main = calculate(sum(Movements[Outstanding Units]))
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: 5861d2c8-6436-4681-94ec-08befbd27587
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '3.3 Allocated Late Units' =
+			
+			var main = calculate(sum(Movements[Allocated Late Units]))
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: 0a0a0a2d-8720-4161-9ef7-a259f5558425
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '3.2 Allocated On Time Units' =
+			
+			var main = calculate(sum(Movements[Allocated On time Units]))
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: 17fc25fe-ec9d-4ccd-b47a-8a4ebcc43622
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '3. Allocated Units' = [3.3 Allocated Late Units]+[3.2 Allocated On Time Units] + [3.1 Allocated Arrived Units]
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: c2557129-ebff-4780-97b6-a0c58d6977f0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '3.1 Allocated Arrived Units' =
+			
+			var main = calculate(sum(Movements[Allocated Arrived Units]))
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: f33f0ea0-1bb7-4e1c-ad60-6b0dd3d02910
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '4. Reserved Units' =
+			
+			var main = calculate(sum(Movements[Reserved Units]))
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: bb97dc44-0602-4890-b025-ec57ba211682
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '5.2 Pick Release Units' =
+			
+			var main = calculate(sum(Movements[Pick Release Units]))
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: dd05c95a-873e-4564-ab4f-a1ca95264263
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '5.1 Pick Active Units' =
+			
+			var main = calculate(sum(Movements[Pick Active Units]))
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: a873f0c4-1d39-4e91-90c9-474e6db1e174
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '5.3 Pick Complete Units' =
+			
+			var main = calculate(sum(Movements[Pick Complete Units]))
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: 70be069b-7c74-429c-8bba-dd062366d218
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '5. In Pick Units' = [5.1 Pick Active Units]+[5.3 Pick Complete Units]+[5.2 Pick Release Units]
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: 1c24c6b5-043f-419b-9b85-bd375016db58
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '1. Open Units' =
+			
+			var main = SUM(Movements[Open Units])
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: 55c34623-98a9-4378-8798-5e70514b465c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '6. Despatched Units' = ```
+			
+			var main=SUM(Movements[Despactched Units])
+			return 
+			IF(main=0,blank(),main)
+			```
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: 5f376eba-77d3-4876-b3d8-0ab888b9d245
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '7. Despatched not Received Units' =
+			
+			var main = [6. Despatched Units] - [8. Received Units]
+			RETURN
+			IF(main = 0, BLANK(), main)
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: e79942e3-bdea-4589-a733-d591cc3bf24a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '8. Received Units' =
+			
+			var main=SUM(Movements[Received Units])
+			return
+			IF(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: 23f3b0d7-06f1-42cd-a2c6-bc6a6c018ff4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '0. Ordered Units' =
+			
+			var main = calculate(sum(Movements[Ordered Units]))
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: dabb4da7-8242-426d-b9e9-a456ee9ec923
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '9. Cancelled Units' =
+			
+			var main = SUM(Movements[Cancelled Units])
+			return
+			IF(main=0,BLANK(),main)
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: 000a4c04-6b77-4e0d-937e-629824df265a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '0. Ordered Amount' =
+			
+			var main = calculate(sum(Movements[Ordered Amount])*[XR])
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: 7529fb6d-10ff-4f76-b48b-8be289440b08
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '1. Open Amount' =
+			
+			var main = SUM(Movements[Open Amount])*[XR]
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: c9399ba4-1e53-4730-ab6a-e9bdc06f525e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '2. Outstanding Amount' =
+			
+			VAR main =
+			    CALCULATE ( SUM ( Movements[Short Delivery Amount] ) * [XR] )
+			RETURN
+			    IF ( main = 0, BLANK (), main )
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: 4a02cf05-6017-4bdc-b534-bae9d1b6feb4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '3.1 Allocated Arrived Amount' =
+			
+			var main = sum(Movements[Allocated Arrived Amount])*[XR]
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: d1331d27-3cae-4ab2-b3b2-7959e1439cb0
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '3.2 Allocated On Time Amount' =
+			
+			var main = calculate(sum(Movements[Allocated On time Amount])*[XR])
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: 31c066f9-34c1-420f-bce6-c741a97c76e1
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '3.3 Allocated Late Amount' =
+			
+			var main = calculate(sum(Movements[Allocated Late Amount])*[XR])
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: 8f764af0-07eb-4a5d-b2fa-21f96b25b970
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '4. Reserved Amount' =
+			
+			var main = calculate(sum(Movements[Reserved Amount])*[XR])
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: aa3d6027-d16d-48c0-81d7-358bbb4cd29c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '5.1 Pick Active Amount' =
+			
+			var main = calculate(sum(Movements[Pick Active Amount])*[XR])
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: 9ed5cb9a-12a5-4e1e-8d46-f6bec88a354e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '5.2 Pick Release Amount' =
+			
+			var main = calculate(sum(Movements[Pick Release Amount])*[XR])
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: 30eec39c-5b1e-45e8-9de6-26a95f63bcc8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '5.3 Pick Complete Amount' = ```
+			
+			var main = calculate(sum(Movements[Pick Complete Amount])*[XR])
+			return
+			if(main=0,blank(),main)
+			
+			```
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: 002e3aea-4aa0-4bd3-bf96-7dd1f91651f7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '6. Despatched Amount' = ```
+			
+			var main=SUM(Movements[Despatched Amount])*[XR]
+			return 
+			IF(main=0,blank(),main)
+			```
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: b191b809-09c8-431d-b98e-ddd30cd23c9c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '8. Received Amount' =
+			
+			var main=SUM(Movements[Received Amount])*[XR]
+			return
+			IF(main=0,blank(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: f8b25a3b-f68f-4390-9354-14cb10ff1b1c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '9. Cancelled Amount' =
+			
+			var main = SUM(Movements[Cancelled Amount])*[XR]
+			return
+			IF(main=0,BLANK(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: 7c395670-b4e6-41f0-8ad7-131e2278cdcb
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '3. Allocated Amount' = [3.3 Allocated Late Amount]+[3.2 Allocated On Time Amount] + [3.1 Allocated Arrived Amount]
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: 46be9afe-cd43-42e7-b8fe-9794c263e88b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '5. In Pick Amount' = [5.1 Pick Active Amount]+[5.3 Pick Complete Amount]+[5.2 Pick Release Amount]
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: b8a82c3d-b431-4681-9c6b-ca64770954e5
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '7. Despatched not Received Amount' = [6. Despatched Amount] - [8. Received Amount]
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: 2a3d1aff-bc12-4616-994d-36bec77812c7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '6.1 % Despatched Units' =
+			
+			DIVIDE (
+			    SUMX ( Movements, Movements[Despactched Units] ),
+			    CALCULATE (
+			        SUM ( Movements[Despactched Units] ),
+			        ALL (
+			            Movements[eCom Despatch Time Band],
+			            Movements[eCom Despatch Time Band Sort]
+			        )
+			    )
+			)
+		formatString: " #,0.00%;-#,0.00%;#,0.00%"
+		displayFolder: Movements
+		lineageTag: 73d20173-6472-4565-bdf1-967ee3a8c470
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '3.5 Allocated Detail Units' =
+			CALCULATE (
+			    SUM ( 'Allocation Details'[Allocantion_Qty] ),
+			    USERELATIONSHIP ( 'Allocation Details'[Date_Key], 'Date'[Date Key] )
+			)
+		formatString: " #,##0"
+		displayFolder: Movements
+		lineageTag: f500c4ef-bae1-4a98-819d-07e91c7905e1
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '8.1 Short Delivery Units' =
+			
+			VAR main =
+			    SUM ( Movements[Short Delivery Units])
+			RETURN
+			    IF ( main = 0, BLANK (), main )
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: 9ab86abc-e27a-4047-a75f-673f004b1f72
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '8.1. Short Delivery Amount' =
+			
+			var main = SUM(Movements[Cancelled Amount])*[XR]
+			return
+			IF(main=0,BLANK(),main)
+		formatString: " #,0.00"
+		displayFolder: Movements
+		lineageTag: f1be8594-ed90-48ef-86ef-fdf702da3630
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '3.4 Allocated Outside Of Time Fence Units' =
+			
+			var main = calculate(sum(Movements[Allocated outside of time fence units]))
+			return
+			if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: e56ab517-edbe-44a7-bc3f-ede014819631
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '3.4 Allocated Outside Of Time Fence Amount' = ```
+			
+			var main = calculate(sum(Movements[Allocated Outside Of Time Fence Amount])*[XR])
+			return
+			if(main=0,blank(),main) 
+			```
+		formatString: " #,0"
+		displayFolder: Movements
+		lineageTag: 60facbcd-0597-43ea-9a35-f08af36aa9fc
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Forecast Amount' =
+			
+			var main = CALCULATE(SUM('Global Product Forecast'[Forecast Value]) * [XR])
+			return
+			IF(main = 0, BLANK(), main)
+		formatString: " #,0.00"
+		displayFolder: Product Forecast
+		lineageTag: b76c06d5-a290-4b2a-aefc-f42b9f689ea7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Forecast RRP' =
+			
+			var main = CALCULATE(SUM('Global Product Forecast'[SRP (GBP)]) * [XR])
+			return
+			IF(main = 0, BLANK(), main)
+		formatString: " #,0.00"
+		displayFolder: Product Forecast
+		lineageTag: add8b089-a3a1-4dbe-b735-de76fbfaca6d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Qty Sold US' =
+			
+			var main = SUM('Customer Sell Out US'[Qty Sold])
+			return if(main=0,BLANK(),main)
+		formatString: " #,0"
+		displayFolder: Sell Out\US
+		lineageTag: ce67039c-ea6b-49bb-be23-858267cf7eb6
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Qty On Hand US' = ```
+			
+			var main = SUM('Customer Sell Out US'[Qty On Hand])
+			return if(main=0,BLANK(),main)
+			
+			```
+		formatString: " #,0"
+		displayFolder: Sell Out\US
+		lineageTag: 9e3da93c-8f5d-46f2-af29-95ccac09b8cb
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Qty On-Hand US' =
+			
+			var ldate = CALCULATE(LASTDATE('Customer Sell Out US'[To Date]),ALL(Products))
+			var main = CALCULATE(SUM('Customer Sell Out US'[Qty On Hand]),'Customer Sell Out US'[To Date]=ldate)
+			return if(main=0,blank(),main)
+		formatString: " #,0"
+		displayFolder: Sell Out\US
+		lineageTag: 7b84bc29-0598-4f22-851c-01d3d7b0e0c8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Max. Net Weight' = MAX ( 'Product Weights'[Net Weight] )
+		formatString: " #,##0.000"
+		displayFolder: Other
+		lineageTag: fc99d621-6642-42ba-a03e-915c2fca570f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Max. Pack Weight' = MAX ( 'Product Weights'[Pack Weight] )
+		formatString: " #,##0.000"
+		displayFolder: Other
+		lineageTag: eec1d05e-bcb9-4d90-8f0f-c02687f60793
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	partition Metrics = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Metrics = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Metrics", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Metrics"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

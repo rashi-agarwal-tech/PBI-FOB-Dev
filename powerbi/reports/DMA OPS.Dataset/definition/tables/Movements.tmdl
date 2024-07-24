@@ -1,0 +1,1795 @@
+table Movements
+	lineageTag: 307f5ac3-6a6d-409f-9cec-692c905f6bae
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 7bb043ce-1c5f-4572-a047-c6560b2e5a70
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 5bccc14e-5d2f-41ac-928a-d03f461c854d
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 24dfd431-3212-45ea-bd13-b49ff410d7ef
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warehouse_Key_Desp
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 7eda7fad-0419-4529-8026-fde45710510e
+		summarizeBy: none
+		sourceColumn: Warehouse_Key_Desp
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warehouse_Key_Rec
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 1290ce91-f692-4f6f-a2ea-075506f2e127
+		summarizeBy: none
+		sourceColumn: Warehouse_Key_Rec
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 27bbf5ab-3120-444d-9580-a1eeda15723e
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: de94ed4e-b96a-419b-ab0c-4fcb62132a13
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vendor_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: ea575a30-bd0c-4e41-bd54-07e8e2f999c3
+		summarizeBy: none
+		sourceColumn: Vendor_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 91a2b389-0036-4830-9c1d-3fb1a97976f1
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SO_Requested_Ship_Date_Key
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: c5d557ac-1b51-4c06-b0e2-05c511ca1117
+		summarizeBy: none
+		sourceColumn: SO_Requested_Ship_Date_Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column HDM_INT_ETD_Date_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: e75ed7da-2340-4c80-ba49-dbfcc6acc647
+		summarizeBy: none
+		sourceColumn: HDM_INT_ETD_Date_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales_Order_Pool_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 85af0c5f-f775-4020-a509-8582f26490a7
+		summarizeBy: none
+		sourceColumn: Sales_Order_Pool_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column New_Purchase_Season_Key
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Keys
+		lineageTag: 36d5da5e-c269-4c95-afb2-d8552cdc3824
+		summarizeBy: none
+		sourceColumn: New_Purchase_Season_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Movement
+		dataType: string
+		sourceProviderType: nvarchar(8)
+		displayFolder: zz_Misc
+		lineageTag: 28f2b085-1f4b-4553-b1fe-97e5d08ef729
+		summarizeBy: none
+		sourceColumn: Movement
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pick Release Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Misc
+		lineageTag: 32071f99-63b5-4409-9d54-4242ab410078
+		summarizeBy: sum
+		sourceColumn: Pick Release Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pick Active Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Misc
+		lineageTag: 61d36f68-d472-4f5c-bf13-5eb16bbe5da6
+		summarizeBy: sum
+		sourceColumn: Pick Active Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pick Complete Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Misc
+		lineageTag: e6b5658e-1efa-48c2-95f2-74fd1ebde183
+		summarizeBy: sum
+		sourceColumn: Pick Complete Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Outstanding Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: d7e95f8b-ba7c-4bd3-8103-ab546fca6536
+		summarizeBy: sum
+		sourceColumn: Outstanding Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Open Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: cb2b45de-3a9e-4542-92f3-89d07efe9b22
+		summarizeBy: sum
+		sourceColumn: Open Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cancelled Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: ae71d1c1-e690-463d-a084-269069c9d0ed
+		summarizeBy: sum
+		sourceColumn: Cancelled Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ordered Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: ef327027-9acc-41aa-9211-a8f98095049c
+		summarizeBy: sum
+		sourceColumn: Ordered Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Allocated Arrived Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: b80cbb4f-bbaa-47ad-8fc8-cf74c24b037e
+		summarizeBy: sum
+		sourceColumn: Allocated Arrived Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Allocated On time Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: 2a72087f-bc85-47c6-94fe-00d8f0979685
+		summarizeBy: sum
+		sourceColumn: Allocated On time Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Allocated Late Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: 1ca1a773-d608-4f64-a649-dfcd593bee52
+		summarizeBy: sum
+		sourceColumn: Allocated Late Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Reserved Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: aef1827e-3e66-44f2-9fdf-df50d3ee6c50
+		summarizeBy: sum
+		sourceColumn: Reserved Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Despactched Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: cad58446-8aa7-4f4c-acc3-914b94f8fdee
+		summarizeBy: sum
+		sourceColumn: Despactched Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Received Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: 261783f3-22e2-4ad0-a4bc-35db71153ae3
+		summarizeBy: sum
+		sourceColumn: Received Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Open Intake Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Misc
+		lineageTag: 98ace593-6c8b-4845-ab63-84c4b6f116d9
+		summarizeBy: sum
+		sourceColumn: Open Intake Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Received Intake Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 3)
+		displayFolder: zz_Misc
+		lineageTag: 152da976-6851-44a4-be74-c341dc1c6114
+		summarizeBy: sum
+		sourceColumn: Received Intake Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Open Return Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: d54e5dbb-47db-4795-b7d0-9d5d43e6e35e
+		summarizeBy: sum
+		sourceColumn: Open Return Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Complete Return Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: ceb388a2-44e5-41f6-9b44-f25ef80c8db5
+		summarizeBy: sum
+		sourceColumn: Complete Return Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cancelled Intake Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 3)
+		displayFolder: zz_Misc
+		lineageTag: f9e8b1be-86c8-4754-ba39-1149a05ac5c9
+		summarizeBy: sum
+		sourceColumn: Cancelled Intake Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SO_HDM_Order_Type_ID
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 8eb0d1c4-3f35-4443-bf8f-48d473d16d34
+		summarizeBy: none
+		sourceColumn: SO_HDM_Order_Type_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Amount'
+		dataType: double
+		sourceProviderType: decimal(32, 6)
+		displayFolder: zz_Misc
+		lineageTag: 4cf8289b-4b41-4c5c-beb6-9c457507effe
+		summarizeBy: sum
+		sourceColumn: PO Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PO Charges'
+		dataType: double
+		sourceProviderType: decimal(28, 2)
+		displayFolder: zz_Misc
+		lineageTag: d74af81f-0199-4ad6-8497-c0355cca741b
+		summarizeBy: sum
+		sourceColumn: PO Charges
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Selling Status-Invoice Entry'
+		dataType: double
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: a93a3349-9dbe-428b-b373-f215d53911d3
+		summarizeBy: none
+		sourceColumn: Selling Status-Invoice Entry
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Selling Status Order Entry'
+		dataType: double
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: 521d48cf-b02b-4f85-bb19-9ab2cf98a546
+		summarizeBy: none
+		sourceColumn: Selling Status Order Entry
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ordered Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 12)
+		displayFolder: zz_Misc
+		lineageTag: ceff2ac7-eaa1-48be-9168-2d6d7b80d296
+		summarizeBy: sum
+		sourceColumn: Ordered Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Open Amount'
+		dataType: double
+		sourceProviderType: double
+		displayFolder: zz_Misc
+		lineageTag: 000af802-5968-410f-ad8a-942071c1b96f
+		summarizeBy: sum
+		sourceColumn: Open Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Allocated Arrived Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 12)
+		displayFolder: zz_Misc
+		lineageTag: 1a2446c3-1be1-440a-9885-28f17c91e8ef
+		summarizeBy: sum
+		sourceColumn: Allocated Arrived Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Allocated On time Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 12)
+		displayFolder: zz_Misc
+		lineageTag: 727c9499-8765-403d-b9e6-e9a82040b5a2
+		summarizeBy: sum
+		sourceColumn: Allocated On time Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Allocated late Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 12)
+		displayFolder: zz_Misc
+		lineageTag: 76337769-98e7-4448-8c15-2754122dcfc4
+		summarizeBy: sum
+		sourceColumn: Allocated late Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Reserved Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 12)
+		displayFolder: zz_Misc
+		lineageTag: eefab2af-9154-49bc-a370-c4268003384a
+		summarizeBy: sum
+		sourceColumn: Reserved Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pick Active Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: ec94ca0b-7725-4555-8c6f-3d1c6eb395a8
+		summarizeBy: sum
+		sourceColumn: Pick Active Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pick Release Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: 12f83f23-7ee0-4748-bd32-dcf6eb9d3139
+		summarizeBy: sum
+		sourceColumn: Pick Release Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pick Complete Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: c9270ea5-39d1-4521-a055-b7850d4b884f
+		summarizeBy: sum
+		sourceColumn: Pick Complete Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Despatched Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 12)
+		displayFolder: zz_Misc
+		lineageTag: 99c900cd-c20b-4ca8-ba95-71c92cdc5e5a
+		summarizeBy: sum
+		sourceColumn: Despatched Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Received Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 9)
+		displayFolder: zz_Misc
+		lineageTag: f8c68126-aae2-4345-b495-1f65afba07b3
+		summarizeBy: sum
+		sourceColumn: Received Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cancelled Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 12)
+		displayFolder: zz_Misc
+		lineageTag: fbc71825-8b48-4e1c-8519-7ea79640f1ba
+		summarizeBy: sum
+		sourceColumn: Cancelled Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Orderd Intake Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 9)
+		displayFolder: zz_Misc
+		lineageTag: 49b97e2a-5744-4903-aaee-95837189dd57
+		summarizeBy: sum
+		sourceColumn: Orderd Intake Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Open Intake Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: 7276fff0-34c5-4ede-b3d2-9aa907628c9e
+		summarizeBy: sum
+		sourceColumn: Open Intake Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Received Intake Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 9)
+		displayFolder: zz_Misc
+		lineageTag: e503791c-0de7-4322-9307-361b05541ef0
+		summarizeBy: sum
+		sourceColumn: Received Intake Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cancelled Intake Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 9)
+		displayFolder: zz_Misc
+		lineageTag: 8118d86b-79b8-4e49-9a1e-37abcf126266
+		summarizeBy: sum
+		sourceColumn: Cancelled Intake Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Open Return Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 12)
+		displayFolder: zz_Misc
+		lineageTag: 4536b5ca-ef90-427f-8993-9e6d8ec10004
+		summarizeBy: sum
+		sourceColumn: Open Return Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Complete Return Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 12)
+		displayFolder: zz_Misc
+		lineageTag: 68719e97-d2f9-4edb-8f41-8e95b246c01b
+		summarizeBy: sum
+		sourceColumn: Complete Return Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Short Delivery Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Misc
+		lineageTag: d3141179-7243-45cc-9007-21c6a1bab61e
+		summarizeBy: sum
+		sourceColumn: Short Delivery Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Short Delivery Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 12)
+		displayFolder: zz_Misc
+		lineageTag: 1fd7bd4e-a1a7-4c83-96db-727d33405846
+		summarizeBy: sum
+		sourceColumn: Short Delivery Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Invent_Trans_ID
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: dc96235a-936c-416a-8c34-74496a7cbfa1
+		summarizeBy: none
+		sourceColumn: Invent_Trans_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ordered Intake Units'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 3)
+		displayFolder: zz_Misc
+		lineageTag: 08a6cd85-dfd1-46ed-8949-7426b267ff1c
+		summarizeBy: sum
+		sourceColumn: Ordered Intake Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ordered Intake Amount'
+		dataType: double
+		sourceProviderType: decimal(38, 9)
+		displayFolder: zz_Misc
+		lineageTag: debd2f9b-e779-4799-975c-f6077cf9ccd2
+		summarizeBy: sum
+		sourceColumn: Ordered Intake Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'SO Credit Limit Hold?'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		displayFolder: z Sales Orders
+		lineageTag: f6204c67-05f4-4379-91b7-92516db25b83
+		summarizeBy: none
+		sourceColumn: SO Credit Limit Hold?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SO Delivery Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Sales Orders
+		lineageTag: 251e30ba-c6d3-45e8-8900-24bbae8e8576
+		summarizeBy: none
+		sourceColumn: SO Delivery Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SO Label Received?'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		displayFolder: z Sales Orders
+		lineageTag: 503ee3e7-5748-40a1-aeee-a2e4f6399a39
+		summarizeBy: none
+		sourceColumn: SO Label Received?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SO Label Required?'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		displayFolder: z Sales Orders
+		lineageTag: d52ba1b1-a645-426d-97d1-f09967f8d68d
+		summarizeBy: none
+		sourceColumn: SO Label Required?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SO MDA Mandantory?'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		displayFolder: z Sales Orders
+		lineageTag: ea17a618-323a-4371-8175-2dc4b748d060
+		summarizeBy: none
+		sourceColumn: SO MDA Mandantory?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SO MDA Reference'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Sales Orders
+		lineageTag: 598990fb-d303-4bf1-b4f6-a70bae030073
+		summarizeBy: none
+		sourceColumn: SO MDA Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SO Entry Date'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		displayFolder: z Sales Orders
+		lineageTag: c20f7cdb-b0b7-4df4-9ad8-0231bbb820f8
+		summarizeBy: none
+		sourceColumn: SO Entry Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SO Currency Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Sales Orders
+		lineageTag: 0bc93d0d-6038-4e7b-a8e4-9823d2f9d753
+		summarizeBy: none
+		sourceColumn: SO Currency Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SO Delivery Mode'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Sales Orders
+		lineageTag: 632156d7-cc8e-443b-938c-9a7d61ccdab7
+		summarizeBy: none
+		sourceColumn: SO Delivery Mode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SO Line #'
+		dataType: double
+		sourceProviderType: decimal(38, 16)
+		displayFolder: z Sales Orders
+		lineageTag: ac99bb6d-33d7-4f48-93d1-5c75c87c0591
+		summarizeBy: sum
+		sourceColumn: SO Line #
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cancel Risk Date'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		displayFolder: z Sales Orders
+		lineageTag: 1c43460a-8dfd-4fb5-af1d-a90337e00743
+		summarizeBy: none
+		sourceColumn: Cancel Risk Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SO Confirmed Ship Date'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		displayFolder: z Sales Orders
+		lineageTag: 475fe158-02df-464d-8734-c96b844f93c8
+		summarizeBy: none
+		sourceColumn: SO Confirmed Ship Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'SO Requested Ship Date'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		displayFolder: z Sales Orders
+		lineageTag: 2db041be-52f0-4115-8535-18017a45fd0e
+		summarizeBy: none
+		sourceColumn: SO Requested Ship Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Season
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Sales Orders
+		lineageTag: d0234b18-44f8-4512-836e-96bd3ce0a172
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Requisition Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Sales Orders
+		lineageTag: 0e4a0821-8f69-466c-b85e-0e57a92645df
+		summarizeBy: none
+		sourceColumn: Customer Requisition Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Note Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Sales Orders
+		lineageTag: 8976c156-8035-4113-b15f-a5aa2af76fe9
+		summarizeBy: none
+		sourceColumn: Delivery Note Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SO Customer Order Ref'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Sales Orders
+		lineageTag: e2b78e78-5af6-4e98-8f84-2c29993617ed
+		summarizeBy: none
+		sourceColumn: SO Customer Order Ref
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SO Return Deadline'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		displayFolder: z Sales Orders
+		lineageTag: 29267220-1f50-4d83-a70f-2759dbddd72a
+		summarizeBy: none
+		sourceColumn: SO Return Deadline
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'SO Customer Requisition Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Sales Orders
+		lineageTag: b8e41000-105a-44c0-8801-2033e7a11e0a
+		summarizeBy: none
+		sourceColumn: SO Customer Requisition Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TO Ship Date'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		displayFolder: z Transfer Orders
+		lineageTag: cd390575-eed8-4b06-95bf-48ff96bf330c
+		summarizeBy: none
+		sourceColumn: TO Ship Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TO Status'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Transfer Orders
+		lineageTag: b109a585-6063-4591-a9d2-999b483d7403
+		summarizeBy: none
+		sourceColumn: TO Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TO Delivery Mode'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Transfer Orders
+		lineageTag: cb166186-328c-4b73-a2a4-7ffc1c53f1cf
+		summarizeBy: none
+		sourceColumn: TO Delivery Mode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TO Line #'
+		dataType: double
+		sourceProviderType: decimal(38, 16)
+		displayFolder: z Transfer Orders
+		lineageTag: a1bb8d11-2cd5-4172-b328-44d511834777
+		summarizeBy: sum
+		sourceColumn: TO Line #
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Initial/Reorder/Opening
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Transfer Orders
+		lineageTag: 6d953f7e-1417-4eff-bae4-4c8bb046e952
+		summarizeBy: none
+		sourceColumn: Initial/Reorder/Opening
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'TO Created Date'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		displayFolder: z Transfer Orders
+		lineageTag: 7625d749-1b1a-4fba-b9ed-d2e222298505
+		summarizeBy: none
+		sourceColumn: TO Created Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Note Internal'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Transfer Orders
+		lineageTag: 285d447c-eb83-4946-bc7c-74dacde8de42
+		summarizeBy: none
+		sourceColumn: Note Internal
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Confirmed Delivery Date'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		displayFolder: z Purchase Orders
+		lineageTag: 2c7f28d1-7c67-494e-9b34-71115590712f
+		summarizeBy: none
+		sourceColumn: PO Confirmed Delivery Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'PO Confirmed Ship Date'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		displayFolder: z Purchase Orders
+		lineageTag: cc08dc9c-8451-4565-9cef-9f783a25ef19
+		summarizeBy: none
+		sourceColumn: PO Confirmed Ship Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'PO Requested Delivery Date'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		displayFolder: z Purchase Orders
+		lineageTag: 03aa6d2c-a395-4c4d-b1f6-f676fb30cb8a
+		summarizeBy: none
+		sourceColumn: PO Requested Delivery Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'PO Requested Ship Date'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		displayFolder: z Purchase Orders
+		lineageTag: 39b355bc-6641-4bb8-bca0-40008b983d73
+		summarizeBy: none
+		sourceColumn: PO Requested Ship Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'PO Currency'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Purchase Orders
+		lineageTag: 78a0d2be-9e26-4476-bcfd-d19a88ae10e1
+		summarizeBy: none
+		sourceColumn: PO Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Delivery Terms'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Purchase Orders
+		lineageTag: 5e03a36f-918a-49d2-aedf-d9f66ccf5112
+		summarizeBy: none
+		sourceColumn: PO Delivery Terms
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Line #'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: z Purchase Orders
+		lineageTag: 5e7dbf57-7e16-46e5-987f-761a1481e62e
+		summarizeBy: none
+		sourceColumn: PO Line #
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PO Entry Date'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		displayFolder: z Purchase Orders
+		lineageTag: fb33b6e4-d3de-412e-b915-3402fa6441fd
+		summarizeBy: none
+		sourceColumn: PO Entry Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'PO Line Status'
+		dataType: string
+		sourceProviderType: nvarchar(9)
+		displayFolder: z Purchase Orders
+		lineageTag: b002ad97-45d3-4384-99f7-66596e1b9806
+		summarizeBy: none
+		sourceColumn: PO Line Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Procurement Category'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Purchase Orders
+		lineageTag: 97e64467-00cf-407b-933c-724f2b07258c
+		summarizeBy: none
+		sourceColumn: PO Procurement Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Receipt Note Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Purchase Orders
+		lineageTag: 81027e49-ff27-4d4e-8df5-1c01c01aee19
+		summarizeBy: none
+		sourceColumn: Receipt Note Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Related PO#'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Purchase Orders
+		lineageTag: b7ee49ae-28b7-4fb3-b03f-09a874d82475
+		summarizeBy: none
+		sourceColumn: Related PO#
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Ex-Factory Date'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		displayFolder: z Purchase Orders
+		lineageTag: 71975239-af0c-4d11-a348-e2b5f82c401c
+		summarizeBy: none
+		sourceColumn: PO Ex-Factory Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'PO Customer Reference'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Purchase Orders
+		lineageTag: 7db4c524-9902-415c-9115-e57bf2b29599
+		summarizeBy: none
+		sourceColumn: PO Customer Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Customer Requisition Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Purchase Orders
+		lineageTag: 666f6873-fc5e-49b3-8874-916b70634a78
+		summarizeBy: none
+		sourceColumn: PO Customer Requisition Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Intercompany PO#'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Purchase Orders
+		lineageTag: 16324f73-9309-43f3-beb3-e264dcc35601
+		summarizeBy: none
+		sourceColumn: Intercompany PO#
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location ID'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Purchase Orders
+		lineageTag: 262a1021-0c6b-41fb-826f-eee646084360
+		summarizeBy: none
+		sourceColumn: Location ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tag on Order'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: z Purchase Orders
+		lineageTag: 735cfb0d-48b7-4922-8105-1dd32151bc23
+		summarizeBy: none
+		sourceColumn: Tag on Order
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PO Available Ship Date'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		displayFolder: z Purchase Orders
+		lineageTag: d139f110-8522-49be-a1bd-7e674344dc14
+		summarizeBy: none
+		sourceColumn: PO Available Ship Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column SO#
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: edf4dae5-19b4-47c9-bbe5-852820c86818
+		summarizeBy: none
+		sourceColumn: SO#
+
+		annotation SummarizationSetBy = Automatic
+
+	column PO#
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d7496768-ffff-4db8-8f4a-a17f02b5a8b6
+		summarizeBy: none
+		sourceColumn: PO#
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Country'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 67f82a2b-3c9b-4dd8-be79-d333834daf6d
+		summarizeBy: none
+		sourceColumn: Delivery Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Region'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 70dbebab-160a-4c90-87b1-e1eaebff9dff
+		summarizeBy: none
+		sourceColumn: Delivery Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Movement Status'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e63f32b7-f068-4e6a-8237-da43b24cbf79
+		summarizeBy: none
+		sourceColumn: Movement Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Order Numbers'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5777690c-35ec-4944-8a0f-9f4b1b281ca8
+		summarizeBy: none
+		sourceColumn: Transaction Order Numbers
+
+		annotation SummarizationSetBy = Automatic
+
+	column TO#
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 607d875f-e380-4626-95cf-e794b5e318ea
+		summarizeBy: none
+		sourceColumn: TO#
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Movement Purpose'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ed12b351-4a56-42bd-8d7e-ca28ec5ba5b7
+		summarizeBy: none
+		sourceColumn: Movement Purpose
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Receipt Date'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: d7ac1534-ad01-4f6d-82d9-4a930654b7ef
+		summarizeBy: none
+		sourceColumn: Receipt Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Barcode
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ab7c60fb-72ee-4809-8aeb-0299a472569c
+		summarizeBy: none
+		sourceColumn: Barcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column RMA#
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 54620584-81eb-4746-bd39-bc23ebdfeb11
+		summarizeBy: none
+		sourceColumn: RMA#
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Requested Month-Year'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a8a2d6e9-f570-46c1-a8b3-901f816ef4e8
+		summarizeBy: none
+		sourceColumn: Requested Month-Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HTS Tariff Code US'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 9edc5493-3b50-4f2f-a68e-aafae7375a7c
+		summarizeBy: none
+		sourceColumn: HTS Tariff Code US
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'HTS Tariff Code CAD'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b81b7ff6-3306-4e42-8aba-c25143c27ef1
+		summarizeBy: none
+		sourceColumn: HTS Tariff Code CAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fill Date - Line'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: 027f71c3-12fb-4858-84b2-843312d62759
+		summarizeBy: none
+		sourceColumn: Fill Date - Line
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Returns Disposition Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 7f85d559-cac1-4a26-bc22-ed13e03c0eed
+		summarizeBy: none
+		sourceColumn: Returns Disposition Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Earliest Confirmed Delivery Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 33fd7a5c-ba2c-4f2d-9018-696d2433ae9c
+		summarizeBy: none
+		sourceColumn: Earliest Confirmed Delivery Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Sorting Key'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: ca32866b-94d6-4816-869d-e52c23423c4e
+		summarizeBy: none
+		sourceColumn: Sorting Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Reference
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2400f142-8567-4dbe-8ca2-9a28b6f21611
+		summarizeBy: none
+		sourceColumn: Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column Filter6Months
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: d8aa46ef-95ec-4cd6-a897-3a057f81f260
+		summarizeBy: sum
+		sourceColumn: Filter6Months
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Returns Disposition Code Description'
+		dataType: string
+		sourceProviderType: nvarchar(42)
+		lineageTag: b55331e6-3679-41de-93e3-c3b34b0ebe97
+		summarizeBy: none
+		sourceColumn: Returns Disposition Code Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Requested Ship Date'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 6dfd0cba-a8fc-4ecc-9b26-bf0aaeccbbb5
+		summarizeBy: none
+		sourceColumn: Requested Ship Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Confirmed Ship Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 15fec484-5e5c-4472-bd05-d2f8c6b226a8
+		summarizeBy: none
+		sourceColumn: Confirmed Ship Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Financial Channel Custom'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f880ee0e-2ca1-496d-815d-cad2dda6b0d0
+		summarizeBy: none
+		sourceColumn: Financial Channel Custom
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Warehouse ID' = RELATED('To Warehouse'[Warehouse ID])
+		dataType: string
+		displayFolder: z Warehouse To
+		lineageTag: 28c9727e-a9cd-4dc7-a92b-c68894a84e90
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Warehouse Name' = RELATED('To Warehouse'[Warehouse Name])
+		dataType: string
+		displayFolder: z Warehouse To
+		lineageTag: 671e1ca9-0626-44c0-8f44-f181c549dcf5
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Warehouse Region' = RELATED('To Warehouse'[Warehouse Region])
+		dataType: string
+		displayFolder: z Warehouse To
+		lineageTag: f1fcd243-f6e9-4d1b-9776-e46064925d72
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Warehouse Sub Region' = RELATED('To Warehouse'[Warehouse Sub-Region])
+		dataType: string
+		displayFolder: z Warehouse To
+		lineageTag: 2adccd29-43c1-4a5f-85bc-c7aea3e63365
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Warehouse Channel' = RELATED('To Warehouse'[Warehouse Channel])
+		dataType: string
+		displayFolder: z Warehouse To
+		lineageTag: 9a5f6c86-6ea8-4c20-9a76-68dcc739a793
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Warehouse Group' = RELATED('To Warehouse'[Warehouse Group])
+		dataType: string
+		displayFolder: z Warehouse To
+		lineageTag: 885c8bfc-fff9-4100-a871-aa3efe5fa5e7
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'To Warehouse Sub Group' = RELATED('To Warehouse'[Warehouse Sub-Group])
+		dataType: string
+		displayFolder: z Warehouse To
+		lineageTag: 8069d816-4bcc-4b5d-94db-9352ef178bbc
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Warehouse ID' = RELATED('From Warehouse'[Warehouse ID])
+		dataType: string
+		displayFolder: z Warehouse From
+		lineageTag: 69a4f4cd-aa9d-40a5-aeb7-c677adc7f5ae
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Warehouse Name' = RELATED('From Warehouse'[Warehouse Name])
+		dataType: string
+		displayFolder: z Warehouse From
+		lineageTag: 5c68163d-da14-46fd-9ffe-8c249f5ba3d7
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Warehouse Region' = RELATED('From Warehouse'[Warehouse Region])
+		dataType: string
+		displayFolder: z Warehouse From
+		lineageTag: 9769eba4-5d65-4c74-9e96-8816b05f0fbe
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Warehouse Sub Region' = RELATED('From Warehouse'[Warehouse Sub-Region])
+		dataType: string
+		displayFolder: z Warehouse From
+		lineageTag: b0cee084-7d05-48d4-9014-e9a88409f1ac
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Warehouse Sub Group' = RELATED('From Warehouse'[Warehouse Sub-Group])
+		dataType: string
+		displayFolder: z Warehouse From
+		lineageTag: 39d81c8c-47a8-4ffe-ae03-ae31991d04c2
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Warehouse Group' = RELATED('From Warehouse'[Warehouse Group])
+		dataType: string
+		displayFolder: z Warehouse From
+		lineageTag: e33b01ec-4d6a-4826-9a85-0230eb2767f2
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'From Warehouse Channel' = RELATED('From Warehouse'[Warehouse Channel])
+		dataType: string
+		displayFolder: z Warehouse From
+		lineageTag: f0a9a464-f91c-4cbf-9254-3611ca4e04bc
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SO Days to Despatch' =
+			IF(Movements[Despactched Units] = Movements[Ordered Units],
+			    DATEDIFF(Movements[SO Entry Date], Movements[SO Despatch Date] ,DAY),
+			    BLANK()
+			)
+		dataType: int64
+		formatString: 0
+		displayFolder: z Sales Orders
+		lineageTag: d6896e15-bf5d-403a-933c-1ab3d9fcef30
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SO Despatch Date' = RELATED('Date'[Date])
+		dataType: dateTime
+		formatString: General Date
+		displayFolder: z Sales Orders
+		lineageTag: 0f25c771-67a8-47e4-81c0-e81e619522c5
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom Despatch Time Band' = ```
+			SWITCH(TRUE(),
+			    Movements[SO Days to Despatch] = 0, "Same Day",
+			    Movements[SO Days to Despatch] = 1, "Next Day",
+			    Movements[SO Days to Despatch] = 2, "2 Days", 
+			    Movements[SO Days to Despatch] = 3, "3 Days", 
+			    Movements[SO Days to Despatch] = 4, "4 Days", 
+			    Movements[SO Days to Despatch] = 5, "5 Days", 
+			    Movements[SO Days to Despatch] = 6, "6 Days",
+			    Movements[SO Days to Despatch] = 7, "7 Days",
+			    Movements[SO Days to Despatch] = 8, "8 Days",
+			    Movements[SO Days to Despatch] = 9, "9 Days", 
+			    Movements[SO Days to Despatch] = 10, "10 Days",
+			    Movements[SO Days to Despatch] = 11, "11 Days", 
+			    Movements[SO Days to Despatch] = 12, "12 Days", 
+			    "12+ Days"
+			)
+			```
+		dataType: string
+		displayFolder: z Sales Orders
+		lineageTag: 45ef984c-3977-4c81-80c3-f3051e4ac246
+		summarizeBy: none
+		isDataTypeInferred
+		sortByColumn: 'eCom Despatch Time Band Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom Despatch Time Band Sort' = ```
+			SWITCH(TRUE(),
+			    Movements[SO Days to Despatch] = 0, "01",
+			    Movements[SO Days to Despatch] = 1, "02",
+			    Movements[SO Days to Despatch] = 2, "03", 
+			    Movements[SO Days to Despatch] = 3, "04", 
+			    Movements[SO Days to Despatch] = 4, "05", 
+			    Movements[SO Days to Despatch] = 5, "06", 
+			    Movements[SO Days to Despatch] = 6, "07",
+			    Movements[SO Days to Despatch] = 7, "08",
+			    Movements[SO Days to Despatch] = 8, "09",
+			    Movements[SO Days to Despatch] = 9, "10", 
+			    Movements[SO Days to Despatch] = 10, "11",
+			    Movements[SO Days to Despatch] = 11, "12", 
+			    Movements[SO Days to Despatch] = 12, "13", 
+			    "14"
+			)
+			```
+		dataType: string
+		isHidden
+		displayFolder: z Sales Orders
+		lineageTag: 4d6e6c94-18cf-46bf-9102-0a8026c2fa0a
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fill Date - Order' = CALCULATE(MAX(Movements[Fill Date - Line]),ALLEXCEPT(Movements,Movements[MOVEMENT],Movements[Movement Purpose],Movements[SO#],Movements[Product_Key]))
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 8873894f-08dc-4d41-85f3-600a21f0e8e5
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Allocated outside of time fence units'
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: faf58587-0adc-4b73-ad3b-04841838ba75
+		summarizeBy: sum
+		sourceColumn: Allocated outside of time fence units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Allocated outside of time fence amount'
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: fd8011b1-5d1b-4990-9b2d-de4f5e027803
+		summarizeBy: sum
+		sourceColumn: Allocated outside of time fence amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Movements History' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],
+    				Filter6Months    = Number.FromText(Date.ToText(Date.StartOfMonth(Date.AddMonths(DateTime.Date(DateTime.LocalNow()),-6)),"yyyyMMdd")),
+    				#"Custom Column" = Table.AddColumn(BFN_Datatable_View,"FinancialChannel_Custom", each if [FinancialChannel] is null then "x" else [FinancialChannel]),
+    				#"Filtered Rows" = Table.SelectRows(#"Custom Column", each [Date_Key] < Filter6Months and (if [FinancialChannel_Custom]="108" and [Date_Key] >=20240401 then List.Contains({"108"},[FinancialChannel_Custom]) else not List.Contains({"108"}, [FinancialChannel_Custom]) ))
+				in
+    				#"Filtered Rows"
+
+	partition 'Movements Current' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],
+     				Filter6Months    = Number.FromText(Date.ToText(Date.StartOfMonth(Date.AddMonths(DateTime.Date(DateTime.LocalNow()),-6)),"yyyyMMdd")),
+    				#"Custom Column" = Table.AddColumn(BFN_Datatable_View,"FinancialChannel_Custom", each if [FinancialChannel] is null then "x" else [FinancialChannel]),
+    				#"Filtered Rows" = Table.SelectRows(#"Custom Column", each [Date_Key] >= Filter6Months and (if [FinancialChannel_Custom]="108" and [Date_Key] >=20240401 then List.Contains({"108"},[FinancialChannel_Custom]) else not List.Contains({"108"}, [FinancialChannel_Custom]) ))
+				in
+    				#"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+
