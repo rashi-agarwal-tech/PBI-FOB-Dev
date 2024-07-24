@@ -894,9 +894,8 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column Date_Key
-		dataType: string
+		dataType: double
 		isHidden
-		sourceProviderType: nvarchar(16777216)
 		displayFolder: zz_Keys
 		lineageTag: 29285268-2958-494b-844d-3480a05bf6ac
 		summarizeBy: none
@@ -905,6 +904,8 @@ table Orders
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Is Revenue Affecting?'
 		dataType: string
@@ -2174,6 +2175,7 @@ table Orders
 					Date_Key_Filter
 				```
 				
+
 	partition FY2025 = m
 		mode: import
 		dataView: full
@@ -2262,6 +2264,4 @@ table Orders
 
 
 	annotation PBI_ResultType = Table
-
-	annotation PBI_NavigationStepName = Navigation
 
