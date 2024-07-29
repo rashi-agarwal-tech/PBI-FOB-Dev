@@ -126,6 +126,8 @@ table Movements
 		summarizeBy: none
 		sourceColumn: SO_Requested_Ship_Date_Key
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column HDM_INT_ETD_Date_Key
@@ -176,6 +178,8 @@ table Movements
 		lineageTag: 28f2b085-1f4b-4553-b1fe-97e5d08ef729
 		summarizeBy: none
 		sourceColumn: Movement
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -457,6 +461,8 @@ table Movements
 		summarizeBy: none
 		sourceColumn: SO_HDM_Order_Type_ID
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'PO Amount'
@@ -466,6 +472,8 @@ table Movements
 		lineageTag: 4cf8289b-4b41-4c5c-beb6-9c457507effe
 		summarizeBy: sum
 		sourceColumn: PO Amount
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -479,6 +487,8 @@ table Movements
 		summarizeBy: sum
 		sourceColumn: PO Charges
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -490,6 +500,8 @@ table Movements
 		lineageTag: a93a3349-9dbe-428b-b373-f215d53911d3
 		summarizeBy: none
 		sourceColumn: Selling Status-Invoice Entry
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -503,6 +515,8 @@ table Movements
 		summarizeBy: none
 		sourceColumn: Selling Status Order Entry
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -514,6 +528,8 @@ table Movements
 		lineageTag: ceff2ac7-eaa1-48be-9168-2d6d7b80d296
 		summarizeBy: sum
 		sourceColumn: Ordered Amount
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -527,6 +543,8 @@ table Movements
 		summarizeBy: sum
 		sourceColumn: Open Amount
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -538,6 +556,8 @@ table Movements
 		lineageTag: 1a2446c3-1be1-440a-9885-28f17c91e8ef
 		summarizeBy: sum
 		sourceColumn: Allocated Arrived Amount
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -551,6 +571,8 @@ table Movements
 		summarizeBy: sum
 		sourceColumn: Allocated On time Amount
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -562,6 +584,8 @@ table Movements
 		lineageTag: 76337769-98e7-4448-8c15-2754122dcfc4
 		summarizeBy: sum
 		sourceColumn: Allocated late Amount
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -575,6 +599,8 @@ table Movements
 		summarizeBy: sum
 		sourceColumn: Reserved Amount
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -586,6 +612,8 @@ table Movements
 		lineageTag: ec94ca0b-7725-4555-8c6f-3d1c6eb395a8
 		summarizeBy: sum
 		sourceColumn: Pick Active Amount
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -599,6 +627,8 @@ table Movements
 		summarizeBy: sum
 		sourceColumn: Pick Release Amount
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -610,6 +640,8 @@ table Movements
 		lineageTag: c9270ea5-39d1-4521-a055-b7850d4b884f
 		summarizeBy: sum
 		sourceColumn: Pick Complete Amount
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -623,6 +655,8 @@ table Movements
 		summarizeBy: sum
 		sourceColumn: Despatched Amount
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -634,6 +668,8 @@ table Movements
 		lineageTag: f8c68126-aae2-4345-b495-1f65afba07b3
 		summarizeBy: sum
 		sourceColumn: Received Amount
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -647,6 +683,8 @@ table Movements
 		summarizeBy: sum
 		sourceColumn: Cancelled Amount
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -658,6 +696,8 @@ table Movements
 		lineageTag: 49b97e2a-5744-4903-aaee-95837189dd57
 		summarizeBy: sum
 		sourceColumn: Orderd Intake Amount
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -671,6 +711,8 @@ table Movements
 		summarizeBy: sum
 		sourceColumn: Open Intake Amount
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -682,6 +724,8 @@ table Movements
 		lineageTag: e503791c-0de7-4322-9307-361b05541ef0
 		summarizeBy: sum
 		sourceColumn: Received Intake Amount
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -695,6 +739,8 @@ table Movements
 		summarizeBy: sum
 		sourceColumn: Cancelled Intake Amount
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -707,6 +753,8 @@ table Movements
 		summarizeBy: sum
 		sourceColumn: Open Return Amount
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -718,6 +766,8 @@ table Movements
 		lineageTag: 68719e97-d2f9-4edb-8f41-8e95b246c01b
 		summarizeBy: sum
 		sourceColumn: Complete Return Amount
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -746,6 +796,8 @@ table Movements
 		summarizeBy: sum
 		sourceColumn: Short Delivery Amount
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -757,6 +809,8 @@ table Movements
 		lineageTag: dc96235a-936c-416a-8c34-74496a7cbfa1
 		summarizeBy: none
 		sourceColumn: Invent_Trans_ID
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -782,6 +836,8 @@ table Movements
 		lineageTag: debd2f9b-e779-4799-975c-f6077cf9ccd2
 		summarizeBy: sum
 		sourceColumn: Ordered Intake Amount
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
