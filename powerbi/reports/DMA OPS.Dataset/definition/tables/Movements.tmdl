@@ -1762,21 +1762,46 @@ table Movements
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	partition 'Movements Current' = m
-		mode: import
-		source =
-				let
-					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
-					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
-					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],
-     				Filter6Months    = Number.FromText(Date.ToText(Date.StartOfMonth(Date.AddMonths(DateTime.Date(DateTime.LocalNow()),-6)),"yyyyMMdd")),
-    				#"Custom Column" = Table.AddColumn(BFN_Datatable_View,"FinancialChannel_Custom", each if [FinancialChannel] is null then "x" else [FinancialChannel]),
-    				#"Filtered Rows" = Table.SelectRows(#"Custom Column", each [Date_Key] >= Filter6Months and (if [FinancialChannel_Custom]="108" and [Date_Key] >=20240401 then List.Contains({"108"},[FinancialChannel_Custom]) else not List.Contains({"108"}, [FinancialChannel_Custom]) ))
-				in
-					#"Filtered Rows"
 	
+	column 'PO Entry Calendar Week' =
+			LOOKUPVALUE (
+			    'Date'[Calendar Week Number],
+			    'Date'[Date], 'Movements'[PO Entry Date]
+			)
+		dataType: double
+		formatString: " #,##0"
+		displayFolder: z Purchase Orders
+		lineageTag: e22c4f9e-726f-4796-86a1-11a2dcf18407
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Sales Order Type' = RELATED('Sales Order Type'[DESCRIPTION])
+		dataType: string
+		lineageTag: ac11f468-201d-4a0a-8b9f-44d5ee68171f
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Supplier Country' = RELATED('Bridge PPM Supplier PO'[Supplier Country])
+		dataType: string
+		lineageTag: eeea1b3a-fa79-47e8-9720-362fa9bcc9b9
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Supplier Name' = RELATED('Bridge PPM Supplier PO'[Supplier Name])
+		dataType: string
+		lineageTag: d2fd2c59-bbde-4f39-9dc4-2e382e4019ad
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
 
 	partition 'CY2025 Q4' = m
 		mode: import

@@ -1,19 +1,4 @@
 
-	partition 'Movements Current' = m
-		mode: import
-		source =
-				let
-					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
-					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
-					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],
-     				Filter6Months    = Number.FromText(Date.ToText(Date.StartOfMonth(Date.AddMonths(DateTime.Date(DateTime.LocalNow()),-6)),"yyyyMMdd")),
-    				#"Custom Column" = Table.AddColumn(BFN_Datatable_View,"FinancialChannel_Custom", each if [FinancialChannel] is null then "x" else [FinancialChannel]),
-    				#"Filtered Rows" = Table.SelectRows(#"Custom Column", each [Date_Key] >= Filter6Months and (if [FinancialChannel_Custom]="108" and [Date_Key] >=20240401 then List.Contains({"108"},[FinancialChannel_Custom]) else not List.Contains({"108"}, [FinancialChannel_Custom]) ))
-				in
-					#"Filtered Rows"
-	
-
 	partition 'CY2025 Q4' = m
 		mode: import
 		source =
