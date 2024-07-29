@@ -314,7 +314,7 @@ table Adjustments
 					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTINVENTORYADJMOVCOU",Kind="View"]}[Data],				    
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTINVENTORYADJMOVCOU",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each (if [Inventory_Warehouse_ID]="USRWTA01" and [Transaction Date] >=Date.FromText("2024-04-01") then List.Contains({"USRWTA01"},[Inventory_Warehouse_ID]) else not List.Contains({"USRWTA01"},[Inventory_Warehouse_ID]) )),
 					#"Kept First Rows" = Table.FirstN(#"Filtered Rows" ,NumberOfRows),
 					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View

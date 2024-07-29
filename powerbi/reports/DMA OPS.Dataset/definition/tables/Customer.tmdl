@@ -3,21 +3,27 @@ table Customer
 
 	column Customer_Key
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(32)
 		displayFolder: Misc
 		lineageTag: b62f1ffa-794d-4f7d-9c4e-f733fe6a0e0a
 		summarizeBy: none
 		sourceColumn: Customer_Key
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column HDM_EDI_CUSTOMER
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Misc
 		lineageTag: d52c9276-b8ea-4df0-ac4d-fe9e78460ed0
 		summarizeBy: sum
 		sourceColumn: HDM_EDI_CUSTOMER
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -25,11 +31,14 @@ table Customer
 
 	column HDM_DIR_CUSTOMER
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Misc
 		lineageTag: 78d54e47-9a5b-4c6b-8eee-3165cea7c91d
 		summarizeBy: sum
 		sourceColumn: HDM_DIR_CUSTOMER
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -37,11 +46,14 @@ table Customer
 
 	column HDM_RETAIL_CUSTOMER
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Misc
 		lineageTag: 9b6aaeb3-2c5b-46af-9f63-69b62da2f1d0
 		summarizeBy: sum
 		sourceColumn: HDM_RETAIL_CUSTOMER
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -49,11 +61,14 @@ table Customer
 
 	column HDM_VR_LINK_CUSTOMER
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Misc
 		lineageTag: f758214d-4b7a-4097-8414-a28fb10423a0
 		summarizeBy: sum
 		sourceColumn: HDM_VR_LINK_CUSTOMER
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
