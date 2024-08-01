@@ -121,13 +121,12 @@ table Movements
 
 	column SO_Requested_Ship_Date_Key
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: zz_Keys
 		lineageTag: c5d557ac-1b51-4c06-b0e2-05c511ca1117
 		summarizeBy: none
 		sourceColumn: SO_Requested_Ship_Date_Key
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -165,24 +164,23 @@ table Movements
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Keys
 		lineageTag: 36d5da5e-c269-4c95-afb2-d8552cdc3824
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: New_Purchase_Season_Key
 
 		changedProperty = IsHidden
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Movement
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(8)
 		displayFolder: zz_Misc
 		lineageTag: 28f2b085-1f4b-4553-b1fe-97e5d08ef729
 		summarizeBy: none
 		sourceColumn: Movement
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -460,6 +458,7 @@ table Movements
 
 	column SO_HDM_Order_Type_ID
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: zz_Misc
 		lineageTag: 8eb0d1c4-3f35-4443-bf8f-48d473d16d34
@@ -468,19 +467,16 @@ table Movements
 
 		changedProperty = IsHidden
 
-		changedProperty = IsHidden
-
 		annotation SummarizationSetBy = Automatic
 
 	column 'PO Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(32, 6)
 		displayFolder: zz_Misc
 		lineageTag: 4cf8289b-4b41-4c5c-beb6-9c457507effe
 		summarizeBy: sum
 		sourceColumn: PO Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -490,13 +486,12 @@ table Movements
 
 	column 'PO Charges'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(28, 2)
 		displayFolder: zz_Misc
 		lineageTag: d74af81f-0199-4ad6-8497-c0355cca741b
 		summarizeBy: sum
 		sourceColumn: PO Charges
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -506,13 +501,12 @@ table Movements
 
 	column 'Selling Status-Invoice Entry'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 5)
 		displayFolder: zz_Misc
 		lineageTag: a93a3349-9dbe-428b-b373-f215d53911d3
 		summarizeBy: none
 		sourceColumn: Selling Status-Invoice Entry
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -522,13 +516,12 @@ table Movements
 
 	column 'Selling Status Order Entry'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 5)
 		displayFolder: zz_Misc
 		lineageTag: 521d48cf-b02b-4f85-bb19-9ab2cf98a546
 		summarizeBy: none
 		sourceColumn: Selling Status Order Entry
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -538,13 +531,12 @@ table Movements
 
 	column 'Ordered Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 12)
 		displayFolder: zz_Misc
 		lineageTag: ceff2ac7-eaa1-48be-9168-2d6d7b80d296
 		summarizeBy: sum
 		sourceColumn: Ordered Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -554,13 +546,12 @@ table Movements
 
 	column 'Open Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: double
 		displayFolder: zz_Misc
 		lineageTag: 000af802-5968-410f-ad8a-942071c1b96f
 		summarizeBy: sum
 		sourceColumn: Open Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -570,13 +561,12 @@ table Movements
 
 	column 'Allocated Arrived Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 12)
 		displayFolder: zz_Misc
 		lineageTag: 1a2446c3-1be1-440a-9885-28f17c91e8ef
 		summarizeBy: sum
 		sourceColumn: Allocated Arrived Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -586,13 +576,12 @@ table Movements
 
 	column 'Allocated On time Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 12)
 		displayFolder: zz_Misc
 		lineageTag: 727c9499-8765-403d-b9e6-e9a82040b5a2
 		summarizeBy: sum
 		sourceColumn: Allocated On time Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -602,13 +591,12 @@ table Movements
 
 	column 'Allocated late Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 12)
 		displayFolder: zz_Misc
 		lineageTag: 76337769-98e7-4448-8c15-2754122dcfc4
 		summarizeBy: sum
 		sourceColumn: Allocated late Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -618,13 +606,12 @@ table Movements
 
 	column 'Reserved Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 12)
 		displayFolder: zz_Misc
 		lineageTag: eefab2af-9154-49bc-a370-c4268003384a
 		summarizeBy: sum
 		sourceColumn: Reserved Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -634,13 +621,12 @@ table Movements
 
 	column 'Pick Active Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 6)
 		displayFolder: zz_Misc
 		lineageTag: ec94ca0b-7725-4555-8c6f-3d1c6eb395a8
 		summarizeBy: sum
 		sourceColumn: Pick Active Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -650,13 +636,12 @@ table Movements
 
 	column 'Pick Release Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 6)
 		displayFolder: zz_Misc
 		lineageTag: 12f83f23-7ee0-4748-bd32-dcf6eb9d3139
 		summarizeBy: sum
 		sourceColumn: Pick Release Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -666,13 +651,12 @@ table Movements
 
 	column 'Pick Complete Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 6)
 		displayFolder: zz_Misc
 		lineageTag: c9270ea5-39d1-4521-a055-b7850d4b884f
 		summarizeBy: sum
 		sourceColumn: Pick Complete Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -682,13 +666,12 @@ table Movements
 
 	column 'Despatched Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 12)
 		displayFolder: zz_Misc
 		lineageTag: 99c900cd-c20b-4ca8-ba95-71c92cdc5e5a
 		summarizeBy: sum
 		sourceColumn: Despatched Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -698,13 +681,12 @@ table Movements
 
 	column 'Received Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 9)
 		displayFolder: zz_Misc
 		lineageTag: f8c68126-aae2-4345-b495-1f65afba07b3
 		summarizeBy: sum
 		sourceColumn: Received Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -714,13 +696,12 @@ table Movements
 
 	column 'Cancelled Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 12)
 		displayFolder: zz_Misc
 		lineageTag: fbc71825-8b48-4e1c-8519-7ea79640f1ba
 		summarizeBy: sum
 		sourceColumn: Cancelled Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -730,13 +711,12 @@ table Movements
 
 	column 'Orderd Intake Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 9)
 		displayFolder: zz_Misc
 		lineageTag: 49b97e2a-5744-4903-aaee-95837189dd57
 		summarizeBy: sum
 		sourceColumn: Orderd Intake Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -746,13 +726,12 @@ table Movements
 
 	column 'Open Intake Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 6)
 		displayFolder: zz_Misc
 		lineageTag: 7276fff0-34c5-4ede-b3d2-9aa907628c9e
 		summarizeBy: sum
 		sourceColumn: Open Intake Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -762,13 +741,12 @@ table Movements
 
 	column 'Received Intake Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 9)
 		displayFolder: zz_Misc
 		lineageTag: e503791c-0de7-4322-9307-361b05541ef0
 		summarizeBy: sum
 		sourceColumn: Received Intake Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -778,13 +756,12 @@ table Movements
 
 	column 'Cancelled Intake Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 9)
 		displayFolder: zz_Misc
 		lineageTag: 8118d86b-79b8-4e49-9a1e-37abcf126266
 		summarizeBy: sum
 		sourceColumn: Cancelled Intake Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -794,13 +771,12 @@ table Movements
 
 	column 'Open Return Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 12)
 		displayFolder: zz_Misc
 		lineageTag: 4536b5ca-ef90-427f-8993-9e6d8ec10004
 		summarizeBy: sum
 		sourceColumn: Open Return Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -810,13 +786,12 @@ table Movements
 
 	column 'Complete Return Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 12)
 		displayFolder: zz_Misc
 		lineageTag: 68719e97-d2f9-4edb-8f41-8e95b246c01b
 		summarizeBy: sum
 		sourceColumn: Complete Return Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -841,13 +816,12 @@ table Movements
 
 	column 'Short Delivery Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 12)
 		displayFolder: zz_Misc
 		lineageTag: 1fd7bd4e-a1a7-4c83-96db-727d33405846
 		summarizeBy: sum
 		sourceColumn: Short Delivery Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -857,13 +831,12 @@ table Movements
 
 	column Invent_Trans_ID
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: zz_Misc
 		lineageTag: dc96235a-936c-416a-8c34-74496a7cbfa1
 		summarizeBy: none
 		sourceColumn: Invent_Trans_ID
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -886,13 +859,12 @@ table Movements
 
 	column 'Ordered Intake Amount'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 9)
 		displayFolder: zz_Misc
 		lineageTag: debd2f9b-e779-4799-975c-f6077cf9ccd2
 		summarizeBy: sum
 		sourceColumn: Ordered Intake Amount
-
-		changedProperty = IsHidden
 
 		changedProperty = IsHidden
 
@@ -1553,7 +1525,6 @@ table Movements
 	column 'Sorting Key'
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
-		displayFolder: zz_Keys
 		lineageTag: ca32866b-94d6-4816-869d-e52c23423c4e
 		summarizeBy: none
 		sourceColumn: Sorting Key
