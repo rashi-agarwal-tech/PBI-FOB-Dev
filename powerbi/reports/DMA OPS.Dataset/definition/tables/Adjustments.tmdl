@@ -110,6 +110,8 @@ table Adjustments
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column 'Journal Number'
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
@@ -315,9 +317,10 @@ table Adjustments
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTINVENTORYADJMOVCOU",Kind="View"]}[Data],
-				    #"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each (if [Inventory_Warehouse_ID]="USRWTA01" and [Transaction Date] >=Date.FromText("2024-04-01") then List.Contains({"USRWTA01"},[Inventory_Warehouse_ID]) else not List.Contains({"USRWTA01"},[Inventory_Warehouse_ID]) )),
+				    #"Changed Type" = Table.TransformColumnTypes(BFN_Datatable_View,{{"Transaction Date", type date}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each (if [Inventory_Warehouse_ID]="USRWTA01" and [Transaction Date] >=Date.FromText("2024-04-01") then List.Contains({"USRWTA01"},[Inventory_Warehouse_ID]) else not List.Contains({"USRWTA01"},[Inventory_Warehouse_ID]) )),
 					#"Kept First Rows" = Table.FirstN(#"Filtered Rows" ,NumberOfRows),
-					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Changed Type"
 				in
 					ParameterFilter
 

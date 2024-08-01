@@ -582,6 +582,14 @@ table Products
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Construction Desc'
+		dataType: string
+		lineageTag: cbf354a3-b7b7-440f-bea4-dd7d529a6b20
+		summarizeBy: none
+		sourceColumn: Construction Desc
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Products = m
 		mode: import
 		source =

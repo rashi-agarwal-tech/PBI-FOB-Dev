@@ -14,9 +14,9 @@ annotation PBI_ProTooling = ["DevMode"]
 
 annotation PBIDesktopVersion = 2.128.952.0 (24.04)
 
-annotation PBI_QueryOrder = ["Datasource_Server","Datasource_Warehouse","Datasource_Database","Datasource_Schema","NumberOfRows","Global Product Forecast","Bridge InventTransID","Display Currency","Customer","Product Class","Sales Order Pool","Sales Order Type","Size","Vendor","Warehouse","Allocation Details","Availability","Exchange Rates","Intake","Adjustments","Movements","Pick","Products - Last PO","Date","Products - Last PO SKU","Purchase Season","PO ETD Date","Date Slicer","Products","Selling Status - Invoice","Selling Status - Order Entry","Bridge PPM Supplier PO","Product Weights","Customer Sell Out US","From Warehouse","To Warehouse","Metrics"]
+annotation PBI_QueryOrder = ["Datasource_Server","Datasource_Warehouse","Datasource_Database","Datasource_Schema","NumberOfRows","Global Product Forecast","Bridge InventTransID","Display Currency","Customer","Product Class","Sales Order Pool","Sales Order Type","Size","Vendor","Warehouse","Allocation Details","Availability","Exchange Rates","Intake","Adjustments","Movements","Pick","Products - Last PO","Products - Last PO SKU","Purchase Season","PO ETD Date","Date Slicer","Products","Selling Status - Invoice","Selling Status - Order Entry","Bridge PPM Supplier PO","Product Weights","Customer Sell Out US","From Warehouse","To Warehouse","Metrics","Date"]
 
-annotation __PBI_TimeIntelligenceEnabled = 1
+annotation __PBI_TimeIntelligenceEnabled = 0
 
 ref table 'Global Product Forecast'
 ref table 'Bridge InventTransID'
@@ -36,7 +36,6 @@ ref table Adjustments
 ref table Movements
 ref table Pick
 ref table 'Products - Last PO'
-ref table Date
 ref table 'Products - Last PO SKU'
 ref table 'Purchase Season'
 ref table 'PO ETD Date'
@@ -51,6 +50,7 @@ ref table 'From Warehouse'
 ref table 'To Warehouse'
 ref table 'Model Refresh Time'
 ref table Metrics
+ref table Date
 
 ref role Admin
 ref role 'AsiaPac Users'

@@ -46,14 +46,6 @@ relationship 476882aa-c6af-48ba-b0ca-bc73758ba9b4
 	fromColumn: Movements.'Selling Status-Invoice Entry'
 	toColumn: 'Selling Status - Invoice'.'Selling Status'
 
-relationship e9ea33c3-5a88-4226-838d-99729acd6fe3
-	fromColumn: Movements.Date_Key
-	toColumn: Date.'Date Key'
-
-relationship 55f112f1-862f-44e0-8744-2e9935ab0608
-	fromColumn: Pick.Date_Key
-	toColumn: Date.'Date Key'
-
 relationship 04fee53e-7f60-4cf2-85b3-966fe0ca2b68
 	fromColumn: Intake.'Warehouse ID'
 	toColumn: Warehouse.'Warehouse ID'
@@ -77,19 +69,6 @@ relationship 90519be1-c5f6-49f1-bb1c-70d121519138
 relationship b12657db-9811-4634-bb2b-f776fcfe7f34
 	fromColumn: Pick.Product_Key
 	toColumn: Products.Product_Key
-
-relationship 295ab833-1111-4b2d-9e89-8b527802d5e0
-	fromColumn: Adjustments.'Transaction Date'
-	toColumn: Date.Date
-
-relationship e385f9d6-ae87-41dc-a650-ef00ec4e38fb
-	fromColumn: Intake.'Delivery Date'
-	toColumn: Date.Date
-
-relationship e02379de-9768-49b8-bc2e-6cc962fb0bb8
-	isActive: false
-	fromColumn: Intake.Date_Key
-	toColumn: Date.'Date Key'
 
 relationship c75d590c-b1d8-44ed-9d57-8b1e9d0b82bb
 	fromColumn: Movements.Vendor_Key
@@ -123,11 +102,6 @@ relationship 05ef6fc4-cb57-4239-aade-14641541a38f
 	fromColumn: Intake.Product_Class_Key
 	toColumn: 'Product Class'.Product_Class_Key
 
-relationship 90c3ae7d-a2dd-438e-bda9-803b83c4fed0
-	isActive: false
-	fromColumn: Movements.SO_Requested_Ship_Date_Key
-	toColumn: Date.'Date Key'
-
 relationship 03275420-9808-46b1-bc07-2953d8fd212b
 	fromColumn: Movements.SO_HDM_Order_Type_ID
 	toColumn: 'Sales Order Type'.ORDERTYPEID
@@ -143,11 +117,6 @@ relationship 86cedb57-395f-4675-b780-cc44f204d66f
 relationship 507dd990-8cf8-4b49-b613-264ff5d18a5b
 	fromColumn: 'Allocation Details'.Invent_Trans_ID
 	toColumn: 'Bridge InventTransID'.INVENTTRANSID
-
-relationship 9b564582-5856-4677-8fb3-53878b980ad8
-	isActive: false
-	fromColumn: 'Allocation Details'.Date_Key
-	toColumn: Date.'Date Key'
 
 relationship c2835454-6833-4ed9-ae98-64dc02b3fe5c
 	fromColumn: Movements.Invent_Trans_ID
@@ -189,11 +158,6 @@ relationship fa359f7c-6177-4230-9a35-ac36d4652bf3
 	fromColumn: Movements.'Related PO#'
 	toColumn: 'Bridge PPM Supplier PO'.'PO Number'
 
-relationship 5054730d-1811-4dc3-b18f-47d1ec0bcb2b
-	isActive: false
-	fromColumn: Intake.AVAILDATE
-	toColumn: Date.Date
-
 relationship 5c18ffa3-5d42-4a92-a0e3-00307d09a188
 	fromColumn: 'Product Weights'.Product_Key
 	toColumn: Products.Product_Key
@@ -203,6 +167,7 @@ relationship 1e1b57f4-8095-475d-b1bf-fd4b8017c5c3
 	toColumn: Size.Size_Key
 
 relationship 68b4924a-f193-4f6b-9a2d-b1b70f2c8a68
+	isActive: false
 	fromColumn: Movements.New_Purchase_Season_Key
 	toColumn: 'Purchase Season'.Season_Key
 
@@ -218,8 +183,46 @@ relationship 0ad87144-72e5-4059-b5dc-9fc3f8c1ccef
 	fromColumn: Availability.SELLINGSTATUS
 	toColumn: 'Selling Status - Invoice'.'Selling Status'
 
-relationship 01a10e20-bc7d-484f-8449-3f32b4982ce6
+relationship AutoDetected_abb6486a-387f-4054-8deb-b67bf2b35f55
+	fromColumn: 'Allocation Details'.Date_Key
+	toColumn: Date.'Date Key'
+
+relationship AutoDetected_d6c47c34-e459-4db6-bf15-75a0a6589d76
+	fromColumn: Pick.Date_Key
+	toColumn: Date.'Date Key'
+
+relationship AutoDetected_e31bb7ec-6dbb-488f-b008-afbfe751e650
+	fromColumn: Date.Season
+	toColumn: 'Purchase Season'.Season
+
+relationship 6d4fa9e5-c8a9-4d10-bb58-0870a841382f
 	isActive: false
+	fromColumn: Movements.SO_Requested_Ship_Date_Key
+	toColumn: Date.'Date Key'
+
+relationship ef6e554e-f5be-4c0d-8f8e-e7215262ebeb
+	fromColumn: Adjustments.'Transaction Date'
+	toColumn: Date.Date
+
+relationship 2abffe73-a108-4a20-a7b1-7316bb54a350
 	fromColumn: Availability.NextDate
 	toColumn: Date.Date
+
+relationship d16df2f5-d922-4223-9300-369567e040a2
+	fromColumn: Intake.'Delivery Date'
+	toColumn: Date.Date
+
+relationship 3a7dd8f9-4bb4-45ec-92d1-0456b331e187
+	isActive: false
+	fromColumn: Intake.Date_Key
+	toColumn: Date.'Date Key'
+
+relationship 995d42e5-5128-4514-9e81-91c9601f3cb6
+	isActive: false
+	fromColumn: Intake.AVAILDATE
+	toColumn: Date.Date
+
+relationship c9058b47-bc2e-49df-b693-f011f0622afc
+	fromColumn: Movements.Date_Key
+	toColumn: Date.'Date Key'
 

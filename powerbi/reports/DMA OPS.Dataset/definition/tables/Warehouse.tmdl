@@ -114,6 +114,22 @@ table Warehouse
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Warehouse Address Region ID'
+		dataType: string
+		lineageTag: cc853d2a-99c9-43ee-af70-8d9edde57c4d
+		summarizeBy: none
+		sourceColumn: Warehouse Address Region ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: df5f617c-9f78-4f4f-ae8c-ac0f7282dea7
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Warehouse = m
 		mode: import
 		source =

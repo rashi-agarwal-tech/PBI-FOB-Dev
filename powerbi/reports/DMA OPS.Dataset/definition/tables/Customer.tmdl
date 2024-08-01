@@ -216,15 +216,6 @@ table Customer
 
 		annotation SummarizationSetBy = Automatic
 
-	column HDMVASNUMBER
-		dataType: string
-		sourceProviderType: nvarchar(16777216)
-		lineageTag: fc9b0ec4-f9c6-488e-9c30-52d94e7947c9
-		summarizeBy: none
-		sourceColumn: HDMVASNUMBER
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Customer Channel'
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
@@ -333,18 +324,26 @@ table Customer
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'VAS Number'
+		dataType: string
+		lineageTag: 1be35ea2-0c6e-4d86-b897-91629d5588e3
+		summarizeBy: none
+		sourceColumn: VAS Number
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Customer = m
 		mode: import
 		source =
 				let
-									Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
-									PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
-									BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-									BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365DIMCUSTOMER",Kind="View"]}[Data],
-									#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
-									ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
-								in
-									ParameterFilter
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365DIMCUSTOMER",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
 
 	annotation PBI_ResultType = Table
 

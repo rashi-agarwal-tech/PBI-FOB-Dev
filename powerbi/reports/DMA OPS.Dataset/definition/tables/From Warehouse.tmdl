@@ -124,6 +124,22 @@ table 'From Warehouse'
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Warehouse Address Region ID'
+		dataType: string
+		lineageTag: 86962324-f85f-425b-be7e-043d6af1d176
+		summarizeBy: none
+		sourceColumn: Warehouse Address Region ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: 7a85636d-1381-455e-9f57-1373911b065a
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'From Warehouse' = m
 		mode: import
 		source =
