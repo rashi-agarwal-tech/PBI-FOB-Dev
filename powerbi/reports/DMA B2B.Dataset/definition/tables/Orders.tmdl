@@ -863,6 +863,14 @@ table Orders
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Delivery Address Street'
+		dataType: string
+		displayFolder: 4. Delivery Address
+		summarizeBy: none
+		sourceColumn: Delivery Address Street
+
+		annotation SummarizationSetBy = Automatic
+
 	column 'Start Ship Date'
 		dataType: dateTime
 		formatString: Short Date
