@@ -1895,7 +1895,7 @@ table Movements
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],     				    				
-    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20300401 and [Date_Key] < 20310401  )
+    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20290401 and [Date_Key] < 20300401  )
 				in
 					#"Filtered Rows"
 
@@ -1907,7 +1907,7 @@ table Movements
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],     				    				
-    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20290401 and [Date_Key] < 20300401  )
+    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20280401 and [Date_Key] < 20290401  )
 				in
 					#"Filtered Rows"
 
@@ -1919,7 +1919,7 @@ table Movements
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],     				    				
-    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20280401 and [Date_Key] < 20290401  )
+    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20270401 and [Date_Key] < 20280401  )
 				in
 					#"Filtered Rows"
 
@@ -1931,7 +1931,7 @@ table Movements
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],     				    				
-    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20270401 and [Date_Key] < 20280401  )
+    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20260401 and [Date_Key] < 20270401  )
 				in
 					#"Filtered Rows"
 
@@ -1943,7 +1943,7 @@ table Movements
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],     				    				
-    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20260401 and [Date_Key] < 20270401  )
+    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20250401 and [Date_Key] < 20260401  )
 				in
 					#"Filtered Rows"
 
@@ -1955,7 +1955,7 @@ table Movements
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],     				    				
-    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20250401 and [Date_Key] < 20260401  )
+    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20240401 and [Date_Key] < 20250401  )
 				in
 					#"Filtered Rows"
 
@@ -1967,7 +1967,7 @@ table Movements
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],     				    				
-    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20240401 and [Date_Key] < 20250401  )
+    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20230401 and [Date_Key] < 20240401  )
 				in
 					#"Filtered Rows"	
 
@@ -1980,7 +1980,7 @@ table Movements
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
 					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each not List.Contains({"108"},[#"Financial Channel Custom"])),   	   				    				
-    				#"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20230401 and [Date_Key] < 20240401  )
+    				#"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20220401 and [Date_Key] < 20230401  )
 				in
 					#"Filtered Rows2"
 
@@ -1993,7 +1993,7 @@ table Movements
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data], 
 					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each not List.Contains({"108"},[#"Financial Channel Custom"])),     				    				
-    				#"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20220401 and [Date_Key] < 20230401  )
+    				#"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20210401 and [Date_Key] < 20220401  )
 				in
 					#"Filtered Rows"	
 
@@ -2006,7 +2006,7 @@ table Movements
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
 					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each not List.Contains({"108"},[#"Financial Channel Custom"])), 				    				
-    				#"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20210401 and [Date_Key] < 20220401  )
+    				#"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20200401 and [Date_Key] < 20210401  )
 				in
 					#"Filtered Rows2"	
 
