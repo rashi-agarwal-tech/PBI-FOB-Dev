@@ -1995,7 +1995,7 @@ table Movements
 					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each not List.Contains({"108"},[#"Financial Channel Custom"])),     				    				
     				#"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20210401 and [Date_Key] < 20220401  )
 				in
-					#"Filtered Rows"	
+					#"Filtered Rows2"	
 
 	partition 'FY2021' = m
 		mode: import
