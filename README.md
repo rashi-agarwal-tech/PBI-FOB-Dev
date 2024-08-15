@@ -24,7 +24,20 @@ This repository is synced to the [D&A Dev - Dr. Martens Datasets](#https://app.p
     - [Row Level Security](#row-level-security)
     - [Partitions](#partitions)
       - [Partition Refresh](#partition-refresh)
+      - [Partition History](#partition-history)
         - [Using SSMS](#using-ssms)
+- [Utilities Installation](#utilities-installation)
+      - [Installing with pip](#installing-with-pip)
+      - [Installation with Poetry:](#installation-with-poetry)
+    - [Azure Fabric Capacity Report:](#azure-fabric-capacity-report)
+    - [Service Account:](#service-account)
+      - [Azure Application Principle:](#azure-application-principle)
+    - [Premium Workspace:](#premium-workspace)
+    - [Report Settings:](#report-settings)
+    - [Profiling and Performance.](#profiling-and-performance)
+    - [Notes and Issues:](#notes-and-issues)
+- [Contribute:](#contribute)
+>>>>>>> e0d289d (docs: update readme file)
 - [Utilities Installation](#utilities-installation)
       - [Installing with pip](#installing-with-pip)
       - [Installation with Poetry:](#installation-with-poetry)
@@ -200,6 +213,12 @@ and run the following command to remove the original partition:
 
 #### Partition Refresh
 There are several ways to refresh a partition, by connecting to analysis services with a client such as Microsoft SQL Server Management Studio (SSMS), using the in house cli tool and via airflow which uses the same code base with a BaseOperator and Hook.
+
+#### Partition History
+D2C, availability 18 months.
+Operation, 18 months of data will be rettained. Prior to 18 months only the Sunday of each week is retained.
+Total Business, all stock availability data and related measures will be completely removed.
+
 ##### Using SSMS
 You can log into Analysis Services using SSMS with the below server connection details and the service account.
 
@@ -238,15 +257,31 @@ pip -m venv .venv
 
  `pbi --help`
 
+### Azure Fabric Capacity Report:
 
 ### Service Account:
 Report are owned by the service account `PowerBISA-SVC@drmartens.com` and authorisation should be set to OAuth.
 
 #### Azure Application Principle:
+We have installed the [Microsoft Fabric Capacity Metrics app
+](https://app.powerbi.com/groups/me/apps/b4f68cde-3225-4a69-9de2-039942d27d37?experience=power-bi) to help monitor our primium capacity workspaces.
+Fabric resides on a capacity which is a pool of resources allocated to our platform. Each capacity has its own number of Capacity Units (CU). CUs are used to measure the compute power available for our capacity.
+
+The application is currently owned by `Chione Taoself` but I believe that `Karthik Ramani` can also grant access to this application. You will not be able to access the report unless you have specifically granted acess.
+
+![Workspace source control](docs/images/fab_cap_metrics_capacity.PNG)
 
 ### Premium Workspace:
 
+![Admin Portal link](docs/images/pbi_admin_portal_link.PNG)
+
+![Capacity Config](docs/images/pbi_capacity_config.PNG)
+
+![Capacity workspaces](docs/images/pbi_capacity_workspaces.PNG)
+
 ### Report Settings:
+
+### Profiling and Performance.
 
 
 ### Notes and Issues:
