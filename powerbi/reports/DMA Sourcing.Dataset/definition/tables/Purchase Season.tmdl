@@ -1,0 +1,110 @@
+table 'Purchase Season'
+	lineageTag: 8300726f-5cc0-42c4-bece-6f20d2e8afbf
+
+	column Season_Key
+		dataType: double
+		sourceProviderType: decimal(18, 0)
+		displayFolder: zz_Misc
+		lineageTag: a785b29c-a0e1-4762-a48b-ab5760563936
+		summarizeBy: none
+		sourceColumn: Season_Key
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Season
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 1997b67d-0b75-4b84-8c52-645c936590c5
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Season Short Name'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 27257f25-60fa-4134-bd6b-38e8703a4ee0
+		summarizeBy: none
+		sourceColumn: Season Short Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Season Long Name'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: a503ed0f-9177-4517-8020-759d353173f7
+		summarizeBy: none
+		sourceColumn: Season Long Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Season Year'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: b77b9d0c-dbeb-4854-b9b1-2f031046fdf2
+		summarizeBy: none
+		sourceColumn: Season Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start Season'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		sourceProviderType: date
+		displayFolder: zz_Misc
+		lineageTag: 79324fa3-1d45-4f83-9465-84a100f065b4
+		summarizeBy: none
+		sourceColumn: Start Season
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'End Season'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		sourceProviderType: date
+		displayFolder: zz_Misc
+		lineageTag: e3a3fbcb-e93e-4339-8131-34b55a220491
+		summarizeBy: none
+		sourceColumn: End Season
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'Purchase Season' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="SRC_BFN_VW_DIMDATESEASON",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	annotation PBI_ResultType = Table
+

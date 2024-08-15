@@ -1,0 +1,73 @@
+table 'Product Weights'
+	isHidden
+	lineageTag: e03ddc8c-fa66-439c-b01a-79eb9e3d8c1b
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 0899c6d9-dc67-4822-926b-e954cb29ef1a
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: a54ab260-e140-49af-94d2-0ff332233c12
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net Weight'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(18, 3)
+		lineageTag: 6599932a-969c-415b-ab61-7a856847bd9b
+		summarizeBy: sum
+		sourceColumn: Net Weight
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pack Weight'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(6, 3)
+		lineageTag: 9d529b2c-5581-46cf-8d29-2ac4e1f37b89
+		summarizeBy: sum
+		sourceColumn: Pack Weight
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Product Weights' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="SRC_BFN_VW_PPMFACTPRODUCTWEIGHTS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

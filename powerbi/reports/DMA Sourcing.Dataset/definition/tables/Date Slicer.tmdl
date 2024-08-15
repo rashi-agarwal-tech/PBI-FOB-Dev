@@ -1,0 +1,58 @@
+table 'Date Slicer'
+	isHidden
+	lineageTag: 857ae42e-a443-42ff-8667-0b2aeeef02c8
+
+	column 'Date Slicer'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16)
+		lineageTag: 33835692-b5be-4c11-af68-12615fb0684d
+		summarizeBy: none
+		sourceColumn: Date Slicer
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 5a3225f4-949f-4ea5-9a97-5eef41e21033
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sort Order'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(3)
+		lineageTag: e8128cfd-6def-4dfd-af82-37e0a13e62b9
+		summarizeBy: none
+		sourceColumn: Sort Order
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Date Slicer' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="SRC_BFN_VW_DIMDATESLICER",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

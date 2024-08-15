@@ -1,0 +1,225 @@
+table 'Latest Ex-Factory Date'
+	lineageTag: a719d46f-5896-426b-be75-a02cad47deac
+
+	column ExFactoryDate_Key
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: aea8db64-7018-4184-8af5-fb4f0afc0c56
+		summarizeBy: none
+		sourceColumn: ExFactoryDate_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Latest Ex-Factory Date'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: e0165fc5-b72b-4916-97ad-bbf7461e3e8c
+		summarizeBy: none
+		sourceColumn: Latest Ex-Factory Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Number (544)'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: 544 Dates
+		lineageTag: a6fe3605-98cf-4c68-9ce7-b76c5a2da8e0
+		summarizeBy: none
+		sourceColumn: Week Number (544)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Period Number (544)'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: 544 Dates
+		lineageTag: 1141b2a9-3dcb-4d0c-8e5e-1b85945e5206
+		summarizeBy: none
+		sourceColumn: Fiscal Period Number (544)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Quarter (544)'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: 544 Dates
+		lineageTag: 49368909-02d7-4fbd-85ac-d6296827e9af
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter (544)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Half (544)'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: 544 Dates
+		lineageTag: 83afa5ee-42f1-49bd-a12d-7e151a10af50
+		summarizeBy: none
+		sourceColumn: Fiscal Half (544)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: 5708062d-4130-4fd5-9f5f-36a72c3b2a1c
+		summarizeBy: none
+		sourceColumn: Fiscal Year (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year Number (544)'
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		displayFolder: 544 Dates
+		lineageTag: 7279e617-9ef8-4b46-8544-73738bff1553
+		summarizeBy: none
+		sourceColumn: Fiscal Year Number (544)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year-Week (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: 88626b2e-3394-4e51-b11d-841511d5ca13
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Week (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Period (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: bf2239c3-cdc3-4f00-af6d-367b8df4634a
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Period (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Year (544)'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 544 Dates
+		lineageTag: 62353e60-36bd-4b98-8825-61c6cb42d571
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Year (544)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Month Number Short' = ```
+			SWITCH(MONTH('Latest Ex-Factory Date'[Latest Ex-Factory Date]), 
+			1,"01",
+			2,"02",
+			3,"03",
+			4,"04",
+			5,"05",
+			6,"06",
+			7,"07",
+			8,"08",
+			9,"09",
+			10,"10",
+			11,"11",
+			12,"12")
+			```
+		dataType: string
+		lineageTag: f681b80c-e448-45f1-adf7-329cf72b0bd3
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year = ```
+			YEAR('Latest Ex-Factory Date'[Latest Ex-Factory Date]) 
+			```
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c2178e4-3a32-41dd-9720-9287bc24e17f
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Month Short Name' = FORMAT(DATE(1, 'Latest Ex-Factory Date'[Calendar Month Number Short], 1), "MMM")
+		dataType: string
+		lineageTag: 1b729699-3b5e-4f2a-ab8a-75e006a79452
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Day Number' = ```
+			SWITCH(DAY('Latest Ex-Factory Date'[Latest Ex-Factory Date]), 
+			1,"01",
+			2,"02",
+			3,"03",
+			4,"04",
+			5,"05",
+			6,"06",
+			7,"07",
+			8,"08",
+			9,"09",
+			10,"10",
+			11,"11",
+			12,"12",
+			13,"13",
+			14,"14",
+			15,"15",
+			16,"16",
+			17,"17",
+			18,"18",
+			19,"19",
+			20,"20",
+			21,"21",
+			22,"22",
+			23,"23",
+			24,"24",
+			25,"25",
+			26,"26",
+			27,"27",
+			28,"28",
+			29,"29",
+			30,"30",
+			31,"31"
+			)
+			```
+		dataType: string
+		lineageTag: b7b760f1-5b5f-4dd5-9645-fabc19d4c529
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Latest Ex-Factory Date' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="SRC_BFN_VW_LATESTEXFACTORYDATE",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	annotation PBI_ResultType = Table
+

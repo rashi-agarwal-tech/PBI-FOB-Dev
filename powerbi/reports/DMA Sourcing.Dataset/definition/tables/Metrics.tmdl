@@ -1,0 +1,580 @@
+table Metrics
+	lineageTag: 5a6a8f6f-9842-4214-9039-66667bd1dd17
+
+	measure 'Total Capacity' =
+			if(not(ISFILTERED(Size[Size])),
+			SUM('Construction Capacity'[Current Capacity]))
+		formatString: " #,0"
+		displayFolder: 2. Capacity
+		lineageTag: 55ac0fcd-589e-4ae5-8b23-8e3cbf56f89c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Welted Capacity' =
+			if(not(ISFILTERED(Size[Size])),
+			CALCULATE([Total Capacity], 'Construction Capacity'[Construction Code] = "WT"))
+		formatString: " #,0"
+		displayFolder: 2. Capacity
+		lineageTag: 5780cbf2-5766-4be1-9cdc-c351da3776af
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Gross Weight' =
+			IF (
+			    NOT ( ISFILTERED ( Size[Size] ) ),
+			    SUM ( 'PO Daybook'[Gross Weight Source] )
+			)
+		formatString: " #,0.00"
+		displayFolder: 2. Capacity
+		lineageTag: 152853d7-4f65-4c12-9ff4-33eb0b237610
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Total Cube' =
+			IF (
+			    NOT ( ISFILTERED ( Size[Size] ) ),
+			    SUM ( 'PO Daybook'[Total Cube Source] )
+			)
+		formatString: " #,0.00"
+		displayFolder: 2. Capacity
+		lineageTag: dc88f94f-2b33-4281-98ed-7337ae931859
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Max. Net Weight' = MAX ( 'Product Weights'[Net Weight] )
+		formatString: " #,##0.000"
+		displayFolder: 2. Capacity
+		lineageTag: b7ddfc56-b921-4086-8a22-a15af6c09869
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Max. Pack Weight' = MAX ( 'Product Weights'[Pack Weight] )
+		formatString: " #,##0.000"
+		displayFolder: 2. Capacity
+		lineageTag: 0e5253fd-a9b2-483b-a140-3d0c39eda405
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '01. Ordered Units' = SUM ( 'PO Details'[QtyOrdered] )
+		formatString: #,##0
+		displayFolder: 1. Order Placement
+		lineageTag: 07347819-fb84-4f9e-942f-6fd1e4c3d9c3
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '02. Approved Units' = SUM ( 'PO Details'[QtyApproved] )
+		formatString: " #,##0"
+		displayFolder: 1. Order Placement
+		lineageTag: 404595df-7b9b-40f4-8bfe-4475d6739068
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure XR =
+			IF (
+			    OR (
+			        HASONEFILTER ( 'Display Currency'[Currency Name] ),
+			        HASONEFILTER ( 'Display Currency'[Currency Code] )
+			    ),
+			    SUM ( 'Display Currency'[XRMultiplier] ),
+			    1
+			)
+		isHidden
+		displayFolder: Internal
+		lineageTag: ff1896ee-e2fa-449b-860b-88e2666a62c7
+
+	measure '02. Approved Value' = SUM ( 'PO Details'[ValueApproved] ) * [XR]
+		formatString: " #,##0.00"
+		displayFolder: 1. Order Placement
+		lineageTag: 7cfde2ba-c1a5-479f-a6bf-6f9c442d82a4
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '03. Confirmed Units' =
+			CALCULATE (
+			    [01. Ordered Units],
+			    FILTER ( 'PO Daybook', 'PO Daybook'[Confirmed_Ex_Factory_Key] <> 0 )
+			)
+		formatString: #,##0
+		displayFolder: 1. Order Placement
+		lineageTag: 2a7635ba-26e1-4824-a49e-4ba0145249f7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '04. Unconfirmed Units' =
+			CALCULATE (
+			    [01. Ordered Units],
+			    FILTER ( 'PO Daybook', 'PO Daybook'[Confirmed_Ex_Factory_Key] = 0 )
+			)
+		formatString: #,##0
+		displayFolder: 1. Order Placement
+		lineageTag: c49d4868-0cfa-4ffc-a18e-1106607a0bb5
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '05. Placed to Factory Units' = SUM ( 'PO Details'[QtyPlacedtoFcty] )
+		formatString: " #,##0"
+		displayFolder: 1. Order Placement
+		lineageTag: ba54b80c-909a-4476-8915-4b55a6a08fa8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '06. Rejected Units' = ```
+			SUM ( 'PO Details'[QtyRejected] ) 
+			```
+		formatString: " #,##0"
+		displayFolder: 1. Order Placement
+		lineageTag: 3391aa9d-1559-45e5-9c7a-5f2132fa6390
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '07. To Be Shipped Units' = SUM ( 'PO Details'[QtyToBeShipped] )
+		formatString: " #,##0"
+		displayFolder: 1. Order Placement
+		lineageTag: 0d9adc95-3ec3-4490-a3ab-a0698cf809ae
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '08. Shipped Units' =
+			CALCULATE (
+			    SUM ( 'PO Details'[QtyToBeShipped] ),
+			    FILTER ( 'PO Details', 'PO Details'[Production Status] = "Shipped" )
+			)
+		formatString: #,##0
+		displayFolder: 1. Order Placement
+		lineageTag: c5074bdd-2411-4a2f-aff0-5cd7c4f4c24a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '09. Received Units' = SUM ( 'PO Details'[QtyReceived] )
+		formatString: " #,##0"
+		displayFolder: 1. Order Placement
+		lineageTag: 64280109-3c87-4c24-b6f4-9a06025ec395
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '10. Invoiced Units' = SUM ( 'PO Details'[QtyInvoiced] )
+		formatString: " #,##0"
+		displayFolder: 1. Order Placement
+		lineageTag: dc07edd7-6c20-4db6-9f84-25d3cf440054
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '10. Invoiced Value' = SUM ( 'PO Daybook'[LINEAMOUNT_CONS_GBP] ) * [XR]
+		formatString: " #,##0.00"
+		displayFolder: 1. Order Placement
+		lineageTag: 50c23dbe-58a5-445c-aa77-2f415df1926c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '01. Ordered Value' = SUM ( 'PO Details'[ValueOrdered] ) * [XR]
+		formatString: " #,##0.00"
+		displayFolder: 1. Order Placement
+		lineageTag: c0bcda2a-2d6b-4b80-8b06-a15bd8184838
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '03. Confirmed Value' =
+			CALCULATE (
+			    [01. Ordered Value],
+			    FILTER ( 'PO Daybook', 'PO Daybook'[Confirmed_Ex_Factory_Key] <> 0 )
+			) * [XR]
+		formatString: #,##0.00
+		displayFolder: 1. Order Placement
+		lineageTag: 51aa7d8a-3bbc-49e3-8144-bf974dcfac62
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '04. Unconfirmed Value' =
+			CALCULATE (
+			    [01. Ordered Value],
+			    FILTER ( 'PO Daybook', 'PO Daybook'[Confirmed_Ex_Factory_Key] = 0 )
+			) * [XR]
+		formatString: #,##0.00
+		displayFolder: 1. Order Placement
+		lineageTag: 0f22e28c-b30e-4a4a-83b2-64a0708c6bec
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '05. Placed to Factory Value' = SUM ( 'PO Details'[ValuePlacedToFcty] ) * [XR]
+		formatString: " #,##0.0"
+		displayFolder: 1. Order Placement
+		lineageTag: f3d08fa3-e9ba-4b6b-8fae-63150b45dbba
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '06. Rejected Value' = SUM ( 'PO Details'[ValueRejected] ) * [XR]
+		formatString: " #,##0.00"
+		displayFolder: 1. Order Placement
+		lineageTag: 279ba81b-c917-4a00-beb6-e13e16bff3a2
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '07. To Be Shipped Value' = SUM ( 'PO Details'[ValueToBeShipped] ) * [XR]
+		formatString: " #,##0.00"
+		displayFolder: 1. Order Placement
+		lineageTag: 2a2d23e4-aa4c-42ea-86a5-3bf7a4b2db69
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '09. Received Value' = SUM ( 'PO Details'[ValueReceived] ) * [XR]
+		formatString: " #,##0.00"
+		displayFolder: 1. Order Placement
+		lineageTag: fb308518-47fe-4f6f-b28b-785432a293af
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '08. Shipped Value' =
+			CALCULATE (
+			    SUM ( 'PO Details'[ValueToBeShipped] ),
+			    FILTER ( 'PO Details', 'PO Details'[Production Status] = "Shipped" )
+			)
+		formatString: #,##0.00
+		displayFolder: 1. Order Placement
+		lineageTag: a3d1695c-b233-4ce6-a9c8-af9402fbe918
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '11. Duty' = SUM ( 'PO Details'[DutyAmount_CONS_GBP] ) * [XR]
+		displayFolder: 1. Order Placement
+		lineageTag: 81d56aac-64b9-4b3c-896b-53510413b503
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '# Shipped Units (Prebuy)' =
+			CALCULATE (
+			    [08. Shipped Units],
+			    'PO Daybook'[_Is Prebuy?] = 1
+			)
+		formatString: #,##0
+		displayFolder: 3. GSC
+		lineageTag: c2afb0bb-fe6b-41f9-b488-809f73adf61a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# Shipped Units (Non-Prebuy)' =
+			CALCULATE (
+			    [08. Shipped Units],
+			    'PO Daybook'[_Is Prebuy?] = 0
+			)
+		formatString: #,##0
+		displayFolder: 3. GSC
+		lineageTag: be70c078-df05-455d-9bab-03e64b149bd2
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# To be Shipped Units (Prebuy)' =
+			CALCULATE (
+			    [07. To Be Shipped Units],
+			    'PO Daybook'[_Is Prebuy?] = 1
+			)
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: b5e7ccde-95e1-4c5a-a0d2-25231446a896
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# To be Shipped Units (Non-Prebuy)' = CALCULATE ( [07. To Be Shipped Units], 'PO Daybook'[_Is Prebuy?] = 0 )
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: 914e460b-b369-4b39-9666-f076912b855d
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	/// # Number of PO
+	measure '# POs' = DISTINCTCOUNT ( 'PO Daybook'[PO Number] )
+		formatString: 0
+		displayFolder: 3. GSC
+		lineageTag: 2a27da0b-fd63-4322-8acc-d7bd3ee56ed3
+
+	measure '# POs (Prebuy)' = CALCULATE ( [# POs], 'PO Daybook'[_Is Prebuy?] = 1 )
+		formatString: 0
+		displayFolder: 3. GSC
+		lineageTag: 09783eaf-04fb-42dd-980c-4ef6faea40de
+
+	measure '# POs (Non-Prebuy)' = CALCULATE ( [# POs], 'PO Daybook'[_Is Prebuy?] = 0 )
+		formatString: #,##0
+		displayFolder: 3. GSC
+		lineageTag: 6874db9f-a88d-4bbd-8eb4-cb75825a9435
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# Ordered Units (Prebuy)' = CALCULATE ( [01. Ordered Units], 'PO Daybook'[_Is Prebuy?] = 1 )
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: 8fe66be1-8af9-4a32-a77e-946114add652
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# Ordered Units (Non-Prebuy)' = CALCULATE ( [01. Ordered Units], 'PO Daybook'[_Is Prebuy?] = 0 )
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: ed1936c0-15a1-448b-8400-d6bf8de39b84
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# Ordered Units (Backlog)' =
+			CALCULATE (
+			    [01. Ordered Units],
+			    'PO Daybook'[_Is Backlog?] = 1
+			)
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: 5f87bc02-1874-4fb9-9947-03ccb81de0a8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# Ordered Units (Backlog Available)' =
+			CALCULATE (
+			    [01. Ordered Units],
+			    'PO Daybook'[_Is Backlog(Available)?] = 1
+			)
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: 3a514df1-b35c-4440-b4cc-1d57f7141b21
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# OT Ackno (units)' =
+			CALCULATE (
+			    [01. Ordered Units],
+			    'PO Daybook'[_OT Ackno Grouping] = "(1) - Early/On-Time"
+			)
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: c1f5d5b5-bc31-4973-abf9-9cf51bc9d8fc
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# OT Ackno (%)' =
+			if(isblank([# OT Ackno (units)]),
+			0,
+			DIVIDE ( [# OT Ackno (units)], CALCULATE (
+			    [01. Ordered Units],
+			    'PO Daybook'[_OT Ackno Grouping] <> "(6) - To be acknowledged"
+			), 0 )
+			)
+		formatString: " #,##0.00 %"
+		displayFolder: 3. GSC
+		lineageTag: 1498d52d-b9e8-483c-8fc3-0937c752c87b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# OT Placement: (Subm vs Approved) (units)' =
+			CALCULATE (
+			    [01. Ordered Units],
+			    'PO Daybook'[_OT Placement_1 Grouping] = "(1) - Early/On-Time"
+			)
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: fd889182-00bd-43b1-9a35-0d7676659dc5
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# OT Placement: (Subm vs Approved) (%)' =
+			DIVIDE (
+			    [# OT Placement: (Subm vs Approved) (units)],
+			    [01. Ordered Units],
+			    0
+			)
+		formatString: " #,##0.00 %"
+		displayFolder: 3. GSC
+		lineageTag: c98db059-13ed-4b7e-acc2-611fc6db2f20
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# OT Confirmed (units)' =
+			CALCULATE (
+			    [01. Ordered Units],
+			    'PO Daybook'[_OT Confirmed Grouping] = "(1) - Early/On-Time"
+			)
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: 5a459786-f76b-4c4f-a663-3d06c3f0216e
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# OT Confirmed (%)' =
+			if(isblank([# OT Confirmed (units)]),
+			0,
+			DIVIDE ( [# OT Confirmed (units)], CALCULATE (
+			    [01. Ordered Units],
+			    'PO Daybook'[_OT Confirmed Grouping] <> "(6) - Pending to be Confirmed"
+			), 0 )
+			)
+		formatString: " #,##0.00 %"
+		displayFolder: 3. GSC
+		lineageTag: 214bcd92-1c52-4ebf-90db-f00ee3568f0c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# OT Availability (units)' =
+			CALCULATE (
+			    [01. Ordered Units],
+			    'PO Daybook'[_OT Availability Grouping] = "(1) - Early/On-Time"
+			)
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: 4a5687ce-f6fa-496e-9c12-eaa78cf75ccd
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# OT Availability (%)' =
+			if(isblank([# OT Availability (units)]),
+			0,
+			DIVIDE ( [# OT Availability (units)], CALCULATE (
+			    [01. Ordered Units],
+			    'PO Daybook'[_OT Availability Grouping] <> "(6) - Awaiting Available Ship Date",   'PO Daybook'[_OT Availability Grouping] <> "(7) - Pending to be Confirmed"
+			), 0 )
+			)
+		formatString: " #,##0.00 %"
+		displayFolder: 3. GSC
+		lineageTag: 45d1db39-447a-4053-834d-5efe3f13e33c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# Booked on time (units)' =
+			CALCULATE (
+			    [01. Ordered Units],
+			    'PO Daybook'[_Booked on time Grouping] = "(1) - Early/On-Time"
+			)
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: ca79fc92-93ff-4c83-ba94-34754f5bbd3c
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# Booked on time (%)' =
+			if(isblank([# Booked on time (units)]),
+			0,
+			DIVIDE ( [# Booked on time (units)], CALCULATE (
+			   [01. Ordered Units],
+			    'PO Daybook'[_Booked on time Grouping] <> "(6) - Awaiting Available Ship Date",   'PO Daybook'[_Booked on time Grouping] <> "(7) - Pending to be Booked"
+			), 0 )
+			)
+		formatString: " #,##0.00 %"
+		displayFolder: 3. GSC
+		lineageTag: c9a0fcea-ba64-439d-8e25-40fd4188a5ff
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# OT Supplier (units)' =
+			CALCULATE (
+			    [01. Ordered Units],
+			    'PO Daybook'[_OT Supplier Grouping] = "(1) - Early/On-Time"
+			)
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: 84f3e7ab-18dc-4c89-912f-02ded695b346
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# OT Supplier (%)' =
+			if(isblank([# OT Supplier (units)]),
+			0,
+			DIVIDE ( [# OT Supplier (units)], CALCULATE (
+			   [01. Ordered Units],
+			    'PO Daybook'[_OT Supplier Grouping] <> "(6) - Pending to be Confirmed",   'PO Daybook'[_OT Supplier Grouping] <> "(7) - Awaiting date"
+			), 0 )
+			)
+		formatString: " #,##0.00 %"
+		displayFolder: 3. GSC
+		lineageTag: b1852480-1ebe-4f6a-967d-db7ad0501873
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# Ordered Units (Past dues)' =
+			CALCULATE (
+			    [01. Ordered Units],
+			    'PO Daybook'[_Is Past dues?] = 1
+			)
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: 135352e7-d4f9-4f13-ab6b-bf63c799f1af
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# Ordered Units (Available)' =
+			CALCULATE (
+			    [01. Ordered Units],
+			    'PO Daybook'[_Is Available?] = 1
+			)
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: f4be4392-b4b7-4b88-aa12-bff6cf08e6c8
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# Ordered Units (Delayed)' =
+			CALCULATE (
+			    [01. Ordered Units],
+			    'PO Daybook'[_Is Delayed?] = 1
+			)
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: e4d1e039-68fb-4d5f-b48f-fe4528ebfca7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# Ordered Units (On Time)' =
+			CALCULATE (
+			    [01. Ordered Units],
+			    'PO Daybook'[_Is On Time?] = 1
+			)
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: c333405a-dc5f-4490-82e3-5977db37e3f1
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# Ordered Units (To be Shipped)' = ```
+			CALCULATE (
+			    [01. Ordered Units],
+			     'PO Daybook'[_Order Status Group] = "To be Shipped"
+			)
+			
+			```
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: 4150248a-33c9-4825-895d-79531c7c4d33
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# Ordered Units (Shipped)' = ```
+			CALCULATE (
+			    [01. Ordered Units],
+			     'PO Daybook'[_Order Status Group] = "Shipped"
+			)
+			
+			```
+		formatString: " #,##0"
+		displayFolder: 3. GSC
+		lineageTag: d6ae3808-e644-4eb9-b41d-ddf4ea4e0ef3
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '# Packed Quantity' = SUM ( 'Pack One'[Packed Qty] )
+		displayFolder: 3. GSC
+		lineageTag: b9f7ea72-82c2-4f87-a670-f06748368738
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1e9662a4-dc2a-494e-8dfe-9526c22fa7b2
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Metrics = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = 94938468c3e94571885e04bcc641dcd6
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

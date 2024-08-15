@@ -1,0 +1,143 @@
+table 'Pack One'
+	lineageTag: e6b722f4-af23-4a58-aad1-3f0681625cb5
+
+	column 'Packed Order Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c998f92b-3696-4003-9159-1db43972bafb
+		summarizeBy: none
+		sourceColumn: Packed Order Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Packed Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: 411e6ed3-4bb9-495e-beb6-d41f903c27b6
+		summarizeBy: none
+		sourceColumn: Packed Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Packed Qty'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 1ae445d9-3c8b-4d4c-a77d-3a92b4de7d0c
+		summarizeBy: sum
+		sourceColumn: Packed Qty
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Approved Ex-Factory Date'
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: de7757e5-a6eb-4ddf-ab55-5df3740aad07
+		summarizeBy: none
+		sourceColumn: Approved Ex-Factory Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contractual Ex-Factory Date'
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: cd9ead51-80cc-469d-8ff3-63b71a4119bd
+		summarizeBy: none
+		sourceColumn: Contractual Ex-Factory Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_Is Previous Fiscal Week' =
+			IF (
+			    YEAR ( 'Pack One'[Packed Date] )
+			        = YEAR (
+			            TODAY ()
+			        ),
+			    IF (
+			        WEEKNUM (
+			            'Pack One'[Packed Date],
+			            2
+			        )
+			            = WEEKNUM (
+			                TODAY (),
+			                2
+			            ) - 1,
+			        1,
+			        0
+			    ),
+			    0
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: 17bb5fb1-b6e6-48fc-93e5-dcdbe0dcb27d
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'OTD Grouping' =
+			SWITCH (
+			    TRUE (),
+			    'Pack One'[Packed Date vs Contractual] <= 0, "(1) - Early/OT",
+			    'Pack One'[Packed Date vs Contractual] > 0
+			        && 'Pack One'[Packed Date vs Contractual] <= 7, "(2) - 1 Week Late",
+			    'Pack One'[Packed Date vs Contractual] > 7
+			        && 'Pack One'[Packed Date vs Contractual] <= 14, "(3) - 2 Weeks Late",
+			    'Pack One'[Packed Date vs Contractual] > 14
+			        && 'Pack One'[Packed Date vs Contractual] <= 21, "(4) - 3 Weeks Late",
+			    'Pack One'[Packed Date vs Contractual]  > 21, "(5) - +3 Weeks Late",
+			    ""
+			)
+		dataType: string
+		lineageTag: e0d9598e-955c-43bf-8cf3-26be4c189de2
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Packed Date vs Contractual' =
+			IF (
+			    ISBLANK ( 'Pack One'[Contractual Ex-Factory Date] ),
+			    DATEDIFF ( 'Pack One'[Approved Ex-Factory Date], 'Pack One'[Packed Date], DAY ),
+			    DATEDIFF (
+			        'Pack One'[Contractual Ex-Factory Date],
+			        'Pack One'[Packed Date],
+			        DAY
+			    )
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: d2f7fbf4-a4d3-4d2a-9a8a-6fcf0d07fd4c
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Pack One' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="SRC_BFN_WW_PPMPACKONE",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	annotation PBI_ResultType = Table
+

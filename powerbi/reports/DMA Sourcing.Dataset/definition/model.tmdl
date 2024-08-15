@@ -1,0 +1,64 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup Parameters
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.128.952.0 (24.04)
+
+annotation PBI_QueryOrder = ["Pack One","Scheduled Ex-Factory Date","Seasonal Product Type","Product Weights","PO Details","Construction Capacity","Supplier","Product","Purchase Orders","Pack One Date","Latest Ex-Factory Date","Invoice Date","Region","Shipment Method","Order Type","Order Status","Date Slicer","Purchase Season","Exchange Rates","Warehouse","Actual Ex-Factory Date","Display Currency","Size","Datasource_Server","Datasource_Warehouse","Datasource_Database","Datasource_Schema","NumberOfRows","Packed Date","PO Daybook"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Pack One'
+ref table 'Scheduled Ex-Factory Date'
+ref table 'Seasonal Product Type'
+ref table 'Product Weights'
+ref table 'PO Details'
+ref table 'Construction Capacity'
+ref table Supplier
+ref table Product
+ref table 'Purchase Orders'
+ref table 'Pack One Date'
+ref table 'Latest Ex-Factory Date'
+ref table 'Invoice Date'
+ref table Region
+ref table 'Shipment Method'
+ref table 'Order Type'
+ref table 'Order Status'
+ref table 'Date Slicer'
+ref table 'Purchase Season'
+ref table 'Exchange Rates'
+ref table Warehouse
+ref table 'Actual Ex-Factory Date'
+ref table 'Display Currency'
+ref table Size
+ref table 'Confirmed Ex-Factory Date'
+ref table 'Shipped Date'
+ref table 'Model Refresh Time'
+ref table 'Packed Date'
+ref table Metrics
+ref table 'PO Daybook'
+
+ref role Admin
+ref role 'AsiaPac Users'
+ref role 'CN Users'
+ref role 'EMEA Test'
+ref role 'EMEA Users - To Be Restricted'
+ref role 'HK Users'
+ref role 'HK Users - Global'
+ref role 'JP Users'
+ref role 'JP Users - Global'
+ref role 'NA Users'
+ref role 'NA Users - Global'
+ref role PUGs
+ref role 'Use for all new Global users'
+

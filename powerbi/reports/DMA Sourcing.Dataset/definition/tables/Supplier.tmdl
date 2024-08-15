@@ -1,0 +1,112 @@
+table Supplier
+	lineageTag: df93c2c4-01de-41cf-b076-cb097c6b9bc2
+
+	column Supplier_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 635a3d60-f88e-4748-8744-ef53f6f94357
+		summarizeBy: none
+		sourceColumn: Supplier_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Supplier Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0a0d6b14-0ce5-48c2-b28b-6c6770dc4561
+		summarizeBy: none
+		sourceColumn: Supplier Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Supplier Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2529d84d-25e1-46c0-8602-1ff58f079240
+		summarizeBy: none
+		sourceColumn: Supplier Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Supplier Country'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2403230e-0018-49f0-81ce-5eb713da35e8
+		summarizeBy: none
+		sourceColumn: Supplier Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Supplier Currency'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 1402cc08-f399-4beb-9a0c-09a59011bf4a
+		summarizeBy: none
+		sourceColumn: Supplier Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Supplier Short Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 084e5f0b-8190-433d-965f-d27013ca4e5d
+		summarizeBy: none
+		sourceColumn: Supplier Short Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Supplier Group'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: bf6073ce-c09c-47c1-9564-26c944b95a08
+		summarizeBy: none
+		sourceColumn: Supplier Group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Active'
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		lineageTag: 542b40b6-c1b9-40be-9de2-f791cb2bbef0
+		summarizeBy: none
+		sourceColumn: Is Active
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'D365 Vendor ID'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6534e444-1588-42ef-95aa-694c1045f503
+		summarizeBy: none
+		sourceColumn: D365 Vendor ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Supplier = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="SRC_BFN_VW_PPMDIMSUPPLIER",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,462 @@
+table Product
+	lineageTag: 8e1186de-b289-4ec3-9893-395acceea335
+
+	column PPMProduct_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: e432e2ee-4e25-4adb-b054-6c2c7e13ab48
+		summarizeBy: none
+		sourceColumn: PPMProduct_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 5cf35a05-57bc-4268-8bb2-9f36255fb31c
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2b8f629b-ad1f-4fe3-86ca-8b04f278c3e3
+		summarizeBy: none
+		sourceColumn: Product Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sub Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e76b7095-c5cd-46eb-8db8-1b22f9c508bf
+		summarizeBy: none
+		sourceColumn: Sub Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Short Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d3964e36-227d-49a5-95a1-7efb89d0bd76
+		summarizeBy: none
+		sourceColumn: Short Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 9285b48a-b338-4c5f-9ef6-072cfb36da34
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Segment'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c3e84368-af55-4f9d-92a9-d644f694518f
+		summarizeBy: none
+		sourceColumn: Product Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Launch To Retail'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 00885fa3-3fa1-4d8a-ac6e-b2006d1d6be2
+		summarizeBy: none
+		sourceColumn: Launch To Retail
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tariff Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 7e2eadb1-2ded-4152-9a33-71efeac141dc
+		summarizeBy: none
+		sourceColumn: Tariff Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Launch Season'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 263ece25-54c6-4c9d-8ccf-524421a6fa9a
+		summarizeBy: none
+		sourceColumn: Launch Season
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Colour Leather Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 9e561223-f33f-4065-9fe3-b5829eae8f69
+		summarizeBy: none
+		sourceColumn: Colour Leather Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Colour Leather Desc'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6d9e65ce-ead9-4415-a5cd-c4c9044c8504
+		summarizeBy: none
+		sourceColumn: Colour Leather Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Colour Desc'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 73f1b1d7-d87d-4d2c-9622-a39d1b1b784d
+		summarizeBy: none
+		sourceColumn: Colour Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Material Desc'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8263a7c8-1fad-44c0-aa9c-cd08bdde1008
+		summarizeBy: none
+		sourceColumn: Material Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product URL Icon'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: bb985e78-a4ba-4929-8704-dec4a54c3092
+		summarizeBy: none
+		sourceColumn: Product URL Icon
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product URL Image'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c27ede46-15a2-4cd9-a7ef-b1de3bb1a2f9
+		summarizeBy: none
+		sourceColumn: Product URL Image
+
+		annotation SummarizationSetBy = Automatic
+
+	column Construction
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f724e0ca-a5d2-4d2e-9c15-8468e1b0c66a
+		summarizeBy: none
+		sourceColumn: Construction
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Construction Desc'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 86c669e1-4d95-44aa-9030-3d70f834acf2
+		summarizeBy: none
+		sourceColumn: Construction Desc
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Construction Detail'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4feee732-ad86-4516-b2a9-447d1165d6c2
+		summarizeBy: none
+		sourceColumn: Construction Detail
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Group Capacity Construction'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: fc8834aa-be94-4c08-a115-f1bb1e56fe4c
+		summarizeBy: none
+		sourceColumn: Group Capacity Construction
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 1098ffb6-b93c-4aa6-824a-2a3a54fb0c10
+		summarizeBy: none
+		sourceColumn: Style Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 386bd3e8-2cf6-424c-99f4-8d84906c2d73
+		summarizeBy: none
+		sourceColumn: Last
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sole
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: fa5f7d1f-a1e0-45f5-a46b-d16b0255c3a0
+		summarizeBy: none
+		sourceColumn: Sole
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Category Major'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d73391b1-d078-46aa-bdc8-375ed27956c0
+		summarizeBy: none
+		sourceColumn: Category Major
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f435e2c3-cbe7-4574-a495-1671c30b6bbb
+		summarizeBy: none
+		sourceColumn: Product Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Welted?
+		dataType: string
+		sourceProviderType: nvarchar(10)
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 424b39bf-dedf-4f6f-b28b-b19ee65d5dab
+		summarizeBy: none
+		sourceColumn: Welted?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Style Colour Material'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 57613593-3119-4469-bf7f-07af57b057a0
+		summarizeBy: none
+		sourceColumn: Style Colour Material
+
+		annotation SummarizationSetBy = Automatic
+
+	column Collection
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2182834f-7114-4517-98b8-118501e30c5f
+		summarizeBy: none
+		sourceColumn: Collection
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchase Cost (Default Supplier)'
+		dataType: double
+		sourceProviderType: decimal(18, 5)
+		lineageTag: d55ddf61-0786-4e79-8e73-1ff9b99ca131
+		summarizeBy: sum
+		sourceColumn: Purchase Cost (Default Supplier)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Product General'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 438faf36-1c1c-4e15-8168-df3be1d4648e
+		summarizeBy: none
+		sourceColumn: Product General
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f3b4a0e5-bd94-4800-b7c8-1618ea789aa2
+		summarizeBy: none
+		sourceColumn: Selling Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'LatLatest Season'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 410b1d0c-8308-4bad-bb7d-3884a729d763
+		summarizeBy: none
+		sourceColumn: LatLatest Season
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key Story Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d95a5dea-87d5-44e6-8171-0c3638575b69
+		summarizeBy: none
+		sourceColumn: Key Story Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Newness Classification'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: febdb516-e1ea-4c90-bfbd-640163770c19
+		summarizeBy: none
+		sourceColumn: Newness Classification
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Key Story Season'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 69d157a4-2758-428d-9b28-69d023c491ba
+		summarizeBy: none
+		sourceColumn: Key Story Season
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Category'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c7a80ab4-a2d4-4c67-9d29-a45f1f6a058f
+		summarizeBy: none
+		sourceColumn: Finance Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Sub Category'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3fffc5a4-26e6-4e0b-9d67-febe18c3e074
+		summarizeBy: none
+		sourceColumn: Finance Sub Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Original LTR Date'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 05e28a26-bc3c-491d-aaf4-c6d5ad79ea58
+		summarizeBy: none
+		sourceColumn: Original LTR Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Business Unit'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 405810b5-ae6f-4965-9ff2-dd9dc0d74e2c
+		summarizeBy: none
+		sourceColumn: Business Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Construction Desc Hierachy'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 80815475-495c-4183-91b3-4ee38bce81f7
+		summarizeBy: none
+		sourceColumn: Construction Desc Hierachy
+
+		annotation SummarizationSetBy = Automatic
+
+	column '03. Target in DC'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: dc920cf6-8f91-40b9-8bb3-7423fa44f9ac
+		summarizeBy: none
+		sourceColumn: 03. Target in DC
+
+		annotation SummarizationSetBy = Automatic
+
+	column Leather
+		dataType: string
+		lineageTag: 94902cdb-de40-4922-9e90-435ecfbec6ba
+		summarizeBy: none
+		sourceColumn: Leather
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Business Units'
+		dataType: string
+		sourceProviderType: nvarchar(22)
+		lineageTag: 5b997307-bea0-4225-ace9-c6ca49e2dee8
+		summarizeBy: none
+		sourceColumn: Product Business Units
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FOB Category'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: bfa34966-8f0f-4253-a8a8-b0510e75a890
+		summarizeBy: none
+		sourceColumn: FOB Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Category'
+		dataType: string
+		sourceProviderType: nvarchar(22)
+		lineageTag: 4998ffbf-8a64-4e43-adfa-f17b6ae9925b
+		summarizeBy: none
+		sourceColumn: Product Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status Group'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(7)
+		lineageTag: 2c00596b-86d6-41ee-a882-93dc59a8daea
+		summarizeBy: none
+		sourceColumn: Selling Status Group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Launch Month' = FORMAT ( 'Product'[Launch To Retail], "mmmm" )
+		dataType: string
+		lineageTag: cef8003c-1c06-4c6f-a55a-fe2c13d1db87
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Product = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="SRC_BFN_VW_PPMDIMPRODUCT",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	annotation PBI_ResultType = Exception
+

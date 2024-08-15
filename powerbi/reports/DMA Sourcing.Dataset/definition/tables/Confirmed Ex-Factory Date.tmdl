@@ -1,0 +1,675 @@
+table 'Confirmed Ex-Factory Date'
+	lineageTag: 7ab51f86-535b-4f4c-8e0a-ea237c7e7183
+
+	column Date_Key
+		dataType: double
+		isHidden
+		lineageTag: cc7d3e92-2cb3-4be5-81e6-6fa66086b947
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Date_Key]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Confirmed Ex-Factory Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9c51f5a7-0a4e-43d3-b9d7-5d342e3d18cc
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Scheduled Ex-Factory Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day # of Year'
+		dataType: double
+		displayFolder: Calendar Dates
+		lineageTag: 3b87bd60-118e-4556-933d-7924c5d3c205
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Day # of Year]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Calendar Week Number'
+		dataType: double
+		lineageTag: b3bc9599-d128-4fe0-81ad-ee6ec6547c9d
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Calendar Week Number]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Calendar Month Number'
+		dataType: double
+		lineageTag: 174b187d-2a33-48a8-ae78-8ee9a0955b1a
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Calendar Month Number]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Season
+		dataType: string
+		isHidden
+		lineageTag: 6643600c-d784-43ee-b2a0-9ab59287c088
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Season]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Week'
+		dataType: string
+		lineageTag: 336b8880-2691-4247-997e-b9930952460f
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Relative Week]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Month'
+		dataType: string
+		lineageTag: df02cb99-7df9-4ea0-b228-a299dd1a2eb1
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Relative Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Year'
+		dataType: string
+		lineageTag: ed23b64f-0472-47b1-9896-23d70ce5031d
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Relative Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reporting Year'
+		dataType: double
+		lineageTag: a0492d7a-9cb6-4ae7-a5e3-cfa52e334563
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Reporting Year]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Day Of Week'
+		dataType: string
+		lineageTag: bc58c47f-84aa-46b8-9335-fc8060b45add
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Day Of Week]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day # of Week'
+		dataType: double
+		displayFolder: Calendar Dates
+		lineageTag: 7259cd98-ff47-4805-9204-80996f5dd5f6
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Day # of Week]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Day # of Month'
+		dataType: double
+		displayFolder: Calendar Dates
+		lineageTag: cecff39b-59db-49ed-b3aa-4d9ea7d0e634
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Day # of Month]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year
+		dataType: double
+		lineageTag: 79fc47f6-b150-4286-a30b-590c8337b644
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Year]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year-Week
+		dataType: string
+		lineageTag: 8d25d7e1-f553-42d0-b576-562819b5bb75
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Year-Week]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Half
+		dataType: string
+		lineageTag: f4fb0937-c191-432b-bc4e-7c873d7edd6e
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Half]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		lineageTag: 8039bf83-7645-4465-a646-f6983a407c40
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Purchase Season'
+		dataType: string
+		isHidden
+		lineageTag: 425f37c7-a02a-46a6-bea7-f71b143fa55c
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Purchase Season]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Season Long Name'
+		dataType: string
+		isHidden
+		lineageTag: c6939bf2-425f-4957-b324-8aa74ac71d4f
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Season Long Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is UK Bank Holiday?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 2ef30924-ea47-452d-9b17-5b1331a9b151
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[- Is UK Bank Holiday?]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Black Friday?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 68449396-e49f-45b4-8d22-efb8aa55bd96
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[- Is Black Friday?]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Leap Year?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 83d0029a-0abb-47e1-b122-00f53feaf8ba
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[- Is Leap Year?]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End of Month?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 7451762a-14b6-46da-93a9-789da7a42cf9
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[- Is End of Month?]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End of Period?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: e0b8df57-407c-46f7-8efd-077141cfad69
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[- Is End of Period?]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End of Quarter?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 36f88471-48db-49ee-96d9-79012dcc1268
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[- Is End of Quarter?]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Yesterday?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: b099d933-1eb0-4a59-a638-2e83c3749234
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[- Is Yesterday?]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Week?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 7f64ba70-ae45-4591-b162-642489060159
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[- Is Week?]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Month?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: da06ed50-3d50-465b-9fa9-593708108f13
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[- Is Month?]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Month Long Name'
+		dataType: string
+		lineageTag: 2fd6a48f-b117-43b4-9ed9-f3fe1c0d0e59
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Calendar Month Long Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Year Month'
+		dataType: double
+		isHidden
+		lineageTag: 6338389b-f350-4c50-9880-c88648121dbe
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Calendar Year Month]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year'
+		dataType: string
+		displayFolder: Fiscal Dates
+		lineageTag: 2c957f29-e0ce-466b-884f-5a3cd875442c
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter Number'
+		dataType: double
+		displayFolder: Fiscal Dates
+		lineageTag: 26537181-1d04-469b-a4f6-0b704f9aaadf
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Quarter Number]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Period Short Name'
+		dataType: string
+		displayFolder: Fiscal Dates
+		lineageTag: 936bb4af-b9ac-45a4-8251-73b389d3a508
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Period Short Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Period Number'
+		dataType: double
+		displayFolder: Fiscal Dates
+		lineageTag: fbb1c29f-a640-41fd-b6c6-cd9df561e154
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Period Number]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year-Period'
+		dataType: string
+		displayFolder: Fiscal Dates
+		lineageTag: e6542e87-2e64-470f-ba50-6a9dd2858051
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Year-Period]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Week Number'
+		dataType: double
+		displayFolder: Fiscal Dates
+		lineageTag: d59402dd-f5f5-44d7-af20-f06e34036c59
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Week Number]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year Number'
+		dataType: double
+		displayFolder: Fiscal Dates
+		lineageTag: 53e441f2-9b32-4db3-a2be-689ddca86406
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Year Number]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Relative Fiscal Week'
+		dataType: string
+		displayFolder: Fiscal Dates
+		lineageTag: 0ea934c4-2041-406a-be9f-96bc0137b26c
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Relative Fiscal Week]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Period'
+		dataType: string
+		displayFolder: Fiscal Dates
+		lineageTag: 84ad23af-5609-4014-b3e2-369c4b04b043
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Relative Fiscal Period]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Year'
+		dataType: string
+		displayFolder: Fiscal Dates
+		lineageTag: 92d539fd-6443-4f07-81de-84c52a6a7761
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Relative Fiscal Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Day #'
+		dataType: double
+		displayFolder: Fiscal Dates
+		lineageTag: 2921ac35-e0b1-4e4d-ad96-ca646aa54e3d
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Day #]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Week Number (544)'
+		dataType: double
+		displayFolder: 544 Dates
+		lineageTag: 5a8a9b57-38ab-4cd8-bd76-64f85b9acddf
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Week Number (544)]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Period Number (544)'
+		dataType: double
+		displayFolder: 544 Dates
+		lineageTag: f7a412bd-aa8f-4364-b1ab-b967adbb054b
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Period Number (544)]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Quarter (544)'
+		dataType: double
+		displayFolder: 544 Dates
+		lineageTag: dc4ba78d-7023-41df-9e05-d44cbc3d9da4
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Quarter (544)]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Half (544)'
+		dataType: double
+		displayFolder: 544 Dates
+		lineageTag: e45ab4be-85d4-4fda-a597-29725e1c6dd0
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Half (544)]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: 3165aab7-4ec9-4a3b-ba6e-a065e1216765
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Year (544)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year Number (544)'
+		dataType: double
+		displayFolder: 544 Dates
+		lineageTag: cb0336b0-3144-4512-9fd7-9b056e6fbb42
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Year Number (544)]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year-Week (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: 1f6bd35c-8312-4f04-88f4-cc2f5a9f0666
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Year-Week (544)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Period (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: b416ae1e-58bc-498f-b0d9-4ed26b48bad0
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Relative Fiscal Period (544)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Year (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: 84b0e0e0-0f6f-423e-be0f-1f69bbce948f
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Relative Fiscal Year (544)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Month Short Number'
+		dataType: string
+		lineageTag: 5e1b6d3a-78e9-4ec3-8802-929233af650e
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Calendar Month Short Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calenda Month Short Name_'
+		dataType: string
+		lineageTag: 809e1c84-c052-4695-aeff-cc90f48e837b
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Calenda Month Short Name_]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Day Short Number'
+		dataType: string
+		lineageTag: a69d2d40-64cf-4d05-bf2c-c7199455d0c2
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Calendar Day Short Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Period Name'
+		dataType: string
+		displayFolder: Fiscal Dates
+		lineageTag: ff698050-63e7-4031-9bf1-d48b892f2e61
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Period Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Month Short Name' = FORMAT(DATE(1, 'Confirmed Ex-Factory Date'[Calendar Month Number], 1), "MMM")
+		dataType: string
+		lineageTag: 15a6e490-8bf0-4684-b2ee-326449eec578
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Day Number' = ```
+			SWITCH('Confirmed Ex-Factory Date'[Day # of Month], 
+			1,"01",
+			2,"02",
+			3,"03",
+			4,"04",
+			5,"05",
+			6,"06",
+			7,"07",
+			8,"08",
+			9,"09",
+			10,"10",
+			11,"11",
+			12,"12",
+			13,"13",
+			14,"14",
+			15,"15",
+			16,"16",
+			17,"17",
+			18,"18",
+			19,"19",
+			20,"20",
+			21,"21",
+			22,"22",
+			23,"23",
+			24,"24",
+			25,"25",
+			26,"26",
+			27,"27",
+			28,"28",
+			29,"29",
+			30,"30",
+			31,"31"
+			)
+			```
+		dataType: string
+		lineageTag: 1b9ead19-f7a1-45a7-a2a6-e61ccc6ba54e
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Confirmed Ex-Factory Date' = calculated
+		mode: import
+		source = 'Scheduled Ex-Factory Date'
+
+	annotation PBI_Id = 3adbbd9db69b41d881d7337997b6e597
+
