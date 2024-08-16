@@ -52,24 +52,60 @@ table 'Exchange Rates'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column DATE
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 1cc845dc-64ff-49d2-8cc4-1ed612d17084
+		summarizeBy: none
+		sourceColumn: DATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column START_DATE
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 7574042f-fcc2-4069-afdd-a4bf83584ab3
+		summarizeBy: none
+		sourceColumn: START_DATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column END_DATE
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 6c0c5cb4-f817-41a5-a56d-f33c1fda7010
+		summarizeBy: none
+		sourceColumn: END_DATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic	
+
 	partition 'Exchange Rates' = m
 		mode: import
 		source =
 				let
-					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
-					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTCURRENCYEXCHANGERATE2",Kind="View"]}[Data],
-					#"Removed Columns" = Table.RemoveColumns(BFN_Datatable_View,{"START_DATE", "END_DATE"}),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"DATE", type date}}),
-				    #"Reordered Columns" = Table.ReorderColumns(#"Changed Type",{"DATE", "FROMCURRENCY", "TOCURRENCY", "RATETYPENAME", "RATE"}),
-				    #"Filtered Rows" = Table.SelectRows(#"Reordered Columns", each [RATETYPENAME] = "BUDGET"),
-				    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [DATE] = DateTime.Date(DateTime.LocalNow())),
-				    #"Removed Columns1" = Table.RemoveColumns(#"Filtered Rows1",{"DATE"}),
-					#"Kept First Rows" = Table.FirstN( #"Removed Columns1",NumberOfRows),
-					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTCURRENCYEXCHANGERATE2",Kind="View"]}[Data],
+					#"Changed Type"   = Table.TransformColumnTypes(BFN_Datatable_View,{{"DATE", type date}}),
+					#"Filtered Rows"  = Table.SelectRows(#"Changed Type", each [RATETYPENAME] = "BUDGET"),
+					#"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [DATE] = DateTime.Date(DateTime.LocalNow()))		
 				in
-					ParameterFilter
+					#"Filtered Rows1"					
 
 	changedProperty = IsHidden
 

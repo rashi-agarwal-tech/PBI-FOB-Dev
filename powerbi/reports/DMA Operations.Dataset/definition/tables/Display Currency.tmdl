@@ -54,19 +54,19 @@ table 'Display Currency'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	partition 'Display Currency' = m
+	partition 'Display Currency' = m 
 		mode: import
 		source =
 				let
-					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					#"Extra Currencies" = #table({"NAME", "Currency Code", "Currency Name", "Currency Symbol"}, {{ "Constant (GBP)", "GBP_CONS", "Constant (GBP)", "£"},{ "Closing (GBP)", "GBP_CLOS", "Closing (GBP)", "£"},{ "Transaction Currency", "TRANS", "Transaction Currency", ""}}),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
-					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365DIMCURRENCY",Kind="View"]}[Data],
-					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([Currency Name] = "Canadian Dollar" or [Currency Name] = "Euro" or [Currency Name] = "Hong Kong Dollar" or [Currency Name] = "Pound Sterling" or [Currency Name] = "Singapore Dollar" or [Currency Name] = "US Dollar" or [Currency Name] = "Won" or [Currency Name] = "Yen")),
-					#"Kept First Rows" = Table.FirstN(#"Filtered Rows" ,NumberOfRows),
-					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Filtered Rows"
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365DIMCURRENCY",Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each List.Contains({"Canadian Dollar", "Euro", "Hong Kong Dollar", "Pound Sterling", "Singapore Dollar", "US Dollar", "Won", "Yen"},[Currency Name])),
+					#"Appended Query" = Table.Combine({#"Filtered Rows", #"Extra Currencies"})
 				in
-					ParameterFilter
+					#"Appended Query"
 
 	annotation PBI_ResultType = Table
 

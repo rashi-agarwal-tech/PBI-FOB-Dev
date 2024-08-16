@@ -95,7 +95,7 @@ table 'Exchange Rates'
 
 	partition 'Exchange Rates' = m
 		mode: import
-		source = ```
+		source = 
 				let
 				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -105,8 +105,7 @@ table 'Exchange Rates'
 					#"Filtered Rows"  = Table.SelectRows(#"Changed Type", each [RATETYPENAME] = "BUDGET"),
 					#"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [DATE] = DateTime.Date(DateTime.LocalNow()))		
 				in
-					#"Filtered Rows1"
-				```
+					#"Filtered Rows1"				
 
 	changedProperty = IsHidden
 
