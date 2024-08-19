@@ -172,7 +172,7 @@ table Pick
 		formatString: Short Date
 		sourceProviderType: date
 		lineageTag: 3b7f01c1-52ba-4f2a-9033-c5c4ead2fe30
-		summarizeBy: none
+		summarizeBy: none		
 		sourceColumn: Despatch Date
 
 		changedProperty = IsHidden
@@ -207,6 +207,15 @@ table Pick
 		lineageTag: 60e9abdf-f0d1-4791-adb6-f9f45b2fb02e
 		summarizeBy: none
 		sourceColumn: Pick Order Category
+
+		annotation SummarizationSetBy = Automatic
+	
+	column 'Destination Warehouse' =
+			LOOKUPVALUE('Movements'[To Warehouse Name],'Movements'[TO#],Pick[D365 Order #])
+		dataType: string		
+		lineageTag: 85408e37-cc03-4a0f-b8c7-3cf771cb7b65
+		summarizeBy: none
+		isDataTypeInferred		
 
 		annotation SummarizationSetBy = Automatic
 
