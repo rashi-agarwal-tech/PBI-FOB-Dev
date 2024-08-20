@@ -1,5 +1,4 @@
 table 'Exchange Rates'
-	isHidden
 	lineageTag: fb3d8683-8825-4b7c-8017-0d50f7249299
 
 	column FROMCURRENCY
@@ -40,7 +39,6 @@ table 'Exchange Rates'
 
 	column RATE
 		dataType: double
-		isHidden
 		sourceProviderType: decimal(16, 6)
 		lineageTag: 33751486-1b0a-41cf-a09e-4ac0111fdde3
 		summarizeBy: sum
@@ -95,7 +93,7 @@ table 'Exchange Rates'
 
 	partition 'Exchange Rates' = m
 		mode: import
-		source = 
+		source =
 				let
 				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -103,13 +101,11 @@ table 'Exchange Rates'
 				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="SRC_BFN_VW_D365FACTCURRENCYEXCHANGERATE2",Kind="View"]}[Data],
 					#"Changed Type"   = Table.TransformColumnTypes(BFN_Datatable_View,{{"DATE", type date}}),
 					#"Filtered Rows"  = Table.SelectRows(#"Changed Type", each [RATETYPENAME] = "BUDGET"),
-					#"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [DATE] = DateTime.Date(DateTime.LocalNow()))		
+					#"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [DATE] = DateTime.Date(DateTime.LocalNow()))
 				in
-					#"Filtered Rows1"				
+					#"Filtered Rows1"
 
 	changedProperty = IsHidden
 
 	annotation PBI_ResultType = Table
-
-	annotation PBI_NavigationStepName = Navigation
 

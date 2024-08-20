@@ -18,21 +18,27 @@ table 'Invoice Date'
 
 	column 'Invoice Date'
 		dataType: dateTime
+		isHidden
 		formatString: General Date
 		sourceProviderType: datetime2
 		lineageTag: 63b0502b-6c5d-4fc4-af59-0dc6dabb9b3d
 		summarizeBy: none
 		sourceColumn: Invoice Date
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Day # of Year'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: d661859e-8abe-46d0-a8b3-7bda490e20e2
 		summarizeBy: none
 		sourceColumn: Day # of Year
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -40,10 +46,13 @@ table 'Invoice Date'
 
 	column 'Calendar Week Number'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		lineageTag: 5be22578-ca91-4e89-a00f-0884b7f8c8a3
 		summarizeBy: none
 		sourceColumn: Calendar Week Number
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -51,10 +60,13 @@ table 'Invoice Date'
 
 	column 'Calendar Month Number'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		lineageTag: 7134529b-5097-4a6d-9ae2-b0910c837217
 		summarizeBy: none
 		sourceColumn: Calendar Month Number
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -62,61 +74,79 @@ table 'Invoice Date'
 
 	column Season
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 5bf79643-44f8-44f3-841e-b0eb1fd6370f
 		summarizeBy: none
 		sourceColumn: Season
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Relative Week'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: a4aae12c-b1f0-4f68-a450-1684004db6df
 		summarizeBy: none
 		sourceColumn: Relative Week
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Relative Month'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 99f258e7-73b4-421b-b9fc-67c79dc1394f
 		summarizeBy: none
 		sourceColumn: Relative Month
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Relative Year'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: b1ffa986-6147-4e30-9e0f-663fe6e254bb
 		summarizeBy: none
 		sourceColumn: Relative Year
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Day Of Week'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 58ffadb4-6790-4e7b-b73c-d49298c233a2
 		summarizeBy: none
 		sourceColumn: Day Of Week
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Day # of Week'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: efe5f95b-3cc5-4bd4-bd5a-9b4ad2f44e6e
 		summarizeBy: none
 		sourceColumn: Day # of Week
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -124,11 +154,14 @@ table 'Invoice Date'
 
 	column 'Day # of Month'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: c5dedfbf-1b9b-4830-b713-ed1f44b0aabe
 		summarizeBy: none
 		sourceColumn: Day # of Month
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -136,11 +169,14 @@ table 'Invoice Date'
 
 	column Year
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: 3a7779ab-9c3b-49b6-8a9c-daef638f5ad6
 		summarizeBy: none
 		sourceColumn: Year
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -148,41 +184,53 @@ table 'Invoice Date'
 
 	column Year-Week
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 5a471f7b-e4af-46ee-8ed6-b5f60d6206a5
 		summarizeBy: none
 		sourceColumn: Year-Week
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Half
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(2)
 		displayFolder: Calendar Dates
 		lineageTag: 4bd6b191-0153-48b5-9ad3-e70a5d7675b3
 		summarizeBy: none
 		sourceColumn: Half
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Year Half'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(9)
 		displayFolder: Calendar Dates
 		lineageTag: e245ef38-b66c-4174-99c3-25aa6c9e2adb
 		summarizeBy: none
 		sourceColumn: Year Half
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Quarter
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(2)
 		displayFolder: Calendar Dates
 		lineageTag: 921e3e81-372c-446a-8b04-c2260e07e79c
 		summarizeBy: none
 		sourceColumn: Quarter
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -200,110 +248,143 @@ table 'Invoice Date'
 
 	column 'Season Long Name'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: 84a79948-3772-4972-b0cc-31d2dc126cec
 		summarizeBy: none
 		sourceColumn: Season Long Name
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is UK Bank Holiday?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: 85282b9a-9c7e-42d8-978d-c87111615166
 		summarizeBy: none
 		sourceColumn: - Is UK Bank Holiday?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is Black Friday?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: 8c6f3b94-98c0-4e91-a655-8df5d7aeb63d
 		summarizeBy: none
 		sourceColumn: - Is Black Friday?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is Leap Year?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: 7763bda2-8461-4a22-a34d-4229cadadef7
 		summarizeBy: none
 		sourceColumn: - Is Leap Year?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is End of Month?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: 08432326-e1f2-467d-bdec-b0f7ec90fb07
 		summarizeBy: none
 		sourceColumn: - Is End of Month?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is End of Period?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: cca415bb-113f-4a12-98cb-9cb7aab1f557
 		summarizeBy: none
 		sourceColumn: - Is End of Period?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is End of Quarter?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: 51ee1d79-19ac-4efe-951b-bdc6d07de499
 		summarizeBy: none
 		sourceColumn: - Is End of Quarter?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is Yesterday?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: 805d32f0-cc75-47ef-83bd-cf118e5db43f
 		summarizeBy: none
 		sourceColumn: - Is Yesterday?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is Week?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: b0c6a574-b38c-48fa-8c47-c4a8671d44b4
 		summarizeBy: none
 		sourceColumn: - Is Week?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is Month?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: e102ef1b-3ab0-40d5-953a-879048bea3aa
 		summarizeBy: none
 		sourceColumn: - Is Month?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Calendar Month Long Name'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 4fdbcaee-ae68-4226-9c60-e25c285355c7
 		summarizeBy: none
 		sourceColumn: Calendar Month Long Name
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -324,11 +405,14 @@ table 'Invoice Date'
 
 	column 'Calendar Month Year'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 91bca170-462b-438d-90c8-372cfc1a6f60
 		summarizeBy: none
 		sourceColumn: Calendar Month Year
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -415,11 +499,14 @@ table 'Invoice Date'
 
 	column 'Relative Fiscal Week'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Fiscal Dates
 		lineageTag: 90a29930-63f3-474d-9d5f-0a00a7132929
 		summarizeBy: none
 		sourceColumn: Relative Fiscal Week
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -571,9 +658,12 @@ table 'Invoice Date'
 			12,"12")
 			```
 		dataType: string
+		isHidden
 		lineageTag: 90a4ca5e-d659-4d12-85ef-2e45e6f233ce
 		summarizeBy: none
 		isDataTypeInferred
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -625,9 +715,12 @@ table 'Invoice Date'
 			)
 			```
 		dataType: string
+		isHidden
 		lineageTag: d2f37fc5-5e0a-4956-aa6a-5b2a0d10b402
 		summarizeBy: none
 		isDataTypeInferred
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
