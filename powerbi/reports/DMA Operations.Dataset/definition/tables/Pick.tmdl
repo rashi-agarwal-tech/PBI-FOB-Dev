@@ -211,7 +211,7 @@ table Pick
 		annotation SummarizationSetBy = Automatic
 	
 	column 'Destination Warehouse' =
-			LOOKUPVALUE('Movements'[To Warehouse Name],'Movements'[TO#],Pick[D365 Order #])
+			CALCULATE(FIRSTNONBLANK('Movements'[To Warehouse Name],1),FILTER(ALL('Movements'),Pick[D365 Order #]='Movements'[TO#]))
 		dataType: string		
 		lineageTag: 85408e37-cc03-4a0f-b8c7-3cf771cb7b65
 		summarizeBy: none
