@@ -677,11 +677,14 @@ table 'PO Daybook'
 
 	column 'Commercial Invoice Date'
 		dataType: dateTime
-		formatString: Long Date
+		isHidden
+		formatString: Short Date
 		sourceProviderType: date
 		lineageTag: 27a34efb-1673-4fbe-9e39-3493b6b3bea1
 		summarizeBy: none
 		sourceColumn: Commercial Invoice Date
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1979,10 +1982,13 @@ table 'PO Daybook'
 
 	column 'Product Status'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: 3e4ac1d5-91c6-47e6-a895-9a427cd860ad
 		summarizeBy: none
 		sourceColumn: Product Status
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1997,19 +2003,25 @@ table 'PO Daybook'
 
 	column 'SO Currency'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: 8248d2e6-7b07-41de-b031-246cc60f5a0b
 		summarizeBy: none
 		sourceColumn: SO Currency
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'SO UnitPrice'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(34, 8)
 		lineageTag: ef307541-6cb4-48c0-a79d-0cab6c57ed3f
 		summarizeBy: sum
 		sourceColumn: SO UnitPrice
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

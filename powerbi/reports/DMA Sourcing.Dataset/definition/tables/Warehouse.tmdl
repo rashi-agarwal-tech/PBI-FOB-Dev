@@ -126,13 +126,12 @@ table Warehouse
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Warehouse Address Region ID'
+	column 'Warehouse Country'
 		dataType: string
-		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: 589f34d2-93a1-40be-9b53-a59481289db0
 		summarizeBy: none
-		sourceColumn: Warehouse Address Region ID
+		sourceColumn: Warehouse Country
 
 		changedProperty = IsHidden
 
@@ -159,9 +158,10 @@ table Warehouse
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="SRC_BFN_VW_D365DIMWAREHOUSE",Kind="View"]}[Data],
 					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
-					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View,
+				    #"Renamed Columns" = Table.RenameColumns(ParameterFilter,{{"Warehouse Address Region ID", "Warehouse Country"}})
 				in
-					ParameterFilter
+					#"Renamed Columns"
 
 	annotation PBI_ResultType = Table
 

@@ -3,11 +3,14 @@ table 'Scheduled Ex-Factory Date'
 
 	column Date_Key
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: 9421441b-f8f1-4411-91a6-e26c1c6d1ea4
 		summarizeBy: none
 		sourceColumn: Date_Key
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -37,11 +40,14 @@ table 'Scheduled Ex-Factory Date'
 
 	column 'Calendar Week Number'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: 5e17a896-3233-4cdc-90bc-e27eca208c79
 		summarizeBy: sum
 		sourceColumn: Calendar Week Number
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -49,11 +55,14 @@ table 'Scheduled Ex-Factory Date'
 
 	column 'Calendar Month Number'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: 9d98ad69-a6c2-4ebc-a567-3f44caffdef1
 		summarizeBy: sum
 		sourceColumn: Calendar Month Number
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -61,11 +70,14 @@ table 'Scheduled Ex-Factory Date'
 
 	column Season
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 8546281d-1044-4d30-9709-10545655ed36
 		summarizeBy: none
 		sourceColumn: Season
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -101,11 +113,14 @@ table 'Scheduled Ex-Factory Date'
 
 	column 'Reporting Year'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: da606e39-6c73-464d-bb88-3a2f9bb120f1
 		summarizeBy: sum
 		sourceColumn: Reporting Year
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -113,11 +128,14 @@ table 'Scheduled Ex-Factory Date'
 
 	column 'Day Of Week'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 5693f812-2c23-4ed2-acd1-4171e32f55fb
 		summarizeBy: none
 		sourceColumn: Day Of Week
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -147,11 +165,14 @@ table 'Scheduled Ex-Factory Date'
 
 	column Year
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: 916325e6-6683-4bfc-bf72-605733a6c52f
 		summarizeBy: sum
 		sourceColumn: Year
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -159,21 +180,27 @@ table 'Scheduled Ex-Factory Date'
 
 	column Year-Week
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 1fe30555-a698-4b41-9e68-e7b2b9f224e5
 		summarizeBy: none
 		sourceColumn: Year-Week
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column Half
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(2)
 		displayFolder: Calendar Dates
 		lineageTag: a07a3f5f-563c-451c-94d9-ec94734994b4
 		summarizeBy: none
 		sourceColumn: Half
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -189,121 +216,157 @@ table 'Scheduled Ex-Factory Date'
 
 	column 'Purchase Season'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 08095baa-5abb-435c-9eaa-9cf60d19d43c
 		summarizeBy: none
 		sourceColumn: Purchase Season
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Season Long Name'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 2e171863-84b4-454a-86f7-7e23fea9ba3d
 		summarizeBy: none
 		sourceColumn: Season Long Name
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is UK Bank Holiday?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: e9077a6e-d50b-4afe-beb0-5e0ca629f412
 		summarizeBy: none
 		sourceColumn: - Is UK Bank Holiday?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is Black Friday?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: ef7e4cb8-b51e-4022-846a-90524b5d88a9
 		summarizeBy: none
 		sourceColumn: - Is Black Friday?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is Leap Year?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: b8ad6472-ee07-47f4-8835-8b354d8de030
 		summarizeBy: none
 		sourceColumn: - Is Leap Year?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is End of Month?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: 4af68983-61e8-47bd-8e1f-fd8ef93ad82d
 		summarizeBy: none
 		sourceColumn: - Is End of Month?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is End of Period?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: 5527a1d9-21be-49e8-b2f9-4f2c9f9e7b51
 		summarizeBy: none
 		sourceColumn: - Is End of Period?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is End of Quarter?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: d6e33bbe-66d5-495d-b71e-f2a9a8f92cd6
 		summarizeBy: none
 		sourceColumn: - Is End of Quarter?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is Yesterday?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: fdc78a73-ed8a-459f-ad81-31f513f26cd4
 		summarizeBy: none
 		sourceColumn: - Is Yesterday?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is Week?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 56236e24-4c0b-4764-a5eb-6822d6a63f26
 		summarizeBy: none
 		sourceColumn: - Is Week?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is Month?'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: cf130f69-74d7-48ec-88e5-80c95451dc56
 		summarizeBy: none
 		sourceColumn: - Is Month?
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Calendar Month Long Name'
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 6fcd14ba-33f1-4a9f-9eb3-3b612d327b16
 		summarizeBy: none
 		sourceColumn: Calendar Month Long Name
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -447,11 +510,14 @@ table 'Scheduled Ex-Factory Date'
 
 	column 'Week Number (544)'
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: 544 Dates
 		lineageTag: 1c83d27d-cde9-41b4-bf9b-80800f104f0c
 		summarizeBy: sum
 		sourceColumn: Week Number (544)
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -561,9 +627,12 @@ table 'Scheduled Ex-Factory Date'
 			12,"12")
 			```
 		dataType: string
+		isHidden
 		lineageTag: 6084fe1b-2952-44e4-be01-5910ae5c8c6d
 		summarizeBy: none
 		isDataTypeInferred
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -573,6 +642,7 @@ table 'Scheduled Ex-Factory Date'
 			               , "09", "Sep", "10", "Oct", "11", "Nov", "12", "Dec") 
 			```
 		dataType: string
+		isHidden
 		lineageTag: 6a92cdd1-a0a0-4a10-98c7-fab9c1f7c2c1
 		summarizeBy: none
 		isDataTypeInferred
@@ -617,9 +687,12 @@ table 'Scheduled Ex-Factory Date'
 			)
 			```
 		dataType: string
+		isHidden
 		lineageTag: 56fb5f5e-5869-44ac-9c7b-e2e373275ae3
 		summarizeBy: none
 		isDataTypeInferred
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
