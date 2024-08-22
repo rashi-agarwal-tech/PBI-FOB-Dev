@@ -9292,6 +9292,13 @@ table Metrics
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
+	measure 'Item Coverage (Current Day)' = IF(SUM(Availability[ItemCoverage])=0,BLANK(),SUM(Availability[ItemCoverage]))
+		formatString: #,0
+		displayFolder: Stock Metrics\5. Measures
+		lineageTag: 6a0ae533-0356-4f2d-89c9-fbfaa21f5d9f
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
 	column MetricID
 		dataType: int64
 		isHidden
