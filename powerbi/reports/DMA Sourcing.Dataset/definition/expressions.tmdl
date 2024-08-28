@@ -1,4 +1,4 @@
-expression Datasource_Server = "drmartensdev.west-europe.azure.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+expression Datasource_Server = "drmartensdev.west-europe.azure.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 9a50a013-497a-4c88-96af-39c896647853
 	queryGroup: Parameters
 
@@ -6,7 +6,7 @@ expression Datasource_Server = "drmartensdev.west-europe.azure.snowflakecomputin
 
 	annotation PBI_NavigationStepName = Navigation
 
-expression Datasource_Warehouse = "REPORTER" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+expression Datasource_Warehouse = "REPORTER" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 33325dd1-8e8a-4b75-85cc-1ff55ba47514
 	queryGroup: Parameters
 
@@ -14,7 +14,7 @@ expression Datasource_Warehouse = "REPORTER" meta [IsParameterQuery=true, Type="
 
 	annotation PBI_NavigationStepName = Navigation
 
-expression Datasource_Database = "PRESENTATION" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+expression Datasource_Database = "PRESENTATION" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 72752b1b-891d-4543-b8b2-eb4e2af298f2
 	queryGroup: Parameters
 
@@ -22,7 +22,7 @@ expression Datasource_Database = "PRESENTATION" meta [IsParameterQuery=true, Typ
 
 	annotation PBI_NavigationStepName = Navigation
 
-expression Datasource_Schema = "BFN_PRESENTATION" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+expression Datasource_Schema = "BFN_PRESENTATION" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 94b7f411-392d-4b06-a651-bda57482fe8c
 	queryGroup: Parameters
 
