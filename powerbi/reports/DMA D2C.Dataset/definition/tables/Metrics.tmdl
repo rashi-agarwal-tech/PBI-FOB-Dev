@@ -2118,7 +2118,7 @@ table Metrics
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	measure 'Total Units vs LFY -1 %' = divide ( ([Total Units] - [Total Units LFY-1])  ,  [Total Units LFY]  )
+	measure 'Total Units vs LFY -1 %' = divide ( ([Total Units] - [Total Units LFY-1])  ,  [Total Units LFY-1]  )
 		formatString: +0%;(0%);-
 		displayFolder: Sales Metrics\04. Total\vs.\vs EMEA LFY
 		lineageTag: e8651ce5-9483-4b37-82dc-c0d0df633cb8
@@ -2904,7 +2904,7 @@ table Metrics
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	measure 'Total Units vs LFY -1 % (544)' = divide ( ([Total Units] - [Total Units LFY-1 (544)])  ,  [Total Units LFY (544)]  )
+	measure 'Total Units vs LFY -1 % (544)' = divide ( ([Total Units] - [Total Units LFY-1 (544)])  ,  [Total Units LFY-1 (544)]  )
 		displayFolder: Sales Metrics\04. Total\vs.\vs LFY (544)
 		lineageTag: 0bedea3a-68b0-459d-8b95-bd0773f2125a
 
