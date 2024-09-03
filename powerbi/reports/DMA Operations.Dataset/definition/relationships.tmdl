@@ -35,20 +35,8 @@ relationship b9b026bf-f6ef-450b-9b7a-c86f4806ac1f
 	toColumn: Products.Product_Key
 
 relationship a011e3df-99bd-4a20-a52d-645414d2dc0f
-	fromColumn: Pick.'Selling Status'
-	toColumn: 'Selling Status - Invoice'.'Selling Status'
-
-relationship a49ea891-f1de-43fc-9336-7ec41c3d246e
-	fromColumn: Intake.'Selling Status'
-	toColumn: 'Selling Status - Invoice'.'Selling Status'
-
-relationship 476882aa-c6af-48ba-b0ca-bc73758ba9b4
-	fromColumn: Movements.'Selling Status-Invoice Entry'
-	toColumn: 'Selling Status - Invoice'.'Selling Status'
-
-relationship 04fee53e-7f60-4cf2-85b3-966fe0ca2b68
-	fromColumn: Intake.'Warehouse ID'
-	toColumn: Warehouse.'Warehouse ID'
+	fromColumn: Pick.SELLINGSTATUS
+	toColumn: 'Selling Status - Invoice'.SELLINGSTATUS
 
 relationship 3e1fb789-3efc-4dfa-a224-a62ad18f4257
 	fromColumn: Adjustments.Warehouse_Key
@@ -102,24 +90,12 @@ relationship 05ef6fc4-cb57-4239-aade-14641541a38f
 	fromColumn: Intake.Product_Class_Key
 	toColumn: 'Product Class'.Product_Class_Key
 
-relationship 03275420-9808-46b1-bc07-2953d8fd212b
-	fromColumn: Movements.SO_HDM_Order_Type_ID
-	toColumn: 'Sales Order Type'.ORDERTYPEID
-
 relationship 46bce74c-2771-403a-aad4-cb0a9febc16f
 	fromColumn: Movements.Warehouse_Key
 	toColumn: Warehouse.Warehouse_Key
 
-relationship 86cedb57-395f-4675-b780-cc44f204d66f
-	fromColumn: Movements.'Selling Status Order Entry'
-	toColumn: 'Selling Status - Order Entry'.'Selling Status'
-
 relationship 507dd990-8cf8-4b49-b613-264ff5d18a5b
-	fromColumn: 'Allocation Details'.Invent_Trans_ID
-	toColumn: 'Bridge InventTransID'.INVENTTRANSID
-
-relationship c2835454-6833-4ed9-ae98-64dc02b3fe5c
-	fromColumn: Movements.Invent_Trans_ID
+	fromColumn: 'Allocation Details'.INVENTTRANSID
 	toColumn: 'Bridge InventTransID'.INVENTTRANSID
 
 relationship 3fa17e0a-6b2f-4bde-926f-85341e3ebfa7
@@ -146,12 +122,8 @@ relationship e0ef1489-9cad-4cdf-ac98-765709303501
 	fromColumn: 'Customer Sell Out US'.Customer_Key
 	toColumn: Customer.Customer_Key
 
-relationship 388f49df-8e1f-47e5-8820-9231ca4b429d
-	fromColumn: Movements.HDM_INT_ETD_Date_Key
-	toColumn: 'PO ETD Date'.HDMIntETDDate_Key
-
 relationship 2e8db648-a3a8-4215-ae98-9cd2be81a9ce
-	fromColumn: Movements.Sales_Order_Pool_Key
+	fromColumn: Movements.SalesOrderPool_Key
 	toColumn: 'Sales Order Pool'.SalesOrderPool_Key
 
 relationship fa359f7c-6177-4230-9a35-ac36d4652bf3
@@ -168,7 +140,7 @@ relationship 1e1b57f4-8095-475d-b1bf-fd4b8017c5c3
 
 relationship 68b4924a-f193-4f6b-9a2d-b1b70f2c8a68
 	isActive: false
-	fromColumn: Movements.New_Purchase_Season_Key
+	fromColumn: Movements.NewPurchasingSeason_Key
 	toColumn: 'Purchase Season'.Season_Key
 
 relationship 971fdb56-224f-403c-a51e-e5e003b10e10
@@ -181,48 +153,85 @@ relationship 7e807b3d-9d61-475b-9333-3bd995b38bde
 
 relationship 0ad87144-72e5-4059-b5dc-9fc3f8c1ccef
 	fromColumn: Availability.SELLINGSTATUS
-	toColumn: 'Selling Status - Invoice'.'Selling Status'
-
-relationship AutoDetected_abb6486a-387f-4054-8deb-b67bf2b35f55
-	fromColumn: 'Allocation Details'.Date_Key
-	toColumn: Date.'Date Key'
-
-relationship AutoDetected_d6c47c34-e459-4db6-bf15-75a0a6589d76
-	fromColumn: Pick.Date_Key
-	toColumn: Date.'Date Key'
+	toColumn: 'Selling Status - Invoice'.SELLINGSTATUS
 
 relationship AutoDetected_e31bb7ec-6dbb-488f-b008-afbfe751e650
 	fromColumn: Date.Season
 	toColumn: 'Purchase Season'.Season
 
+relationship a49ea891-f1de-43fc-9336-7ec41c3d246e
+	fromColumn: Intake.SELLINGSTATUS
+	toColumn: 'Selling Status - Invoice'.SELLINGSTATUS
+
+relationship 476882aa-c6af-48ba-b0ca-bc73758ba9b4
+	fromColumn: Movements.'Selling Status - Invoice Entry'
+	toColumn: 'Selling Status - Invoice'.SELLINGSTATUS
+
+relationship 03275420-9808-46b1-bc07-2953d8fd212b
+	fromColumn: Movements.SO_HDMORDERTYPEID
+	toColumn: 'Sales Order Type'.ORDERTYPEID
+
+relationship c2835454-6833-4ed9-ae98-64dc02b3fe5c
+	fromColumn: Movements.INVENTTRANSID
+	toColumn: 'Bridge InventTransID'.INVENTTRANSID
+
+relationship 388f49df-8e1f-47e5-8820-9231ca4b429d
+	fromColumn: Movements.HDMIntETDDate_Key
+	toColumn: 'PO ETD Date'.HDMIntETDDate_Key
+
+relationship AutoDetected_abb6486a-387f-4054-8deb-b67bf2b35f55
+	fromColumn: 'Allocation Details'.Date_Key
+	toColumn: Date.Date_Key
+
+relationship AutoDetected_d6c47c34-e459-4db6-bf15-75a0a6589d76
+	fromColumn: Pick.Date_Key
+	toColumn: Date.Date_Key
+
 relationship 6d4fa9e5-c8a9-4d10-bb58-0870a841382f
 	isActive: false
-	fromColumn: Movements.SO_Requested_Ship_Date_Key
-	toColumn: Date.'Date Key'
+	fromColumn: Movements.SORequestedShipDate_Key
+	toColumn: Date.Date_Key
 
 relationship ef6e554e-f5be-4c0d-8f8e-e7215262ebeb
 	fromColumn: Adjustments.'Transaction Date'
-	toColumn: Date.Date
+	toColumn: Date.' Date'
 
 relationship 2abffe73-a108-4a20-a7b1-7316bb54a350
 	fromColumn: Availability.NextDate
-	toColumn: Date.Date
+	toColumn: Date.' Date'
 
 relationship d16df2f5-d922-4223-9300-369567e040a2
 	fromColumn: Intake.'Delivery Date'
-	toColumn: Date.Date
+	toColumn: Date.' Date'
 
 relationship 3a7dd8f9-4bb4-45ec-92d1-0456b331e187
 	isActive: false
 	fromColumn: Intake.Date_Key
-	toColumn: Date.'Date Key'
+	toColumn: Date.Date_Key
 
 relationship 995d42e5-5128-4514-9e81-91c9601f3cb6
 	isActive: false
 	fromColumn: Intake.AVAILDATE
-	toColumn: Date.Date
+	toColumn: Date.' Date'
 
 relationship c9058b47-bc2e-49df-b693-f011f0622afc
 	fromColumn: Movements.Date_Key
-	toColumn: Date.'Date Key'
+	toColumn: Date.Date_Key
+
+relationship 93cc8870-d49a-4e0d-8bed-05a32df40900
+	fromColumn: Intake.'Warehouse ID'
+	toColumn: Warehouse.'Warehouse ID'
+
+relationship 61624010-f5a9-4789-89e5-98c965552f32
+	isActive: false
+	fromColumn: Availability.DATE
+	toColumn: Date.' Date'
+
+relationship 651d2440-448e-45cc-a813-1175e9e73e59
+	fromColumn: Pick.Customer_Key
+	toColumn: Customer.Customer_Key
+
+relationship 0f76dfd8-dd77-4a9a-8993-3a679476696a
+	fromColumn: 'Customer Sell Out US'.To_Date_Key
+	toColumn: Date.Date_Key
 

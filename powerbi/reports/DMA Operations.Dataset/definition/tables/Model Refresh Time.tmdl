@@ -36,17 +36,6 @@ table 'Model Refresh Time'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Season Year'
-		dataType: string
-		isHidden
-		lineageTag: aae21664-f0c4-4b4f-be86-4db58008ace2
-		summarizeBy: none
-		isNameInferred
-		isDataTypeInferred
-		sourceColumn: Purchase Season[Season Year]
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Refresh Time' = NOW()
 		dataType: dateTime
 		formatString: dd MMMM yyyy hh:mm AM/PM

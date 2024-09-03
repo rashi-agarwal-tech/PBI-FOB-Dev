@@ -26,13 +26,13 @@ table 'Global Product Forecast'
 
 		annotation SummarizationSetBy = Automatic
 
-	column Intro_Month
+	column 'Intro Month'
 		dataType: string
 		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: 0ccd5a1d-f15f-4383-94f3-4383c133bd13
 		summarizeBy: none
-		sourceColumn: Intro_Month
+		sourceColumn: Intro Month
 
 		changedProperty = IsHidden
 
@@ -75,11 +75,12 @@ table 'Global Product Forecast'
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_AZUREGLOBALPRODUCTFORECAST",Kind="View"]}[Data],
 					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
-					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View,
+				    #"Renamed Columns" = Table.RenameColumns(ParameterFilter,{{"Intro_Month", "Intro Month"}})
 				in
-					ParameterFilter
+					#"Renamed Columns"
 
 	changedProperty = IsHidden
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 

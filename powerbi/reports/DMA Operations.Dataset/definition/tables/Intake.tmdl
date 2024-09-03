@@ -54,14 +54,14 @@ table Intake
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Snapshot Date'
+	column 'SnapShot Date'
 		dataType: dateTime
 		isHidden
 		formatString: Short Date
 		sourceProviderType: date
 		lineageTag: 9daf6a2f-8ce4-4c01-b0f7-9c15c329e689
 		summarizeBy: none
-		sourceColumn: Snapshot Date
+		sourceColumn: SnapShot Date
 
 		changedProperty = IsHidden
 
@@ -70,7 +70,7 @@ table Intake
 		annotation UnderlyingDateTimeDataType = Date
 
 	column QTYFREE
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 6)
 		lineageTag: 3ee5f59d-6237-4e5c-a215-12061efaf8e3
@@ -78,6 +78,8 @@ table Intake
 		sourceColumn: QTYFREE
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -109,20 +111,6 @@ table Intake
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
-
-	column 'Selling Status'
-		dataType: double
-		isHidden
-		sourceProviderType: decimal(38, 5)
-		lineageTag: 52d72e4e-8c7e-4472-b9a3-2dc6379b1b1d
-		summarizeBy: none
-		sourceColumn: Selling Status
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Product_Class_Key
 		dataType: string
@@ -160,6 +148,21 @@ table Intake
 		sourceColumn: RECEIPTTYPE
 
 		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SELLINGSTATUS
+		dataType: int64
+		isHidden
+		lineageTag: 52d72e4e-8c7e-4472-b9a3-2dc6379b1b1d
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 

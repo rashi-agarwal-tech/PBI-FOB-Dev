@@ -44,14 +44,14 @@ table Products
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column ProductSegment
+	column 'Product Segment'
 		dataType: string
 		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: zz_Misc
 		lineageTag: f1b14a6e-b7f1-4bb3-aaf7-8ffd98e12673
 		summarizeBy: none
-		sourceColumn: ProductSegment
+		sourceColumn: Product Segment
 
 		changedProperty = IsHidden
 
@@ -273,6 +273,7 @@ table Products
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: d6396059-f8c0-4422-941a-cbeb36f4b39e
+		dataCategory: ImageUrl
 		summarizeBy: none
 		sourceColumn: Product URL Icon
 
@@ -282,6 +283,7 @@ table Products
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: f69c6be3-730d-4eb1-a2aa-ff130c38714f
+		dataCategory: ImageUrl
 		summarizeBy: none
 		sourceColumn: Product URL Image
 
@@ -315,11 +317,13 @@ table Products
 		annotation SummarizationSetBy = Automatic
 
 	column Collaboration
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(1, 0)
 		lineageTag: c882640a-dc2a-4be7-9291-b1f5167ef903
 		summarizeBy: none
 		sourceColumn: Collaboration
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
 
@@ -403,7 +407,7 @@ table Products
 
 	column 'Last PO Purchase Date'
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		sourceProviderType: datetime2
 		lineageTag: 1a988d3f-ae86-4e0d-9bdd-33fed7d00f99
 		summarizeBy: none

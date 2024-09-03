@@ -1,36 +1,22 @@
 table 'Allocation Details'
 	lineageTag: 21846bb7-a96c-4bf8-8761-cb1594819092
 
-	column Allocantion_Qty
-		dataType: double
-		isHidden
-		sourceProviderType: decimal(38, 0)
-		lineageTag: f1bdf359-bdc3-44c2-8cd9-ea17e3d05919
-		summarizeBy: sum
-		sourceColumn: Allocantion_Qty
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Invent_Trans_ID
+	column INVENTTRANSID
 		dataType: string
 		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: a987085e-f028-4700-ac93-8dab77ca48bd
 		summarizeBy: none
-		sourceColumn: Invent_Trans_ID
+		sourceColumn: INVENTTRANSID
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column Date_Key
-		dataType: string
+		dataType: int64
 		isHidden
-		sourceProviderType: nvarchar(16777216)
+		formatString: 0
 		lineageTag: d2ed8dff-e8f9-4726-84a4-93d70bcd0a7b
 		summarizeBy: none
 		sourceColumn: Date_Key
@@ -60,18 +46,21 @@ table 'Allocation Details'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'SO Cancel Risk Date'
-		dataType: dateTime
+	column ALLOCATIONQTY
+		dataType: int64
 		isHidden
-		formatString: Short Date
-		sourceProviderType: datetime2
-		lineageTag: 7062554f-7e37-4ea8-93f8-0929903bff76
-		summarizeBy: none
-		sourceColumn: SO Cancel Risk Date
+		sourceProviderType: decimal(38, 0)
+		lineageTag: f1bdf359-bdc3-44c2-8cd9-ea17e3d05919
+		summarizeBy: sum
+		sourceColumn: ALLOCATIONQTY
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition 'Allocation Details' = m
 		mode: import
@@ -82,9 +71,10 @@ table 'Allocation Details'
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365DMRFSBIMRESVALLOCATIONDETAILS",Kind="View"]}[Data],
 					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
-					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View,
+				    #"Changed Type" = Table.TransformColumnTypes(ParameterFilter,{{"Date_Key", Int64.Type}})
 				in
-					ParameterFilter
+					#"Changed Type"
 
 	annotation PBI_ResultType = Table
 

@@ -33,18 +33,6 @@ table 'Purchase Season'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Season Year'
-		dataType: string
-		isHidden
-		sourceProviderType: nvarchar(16777216)
-		lineageTag: 780557d7-26db-43fa-b6c4-e260e66ab7fb
-		summarizeBy: none
-		sourceColumn: Season Year
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	partition 'Purchase Season' = m
 		mode: import
 		source =

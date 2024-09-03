@@ -26,36 +26,36 @@ table 'From Warehouse'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Warehouse ID'
+	column WAREHOUSEID
 		dataType: string
 		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: 55214395-dcd8-4ba0-a304-4b4a8e1fa086
 		summarizeBy: none
-		sourceColumn: Warehouse ID
+		sourceColumn: WAREHOUSEID
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Warehouse Group'
+	column WH_Group
 		dataType: string
 		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: b23dd719-162d-42e4-9a6c-52caddd28ff9
 		summarizeBy: none
-		sourceColumn: Warehouse Group
+		sourceColumn: WH_Group
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Warehouse Name'
+	column WAREHOUSENAME
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: 89d79106-62f9-42a1-80b8-93a18afea3d5
 		summarizeBy: none
-		sourceColumn: Warehouse Name
+		sourceColumn: WAREHOUSENAME
 
 		annotation SummarizationSetBy = Automatic
 
@@ -88,39 +88,39 @@ table 'From Warehouse'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Warehouse Sub-Group'
+	column WH_Sub-Group
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: be8316c9-cb57-4964-9853-24f893e377c2
 		summarizeBy: none
-		sourceColumn: Warehouse Sub-Group
+		sourceColumn: WH_Sub-Group
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Warehouse Channel'
+	column WH_Channel
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: a7a5ec3b-9844-4b3d-84da-74d212701512
 		summarizeBy: none
-		sourceColumn: Warehouse Channel
+		sourceColumn: WH_Channel
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Warehouse Region'
+	column CompanyRegion
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: afcfbfbb-b244-4c72-9700-3edcad03b7d7
 		summarizeBy: none
-		sourceColumn: Warehouse Region
+		sourceColumn: CompanyRegion
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Warehouse Sub-Region'
+	column WarehouseSubRegion
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: 89aaf2b9-a63d-4c0c-843a-d0d0c142f974
 		summarizeBy: none
-		sourceColumn: Warehouse Sub-Region
+		sourceColumn: WarehouseSubRegion
 
 		annotation SummarizationSetBy = Automatic
 

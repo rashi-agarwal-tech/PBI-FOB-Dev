@@ -19,21 +19,23 @@ table Size
 		lineageTag: b395f110-3375-4bd5-bf2c-dc80390d21fd
 		summarizeBy: none
 		sourceColumn: Size
-		sortByColumn: 'Display Order'
+		sortByColumn: DisplayOrder
 
 		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Display Order'
-		dataType: double
+	column DisplayOrder
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		lineageTag: c579196b-9304-4df6-a130-ce69f0bef55e
 		summarizeBy: sum
-		sourceColumn: Display Order
+		sourceColumn: DisplayOrder
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 

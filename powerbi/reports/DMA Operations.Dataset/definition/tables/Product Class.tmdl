@@ -14,16 +14,18 @@ table 'Product Class'
 
 		annotation SummarizationSetBy = Automatic
 
-	column Product_Class_Sort
-		dataType: double
+	column 'Product Class Sort'
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(2, 0)
 		displayFolder: zz_Misc
 		lineageTag: 3c4bb9e4-61dc-4ad8-8534-0d4ca92fadbe
 		summarizeBy: none
-		sourceColumn: Product_Class_Sort
+		sourceColumn: Product Class Sort
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
 

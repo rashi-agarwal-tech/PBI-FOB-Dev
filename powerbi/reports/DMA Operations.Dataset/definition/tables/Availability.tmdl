@@ -2,18 +2,6 @@ table Availability
 	isHidden
 	lineageTag: ea8ea58e-bf4b-488e-8dc9-d3dcf9cd4c8c
 
-	column Company_Key
-		dataType: string
-		isHidden
-		sourceProviderType: nvarchar(32)
-		lineageTag: bd27e709-48ed-44f2-ac34-60bc95c78b94
-		summarizeBy: none
-		sourceColumn: Company_Key
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column Product_Key
 		dataType: string
 		isHidden
@@ -63,7 +51,7 @@ table Availability
 		annotation SummarizationSetBy = Automatic
 
 	column QTY
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		lineageTag: f0069b3b-25dd-4ce5-999b-1c3139def69c
@@ -71,6 +59,8 @@ table Availability
 		sourceColumn: QTY
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -90,74 +80,10 @@ table Availability
 
 		annotation UnderlyingDateTimeDataType = Date
 
-	column OnHandUnits
-		dataType: double
-		isHidden
-		lineageTag: 9b17b015-01bf-45bd-91ec-55e5472d631f
-		summarizeBy: sum
-		sourceColumn: OnHandUnits
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column ItemCoverage
-		dataType: double
-		isHidden
-		lineageTag: 44f6793f-9880-4340-89d4-968106bd8a7a
-		summarizeBy: sum
-		sourceColumn: ItemCoverage
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column InvoicedUnits
-		dataType: double
-		isHidden
-		lineageTag: 0b751b55-ad13-4f7c-a688-c7932d97de9a
-		summarizeBy: sum
-		sourceColumn: InvoicedUnits
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column InTransit
-		dataType: double
-		isHidden
-		lineageTag: 046d1204-153c-4632-a5b4-304248465b8c
-		summarizeBy: sum
-		sourceColumn: InTransit
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column RetailWarehouseOnHand
-		dataType: double
-		isHidden
-		lineageTag: 423cf670-7c66-4ed9-aba3-9ca90f6dcb7d
-		summarizeBy: sum
-		sourceColumn: RetailWarehouseOnHand
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column SELLINGSTATUS
 		dataType: double
 		isHidden
+		sourceProviderType: decimal(38, 0)
 		lineageTag: a110688a-d763-49a7-82dd-b05c72f85035
 		summarizeBy: none
 		sourceColumn: SELLINGSTATUS
@@ -168,21 +94,8 @@ table Availability
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column ReservedOnHandUnits
-		dataType: double
-		isHidden
-		lineageTag: bd8d5c67-cbe0-4fc1-bc78-f0500d3ba219
-		summarizeBy: sum
-		sourceColumn: ReservedOnHandUnits
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column AvailableOnHandUnits
-		dataType: double
+		dataType: int64
 		isHidden
 		lineageTag: 7dcc3904-e308-4692-b3bc-16a9402e7fa8
 		summarizeBy: sum
@@ -190,25 +103,14 @@ table Availability
 
 		changedProperty = IsHidden
 
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column OrderedQuantity
-		dataType: double
-		isHidden
-		lineageTag: e3883d90-bf7d-4309-b708-c46154e7b6b1
-		summarizeBy: sum
-		sourceColumn: OrderedQuantity
-
-		changedProperty = IsHidden
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column MAXIMUMONHANDINVENTORYQUANTITY
-		dataType: double
+		dataType: int64
 		isHidden
 		lineageTag: ee2f6ea0-a46b-49db-9648-45ad8b451000
 		summarizeBy: sum
@@ -216,20 +118,11 @@ table Availability
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column WH_Channel
-		dataType: string
-		isHidden
-		lineageTag: 38882e79-ff1e-40b7-99c1-2a2607172c29
-		summarizeBy: none
-		sourceColumn: WH_Channel
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
 
 	column AMOUNT
 		dataType: double
@@ -244,41 +137,6 @@ table Availability
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Selling Status - Order Entry'
-		dataType: double
-		isHidden
-		lineageTag: d5789891-099e-4f07-a41f-b7d8c79d2d21
-		summarizeBy: sum
-		sourceColumn: Selling Status - Order Entry
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column CompanyProductSize_Key
-		dataType: string
-		isHidden
-		lineageTag: fda1a057-fedc-4e00-9a60-546734f498bc
-		summarizeBy: none
-		sourceColumn: CompanyProductSize_Key
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column ITEMNUMBER
-		dataType: string
-		isHidden
-		lineageTag: 40fd169d-0ad7-489f-aff4-344cd8e1dcc1
-		summarizeBy: none
-		sourceColumn: ITEMNUMBER
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column NextDate = DATEADD ( Availability[DATE], 1, DAY )
 		dataType: dateTime
 		isHidden
@@ -288,6 +146,26 @@ table Availability
 		isDataTypeInferred
 
 		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ItemCoverage
+		dataType: int64
+		lineageTag: 4a57e541-ef7a-4f2e-a086-cc44ac5c6d63
+		summarizeBy: sum
+		sourceColumn: ItemCoverage
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WH_Channel_Custom
+		dataType: string
+		lineageTag: ed2ff9e8-31bf-4e12-8f87-4258fd706bf9
+		summarizeBy: none
+		sourceColumn: WH_Channel_Custom
 
 		annotation SummarizationSetBy = Automatic
 

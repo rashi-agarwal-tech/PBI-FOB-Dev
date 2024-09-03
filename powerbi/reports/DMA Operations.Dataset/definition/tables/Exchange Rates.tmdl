@@ -91,7 +91,7 @@ table 'Exchange Rates'
 
 		changedProperty = IsHidden
 
-		annotation SummarizationSetBy = Automatic	
+		annotation SummarizationSetBy = Automatic
 
 	partition 'Exchange Rates' = m
 		mode: import
@@ -103,9 +103,9 @@ table 'Exchange Rates'
 				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTCURRENCYEXCHANGERATE2",Kind="View"]}[Data],
 					#"Changed Type"   = Table.TransformColumnTypes(BFN_Datatable_View,{{"DATE", type date}}),
 					#"Filtered Rows"  = Table.SelectRows(#"Changed Type", each [RATETYPENAME] = "BUDGET"),
-					#"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [DATE] = DateTime.Date(DateTime.LocalNow()))		
+					#"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [DATE] = DateTime.Date(DateTime.LocalNow()))
 				in
-					#"Filtered Rows1"					
+					#"Filtered Rows1"
 
 	changedProperty = IsHidden
 

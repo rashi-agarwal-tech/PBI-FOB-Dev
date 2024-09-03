@@ -1,14 +1,14 @@
 table 'Selling Status - Order Entry'
 	lineageTag: 944b9452-db47-409a-acad-b5947fc5cac6
 
-	column 'Selling Status'
-		dataType: string
+	column SELLINGSTATUS
+		dataType: double
 		isHidden
-		sourceProviderType: nvarchar(16777216)
+		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Misc
 		lineageTag: 52cd0f5b-519f-4278-82be-3be87e05c8c3
 		summarizeBy: none
-		sourceColumn: Selling Status
+		sourceColumn: SELLINGSTATUS
 
 		changedProperty = IsHidden
 
@@ -29,7 +29,7 @@ table 'Selling Status - Order Entry'
 		sourceProviderType: decimal(1, 0)
 		displayFolder: zz_Misc
 		lineageTag: 5585ac9e-30b6-42cf-913c-29c60c19d726
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Selling Status Sort
 
 		changedProperty = IsHidden

@@ -54,7 +54,15 @@ table 'Display Currency'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	partition 'Display Currency' = m 
+	column NAME
+		dataType: string
+		lineageTag: 874dadd4-3946-49f6-9554-727b4410e030
+		summarizeBy: none
+		sourceColumn: NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Display Currency' = m
 		mode: import
 		source =
 				let

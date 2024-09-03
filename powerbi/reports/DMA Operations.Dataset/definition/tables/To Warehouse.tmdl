@@ -14,13 +14,13 @@ table 'To Warehouse'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Warehouse Name'
+	column WAREHOUSENAME
 		dataType: string
 		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: ffa49a02-792a-4a4b-811d-4ff0c95f33ab
 		summarizeBy: none
-		sourceColumn: Warehouse Name
+		sourceColumn: WAREHOUSENAME
 
 		changedProperty = IsHidden
 
@@ -38,13 +38,13 @@ table 'To Warehouse'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Warehouse ID'
+	column WAREHOUSEID
 		dataType: string
 		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: f7d0636e-2947-459c-9b9c-f2460141de36
 		summarizeBy: none
-		sourceColumn: Warehouse ID
+		sourceColumn: WAREHOUSEID
 
 		changedProperty = IsHidden
 
@@ -76,61 +76,61 @@ table 'To Warehouse'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Warehouse Group'
+	column WH_Group
 		dataType: string
 		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: 956ed0c8-836c-4b75-8092-edaa8a8fbd4a
 		summarizeBy: none
-		sourceColumn: Warehouse Group
+		sourceColumn: WH_Group
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Warehouse Sub-Group'
+	column WH_Sub-Group
 		dataType: string
 		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: e379ed48-ee79-4d1d-9594-a52eafa7dbd8
 		summarizeBy: none
-		sourceColumn: Warehouse Sub-Group
+		sourceColumn: WH_Sub-Group
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Warehouse Channel'
+	column WH_Channel
 		dataType: string
 		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: 9c565f0d-698b-4cc1-8afb-b70e1508aa2e
 		summarizeBy: none
-		sourceColumn: Warehouse Channel
+		sourceColumn: WH_Channel
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Warehouse Region'
+	column CompanyRegion
 		dataType: string
 		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: 13e2aec6-d65e-4180-8700-239527f76cbb
 		summarizeBy: none
-		sourceColumn: Warehouse Region
+		sourceColumn: CompanyRegion
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Warehouse Sub-Region'
+	column WarehouseSubRegion
 		dataType: string
 		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: e34ff0c2-daa5-4a2e-a625-8e1ee6ef593b
 		summarizeBy: none
-		sourceColumn: Warehouse Sub-Region
+		sourceColumn: WarehouseSubRegion
 
 		changedProperty = IsHidden
 

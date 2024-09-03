@@ -15,7 +15,7 @@ table 'PO ETD Date'
 
 	column 'PO ETD Date'
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		sourceProviderType: datetime2
 		lineageTag: 4c81b655-eeee-49f7-b9fd-efbd5ecf4133
 		summarizeBy: none
@@ -36,14 +36,16 @@ table 'PO ETD Date'
 		annotation SummarizationSetBy = Automatic
 
 	column Year
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		lineageTag: 327ae1e8-397c-4236-b498-3280d083602c
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Year
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 

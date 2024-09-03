@@ -89,7 +89,7 @@ table Pick
 		annotation SummarizationSetBy = Automatic
 
 	column 'Pick QTY'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Misc
@@ -98,6 +98,8 @@ table Pick
 		sourceColumn: Pick QTY
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -121,16 +123,18 @@ table Pick
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Selling Status'
-		dataType: double
+	column SELLINGSTATUS
+		dataType: int64
 		isHidden
-		sourceProviderType: decimal(38, 5)
+		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Misc
 		lineageTag: 9cebeef5-02ef-4b80-89a3-4ddad108286f
 		summarizeBy: none
-		sourceColumn: Selling Status
+		sourceColumn: SELLINGSTATUS
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -172,7 +176,7 @@ table Pick
 		formatString: Short Date
 		sourceProviderType: date
 		lineageTag: 3b7f01c1-52ba-4f2a-9033-c5c4ead2fe30
-		summarizeBy: none		
+		summarizeBy: none
 		sourceColumn: Despatch Date
 
 		changedProperty = IsHidden
@@ -209,13 +213,12 @@ table Pick
 		sourceColumn: Pick Order Category
 
 		annotation SummarizationSetBy = Automatic
-	
-	column 'Destination Warehouse' =
-			CALCULATE(FIRSTNONBLANK('Movements'[To Warehouse Name],1),FILTER(ALL('Movements'),Pick[D365 Order #]='Movements'[TO#]))
-		dataType: string		
+
+	column 'Destination Warehouse' = CALCULATE(FIRSTNONBLANK('Movements'[To Warehouse Name],1),FILTER(ALL('Movements'),Pick[D365 Order #]='Movements'[TO#]))
+		dataType: string
 		lineageTag: 85408e37-cc03-4a0f-b8c7-3cf771cb7b65
 		summarizeBy: none
-		isDataTypeInferred		
+		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 

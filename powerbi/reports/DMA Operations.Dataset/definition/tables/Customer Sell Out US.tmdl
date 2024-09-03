@@ -56,7 +56,7 @@ table 'Customer Sell Out US'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Qty On Hand'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		lineageTag: f05df1dd-51c2-45db-af3e-d79d8dbc2132
@@ -64,6 +64,8 @@ table 'Customer Sell Out US'
 		sourceColumn: Qty On Hand
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
