@@ -34,13 +34,9 @@ relationship 1369fe8c-69f6-48b5-a7bb-31bc64f37fe4
 	fromColumn: 'PO Daybook'.OrderType_Key
 	toColumn: 'Order Type'.Order_Type_Key
 
-relationship e9edf8ac-d9f1-4802-8183-6ea121156462
-	fromColumn: 'PO Daybook'.Confirmed_Ex_Factory_Key
-	toColumn: 'Confirmed Ex-Factory Date'.Date_Key
-
 relationship 19636650-079a-4829-8b8c-1ed4580d7a4b
 	fromColumn: 'PO Daybook'.Scheduled_Ex_Factory_Key
-	toColumn: 'Scheduled Ex-Factory Date'.Date_Key
+	toColumn: 'Scheduled Ex-Factory Date'.'Date Key'
 
 relationship 3d74ce6d-af4d-4d22-955c-35162b0dd2fd
 	fromColumn: 'PO Daybook'.PONumberLine_Key
@@ -49,14 +45,6 @@ relationship 3d74ce6d-af4d-4d22-955c-35162b0dd2fd
 relationship 9a5c3b23-8f67-4a6c-b0f4-1bba43a60b22
 	fromColumn: 'PO Daybook'.Method_Key
 	toColumn: 'Shipment Method'.Shipment_Method_Key
-
-relationship 8c7b238f-1f40-4827-a66b-a99b5eb5f6b4
-	fromColumn: 'PO Daybook'.NewPurchasingSeason_Key
-	toColumn: 'Purchase Season'.Season_Key
-
-relationship 2b9da1e5-0029-4c35-bd56-95436438747a
-	fromColumn: 'PO Daybook'.InvoiceDate_Key
-	toColumn: 'Invoice Date'.Date_Key
 
 relationship d84da3a2-a937-48f7-aed1-2ee9ea3c22bc
 	fromColumn: 'PO Daybook'.Territory_Key
@@ -72,7 +60,7 @@ relationship 7c0b8217-26a6-4e2f-ad1b-03dc7c0a18dd
 
 relationship fbaaeb0c-b4bb-45ca-8b66-f998d598d90a
 	fromColumn: 'PO Daybook'.ActualExFactoryDate_Key
-	toColumn: 'Actual Ex-Factory Date'.Date_Key
+	toColumn: 'Actual Ex-Factory Date'.'Date Key'
 
 relationship 5730f639-55b0-4e9c-a71a-461e8f5f1254
 	fromColumn: 'PO Daybook'.ExFactoryDate_Key
@@ -80,9 +68,25 @@ relationship 5730f639-55b0-4e9c-a71a-461e8f5f1254
 
 relationship b836a001-a81a-4e77-9e51-4e8ed322095c
 	fromColumn: 'Construction Capacity'.Amended_StartDate_Key
-	toColumn: 'Scheduled Ex-Factory Date'.Date_Key
+	toColumn: 'Scheduled Ex-Factory Date'.'Date Key'
 
 relationship b788d4a2-44b4-490a-8430-12b938d0da25
 	fromColumn: 'Pack One'.PONumberLine_Key
 	toColumn: 'Purchase Orders'.PONumberLine_Key
+
+relationship c6ed95c6-ec29-4f13-b733-eeea60a8e552
+	fromColumn: 'PO Daybook'.Confirmed_Ex_Factory_Key
+	toColumn: 'Confirmed Ex-Factory Date'.'Date Key'
+
+relationship 0f5dc9b5-8ac2-49c2-8b12-d592ce46ea60
+	fromColumn: 'PO Daybook'.InvoiceDate_Key
+	toColumn: 'Invoice Date'.'Date Key'
+
+relationship 9f37a407-c04c-4072-900e-2b26f4f00629
+	fromColumn: 'PO Daybook'.NewPurchasingSeason_Key
+	toColumn: 'Purchase Season'.'Season Key'
+
+relationship 3af1c025-0ee2-49fc-a197-d823c47f04ad
+	fromColumn: 'Pack One'.'Packed Date'
+	toColumn: 'Packed Date'.'Date Key'
 

@@ -101,7 +101,6 @@ table Product
 	column 'Colour Leather Code'
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
-		displayFolder: ToBeRemovedGFF
 		lineageTag: 9e561223-f33f-4065-9fe3-b5829eae8f69
 		summarizeBy: none
 		sourceColumn: Colour Leather Code
@@ -139,6 +138,7 @@ table Product
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: bb985e78-a4ba-4929-8704-dec4a54c3092
+		dataCategory: ImageUrl
 		summarizeBy: none
 		sourceColumn: Product URL Icon
 
@@ -148,6 +148,7 @@ table Product
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: c27ede46-15a2-4cd9-a7ef-b1de3bb1a2f9
+		dataCategory: ImageUrl
 		summarizeBy: none
 		sourceColumn: Product URL Image
 
@@ -231,18 +232,6 @@ table Product
 		lineageTag: f435e2c3-cbe7-4574-a495-1671c30b6bbb
 		summarizeBy: none
 		sourceColumn: Product Type
-
-		annotation SummarizationSetBy = Automatic
-
-	column Welted?
-		dataType: string
-		sourceProviderType: nvarchar(10)
-		displayFolder: ToBeRemovedGFF
-		lineageTag: 424b39bf-dedf-4f6f-b28b-b19ee65d5dab
-		summarizeBy: none
-		sourceColumn: Welted?
-
-		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -382,7 +371,7 @@ table Product
 
 	column '03. Target in DC'
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		sourceProviderType: datetime2
 		lineageTag: dc920cf6-8f91-40b9-8bb3-7423fa44f9ac
 		summarizeBy: none
@@ -442,6 +431,102 @@ table Product
 		lineageTag: cef8003c-1c06-4c6f-a55a-fe2c13d1db87
 		summarizeBy: none
 		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gender Code'
+		dataType: string
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 0c399ebd-8c7e-4096-b710-35de65d026c0
+		summarizeBy: none
+		sourceColumn: Gender Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'B2C Vat Application'
+		dataType: string
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 67f2460e-0a4d-46d7-a5c2-747893bfffe6
+		summarizeBy: none
+		sourceColumn: B2C Vat Application
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Leather Code'
+		dataType: string
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 278c1cca-e644-49d6-bf71-0236dc13d7af
+		summarizeBy: none
+		sourceColumn: Leather Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Construction Code'
+		dataType: string
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 51566158-6595-4b8e-9b2e-89f6fb6864a3
+		summarizeBy: none
+		sourceColumn: Construction Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Collection'
+		dataType: string
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 876ad898-506f-4af7-a21b-50ffce6e74d9
+		summarizeBy: none
+		sourceColumn: Product Collection
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Family'
+		dataType: string
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: af784eef-b1ce-44ec-a717-ff30202f30d7
+		summarizeBy: none
+		sourceColumn: Product Family
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 8e1b7d7e-9b9e-4b6e-a61b-16e87b92a256
+		summarizeBy: none
+		sourceColumn: Category
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Welted
+		dataType: string
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 2f78987b-4fb9-4ffb-a3ab-74a905492c7e
+		summarizeBy: none
+		sourceColumn: Welted
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

@@ -27,21 +27,8 @@ table 'Construction Capacity'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Construction Code'
-		dataType: string
-		isHidden
-		sourceProviderType: nvarchar(16777216)
-		displayFolder: zz_Misc
-		lineageTag: df3ce09a-83c3-4a93-979c-0530e922d544
-		summarizeBy: none
-		sourceColumn: Construction Code
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Current Capacity'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Misc
@@ -51,12 +38,14 @@ table 'Construction Capacity'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column StartDate_Key
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 5)
 		displayFolder: zz_Misc
@@ -65,6 +54,8 @@ table 'Construction Capacity'
 		sourceColumn: StartDate_Key
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
 
@@ -82,7 +73,7 @@ table 'Construction Capacity'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Amended_StartDate_Key = [StartDate_Key] + 19
-		dataType: double
+		dataType: int64
 		isHidden
 		displayFolder: zz_Misc
 		lineageTag: 8f31c4ae-989c-45a9-a4c2-74823c419138
@@ -94,6 +85,14 @@ table 'Construction Capacity'
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ConstructionCode
+		dataType: string
+		lineageTag: 4db53c28-fb9f-4713-af04-feec8f363b74
+		summarizeBy: none
+		sourceColumn: ConstructionCode
+
+		annotation SummarizationSetBy = Automatic
 
 	partition 'Construction Capacity' = m
 		mode: import

@@ -22,15 +22,17 @@ table Size
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Display Order'
-		dataType: double
+	column DisplayOrder
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		lineageTag: c7d2d9b3-67f7-4fb4-9572-2a3505175997
 		summarizeBy: none
-		sourceColumn: Display Order
+		sourceColumn: DisplayOrder
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
 

@@ -113,7 +113,7 @@ table 'PO Daybook'
 		annotation UnderlyingDateTimeDataType = Date
 
 	column 'OrderID PO'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: ToBeRemovedGFF
@@ -122,6 +122,8 @@ table 'PO Daybook'
 		sourceColumn: OrderID PO
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -167,7 +169,7 @@ table 'PO Daybook'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Variance Confirmed vs Approved'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(9, 0)
 		lineageTag: 4ea54286-f9df-441f-b006-91bf716deaba
@@ -176,12 +178,14 @@ table 'PO Daybook'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Variance First To Last Xmit Date'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(9, 0)
 		lineageTag: f0a3e199-801c-4733-8f7c-faa5db8146e4
@@ -189,6 +193,8 @@ table 'PO Daybook'
 		sourceColumn: Variance First To Last Xmit Date
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -566,12 +572,14 @@ table 'PO Daybook'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Daybook Item ID'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: 2. Shipment Details
 		lineageTag: 90b28517-6e1b-44dd-84b1-db5d1c1b1546
 		summarizeBy: none
 		sourceColumn: Daybook Item ID
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
 
@@ -1048,7 +1056,7 @@ table 'PO Daybook'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Qty_Invoiced
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: ToBeRemovedGFF
@@ -1058,12 +1066,14 @@ table 'PO Daybook'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Qty_Ordered
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: ToBeRemovedGFF
@@ -1073,12 +1083,14 @@ table 'PO Daybook'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Qty_Approved
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: ToBeRemovedGFF
@@ -1088,12 +1100,14 @@ table 'PO Daybook'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Qty_PlacedToFcty
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: ToBeRemovedGFF
@@ -1103,12 +1117,14 @@ table 'PO Daybook'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Qty_Rejected
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: ToBeRemovedGFF
@@ -1118,12 +1134,14 @@ table 'PO Daybook'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column QtyToBeShipped
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: ToBeRemovedGFF
@@ -1132,6 +1150,8 @@ table 'PO Daybook'
 		sourceColumn: QtyToBeShipped
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1165,7 +1185,7 @@ table 'PO Daybook'
 
 	column '06. First Xmit Date'
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		sourceProviderType: datetime2
 		displayFolder: 1. Dates
 		lineageTag: 52239bc2-b779-47a5-8f11-fe50d7f6a97e
@@ -1176,7 +1196,7 @@ table 'PO Daybook'
 
 	column '02. Date Loaded - Original'
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		sourceProviderType: datetime2
 		displayFolder: 1. Dates
 		lineageTag: edfdb42f-8a7f-4530-869e-0efa0f85cc8d
@@ -1590,7 +1610,7 @@ table 'PO Daybook'
 
 	column '01. Target PO Drop'
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		sourceProviderType: datetime2
 		displayFolder: 3. Target Dates
 		lineageTag: 67c25123-e06b-4ee0-91ed-d65a291d6e3d
@@ -1601,7 +1621,7 @@ table 'PO Daybook'
 
 	column '02. Target XF'
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		sourceProviderType: datetime2
 		displayFolder: 3. Target Dates
 		lineageTag: 13ca4920-0ed6-4018-81e4-31a68852f3f9
@@ -1612,7 +1632,7 @@ table 'PO Daybook'
 
 	column '03. Target In DC'
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		sourceProviderType: datetime2
 		displayFolder: 3. Target Dates
 		lineageTag: b2221243-2f87-4668-9b76-ea7adfbca225
@@ -1668,12 +1688,14 @@ table 'PO Daybook'
 		annotation SummarizationSetBy = Automatic
 
 	column '04a. OT Receipt n. of days'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(9, 0)
 		displayFolder: 3. Target Dates
 		lineageTag: 79581e74-105f-4be9-9622-6e159f4e8ba4
 		summarizeBy: sum
 		sourceColumn: 04a. OT Receipt n. of days
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1726,11 +1748,13 @@ table 'PO Daybook'
 		annotation SummarizationSetBy = Automatic
 
 	column 'PO Line'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		lineageTag: 3ccb273f-3c62-45df-90c1-1a44cafacf22
 		summarizeBy: sum
 		sourceColumn: PO Line
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1757,11 +1781,13 @@ table 'PO Daybook'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Shipment Line ID'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		lineageTag: 33841556-5c37-4ba3-9539-db613d3c75b8
 		summarizeBy: count
 		sourceColumn: Shipment Line ID
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1867,17 +1893,19 @@ table 'PO Daybook'
 		annotation SummarizationSetBy = Automatic
 
 	column '11b. Estimated Cargo Ready date'
-		dataType: string
-		sourceProviderType: nvarchar(16777216)
+		dataType: dateTime
+		formatString: Long Date
 		lineageTag: ea063f2e-9873-4564-9277-5e0ea598c0d4
 		summarizeBy: none
 		sourceColumn: 11b. Estimated Cargo Ready date
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation UnderlyingDateTimeDataType = Date
+
 	column '29b. Actual/Estimated Receipt Date'
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		sourceProviderType: date
 		lineageTag: d93b4364-345b-4846-af54-8a0f1904407e
 		summarizeBy: none
@@ -2047,7 +2075,7 @@ table 'PO Daybook'
 			    IF (
 			        'PO Daybook'[Confirmed_Ex_Factory_Key] = 0,
 			        'PO Daybook'[Latest Ex-Factory Date],
-			        RELATED ( 'Confirmed Ex-Factory Date'[Confirmed Ex-Factory Date] )
+			        RELATED ( 'Confirmed Ex-Factory Date'[ Confirmed Ex-Factory Date] )
 			    )
 			RETURN
 			    IF ( X > Y, "LATE", IF ( X <= Y, "EARLY/ON TIME", BLANK () ) )
@@ -2130,15 +2158,15 @@ table 'PO Daybook'
 			    IF (
 			        OR (
 			            ISBLANK (
-			                RELATED ( 'Confirmed Ex-Factory Date'[Confirmed Ex-Factory Date] )
+			                RELATED ( 'Confirmed Ex-Factory Date'[ Confirmed Ex-Factory Date] )
 			            ),
 			            YEAR (
-			                RELATED ( 'Confirmed Ex-Factory Date'[Confirmed Ex-Factory Date] )
+			                RELATED ( 'Confirmed Ex-Factory Date'[ Confirmed Ex-Factory Date] )
 			            ) = 1900
 			        ),
 			        0,
 			        IF (
-			            RELATED ( 'Confirmed Ex-Factory Date'[Confirmed Ex-Factory Date] )
+			            RELATED ( 'Confirmed Ex-Factory Date'[ Confirmed Ex-Factory Date] )
 			                < TODAY (),
 			            1,
 			            0
@@ -2146,9 +2174,8 @@ table 'PO Daybook'
 			    )
 			)
 		dataType: int64
-		formatString: 0
 		lineageTag: 320ac2bf-80d0-4e3a-8bb6-8c4671fc6cde
-		summarizeBy: sum
+		summarizeBy: none
 		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
@@ -2159,15 +2186,15 @@ table 'PO Daybook'
 			    IF (
 			        OR (
 			            ISBLANK (
-			                RELATED ( 'Confirmed Ex-Factory Date'[Confirmed Ex-Factory Date] )
+			                RELATED ( 'Confirmed Ex-Factory Date'[ Confirmed Ex-Factory Date] )
 			            ),
 			            YEAR (
-			                RELATED ( 'Confirmed Ex-Factory Date'[Confirmed Ex-Factory Date] )
+			                RELATED ( 'Confirmed Ex-Factory Date'[ Confirmed Ex-Factory Date] )
 			            ) = 1900
 			        ),
 			        0,
 			        IF (
-			            RELATED ( 'Confirmed Ex-Factory Date'[Confirmed Ex-Factory Date] )
+			            RELATED ( 'Confirmed Ex-Factory Date'[ Confirmed Ex-Factory Date] )
 			                < TODAY (),
 			            IF (
 			                ISBLANK ( [12. Available Ship Date] ),
@@ -2248,7 +2275,7 @@ table 'PO Daybook'
 	column '_OT Confirmed n.of days' =
 			DATEDIFF (
 			    [05. Approved Ex-Factory Date],
-			    RELATED ( 'Confirmed Ex-Factory Date'[Confirmed Ex-Factory Date] ),
+			    RELATED ( 'Confirmed Ex-Factory Date'[ Confirmed Ex-Factory Date] ),
 			    DAY
 			
 			)
@@ -2264,10 +2291,10 @@ table 'PO Daybook'
 			IF (
 			    OR (
 			        YEAR (
-			            RELATED ( 'Confirmed Ex-Factory Date'[Confirmed Ex-Factory Date] )
+			            RELATED ( 'Confirmed Ex-Factory Date'[ Confirmed Ex-Factory Date] )
 			        ) = 1900,
 			        ISBLANK (
-			            RELATED ( 'Confirmed Ex-Factory Date'[Confirmed Ex-Factory Date] )
+			            RELATED ( 'Confirmed Ex-Factory Date'[ Confirmed Ex-Factory Date] )
 			        )
 			    ),
 			    "(6) - Pending to be Confirmed",
@@ -2558,10 +2585,10 @@ table 'PO Daybook'
 			    IF (
 			        ISBLANK ( [12. Available Ship Date] ),
 			        IF (
-			            RELATED ( 'Confirmed Ex-Factory Date'[Confirmed Ex-Factory Date] )
+			            RELATED ( 'Confirmed Ex-Factory Date'[ Confirmed Ex-Factory Date] )
 			                > TODAY (),
 			            IF (
-			                RELATED ( 'Confirmed Ex-Factory Date'[Confirmed Ex-Factory Date] ) < [11. Latest Ex-Factory Date],
+			                RELATED ( 'Confirmed Ex-Factory Date'[ Confirmed Ex-Factory Date] ) < [11. Latest Ex-Factory Date],
 			                1,
 			                0
 			            ),
@@ -3005,6 +3032,251 @@ table 'PO Daybook'
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'SO Unit Price W/O (Markup)'
+		dataType: double
+		lineageTag: 4c5e9364-77f5-445e-a505-cd1ce43b5ad7
+		summarizeBy: sum
+		sourceColumn: SO Unit Price W/O (Markup)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PO Currency'
+		dataType: string
+		lineageTag: 2cc16a8e-afa8-464a-8102-707ad01bb2e0
+		summarizeBy: none
+		sourceColumn: PO Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days Late' =
+			VAR StartDate =
+			    IF (
+			        ISBLANK ( 'PO Daybook'[Available Ship Date] ),
+			        'PO Daybook'[Latest Ex-Factory Date],
+			        'PO Daybook'[Available Ship Date]
+			    )
+			VAR EndDate =
+			    IF (
+			        'PO Daybook'[Confirmed_Ex_Factory_Key] = 0,
+			        'PO Daybook'[Latest Ex-Factory Date],
+			        RELATED ( 'Confirmed Ex-Factory Date'[ Confirmed Ex-Factory Date] )
+			    )
+			RETURN
+			    IF (
+			        StartDate > EndDate,
+			        DATEDIFF ( EndDate, Startdate, DAY ),
+			        0 - DATEDIFF ( StartDate, EndDate, DAY )
+			    )
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 70a1be49-b1b3-4ffa-941f-ec9e0d31d6f0
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days Late Bin' =
+			VAR temp = 'PO Daybook'[Days Late]
+			RETURN
+			    IF (
+			        temp <= 0,
+			        1,
+			        IF (
+			            AND ( temp > 0, temp <= 7 ),
+			            2,
+			            IF (
+			                AND ( temp > 7, temp <= 14 ),
+			                3,
+			                IF (
+			                    AND ( temp > 14, temp <= 21 ),
+			                    4,
+			                    IF ( AND ( temp > 21, temp <= 35 ), 5, 6 )
+			                )
+			            )
+			        )
+			    )
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 9b8d5ec4-7984-4a79-bda4-84cdf016ac8b
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shipped Date Old' = ```
+			IF (
+			    ISBLANK ( 'PO Daybook'[Latest Ex-Factory Date] ),
+			    RELATED ( 'Scheduled Ex-Factory Date'[ Scheduled Ex-Factory Date] ),
+			    IF (
+			        AND (
+			            ISBLANK ( 'PO Daybook'[Available Ship Date] ),
+			            ISBLANK ( 'PO Daybook'[ETD] )
+			        ),
+			        'PO Daybook'[Latest Ex-Factory Date],
+			        IF (
+			            OR (
+			                ISBLANK ( 'PO Daybook'[Available Ship Date] ),
+			                ISBLANK ( 'PO Daybook'[ETD] )
+			            ),
+			            'PO Daybook'[Available Ship Date],
+			            IF (
+			                AND (
+			                    NOT ( ISBLANK ( 'PO Daybook'[ETD] ) ),
+			                    NOT ( ISBLANK ( 'PO Daybook'[Available Ship Date] ) )
+			                ),
+			                'PO Daybook'[ETD]
+			            )
+			        )
+			    )
+			)
+			//IF LatestExFactory is null then ScheduledExFactory
+			//ELSE
+			//IF AvailableShipDate and ETDDate is null then LatestExFactory
+			//ELSE
+			//IF AvailableShipDate or ETDDate is null then AvailableShipDate
+			//ELSE 
+			//IF ETDDate and AvailableShipDate are not null then ETDDate
+			```
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: f4e5ee51-3300-4b72-a3be-aa6aad4efa93
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Production Status Old' = ```
+			IF(ISBLANK('PO Daybook'[ETD]), "To Be Shipped", 
+			        IF('PO Daybook'[Shipped Date Old] < TODAY(), "Shipped",
+			            "To Be Shipped"
+			        )
+			    )
+			```
+		dataType: string
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: fe325940-f47e-4025-8215-6b8e67dec21a
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Approved Value' = [Qty_Approved] * [Unit Cost]
+		dataType: double
+		lineageTag: 8aa20604-6b1e-474d-bae2-2a7796b9f0b3
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PlacedToFcty Value' = [Qty_PlacedToFcty] * [Unit Cost]
+		dataType: double
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: f3527970-4123-4e91-873f-2a8b6444e6e4
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Rejected Value' = [Qty_Rejected] * [Unit Cost]
+		dataType: double
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: f9facc10-9ac0-4bdb-818e-8bfbb444ba97
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'QtyToBeShipped Value' =
+			IF (
+			    [Production Status Old] = "To Be Shipped",
+			    [QtyToBeShipped] * [Unit Cost],
+			    BLANK ()
+			)
+		dataType: double
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: d66754ff-3cab-4a21-b789-fe846c397c4e
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Received Value' = [QuantityReceived] * [Unit Cost]
+		dataType: double
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: f1ac1ccc-04b7-4f59-9e12-f32c16816312
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'QtyShipped Value' =
+			IF (
+			    [Production Status Old] = "Shipped",
+			    [QtyToBeShipped] * [Unit Cost],
+			    BLANK ()
+			)
+		dataType: double
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 977ef1a3-1ea5-4678-8056-96e0b3277e59
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ordered Value' = [Qty_Ordered] * [Unit Cost]
+		dataType: double
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 6748d366-90be-4542-b7ae-0d3568f8a422
+		summarizeBy: sum
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition 'PO Daybook' = m
 		mode: import
 		source =
@@ -3014,9 +3286,13 @@ table 'PO Daybook'
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="SRC_BFN_VW_FACTPPMPURCHASEORDERSHIPMENTDAYBOOK",Kind="View"]}[Data],
 					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
-					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View,
+				    #"Replaced Value" = Table.ReplaceValue(ParameterFilter,"""","",Replacer.ReplaceText,{"11b. Estimated Cargo Ready date"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Replaced Value",{{"11b. Estimated Cargo Ready date", type date}})
 				in
-					ParameterFilter
+				    #"Changed Type"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

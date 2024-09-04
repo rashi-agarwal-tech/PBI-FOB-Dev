@@ -2,7 +2,7 @@ table 'Latest Ex-Factory Date'
 	lineageTag: a719d46f-5896-426b-be75-a02cad47deac
 
 	column ExFactoryDate_Key
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		lineageTag: aea8db64-7018-4184-8af5-fb4f0afc0c56
@@ -11,13 +11,15 @@ table 'Latest Ex-Factory Date'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Latest Ex-Factory Date'
+	column ' Latest Ex-Factory Date'
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		sourceProviderType: datetime2
 		lineageTag: e0165fc5-b72b-4916-97ad-bbf7461e3e8c
 		summarizeBy: none
@@ -26,48 +28,56 @@ table 'Latest Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Week Number (544)'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: 544 Dates
 		lineageTag: a6fe3605-98cf-4c68-9ce7-b76c5a2da8e0
 		summarizeBy: none
 		sourceColumn: Week Number (544)
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Fiscal Period Number (544)'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: 544 Dates
 		lineageTag: 1141b2a9-3dcb-4d0c-8e5e-1b85945e5206
 		summarizeBy: none
 		sourceColumn: Fiscal Period Number (544)
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Fiscal Quarter (544)'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: 544 Dates
 		lineageTag: 49368909-02d7-4fbd-85ac-d6296827e9af
 		summarizeBy: none
 		sourceColumn: Fiscal Quarter (544)
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Fiscal Half (544)'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: 544 Dates
 		lineageTag: 83afa5ee-42f1-49bd-a12d-7e151a10af50
 		summarizeBy: none
 		sourceColumn: Fiscal Half (544)
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -84,12 +94,14 @@ table 'Latest Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Year Number (544)'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: 544 Dates
 		lineageTag: 7279e617-9ef8-4b46-8544-73738bff1553
 		summarizeBy: none
 		sourceColumn: Fiscal Year Number (544)
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -126,7 +138,7 @@ table 'Latest Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Calendar Month Number Short' = ```
-			SWITCH(MONTH('Latest Ex-Factory Date'[Latest Ex-Factory Date]), 
+			SWITCH(MONTH('Latest Ex-Factory Date'[ Latest Ex-Factory Date]), 
 			1,"01",
 			2,"02",
 			3,"03",
@@ -148,7 +160,7 @@ table 'Latest Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column Year = ```
-			YEAR('Latest Ex-Factory Date'[Latest Ex-Factory Date]) 
+			YEAR('Latest Ex-Factory Date'[ Latest Ex-Factory Date]) 
 			```
 		dataType: int64
 		formatString: 0
@@ -167,7 +179,7 @@ table 'Latest Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Calendar Day Number' = ```
-			SWITCH(DAY('Latest Ex-Factory Date'[Latest Ex-Factory Date]), 
+			SWITCH(DAY('Latest Ex-Factory Date'[ Latest Ex-Factory Date]), 
 			1,"01",
 			2,"02",
 			3,"03",

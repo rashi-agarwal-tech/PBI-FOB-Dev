@@ -12,7 +12,7 @@ table Metrics
 
 	measure 'Welted Capacity' =
 			if(not(ISFILTERED(Size[Size])),
-			CALCULATE([Total Capacity], 'Construction Capacity'[Construction Code] = "WT"))
+			CALCULATE([Total Capacity], 'Construction Capacity'[ConstructionCode] = "WT"))
 		formatString: " #,0"
 		displayFolder: 2. Capacity
 		lineageTag: 5780cbf2-5766-4be1-9cdc-c351da3776af
@@ -526,18 +526,16 @@ table Metrics
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	measure '# Ordered Units (To be Shipped)' = ```
+	measure '# Ordered Units (To be Shipped) ' = ```
 			CALCULATE (
 			    [01. Ordered Units],
 			     'PO Daybook'[_Order Status Group] = "To be Shipped"
 			)
 			
 			```
-		formatString: " #,##0"
+		formatString: 0
 		displayFolder: 3. GSC
 		lineageTag: 4150248a-33c9-4825-895d-79531c7c4d33
-
-		annotation PBI_FormatHint = {"isCustom":true}
 
 	measure '# Ordered Units (Shipped)' = ```
 			CALCULATE (

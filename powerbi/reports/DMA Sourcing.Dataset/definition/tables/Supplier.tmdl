@@ -58,38 +58,38 @@ table Supplier
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Supplier Group'
+	column SupplierGroup
 		dataType: string
 		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: bf6073ce-c09c-47c1-9564-26c944b95a08
 		summarizeBy: none
-		sourceColumn: Supplier Group
+		sourceColumn: SupplierGroup
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Is Active'
+	column IsActive
 		dataType: boolean
 		isHidden
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		sourceProviderType: bit
 		lineageTag: 542b40b6-c1b9-40be-9de2-f791cb2bbef0
 		summarizeBy: none
-		sourceColumn: Is Active
+		sourceColumn: IsActive
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'D365 Vendor ID'
+	column D365VendorID
 		dataType: string
 		isHidden
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: 6534e444-1588-42ef-95aa-694c1045f503
 		summarizeBy: none
-		sourceColumn: D365 Vendor ID
+		sourceColumn: D365VendorID
 
 		changedProperty = IsHidden
 

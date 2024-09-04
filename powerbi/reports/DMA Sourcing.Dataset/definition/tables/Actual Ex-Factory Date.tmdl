@@ -2,32 +2,19 @@ table 'Actual Ex-Factory Date'
 	isHidden
 	lineageTag: 8b0d20d5-0ee5-4959-b697-a01c3d89aa07
 
-	column Date_Key
+	column 'Date Key'
 		dataType: double
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		lineageTag: da419461-d23d-4da7-a10c-fdb9190c35ed
 		summarizeBy: none
-		sourceColumn: Date_Key
+		sourceColumn: Date Key
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'Actual Ex-Factory Date'
-		dataType: dateTime
-		isHidden
-		formatString: General Date
-		sourceProviderType: datetime2
-		lineageTag: 27bf422b-217e-44f5-8aea-6027e6f1d4a4
-		summarizeBy: none
-		sourceColumn: Actual Ex-Factory Date
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Year'
 		dataType: string
@@ -42,7 +29,7 @@ table 'Actual Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Period Number'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		lineageTag: b7fd0eae-a87a-46f9-8dd2-f0403541b866
@@ -50,6 +37,8 @@ table 'Actual Ex-Factory Date'
 		sourceColumn: Fiscal Period Number
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
 
@@ -68,7 +57,7 @@ table 'Actual Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Week Number'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		lineageTag: 170ded76-1146-4639-923d-29fc3b8f135d
@@ -76,6 +65,8 @@ table 'Actual Ex-Factory Date'
 		sourceColumn: Fiscal Week Number
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
 

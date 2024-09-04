@@ -1,38 +1,34 @@
 table 'Shipped Date'
-	lineageTag: 7cfb54ed-64a5-401c-8567-d41f81eacd26
+	lineageTag: 86cef0da-a266-4469-a298-79aa91361a67
 
-	column Date_Key
-		dataType: double
+	column 'Date Key'
+		dataType: int64
 		isHidden
-		displayFolder: Calander Dates
-		lineageTag: c696f3bb-0f5c-4ea7-b8fc-31cf079f5491
+		formatString: 0
+		lineageTag: fb819f70-0a1c-47ec-985a-03d6182efeec
 		summarizeBy: count
 		isNameInferred
 		isDataTypeInferred
-		sourceColumn: Scheduled Ex-Factory Date[Date_Key]
+		sourceColumn: Scheduled Ex-Factory Date[Date Key]
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'Scheduled Ex-Factory Date'
+	column ' Shipped Date'
 		dataType: dateTime
 		isHidden
 		formatString: General Date
-		displayFolder: Calander Dates
-		lineageTag: 463ee13f-93cd-461a-bac4-2c7aac0662a5
+		lineageTag: 3fca1b09-973f-4029-8c7f-4f387f0cb963
 		summarizeBy: none
-		isNameInferred
 		isDataTypeInferred
-		sourceColumn: Scheduled Ex-Factory Date[Scheduled Ex-Factory Date]
+		sourceColumn: Scheduled Ex-Factory Date[ Scheduled Ex-Factory Date]
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Day # of Year'
-		dataType: double
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: 48b6d50d-f5c4-4135-a2a7-be8881f4aecf
+		dataType: int64
+		formatString: 0
+		displayFolder: Calendar Dates
+		lineageTag: 9bad976b-bf47-4297-b48c-dd4ac9d1303e
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -40,13 +36,12 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Calendar Week Number'
-		dataType: double
+		dataType: int64
 		isHidden
-		displayFolder: Calander Dates
-		lineageTag: b7b2277b-4026-493d-9db5-c79a51933ea4
+		formatString: 0
+		displayFolder: Calendar Dates
+		lineageTag: b2c94c19-0cea-4808-8611-721b56138746
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -54,13 +49,12 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Calendar Month Number'
-		dataType: double
+		dataType: int64
 		isHidden
-		displayFolder: Calander Dates
-		lineageTag: 29ce0c2d-0235-456b-94b4-771541d1d600
+		formatString: 0
+		displayFolder: Calendar Dates
+		lineageTag: acabeef6-a760-443a-be3f-c504fe2d6976
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -68,13 +62,10 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Season
 		dataType: string
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: d32204a4-c249-4827-8e8e-cde2ca674c3c
+		displayFolder: Calendar Dates
+		lineageTag: f803080c-6eb8-451b-8cf5-d487b5808205
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -84,8 +75,8 @@ table 'Shipped Date'
 
 	column 'Relative Week'
 		dataType: string
-		displayFolder: Calander Dates
-		lineageTag: 3024ba91-66f9-4cea-bec4-935796d05ae6
+		displayFolder: Fiscal Dates
+		lineageTag: 629f7fbf-90ea-4d32-abd5-6f6445aeee03
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -95,8 +86,8 @@ table 'Shipped Date'
 
 	column 'Relative Month'
 		dataType: string
-		displayFolder: Calander Dates
-		lineageTag: a89e6217-556f-442e-9b29-003a42fb9463
+		displayFolder: Fiscal Dates
+		lineageTag: 5deb0869-f39f-4294-a749-1de105469ca6
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -106,8 +97,8 @@ table 'Shipped Date'
 
 	column 'Relative Year'
 		dataType: string
-		displayFolder: Calander Dates
-		lineageTag: 6e3e33ed-b2de-427e-8a36-0982ce59586a
+		displayFolder: Fiscal Dates
+		lineageTag: dbadd4f1-3f3b-4f10-a792-1686ac4cd0ec
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -116,10 +107,10 @@ table 'Shipped Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Reporting Year'
-		dataType: double
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: 15b29d35-effb-4f1c-9197-253ad2ede731
+		dataType: int64
+		formatString: 0
+		displayFolder: Calendar Dates
+		lineageTag: 2ce01fa1-16b1-4197-9888-a238b22d9fc0
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -127,25 +118,22 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'Day Of Week'
+	column 'Day of Week'
 		dataType: string
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: 45e8ae3f-46fd-4a62-a94e-eb85f873868b
+		displayFolder: Calendar Dates
+		lineageTag: 164c3d67-7b6c-4c79-a223-59798e290077
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
-		sourceColumn: Scheduled Ex-Factory Date[Day Of Week]
+		sourceColumn: Scheduled Ex-Factory Date[Day of Week]
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Day # of Week'
-		dataType: double
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: b50c6fb0-01ec-4e81-b1a1-f50da39fd65e
+		dataType: int64
+		formatString: 0
+		displayFolder: Calendar Dates
+		lineageTag: 9a38bb26-f6f7-43c3-8e1d-34975031db73
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -153,13 +141,11 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Day # of Month'
-		dataType: double
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: 44e03054-ec50-4ac7-af1e-00edf498d796
+		dataType: int64
+		formatString: 0
+		displayFolder: Calendar Dates
+		lineageTag: a58c0d9a-76fc-4c76-89f4-68686f35b8db
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -167,13 +153,11 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Year
-		dataType: double
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: 7f1c629d-2cd2-4f59-a0a7-513912bbead8
+		dataType: int64
+		formatString: 0
+		displayFolder: Calendar Dates
+		lineageTag: fb0091f5-d871-4a26-9424-6a70651767b3
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -181,13 +165,10 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Year-Week
 		dataType: string
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: d1cf145b-3b59-456e-beb9-2da79dd7981b
+		displayFolder: Calendar Dates
+		lineageTag: 5c8e77df-2fe4-450b-b20a-f29cd909c446
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -197,9 +178,8 @@ table 'Shipped Date'
 
 	column Half
 		dataType: string
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: 25c7073c-d4b9-4915-9dbb-a33715af04c5
+		displayFolder: Calendar Dates
+		lineageTag: 9cb47858-652e-4a44-a765-4f04fdbcf250
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -209,8 +189,8 @@ table 'Shipped Date'
 
 	column Quarter
 		dataType: string
-		displayFolder: Calander Dates
-		lineageTag: 924e7dfb-78f0-4bc2-8818-7483b8fc6db0
+		displayFolder: Calendar Dates
+		lineageTag: 621f6c0c-5623-482a-b279-c690975641ba
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -221,8 +201,8 @@ table 'Shipped Date'
 	column 'Purchase Season'
 		dataType: string
 		isHidden
-		displayFolder: Calander Dates
-		lineageTag: 52a407ee-3815-4f3b-b49e-1d66142cb631
+		displayFolder: Calendar Dates
+		lineageTag: 790e933d-4b00-480d-a0ca-1c7c22a48360
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -233,8 +213,8 @@ table 'Shipped Date'
 	column 'Season Long Name'
 		dataType: string
 		isHidden
-		displayFolder: Calander Dates
-		lineageTag: c7858878-6b7e-43ee-89fd-597852beebdf
+		displayFolder: Calendar Dates
+		lineageTag: c2bad238-7449-499d-ac78-c5d8fe561d35
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -244,9 +224,8 @@ table 'Shipped Date'
 
 	column '- Is UK Bank Holiday?'
 		dataType: string
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: ffa1ff5f-4b98-4c8b-a523-553678abc269
+		displayFolder: Calendar Dates
+		lineageTag: 381f31ed-839b-4365-b552-822cfeeadc09
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -256,9 +235,8 @@ table 'Shipped Date'
 
 	column '- Is Black Friday?'
 		dataType: string
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: a48aaf34-5e1a-4131-84c7-95c17a503090
+		displayFolder: Calendar Dates
+		lineageTag: c2a735e5-7ca0-48f6-b5ce-1f94d1f6d604
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -268,9 +246,8 @@ table 'Shipped Date'
 
 	column '- Is Leap Year?'
 		dataType: string
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: c24f1b6b-bc0a-4da5-8225-856af4fbad4c
+		displayFolder: Calendar Dates
+		lineageTag: f26d6444-2fc1-45f7-8b91-3247780a6a76
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -278,47 +255,21 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-	column '- Is End of Month?'
+	column '- Is End Of Month?'
 		dataType: string
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: 2161a924-7d2b-4908-86cf-4f68c5f8fbb3
+		displayFolder: Calendar Dates
+		lineageTag: fb467b58-d0f3-463e-b407-7519dfde59da
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
-		sourceColumn: Scheduled Ex-Factory Date[- Is End of Month?]
-
-		annotation SummarizationSetBy = Automatic
-
-	column '- Is End of Period?'
-		dataType: string
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: a08f7f3e-d724-41db-97e2-941e31625828
-		summarizeBy: none
-		isNameInferred
-		isDataTypeInferred
-		sourceColumn: Scheduled Ex-Factory Date[- Is End of Period?]
-
-		annotation SummarizationSetBy = Automatic
-
-	column '- Is End of Quarter?'
-		dataType: string
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: 7356e3a3-4342-47a2-80b8-9fe2821bf14d
-		summarizeBy: none
-		isNameInferred
-		isDataTypeInferred
-		sourceColumn: Scheduled Ex-Factory Date[- Is End of Quarter?]
+		sourceColumn: Scheduled Ex-Factory Date[- Is End Of Month?]
 
 		annotation SummarizationSetBy = Automatic
 
 	column '- Is Yesterday?'
 		dataType: string
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: f006bd2e-1bff-4d20-90ba-b21b49ec8ec4
+		displayFolder: Calendar Dates
+		lineageTag: caa161e1-ed39-41e3-bb02-45ecd7d9e520
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -328,9 +279,8 @@ table 'Shipped Date'
 
 	column '- Is Week?'
 		dataType: string
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: 2b784cdc-46bd-4763-876b-dd699fcd081e
+		displayFolder: Calendar Dates
+		lineageTag: 28802488-5bda-44dc-8404-dad873b1753f
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -340,9 +290,8 @@ table 'Shipped Date'
 
 	column '- Is Month?'
 		dataType: string
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: af70276f-5329-452a-81ee-5c42289c1e29
+		displayFolder: Calendar Dates
+		lineageTag: a90b4f43-8f8c-452d-9220-909993d80fbb
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -352,9 +301,8 @@ table 'Shipped Date'
 
 	column 'Calendar Month Long Name'
 		dataType: string
-		isHidden
-		displayFolder: Calander Dates
-		lineageTag: 80b25c69-7067-4733-a132-5c5e1bc14679
+		displayFolder: Calendar Dates
+		lineageTag: 24f99a55-e687-4e18-a7d0-ea909881f210
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -363,9 +311,10 @@ table 'Shipped Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Calendar Year Month'
-		dataType: double
-		displayFolder: Calander Dates
-		lineageTag: 9c88782f-fdff-40d8-8ad9-e2bac86f279c
+		dataType: int64
+		formatString: 0
+		displayFolder: Calendar Dates
+		lineageTag: 26b0372e-1084-4e35-8323-17bcf27d9dca
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -373,12 +322,10 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Fiscal Year'
 		dataType: string
 		displayFolder: Fiscal Dates
-		lineageTag: 656bf22b-9a4f-4707-83e5-cb157c5317f7
+		lineageTag: 67174f4b-d46a-4f1e-863f-402ca5ed6ac7
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -387,9 +334,10 @@ table 'Shipped Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Quarter Number'
-		dataType: double
+		dataType: int64
+		formatString: 0
 		displayFolder: Fiscal Dates
-		lineageTag: bd938468-122e-4b60-b0eb-bb7f49ceebe0
+		lineageTag: 8ff8a1d2-3f3f-4259-8af8-23ca33c4f6e1
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -397,22 +345,22 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column 'Fiscal Period'
+	column 'Fiscal Period Short Name'
 		dataType: string
 		displayFolder: Fiscal Dates
-		lineageTag: 0576a1bd-b547-4e6a-9c23-d6c3c35f0678
+		lineageTag: fa64fd84-0b3b-4867-8f9b-677695851d2d
 		summarizeBy: none
+		isNameInferred
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Fiscal Period Short Name]
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Period Number'
-		dataType: double
+		dataType: int64
+		formatString: 0
 		displayFolder: Fiscal Dates
-		lineageTag: 87786d1f-f8fa-47c2-a87b-9f4e46c542bd
+		lineageTag: 00ad9ee0-5256-461a-bf34-76a2ff0cdadc
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -420,12 +368,10 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Fiscal Year-Period'
 		dataType: string
 		displayFolder: Fiscal Dates
-		lineageTag: 85dcf620-c654-4237-980c-4ed332fa3459
+		lineageTag: a13aef93-d495-442c-9c1c-ac7fb0ccf373
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -433,22 +379,23 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Fiscal Week #'
-		dataType: double
+	column 'Fiscal Week Number'
+		dataType: int64
+		formatString: 0
 		displayFolder: Fiscal Dates
-		lineageTag: 478bca98-81a7-460c-be25-d3b88c035156
+		lineageTag: b86f2be8-41b8-4d76-8884-16779629ee26
 		summarizeBy: sum
+		isNameInferred
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Fiscal Week Number]
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Fiscal Year Number'
-		dataType: double
+		dataType: int64
+		formatString: 0
 		displayFolder: Fiscal Dates
-		lineageTag: 5bd42374-65de-4fd1-b043-8984c95aed67
+		lineageTag: cdf02ca0-aa10-4d54-b512-ebda4cf8fb59
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -456,12 +403,10 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Relative Fiscal Week'
 		dataType: string
 		displayFolder: Fiscal Dates
-		lineageTag: 864544e8-5443-4597-860a-f6cc1d7a3b5a
+		lineageTag: 671afa7c-ba43-4951-9572-c4a8fca2f6d8
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -472,7 +417,7 @@ table 'Shipped Date'
 	column 'Relative Fiscal Period'
 		dataType: string
 		displayFolder: Fiscal Dates
-		lineageTag: e7d42ef0-3c83-485c-83ae-7d9c76ebf9ed
+		lineageTag: 69dcc886-cb0b-4382-a9ed-a3bd6ee19342
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -483,7 +428,7 @@ table 'Shipped Date'
 	column 'Relative Fiscal Year'
 		dataType: string
 		displayFolder: Fiscal Dates
-		lineageTag: cca11b3e-fef9-4238-a3f5-23ba3ea80403
+		lineageTag: 6cf493f0-2465-4448-979d-19208e0166e8
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -492,9 +437,10 @@ table 'Shipped Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Day #'
-		dataType: double
+		dataType: int64
+		formatString: 0
 		displayFolder: Fiscal Dates
-		lineageTag: f99a23de-ff0f-4c7d-a71a-0ce7a4e0c79d
+		lineageTag: 2b23e205-1590-4e56-9f0d-19222f242361
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -502,13 +448,11 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Week Number (544)'
-		dataType: double
-		isHidden
+		dataType: int64
+		formatString: 0
 		displayFolder: 544 Dates
-		lineageTag: f90dc837-442b-4000-b6f5-7b7126331c58
+		lineageTag: 53d8fa18-4117-4f9f-a522-ff789728635f
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -516,12 +460,11 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Fiscal Period Number (544)'
-		dataType: double
+		dataType: int64
+		formatString: 0
 		displayFolder: 544 Dates
-		lineageTag: 5567af1d-04a6-420d-94c2-3f8e1281573c
+		lineageTag: 3b07c351-c3f9-46e5-93fe-cb371a8e2598
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -529,12 +472,11 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Fiscal Quarter (544)'
-		dataType: double
+		dataType: int64
+		formatString: 0
 		displayFolder: 544 Dates
-		lineageTag: a94989d7-b97d-4be9-a500-4366dfac0e70
+		lineageTag: cb39dbf0-03f6-4eb9-b044-cfa0a9fa7c27
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -542,12 +484,11 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Fiscal Half (544)'
-		dataType: double
+		dataType: int64
+		formatString: 0
 		displayFolder: 544 Dates
-		lineageTag: 594f8457-1639-49bf-89c1-8c169d2b8d07
+		lineageTag: b69a8b92-357b-4464-9ac0-16ae8c0b4847
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -555,12 +496,10 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Fiscal Year (544)'
 		dataType: string
 		displayFolder: 544 Dates
-		lineageTag: 069afca0-b483-4e94-9dbd-140065b2c73a
+		lineageTag: e0ccd8c7-2850-4dad-8a2a-f9b8dc74fb2f
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -569,9 +508,10 @@ table 'Shipped Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Year Number (544)'
-		dataType: double
+		dataType: int64
+		formatString: 0
 		displayFolder: 544 Dates
-		lineageTag: 738ed351-dd27-45a7-af4a-ec6268f57a14
+		lineageTag: e24ecb0b-9cea-43ff-ae65-9e3595977a66
 		summarizeBy: sum
 		isNameInferred
 		isDataTypeInferred
@@ -579,12 +519,10 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Fiscal Year-Week (544)'
 		dataType: string
 		displayFolder: 544 Dates
-		lineageTag: ee897202-8265-4ee6-9bff-a593edfab3bb
+		lineageTag: 7028db8e-2fbe-4c33-a29e-6850ba50b2cc
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -595,7 +533,7 @@ table 'Shipped Date'
 	column 'Relative Fiscal Period (544)'
 		dataType: string
 		displayFolder: 544 Dates
-		lineageTag: 836ffca8-1335-4b50-9ec4-a490da40bbb2
+		lineageTag: 993337aa-9887-4b30-a8de-6ded6b7f4803
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -606,7 +544,7 @@ table 'Shipped Date'
 	column 'Relative Fiscal Year (544)'
 		dataType: string
 		displayFolder: 544 Dates
-		lineageTag: 2ee0803c-cfb1-4cae-91b7-53de9b60a4ee
+		lineageTag: 44ecec03-eed0-457b-865f-1ecab7ce7a30
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -614,20 +552,19 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Calendar Month Short Number'
+	column 'Calendar Month Short Number '
 		dataType: string
-		lineageTag: 5e48f0b0-30b8-4b55-af6b-d2d80278c5fa
+		lineageTag: 0affdb7d-f0f4-4be6-b67b-67cba07e7523
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
-		sourceColumn: Scheduled Ex-Factory Date[Calendar Month Short Number]
+		sourceColumn: Scheduled Ex-Factory Date[Calendar Month Short Number ]
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Calenda Month Short Name_'
 		dataType: string
-		isHidden
-		lineageTag: d8812981-e7d0-4dc9-aa6a-02ecea9eaad4
+		lineageTag: aae8f756-324e-48e3-9425-bfec186572ef
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -637,8 +574,7 @@ table 'Shipped Date'
 
 	column 'Calendar Day Short Number'
 		dataType: string
-		isHidden
-		lineageTag: a5665527-f6ea-4a75-a2b0-f9e689aa73a3
+		lineageTag: 22426773-36ae-49d9-9635-650ab83de227
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -649,7 +585,7 @@ table 'Shipped Date'
 	column 'Fiscal Period Name'
 		dataType: string
 		displayFolder: Fiscal Dates
-		lineageTag: 7905c8d1-dd4f-45f3-b710-5a98c4a1ccaf
+		lineageTag: 2112f51a-a1e5-4037-8bce-98ed01930c3d
 		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
@@ -657,9 +593,64 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Fiscal Year-Week'
+		dataType: string
+		displayFolder: Fiscal Dates
+		lineageTag: d17564c4-1263-4ff6-b260-71902e32fbef
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Fiscal Year-Week]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End Of Period?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 3e58f35c-220e-473f-b8d4-faea39dd8d16
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[- Is End Of Period?]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End Of Quarter?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 1ea28bd7-b3d3-4d23-9487-64130253b334
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[- Is End Of Quarter?]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Year'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: dbf47d6c-5796-4d64-aed0-7e042de26026
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Month Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Half'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 8f5ec29f-3130-443f-b925-582ef369f0d4
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Scheduled Ex-Factory Date[Year Half]
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'Shipped Date' = calculated
 		mode: import
 		source = 'Scheduled Ex-Factory Date'
 
-	annotation PBI_Id = 65a3f02808224d70b7e29ac474c3baca
+	annotation PBI_Id = 6c422308b4504acb9b9881530aa99a00
 

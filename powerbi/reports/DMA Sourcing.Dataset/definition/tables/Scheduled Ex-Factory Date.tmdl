@@ -1,46 +1,49 @@
 table 'Scheduled Ex-Factory Date'
 	lineageTag: 364263c5-74bf-4ad2-a0bf-c6c4386099ef
 
-	column Date_Key
-		dataType: double
+	column 'Date Key'
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: 9421441b-f8f1-4411-91a6-e26c1c6d1ea4
 		summarizeBy: none
-		sourceColumn: Date_Key
+		sourceColumn: Date Key
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Scheduled Ex-Factory Date'
+	column ' Scheduled Ex-Factory Date'
 		dataType: dateTime
 		formatString: Short Date
 		sourceProviderType: datetime2
 		lineageTag: 427fa007-6d34-4d3a-b8fb-28d5c73810be
 		summarizeBy: none
-		sourceColumn: Scheduled Ex-Factory Date
+		sourceColumn: " Scheduled Ex-Factory Date"
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Day # of Year'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: 3c564124-9b86-483f-a85a-bcd7fc7d3f87
 		summarizeBy: sum
 		sourceColumn: Day # of Year
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Calendar Week Number'
-		dataType: double
-		isHidden
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: 5e17a896-3233-4cdc-90bc-e27eca208c79
@@ -49,13 +52,14 @@ table 'Scheduled Ex-Factory Date'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Calendar Month Number'
-		dataType: double
-		isHidden
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: 9d98ad69-a6c2-4ebc-a567-3f44caffdef1
@@ -63,6 +67,8 @@ table 'Scheduled Ex-Factory Date'
 		sourceColumn: Calendar Month Number
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -112,8 +118,7 @@ table 'Scheduled Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Reporting Year'
-		dataType: double
-		isHidden
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: da606e39-6c73-464d-bb88-3a2f9bb120f1
@@ -122,50 +127,54 @@ table 'Scheduled Ex-Factory Date'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Day Of Week'
+	column 'Day of Week'
 		dataType: string
-		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 5693f812-2c23-4ed2-acd1-4171e32f55fb
 		summarizeBy: none
-		sourceColumn: Day Of Week
+		sourceColumn: Day of Week
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Day # of Week'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: b8be0af1-f4ea-45da-901c-f1fadde32e47
 		summarizeBy: sum
 		sourceColumn: Day # of Week
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Day # of Month'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: 8c806964-3b90-4353-9fc8-b54544cc5004
 		summarizeBy: sum
 		sourceColumn: Day # of Month
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Year
-		dataType: double
-		isHidden
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
 		lineageTag: 916325e6-6683-4bfc-bf72-605733a6c52f
@@ -174,13 +183,14 @@ table 'Scheduled Ex-Factory Date'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Year-Week
 		dataType: string
-		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 1fe30555-a698-4b41-9e68-e7b2b9f224e5
@@ -193,7 +203,6 @@ table 'Scheduled Ex-Factory Date'
 
 	column Half
 		dataType: string
-		isHidden
 		sourceProviderType: nvarchar(2)
 		displayFolder: Calendar Dates
 		lineageTag: a07a3f5f-563c-451c-94d9-ec94734994b4
@@ -242,7 +251,6 @@ table 'Scheduled Ex-Factory Date'
 
 	column '- Is UK Bank Holiday?'
 		dataType: string
-		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: e9077a6e-d50b-4afe-beb0-5e0ca629f412
@@ -255,7 +263,6 @@ table 'Scheduled Ex-Factory Date'
 
 	column '- Is Black Friday?'
 		dataType: string
-		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: ef7e4cb8-b51e-4022-846a-90524b5d88a9
@@ -268,7 +275,6 @@ table 'Scheduled Ex-Factory Date'
 
 	column '- Is Leap Year?'
 		dataType: string
-		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: b8ad6472-ee07-47f4-8835-8b354d8de030
@@ -279,40 +285,13 @@ table 'Scheduled Ex-Factory Date'
 
 		annotation SummarizationSetBy = Automatic
 
-	column '- Is End of Month?'
+	column '- Is End Of Month?'
 		dataType: string
-		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: 4af68983-61e8-47bd-8e1f-fd8ef93ad82d
 		summarizeBy: none
-		sourceColumn: - Is End of Month?
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column '- Is End of Period?'
-		dataType: string
-		isHidden
-		sourceProviderType: nvarchar(3)
-		displayFolder: Calendar Dates
-		lineageTag: 5527a1d9-21be-49e8-b2f9-4f2c9f9e7b51
-		summarizeBy: none
-		sourceColumn: - Is End of Period?
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column '- Is End of Quarter?'
-		dataType: string
-		isHidden
-		sourceProviderType: nvarchar(3)
-		displayFolder: Calendar Dates
-		lineageTag: d6e33bbe-66d5-495d-b71e-f2a9a8f92cd6
-		summarizeBy: none
-		sourceColumn: - Is End of Quarter?
+		sourceColumn: - Is End Of Month?
 
 		changedProperty = IsHidden
 
@@ -320,7 +299,6 @@ table 'Scheduled Ex-Factory Date'
 
 	column '- Is Yesterday?'
 		dataType: string
-		isHidden
 		sourceProviderType: nvarchar(3)
 		displayFolder: Calendar Dates
 		lineageTag: fdc78a73-ed8a-459f-ad81-31f513f26cd4
@@ -333,7 +311,6 @@ table 'Scheduled Ex-Factory Date'
 
 	column '- Is Week?'
 		dataType: string
-		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 56236e24-4c0b-4764-a5eb-6822d6a63f26
@@ -346,7 +323,6 @@ table 'Scheduled Ex-Factory Date'
 
 	column '- Is Month?'
 		dataType: string
-		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: cf130f69-74d7-48ec-88e5-80c95451dc56
@@ -359,7 +335,6 @@ table 'Scheduled Ex-Factory Date'
 
 	column 'Calendar Month Long Name'
 		dataType: string
-		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: Calendar Dates
 		lineageTag: 6fcd14ba-33f1-4a9f-9eb3-3b612d327b16
@@ -371,7 +346,7 @@ table 'Scheduled Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Calendar Year Month'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Calendar Dates
@@ -380,6 +355,8 @@ table 'Scheduled Ex-Factory Date'
 		sourceColumn: Calendar Year Month
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -396,12 +373,14 @@ table 'Scheduled Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Quarter Number'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Fiscal Dates
 		lineageTag: 8c2e4f73-3a44-4cba-aa2b-b6a7bcc6d8ee
 		summarizeBy: sum
 		sourceColumn: Fiscal Quarter Number
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -421,12 +400,14 @@ table 'Scheduled Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Period Number'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Fiscal Dates
 		lineageTag: 87dea5f6-918f-40b9-a13f-0dd93f5f81b1
 		summarizeBy: sum
 		sourceColumn: Fiscal Period Number
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -443,24 +424,28 @@ table 'Scheduled Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Week Number'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Fiscal Dates
 		lineageTag: a14141a9-c216-45f1-ad5f-9fc8a8640a35
 		summarizeBy: sum
 		sourceColumn: Fiscal Week Number
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Fiscal Year Number'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Fiscal Dates
 		lineageTag: 5455df9c-5dfe-4422-9cad-49e200fdc27a
 		summarizeBy: sum
 		sourceColumn: Fiscal Year Number
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -497,19 +482,21 @@ table 'Scheduled Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Day #'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Fiscal Dates
 		lineageTag: 302df5d9-6589-41c5-82a2-4fca086d624c
 		summarizeBy: sum
 		sourceColumn: Fiscal Day #
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Week Number (544)'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: 544 Dates
@@ -519,41 +506,49 @@ table 'Scheduled Ex-Factory Date'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Fiscal Period Number (544)'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: 544 Dates
 		lineageTag: 6d867feb-f3c7-49cd-a642-8512271bed8f
 		summarizeBy: sum
 		sourceColumn: Fiscal Period Number (544)
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Fiscal Quarter (544)'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: 544 Dates
 		lineageTag: 23eb5682-bbed-475b-a6e3-d265bca2a35e
 		summarizeBy: sum
 		sourceColumn: Fiscal Quarter (544)
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Fiscal Half (544)'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: 544 Dates
 		lineageTag: 3d5bf757-7d33-4e84-976e-5057b7a6d3cc
 		summarizeBy: sum
 		sourceColumn: Fiscal Half (544)
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -570,12 +565,14 @@ table 'Scheduled Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Year Number (544)'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: 544 Dates
 		lineageTag: 5937162b-cd83-4a6c-9e91-dafa5c688f1e
 		summarizeBy: sum
 		sourceColumn: Fiscal Year Number (544)
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -611,8 +608,8 @@ table 'Scheduled Ex-Factory Date'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Calendar Month Short Number' = ```
-			SWITCH(MONTH('Scheduled Ex-Factory Date'[Scheduled Ex-Factory Date]), 
+	column 'Calendar Month Short Number ' = ```
+			SWITCH(MONTH('Scheduled Ex-Factory Date'[ Scheduled Ex-Factory Date]), 
 			1,"01",
 			2,"02",
 			3,"03",
@@ -627,7 +624,6 @@ table 'Scheduled Ex-Factory Date'
 			12,"12")
 			```
 		dataType: string
-		isHidden
 		lineageTag: 6084fe1b-2952-44e4-be01-5910ae5c8c6d
 		summarizeBy: none
 		isDataTypeInferred
@@ -637,12 +633,11 @@ table 'Scheduled Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Calenda Month Short Name_' = ```
-			SWITCH('Scheduled Ex-Factory Date'[Calendar Month Short Number], "01", "Jan", "02", "Feb", "03", "Mar", "04", "Apr"  
+			SWITCH('Scheduled Ex-Factory Date'[Calendar Month Short Number ], "01", "Jan", "02", "Feb", "03", "Mar", "04", "Apr"  
 			              , "05", "May", "06", "Jun", "07", "Jul", "08", "Aug"  
 			               , "09", "Sep", "10", "Oct", "11", "Nov", "12", "Dec") 
 			```
 		dataType: string
-		isHidden
 		lineageTag: 6a92cdd1-a0a0-4a10-98c7-fab9c1f7c2c1
 		summarizeBy: none
 		isDataTypeInferred
@@ -687,7 +682,6 @@ table 'Scheduled Ex-Factory Date'
 			)
 			```
 		dataType: string
-		isHidden
 		lineageTag: 56fb5f5e-5869-44ac-9c7b-e2e373275ae3
 		summarizeBy: none
 		isDataTypeInferred
@@ -702,6 +696,52 @@ table 'Scheduled Ex-Factory Date'
 		lineageTag: 020a8883-2f87-41f5-9f39-090c369ebb20
 		summarizeBy: none
 		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year-Week'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: Fiscal Dates
+		lineageTag: 295f87c2-5d8b-4aa5-b28a-8d3139901610
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End Of Period?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 1f3a0ea2-1592-4d9c-8fa9-f2d8cb14030d
+		summarizeBy: none
+		sourceColumn: - Is End Of Period?
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End Of Quarter?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 5f4c6975-dc5e-4462-bed4-354d141b527b
+		summarizeBy: none
+		sourceColumn: - Is End Of Quarter?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Year'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 12d81bee-4023-40ab-8267-106c5de2ac4f
+		summarizeBy: none
+		sourceColumn: Month Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Half'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 35d28f13-9025-4a30-88f5-446c32b5b73d
+		summarizeBy: none
+		sourceColumn: Year Half
 
 		annotation SummarizationSetBy = Automatic
 

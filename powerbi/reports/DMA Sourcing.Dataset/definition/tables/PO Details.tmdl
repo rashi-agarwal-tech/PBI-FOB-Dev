@@ -28,7 +28,7 @@ table 'PO Details'
 		annotation SummarizationSetBy = Automatic
 
 	column QtyOrdered
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Misc
@@ -38,12 +38,14 @@ table 'PO Details'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column QtyApproved
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Misc
@@ -53,12 +55,14 @@ table 'PO Details'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column QtyPlacedToFcty
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Misc
@@ -68,12 +72,14 @@ table 'PO Details'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column QtyRejected
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Misc
@@ -83,12 +89,14 @@ table 'PO Details'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column QtyToBeShipped
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Misc
@@ -98,12 +106,14 @@ table 'PO Details'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column QtyReceived
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 3)
 		displayFolder: zz_Misc
@@ -113,12 +123,14 @@ table 'PO Details'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column QtyInvoiced
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Misc
@@ -127,6 +139,8 @@ table 'PO Details'
 		sourceColumn: QtyInvoiced
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -176,24 +190,21 @@ table 'PO Details'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Production Status'
-		dataType: double
+		dataType: string
 		isHidden
-		sourceProviderType: decimal(1, 0)
 		displayFolder: zz_Misc
 		lineageTag: bc03ac0c-706f-4b3e-b301-1327b65846eb
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Production Status
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column ShippedDate
 		dataType: dateTime
 		isHidden
-		formatString: General Date
+		formatString: Short Date
 		sourceProviderType: datetime2
 		displayFolder: zz_Misc
 		lineageTag: 8a10febe-3994-4ea7-9ab1-8019dd3a154a
@@ -245,26 +256,20 @@ table 'PO Details'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Is Multiple 6'
-		dataType: double
-		sourceProviderType: decimal(1, 0)
+		dataType: string
 		lineageTag: 7b828f8f-be6c-49b2-9b7d-4642b55bdac4
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Is Multiple 6
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column 'Is Multiple 8'
-		dataType: double
-		sourceProviderType: decimal(1, 0)
+		dataType: string
 		lineageTag: 988ed67c-9b57-47e9-a117-53a977cbb280
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Is Multiple 8
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Related PO Number'
 		dataType: string

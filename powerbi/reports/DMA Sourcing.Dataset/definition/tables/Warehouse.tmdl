@@ -22,18 +22,6 @@ table Warehouse
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Site ID'
-		dataType: string
-		isHidden
-		sourceProviderType: nvarchar(16777216)
-		lineageTag: b0663bb1-2c5b-4d8e-99a2-3bcdba26bd86
-		summarizeBy: none
-		sourceColumn: Site ID
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Warehouse ID'
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
@@ -42,32 +30,6 @@ table Warehouse
 		sourceColumn: Warehouse ID
 
 		annotation SummarizationSetBy = Automatic
-
-	column 'Parent Store ID'
-		dataType: string
-		isHidden
-		sourceProviderType: nvarchar(16777216)
-		lineageTag: da63407a-b248-48de-a613-818ec6e562f7
-		summarizeBy: none
-		sourceColumn: Parent Store ID
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Is Retail Warehouse?'
-		dataType: double
-		isHidden
-		sourceProviderType: decimal(38, 5)
-		lineageTag: 5080ccd7-ec00-43b6-9761-e18e781ebe4d
-		summarizeBy: none
-		sourceColumn: Is Retail Warehouse?
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Warehouse Group'
 		dataType: string
@@ -96,33 +58,12 @@ table Warehouse
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Warehouse Region'
-		dataType: string
-		sourceProviderType: nvarchar(16777216)
-		lineageTag: c278b42c-1ab7-4748-bfe0-7ffd97ed6a8b
-		summarizeBy: none
-		sourceColumn: Warehouse Region
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Warehouse Sub-Region'
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: dcba5e39-9515-4a83-9e86-1c38376ad234
 		summarizeBy: none
 		sourceColumn: Warehouse Sub-Region
-
-		annotation SummarizationSetBy = Automatic
-
-	column FinancialChannel
-		dataType: string
-		isHidden
-		sourceProviderType: nvarchar(16777216)
-		lineageTag: 1c30680a-c786-45e0-8885-6cefbedba5d1
-		summarizeBy: none
-		sourceColumn: FinancialChannel
-
-		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -137,18 +78,6 @@ table Warehouse
 
 		annotation SummarizationSetBy = Automatic
 
-	column Company
-		dataType: string
-		isHidden
-		sourceProviderType: nvarchar(16777216)
-		lineageTag: 01908c48-707e-4cbb-8d34-c429726692d2
-		summarizeBy: none
-		sourceColumn: Company
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	partition Warehouse = m
 		mode: import
 		source =
@@ -158,10 +87,9 @@ table Warehouse
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="SRC_BFN_VW_D365DIMWAREHOUSE",Kind="View"]}[Data],
 					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
-					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View,
-				    #"Renamed Columns" = Table.RenameColumns(ParameterFilter,{{"Warehouse Address Region ID", "Warehouse Country"}})
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
 				in
-					#"Renamed Columns"
+					ParameterFilter
 
 	annotation PBI_ResultType = Table
 

@@ -1,13 +1,13 @@
 table 'Packed Date'
 	lineageTag: 44fbc27e-c8cf-4389-ab2b-d1aaa1e7446c
 
-	column Date_Key
+	column 'Date Key'
 		dataType: double
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		lineageTag: 0bfd3337-01f9-44b8-a88a-44872d917753
-		summarizeBy: count
-		sourceColumn: Date_Key
+		summarizeBy: none
+		sourceColumn: Date Key
 
 		changedProperty = IsHidden
 
@@ -30,7 +30,7 @@ table 'Packed Date'
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Fiscal Dates
 		lineageTag: f0d0cea8-cbd7-4993-bc03-5ccae39de590
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Fiscal Period Number
 
 		annotation SummarizationSetBy = Automatic
@@ -52,7 +52,7 @@ table 'Packed Date'
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Fiscal Dates
 		lineageTag: 925325a2-1f4f-4bb8-a64d-082762ae9eee
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Fiscal Week Number
 
 		annotation SummarizationSetBy = Automatic

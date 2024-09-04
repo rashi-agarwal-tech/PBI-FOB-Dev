@@ -1,18 +1,6 @@
 table 'Purchase Season'
 	lineageTag: 8300726f-5cc0-42c4-bece-6f20d2e8afbf
 
-	column Season_Key
-		dataType: double
-		sourceProviderType: decimal(18, 0)
-		displayFolder: zz_Misc
-		lineageTag: a785b29c-a0e1-4762-a48b-ab5760563936
-		summarizeBy: none
-		sourceColumn: Season_Key
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Season
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
@@ -39,7 +27,6 @@ table 'Purchase Season'
 		dataType: string
 		isHidden
 		sourceProviderType: nvarchar(16777216)
-		displayFolder: zz_Misc
 		lineageTag: a503ed0f-9177-4517-8020-759d353173f7
 		summarizeBy: none
 		sourceColumn: Season Long Name
@@ -61,15 +48,25 @@ table 'Purchase Season'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Start Season'
+	column 'Season Key'
+		dataType: double
+		displayFolder: zz_Misc
+		lineageTag: 206dc978-85bf-41ae-851d-97c30a1f6cbf
+		summarizeBy: none
+		sourceColumn: Season Key
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column StartSeason
 		dataType: dateTime
 		isHidden
 		formatString: Long Date
-		sourceProviderType: date
 		displayFolder: zz_Misc
-		lineageTag: 79324fa3-1d45-4f83-9465-84a100f065b4
+		lineageTag: 3b4dc827-f262-4d95-8efe-104c9fd8cb73
 		summarizeBy: none
-		sourceColumn: Start Season
+		sourceColumn: StartSeason
 
 		changedProperty = IsHidden
 
@@ -77,21 +74,66 @@ table 'Purchase Season'
 
 		annotation UnderlyingDateTimeDataType = Date
 
-	column 'End Season'
+	column EndSeason
 		dataType: dateTime
 		isHidden
 		formatString: Long Date
-		sourceProviderType: date
 		displayFolder: zz_Misc
-		lineageTag: e3a3fbcb-e93e-4339-8131-34b55a220491
+		lineageTag: abf415b2-8957-4441-87b3-c60f6c341c78
 		summarizeBy: none
-		sourceColumn: End Season
+		sourceColumn: EndSeason
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Current Year Number' = RIGHT ( VALUE ( YEAR ( NOW () ) ), 2 )
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: fb5e61e8-2487-4bed-834f-79f5029298fc
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Year' = RIGHT ( VALUE ( YEAR ( NOW () ) - 1 ), 2 )
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: f4e19e8c-e4af-49b3-b085-0c7a0a511741
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentSeasonYear =
+			IF (
+			    [StartSeason] <= NOW ()
+			        && [EndSeason] >= NOW (),
+			    RIGHT ( [Season], 2 ),
+			    IF (
+			        RIGHT ( [Season], 2 ) = RIGHT ( VALUE ( YEAR ( NOW () ) ), 2 ),
+			        RIGHT ( VALUE ( YEAR ( NOW () ) ), 2 ),
+			        ""
+			    )
+			)
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 682efe47-1898-48c3-89ba-1faa4247e946
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	partition 'Purchase Season' = m
 		mode: import
