@@ -3,6 +3,7 @@ relationship 26f6939a-e4b9-478e-a425-79bc54346bba
 	toColumn: Supplier.Supplier_Key
 
 relationship 009b3aca-c462-4178-abfb-7c164cd9912c
+	crossFilteringBehavior: bothDirections
 	fromColumn: 'PO Details'.PONumberLine_Key
 	toColumn: 'Purchase Orders'.PONumberLine_Key
 
@@ -11,6 +12,7 @@ relationship 8d0109d3-44bd-449e-8275-7693b535eaff
 	toColumn: Size.Size
 
 relationship 151a33bf-de91-4406-819d-942a9b3d2f80
+	crossFilteringBehavior: bothDirections
 	fromColumn: 'Seasonal Product Type'.Product_Key
 	toColumn: Product.PPMProduct_Key
 
@@ -39,6 +41,7 @@ relationship 19636650-079a-4829-8b8c-1ed4580d7a4b
 	toColumn: 'Scheduled Ex-Factory Date'.'Date Key'
 
 relationship 3d74ce6d-af4d-4d22-955c-35162b0dd2fd
+	crossFilteringBehavior: bothDirections
 	fromColumn: 'PO Daybook'.PONumberLine_Key
 	toColumn: 'Purchase Orders'.PONumberLine_Key
 
@@ -55,6 +58,7 @@ relationship 0927973a-aa2e-4b56-820b-914646be8758
 	toColumn: Warehouse.Warehouse_Key
 
 relationship 7c0b8217-26a6-4e2f-ad1b-03dc7c0a18dd
+	crossFilteringBehavior: bothDirections
 	fromColumn: 'PO Daybook'.Supplier_Key
 	toColumn: Supplier.Supplier_Key
 
@@ -71,6 +75,7 @@ relationship b836a001-a81a-4e77-9e51-4e8ed322095c
 	toColumn: 'Scheduled Ex-Factory Date'.'Date Key'
 
 relationship b788d4a2-44b4-490a-8430-12b938d0da25
+	crossFilteringBehavior: bothDirections
 	fromColumn: 'Pack One'.PONumberLine_Key
 	toColumn: 'Purchase Orders'.PONumberLine_Key
 
@@ -89,4 +94,8 @@ relationship 9f37a407-c04c-4072-900e-2b26f4f00629
 relationship 3af1c025-0ee2-49fc-a197-d823c47f04ad
 	fromColumn: 'Pack One'.'Packed Date'
 	toColumn: 'Packed Date'.'Date Key'
+
+relationship 72217bb0-3d85-4f6e-8f9c-2d83e7597fe4
+	fromColumn: 'PO Daybook'.'Days Late Bin'
+	toColumn: 'Days Late Groupings'.'DL Bin'
 
