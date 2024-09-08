@@ -42,7 +42,7 @@ table 'Customer Sell Out US'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Qty Sold'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		lineageTag: 246160f4-5d0b-4813-95f1-07399380cee3
@@ -50,6 +50,8 @@ table 'Customer Sell Out US'
 		sourceColumn: Qty Sold
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 

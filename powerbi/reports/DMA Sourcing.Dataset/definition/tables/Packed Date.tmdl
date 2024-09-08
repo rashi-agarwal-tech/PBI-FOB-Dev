@@ -26,14 +26,16 @@ table 'Packed Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Period Number'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Fiscal Dates
 		lineageTag: f0d0cea8-cbd7-4993-bc03-5ccae39de590
 		summarizeBy: none
 		sourceColumn: Fiscal Period Number
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -48,14 +50,16 @@ table 'Packed Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Week Number'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Fiscal Dates
 		lineageTag: 925325a2-1f4f-4bb8-a64d-082762ae9eee
 		summarizeBy: none
 		sourceColumn: Fiscal Week Number
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 

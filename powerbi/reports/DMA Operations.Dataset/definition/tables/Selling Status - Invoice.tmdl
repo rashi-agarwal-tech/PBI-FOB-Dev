@@ -2,8 +2,9 @@ table 'Selling Status - Invoice'
 	lineageTag: 3027adad-163f-4eae-9bdf-12635e9a0011
 
 	column SELLINGSTATUS
-		dataType: double
+		dataType: int64
 		isHidden
+		formatString: 0
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Misc
 		lineageTag: 2bcde509-44c5-439c-8f60-924f8801e2ab
@@ -11,6 +12,8 @@ table 'Selling Status - Invoice'
 		sourceColumn: SELLINGSTATUS
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 

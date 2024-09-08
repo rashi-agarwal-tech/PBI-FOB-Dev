@@ -17,7 +17,7 @@ table 'Latest Ex-Factory Date'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column ' Latest Ex-Factory Date'
+	column 'Latest Ex-Factory Date'
 		dataType: dateTime
 		formatString: Short Date
 		sourceProviderType: datetime2
@@ -138,7 +138,7 @@ table 'Latest Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Calendar Month Number Short' = ```
-			SWITCH(MONTH('Latest Ex-Factory Date'[ Latest Ex-Factory Date]), 
+			SWITCH(MONTH('Latest Ex-Factory Date'[Latest Ex-Factory Date]), 
 			1,"01",
 			2,"02",
 			3,"03",
@@ -160,7 +160,7 @@ table 'Latest Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column Year = ```
-			YEAR('Latest Ex-Factory Date'[ Latest Ex-Factory Date]) 
+			YEAR('Latest Ex-Factory Date'[Latest Ex-Factory Date]) 
 			```
 		dataType: int64
 		formatString: 0
@@ -179,7 +179,7 @@ table 'Latest Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Calendar Day Number' = ```
-			SWITCH(DAY('Latest Ex-Factory Date'[ Latest Ex-Factory Date]), 
+			SWITCH(DAY('Latest Ex-Factory Date'[Latest Ex-Factory Date]), 
 			1,"01",
 			2,"02",
 			3,"03",

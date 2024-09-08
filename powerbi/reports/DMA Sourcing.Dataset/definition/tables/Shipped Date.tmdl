@@ -1,4 +1,5 @@
 table 'Shipped Date'
+	isHidden
 	lineageTag: 86cef0da-a266-4469-a298-79aa91361a67
 
 	column 'Date Key'
@@ -13,10 +14,10 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-	column ' Shipped Date'
+	column '  Shipped Date'
 		dataType: dateTime
 		isHidden
-		formatString: General Date
+		formatString: Short Date
 		lineageTag: 3fca1b09-973f-4029-8c7f-4f387f0cb963
 		summarizeBy: none
 		isDataTypeInferred
@@ -26,6 +27,7 @@ table 'Shipped Date'
 
 	column 'Day # of Year'
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: Calendar Dates
 		lineageTag: 9bad976b-bf47-4297-b48c-dd4ac9d1303e
@@ -64,6 +66,7 @@ table 'Shipped Date'
 
 	column Season
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: f803080c-6eb8-451b-8cf5-d487b5808205
 		summarizeBy: none
@@ -75,6 +78,7 @@ table 'Shipped Date'
 
 	column 'Relative Week'
 		dataType: string
+		isHidden
 		displayFolder: Fiscal Dates
 		lineageTag: 629f7fbf-90ea-4d32-abd5-6f6445aeee03
 		summarizeBy: none
@@ -86,6 +90,7 @@ table 'Shipped Date'
 
 	column 'Relative Month'
 		dataType: string
+		isHidden
 		displayFolder: Fiscal Dates
 		lineageTag: 5deb0869-f39f-4294-a749-1de105469ca6
 		summarizeBy: none
@@ -97,6 +102,7 @@ table 'Shipped Date'
 
 	column 'Relative Year'
 		dataType: string
+		isHidden
 		displayFolder: Fiscal Dates
 		lineageTag: dbadd4f1-3f3b-4f10-a792-1686ac4cd0ec
 		summarizeBy: none
@@ -108,6 +114,7 @@ table 'Shipped Date'
 
 	column 'Reporting Year'
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: Calendar Dates
 		lineageTag: 2ce01fa1-16b1-4197-9888-a238b22d9fc0
@@ -120,6 +127,7 @@ table 'Shipped Date'
 
 	column 'Day of Week'
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: 164c3d67-7b6c-4c79-a223-59798e290077
 		summarizeBy: none
@@ -131,6 +139,7 @@ table 'Shipped Date'
 
 	column 'Day # of Week'
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: Calendar Dates
 		lineageTag: 9a38bb26-f6f7-43c3-8e1d-34975031db73
@@ -143,6 +152,7 @@ table 'Shipped Date'
 
 	column 'Day # of Month'
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: Calendar Dates
 		lineageTag: a58c0d9a-76fc-4c76-89f4-68686f35b8db
@@ -155,6 +165,7 @@ table 'Shipped Date'
 
 	column Year
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: Calendar Dates
 		lineageTag: fb0091f5-d871-4a26-9424-6a70651767b3
@@ -167,6 +178,7 @@ table 'Shipped Date'
 
 	column Year-Week
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: 5c8e77df-2fe4-450b-b20a-f29cd909c446
 		summarizeBy: none
@@ -178,6 +190,7 @@ table 'Shipped Date'
 
 	column Half
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: 9cb47858-652e-4a44-a765-4f04fdbcf250
 		summarizeBy: none
@@ -189,6 +202,7 @@ table 'Shipped Date'
 
 	column Quarter
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: 621f6c0c-5623-482a-b279-c690975641ba
 		summarizeBy: none
@@ -224,6 +238,7 @@ table 'Shipped Date'
 
 	column '- Is UK Bank Holiday?'
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: 381f31ed-839b-4365-b552-822cfeeadc09
 		summarizeBy: none
@@ -235,6 +250,7 @@ table 'Shipped Date'
 
 	column '- Is Black Friday?'
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: c2a735e5-7ca0-48f6-b5ce-1f94d1f6d604
 		summarizeBy: none
@@ -246,6 +262,7 @@ table 'Shipped Date'
 
 	column '- Is Leap Year?'
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: f26d6444-2fc1-45f7-8b91-3247780a6a76
 		summarizeBy: none
@@ -257,6 +274,7 @@ table 'Shipped Date'
 
 	column '- Is End Of Month?'
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: fb467b58-d0f3-463e-b407-7519dfde59da
 		summarizeBy: none
@@ -268,6 +286,7 @@ table 'Shipped Date'
 
 	column '- Is Yesterday?'
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: caa161e1-ed39-41e3-bb02-45ecd7d9e520
 		summarizeBy: none
@@ -279,6 +298,7 @@ table 'Shipped Date'
 
 	column '- Is Week?'
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: 28802488-5bda-44dc-8404-dad873b1753f
 		summarizeBy: none
@@ -290,6 +310,7 @@ table 'Shipped Date'
 
 	column '- Is Month?'
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: a90b4f43-8f8c-452d-9220-909993d80fbb
 		summarizeBy: none
@@ -301,6 +322,7 @@ table 'Shipped Date'
 
 	column 'Calendar Month Long Name'
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: 24f99a55-e687-4e18-a7d0-ea909881f210
 		summarizeBy: none
@@ -312,6 +334,7 @@ table 'Shipped Date'
 
 	column 'Calendar Year Month'
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: Calendar Dates
 		lineageTag: 26b0372e-1084-4e35-8323-17bcf27d9dca
@@ -324,6 +347,7 @@ table 'Shipped Date'
 
 	column 'Fiscal Year'
 		dataType: string
+		isHidden
 		displayFolder: Fiscal Dates
 		lineageTag: 67174f4b-d46a-4f1e-863f-402ca5ed6ac7
 		summarizeBy: none
@@ -335,18 +359,20 @@ table 'Shipped Date'
 
 	column 'Fiscal Quarter Number'
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: Fiscal Dates
 		lineageTag: 8ff8a1d2-3f3f-4259-8af8-23ca33c4f6e1
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Fiscal Quarter Number]
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Fiscal Period Short Name'
 		dataType: string
+		isHidden
 		displayFolder: Fiscal Dates
 		lineageTag: fa64fd84-0b3b-4867-8f9b-677695851d2d
 		summarizeBy: none
@@ -358,18 +384,20 @@ table 'Shipped Date'
 
 	column 'Fiscal Period Number'
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: Fiscal Dates
 		lineageTag: 00ad9ee0-5256-461a-bf34-76a2ff0cdadc
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Fiscal Period Number]
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Fiscal Year-Period'
 		dataType: string
+		isHidden
 		displayFolder: Fiscal Dates
 		lineageTag: a13aef93-d495-442c-9c1c-ac7fb0ccf373
 		summarizeBy: none
@@ -381,18 +409,20 @@ table 'Shipped Date'
 
 	column 'Fiscal Week Number'
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: Fiscal Dates
 		lineageTag: b86f2be8-41b8-4d76-8884-16779629ee26
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Fiscal Week Number]
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Fiscal Year Number'
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: Fiscal Dates
 		lineageTag: cdf02ca0-aa10-4d54-b512-ebda4cf8fb59
@@ -405,6 +435,7 @@ table 'Shipped Date'
 
 	column 'Relative Fiscal Week'
 		dataType: string
+		isHidden
 		displayFolder: Fiscal Dates
 		lineageTag: 671afa7c-ba43-4951-9572-c4a8fca2f6d8
 		summarizeBy: none
@@ -416,6 +447,7 @@ table 'Shipped Date'
 
 	column 'Relative Fiscal Period'
 		dataType: string
+		isHidden
 		displayFolder: Fiscal Dates
 		lineageTag: 69dcc886-cb0b-4382-a9ed-a3bd6ee19342
 		summarizeBy: none
@@ -427,6 +459,7 @@ table 'Shipped Date'
 
 	column 'Relative Fiscal Year'
 		dataType: string
+		isHidden
 		displayFolder: Fiscal Dates
 		lineageTag: 6cf493f0-2465-4448-979d-19208e0166e8
 		summarizeBy: none
@@ -438,6 +471,7 @@ table 'Shipped Date'
 
 	column 'Fiscal Day #'
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: Fiscal Dates
 		lineageTag: 2b23e205-1590-4e56-9f0d-19222f242361
@@ -450,6 +484,7 @@ table 'Shipped Date'
 
 	column 'Week Number (544)'
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: 544 Dates
 		lineageTag: 53d8fa18-4117-4f9f-a522-ff789728635f
@@ -462,6 +497,7 @@ table 'Shipped Date'
 
 	column 'Fiscal Period Number (544)'
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: 544 Dates
 		lineageTag: 3b07c351-c3f9-46e5-93fe-cb371a8e2598
@@ -474,6 +510,7 @@ table 'Shipped Date'
 
 	column 'Fiscal Quarter (544)'
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: 544 Dates
 		lineageTag: cb39dbf0-03f6-4eb9-b044-cfa0a9fa7c27
@@ -486,6 +523,7 @@ table 'Shipped Date'
 
 	column 'Fiscal Half (544)'
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: 544 Dates
 		lineageTag: b69a8b92-357b-4464-9ac0-16ae8c0b4847
@@ -498,6 +536,7 @@ table 'Shipped Date'
 
 	column 'Fiscal Year (544)'
 		dataType: string
+		isHidden
 		displayFolder: 544 Dates
 		lineageTag: e0ccd8c7-2850-4dad-8a2a-f9b8dc74fb2f
 		summarizeBy: none
@@ -509,6 +548,7 @@ table 'Shipped Date'
 
 	column 'Fiscal Year Number (544)'
 		dataType: int64
+		isHidden
 		formatString: 0
 		displayFolder: 544 Dates
 		lineageTag: e24ecb0b-9cea-43ff-ae65-9e3595977a66
@@ -521,6 +561,7 @@ table 'Shipped Date'
 
 	column 'Fiscal Year-Week (544)'
 		dataType: string
+		isHidden
 		displayFolder: 544 Dates
 		lineageTag: 7028db8e-2fbe-4c33-a29e-6850ba50b2cc
 		summarizeBy: none
@@ -532,6 +573,7 @@ table 'Shipped Date'
 
 	column 'Relative Fiscal Period (544)'
 		dataType: string
+		isHidden
 		displayFolder: 544 Dates
 		lineageTag: 993337aa-9887-4b30-a8de-6ded6b7f4803
 		summarizeBy: none
@@ -543,6 +585,7 @@ table 'Shipped Date'
 
 	column 'Relative Fiscal Year (544)'
 		dataType: string
+		isHidden
 		displayFolder: 544 Dates
 		lineageTag: 44ecec03-eed0-457b-865f-1ecab7ce7a30
 		summarizeBy: none
@@ -554,6 +597,7 @@ table 'Shipped Date'
 
 	column 'Calendar Month Short Number '
 		dataType: string
+		isHidden
 		lineageTag: 0affdb7d-f0f4-4be6-b67b-67cba07e7523
 		summarizeBy: none
 		isNameInferred
@@ -564,6 +608,7 @@ table 'Shipped Date'
 
 	column 'Calenda Month Short Name_'
 		dataType: string
+		isHidden
 		lineageTag: aae8f756-324e-48e3-9425-bfec186572ef
 		summarizeBy: none
 		isNameInferred
@@ -574,6 +619,7 @@ table 'Shipped Date'
 
 	column 'Calendar Day Short Number'
 		dataType: string
+		isHidden
 		lineageTag: 22426773-36ae-49d9-9635-650ab83de227
 		summarizeBy: none
 		isNameInferred
@@ -584,6 +630,7 @@ table 'Shipped Date'
 
 	column 'Fiscal Period Name'
 		dataType: string
+		isHidden
 		displayFolder: Fiscal Dates
 		lineageTag: 2112f51a-a1e5-4037-8bce-98ed01930c3d
 		summarizeBy: none
@@ -595,6 +642,7 @@ table 'Shipped Date'
 
 	column 'Fiscal Year-Week'
 		dataType: string
+		isHidden
 		displayFolder: Fiscal Dates
 		lineageTag: d17564c4-1263-4ff6-b260-71902e32fbef
 		summarizeBy: none
@@ -606,6 +654,7 @@ table 'Shipped Date'
 
 	column '- Is End Of Period?'
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: 3e58f35c-220e-473f-b8d4-faea39dd8d16
 		summarizeBy: none
@@ -617,6 +666,7 @@ table 'Shipped Date'
 
 	column '- Is End Of Quarter?'
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: 1ea28bd7-b3d3-4d23-9487-64130253b334
 		summarizeBy: none
@@ -628,6 +678,7 @@ table 'Shipped Date'
 
 	column 'Month Year'
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: dbf47d6c-5796-4d64-aed0-7e042de26026
 		summarizeBy: none
@@ -639,6 +690,7 @@ table 'Shipped Date'
 
 	column 'Year Half'
 		dataType: string
+		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: 8f5ec29f-3130-443f-b925-582ef369f0d4
 		summarizeBy: none

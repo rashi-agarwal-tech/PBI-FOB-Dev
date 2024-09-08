@@ -56,9 +56,12 @@ table 'Display Currency'
 
 	column NAME
 		dataType: string
+		isHidden
 		lineageTag: 874dadd4-3946-49f6-9554-727b4410e030
 		summarizeBy: none
 		sourceColumn: NAME
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

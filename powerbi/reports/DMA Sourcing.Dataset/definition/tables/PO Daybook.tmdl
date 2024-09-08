@@ -360,22 +360,26 @@ table 'PO Daybook'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Days Air'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		lineageTag: a5bfd63d-aac3-4866-8ae3-cbb39431186d
 		summarizeBy: sum
 		sourceColumn: Days Air
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Days Sea'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		lineageTag: b75bcad9-afe3-4b3a-ad3b-f9f7bd1664b8
 		summarizeBy: sum
 		sourceColumn: Days Sea
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1362,6 +1366,7 @@ table 'PO Daybook'
 		dataType: dateTime
 		formatString: Short Date
 		sourceProviderType: date
+		displayFolder: 1. Dates
 		lineageTag: 74d219a4-61e8-46f8-a688-8e05b802be8a
 		summarizeBy: none
 		sourceColumn: 16. Picked Up At Origin
@@ -1479,12 +1484,15 @@ table 'PO Daybook'
 
 	column '26. Earliest Confirmed Delivery'
 		dataType: dateTime
+		isHidden
 		formatString: Short Date
 		sourceProviderType: date
 		displayFolder: 1. Dates
 		lineageTag: a987af5c-ec29-4170-a6f8-6877b05647f9
 		summarizeBy: none
 		sourceColumn: 26. Earliest Confirmed Delivery
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1666,12 +1674,14 @@ table 'PO Daybook'
 		annotation SummarizationSetBy = Automatic
 
 	column '02a. OT XF n. of days'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(9, 0)
 		displayFolder: 3. Target Dates
 		lineageTag: 5040776d-c3d9-4884-9d7a-ac0d788c2728
 		summarizeBy: sum
 		sourceColumn: 02a. OT XF n. of days
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1894,7 +1904,7 @@ table 'PO Daybook'
 
 	column '11b. Estimated Cargo Ready date'
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: ea063f2e-9873-4564-9277-5e0ea598c0d4
 		summarizeBy: none
 		sourceColumn: 11b. Estimated Cargo Ready date
@@ -1907,6 +1917,7 @@ table 'PO Daybook'
 		dataType: dateTime
 		formatString: Short Date
 		sourceProviderType: date
+		displayFolder: 1. Dates
 		lineageTag: d93b4364-345b-4846-af54-8a0f1904407e
 		summarizeBy: none
 		sourceColumn: 29b. Actual/Estimated Receipt Date
@@ -1989,7 +2000,7 @@ table 'PO Daybook'
 
 	column 'Earliest Confirmed Delivery Date'
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		sourceProviderType: date
 		lineageTag: 9577b93e-c743-417a-918d-d7dab5947fcd
 		summarizeBy: none
@@ -3293,6 +3304,4 @@ table 'PO Daybook'
 				    #"Changed Type"
 
 	annotation PBI_ResultType = Table
-
-	annotation PBI_NavigationStepName = Navigation
 

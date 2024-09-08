@@ -7,7 +7,7 @@
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],					
-					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([Snapshot Date] >= #date(2025, 10, 1) and [Snapshot Date] < #date(2026, 1, 1)) )
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2025, 10, 1) and [SnapShot Date] < #date(2026, 1, 1)) )
 				in
 					#"Filtered Rows"
 
@@ -19,7 +19,7 @@
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],					
-					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([Snapshot Date] >= #date(2025, 7, 1) and [Snapshot Date] < #date(2025, 10, 1)) )
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2025, 7, 1) and [SnapShot Date] < #date(2025, 10, 1)) )
 				in
 					#"Filtered Rows"
 	
@@ -32,7 +32,7 @@
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],					
-					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([Snapshot Date] >= #date(2025, 4, 1) and [Snapshot Date] < #date(2025, 7, 1)) )
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2025, 4, 1) and [SnapShot Date] < #date(2025, 7, 1)) )
 				in
 					#"Filtered Rows"
 
@@ -44,7 +44,7 @@
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],					
-					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([Snapshot Date] >= #date(2025, 1, 1) and [Snapshot Date] < #date(2025, 4, 1)) )
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2025, 1, 1) and [SnapShot Date] < #date(2025, 4, 1)) )
 				in
 					#"Filtered Rows"
 	
@@ -57,7 +57,7 @@
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],					
-					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([Snapshot Date] >= #date(2024, 10, 1) and [Snapshot Date] < #date(2025, 1, 1)) )
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2024, 10, 1) and [SnapShot Date] < #date(2025, 1, 1)) )
 				in
 					#"Filtered Rows"
 	
@@ -70,7 +70,7 @@
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],					
-					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([Snapshot Date] >= #date(2024, 7, 1) and [Snapshot Date] < #date(2024, 10, 1)) )
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2024, 7, 1) and [SnapShot Date] < #date(2024, 10, 1)) )
 				in
 					#"Filtered Rows"
 	
@@ -83,7 +83,7 @@
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],					
-					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([Snapshot Date] >= #date(2024, 1, 1) and [Snapshot Date] < #date(2024, 7, 1)) )
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2024, 1, 1) and [SnapShot Date] < #date(2024, 7, 1)) )
 				in
 					#"Filtered Rows"
 
@@ -95,7 +95,7 @@
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],					
-					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([Snapshot Date] >= #date(2023, 7, 1) and [Snapshot Date] < #date(2024, 1, 1)) )
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2023, 7, 1) and [SnapShot Date] < #date(2024, 1, 1)) )
 				in
 					#"Filtered Rows"
 
@@ -107,7 +107,7 @@
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],					
-					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([Snapshot Date] >= #date(2023, 1, 1) and [Snapshot Date] < #date(2023, 7, 1)) )
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2023, 1, 1) and [SnapShot Date] < #date(2023, 7, 1)) )
 				in
 					#"Filtered Rows"	
 
@@ -119,7 +119,7 @@
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],					
-					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([Snapshot Date] >= #date(2022, 7, 1) and [Snapshot Date] < #date(2023, 1, 1)) )
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2022, 7, 1) and [SnapShot Date] < #date(2023, 1, 1)) )
 				in
 					#"Filtered Rows"
 
@@ -131,7 +131,7 @@
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],					
-					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([Snapshot Date] >= #date(2022, 1, 1) and [Snapshot Date] < #date(2022, 7, 1)) )
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2022, 1, 1) and [SnapShot Date] < #date(2022, 7, 1)) )
 				in
 					#"Filtered Rows"							
 

@@ -305,7 +305,9 @@ table 'Confirmed Ex-Factory Date'
 
 	column 'Calendar Year Month'
 		dataType: int64
+		isHidden
 		formatString: 0
+		displayFolder: Calendar Dates
 		lineageTag: e64c93fa-beba-4c3f-ad80-5be1c83f9bac
 		summarizeBy: none
 		isNameInferred
@@ -616,12 +618,11 @@ table 'Confirmed Ex-Factory Date'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Month Year'
+	column Month-Year
 		dataType: string
 		displayFolder: Calendar Dates
 		lineageTag: 968f3032-0967-428a-ac1b-ee3856fa5a74
 		summarizeBy: none
-		isNameInferred
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Month Year]
 

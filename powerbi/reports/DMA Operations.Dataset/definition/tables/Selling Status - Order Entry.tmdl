@@ -2,15 +2,18 @@ table 'Selling Status - Order Entry'
 	lineageTag: 944b9452-db47-409a-acad-b5947fc5cac6
 
 	column SELLINGSTATUS
-		dataType: double
+		dataType: int64
 		isHidden
+		formatString: 0
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Misc
 		lineageTag: 52cd0f5b-519f-4278-82be-3be87e05c8c3
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: SELLINGSTATUS
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 

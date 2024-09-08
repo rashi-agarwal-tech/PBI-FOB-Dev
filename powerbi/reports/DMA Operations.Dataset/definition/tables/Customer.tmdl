@@ -315,7 +315,7 @@ table Customer
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Last External Sell Thru Upload (US)' = CALCULATE ( LASTDATE(  'Customer Sell Out US'[To Date] ), ALL ( Products ) )
+	column ' Last External Sell Thru Upload (US)' = CALCULATE ( LASTDATE(  'Customer Sell Out US'[To Date] ), ALL ( Products ) )
 		dataType: dateTime
 		formatString: Short Date
 		lineageTag: bdc8c1ce-3020-47b0-8556-12b90d8243b4
@@ -346,4 +346,6 @@ table Customer
 					ParameterFilter
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

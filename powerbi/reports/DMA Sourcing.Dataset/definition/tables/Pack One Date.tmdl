@@ -2,14 +2,16 @@ table 'Pack One Date'
 	lineageTag: 2f73a9f4-2363-4fe6-90f5-f02e1b2eee59
 
 	column 'Date Key'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		lineageTag: be562d26-9afc-467d-857c-cd43b9c6846e
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: Date Key
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -26,8 +28,7 @@ table 'Pack One Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Period Number'
-		dataType: double
-		isHidden
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Fiscal Dates
 		lineageTag: 00671514-f2eb-4401-ab66-2c79ae566db6
@@ -35,6 +36,8 @@ table 'Pack One Date'
 		sourceColumn: Fiscal Period Number
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
 
@@ -51,8 +54,7 @@ table 'Pack One Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Week Number'
-		dataType: double
-		isHidden
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		displayFolder: Fiscal Dates
 		lineageTag: ca51d26a-b951-4325-96cf-89794fa67f92
@@ -60,6 +62,8 @@ table 'Pack One Date'
 		sourceColumn: Fiscal Week Number
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
 

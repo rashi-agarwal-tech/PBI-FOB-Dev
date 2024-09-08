@@ -6,7 +6,7 @@
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					OPS_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
-					#"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Rewair"},[WH_Channel])),
+					#"Filtered Rows" = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Rewair"},[WH_Channel_Custom])),
 					#"Kept First Rows" = Table.FirstN(#"Filtered Rows",NumberOfRows),
 					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Filtered Rows"
 				in

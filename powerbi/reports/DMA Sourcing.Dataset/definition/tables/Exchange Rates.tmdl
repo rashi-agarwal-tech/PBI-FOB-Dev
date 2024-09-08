@@ -1,4 +1,5 @@
 table 'Exchange Rates'
+	isHidden
 	lineageTag: fb3d8683-8825-4b7c-8017-0d50f7249299
 
 	column FROMCURRENCY
@@ -39,6 +40,7 @@ table 'Exchange Rates'
 
 	column RATE
 		dataType: double
+		isHidden
 		sourceProviderType: decimal(16, 6)
 		lineageTag: 33751486-1b0a-41cf-a09e-4ac0111fdde3
 		summarizeBy: sum

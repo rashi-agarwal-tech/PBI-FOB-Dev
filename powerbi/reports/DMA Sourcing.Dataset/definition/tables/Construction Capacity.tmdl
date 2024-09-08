@@ -62,11 +62,13 @@ table 'Construction Capacity'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Capacity Lead Time'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 0)
 		lineageTag: 804bd283-292b-4f94-ac84-dbcac1fa5a31
 		summarizeBy: none
 		sourceColumn: Capacity Lead Time
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
 
@@ -88,9 +90,13 @@ table 'Construction Capacity'
 
 	column ConstructionCode
 		dataType: string
+		isHidden
+		displayFolder: zz_Misc
 		lineageTag: 4db53c28-fb9f-4713-af04-feec8f363b74
 		summarizeBy: none
 		sourceColumn: ConstructionCode
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

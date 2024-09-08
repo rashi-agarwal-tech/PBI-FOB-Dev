@@ -497,18 +497,17 @@ table 'Scheduled Ex-Factory Date'
 
 	column 'Week Number (544)'
 		dataType: int64
-		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: 544 Dates
 		lineageTag: 1c83d27d-cde9-41b4-bf9b-80800f104f0c
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Week Number (544)
 
 		changedProperty = IsHidden
 
 		changedProperty = DataType
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 

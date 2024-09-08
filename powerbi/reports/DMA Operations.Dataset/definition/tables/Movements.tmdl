@@ -378,9 +378,9 @@ table Movements
 
 	column 'SO Return Deadline'
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		sourceProviderType: date
-		displayFolder: z Sales Orders
+		displayFolder: z Return Orders
 		lineageTag: 29267220-1f50-4d83-a70f-2759dbddd72a
 		summarizeBy: none
 		sourceColumn: SO Return Deadline
@@ -431,12 +431,14 @@ table Movements
 		annotation SummarizationSetBy = Automatic
 
 	column 'TO Line #'
-		dataType: double
+		dataType: int64
 		sourceProviderType: decimal(38, 16)
 		displayFolder: z Transfer Orders
 		lineageTag: a1bb8d11-2cd5-4172-b328-44d511834777
 		summarizeBy: sum
 		sourceColumn: TO Line #
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -758,7 +760,7 @@ table Movements
 
 	column 'Receipt Date'
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		sourceProviderType: datetime2
 		lineageTag: d7ac1534-ad01-4f6d-82d9-4a930654b7ef
 		summarizeBy: none
@@ -887,7 +889,7 @@ table Movements
 
 	column 'Requested Ship Date'
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		sourceProviderType: date
 		lineageTag: 6dfd0cba-a8fc-4ecc-9b26-bf0aaeccbbb5
 		summarizeBy: none
@@ -1143,7 +1145,7 @@ table Movements
 			    'Date'[Calendar Week Number],
 			    'Date'[ Date], 'Movements'[PO Entry Date]
 			)
-		dataType: double
+		dataType: int64
 		formatString: " #,##0"
 		displayFolder: z Purchase Orders
 		lineageTag: e22c4f9e-726f-4796-86a1-11a2dcf18407
@@ -1860,11 +1862,15 @@ table Movements
 
 	column 'Selling Status - Order Entry'
 		dataType: double
+		isHidden
+		displayFolder: zz_Misc
 		lineageTag: 63fc14ab-26df-46a1-b395-f49baf56f08d
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Selling Status - Order Entry
 
-		annotation SummarizationSetBy = Automatic
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
