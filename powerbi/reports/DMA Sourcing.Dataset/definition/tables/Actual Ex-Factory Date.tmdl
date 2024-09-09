@@ -1,9 +1,8 @@
 table 'Actual Ex-Factory Date'
-	isHidden
 	lineageTag: 8b0d20d5-0ee5-4959-b697-a01c3d89aa07
 
 	column 'Date Key'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		lineageTag: da419461-d23d-4da7-a10c-fdb9190c35ed
@@ -12,14 +11,16 @@ table 'Actual Ex-Factory Date'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Fiscal Year'
 		dataType: string
-		isHidden
 		sourceProviderType: nvarchar(16777216)
+		displayFolder: Fiscal Dates
 		lineageTag: 70885403-4f59-48ff-8e1c-4b92625294a2
 		summarizeBy: none
 		sourceColumn: Fiscal Year
@@ -30,8 +31,8 @@ table 'Actual Ex-Factory Date'
 
 	column 'Fiscal Period Number'
 		dataType: int64
-		isHidden
 		sourceProviderType: decimal(38, 0)
+		displayFolder: Fiscal Dates
 		lineageTag: b7fd0eae-a87a-46f9-8dd2-f0403541b866
 		summarizeBy: none
 		sourceColumn: Fiscal Period Number
@@ -46,8 +47,8 @@ table 'Actual Ex-Factory Date'
 
 	column 'Fiscal Year-Period'
 		dataType: string
-		isHidden
 		sourceProviderType: nvarchar(16777216)
+		displayFolder: Fiscal Dates
 		lineageTag: 1d645912-cd96-4bf9-bd47-13e098502690
 		summarizeBy: none
 		sourceColumn: Fiscal Year-Period
@@ -58,8 +59,8 @@ table 'Actual Ex-Factory Date'
 
 	column 'Fiscal Week Number'
 		dataType: int64
-		isHidden
 		sourceProviderType: decimal(38, 0)
+		displayFolder: Fiscal Dates
 		lineageTag: 170ded76-1146-4639-923d-29fc3b8f135d
 		summarizeBy: none
 		sourceColumn: Fiscal Week Number

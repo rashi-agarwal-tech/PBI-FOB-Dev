@@ -556,6 +556,712 @@ table Metrics
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Quantity To Be Shipped (Current Season)' =
+			CALCULATE (
+			    [To Be Shipped],
+			    FILTER (
+			        'Purchase Season',
+			        'Purchase Season'[Season Year] = [Current Year Number]
+			    )
+			)
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: db5c81e8-5efb-4db4-b500-c9362602e673
+
+	measure 'Current Week' = WEEKNUM ( NOW () ) - 1
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 81616829-061f-4f66-b0ee-0358e9f66d1f
+
+	measure 'Shipped (Current Week)' =
+			IF (
+			    ISBLANK (
+			        CALCULATE (
+			            [Quantity Shipped],
+			            FILTER (
+			                'Shipped Date',
+			                'Shipped Date'[Calendar Week Number]
+			                    = WEEKNUM ( NOW () ) - 1
+			                    && 'Shipped Date'[Year] = YEAR ( NOW () )
+			            )
+			        )
+			    ),
+			    0,
+			    CALCULATE (
+			        [Quantity Shipped],
+			        FILTER (
+			            'Shipped Date',
+			            'Shipped Date'[Calendar Week Number]
+			                = WEEKNUM ( NOW () ) - 1
+			                && 'Shipped Date'[Year] = YEAR ( NOW () )
+			        )
+			    )
+			)
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 3bbdc9e9-f960-4415-aeaa-bcab1a13a42d
+
+	measure 'Shipped (Current Month)' =
+			IF (
+			    ISBLANK (
+			        CALCULATE (
+			            [Quantity Shipped],
+			            FILTER (
+			                'Shipped Date',
+			                'Shipped Date'[Calendar Month Number] = MONTH ( NOW () )
+			                    && 'Shipped Date'[Year] = YEAR ( NOW () )
+			            )
+			        )
+			    ),
+			    0,
+			    CALCULATE (
+			        [Quantity Shipped],
+			        FILTER (
+			            'Shipped Date',
+			            'Shipped Date'[Calendar Month Number] = MONTH ( NOW () )
+			                && 'Shipped Date'[Year] = YEAR ( NOW () )
+			        )
+			    )
+			)
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: bf31142f-56af-4cc4-81fc-a1ef14914193
+
+	measure 'Current Month Name' = FORMAT ( DATE ( YEAR ( NOW () ), MONTH ( NOW () ), 1 ), "MMM" )
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 892f95ac-b18c-4c85-8f13-dd5d14cdd8e2
+
+	measure 'To Be Shipped (Current Month)' =
+			IF (
+			    ISBLANK (
+			        CALCULATE (
+			            [To Be Shipped],
+			            FILTER (
+			                'Shipped Date',
+			                'Shipped Date'[Calendar Month Number] = MONTH ( NOW () )
+			                    && 'Shipped Date'[Year] = YEAR ( NOW () )
+			            )
+			        )
+			    ),
+			    0,
+			    CALCULATE (
+			        [To Be Shipped],
+			        FILTER (
+			            'Shipped Date',
+			            'Shipped Date'[Calendar Month Number] = MONTH ( NOW () )
+			                && 'Shipped Date'[Year] = YEAR ( NOW () )
+			        )
+			    )
+			)
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 17e405e1-bfc2-4590-8335-13245c8f84ee
+
+	measure 'To Be Shipped (Current Week)' =
+			IF (
+			    ISBLANK (
+			        CALCULATE (
+			            [To Be Shipped],
+			            FILTER (
+			                'Shipped Date',
+			                'Shipped Date'[Calendar Week Number]
+			                    = WEEKNUM ( NOW () ) - 1
+			                    && 'Shipped Date'[Year] = YEAR ( NOW () )
+			            )
+			        )
+			    ),
+			    0,
+			    CALCULATE (
+			        [To Be Shipped],
+			        FILTER (
+			            'Shipped Date',
+			            'Shipped Date'[Calendar Week Number]
+			                = WEEKNUM ( NOW () ) - 1
+			                && 'Shipped Date'[Year] = YEAR ( NOW () )
+			        )
+			    )
+			)
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: f756b572-382c-495d-ab90-9f7c25f7c680
+
+	measure '% Country of Manufacture (Current Season)' =
+			DIVIDE (
+			    [Quantity Shipped & to be Shipped (Current Seasons)],
+			    CALCULATE (
+			        [Quantity Shipped & to be Shipped (Current Seasons)],
+			        ALLSELECTED ( 'Supplier'[Supplier Country] )
+			    )
+			)
+		formatString: " 0.00%;-0.00%;0.00%"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 7bc0d443-ab1e-4024-a43e-ec44875e6915
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '% Submitted vs Confirmed Ex-Factory (Last Season)' =
+			DIVIDE (
+			    [Quantity Shipped & to be Shipped (Last Season)],
+			    CALCULATE (
+			        [Quantity Shipped & to be Shipped (Last Season)],
+			        ALL ( 'Days Late Groupings' )
+			    )
+			)
+		formatString: " 0.00%;-0.00%;0.00%"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 4a464614-e69b-427d-b68f-7aef4b8531ff
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '% Submitted vs Confirmed Ex-Factory (Current Season)' =
+			DIVIDE (
+			    [Quantity Shipped & to be Shipped (Current Seasons)],
+			    CALCULATE (
+			        [Quantity Shipped & to be Shipped (Current Seasons)],
+			        ALL ( 'Days Late Groupings' )
+			    )
+			)
+		formatString: " 0.00%;-0.00%;0.00%"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 4b3d39ba-fb04-462d-a300-3ca0ccad727a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Quantity Shipped & to be Shipped' = SUM ( 'PO Daybook'[QtyToBeShipped] )
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 13ca3dc7-c360-4f58-b0b1-6877ea0c87a3
+
+	measure 'Submitted Qty' =
+			CALCULATE (
+			    [Quantity Shipped & to be Shipped],
+			    FILTER (
+			        'Product',
+			        LEFT ( 'Product'[Product Code], 2 ) <> "AC"
+			            && LEFT ( 'Product'[Product Code], 2 ) <> "AB"
+			    ),
+			    FILTER ( 'PO Daybook', 'PO Daybook'[Status] = "FA" ),
+			    FILTER ( 'Order Type', 'Order Type'[Order Type] = "BULK" )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 82a7b665-ec5e-407b-bf02-4a879c646b20
+
+	measure 'Ranking Leathers' =
+			IF (
+			    HASONEVALUE ( 'Purchase Season'[Season] ),
+			    RANKX ( ALL ( 'Product'[Leather] ), [Submitted Qty] )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 024eb0ad-d961-4f0c-8489-0f8d677315c9
+
+	measure 'Ranking Products' =
+			IF (
+			    HASONEVALUE ( 'Purchase Season'[Season] ),
+			    RANKX ( ALL ( 'Product'[Product Code] ), [Submitted Qty] )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: cb4177c8-bec2-49b1-96ff-04cb3a609eb3
+
+	measure '% Submitted vs Confirmed Ex-Factory' =
+			DIVIDE (
+			    'Metrics'[Quantity Shipped & to be Shipped],
+			    CALCULATE (
+			        'Metrics'[Quantity Shipped & to be Shipped],
+			        ALL ( 'Days Late Groupings' )
+			    )
+			)
+		formatString: " 0.00%;-0.00%;0.00%"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: ce78e751-9d27-4e6e-8141-42f3ffab4755
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Submitted Qty (Current Season)' =
+			CALCULATE (
+			    [Submitted Qty],
+			    FILTER (
+			        'Purchase Season',
+			        'Purchase Season'[Season Year] = 'Purchase Season'[Current Year Number]
+			    )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 87eae2e7-c716-49aa-b3c3-bb0d64f11383
+
+	/// % Difference of the current vs previous season for submissions (Order Placement reports)
+	measure 'Submitted Qty (% Diff LS)' =
+			DIVIDE (
+			    [Submitted Qty (Current Seasons)] - [Submitted Qty (Previous Seasons)],
+			    [Submitted Qty (Previous Seasons)]
+			)
+		formatString: " 0.00%;-0.00%;0.00%"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 807f8e40-7e97-494d-b571-5222d0610473
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure '% Submitted by Supplier Country' =
+			DIVIDE (
+			    Metrics[Submitted Qty],
+			    CALCULATE ( Metrics[Submitted Qty], ALL ( Supplier[Supplier Country] ) )
+			)
+		formatString: " 0.00%;-0.00%;0.00%"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: f6f953e0-06c9-4178-88c9-0434d8f44183
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Approved PO Value (With Currency)' =
+			IF (
+			    HASONEVALUE ( Supplier[Supplier Currency] ),
+			    SWITCH (
+			        VALUES ( Supplier[Supplier Currency] ),
+			        "Euro", FORMAT ( [Approved PO Value], "€#,##0.00" ),
+			        "GBP", FORMAT ( [Approved PO Value], "£#,##0.00" ),
+			        "USD", FORMAT ( [Approved PO Value], "$#,##0.00" ),
+			        BLANK ()
+			    ),
+			    ""
+			)
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 8ec298ef-8396-43d8-9ad6-fe2ac5c6a31e
+
+	measure 'Confirmed (From today)' =
+			CALCULATE (
+			    [Quantity Confirmed],
+			    FILTER (
+			        'Confirmed Ex-Factory Date',
+			        'Confirmed Ex-Factory Date'[ Confirmed Ex-Factory Date] >= TODAY ()
+			    )
+			)
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 0b1d150e-eaf2-4a51-92d2-1c5e81677681
+
+	measure 'Unconfirmed (From today)' =
+			CALCULATE (
+			    [Quantity Unconfirmed],
+			    FILTER ( 'PO Daybook', 'PO Daybook'[Approved Ex-Factory Date] >= TODAY () )
+			)
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: afda6cd6-5dab-4593-acf9-a51ade3ccd57
+
+	measure CurrentSeasonAWLabel =
+			"AW"
+			    & CALCULATE (
+			        [Max Season],
+			        FILTER ( 'Purchase Season', 'Purchase Season'[Season Short Name] = "AW" )
+			    )
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 610d483f-fdb3-42d3-8d8d-b7be5818b084
+
+	measure CurrentSeasonSSLabel =
+			"SS"
+			    & CALCULATE (
+			        [Max Season],
+			        FILTER ( 'Purchase Season', 'Purchase Season'[Season Short Name] = "SS" )
+			    )
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 7c822c0a-9615-47d5-8cf5-14b7914f8d07
+
+	measure 'Quantity Shipped & to be Shipped (SS Current Season)' =
+			CALCULATE (
+			    [Quantity Shipped & to be Shipped],
+			    FILTER ( 'Purchase Season', 'Purchase Season'[Season] = [CurrentSeasonSSLabel] )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: fda08a63-c894-4ceb-a5d3-779f0a1259e4
+
+	measure 'Max Season' =
+			CALCULATE (
+			    MAX ( 'Purchase Season'[CurrentSeasonYear] ),
+			    ALLEXCEPT ( 'Purchase Season', 'Purchase Season'[Season Short Name] )
+			)
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 441e81ad-52b4-45a4-a084-35552b867254
+
+	measure 'Quantity Shipped & to be Shipped (AW Current Season)' =
+			CALCULATE (
+			    [Quantity Shipped & to be Shipped],
+			    FILTER ( 'Purchase Season', 'Purchase Season'[Season] = [CurrentSeasonAWLabel] )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: ac87a303-b044-4983-a3aa-9da2154e0b1a
+
+	measure 'Quantity Shipped & to be Shipped (Current Seasons)' =
+			SUMX (
+			    'Purchase Season',
+			    IF (
+			        'Purchase Season'[Season Short Name] = "AW",
+			        [Quantity Shipped & to be Shipped (AW Current Season)],
+			        [Quantity Shipped & to be Shipped (SS Current Season)]
+			    )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 5d8a8a4f-7b8d-4af3-9225-5d71ba1ffd93
+
+	measure PreviousSeasonAWLabel =
+			"AW"
+			    & CALCULATE (
+			        [Max Season] - 1,
+			        FILTER ( 'Purchase Season', 'Purchase Season'[Season Short Name] = "AW" )
+			    )
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: b5d0b9a6-3a9a-478c-b34f-93499d7cdce1
+
+	measure PreviousSeasonSSLabel =
+			"SS"
+			    & CALCULATE (
+			        [Max Season] - 1,
+			        FILTER ( 'Purchase Season', 'Purchase Season'[Season Short Name] = "SS" )
+			    )
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 65ec3697-867b-4b21-8628-10aa56954fb9
+
+	measure 'Quantity Shipped & to be Shipped (AW Previous Season)' =
+			CALCULATE (
+			    [Quantity Shipped & to be Shipped],
+			    FILTER (
+			        'Purchase Season',
+			        'Purchase Season'[Season] = [PreviousSeasonAWLabel]
+			    )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: f813442a-3a04-486c-9404-a745cdfa3ea3
+
+	measure 'Quantity Shipped & to be Shipped (SS Previous Season)' =
+			CALCULATE (
+			    [Quantity Shipped & to be Shipped],
+			    FILTER (
+			        'Purchase Season',
+			        'Purchase Season'[Season] = [PreviousSeasonSSLabel]
+			    )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: e3aabc13-a54f-4af4-8a0c-59c520d90885
+
+	measure 'Quantity Shipped & to be Shipped (Previous Seasons)' =
+			SUMX (
+			    'Purchase Season',
+			    IF (
+			        'Purchase Season'[Season Short Name] = "AW",
+			        [Quantity Shipped & to be Shipped (AW Previous Season)],
+			        [Quantity Shipped & to be Shipped (SS Previous Season)]
+			    )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 78aa285c-4493-45d0-a96e-a896facf994b
+
+	measure '% Submitted vs Confirmed Ex-Factory (Previous Season)' =
+			DIVIDE (
+			    [Quantity Shipped & to be Shipped (Previous Seasons)],
+			    CALCULATE (
+			        [Quantity Shipped & to be Shipped (Previous Seasons)],
+			        ALL ( 'Days Late Groupings' )
+			    )
+			)
+		formatString: " 0.00%;-0.00%;0.00%"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 3cd1201c-f79c-4ec4-9075-6419cd0fd618
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Shipped (Current Season)' =
+			CALCULATE (
+			    [Quantity Shipped & to be Shipped (Current Seasons)],
+			    FILTER ( 'PO Daybook', 'PO Daybook'[Production Status Old] = "Shipped" )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 5d97c549-08a0-42b1-bd6f-349fe03f310b
+
+	measure 'To Be Shipped (Current Season)' =
+			CALCULATE (
+			    [Quantity Shipped & to be Shipped (Current Seasons)],
+			    FILTER ( 'PO Daybook', 'PO Daybook'[Production Status Old] = "To Be Shipped" )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: d48163a9-2efb-4e69-9a6b-9f4ba7fe1cb1
+
+	measure '% Country of Manufacture (Previous Season)' =
+			DIVIDE (
+			    [Quantity Shipped & to be Shipped (Previous Seasons)],
+			    CALCULATE (
+			        [Quantity Shipped & to be Shipped (Previous Seasons)],
+			        ALLSELECTED ( 'Supplier'[Supplier Country] )
+			    )
+			)
+		formatString: " 0.00%;-0.00%;0.00%"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: f90a4285-f4f9-4b9e-9dc1-de919e59fa6a
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Submitted Qty (AW Current Season)' =
+			CALCULATE (
+			    [Submitted Qty],
+			    FILTER ( 'Purchase Season', 'Purchase Season'[Season] = [CurrentSeasonAWLabel] )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 970755b8-c18c-4c79-b719-ec31561e9f7c
+
+	measure 'Submitted Qty (AW Previous Season)' =
+			CALCULATE (
+			    [Submitted Qty],
+			    FILTER (
+			        'Purchase Season',
+			        'Purchase Season'[Season] = [PreviousSeasonAWLabel]
+			    )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 169540e1-ca3a-4e64-a94c-194e707298b2
+
+	measure 'Submitted Qty (SS Current Season)' =
+			CALCULATE (
+			    [Submitted Qty],
+			    FILTER ( 'Purchase Season', 'Purchase Season'[Season] = [CurrentSeasonSSLabel] )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: e169adbf-cda9-4cca-8e58-9794bd633a68
+
+	measure 'Submitted Qty (SS Previous Season)' =
+			CALCULATE (
+			    [Submitted Qty],
+			    FILTER (
+			        'Purchase Season',
+			        'Purchase Season'[Season] = [PreviousSeasonSSLabel]
+			    )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 15b4980f-e454-43b9-a1dc-352652d7a312
+
+	measure 'Submitted Qty (Previous Seasons)' =
+			SUMX (
+			    'Purchase Season',
+			    IF (
+			        'Purchase Season'[Season Short Name] = "AW",
+			        [Submitted Qty (AW Previous Season)],
+			        [Submitted Qty (SS Previous Season)]
+			    )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 12ac1ba1-10cc-4330-9588-6a1644721b5e
+
+	measure 'Submitted Qty (Current Seasons)' =
+			SUMX (
+			    'Purchase Season',
+			    IF (
+			        'Purchase Season'[Season Short Name] = "AW",
+			        [Submitted Qty (AW Current Season)],
+			        [Submitted Qty (SS Current Season)]
+			    )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 9689bb26-e560-4c6d-9912-eda4208b69a5
+
+	measure 'Submitted Running Totals' =
+			CALCULATE (
+			    [Submitted Qty (Current Seasons)],
+			    FILTER ( 'PO Daybook', 'PO Daybook'[Date Loaded - Revised] <= NOW () )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 7ec1c36c-4a8a-43f6-8907-00cb280dc11a
+
+	measure 'Submitted Same Season Period Last Year' =
+			CALCULATE (
+			    [Submitted Qty (Previous Seasons)],
+			    FILTER ( 'PO Daybook', 'PO Daybook'[Date Loaded - Revised] <= NOW () - 365 )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 5fb9cb9f-4c2d-47a8-bdb0-4258d4cfd9de
+
+	measure '% Difference Submitted Current Season vs Last Season PIT' =
+			DIVIDE (
+			    [Submitted Running Totals] - [Submitted Same Season Period Last Year],
+			    [Submitted Same Season Period Last Year]
+			)
+		formatString: " 0.00%;-0.00%;0.00%"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 518c12ed-dbad-4b59-8e77-b6b2c4e548f7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'To Be Shipped' =
+			CALCULATE (
+			    [Quantity Shipped & to be Shipped],
+			    FILTER ( 'PO Daybook', 'PO Daybook'[Production Status Old] = "To Be Shipped" )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: b358612d-4cba-49d7-bd79-8bd1b6a150d1
+
+	measure 'Quantity Shipped & to be Shipped (Last Season)' =
+			CALCULATE (
+			    [Quantity Shipped & to be Shipped],
+			    FILTER ( 'Purchase Season', 'Purchase Season'[Season Year] = 'Purchase Season'[Last Year] )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: a78595c3-28dc-48c8-b9a9-91e003c35614
+
+	measure 'Quantity Submitted' = IF ( NOT ( ISFILTERED ( Size[Size] ) ), SUM ( 'PO Daybook'[Qty_Ordered] ) )
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 492cc88c-ca4e-4ae8-8a34-8ffd17272d86
+
+	measure 'Quantity Approved' =
+			IF (
+			    NOT ( ISFILTERED ( Size[Size] ) ),
+			    SUM ( 'PO Daybook'[Qty_Approved] )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: a87f4e4a-75ec-4bf9-aedf-95fce243c1e7
+
+	measure 'Approved PO Value' = SUM ( 'PO Daybook'[Approved Value] )
+		formatString: " #,##0.00"
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 226fb5cc-abe3-47d3-ba6e-51e9af4341fa
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Quantity to be Shipped' = SUM('PO Daybook'[QtyToBeShipped])
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 57dc8253-9d0e-485e-a6a5-dd0a6e5e9d5e
+
+	measure 'Quantity Placed to Factory' =
+			IF (
+			    NOT ( ISFILTERED ( Size[Size] ) ),
+			    SUM ( 'PO Daybook'[Qty_PlacedtoFcty] )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 61f7533a-2cfb-4371-b759-907c391792fc
+
+	measure 'Quantity Rejected' = IF ( NOT ( ISFILTERED ( Size[Size] ) ), SUM ( 'PO Daybook'[Qty_Rejected] ) )
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 9fd670b7-92e4-476d-b2f0-6c4e28c44b4c
+
+	measure 'Quantity Shipped' = CALCULATE([Quantity Shipped & to be Shipped],FILTER('PO Daybook','PO Daybook'[Production Status Old]="Shipped"))
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 4c67b8d9-9f16-4bb2-8ea4-57b0bea7704a
+
+	measure 'Quantity Confirmed' =
+			CALCULATE (
+			    [Submitted Qty],
+			    FILTER ( 'PO Daybook', 'PO Daybook'[Confirmed_Ex_Factory_Key] <> 0 )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 412e3a2c-4b7a-41fc-af81-45e995f68d57
+
+	measure 'Quantity Unconfirmed' =
+			CALCULATE (
+			    [Submitted Qty],
+			    FILTER ( 'PO Daybook', 'PO Daybook'[Confirmed_Ex_Factory_Key] = 0 )
+			)
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 22751141-749a-4e71-9bc9-f5443e330e05
+
+	/// FOB (Freight on Board)
+	measure FOB = [Approved PO Value]
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 4e64930c-668c-4663-bb59-be8dc9e0c876
+
+	measure 'Quantity Ordered' = sum('PO Details'[QtyOrdered])
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 81eedee5-3b7c-4a96-ab06-4220673d6c24
+
+	measure 'Invoice Value' = SUM ( 'PO Daybook'[LINEAMOUNT_CONS_GBP] ) * [XR]
+		formatString: " #,##0.00"
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 02e25a6d-4a5c-42ed-8029-b5dfb9ced9d7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Quantity Invoiced' = SUM('PO Daybook'[Qty_Invoiced])
+		formatString: #,0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 8304fdd3-f743-4e5c-9dfd-26c5c815a003
+
 	column Column
 		dataType: int64
 		isHidden

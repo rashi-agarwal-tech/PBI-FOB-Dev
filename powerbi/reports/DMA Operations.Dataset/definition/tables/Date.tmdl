@@ -992,13 +992,15 @@ table Date
 		annotation SummarizationSetBy = Automatic
 
 	column 'Reporting Year'
-		dataType: double
+		dataType: int64
 		displayFolder: Calendar Dates
 		lineageTag: 7ea323c0-87c6-456f-ab0f-d82df33779be
 		summarizeBy: none
 		sourceColumn: Reporting Year
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
 
@@ -1182,6 +1184,24 @@ table Date
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Calendar Day Of Week Long Name'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 602db303-a164-4990-9f52-6d75f18f97e8
+		summarizeBy: none
+		sourceColumn: Calendar Day Of Week Long Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Month Year Short Name'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: ca56f768-7d74-4bb4-8bdf-dea8033d3787
+		summarizeBy: none
+		sourceColumn: Calendar Month Year Short Name
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Date = m
 		mode: import
 		source =
@@ -1200,6 +1220,4 @@ table Date
 	changedProperty = IsHidden
 
 	annotation PBI_ResultType = Table
-
-	annotation PBI_NavigationStepName = Navigation
 

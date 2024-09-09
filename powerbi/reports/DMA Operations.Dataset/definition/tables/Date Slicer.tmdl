@@ -7,6 +7,9 @@ table 'Date Slicer'
 		lineageTag: 71e28245-ac87-45b7-8d83-32adb9f6e5e0
 		summarizeBy: none
 		sourceColumn: Date Slicer
+		sortByColumn: SortOrder
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -24,14 +27,12 @@ table 'Date Slicer'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Sort Order'
+	column SortOrder
 		dataType: string
 		isHidden
-		sourceProviderType: nvarchar(3)
-		displayFolder: zz_Misc
-		lineageTag: 0cb80828-61ed-4069-9b75-76b4dc236925
+		lineageTag: f892db1e-0fec-4905-87d4-031df8b5e307
 		summarizeBy: none
-		sourceColumn: Sort Order
+		sourceColumn: SortOrder
 
 		changedProperty = IsHidden
 

@@ -285,15 +285,6 @@ table Product
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'LatLatest Season'
-		dataType: string
-		sourceProviderType: nvarchar(16777216)
-		lineageTag: 410b1d0c-8308-4bad-bb7d-3884a729d763
-		summarizeBy: none
-		sourceColumn: LatLatest Season
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Key Story Name'
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
@@ -527,6 +518,14 @@ table Product
 		sourceColumn: Welted
 
 		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Latest Season'
+		dataType: string
+		lineageTag: bff662b5-1eb3-4e1f-b85a-996adeae2516
+		summarizeBy: none
+		sourceColumn: Latest Season
 
 		annotation SummarizationSetBy = Automatic
 

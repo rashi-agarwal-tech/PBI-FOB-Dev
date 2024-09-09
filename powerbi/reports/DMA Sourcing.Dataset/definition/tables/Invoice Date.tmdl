@@ -634,7 +634,7 @@ table 'Invoice Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Date Key'
-		dataType: double
+		dataType: int64
 		isHidden
 		displayFolder: Calendar Dates
 		lineageTag: b086bdd8-3268-4ee2-8ef9-2b9a4d8c611c
@@ -642,6 +642,8 @@ table 'Invoice Date'
 		sourceColumn: Date Key
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 

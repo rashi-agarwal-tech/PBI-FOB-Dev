@@ -1162,16 +1162,17 @@ table 'PO Daybook'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Production Status'
-		dataType: string
+		dataType: double
 		isHidden
-		sourceProviderType: nvarchar(16777216)
 		lineageTag: 0adeaa4d-aa67-4ce2-9592-a99aa952fa86
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Production Status
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Shipped Date'
 		dataType: dateTime
@@ -2375,7 +2376,7 @@ table 'PO Daybook'
 
 	column '_Expected Booking Date' = [12. Available Ship Date] - 14
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		lineageTag: 8a7d731a-c5be-48df-9371-8d03fe7565c3
 		summarizeBy: none
 		isDataTypeInferred

@@ -7,12 +7,12 @@ table 'Shipped Date'
 		isHidden
 		formatString: 0
 		lineageTag: fb819f70-0a1c-47ec-985a-03d6182efeec
-		summarizeBy: count
+		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Date Key]
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column '  Shipped Date'
 		dataType: dateTime
@@ -426,12 +426,12 @@ table 'Shipped Date'
 		formatString: 0
 		displayFolder: Fiscal Dates
 		lineageTag: cdf02ca0-aa10-4d54-b512-ebda4cf8fb59
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Fiscal Year Number]
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Relative Fiscal Week'
 		dataType: string
@@ -475,12 +475,12 @@ table 'Shipped Date'
 		formatString: 0
 		displayFolder: Fiscal Dates
 		lineageTag: 2b23e205-1590-4e56-9f0d-19222f242361
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Fiscal Day #]
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Week Number (544)'
 		dataType: int64
