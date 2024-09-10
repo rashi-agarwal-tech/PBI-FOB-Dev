@@ -15,7 +15,7 @@ table 'Confirmed Ex-Factory Date'
 
 	column ' Confirmed Ex-Factory Date'
 		dataType: dateTime
-		formatString: General Date
+		formatString: Short Date
 		lineageTag: f89162ea-12a1-450d-8983-850d2099c028
 		summarizeBy: none
 		isDataTypeInferred
@@ -153,6 +153,7 @@ table 'Confirmed Ex-Factory Date'
 	column Year
 		dataType: int64
 		formatString: 0
+		displayFolder: Calendar Dates
 		lineageTag: cb3d8494-de12-45b5-89a2-68565c3f7592
 		summarizeBy: none
 		isNameInferred
@@ -163,6 +164,7 @@ table 'Confirmed Ex-Factory Date'
 
 	column Year-Week
 		dataType: string
+		displayFolder: Calendar Dates
 		lineageTag: 74d96cfc-c99d-4b8d-a85b-009a0beeb6a1
 		summarizeBy: none
 		isNameInferred
@@ -630,6 +632,7 @@ table 'Confirmed Ex-Factory Date'
 
 	column 'Year Half'
 		dataType: string
+		displayFolder: Calendar Dates
 		lineageTag: f3e55235-49b4-47e3-83a3-78297f45e410
 		summarizeBy: none
 		isNameInferred

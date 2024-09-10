@@ -17,13 +17,13 @@ table 'Latest Ex-Factory Date'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Latest Ex-Factory Date'
+	column ' Latest Ex-Factory Date'
 		dataType: dateTime
 		formatString: Short Date
 		sourceProviderType: datetime2
 		lineageTag: e0165fc5-b72b-4916-97ad-bbf7461e3e8c
 		summarizeBy: none
-		sourceColumn: Latest Ex-Factory Date
+		sourceColumn: " Latest Ex-Factory Date"
 
 		annotation SummarizationSetBy = Automatic
 
@@ -138,7 +138,7 @@ table 'Latest Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Calendar Month Number Short' = ```
-			SWITCH(MONTH('Latest Ex-Factory Date'[Latest Ex-Factory Date]), 
+			SWITCH(MONTH('Latest Ex-Factory Date'[ Latest Ex-Factory Date]), 
 			1,"01",
 			2,"02",
 			3,"03",
@@ -160,7 +160,7 @@ table 'Latest Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column Year = ```
-			YEAR('Latest Ex-Factory Date'[Latest Ex-Factory Date]) 
+			YEAR('Latest Ex-Factory Date'[ Latest Ex-Factory Date]) 
 			```
 		dataType: int64
 		formatString: 0
@@ -179,7 +179,7 @@ table 'Latest Ex-Factory Date'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Calendar Day Number' = ```
-			SWITCH(DAY('Latest Ex-Factory Date'[Latest Ex-Factory Date]), 
+			SWITCH(DAY('Latest Ex-Factory Date'[ Latest Ex-Factory Date]), 
 			1,"01",
 			2,"02",
 			3,"03",
@@ -229,9 +229,10 @@ table 'Latest Ex-Factory Date'
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="SRC_BFN_VW_LATESTEXFACTORYDATE",Kind="View"]}[Data],
 					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
-					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View,
+				    #"Renamed Columns" = Table.RenameColumns(ParameterFilter,{{"Latest Ex-Factory Date", " Latest Ex-Factory Date"}})
 				in
-					ParameterFilter
+					#"Renamed Columns"
 
 	annotation PBI_ResultType = Table
 

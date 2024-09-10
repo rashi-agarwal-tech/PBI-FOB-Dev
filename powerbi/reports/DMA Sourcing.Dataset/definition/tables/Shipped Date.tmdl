@@ -370,13 +370,12 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = User
 
-	column 'Fiscal Period Short Name'
+	column 'Fiscal Period'
 		dataType: string
 		isHidden
 		displayFolder: Fiscal Dates
 		lineageTag: fa64fd84-0b3b-4867-8f9b-677695851d2d
 		summarizeBy: none
-		isNameInferred
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Fiscal Period Short Name]
 
@@ -407,14 +406,13 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Fiscal Week Number'
+	column 'Fiscal Week #'
 		dataType: int64
 		isHidden
 		formatString: 0
 		displayFolder: Fiscal Dates
 		lineageTag: b86f2be8-41b8-4d76-8884-16779629ee26
 		summarizeBy: none
-		isNameInferred
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Fiscal Week Number]
 
@@ -482,18 +480,17 @@ table 'Shipped Date'
 
 		annotation SummarizationSetBy = User
 
-	column 'Week Number (544)'
+	column 'Fiscal Week Number (544)'
 		dataType: int64
 		isHidden
 		formatString: 0
 		displayFolder: 544 Dates
 		lineageTag: 53d8fa18-4117-4f9f-a522-ff789728635f
-		summarizeBy: sum
-		isNameInferred
+		summarizeBy: none
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Week Number (544)]
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Fiscal Period Number (544)'
 		dataType: int64
@@ -501,12 +498,12 @@ table 'Shipped Date'
 		formatString: 0
 		displayFolder: 544 Dates
 		lineageTag: 3b07c351-c3f9-46e5-93fe-cb371a8e2598
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Fiscal Period Number (544)]
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Fiscal Quarter (544)'
 		dataType: int64
@@ -514,12 +511,12 @@ table 'Shipped Date'
 		formatString: 0
 		displayFolder: 544 Dates
 		lineageTag: cb39dbf0-03f6-4eb9-b044-cfa0a9fa7c27
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Fiscal Quarter (544)]
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Fiscal Half (544)'
 		dataType: int64
@@ -527,12 +524,12 @@ table 'Shipped Date'
 		formatString: 0
 		displayFolder: 544 Dates
 		lineageTag: b69a8b92-357b-4464-9ac0-16ae8c0b4847
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Fiscal Half (544)]
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Fiscal Year (544)'
 		dataType: string
@@ -552,12 +549,12 @@ table 'Shipped Date'
 		formatString: 0
 		displayFolder: 544 Dates
 		lineageTag: e24ecb0b-9cea-43ff-ae65-9e3595977a66
-		summarizeBy: sum
+		summarizeBy: none
 		isNameInferred
 		isDataTypeInferred
 		sourceColumn: Scheduled Ex-Factory Date[Fiscal Year Number (544)]
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column 'Fiscal Year-Week (544)'
 		dataType: string
