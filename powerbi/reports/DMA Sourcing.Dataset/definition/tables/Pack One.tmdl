@@ -137,6 +137,21 @@ table 'Pack One'
 
 		annotation SummarizationSetBy = Automatic
 
+	column PackedDateKey
+		dataType: int64
+		isHidden
+		lineageTag: 2f1dc7a1-cf0f-4f3b-ab55-f3d83925ed2f
+		summarizeBy: none
+		sourceColumn: PackedDateKey
+
+		changedProperty = DataType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition 'Pack One' = m
 		mode: import
 		source =

@@ -95,7 +95,15 @@ relationship 72217bb0-3d85-4f6e-8f9c-2d83e7597fe4
 	fromColumn: 'PO Daybook'.'Days Late Bin'
 	toColumn: 'Days Late Groupings'.'DL Bin'
 
-relationship 84780145-f1c9-4ef5-85ee-c48de4fd0f90
-	fromColumn: 'Pack One'.'Packed Date'
+relationship AutoDetected_9a7e738b-9721-46c4-9ae9-62aff9c86a01
+	fromColumn: 'Pack One Carton Dimensions'.Size_Key
+	toColumn: Size.Size_Key
+
+relationship b994a886-4b49-447d-8567-ad420158062f
+	fromColumn: 'Pack One Carton Dimensions'.PPMProduct_Key
+	toColumn: Product.PPMProduct_Key
+
+relationship 4aa7c772-fce2-4b02-85ce-2dd1eb646ae2
+	fromColumn: 'Pack One'.PackedDateKey
 	toColumn: 'Pack One Date'.'Date Key'
 
