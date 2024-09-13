@@ -1,0 +1,33 @@
+table 'Seasons 2'
+	isHidden
+	lineageTag: 375ce9b0-3820-46cb-9142-60a0768cf784
+	sourceLineageTag: 8881a7a6-0425-45db-b679-6c37dcecf28a
+
+	column Season
+		dataType: string
+		isHidden
+		lineageTag: 547e1198-dbd5-41c4-8332-2ea42c711f25
+		sourceLineageTag: cd55c42c-7b4e-4929-a184-aac6994ae5cf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = User
+
+	column 'Season LY'
+		dataType: string
+		isHidden
+		lineageTag: 5c205b9b-2a23-42a1-91bc-7f98205e8c8e
+		sourceLineageTag: d6902e98-4099-4b50-bc36-f1ec20cc5903
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season LY
+
+		annotation SummarizationSetBy = User
+
+	partition 'Seasons 2' = entity
+		mode: directQuery
+		source
+			entityName: Seasons
+			expressionSource: 'DirectQuery to AS - DMA Total Business 2'
+

@@ -1,0 +1,43 @@
+table 'Web Device 2'
+	lineageTag: 6858c7ad-f4ee-4d78-9b91-2ec220410e61
+	sourceLineageTag: 813704e2-0e0c-4433-9d5d-b70d0998d1e1
+
+	column Device
+		dataType: string
+		lineageTag: dbd16593-0a11-43f7-85f1-447bb340bd95
+		sourceLineageTag: 8fbcd3f5-ca14-4a8f-93cd-ab3929a9067c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Device
+
+		annotation SummarizationSetBy = User
+
+	column DeviceCategory_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 1062d5b2-43d0-42c3-be0f-34de4b8100e7
+		sourceLineageTag: 6a06b688-eb15-4d5b-8b5a-db5579a0e489
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DeviceCategory_Key
+
+		annotation SummarizationSetBy = User
+
+	column DeviceJoin
+		dataType: string
+		isNullable: false
+		lineageTag: ea24816e-14e9-4dda-9e4a-6dd2385c1079
+		sourceLineageTag: 4ccadd21-92d6-4e52-9970-07c3b54e7653
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DeviceJoin
+
+		annotation SummarizationSetBy = User
+
+	partition 'Web Device 2' = entity
+		mode: directQuery
+		source
+			entityName: Web Device
+			expressionSource: 'DirectQuery to AS - DMA D2C 2'
+

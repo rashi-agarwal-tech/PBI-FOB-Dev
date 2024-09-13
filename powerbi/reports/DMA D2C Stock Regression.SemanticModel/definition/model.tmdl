@@ -1,0 +1,205 @@
+model Model
+	culture: en-GB
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DirectQuery to AS - DMA D2C","DirectQuery to AS - DMA D2C 2","DirectQuery to AS - DMA D2C 3"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.132.1053.0 (24.08)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Regions
+ref table Pick
+ref table 'GA Demand FC'
+ref table 'Hours Worked'
+ref table 'Order Taker'
+ref table 'Seasonal Product Forecast'
+ref table 'Refit Exclusion'
+ref table 'Store Activity FC'
+ref table Forecast
+ref table 'Bridge InventTransID'
+ref table 'Retail Demographics'
+ref table 'Retail Payment Details'
+ref table 'Retail Payment Methods'
+ref table Orders
+ref table 'Financial Channel'
+ref table Region
+ref table 'Display Currency'
+ref table Customer
+ref table 'Product Class'
+ref table 'Selling Status - Invoice'
+ref table 'Selling Status - Order Entry'
+ref table 'Account Details'
+ref table Size
+ref table Warehouse
+ref table 'Adjustments CoGS'
+ref table 'Adjustments Sales'
+ref table 'Exchange Rates'
+ref table 'Purchase Orders'
+ref table 'Order Type'
+ref table 'Ecom Email Marketing'
+ref table Products
+ref table Time
+ref table Date
+ref table 'Date - Order Date'
+ref table 'Date Slicer'
+ref table 'Google Analytics Ads'
+ref table 'Google Analytics'
+ref table 'Google Analytics Goals'
+ref table 'GA Country'
+ref table 'Website Name'
+ref table 'Open eCom Return Info'
+ref table 'Product Weights'
+ref table 'Web Channel'
+ref table 'Web Device'
+ref table Website
+ref table BridgeSalesOrderNumber
+ref table 'Size Classification'
+ref table SmartRes
+ref table Availability
+ref table Footfall
+ref table 'Forecast Version'
+ref table 'Refit Slicer'
+ref table Channel
+ref table Territory
+ref table 'Seasonal Product Info'
+ref table 'Forecast Additional Ecom'
+ref table 'Forecast Ecom Demand'
+ref table TMALL
+ref table 'Model Refresh Time'
+ref table Metrics
+ref table 'Net Transactions'
+ref table 'Regions 2'
+ref table 'Pick 2'
+ref table 'GA Demand FC 2'
+ref table 'Hours Worked 2'
+ref table 'Order Taker 2'
+ref table 'Seasonal Product Forecast 2'
+ref table 'Refit Exclusion 2'
+ref table 'Store Activity FC 2'
+ref table 'Forecast 2'
+ref table 'Bridge InventTransID 2'
+ref table 'Retail Demographics 2'
+ref table 'Retail Payment Details 2'
+ref table 'Retail Payment Methods 2'
+ref table 'Orders 2'
+ref table 'Financial Channel 2'
+ref table 'Region 2'
+ref table 'Display Currency 2'
+ref table 'Customer 2'
+ref table 'Product Class 2'
+ref table 'Selling Status - Invoice 2'
+ref table 'Selling Status - Order Entry 2'
+ref table 'Account Details 2'
+ref table 'Size 2'
+ref table 'Warehouse 2'
+ref table 'Adjustments CoGS 2'
+ref table 'Adjustments Sales 2'
+ref table 'Exchange Rates 2'
+ref table 'Purchase Orders 2'
+ref table 'Order Type 2'
+ref table 'Ecom Email Marketing 2'
+ref table 'Products 2'
+ref table 'Time 2'
+ref table 'Date 2'
+ref table 'Date - Order Date 2'
+ref table 'Date Slicer 2'
+ref table 'Google Analytics Ads 2'
+ref table 'Google Analytics 2'
+ref table 'Google Analytics Goals 2'
+ref table 'GA Country 2'
+ref table 'Website Name 2'
+ref table 'Open eCom Return Info 2'
+ref table 'Product Weights 2'
+ref table 'Web Channel 2'
+ref table 'Web Device 2'
+ref table 'Website 2'
+ref table 'BridgeSalesOrderNumber 2'
+ref table 'Size Classification 2'
+ref table 'SmartRes 2'
+ref table 'Availability 2'
+ref table 'Footfall 2'
+ref table 'Forecast Version 2'
+ref table 'Refit Slicer 2'
+ref table 'Channel 2'
+ref table 'Territory 2'
+ref table 'Seasonal Product Info 2'
+ref table 'Forecast Additional Ecom 2'
+ref table 'Forecast Ecom Demand 2'
+ref table 'TMALL 2'
+ref table 'Model Refresh Time 2'
+ref table 'Metrics 2'
+ref table 'Net Transactions 2'
+ref table 'Regions 3'
+ref table 'Pick 3'
+ref table 'GA Demand FC 3'
+ref table 'Hours Worked 3'
+ref table 'Order Taker 3'
+ref table 'Seasonal Product Forecast 3'
+ref table 'Refit Exclusion 3'
+ref table 'Store Activity FC 3'
+ref table 'Forecast 3'
+ref table 'Bridge InventTransID 3'
+ref table 'Retail Demographics 3'
+ref table 'Retail Payment Details 3'
+ref table 'Retail Payment Methods 3'
+ref table 'Orders 3'
+ref table 'Financial Channel 3'
+ref table 'Region 3'
+ref table 'Display Currency 3'
+ref table 'Customer 3'
+ref table 'Product Class 3'
+ref table 'Selling Status - Invoice 3'
+ref table 'Selling Status - Order Entry 3'
+ref table 'Account Details 3'
+ref table 'Size 3'
+ref table 'Warehouse 3'
+ref table 'Adjustments CoGS 3'
+ref table 'Adjustments Sales 3'
+ref table 'Exchange Rates 3'
+ref table 'Purchase Orders 3'
+ref table 'Order Type 3'
+ref table 'Ecom Email Marketing 3'
+ref table 'Products 3'
+ref table 'Time 3'
+ref table 'Date 3'
+ref table 'Date - Order Date 3'
+ref table 'Date Slicer 3'
+ref table 'Google Analytics Ads 3'
+ref table 'Google Analytics 3'
+ref table 'Google Analytics Goals 3'
+ref table 'GA Country 3'
+ref table 'Website Name 3'
+ref table 'Open eCom Return Info 3'
+ref table 'Product Weights 3'
+ref table 'Web Channel 3'
+ref table 'Web Device 3'
+ref table 'Website 3'
+ref table 'BridgeSalesOrderNumber 3'
+ref table 'Size Classification 3'
+ref table 'SmartRes 3'
+ref table 'Availability 3'
+ref table 'Footfall 3'
+ref table 'Forecast Version 3'
+ref table 'Refit Slicer 3'
+ref table 'Channel 3'
+ref table 'Territory 3'
+ref table 'Seasonal Product Info 3'
+ref table 'Forecast Additional Ecom 3'
+ref table 'Forecast Ecom Demand 3'
+ref table 'TMALL 3'
+ref table 'Model Refresh Time 3'
+ref table 'Metrics 3'
+ref table 'Net Transactions 3'
+ref table stocks
+ref table 'Parameter - Date'
+ref table 'Parameter - Metrics'
+
+ref cultureInfo en-GB
+

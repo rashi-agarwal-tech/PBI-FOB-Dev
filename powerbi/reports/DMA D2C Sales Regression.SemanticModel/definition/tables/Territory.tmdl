@@ -1,0 +1,65 @@
+table Territory
+	lineageTag: 970ce334-d60f-44bb-abe2-9357677326aa
+	sourceLineageTag: 1817e326-a1b2-4970-a8ff-7bdfc2925cb5
+
+	column Territory_Key
+		dataType: int64
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: 1ff39329-64ac-429e-b184-772979d31115
+		sourceLineageTag: 8de3c35c-d3e8-46d9-88d0-891d7bd7424a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Territory_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Country Code'
+		dataType: string
+		lineageTag: 7259ce3d-d399-4fd5-b187-9c30907bc939
+		sourceLineageTag: efe63c63-4c08-4e49-82ad-cd7365d960df
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Country Name'
+		dataType: string
+		lineageTag: a5619bef-fb16-4ef1-92fd-547ce813ae89
+		sourceLineageTag: ab8374ac-996b-419e-ae72-0d00ecd8a31f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country Name
+
+		annotation SummarizationSetBy = User
+
+	column Region
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: bb740871-f163-4f24-af45-689020945d5c
+		sourceLineageTag: df326ff2-b17f-430b-b4a0-4f69929adc53
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = User
+
+	column 'Territory Region'
+		dataType: string
+		lineageTag: cdfddeee-c755-4d45-a630-47f0a6ce8086
+		sourceLineageTag: 3384d89b-7a70-4dc9-bbaa-58014f96de49
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Territory Region
+
+		annotation SummarizationSetBy = User
+
+	partition Territory = entity
+		mode: directQuery
+		source
+			entityName: Territory
+			expressionSource: 'DirectQuery to AS - DMA D2C'
+

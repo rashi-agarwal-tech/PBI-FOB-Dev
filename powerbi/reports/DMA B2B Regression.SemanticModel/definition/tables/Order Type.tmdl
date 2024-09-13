@@ -1,0 +1,53 @@
+table 'Order Type'
+	lineageTag: a3c92ac9-1f6a-41e6-8497-9a52ec2ed0b6
+	sourceLineageTag: 67de66cf-bf2e-412a-be0c-1661ba5db82e
+
+	column SalesOrderPool_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: d42956cd-66a3-4f50-b1ea-f47933318912
+		sourceLineageTag: 1ee26889-fcb3-4a9f-8f26-d0961fa89657
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SalesOrderPool_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Type'
+		dataType: string
+		lineageTag: 4154f981-d804-4563-93bf-1b3467ead6be
+		sourceLineageTag: 54dd4684-3328-4373-963d-8b4482e93287
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Type ID'
+		dataType: string
+		lineageTag: b6fef636-94df-4bd4-aac1-d31f9255d445
+		sourceLineageTag: 9a32cf2b-b614-45a3-8ba3-5169a50d5da7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Channel'
+		dataType: string
+		lineageTag: ced488fe-5c6d-4cfd-bb72-cb598122e87b
+		sourceLineageTag: c937090b-fb9a-4eca-8c2d-b4c73a015d8b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Channel
+
+		annotation SummarizationSetBy = User
+
+	partition 'Order Type' = entity
+		mode: directQuery
+		source
+			entityName: Order Type
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

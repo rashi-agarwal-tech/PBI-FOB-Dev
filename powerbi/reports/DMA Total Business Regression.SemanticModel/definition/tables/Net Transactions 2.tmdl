@@ -1,0 +1,67 @@
+table 'Net Transactions 2'
+	isHidden
+	lineageTag: 0482579a-29c1-42a2-bcf7-fdf8df9c2276
+	sourceLineageTag: a6dc0dfb-5849-4fb2-baac-4e2a76e48ac3
+
+	column 'Sales Order Number'
+		dataType: string
+		isHidden
+		lineageTag: 7ad18cb9-266e-44d2-8cec-7bc1527d62be
+		sourceLineageTag: 6ddb9a64-7f28-40ed-988a-5d3d7e875a61
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Order Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Returns Flg'
+		dataType: int64
+		isHidden
+		lineageTag: f665aa62-4df0-41ab-ae3d-36da4dfbec99
+		sourceLineageTag: b7cf7558-6afc-4dc9-a8e6-aa6dacc36ca2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Returns Flg
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Flg'
+		dataType: int64
+		isHidden
+		lineageTag: 8788200f-d180-4d01-9e41-8b4689e95e8d
+		sourceLineageTag: 5ee3e9da-2d3d-48ff-b145-d0912c730163
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Flg
+
+		annotation SummarizationSetBy = User
+
+	column 'Net Trx'
+		dataType: int64
+		isHidden
+		lineageTag: 4fdba4a7-936b-4582-be58-385eb7d7d04b
+		sourceLineageTag: 9d9f3db1-903a-4971-9825-83bb792e1aea
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Net Trx
+
+		annotation SummarizationSetBy = User
+
+	column 'Total Net Value'
+		dataType: decimal
+		isHidden
+		formatString: " \0.\0\0"
+		lineageTag: 440762c0-6311-4b31-acc7-57efbaf5b43e
+		sourceLineageTag: 2a9effff-a9e6-4ff6-8405-112a37140289
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Total Net Value
+
+		annotation SummarizationSetBy = User
+
+	partition 'Net Transactions 2' = entity
+		mode: directQuery
+		source
+			entityName: Net Transactions
+			expressionSource: 'DirectQuery to AS - DMA Total Business 2'
+

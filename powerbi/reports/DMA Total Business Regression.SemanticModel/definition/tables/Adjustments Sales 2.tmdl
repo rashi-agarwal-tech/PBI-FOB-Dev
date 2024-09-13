@@ -1,0 +1,59 @@
+table 'Adjustments Sales 2'
+	isHidden
+	lineageTag: b3f68c5d-05dc-477e-8173-c87fb950971b
+	sourceLineageTag: 4ef7ef53-0654-4a21-ac8a-6c43284503fc
+
+	column 'Amount at Constant Rate'
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Value
+		lineageTag: 5196305e-c0ac-4387-bf12-31ed17fa6bc5
+		sourceLineageTag: ca169b54-8beb-4c49-a273-d6a04d538156
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Amount at Constant Rate
+
+		annotation SummarizationSetBy = User
+
+	column AccountingDate_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: cf9e889f-d633-424e-ab8e-e30d46daf6f0
+		sourceLineageTag: 2d0cff8c-f934-473b-aae0-c6d59f4584a6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AccountingDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 34cd2c1f-20ff-4b9f-b92a-e6d13d77c7bb
+		sourceLineageTag: 48c350f2-ac66-4ccd-ae78-61d9ffc3775d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column Channel_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 6d8b9b0e-a6e2-4067-9a20-369d3354e3ff
+		sourceLineageTag: 7b1a06fb-ec8f-4175-917f-4a0b2cf8bcc5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel_Key
+
+		annotation SummarizationSetBy = User
+
+	partition 'Adjustments Sales 2' = entity
+		mode: directQuery
+		source
+			entityName: Adjustments Sales
+			expressionSource: 'DirectQuery to AS - DMA Total Business 2'
+

@@ -1,0 +1,56 @@
+table 'Customer 2'
+	isHidden
+	lineageTag: d046f344-2703-4f98-83c8-8ecb3c2794c9
+	sourceLineageTag: e1f79353-8f32-4ae4-816f-4d855232bef6
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 1c3ee54c-7a5c-476f-983c-4b9840d8cf52
+		sourceLineageTag: 234b077a-a8b2-435a-9bf5-35ccdbb81501
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Acct No'
+		dataType: string
+		isHidden
+		lineageTag: 1f0b3dd9-e915-424a-9c72-2deb56c48f69
+		sourceLineageTag: 53d710fc-4b0a-4e9a-a12e-39f54c489a4f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Acct No
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Name'
+		dataType: string
+		isHidden
+		lineageTag: 0aed07ee-c9ba-4944-a3db-5eabf2fc49f8
+		sourceLineageTag: 8757b5c4-0529-4432-a98b-23976456ea5a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Name
+
+		annotation SummarizationSetBy = User
+
+	column Country
+		dataType: string
+		isHidden
+		lineageTag: f393b4e9-71ca-419e-9eae-ad2aa4a7d7f4
+		sourceLineageTag: b1b54c5f-ae37-45ee-b4eb-3cb204850702
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = User
+
+	partition 'Customer 2' = entity
+		mode: directQuery
+		source
+			entityName: Customer
+			expressionSource: 'DirectQuery to AS - DMA D2C 2'
+

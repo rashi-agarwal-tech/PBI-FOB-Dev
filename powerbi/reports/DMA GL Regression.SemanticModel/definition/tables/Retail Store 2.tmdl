@@ -1,0 +1,249 @@
+table 'Retail Store 2'
+	lineageTag: d3bc84ad-8f45-44a7-93c1-1ae05c434073
+	sourceLineageTag: e9d19dbe-4bdb-4207-8287-b511a7baccc3
+
+	column STOREID
+		dataType: string
+		isHidden
+		lineageTag: 7f679046-99ef-4970-9afc-f72414e3bae0
+		sourceLineageTag: f023525f-065f-470b-8cbb-b2423d992990
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: STOREID
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Name'
+		dataType: string
+		lineageTag: fd001953-a30e-4b03-9c91-576432d81135
+		sourceLineageTag: a1cc3526-52e8-4f80-85e5-6661c0b2b636
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Location ID'
+		dataType: string
+		lineageTag: 8ae10796-72c5-45f2-a1a1-24bfca3441d3
+		sourceLineageTag: 2c5287bf-6432-467f-aef3-a0877378da1b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Location ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Overall Store Grade'
+		dataType: string
+		lineageTag: 637ecae8-c9d5-415e-8314-6393be75b4e8
+		sourceLineageTag: 64f398b6-561e-490b-b38c-a289901aad34
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Overall Store Grade
+
+		annotation SummarizationSetBy = User
+
+	column 'Regional Channel'
+		dataType: string
+		lineageTag: 2761f41f-991a-4011-893a-6de30a276c40
+		sourceLineageTag: 2965bc4c-d69c-420d-b2fe-19d4525ad5cf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Regional Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Location'
+		dataType: string
+		lineageTag: cd6d26a5-ffb1-4f83-8c7b-c73d0f99cb28
+		sourceLineageTag: 8c2cbab4-e272-421c-9c61-79b0b766e726
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Location
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Status'
+		dataType: string
+		lineageTag: 579f7342-55e5-4aee-86ec-defa8ff8793b
+		sourceLineageTag: 6deb1c9c-d803-4ee1-8518-9f67181f1997
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Status
+
+		annotation SummarizationSetBy = User
+
+	column City
+		dataType: string
+		lineageTag: d694ec5e-26a7-44db-8812-500c35b188ed
+		sourceLineageTag: a0a1b968-8a67-445c-8dae-a4974dad3493
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = User
+
+	column Country
+		dataType: string
+		lineageTag: 3f041389-dba3-49cd-8f34-36bf63b5559f
+		sourceLineageTag: 89d4e42a-4797-49f9-887a-e9878870d372
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = User
+
+	column Area
+		dataType: string
+		lineageTag: 58effd28-3896-4c0b-b59a-782cf2b6c2ec
+		sourceLineageTag: 1f1db8e2-eb84-46e4-9fb3-0f8e528021d8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Area
+
+		annotation SummarizationSetBy = User
+
+	column 'Opening Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: f00b7ca4-adb7-4200-a5c9-7ce70270b4ff
+		sourceLineageTag: b0108b8e-f2ba-4567-ac33-8050c95bb27b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Opening Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Closing Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 7df850a2-08f6-45f0-8b60-7d97af558cd5
+		sourceLineageTag: c5df05c6-4184-45b8-90ab-4b435d3e7bad
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Closing Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Gross Sq ft'
+		dataType: decimal
+		formatString: #,0
+		lineageTag: 5f146121-0281-4168-b140-f82b92cd3a14
+		sourceLineageTag: 9cae6d41-e15d-41e6-8d68-152f9ed4d4ee
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Gross Sq ft
+
+		annotation SummarizationSetBy = User
+
+	column 'Gross Sqm'
+		dataType: int64
+		formatString: #,0
+		lineageTag: bacc12a9-98de-40a7-8c87-fea7965dfdb4
+		sourceLineageTag: a779b2fb-a8c1-47cb-91ad-2e9f2512483c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Gross Sqm
+
+		annotation SummarizationSetBy = User
+
+	column 'Linear Ft'
+		dataType: double
+		formatString: 0
+		lineageTag: b7783c19-9731-4d59-a2b7-726494f4dbe6
+		sourceLineageTag: c16aa9eb-f5da-4e9a-bc17-3a143281dd9b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Linear Ft
+
+		annotation SummarizationSetBy = User
+
+	column Latitude
+		dataType: double
+		formatString: 0
+		lineageTag: 1263a46e-b33c-4bbe-8370-c35aef8c588c
+		sourceLineageTag: 0ec15332-66e1-4752-ac81-7433ffe99c82
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = User
+
+	column Longtitude
+		dataType: double
+		formatString: 0
+		lineageTag: 067c63c9-384e-4d3e-ab87-84535127312e
+		sourceLineageTag: b13838b2-7332-4715-9c08-8b63dc9a6dba
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Longtitude
+
+		annotation SummarizationSetBy = User
+
+	column 'Footwear SKU Capacity'
+		dataType: double
+		lineageTag: a65828a0-fbf3-4e32-afe5-d242d542ae94
+		sourceLineageTag: 780c3b0e-24a1-4442-b382-34d901aef003
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Footwear SKU Capacity
+
+		annotation SummarizationSetBy = User
+
+	column 'Price Profile'
+		dataType: string
+		lineageTag: 4862cb0c-51de-48d4-8da8-0a1318716201
+		sourceLineageTag: 4622a864-b967-4143-836c-a014aef54032
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Price Profile
+
+		annotation SummarizationSetBy = User
+
+	column 'Regional Manager'
+		dataType: string
+		lineageTag: 52277176-74cb-4597-aa7f-c7863aeb2a2e
+		sourceLineageTag: b7921622-3273-40ca-a857-4f9e8ec739f2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Regional Manager
+
+		annotation SummarizationSetBy = User
+
+	column 'Tourist Level'
+		dataType: string
+		lineageTag: d00b29a4-9718-491c-85a2-37edea471e12
+		sourceLineageTag: 54383865-1d68-454d-b2d6-347908649228
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Tourist Level
+
+		annotation SummarizationSetBy = User
+
+	column 'Store Image'
+		dataType: string
+		lineageTag: 8c005515-ad9c-441a-961f-cbfd80862b14
+		sourceLineageTag: 84aa0ec0-527e-4817-bf21-c3e05a4aff9f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Store Image
+
+		annotation SummarizationSetBy = User
+
+	column CostCentre_Key
+		dataType: string
+		isHidden
+		lineageTag: 0709fc73-01a6-4d47-a849-23108c6bf788
+		sourceLineageTag: 8ace27d1-e065-45ab-96b9-b8ee99adfe97
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CostCentre_Key
+
+		annotation SummarizationSetBy = User
+
+	partition 'Retail Store 2' = entity
+		mode: directQuery
+		source
+			entityName: Retail Store
+			expressionSource: 'DirectQuery to AS - DMA GL 2'
+

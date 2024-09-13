@@ -1,0 +1,103 @@
+table 'Region 3'
+	lineageTag: 36ab96d8-0c38-4e6a-82f6-18b0cbd64eeb
+	sourceLineageTag: 64c747e9-aa92-432b-9b4e-3cc9a1595964
+
+	column 'Company ShortName'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 9132e571-da53-42c4-bb66-0a5ffb5b2600
+		sourceLineageTag: 0b5f2e8f-6fec-429f-b82f-70b24fb27149
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company ShortName
+
+		annotation SummarizationSetBy = User
+
+	column 'Region ID'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: a025a217-bb46-4d15-abc5-e1133b95fa66
+		sourceLineageTag: d510a057-0efb-4595-8188-3ce8e5fa0dc0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Region ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Company ID'
+		dataType: string
+		isNullable: false
+		lineageTag: d77c9081-c410-4897-84f2-df4df2ea3889
+		sourceLineageTag: 524f828b-7f37-4b2b-9fbd-83a52f43c5ab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Misc
+		lineageTag: 7bb5ede0-2e2c-49ed-ae7c-ad443668be59
+		sourceLineageTag: db510b75-f4c9-489b-b312-93ef9dbe5c13
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column Region
+		dataType: string
+		lineageTag: b342a339-3c6b-40ad-983c-4b68b72e6a6b
+		sourceLineageTag: 52642833-eab9-4d6b-a97a-15541403988c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = User
+
+	column Sub-Region
+		dataType: string
+		lineageTag: 829b704e-8c45-4890-922b-91a3d3e14bc9
+		sourceLineageTag: 893643e6-ada1-40b0-8aa3-181fab65c401
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sub-Region
+
+		annotation SummarizationSetBy = User
+
+	column NAME
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 85629d5c-a83b-43fa-b332-8bc1418d5901
+		sourceLineageTag: 84275d49-0a97-4c1a-9116-e02b5301f900
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NAME
+
+		annotation SummarizationSetBy = User
+
+	column 'Company Region'
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Misc
+		lineageTag: 5f25f66c-997d-4181-b400-bdb22fdaaa18
+		sourceLineageTag: a93d3e1c-d1d6-4fc0-b538-a275fe07757a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company Region
+
+		annotation SummarizationSetBy = User
+
+	partition 'Region 3' = entity
+		mode: directQuery
+		source
+			entityName: Region
+			expressionSource: 'DirectQuery to AS - DMA D2C 3'
+

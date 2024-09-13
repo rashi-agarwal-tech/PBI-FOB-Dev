@@ -1,0 +1,962 @@
+table Date
+	lineageTag: 59d523e2-9805-485c-9e3a-34fd559d5cd1
+	sourceLineageTag: cc214cf7-52df-48e3-8940-073d4ab2f48b
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		displayFolder: Calendar Dates
+		lineageTag: 29197f54-d9d4-45d1-801a-851ecb25e70c
+		sourceLineageTag: 031c4daf-b3e6-47aa-869f-37eb308ef85b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Calendar Month Number'
+		dataType: int64
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: f82ba8f3-15bd-4ad5-aa8f-fcb2c245bf2f
+		sourceLineageTag: 2b8e474e-c618-4f9d-86f6-96f1b6e059b5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Calendar Month Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: b63fb7eb-7a93-4493-9f89-a5b84df7bdb7
+		sourceLineageTag: de3c63bd-23b0-4c8f-b0f1-73d925e6340d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year-Week'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 948e81b3-4060-48f3-96bd-dd65b48b7b8e
+		sourceLineageTag: 2595daa1-7f8f-4733-a4c7-2ff09fe625bc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Week
+
+		annotation SummarizationSetBy = User
+
+	column Season
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 9db90c74-fd2e-4309-b7c2-13a79562a706
+		sourceLineageTag: 193544b8-4b5a-4695-9492-89d3580adbe8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Fiscal Point in Time?'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 513e8e5b-0854-4926-8643-84a74a825ed6
+		sourceLineageTag: c93f5d34-b56f-4c95-bd12-406094bcec90
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Fiscal Point in Time?
+
+		annotation SummarizationSetBy = User
+
+	column 'Full Date'
+		dataType: dateTime
+		formatString: dd mmmm yyyy
+		displayFolder: Calendar Dates
+		lineageTag: 1123acaf-473b-4d0e-b80b-6fc5bbcb76e5
+		sourceLineageTag: 949da6a2-6231-4654-aa01-660074fad6ca
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Full Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Day Of Week'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: d658f22d-40d0-4180-9afb-b0dc7ef16385
+		sourceLineageTag: 11d3474d-436e-42c2-be16-b5b065fbd5cf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Day Of Week
+		sortByColumn: 'Day # of Week'
+
+		annotation SummarizationSetBy = User
+
+	column 'Day # of Week'
+		dataType: int64
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: 93b8e84a-be9a-4092-8667-5e1627f911eb
+		sourceLineageTag: d208c414-170d-4ff2-aec8-9179c0f50fa2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Day # of Week
+
+		annotation SummarizationSetBy = User
+
+	column 'Day # of Month'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: Calendar Dates
+		lineageTag: 99aa6dc1-e723-45c4-9c18-28194451412c
+		sourceLineageTag: 65074722-3704-4133-951d-907a4a20dd53
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Day # of Month
+
+		annotation SummarizationSetBy = User
+
+	column 'Day # of Year'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: Calendar Dates
+		lineageTag: d9b61795-6da1-437a-b820-3a74c44de829
+		sourceLineageTag: 63baa9c4-de7b-4386-83df-6f5a698eaea8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Day # of Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Week Name'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 790e22be-0620-48f5-88fc-079c8245b07e
+		sourceLineageTag: 642c5834-c922-49cd-a748-3dea4d17e876
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Week Name
+		sortByColumn: 'Calendar Week Number'
+
+		annotation SummarizationSetBy = User
+
+	column Mon
+		dataType: string
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: 6c843b8b-36d0-4467-8275-41827211099d
+		sourceLineageTag: 769b5eee-03ff-4836-a06e-7a2c5fc7fb99
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Mon
+		sortByColumn: 'Calendar Month Number'
+
+		annotation SummarizationSetBy = User
+
+	column Month
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 355f8c2d-30e9-43a6-ac66-6c8e1031bf4f
+		sourceLineageTag: a04ed39f-cb3f-41cf-be39-e9bf7034089d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: 'Calendar Month Number'
+
+		annotation SummarizationSetBy = User
+
+	column Year
+		dataType: int64
+		formatString: #,##0
+		displayFolder: Calendar Dates
+		lineageTag: 21fdc935-d983-4cd8-846d-73e871917cba
+		sourceLineageTag: 5afe114c-5574-4872-85b7-ec7efdd37ff5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = User
+
+	column Month-Yearold
+		dataType: int64
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: 0432f931-202b-49cf-92a1-fc58fb228968
+		sourceLineageTag: 2c4f2ba7-f197-48be-91fe-08416acea1a9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month-Yearold
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Quarter'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 4427b656-d246-4c5a-8dc4-d1649188df6c
+		sourceLineageTag: ca4083f7-d67e-42bb-9e8b-d6bda1240a60
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year-Period'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 0609af7e-5cb0-4601-bdfd-217da50c97e5
+		sourceLineageTag: 0437d862-f45c-49aa-933b-162064c42c60
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Period - Year'
+		dataType: string
+		isHidden
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: bdfd3542-003c-44ef-b61c-2972918e7e84
+		sourceLineageTag: 40897b50-7373-46d2-9532-c8f1c05ea58f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Period - Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Week #'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 6f77c8f1-72c9-4651-9e3b-25b255a32d7e
+		sourceLineageTag: be2ef125-abc0-4c1c-a6f1-6097491d1324
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Week #
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Day #'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: b7469e10-40f5-466b-b317-0fcd6aa6c53e
+		sourceLineageTag: 035e85ee-5336-4aa2-92a2-b95ceae0129a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Day #
+
+		annotation SummarizationSetBy = User
+
+	column '- Is UK Bank Holiday?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: c8790145-6d06-4aa4-a8d2-2fe6d3465a35
+		sourceLineageTag: 381b3fa6-dd48-4005-b58c-2bbd6a89aea0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is UK Bank Holiday?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Black Friday?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 451858b2-462a-46ad-b524-3d10e4ba6d90
+		sourceLineageTag: 7071a216-1186-4f19-8b4a-182b4fc4f6e9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Black Friday?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Weekend?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 6af1f4a9-c346-48ee-8fea-ba1c58a123ac
+		sourceLineageTag: 258f17d3-0121-415f-9cfc-f82802eb9c34
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Weekend?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Leap Year?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 57374fc9-7bbf-427e-b710-7b5433625462
+		sourceLineageTag: 8ff9b189-2f6a-4aba-8764-5c3e9124f12b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Leap Year?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is End of Month?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: f8c2160b-d3cc-4808-9ac5-84646fcd0c53
+		sourceLineageTag: b0281c25-998f-4688-8489-fc90781fe097
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is End of Month?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Point in Time?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: c65ddc6d-710d-47e1-8488-901aefa95691
+		sourceLineageTag: fb9e16b7-e290-46cb-83fc-5b9d9c8371e9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Point in Time?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is End of Period?'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 9bd3609d-8631-475f-b1ff-3fd4ff3b8f98
+		sourceLineageTag: 1bb386cb-0950-4f35-8f4e-f769f16c492d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is End of Period?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is End of Quarter?'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: aa869b6a-89eb-4d70-ae19-cc37196a61db
+		sourceLineageTag: 70fecdf7-a9c5-4f82-b50a-86861d0f6151
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is End of Quarter?
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Period Number'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: a8a220b9-5ace-40b5-87ea-01f27e672078
+		sourceLineageTag: 53214092-5358-4eb5-942a-39af68ca6e35
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Period Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year Number'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: e3a4f85b-1c60-49f0-910a-b9b1dae292a5
+		sourceLineageTag: ada126d7-d0e6-427e-9306-74f0cdc7aa53
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Year Number
+
+		annotation SummarizationSetBy = User
+
+	column Year-Week
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 07faffd3-a91f-4f67-a270-53c1ea28022e
+		sourceLineageTag: 612b37a0-14a6-4b58-a6bf-5dc9b7092017
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Year-Week
+
+		annotation SummarizationSetBy = User
+
+	column 'Calendar Week Number'
+		dataType: int64
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: 9f00c942-5444-485e-af6d-b280bedbf01e
+		sourceLineageTag: fb74fdad-0f8c-4fc6-9aa0-b6cb09b47f45
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Calendar Week Number
+
+		annotation SummarizationSetBy = User
+
+	column Half
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 86403c39-a192-493d-a71d-8b8e7b7067a0
+		sourceLineageTag: 362d6ee6-0c19-4d02-8467-4f9724b7f1af
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Half
+
+		annotation SummarizationSetBy = User
+
+	column 'Year Half'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 7e605171-4de8-49cc-bc38-3bcf9d9223ac
+		sourceLineageTag: ec8d70c8-9d14-4688-9297-faf5a88cde31
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Year Half
+
+		annotation SummarizationSetBy = User
+
+	column Quarter
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: abb7198c-e0d6-4b91-875f-dba076299305
+		sourceLineageTag: 3ff770b4-24de-476a-835d-f304d1e1fe35
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = User
+
+	column 'Year Quarter'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 613fb6bf-f36f-46ba-8377-082b3fad3903
+		sourceLineageTag: 158da0e1-ac38-443c-ba28-97f95969e940
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Year Quarter
+
+		annotation SummarizationSetBy = User
+
+	column 'Relative Week'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 6f58a67a-8d22-4ed2-b8e9-6d8785a49929
+		sourceLineageTag: 311f25d8-1c65-45ef-a560-0d4ff00ca99f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Relative Week
+		sortByColumn: 'Relative Week Sort'
+
+		annotation SummarizationSetBy = User
+
+	column 'Relative Month'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: b4615413-8026-440a-ab9a-afa228fbd0e3
+		sourceLineageTag: 2f78674b-1d6a-4e0e-b81c-3962e67f5e1f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Relative Month
+
+		annotation SummarizationSetBy = User
+
+	column 'Relative Year'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 4a234f48-25bb-4a93-875e-bb2848ba3fa0
+		sourceLineageTag: 5f71ab82-4c37-4713-82ab-be8645757efd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Relative Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Relative Fiscal Week'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: c1c7f0c2-d0c3-4daa-aae8-ef62477cadce
+		sourceLineageTag: a560b078-b072-40cc-b1c4-7ea3259b9139
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Week
+
+		annotation SummarizationSetBy = User
+
+	column 'Relative Fiscal Period'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 5cc88c0e-7ada-4af7-9054-bde44cd16d35
+		sourceLineageTag: b2cc7105-0ae3-454a-ac24-451d5f371015
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Relative Fiscal Year'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 3e2ccba4-f2ad-4dab-a958-9505845ba1f5
+		sourceLineageTag: ad593c02-ed7c-49d0-af88-8b87c49dd50c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Year
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Yesterday?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 63b44c08-5ef3-4386-980e-e9a590c8a6b7
+		sourceLineageTag: 968bf70a-a96d-4b2c-9af1-4bf13b3455c9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Yesterday?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Today?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 2a9452ac-822a-4788-853d-a07086118bca
+		sourceLineageTag: ef23c369-259e-44c0-8d2f-d1c936b1353c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Today?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Week?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 65e0c4a0-b2a2-4eec-92c1-401d8754f22a
+		sourceLineageTag: 31a52eb2-4319-48be-99d9-e9aafb96e497
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Week?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Month?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 6f02d8c0-a115-4f80-8295-783429c4f066
+		sourceLineageTag: e02e2218-e9e7-4b13-b6ae-80b4e635744b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Month?
+
+		annotation SummarizationSetBy = User
+
+	column 'Reporting Year'
+		dataType: int64
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: 5781c6a9-868a-485e-a9a8-d517d54258f7
+		sourceLineageTag: 7e088b42-44d0-4469-a6ec-12005b4c1e93
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Reporting Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Reporting Cal Week Index'
+		dataType: int64
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: dc704ed5-f6e8-42b4-b62d-c267a5f2f701
+		sourceLineageTag: ab50a9d9-365f-4862-808a-3676a2e3f613
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Reporting Cal Week Index
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Period Number (544)'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: 544 Dates
+		lineageTag: ee1d6a02-f102-4232-957a-ec70d228e168
+		sourceLineageTag: 0df2e3bc-dea9-4e09-956b-183150963f2b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Period Number (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Quarter (544)'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: 544 Dates
+		lineageTag: 995f1a08-0a18-4b43-b311-8f1beb1398d1
+		sourceLineageTag: 1437035e-8f7e-49e4-a94b-fc7cb8278037
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Half (544)'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: 544 Dates
+		lineageTag: 200e0c3a-ae3d-4b4a-9b98-0d03b78b86e3
+		sourceLineageTag: f83f8b92-6e6f-40c9-b575-289e215fcb71
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Half (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: 652c8c32-3f69-43ab-8e28-c0478b777afd
+		sourceLineageTag: 72904f2a-da46-4dbd-b0b6-64bad2aced94
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Year (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year Number (544)'
+		dataType: int64
+		isHidden
+		displayFolder: 544 Dates
+		lineageTag: 46d763a5-2103-4c67-9bd4-2ee0f427ce11
+		sourceLineageTag: b79af238-f2d6-48f6-99e6-685780081cbc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Year Number (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Week Number (544)'
+		dataType: int64
+		formatString: " \#\,\#\#\0"
+		displayFolder: 544 Dates
+		lineageTag: 9c58b95f-339b-48b7-a6f6-2bd7219a0e77
+		sourceLineageTag: dcf21885-332e-468e-b19c-f56b7cec7bad
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Week Number (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year-Week (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: 5781b5d3-ad19-4170-ae8b-33f90dcb9c00
+		sourceLineageTag: b52d6bff-8b73-43f9-8e4d-a1fb45dcd7b3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Week (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Relative Fiscal Period (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: 434415af-5fba-49e2-8321-4ead5a11fbb5
+		sourceLineageTag: 7a385318-7192-4796-b1b1-83f602e73e3f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Period (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Relative Fiscal Year (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: 79a4ac1f-38a6-4c87-ad96-fdbca7f140de
+		sourceLineageTag: b99aeef3-8000-4228-9f01-6723a53e7a70
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Year (544)
+
+		annotation SummarizationSetBy = User
+
+	column '- Is End of US Period?'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: 1ccf8e6a-2170-4caa-9d2c-9f9e7af004f3
+		sourceLineageTag: e7a92c16-15cb-4a24-a820-3aad97ba2362
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is End of US Period?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is End of US Quarter?'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: cae19116-e804-4e28-9770-871f59a9b262
+		sourceLineageTag: 140ee6e8-36ac-4c78-ad92-aa4bce80e436
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is End of US Quarter?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is US Fiscal Point in Time?'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: b6edcc66-7ab2-43b4-86e3-ab887d29ab07
+		sourceLineageTag: 17c778d6-c93d-4bc9-b210-63db27f1f3ba
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is US Fiscal Point in Time?
+
+		annotation SummarizationSetBy = User
+
+	column 'Relative Fiscal US Period'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: 63fc91e4-960a-495f-9220-daa9365dacac
+		sourceLineageTag: d16e485c-9127-4439-926a-1dc9c416fcbb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Relative Fiscal US Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Relative Fiscal US Week'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: b456fbf2-8391-4edc-8e38-7878e0b709af
+		sourceLineageTag: 254f506b-913f-4b9a-a431-d557af9a5a96
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Relative Fiscal US Week
+
+		annotation SummarizationSetBy = User
+
+	column 'Relative Fiscal US Year'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: d98f4136-1c3c-40d3-8a98-5bc337f73b70
+		sourceLineageTag: 6ebdb162-bd62-42d8-914f-138a4aeaf7e5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Relative Fiscal US Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal US Period'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: d7708007-1d1e-4619-9201-6551dfa3327a
+		sourceLineageTag: 54c09825-32dc-43b0-b0f2-a7059d997712
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal US Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal US Quarter'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: f5eb73b9-5702-408a-8915-00e5cc221168
+		sourceLineageTag: 3d9b8c47-e853-4b5d-a19d-8a3ed8c412f2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal US Quarter
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal US Period Number'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: US Fiscal Dates
+		lineageTag: c6fc0a2d-fe55-4bf4-ae69-070c64e0979a
+		sourceLineageTag: 84518578-ab16-40b6-8d9d-fce065c91246
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal US Period Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal US Year'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: ea11bb92-a4a5-4384-8e7e-ed8312e08795
+		sourceLineageTag: f66039ac-daeb-442f-9d28-df6a9f8dd732
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal US Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal US Year Number'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: US Fiscal Dates
+		lineageTag: 23daea13-3904-4b31-b27c-3159f9987d3c
+		sourceLineageTag: c14e8672-72ec-4be7-a7d6-0696aa15aa09
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal US Year Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal US Day #'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: US Fiscal Dates
+		lineageTag: a5d447af-7ce5-4d00-85d6-5d8b5ec5f991
+		sourceLineageTag: 4a87afef-7988-4b32-9256-6244f19ff274
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal US Day #
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal US Week #'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: US Fiscal Dates
+		lineageTag: 26c56cbd-7ddd-43c6-8b16-62235839fce8
+		sourceLineageTag: 60ccdd24-e83c-4df6-87a6-061a94928b16
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal US Week #
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal US Year-Period'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: afa91422-9b3e-4b93-a6e9-74488e7459dc
+		sourceLineageTag: c9a08add-412e-405d-a36f-5bc05a4d32e9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal US Year-Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal US Year-Week'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: f334a2e0-1a65-4a07-8de5-4da69ad311cf
+		sourceLineageTag: eaf691d6-c8c9-4ec6-a19e-f9b4da3693c3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal US Year-Week
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year-Period (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: 36ec2236-b148-4167-92be-60898f90b275
+		sourceLineageTag: d12fb224-bdb5-47f4-9955-7cb7e11254a4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Period (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Relative Week Sort'
+		dataType: string
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: bcf7c1fc-bd72-4d84-8998-c10d12b561d8
+		sourceLineageTag: 851c7e59-e807-46f9-a48f-921da286db21
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Relative Week Sort
+
+		annotation SummarizationSetBy = User
+
+	column ' Last Year Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: e705018a-1f22-4685-a00c-113a3186ff88
+		sourceLineageTag: 78138d31-d50d-451f-a489-d72aeaf6ef25
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: " Last Year Date"
+
+		annotation SummarizationSetBy = User
+
+	column 'Exclude 53rd Week (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: dfaceef9-bb76-42d4-9e3d-aeb6b30e360a
+		sourceLineageTag: b0be0a84-b55f-4a5b-b321-687a97a2d059
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Exclude 53rd Week (544)
+
+		annotation SummarizationSetBy = User
+
+	column ' Two Year Date '
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 21deb0af-bd80-41d6-b116-e779b3d73f75
+		sourceLineageTag: 1bccd480-43f5-4d48-9a53-a52f4090e104
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: " Two Year Date "
+
+		annotation SummarizationSetBy = User
+
+	column 'Is Week Filter (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: 48fa292e-04af-4ddb-9ebf-765b0f63b55c
+		sourceLineageTag: eeded0b9-ed3d-4871-8630-107b29223268
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Is Week Filter (544)
+
+		annotation SummarizationSetBy = User
+
+	column Month-Year
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: f0a89685-7ccd-40ec-bd17-e08a2dcb8840
+		sourceLineageTag: ad532830-16ad-4dae-93a8-f1c2fba5d7f6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month-Year
+		sortByColumn: Month-Yearold
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Period'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: abd113cf-74c7-4938-a9f1-c0a03f2f113b
+		sourceLineageTag: d0892ea0-9f56-45e2-86d0-073a5bb5457b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Financial Year'
+		dataType: int64
+		isHidden
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: c131bde6-1177-4f5c-9991-6bb216410bee
+		sourceLineageTag: 1d6739e3-b13a-4c67-8c41-ad36925bd22c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Financial Year
+
+		annotation SummarizationSetBy = User
+
+	column ' Date'
+		dataType: dateTime
+		isNullable: false
+		formatString: Short Date
+		lineageTag: 14356277-6e2b-4e1b-bec0-1201eeee2429
+		sourceLineageTag: 4132891d-7708-4be1-a14a-9914ca16cf55
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: " Date"
+
+		annotation SummarizationSetBy = User
+
+	partition Date = entity
+		mode: directQuery
+		source
+			entityName: Date
+			expressionSource: 'DirectQuery to AS - DMA D2C'
+

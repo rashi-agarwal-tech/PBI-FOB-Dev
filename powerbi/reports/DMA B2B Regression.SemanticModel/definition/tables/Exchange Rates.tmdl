@@ -1,0 +1,68 @@
+table 'Exchange Rates'
+	isHidden
+	lineageTag: f6c213d8-ece4-4a0a-9b9b-81000cac52cb
+	sourceLineageTag: 46196011-4b3b-485f-a931-93b58ffa8186
+
+	column FROMCURRENCY
+		dataType: string
+		isHidden
+		lineageTag: b8ad7c89-2b68-43c0-b3aa-1cb87584ade0
+		sourceLineageTag: e1f68c95-86df-4504-aa6c-b9521400d6e6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FROMCURRENCY
+
+		annotation SummarizationSetBy = User
+
+	column TOCURRENCY
+		dataType: string
+		isHidden
+		lineageTag: 088b8335-788b-4ba9-8945-b46479553fb0
+		sourceLineageTag: b75a303b-aeaa-4e91-8967-0c4c45bb74b6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TOCURRENCY
+
+		annotation SummarizationSetBy = User
+
+	column RATETYPENAME
+		dataType: string
+		isHidden
+		lineageTag: e9937d34-0bf4-4184-808a-4745233d2ec0
+		sourceLineageTag: 1cd31185-6ab4-4e0f-943e-d179a6523c78
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RATETYPENAME
+
+		annotation SummarizationSetBy = User
+
+	column RATE
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		lineageTag: 5979e406-83c7-40d8-baae-c046ebb5be89
+		sourceLineageTag: e5e4de83-c415-405b-bfe0-0404d15fb9db
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RATE
+
+		annotation SummarizationSetBy = User
+
+	column DATE
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: f0140daf-f43b-4392-93cf-7854f0b006df
+		sourceLineageTag: 1ea7fadb-7b79-4d76-b194-17f4f1bd558a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DATE
+
+		annotation SummarizationSetBy = User
+
+	partition 'Exchange Rates' = entity
+		mode: directQuery
+		source
+			entityName: Exchange Rates
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

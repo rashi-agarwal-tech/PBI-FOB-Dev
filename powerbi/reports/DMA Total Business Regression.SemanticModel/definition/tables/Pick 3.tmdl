@@ -1,0 +1,100 @@
+table 'Pick 3'
+	isHidden
+	lineageTag: 9e2912a6-85ae-4311-b42b-ea67ba771ee3
+	sourceLineageTag: 37647a4a-deb6-4f37-9671-4341822c66a1
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		lineageTag: 1b9483c2-cab4-4482-aa6a-211249f7842c
+		sourceLineageTag: cf5c201c-2e65-4940-8e77-a3ac927b545a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		annotation SummarizationSetBy = User
+
+	column Product_Key
+		dataType: string
+		isHidden
+		lineageTag: ff6a2ce7-4079-42fa-8e0f-7632e95328cb
+		sourceLineageTag: 5196e6c4-50bd-4214-90ce-8ea6f2eb4774
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size_Key
+		dataType: string
+		isHidden
+		lineageTag: 6c33faf3-64de-42f2-a54a-e8e5f1fba60f
+		sourceLineageTag: a8b05d2d-10dc-4fd2-8318-dcd3c1249774
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		lineageTag: b8b37840-c70e-43db-b168-2d69d9540b4b
+		sourceLineageTag: 3b992748-090a-4d9f-ac55-eeb0eca9afcc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Selling Status'
+		dataType: int64
+		isHidden
+		lineageTag: 2b1bba60-7a42-4f5b-bb68-1af4b3e9798c
+		sourceLineageTag: aea1c583-83cf-4845-b8f5-fff6a3ddd52a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selling Status
+
+		annotation SummarizationSetBy = User
+
+	column HandlingStatusDesc
+		dataType: string
+		isHidden
+		lineageTag: 7ad1f653-0868-4ab9-a58d-2b2be22834ff
+		sourceLineageTag: c57491fe-b480-4a7d-836b-34c44df6b632
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: HandlingStatusDesc
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick Qty'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 307f1524-194e-43db-bca6-a03dc13d4b19
+		sourceLineageTag: 82f6a69a-4135-4b84-925a-4b167e6c962a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pick Qty
+
+		annotation SummarizationSetBy = User
+
+	column INVENTLOCATIONID_WMS
+		dataType: string
+		isHidden
+		lineageTag: ad6d2f03-b99e-4d90-b47e-b4504627c794
+		sourceLineageTag: f1c71b9a-dca7-4707-8ebd-137134854050
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTLOCATIONID_WMS
+
+		annotation SummarizationSetBy = User
+
+	partition 'Pick 3' = entity
+		mode: directQuery
+		source
+			entityName: Pick
+			expressionSource: 'DirectQuery to AS - DMA Total Business 3'
+

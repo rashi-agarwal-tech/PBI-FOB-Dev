@@ -1,0 +1,219 @@
+relationship 5db524c2-9d4f-4cf7-80d9-7deef9bc8654
+	fromColumn: Budget.CostCentre_Key
+	toColumn: 'Cost Centre'.CostCentre_Key
+
+relationship ac4655d5-1b4a-42cc-ae05-9a64a0325dbc
+	fromColumn: Budget.MainAccount_Key
+	toColumn: 'Main Account'.MainAccount_Key
+
+relationship cbd65cad-fbf8-4f46-8cc2-9c2961f7b08f
+	fromColumn: Budget.Channel_Key
+	toColumn: Channel.Channel_Key
+
+relationship 5153e139-b67a-4919-9cb7-090047763948
+	fromColumn: Budget.Country_Key
+	toColumn: Country.Country_Key
+
+relationship b4c599ae-7692-48cc-a4e7-bac67738b3d0
+	fromColumn: Budget.Analysis_Key
+	toColumn: Analysis.Analysis_Key
+
+relationship 353769ac-7c7b-454d-aeba-0e1a7dfe6eaf
+	fromColumn: Budget.Company_Key
+	toColumn: Region.Company_Key
+
+relationship 070de8dd-5a84-4820-9ed9-02e75ee29b7e
+	fromColumn: Budget.'Budget Model ID'
+	toColumn: Comparatives.'Comparative Version'
+
+relationship c15370d4-ea58-4fdb-b5c4-76011eb213d8
+	fromColumn: Budget.Date_Key
+	toColumn: Date.DATE_KEY
+
+relationship 21113edd-0591-4b7d-bcad-4a39c8ac5eb3
+	fromColumn: 'General Ledger Fact'.Analysis_Key
+	toColumn: Analysis.Analysis_Key
+
+relationship 8ca76cac-4d3e-4b19-adaa-1b063e408f6a
+	fromColumn: 'General Ledger Fact'.MainAccount_Key
+	toColumn: 'Main Account'.MainAccount_Key
+
+relationship 23984f7b-41ff-4c73-ba58-d0770d258208
+	fromColumn: 'General Ledger Fact'.CostCentre_Key
+	toColumn: 'Cost Centre'.CostCentre_Key
+
+relationship e6118cc5-65af-4826-b16f-592f0093f99d
+	fromColumn: 'General Ledger Fact'.Country_Key
+	toColumn: Country.Country_Key
+
+relationship 4808d9a3-891b-4741-855b-90c53a58fe6b
+	fromColumn: 'General Ledger Fact'.Channel_Key
+	toColumn: Channel.Channel_Key
+
+relationship 8da6fa10-407b-4e45-a2f3-5bc8c80191b9
+	toCardinality: many
+	fromColumn: 'General Ledger Fact'.CostCentre_Key
+	toColumn: 'Retail Store'.CostCentre_Key
+
+relationship 7b3dcd53-fa19-4f5e-8c72-3ecd7d4439ae
+	fromColumn: 'General Ledger Fact'.Vendor_Key
+	toColumn: Vendor.Vendor_Key
+
+relationship 77052d17-080a-4c8a-a8ae-ec95d8043c38
+	fromColumn: 'General Ledger Fact'.SellingStatus_Key
+	toColumn: 'Selling Status'.SellingStatus_Key
+
+relationship 8903a690-90b0-4c7f-aae5-6f3c7fef6b9f
+	fromColumn: 'General Ledger Fact'.AccountingDate_Key
+	toColumn: Date.DATE_KEY
+
+relationship 49472296-6950-4a88-8d08-b783ffbbe585
+	fromColumn: 'General Ledger Fact'.LEDGERNAME
+	toColumn: Region.'Company ID'
+
+relationship de534a79-2f19-4d99-94d4-fca474794fd5
+	fromColumn: 'Budget 2'.CostCentre_Key
+	toColumn: 'Cost Centre 2'.CostCentre_Key
+
+relationship 3800b6ce-1ead-499c-b11a-61efc6854ac0
+	fromColumn: 'Budget 2'.MainAccount_Key
+	toColumn: 'Main Account 2'.MainAccount_Key
+
+relationship d54419a0-b17a-4418-a1c5-2e45d94eac11
+	fromColumn: 'Budget 2'.Channel_Key
+	toColumn: 'Channel 2'.Channel_Key
+
+relationship 27931ccd-b44e-48ea-bc70-a15e953f1fdb
+	fromColumn: 'Budget 2'.Country_Key
+	toColumn: 'Country 2'.Country_Key
+
+relationship fbf67aad-d0d0-4a7c-af12-232cb4b14f39
+	fromColumn: 'Budget 2'.Analysis_Key
+	toColumn: 'Analysis 2'.Analysis_Key
+
+relationship 0118c578-39d9-4a91-981b-5a28d608d89a
+	fromColumn: 'Budget 2'.Company_Key
+	toColumn: 'Region 2'.Company_Key
+
+relationship 581101f2-f961-42c2-9907-9c5959e2fb74
+	fromColumn: 'Budget 2'.'Budget Model ID'
+	toColumn: 'Comparatives 2'.'Comparative Version'
+
+relationship 40777e94-61ac-497f-8abc-9d6e11cdd985
+	fromColumn: 'Budget 2'.Date_Key
+	toColumn: 'Date 2'.DATE_KEY
+
+relationship d4fb922c-635e-4996-b7e2-70d042220618
+	fromColumn: 'General Ledger Fact 2'.Analysis_Key
+	toColumn: 'Analysis 2'.Analysis_Key
+
+relationship 7473fa92-114a-4219-81ae-125a24c050db
+	fromColumn: 'General Ledger Fact 2'.MainAccount_Key
+	toColumn: 'Main Account 2'.MainAccount_Key
+
+relationship 13e6650b-a5f3-4ae0-a99e-29ae32d01123
+	fromColumn: 'General Ledger Fact 2'.CostCentre_Key
+	toColumn: 'Cost Centre 2'.CostCentre_Key
+
+relationship 14b0e433-3022-4c9b-9420-c856590f0f47
+	fromColumn: 'General Ledger Fact 2'.Country_Key
+	toColumn: 'Country 2'.Country_Key
+
+relationship 077c910a-b7a1-4d44-b56b-61932c3a1398
+	fromColumn: 'General Ledger Fact 2'.Channel_Key
+	toColumn: 'Channel 2'.Channel_Key
+
+relationship ff576b5d-deeb-4ead-a7ee-b2fbb78df687
+	toCardinality: many
+	fromColumn: 'General Ledger Fact 2'.CostCentre_Key
+	toColumn: 'Retail Store 2'.CostCentre_Key
+
+relationship 275c0843-8116-4be0-8b78-a12350c05058
+	fromColumn: 'General Ledger Fact 2'.Vendor_Key
+	toColumn: 'Vendor 2'.Vendor_Key
+
+relationship e877bf69-2641-4c25-b87d-e3893aebd225
+	fromColumn: 'General Ledger Fact 2'.SellingStatus_Key
+	toColumn: 'Selling Status 2'.SellingStatus_Key
+
+relationship 96385d0b-2bef-4e21-b5a5-20cdd6c2c925
+	fromColumn: 'General Ledger Fact 2'.AccountingDate_Key
+	toColumn: 'Date 2'.DATE_KEY
+
+relationship e0ddadee-cc33-4a32-b0c7-4ffed60157cb
+	fromColumn: 'General Ledger Fact 2'.LEDGERNAME
+	toColumn: 'Region 2'.'Company ID'
+
+relationship f274a08b-a958-4f56-bc30-a2634b449b26
+	fromColumn: 'Budget 3'.CostCentre_Key
+	toColumn: 'Cost Centre 3'.CostCentre_Key
+
+relationship b1add91a-b272-442f-a2cb-0481b14f8a07
+	fromColumn: 'Budget 3'.MainAccount_Key
+	toColumn: 'Main Account 3'.MainAccount_Key
+
+relationship 5f98f300-dbe6-4672-9083-6b16698bb545
+	fromColumn: 'Budget 3'.Channel_Key
+	toColumn: 'Channel 3'.Channel_Key
+
+relationship 87cebeb2-bea9-4e33-bb06-62d5b7a80195
+	fromColumn: 'Budget 3'.Country_Key
+	toColumn: 'Country 3'.Country_Key
+
+relationship 1629ce81-2f47-4435-b7a4-be1034d31ad1
+	fromColumn: 'Budget 3'.Analysis_Key
+	toColumn: 'Analysis 3'.Analysis_Key
+
+relationship 88dd34ec-74c8-4310-80e1-6ce7114c008f
+	fromColumn: 'Budget 3'.Company_Key
+	toColumn: 'Region 3'.Company_Key
+
+relationship 5436ffe7-0e7a-4490-949c-e2bab801c931
+	fromColumn: 'Budget 3'.'Budget Model ID'
+	toColumn: 'Comparatives 3'.'Comparative Version'
+
+relationship 42d2df07-a6f7-42d9-a9bc-a51f3579298a
+	fromColumn: 'Budget 3'.Date_Key
+	toColumn: 'Date 3'.DATE_KEY
+
+relationship e572d735-0f23-44da-a90e-534f1790cedd
+	fromColumn: 'General Ledger Fact 3'.Analysis_Key
+	toColumn: 'Analysis 3'.Analysis_Key
+
+relationship 9d3b9b1c-2219-4ec3-9ba0-67d32ac662d8
+	fromColumn: 'General Ledger Fact 3'.MainAccount_Key
+	toColumn: 'Main Account 3'.MainAccount_Key
+
+relationship 711db7da-e12d-4251-888b-27837d851b13
+	fromColumn: 'General Ledger Fact 3'.CostCentre_Key
+	toColumn: 'Cost Centre 3'.CostCentre_Key
+
+relationship b4c8ae7c-4d2e-40d0-8e0c-e8d6199ed417
+	fromColumn: 'General Ledger Fact 3'.Country_Key
+	toColumn: 'Country 3'.Country_Key
+
+relationship 3bb9b18d-fc56-41c9-9ca0-97827872da41
+	fromColumn: 'General Ledger Fact 3'.Channel_Key
+	toColumn: 'Channel 3'.Channel_Key
+
+relationship ab9179ca-dbad-47b0-a3cb-1516b87deff8
+	toCardinality: many
+	fromColumn: 'General Ledger Fact 3'.CostCentre_Key
+	toColumn: 'Retail Store 3'.CostCentre_Key
+
+relationship 9182ddf4-9aba-4213-9611-199fa931f228
+	fromColumn: 'General Ledger Fact 3'.Vendor_Key
+	toColumn: 'Vendor 3'.Vendor_Key
+
+relationship b68bf7be-8929-42e2-bfdf-9f437fc99387
+	fromColumn: 'General Ledger Fact 3'.SellingStatus_Key
+	toColumn: 'Selling Status 3'.SellingStatus_Key
+
+relationship af56f01d-03ae-4fdf-a71f-50fa21183597
+	fromColumn: 'General Ledger Fact 3'.AccountingDate_Key
+	toColumn: 'Date 3'.DATE_KEY
+
+relationship f5be477c-e33a-414c-96fb-fdec0144050a
+	fromColumn: 'General Ledger Fact 3'.LEDGERNAME
+	toColumn: 'Region 3'.'Company ID'
+

@@ -1,0 +1,1622 @@
+table ga
+	lineageTag: 10d9ef44-79f6-4df3-af4c-4cebe0c55b56
+
+	measure 'ga Web Sessions' =
+			
+			SUMX(ga,IF(ga[Web Sessions]=0,BLANK(),ga[Web Sessions]))
+		formatString: #,0
+		lineageTag: cda54037-87b2-4774-b0ba-410ba69a6a86
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'ga Web Transactions' =
+			
+			SUMX(ga,IF(ga[Web Transactions]=0,BLANK(),ga[Web Transactions]))
+		formatString: #,0
+		lineageTag: 512295a2-737f-42bc-9d87-2fbe138a0f0c
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'ga GA Units' =
+			
+			SUMX(ga,IF(ga[GA Units]=0,BLANK(),ga[GA Units]))
+		formatString: #,0
+		lineageTag: 21f8b5a8-15aa-41b6-97a9-f73c212fde07
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'ga Users' =
+			
+			SUMX(ga,IF(ga[Users]=0,BLANK(),ga[Users]))
+		formatString: #,0
+		lineageTag: 91238688-0bb8-4e90-bf80-4e1b61d2cd63
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'ga New Users' =
+			
+			SUMX(ga,IF(ga[New Users]=0,BLANK(),ga[New Users]))
+		formatString: #,0
+		lineageTag: 66f7a299-54f2-410f-9d22-aa1a731e977c
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'ga GA Ads Impressions' =
+			
+			SUMX(ga,IF(ga[GA Ads Impressions]=0,BLANK(),ga[GA Ads Impressions]))
+		formatString: #,0
+		lineageTag: 5c8ac23b-df61-4b8b-845f-b76c1c219596
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'ga GA Goal 01 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 01 Completion]=0,BLANK(),ga[GA Goal 01 Completion]))
+		formatString: #,0
+		lineageTag: 6c1a26ae-8b1c-46ed-bcae-0c2f205ab011
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'ga GA Ads Cost' =
+			
+			SUMX(ga,IF(ga[GA Ads Cost]=0,BLANK(),ga[GA Ads Cost]))
+		formatString: #,0.00
+		lineageTag: 37641d7d-e852-45eb-86b3-57b68488124c
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'ga Web Value' =
+			
+			SUMX(ga,IF(ga[Web Value]=0,BLANK(),ga[Web Value]))
+		formatString: #,0.00
+		lineageTag: 0c3a1ca8-141c-47ab-94c2-0f3682c28020
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'ga Web Sessions Diff' =
+			
+			SUM(ga[Web Sessions Diff])
+		formatString: #,0
+		lineageTag: e60caf96-b720-4b8f-ab61-6bc4cb28d6fd
+
+	measure 'ga Web Transactions Diff' =
+			
+			SUM(ga[Web Transactions Diff])
+		formatString: #,0
+		lineageTag: 90008c86-de5e-4605-886f-9174c4cb6b0e
+
+	measure 'ga GA units Diff' =
+			
+			SUM(ga[GA Units Diff])
+		formatString: #,0
+		lineageTag: cf5fbcbf-1594-4871-b9f0-28b41beff897
+
+	measure 'ga Users Diff' =
+			
+			SUM(ga[Users Diff])
+		formatString: #,0
+		lineageTag: fa2502e5-f484-46d6-b16b-e4a0be556cc1
+
+	measure 'ga New Users Diff' =
+			
+			SUM(ga[New Users Diff])
+		formatString: #,0
+		lineageTag: 1a531c0d-f668-4fd5-98d7-d4a6f82164a3
+
+	measure 'ga GA Ads Impressions Diff' =
+			
+			SUM(ga[GA Ads Impressions Diff])
+		formatString: #,0
+		lineageTag: 187b0453-f7a5-44d6-94e8-6615aa5a11c6
+
+	measure 'ga GA Goal 01 Completion Diff' =
+			
+			SUM(ga[GA Goal 01 Completion Diff])
+		formatString: #,0
+		lineageTag: 3cd5d233-cb48-43a2-bbf7-7425f5281529
+
+	measure 'ga GA Ads Cost Diff' =
+			
+			SUM(ga[GA Ads Cost Diff])
+		formatString: #,0.00
+		lineageTag: faf4f9bc-ac15-43d7-b052-03b6dcb56a01
+
+	measure 'ga Web Value Diff' =
+			
+			SUM(ga[Web Value Diff])
+		formatString: #,0.00
+		lineageTag: 3c026ed6-a944-469f-8417-01b6feaae994
+
+	measure 'ga Sum of AbsDiff' =
+			
+			[ga Web Sessions Diff]
+			+[ga Web Transactions Diff]
+			+[ga GA Units Diff]
+			+[ga Users Diff]
+			+[ga New Users Diff]
+			+[ga Web Value Diff]
+			+[ga GA Ads Impressions Diff]
+			+[ga GA Ads Cost Diff]
+			+[ga GA Goal 01 Completion Diff]
+			+[ga GA Goal 02 Completion Diff]
+			+[ga GA Goal 03 Completion Diff]
+			+[ga GA Goal 04 Completion Diff]
+			+[ga GA Goal 05 Completion Diff]
+			+[ga GA Goal 06 Completion Diff]
+			+[ga GA Goal 07 Completion Diff]
+			+[ga GA Goal 08 Completion Diff]
+			+[ga GA Goal 09 Completion Diff]
+			+[ga GA Goal 10 Completion Diff]
+			+[ga GA Goal 11 Completion Diff]
+			+[ga GA Goal 12 Completion Diff]
+			+[ga GA Goal 13 Completion Diff]
+			+[ga GA Goal 14 Completion Diff]
+			+[ga GA Goal 15 Completion Diff]
+			+[ga GA Goal 16 Completion Diff]
+			+[ga GA Goal 17 Completion Diff]
+			+[ga GA Goal 18 Completion Diff]
+			+[ga GA Goal 19 Completion Diff]
+		formatString: #,0.00
+		lineageTag: 8b855803-9206-471f-96c9-2f3272fc252e
+
+	measure 'ga GA Goal 02 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 02 Completion]=0,BLANK(),ga[GA Goal 02 Completion]))
+		formatString: #,0
+		lineageTag: 738660bd-f882-4fa5-bb9e-5ec631d8b5cd
+
+	measure 'ga GA Goal 03 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 03 Completion]=0,BLANK(),ga[GA Goal 03 Completion]))
+		formatString: #,0
+		lineageTag: d356d0e2-5b23-4383-8b2e-b30424fd68cf
+
+	measure 'ga GA Goal 04 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 04 Completion]=0,BLANK(),ga[GA Goal 04 Completion]))
+		formatString: #,0
+		lineageTag: 7db4c723-fe7d-4cfb-928d-2d8f98f5910c
+
+	measure 'ga GA Goal 05 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 05 Completion]=0,BLANK(),ga[GA Goal 05 Completion]))
+		formatString: #,0
+		lineageTag: 9b5cc46d-02ab-46b7-8064-1998357c6afc
+
+	measure 'ga GA Goal 06 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 06 Completion]=0,BLANK(),ga[GA Goal 06 Completion]))
+		formatString: #,0
+		lineageTag: c8ff1cc4-aaab-4368-9d63-7185a7594e51
+
+	measure 'ga GA Goal 07 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 07 Completion]=0,BLANK(),ga[GA Goal 07 Completion]))
+		formatString: #,0
+		lineageTag: ab1bd50b-2977-4e56-b0fb-29c5f1993d4c
+
+	measure 'ga GA Goal 08 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 08 Completion]=0,BLANK(),ga[GA Goal 08 Completion]))
+		formatString: #,0
+		lineageTag: 77160fa4-2ecf-43bc-848b-b884f8627d9c
+
+	measure 'ga GA Goal 09 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 09 Completion]=0,BLANK(),ga[GA Goal 09 Completion]))
+		formatString: #,0
+		lineageTag: b42301a0-a891-4227-bf67-ca5aa74e6ba3
+
+	measure 'ga GA Goal 10 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 10 Completion]=0,BLANK(),ga[GA Goal 10 Completion]))
+		formatString: #,0
+		lineageTag: d15aca5c-e5b9-4491-beb8-d08912b5a1a3
+
+	measure 'ga GA Goal 11 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 11 Completion]=0,BLANK(),ga[GA Goal 11 Completion]))
+		formatString: #,0
+		lineageTag: 53fb2883-ac1c-4b07-abbe-9ebbacd14a9d
+
+	measure 'ga GA Goal 12 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 12 Completion]=0,BLANK(),ga[GA Goal 12 Completion]))
+		formatString: #,0
+		lineageTag: faed7ebf-fdd6-4085-9ea6-c0a1646edd73
+
+	measure 'ga GA Goal 13 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 13 Completion]=0,BLANK(),ga[GA Goal 13 Completion]))
+		formatString: #,0
+		lineageTag: 374b2857-74c6-4725-b13f-f99d919179cd
+
+	measure 'ga GA Goal 14 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 14 Completion]=0,BLANK(),ga[GA Goal 14 Completion]))
+		formatString: #,0
+		lineageTag: a8013b95-aa42-4234-b39e-3e3937d11516
+
+	measure 'ga GA Goal 15 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 15 Completion]=0,BLANK(),ga[GA Goal 15 Completion]))
+		formatString: #,0
+		lineageTag: b47acc7d-1bbc-492e-9fa7-f956298199da
+
+	measure 'ga GA Goal 16 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 16 Completion]=0,BLANK(),ga[GA Goal 16 Completion]))
+		formatString: #,0
+		lineageTag: b55a864d-8bc1-4a06-99fc-b640513ca825
+
+	measure 'ga GA Goal 17 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 17 Completion]=0,BLANK(),ga[GA Goal 17 Completion]))
+		formatString: #,0
+		lineageTag: 6ff260a8-3f3c-49e6-81ab-8a5d3b5574c6
+
+	measure 'ga GA Goal 18 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 18 Completion]=0,BLANK(),ga[GA Goal 18 Completion]))
+		formatString: #,0
+		lineageTag: 8cf538df-ad76-48ad-9632-c7dec5ac3597
+
+	measure 'ga GA Goal 19 Completion' =
+			
+			SUMX(ga,IF(ga[GA Goal 19 Completion]=0,BLANK(),ga[GA Goal 19 Completion]))
+		formatString: #,0
+		lineageTag: 07e4b3cd-2781-421a-99a9-181db702abf9
+
+	measure 'ga GA Goal 02 Completion Diff' =
+			
+			SUM(ga[GA Goal 02 Completion Diff])
+		formatString: #,0
+		lineageTag: 3b743228-02c2-4bc8-a0c9-8fcbec9e436d
+
+	measure 'ga GA Goal 03 Completion Diff' =
+			
+			SUM(ga[GA Goal 03 Completion Diff])
+		formatString: #,0
+		lineageTag: 60f5f0e3-d02a-436e-ab3c-75b0a54a4214
+
+	measure 'ga GA Goal 04 Completion Diff' =
+			
+			SUM(ga[GA Goal 04 Completion Diff])
+		formatString: #,0
+		lineageTag: 5a9bd270-43ae-4e5d-ab79-9f4d523e00c9
+
+	measure 'ga GA Goal 05 Completion Diff' =
+			
+			SUM(ga[GA Goal 05 Completion Diff])
+		formatString: #,0
+		lineageTag: 557be608-2561-4b9a-8751-b8b44b592a8f
+
+	measure 'ga GA Goal 06 Completion Diff' =
+			
+			SUM(ga[GA Goal 06 Completion Diff])
+		formatString: #,0
+		lineageTag: 8cc872bb-8ca3-42dc-bb3a-203d3d39deaf
+
+	measure 'ga GA Goal 07 Completion Diff' =
+			
+			SUM(ga[GA Goal 07 Completion Diff])
+		formatString: #,0
+		lineageTag: 76906cc8-51eb-4fc0-b557-34c2b56ed10d
+
+	measure 'ga GA Goal 08 Completion Diff' =
+			
+			SUM(ga[GA Goal 08 Completion Diff])
+		formatString: #,0
+		lineageTag: 4279c16f-cf05-41d4-b2aa-3a631023732c
+
+	measure 'ga GA Goal 09 Completion Diff' =
+			
+			SUM(ga[GA Goal 09 Completion Diff])
+		formatString: #,0
+		lineageTag: 3d4feb6b-e7b3-4fb1-8402-85da1f8452ad
+
+	measure 'ga GA Goal 10 Completion Diff' =
+			
+			SUM(ga[GA Goal 10 Completion Diff])
+		formatString: #,0
+		lineageTag: 51705957-f003-41c5-a383-67987d1abb39
+
+	measure 'ga GA Goal 11 Completion Diff' =
+			
+			SUM(ga[GA Goal 11 Completion Diff])
+		formatString: #,0
+		lineageTag: 7ab00c08-f28a-4bcb-939d-7a3049965339
+
+	measure 'ga GA Goal 12 Completion Diff' =
+			
+			SUM(ga[GA Goal 12 Completion Diff])
+		formatString: #,0
+		lineageTag: 40b98151-18a2-48cc-8e8c-25a64356d6af
+
+	measure 'ga GA Goal 13 Completion Diff' =
+			
+			SUM(ga[GA Goal 13 Completion Diff])
+		formatString: #,0
+		lineageTag: a7153fcc-597c-4b79-9631-dd575fea1c5b
+
+	measure 'ga GA Goal 14 Completion Diff' =
+			
+			SUM(ga[GA Goal 14 Completion Diff])
+		formatString: #,0
+		lineageTag: 0cb896fa-4574-4231-a533-f59b21ee6d7c
+
+	measure 'ga GA Goal 15 Completion Diff' =
+			
+			SUM(ga[GA Goal 15 Completion Diff])
+		formatString: #,0
+		lineageTag: 8f94cfb7-2f48-4f4f-9830-6103a26e5717
+
+	measure 'ga GA Goal 16 Completion Diff' =
+			
+			SUM(ga[GA Goal 16 Completion Diff])
+		formatString: #,0
+		lineageTag: 63ac78e7-d793-4a81-9a3b-5ba58a81ae94
+
+	measure 'ga GA Goal 17 Completion Diff' =
+			
+			SUM(ga[GA Goal 17 Completion Diff])
+		formatString: #,0
+		lineageTag: fa3000e3-fe54-460e-a0d3-1ce158d952ff
+
+	measure 'ga GA Goal 18 Completion Diff' =
+			
+			SUM(ga[GA Goal 18 Completion Diff])
+		formatString: #,0
+		lineageTag: d1b41c9b-7454-4a1a-a525-fa1c1742adb0
+
+	measure 'ga GA Goal 19 Completion Diff' =
+			
+			SUM(ga[GA Goal 19 Completion Diff])
+		formatString: #,0
+		lineageTag: 1e279e55-d35d-45f3-b29b-5621f9e6757b
+
+	measure 'source parameter' =
+			
+			"1 Footprint PROD"
+		lineageTag: 23172277-eaa1-4f3d-9423-be80cdf4ce0b
+
+	column Source
+		dataType: string
+		lineageTag: 9120e77a-9f5b-440a-9c65-73dd621799d9
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Source]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dimension
+		dataType: string
+		lineageTag: 58e2b3b4-580e-4a0d-aeec-92bc13efc8c4
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Dimension]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year (544)'
+		dataType: string
+		lineageTag: b7302122-d612-48c7-ade1-95c0e00f1a9c
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Date[Fiscal Year (544)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year-Period (544)'
+		dataType: string
+		lineageTag: 00a1d43d-3fcc-4ff3-a2dd-9c8814b206a6
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Date[Fiscal Year-Period (544)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Date'
+		dataType: dateTime
+		formatString: dd-mmm-yyyy
+		lineageTag: 634305d1-77e7-478d-9a58-e97ebe7a2a86
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Date[ Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Attribute
+		dataType: string
+		lineageTag: 66b9538b-2307-4087-8c2a-6211fc90c4fd
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Attribute]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Web Sessions'
+		dataType: int64
+		formatString: 0
+		lineageTag: dcf4aa81-335c-4680-b2f1-8e6c86bd647e
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Web Sessions]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Web Transactions'
+		dataType: int64
+		formatString: 0
+		lineageTag: be3ca09b-d283-4b82-b8e3-15bf477cacd3
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Web Transactions]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Units'
+		dataType: int64
+		formatString: 0
+		lineageTag: 77ac19d3-833a-413c-bdb3-a67770aeacc3
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Users
+		dataType: int64
+		formatString: 0
+		lineageTag: cc12522e-a0d9-4760-b289-f9c0ea9b6b5a
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Users]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New Users'
+		dataType: int64
+		formatString: 0
+		lineageTag: b9ec8db6-e12b-4e24-99d5-9696d093e3bc
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [New Users]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Web Value'
+		dataType: double
+		lineageTag: 2e8a2f4e-3eb3-41f8-9495-2a835e4892c9
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Web Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'GA Ads Impressions'
+		dataType: double
+		lineageTag: 4b35868e-f69d-4b23-a84b-6bd9e1b093d6
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Ads Impressions]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'GA Ads Cost'
+		dataType: double
+		lineageTag: 48fa139d-0e16-4e61-98e4-ed113659d994
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Ads Cost]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'GA Goal 01 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b260dc2-54b1-4b3d-95d6-8572d7c6008f
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 01 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 02 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6737567b-6f15-45cd-b230-d9b64192f6ad
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 02 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 03 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: aa2f31e1-e427-447a-9564-a1ebf252835b
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 03 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 04 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: b7e7be65-e80c-493e-9402-cf148c121952
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 04 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 05 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4e064697-78ac-439b-91f7-4d1d41de5762
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 05 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 06 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: 71b9df68-623b-4f16-a942-3956970b3c28
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 06 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 07 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: 796c665d-6a17-48f9-9c74-1215ed7c5d3d
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 07 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 08 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: e42842a8-8713-49b8-afcf-e69a3a2a8d32
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 08 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 09 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: da4f2ced-b5a0-4dcc-91e1-9b247c16f052
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 09 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 10 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4595bc61-ab13-4f8a-a2ad-c72b1de16cdc
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 10 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 11 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1341982d-1f4f-42c4-871a-dd529a4ab0e5
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 11 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 12 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f396090-ff1e-4a5c-a7a2-584ef67af012
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 12 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 13 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: f6453e39-2a08-44d6-85bc-9a811b4a2f89
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 13 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 14 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: b0747054-9cef-4a1e-9d57-8efe130c503d
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 14 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 15 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: 969b0d65-fe92-458c-971b-e75fab02f891
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 15 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 16 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: 08953632-edc2-4fbf-b6f1-25e876db52d1
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 16 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 17 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: 00c09752-7255-4f4e-80d6-4656a08a8105
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 17 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 18 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: 554c1022-7642-4576-9722-f7eec0c7e18c
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 18 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 19 Completion'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6942d9be-1215-4a68-9e3a-643bc7996bf0
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [GA Goal 19 Completion]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Web Sessions Diff' =
+			
+			ABS
+			(
+			    ga[Web Sessions]
+			    -LOOKUPVALUE(ga[Web Sessions],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: ffb72065-d852-4da7-9e10-11eacab12368
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Web Transactions Diff' =
+			
+			ABS
+			(
+			    ga[Web Transactions]
+			    -LOOKUPVALUE(ga[Web Transactions],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: e7009702-99e0-4102-adc7-9872905abc84
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Units Diff' =
+			
+			ABS
+			(
+			    ga[GA Units]
+			    -LOOKUPVALUE(ga[GA Units],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: f9217d75-e7fc-45e3-a721-150c6b4637a2
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Users Diff' =
+			
+			ABS
+			(
+			    ga[Users]
+			    -LOOKUPVALUE(ga[Users],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c9b03b9-4c7b-4ace-82f6-cc5f57f3a6e5
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'New Users Diff' =
+			
+			ABS
+			(
+			    ga[New Users]
+			    -LOOKUPVALUE(ga[New Users],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: e05c4979-ee0d-43d9-a6f6-a38db14ed7a1
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Web Value Diff' =
+			
+			ABS
+			(
+			    ga[Web Value]
+			    -LOOKUPVALUE(ga[Web Value],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: double
+		lineageTag: 9f8580e2-4f71-470b-8b27-3c7786052655
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'GA Ads Impressions Diff' =
+			
+			ABS
+			(
+			    ga[GA Ads Impressions]
+			    -LOOKUPVALUE(ga[GA Ads Impressions],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: double
+		lineageTag: 277b2641-d1a7-4e0f-a25c-a84e1b6fbc10
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'GA Ads Cost Diff' =
+			
+			ABS
+			(
+			    ga[GA Ads Cost]
+			    -LOOKUPVALUE(ga[GA Ads Cost],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: double
+		lineageTag: 9072dca3-6ab1-4798-adcb-bbe5605802aa
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'GA Goal 01 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 01 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 01 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: 01629816-b6eb-43f9-9598-7e371753e538
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 02 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 02 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 02 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: 55a07bb6-00dc-41a1-8c65-b5044fc0b275
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 03 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 03 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 03 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: 213c76b8-5e2a-41fd-bf43-26d7ec17bc59
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 04 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 04 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 04 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: dc8e19c2-10c0-4a6f-8cd2-f889bc880126
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 05 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 05 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 05 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: 12900a85-c5c7-4d62-a277-234271f7b355
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 06 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 06 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 06 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: 94820759-75a8-483e-a8ac-21b222c638c3
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 07 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 07 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 07 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: df9a1a96-28c3-42b5-9c9c-9c043c878230
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 08 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 08 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 08 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: 92aee0f4-7890-49ab-9690-f0d19403d3db
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 09 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 09 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 09 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: c851dea4-b58b-40dc-acb9-12db20335b25
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 10 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 10 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 10 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: 01e3c133-4305-45f9-bbb8-28a081db9731
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 11 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 11 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 11 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: 34a138e1-7e4b-4d12-a2de-1c401a527c01
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 12 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 12 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 12 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: b9d14aa0-745c-4209-a844-6877544c0a89
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 13 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 13 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 13 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: 4dce94e7-6e8b-41ff-a102-626fb95dea0e
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 14 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 14 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 14 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: a38ad63c-71d9-4256-8675-82721fe80759
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 15 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 15 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 15 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: 8872be51-4061-40d8-ad16-718753595c54
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 16 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 16 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 16 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: b1f59df1-c488-42e2-b147-4aa902ad8df3
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 17 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 17 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 17 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: c44dc2e5-47fc-4dde-84d0-2f26b927683c
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 18 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 18 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 18 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: 49fb603b-afbf-4214-81d5-a9ef26ef3f25
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Goal 19 Completion Diff' =
+			
+			ABS
+			(
+			    ga[GA Goal 19 Completion]
+			    -LOOKUPVALUE(ga[GA Goal 19 Completion],ga[ Date],[ Date],ga[Dimension],[Dimension],ga[Attribute],[Attribute],ga[Source],[source parameter])
+			)
+		dataType: int64
+		formatString: 0
+		lineageTag: 27954d21-bfaa-456b-954a-0010c94a02b3
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ga = calculated
+		mode: import
+		source =
+				
+				UNION
+				(
+				    //date
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,"Attribute",""
+				        ,"Dimension","Date"
+				        ,"Source","1 Footprint PROD"
+				        ,"Web Sessions",[Web Sessions]
+				        ,"Web Transactions",[Web Transactions]
+				        ,"GA Units",[GA Units]
+				        ,"Users",[Users]
+				        ,"New Users",[New Users]
+				        ,"Web Value",ROUND([Web Value],2)
+				        ,"GA Ads Impressions",[GA Ads Impressions]
+				        ,"GA Ads Cost",ROUND([GA Ads Cost],2)
+				        ,"GA Goal 01 Completion",[GA Goal 01 Completion]
+				        ,"GA Goal 02 Completion",[GA Goal 02 Completion]
+				        ,"GA Goal 03 Completion",[GA Goal 03 Completion]
+				        ,"GA Goal 04 Completion",[GA Goal 04 Completion]
+				        ,"GA Goal 05 Completion",[GA Goal 05 Completion]
+				        ,"GA Goal 06 Completion",[GA Goal 06 Completion]
+				        ,"GA Goal 07 Completion",[GA Goal 07 Completion]
+				        ,"GA Goal 08 Completion",[GA Goal 08 Completion]
+				        ,"GA Goal 09 Completion",[GA Goal 09 Completion]
+				        ,"GA Goal 10 Completion",[GA Goal 10 Completion]
+				        ,"GA Goal 11 Completion",[GA Goal 11 Completion]
+				        ,"GA Goal 12 Completion",[GA Goal 12 Completion]
+				        ,"GA Goal 13 Completion",[GA Goal 13 Completion]
+				        ,"GA Goal 14 Completion",[GA Goal 14 Completion]
+				        ,"GA Goal 15 Completion",[GA Goal 15 Completion]
+				        ,"GA Goal 16 Completion",[GA Goal 16 Completion]
+				        ,"GA Goal 17 Completion",[GA Goal 17 Completion]
+				        ,"GA Goal 18 Completion",[GA Goal 18 Completion]
+				        ,"GA Goal 19 Completion",[GA Goal 19 Completion]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,"Attribute",""
+				        ,"Dimension","Date"
+				        ,"Source","2 Footprint UAT"
+				        ,"Web Sessions",[Web Sessions 2]
+				        ,"Web Transactions",[Web Transactions 2]
+				        ,"GA Units",[GA Units 2]
+				        ,"Users",[Users 2]
+				        ,"New Users",[New Users 2]
+				        ,"Web Value",ROUND([Web Value 2],2)
+				        ,"GA Ads Impressions",[GA Ads Impressions 2]
+				        ,"GA Ads Cost",ROUND([GA Ads Cost 2],2)
+				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 2]
+				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 2]
+				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 2]
+				        ,"GA Goal 04 Completion",[GA Goal 04 Completion 2]
+				        ,"GA Goal 05 Completion",[GA Goal 05 Completion 2]
+				        ,"GA Goal 06 Completion",[GA Goal 06 Completion 2]
+				        ,"GA Goal 07 Completion",[GA Goal 07 Completion 2]
+				        ,"GA Goal 08 Completion",[GA Goal 08 Completion 2]
+				        ,"GA Goal 09 Completion",[GA Goal 09 Completion 2]
+				        ,"GA Goal 10 Completion",[GA Goal 10 Completion 2]
+				        ,"GA Goal 11 Completion",[GA Goal 11 Completion 2]
+				        ,"GA Goal 12 Completion",[GA Goal 12 Completion 2]
+				        ,"GA Goal 13 Completion",[GA Goal 13 Completion 2]
+				        ,"GA Goal 14 Completion",[GA Goal 14 Completion 2]
+				        ,"GA Goal 15 Completion",[GA Goal 15 Completion 2]
+				        ,"GA Goal 16 Completion",[GA Goal 16 Completion 2]
+				        ,"GA Goal 17 Completion",[GA Goal 17 Completion 2]
+				        ,"GA Goal 18 Completion",[GA Goal 18 Completion 2]
+				        ,"GA Goal 19 Completion",[GA Goal 19 Completion 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,"Attribute",""
+				        ,"Dimension","Date"
+				        ,"Source","3 Footprint DEV"
+				        ,"Web Sessions",[Web Sessions 3]
+				        ,"Web Transactions",[Web Transactions 3]
+				        ,"GA Units",[GA Units 3]
+				        ,"Users",[Users 3]
+				        ,"New Users",[New Users 3]
+				        ,"Web Value",ROUND([Web Value 3],2)
+				        ,"GA Ads Impressions",[GA Ads Impressions 3]
+				        ,"GA Ads Cost",ROUND([GA Ads Cost 3],2)
+				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 3]
+				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 3]
+				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 3]
+				        ,"GA Goal 04 Completion",[GA Goal 04 Completion 3]
+				        ,"GA Goal 05 Completion",[GA Goal 05 Completion 3]
+				        ,"GA Goal 06 Completion",[GA Goal 06 Completion 3]
+				        ,"GA Goal 07 Completion",[GA Goal 07 Completion 3]
+				        ,"GA Goal 08 Completion",[GA Goal 08 Completion 3]
+				        ,"GA Goal 09 Completion",[GA Goal 09 Completion 3]
+				        ,"GA Goal 10 Completion",[GA Goal 10 Completion 3]
+				        ,"GA Goal 11 Completion",[GA Goal 11 Completion 3]
+				        ,"GA Goal 12 Completion",[GA Goal 12 Completion 3]
+				        ,"GA Goal 13 Completion",[GA Goal 13 Completion 3]
+				        ,"GA Goal 14 Completion",[GA Goal 14 Completion 3]
+				        ,"GA Goal 15 Completion",[GA Goal 15 Completion 3]
+				        ,"GA Goal 16 Completion",[GA Goal 16 Completion 3]
+				        ,"GA Goal 17 Completion",[GA Goal 17 Completion 3]
+				        ,"GA Goal 18 Completion",[GA Goal 18 Completion 3]
+				        ,"GA Goal 19 Completion",[GA Goal 19 Completion 3]
+				    )
+				
+				    //Device
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Web Device'[Device]
+				        ,"Dimension","Device"
+				        ,"Source","1 Footprint PROD"
+				        ,"Web Sessions",[Web Sessions]
+				        ,"Web Transactions",[Web Transactions]
+				        ,"GA Units",[GA Units]
+				        ,"Users",[Users]
+				        ,"New Users",[New Users]
+				        ,"Web Value",ROUND([Web Value],2)
+				        ,"GA Ads Impressions",[GA Ads Impressions]
+				        ,"GA Ads Cost",ROUND([GA Ads Cost],2)
+				        ,"GA Goal 01 Completion",[GA Goal 01 Completion]
+				        ,"GA Goal 02 Completion",[GA Goal 02 Completion]
+				        ,"GA Goal 03 Completion",[GA Goal 03 Completion]
+				        ,"GA Goal 04 Completion",[GA Goal 04 Completion]
+				        ,"GA Goal 05 Completion",[GA Goal 05 Completion]
+				        ,"GA Goal 06 Completion",[GA Goal 06 Completion]
+				        ,"GA Goal 07 Completion",[GA Goal 07 Completion]
+				        ,"GA Goal 08 Completion",[GA Goal 08 Completion]
+				        ,"GA Goal 09 Completion",[GA Goal 09 Completion]
+				        ,"GA Goal 10 Completion",[GA Goal 10 Completion]
+				        ,"GA Goal 11 Completion",[GA Goal 11 Completion]
+				        ,"GA Goal 12 Completion",[GA Goal 12 Completion]
+				        ,"GA Goal 13 Completion",[GA Goal 13 Completion]
+				        ,"GA Goal 14 Completion",[GA Goal 14 Completion]
+				        ,"GA Goal 15 Completion",[GA Goal 15 Completion]
+				        ,"GA Goal 16 Completion",[GA Goal 16 Completion]
+				        ,"GA Goal 17 Completion",[GA Goal 17 Completion]
+				        ,"GA Goal 18 Completion",[GA Goal 18 Completion]
+				        ,"GA Goal 19 Completion",[GA Goal 19 Completion]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Web Device 2'[Device]
+				        ,"Dimension","Device"
+				        ,"Source","2 Footprint UAT"
+				        ,"Web Sessions",[Web Sessions 2]
+				        ,"Web Transactions",[Web Transactions 2]
+				        ,"GA Units",[GA Units 2]
+				        ,"Users",[Users 2]
+				        ,"New Users",[New Users 2]
+				        ,"Web Value",ROUND([Web Value 2],2)
+				        ,"GA Ads Impressions",[GA Ads Impressions 2]
+				        ,"GA Ads Cost",ROUND([GA Ads Cost 2],2)
+				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 2]
+				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 2]
+				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 2]
+				        ,"GA Goal 04 Completion",[GA Goal 04 Completion 2]
+				        ,"GA Goal 05 Completion",[GA Goal 05 Completion 2]
+				        ,"GA Goal 06 Completion",[GA Goal 06 Completion 2]
+				        ,"GA Goal 07 Completion",[GA Goal 07 Completion 2]
+				        ,"GA Goal 08 Completion",[GA Goal 08 Completion 2]
+				        ,"GA Goal 09 Completion",[GA Goal 09 Completion 2]
+				        ,"GA Goal 10 Completion",[GA Goal 10 Completion 2]
+				        ,"GA Goal 11 Completion",[GA Goal 11 Completion 2]
+				        ,"GA Goal 12 Completion",[GA Goal 12 Completion 2]
+				        ,"GA Goal 13 Completion",[GA Goal 13 Completion 2]
+				        ,"GA Goal 14 Completion",[GA Goal 14 Completion 2]
+				        ,"GA Goal 15 Completion",[GA Goal 15 Completion 2]
+				        ,"GA Goal 16 Completion",[GA Goal 16 Completion 2]
+				        ,"GA Goal 17 Completion",[GA Goal 17 Completion 2]
+				        ,"GA Goal 18 Completion",[GA Goal 18 Completion 2]
+				        ,"GA Goal 19 Completion",[GA Goal 19 Completion 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Web Device 3'[Device]
+				        ,"Dimension","Device"
+				        ,"Source","3 Footprint DEV"
+				        ,"Web Sessions",[Web Sessions 3]
+				        ,"Web Transactions",[Web Transactions 3]
+				        ,"GA Units",[GA Units 3]
+				        ,"Users",[Users 3]
+				        ,"New Users",[New Users 3]
+				        ,"Web Value",ROUND([Web Value 3],2)
+				        ,"GA Ads Impressions",[GA Ads Impressions 3]
+				        ,"GA Ads Cost",ROUND([GA Ads Cost 3],2)
+				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 3]
+				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 3]
+				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 3]
+				        ,"GA Goal 04 Completion",[GA Goal 04 Completion 3]
+				        ,"GA Goal 05 Completion",[GA Goal 05 Completion 3]
+				        ,"GA Goal 06 Completion",[GA Goal 06 Completion 3]
+				        ,"GA Goal 07 Completion",[GA Goal 07 Completion 3]
+				        ,"GA Goal 08 Completion",[GA Goal 08 Completion 3]
+				        ,"GA Goal 09 Completion",[GA Goal 09 Completion 3]
+				        ,"GA Goal 10 Completion",[GA Goal 10 Completion 3]
+				        ,"GA Goal 11 Completion",[GA Goal 11 Completion 3]
+				        ,"GA Goal 12 Completion",[GA Goal 12 Completion 3]
+				        ,"GA Goal 13 Completion",[GA Goal 13 Completion 3]
+				        ,"GA Goal 14 Completion",[GA Goal 14 Completion 3]
+				        ,"GA Goal 15 Completion",[GA Goal 15 Completion 3]
+				        ,"GA Goal 16 Completion",[GA Goal 16 Completion 3]
+				        ,"GA Goal 17 Completion",[GA Goal 17 Completion 3]
+				        ,"GA Goal 18 Completion",[GA Goal 18 Completion 3]
+				        ,"GA Goal 19 Completion",[GA Goal 19 Completion 3]
+				    )
+				
+				    //Website
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Website'[Website]
+				        ,"Dimension","Website"
+				        ,"Source","1 Footprint PROD"
+				        ,"Web Sessions",[Web Sessions]
+				        ,"Web Transactions",[Web Transactions]
+				        ,"GA Units",[GA Units]
+				        ,"Users",[Users]
+				        ,"New Users",[New Users]
+				        ,"Web Value",ROUND([Web Value],2)
+				        ,"GA Ads Impressions",[GA Ads Impressions]
+				        ,"GA Ads Cost",ROUND([GA Ads Cost],2)
+				        ,"GA Goal 01 Completion",[GA Goal 01 Completion]
+				        ,"GA Goal 02 Completion",[GA Goal 02 Completion]
+				        ,"GA Goal 03 Completion",[GA Goal 03 Completion]
+				        ,"GA Goal 04 Completion",[GA Goal 04 Completion]
+				        ,"GA Goal 05 Completion",[GA Goal 05 Completion]
+				        ,"GA Goal 06 Completion",[GA Goal 06 Completion]
+				        ,"GA Goal 07 Completion",[GA Goal 07 Completion]
+				        ,"GA Goal 08 Completion",[GA Goal 08 Completion]
+				        ,"GA Goal 09 Completion",[GA Goal 09 Completion]
+				        ,"GA Goal 10 Completion",[GA Goal 10 Completion]
+				        ,"GA Goal 11 Completion",[GA Goal 11 Completion]
+				        ,"GA Goal 12 Completion",[GA Goal 12 Completion]
+				        ,"GA Goal 13 Completion",[GA Goal 13 Completion]
+				        ,"GA Goal 14 Completion",[GA Goal 14 Completion]
+				        ,"GA Goal 15 Completion",[GA Goal 15 Completion]
+				        ,"GA Goal 16 Completion",[GA Goal 16 Completion]
+				        ,"GA Goal 17 Completion",[GA Goal 17 Completion]
+				        ,"GA Goal 18 Completion",[GA Goal 18 Completion]
+				        ,"GA Goal 19 Completion",[GA Goal 19 Completion]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Website 2'[Website]
+				        ,"Dimension","Website"
+				        ,"Source","2 Footprint UAT"
+				        ,"Web Sessions",[Web Sessions 2]
+				        ,"Web Transactions",[Web Transactions 2]
+				        ,"GA Units",[GA Units 2]
+				        ,"Users",[Users 2]
+				        ,"New Users",[New Users 2]
+				        ,"Web Value",ROUND([Web Value 2],2)
+				        ,"GA Ads Impressions",[GA Ads Impressions 2]
+				        ,"GA Ads Cost",ROUND([GA Ads Cost 2],2)
+				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 2]
+				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 2]
+				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 2]
+				        ,"GA Goal 04 Completion",[GA Goal 04 Completion 2]
+				        ,"GA Goal 05 Completion",[GA Goal 05 Completion 2]
+				        ,"GA Goal 06 Completion",[GA Goal 06 Completion 2]
+				        ,"GA Goal 07 Completion",[GA Goal 07 Completion 2]
+				        ,"GA Goal 08 Completion",[GA Goal 08 Completion 2]
+				        ,"GA Goal 09 Completion",[GA Goal 09 Completion 2]
+				        ,"GA Goal 10 Completion",[GA Goal 10 Completion 2]
+				        ,"GA Goal 11 Completion",[GA Goal 11 Completion 2]
+				        ,"GA Goal 12 Completion",[GA Goal 12 Completion 2]
+				        ,"GA Goal 13 Completion",[GA Goal 13 Completion 2]
+				        ,"GA Goal 14 Completion",[GA Goal 14 Completion 2]
+				        ,"GA Goal 15 Completion",[GA Goal 15 Completion 2]
+				        ,"GA Goal 16 Completion",[GA Goal 16 Completion 2]
+				        ,"GA Goal 17 Completion",[GA Goal 17 Completion 2]
+				        ,"GA Goal 18 Completion",[GA Goal 18 Completion 2]
+				        ,"GA Goal 19 Completion",[GA Goal 19 Completion 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Website 3'[Website]
+				        ,"Dimension","Website"
+				        ,"Source","3 Footprint DEV"
+				        ,"Web Sessions",[Web Sessions 3]
+				        ,"Web Transactions",[Web Transactions 3]
+				        ,"GA Units",[GA Units 3]
+				        ,"Users",[Users 3]
+				        ,"New Users",[New Users 3]
+				        ,"Web Value",ROUND([Web Value 3],2)
+				        ,"GA Ads Impressions",[GA Ads Impressions 3]
+				        ,"GA Ads Cost",ROUND([GA Ads Cost 3],2)
+				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 3]
+				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 3]
+				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 3]
+				        ,"GA Goal 04 Completion",[GA Goal 04 Completion 3]
+				        ,"GA Goal 05 Completion",[GA Goal 05 Completion 3]
+				        ,"GA Goal 06 Completion",[GA Goal 06 Completion 3]
+				        ,"GA Goal 07 Completion",[GA Goal 07 Completion 3]
+				        ,"GA Goal 08 Completion",[GA Goal 08 Completion 3]
+				        ,"GA Goal 09 Completion",[GA Goal 09 Completion 3]
+				        ,"GA Goal 10 Completion",[GA Goal 10 Completion 3]
+				        ,"GA Goal 11 Completion",[GA Goal 11 Completion 3]
+				        ,"GA Goal 12 Completion",[GA Goal 12 Completion 3]
+				        ,"GA Goal 13 Completion",[GA Goal 13 Completion 3]
+				        ,"GA Goal 14 Completion",[GA Goal 14 Completion 3]
+				        ,"GA Goal 15 Completion",[GA Goal 15 Completion 3]
+				        ,"GA Goal 16 Completion",[GA Goal 16 Completion 3]
+				        ,"GA Goal 17 Completion",[GA Goal 17 Completion 3]
+				        ,"GA Goal 18 Completion",[GA Goal 18 Completion 3]
+				        ,"GA Goal 19 Completion",[GA Goal 19 Completion 3]
+				    )
+				
+				    //Acquisition Channel
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Web Channel'[Acquisition Channel]
+				        ,"Dimension","Acquisition Channel"
+				        ,"Source","1 Footprint PROD"
+				        ,"Web Sessions",[Web Sessions]
+				        ,"Web Transactions",[Web Transactions]
+				        ,"GA Units",[GA Units]
+				        ,"Users",[Users]
+				        ,"New Users",[New Users]
+				        ,"Web Value",ROUND([Web Value],2)
+				        ,"GA Ads Impressions",[GA Ads Impressions]
+				        ,"GA Ads Cost",ROUND([GA Ads Cost],2)
+				        ,"GA Goal 01 Completion",[GA Goal 01 Completion]
+				        ,"GA Goal 02 Completion",[GA Goal 02 Completion]
+				        ,"GA Goal 03 Completion",[GA Goal 03 Completion]
+				        ,"GA Goal 04 Completion",[GA Goal 04 Completion]
+				        ,"GA Goal 05 Completion",[GA Goal 05 Completion]
+				        ,"GA Goal 06 Completion",[GA Goal 06 Completion]
+				        ,"GA Goal 07 Completion",[GA Goal 07 Completion]
+				        ,"GA Goal 08 Completion",[GA Goal 08 Completion]
+				        ,"GA Goal 09 Completion",[GA Goal 09 Completion]
+				        ,"GA Goal 10 Completion",[GA Goal 10 Completion]
+				        ,"GA Goal 11 Completion",[GA Goal 11 Completion]
+				        ,"GA Goal 12 Completion",[GA Goal 12 Completion]
+				        ,"GA Goal 13 Completion",[GA Goal 13 Completion]
+				        ,"GA Goal 14 Completion",[GA Goal 14 Completion]
+				        ,"GA Goal 15 Completion",[GA Goal 15 Completion]
+				        ,"GA Goal 16 Completion",[GA Goal 16 Completion]
+				        ,"GA Goal 17 Completion",[GA Goal 17 Completion]
+				        ,"GA Goal 18 Completion",[GA Goal 18 Completion]
+				        ,"GA Goal 19 Completion",[GA Goal 19 Completion]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Web Channel 2'[Acquisition Channel]
+				        ,"Dimension","Acquisition Channel"
+				        ,"Source","2 Footprint UAT"
+				        ,"Web Sessions",[Web Sessions 2]
+				        ,"Web Transactions",[Web Transactions 2]
+				        ,"GA Units",[GA Units 2]
+				        ,"Users",[Users 2]
+				        ,"New Users",[New Users 2]
+				        ,"Web Value",ROUND([Web Value 2],2)
+				        ,"GA Ads Impressions",[GA Ads Impressions 2]
+				        ,"GA Ads Cost",ROUND([GA Ads Cost 2],2)
+				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 2]
+				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 2]
+				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 2]
+				        ,"GA Goal 04 Completion",[GA Goal 04 Completion 2]
+				        ,"GA Goal 05 Completion",[GA Goal 05 Completion 2]
+				        ,"GA Goal 06 Completion",[GA Goal 06 Completion 2]
+				        ,"GA Goal 07 Completion",[GA Goal 07 Completion 2]
+				        ,"GA Goal 08 Completion",[GA Goal 08 Completion 2]
+				        ,"GA Goal 09 Completion",[GA Goal 09 Completion 2]
+				        ,"GA Goal 10 Completion",[GA Goal 10 Completion 2]
+				        ,"GA Goal 11 Completion",[GA Goal 11 Completion 2]
+				        ,"GA Goal 12 Completion",[GA Goal 12 Completion 2]
+				        ,"GA Goal 13 Completion",[GA Goal 13 Completion 2]
+				        ,"GA Goal 14 Completion",[GA Goal 14 Completion 2]
+				        ,"GA Goal 15 Completion",[GA Goal 15 Completion 2]
+				        ,"GA Goal 16 Completion",[GA Goal 16 Completion 2]
+				        ,"GA Goal 17 Completion",[GA Goal 17 Completion 2]
+				        ,"GA Goal 18 Completion",[GA Goal 18 Completion 2]
+				        ,"GA Goal 19 Completion",[GA Goal 19 Completion 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Web Channel 3'[Acquisition Channel]
+				        ,"Dimension","Acquisition Channel"
+				        ,"Source","3 Footprint DEV"
+				        ,"Web Sessions",[Web Sessions 3]
+				        ,"Web Transactions",[Web Transactions 3]
+				        ,"GA Units",[GA Units 3]
+				        ,"Users",[Users 3]
+				        ,"New Users",[New Users 3]
+				        ,"Web Value",ROUND([Web Value 3],2)
+				        ,"GA Ads Impressions",[GA Ads Impressions 3]
+				        ,"GA Ads Cost",ROUND([GA Ads Cost 3],2)
+				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 3]
+				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 3]
+				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 3]
+				        ,"GA Goal 04 Completion",[GA Goal 04 Completion 3]
+				        ,"GA Goal 05 Completion",[GA Goal 05 Completion 3]
+				        ,"GA Goal 06 Completion",[GA Goal 06 Completion 3]
+				        ,"GA Goal 07 Completion",[GA Goal 07 Completion 3]
+				        ,"GA Goal 08 Completion",[GA Goal 08 Completion 3]
+				        ,"GA Goal 09 Completion",[GA Goal 09 Completion 3]
+				        ,"GA Goal 10 Completion",[GA Goal 10 Completion 3]
+				        ,"GA Goal 11 Completion",[GA Goal 11 Completion 3]
+				        ,"GA Goal 12 Completion",[GA Goal 12 Completion 3]
+				        ,"GA Goal 13 Completion",[GA Goal 13 Completion 3]
+				        ,"GA Goal 14 Completion",[GA Goal 14 Completion 3]
+				        ,"GA Goal 15 Completion",[GA Goal 15 Completion 3]
+				        ,"GA Goal 16 Completion",[GA Goal 16 Completion 3]
+				        ,"GA Goal 17 Completion",[GA Goal 17 Completion 3]
+				        ,"GA Goal 18 Completion",[GA Goal 18 Completion 3]
+				        ,"GA Goal 19 Completion",[GA Goal 19 Completion 3]
+				    )
+				)
+
+	annotation PBI_Id = bfbb319266c0402989b6f5b1de1f669f
+

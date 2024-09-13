@@ -1,0 +1,133 @@
+table 'Customer Sell Out EMEA'
+	isHidden
+	lineageTag: e1676e3d-fb0a-4ae7-b212-12580dff14ba
+	sourceLineageTag: 3909d438-949e-44c5-96a4-ed8f17813a52
+
+	column 'Customer Gender'
+		dataType: string
+		isHidden
+		lineageTag: 06faee90-3f71-4b06-aafd-cf98187c4d3c
+		sourceLineageTag: 79c7c137-403a-4e34-9a25-3de886ed87f6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Gender
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Name'
+		dataType: string
+		isHidden
+		lineageTag: 020b9c52-0321-41ad-985b-4dd15180c8af
+		sourceLineageTag: 6a079cfc-112b-48ae-b4d1-8eb11a374069
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Name
+
+		annotation SummarizationSetBy = User
+
+	column Stock
+		dataType: int64
+		isHidden
+		lineageTag: 6db102b9-b3dc-41d9-aef4-6e9a0ab24f4c
+		sourceLineageTag: 909566ee-759d-4e71-8a67-789885850fc6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Stock
+
+		annotation SummarizationSetBy = User
+
+	column NetSalesUnits
+		dataType: int64
+		isHidden
+		lineageTag: bd4bd7e4-dba7-4ec5-b8eb-50c0b3d3477a
+		sourceLineageTag: e99dc051-f12f-443c-bc44-3f2dc174246d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NetSalesUnits
+
+		annotation SummarizationSetBy = User
+
+	column ReturnedUnits
+		dataType: int64
+		isHidden
+		lineageTag: 1b98f754-5489-4044-b541-002010bde99a
+		sourceLineageTag: 213f755c-0bd9-4ba0-99d3-ef368dd05705
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ReturnedUnits
+
+		annotation SummarizationSetBy = User
+
+	column 'Week Begining Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: a32e49bc-7652-42dd-8462-466053d2c0da
+		sourceLineageTag: f356ef89-734f-4010-bf56-bdd51e8afe57
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Week Begining Date
+
+		annotation SummarizationSetBy = User
+
+	column Date_Key
+		dataType: string
+		isHidden
+		lineageTag: b97406e2-6c82-42ac-9fab-58f6efb1ea79
+		sourceLineageTag: 17f58219-a75d-42d8-abe9-e2a7256fb1dd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		annotation SummarizationSetBy = User
+
+	column Product_Key
+		dataType: string
+		isHidden
+		lineageTag: 26253f81-30a9-4c1b-8aa1-3ed2575c2448
+		sourceLineageTag: a591b128-1588-4fc6-9dac-c9593deb172d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		lineageTag: f7114a92-e763-461a-aec9-0214bcb199b1
+		sourceLineageTag: dfe62168-4ee9-4fae-8d96-47cf0780637f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Demand Net Sales Units'
+		dataType: int64
+		isHidden
+		lineageTag: e8603a2e-8e3f-4f45-afe2-6b0ea4eb521c
+		sourceLineageTag: f3ac4c7d-7e8a-4981-9715-586ad699eb0e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Demand Net Sales Units
+
+		annotation SummarizationSetBy = User
+
+	column 'YoY Align'
+		dataType: string
+		isHidden
+		lineageTag: c3b7fe07-ab2d-4d9d-9dac-264fddb89f7b
+		sourceLineageTag: e656f571-3ed1-4956-be0e-b30b3cd01910
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: YoY Align
+
+		annotation SummarizationSetBy = User
+
+	partition 'Customer Sell Out EMEA' = entity
+		mode: directQuery
+		source
+			entityName: Customer Sell Out EMEA
+			expressionSource: 'DirectQuery to AS - DMA Total Business'
+

@@ -1,0 +1,43 @@
+table 'Financial Channel'
+	lineageTag: b2fb1768-2abb-4fb1-93d0-5e8a6d38cd8f
+	sourceLineageTag: c472d044-1bb5-4b45-9ba9-0c22e54b9d33
+
+	column 'Channel ID'
+		dataType: string
+		lineageTag: 803cf9c5-35a3-4579-9652-00c897342983
+		sourceLineageTag: e7b16ef4-09f4-454b-9eb3-fa8e1b840583
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel Description'
+		dataType: string
+		lineageTag: ca8e3165-be87-4962-b526-b29e0a9ac9d7
+		sourceLineageTag: ab55d452-065e-4cbe-895c-f7466c619ce5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel Description
+
+		annotation SummarizationSetBy = User
+
+	column Channel_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: 995e8157-df0f-493c-a435-17fb5f19ad20
+		sourceLineageTag: 273d2876-c3ef-4cd1-90b9-b28e373a4640
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel_Key
+
+		annotation SummarizationSetBy = User
+
+	partition 'Financial Channel' = entity
+		mode: directQuery
+		source
+			entityName: Financial Channel
+			expressionSource: 'DirectQuery to AS - DMA Fixed Asset'
+

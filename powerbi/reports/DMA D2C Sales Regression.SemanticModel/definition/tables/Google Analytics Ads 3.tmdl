@@ -1,0 +1,67 @@
+table 'Google Analytics Ads 3'
+	isHidden
+	lineageTag: 89a32b1e-ba2c-49f5-ac6b-c325bc3bfd3c
+	sourceLineageTag: bc42017d-a7db-40fe-94a1-7a68d24868c6
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 810c8099-0d2d-4847-981f-5ac4c4016b15
+		sourceLineageTag: 38d586c1-d051-45aa-a585-170c3a1cf7e5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Ad Cost'
+		dataType: double
+		isHidden
+		lineageTag: 7fda7e6a-15e0-4ceb-bde2-df87f8e0be9e
+		sourceLineageTag: bd7e0125-569f-4fe5-97ca-d1185735d545
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Ad Cost
+
+		annotation SummarizationSetBy = User
+
+	column Impressions
+		dataType: double
+		isHidden
+		lineageTag: 80f5331b-9cc4-4fee-b00c-682c86de92f9
+		sourceLineageTag: 28e4a39a-b9e7-4a04-b8c8-d047eff02a18
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Impressions
+
+		annotation SummarizationSetBy = User
+
+	column GAViewID
+		dataType: int64
+		isHidden
+		lineageTag: aa0e5cee-a6c3-48ff-9258-6591615c2b9d
+		sourceLineageTag: 75e363a1-0131-47ab-8dd5-fe0d5c1106f5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: GAViewID
+
+		annotation SummarizationSetBy = User
+
+	column DeviceCategory_Key
+		dataType: string
+		isHidden
+		lineageTag: ac8f1238-c912-4c85-92ec-5ac610703b94
+		sourceLineageTag: acd83a86-f1d0-4985-9467-65d039288be7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DeviceCategory_Key
+
+		annotation SummarizationSetBy = User
+
+	partition 'Google Analytics Ads 3' = entity
+		mode: directQuery
+		source
+			entityName: Google Analytics Ads
+			expressionSource: 'DirectQuery to AS - DMA D2C 3'
+

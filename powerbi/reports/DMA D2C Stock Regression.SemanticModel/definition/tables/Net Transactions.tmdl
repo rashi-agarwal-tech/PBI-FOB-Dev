@@ -1,0 +1,58 @@
+table 'Net Transactions'
+	isHidden
+	lineageTag: bf5cb91a-7a36-4f47-ad5b-48a5a65aff79
+	sourceLineageTag: 1a599557-4ab8-4cba-82f5-a2d3c18ae9f3
+
+	column 'Sales Order Number'
+		dataType: string
+		isHidden
+		lineageTag: cd1c8eb2-9059-44c5-972d-d84d0f668084
+		sourceLineageTag: 683d3a98-c74d-4643-a69a-d6df8ff38556
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Order Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Returns Flg'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2d1e9985-1f5d-4dfa-a70f-77b185ae75c7
+		sourceLineageTag: 8dc8dd80-fba6-44f0-8980-bb38c767e877
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Returns Flg
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Flg'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7bf54b95-d46a-4629-b07c-10f568dd9c35
+		sourceLineageTag: 24d2d582-5f32-4620-9fbf-6c77fafa39a3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Sales Flg
+
+		annotation SummarizationSetBy = User
+
+	column 'Net Trx'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a14b3c58-fa99-4208-a5e3-aa0d6f51b8fc
+		sourceLineageTag: dde4286f-c8f3-4096-b80b-483a7e4a58c1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Net Trx
+
+		annotation SummarizationSetBy = User
+
+	partition 'Net Transactions' = entity
+		mode: directQuery
+		source
+			entityName: Net Transactions
+			expressionSource: 'DirectQuery to AS - DMA D2C'
+

@@ -1,0 +1,80 @@
+table 'Parameter - Metrics'
+	lineageTag: 35e77544-2544-4074-a099-8fdaaa1f4f95
+
+	column 'Parameter - Metrics'
+		dataType: string
+		lineageTag: 94113e41-da17-4494-90f2-1d4b2db74b74
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter - Metrics Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter - Metrics Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Metrics Fields'
+		dataType: string
+		isHidden
+		lineageTag: 9265534a-368e-42a7-91b9-314c840b9510
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter - Metrics Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Metrics Order'
+		dataType: double
+		isHidden
+		formatString: 0.000
+		lineageTag: f99c51a5-ec8a-4779-853d-90508c0c00ca
+		summarizeBy: sum
+		isDataTypeInferred
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type =
+			
+			IF
+			(
+			    RIGHT(FORMAT([Parameter - Metrics Order],"@"),1)="1"
+			    ,"Actual"
+			    ,"Abs Diff"
+			)
+		dataType: string
+		lineageTag: ad4b0134-41bf-4be9-84ce-8d3ebab207e4
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter - Metrics' = calculated
+		mode: import
+		source =
+				
+				{
+				    ("Amount (Actual) Actuals", NAMEOF([gl Amount (Actual)]), 1.011),
+				    ("Amount (Actual) AbsDiff", NAMEOF([gl Amount (Actual) Diff]), 1.012),
+				    ("Amount (GBC Constant) Actuals", NAMEOF([gl Amount (GBC Constant)]), 1.021),
+				    ("Amount (GBC Constant) AbsDiff", NAMEOF([gl Amount (GBC Constant) Diff]), 1.022),
+				    ("Amount (Local) Actuals", NAMEOF([gl Amount (Local)]), 1.031),
+				    ("Amount (Local) AbsDiff", NAMEOF([gl Amount (Local) Diff]), 1.032),
+				    ("Amount (Transaction) Actuals", NAMEOF([gl Amount (Transaction)]), 1.041),
+				    ("Amount (Transaction) AbsDiff", NAMEOF([gl Amount (Transaction) Diff]), 1.042),
+				    ("Budget (GBC Constant) Actuals", NAMEOF([gl Budget (GBC Constant)]), 1.051),
+				    ("Budget (GBC Constant) AbsDiff", NAMEOF([gl Budget (GBC Constant) Diff]), 1.052),
+				    ("Budget (Local) Actuals", NAMEOF([gl Budget (Local)]), 1.061),
+				    ("Budget (Local) AbsDiff", NAMEOF([gl Budget (Local) Diff]), 1.062)
+				}
+
+	annotation PBI_Id = ca6d7977ee0048349af11303548f9228
+

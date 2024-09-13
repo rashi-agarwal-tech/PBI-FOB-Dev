@@ -1,0 +1,33 @@
+table 'Seasonal Product Info 2'
+	isHidden
+	lineageTag: ce944d95-bf4b-4655-abc9-d70e3b3b2a16
+	sourceLineageTag: 3d291ab2-c98a-4dfe-bb42-d95f7f8e9e6f
+
+	column Product_Key
+		dataType: string
+		isHidden
+		lineageTag: 3e16111e-ace2-442f-b021-b2df9487f127
+		sourceLineageTag: e363e99a-f4d1-4d22-afba-2891950464f6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		lineageTag: dda6f999-a5f7-460c-87ea-b93102f6656f
+		sourceLineageTag: f192daa6-4f76-4b3b-b42d-8cf4594bd0f8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	partition 'Seasonal Product Info 2' = entity
+		mode: directQuery
+		source
+			entityName: Seasonal Product Info
+			expressionSource: 'DirectQuery to AS - DMA Total Business 2'
+

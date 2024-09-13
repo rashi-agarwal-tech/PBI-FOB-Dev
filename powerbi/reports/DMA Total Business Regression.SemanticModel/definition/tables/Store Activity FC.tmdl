@@ -1,0 +1,67 @@
+table 'Store Activity FC'
+	isHidden
+	lineageTag: 66fb2287-bff7-4b33-b6cd-66c8498b4547
+	sourceLineageTag: 70a3939b-ce7c-48a4-a5f7-7770ba9ac9b8
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: b3ce43a8-fd1f-4cd3-a1ef-59e3d1b3e1bc
+		sourceLineageTag: c56c0157-845a-445b-b09f-c98f8a7e05b3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Forecast Version'
+		dataType: string
+		isHidden
+		lineageTag: 5d1497fc-7ba0-4d0a-be16-022b7e5c6802
+		sourceLineageTag: 0ccc553a-7759-494f-bf18-17ad38663c92
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Forecast Version
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse ID'
+		dataType: string
+		isHidden
+		lineageTag: 80962693-e5f9-4860-8cf5-08d7b84498eb
+		sourceLineageTag: ab677954-6656-4bcc-a875-b97395024fba
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Total Footfall'
+		dataType: int64
+		isHidden
+		lineageTag: 0deec737-df75-414c-bf8f-d3a4c86170cb
+		sourceLineageTag: 1513dd9b-72d1-4855-86ba-f4727029c957
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Total Footfall
+
+		annotation SummarizationSetBy = User
+
+	column 'Net Transactions'
+		dataType: int64
+		isHidden
+		lineageTag: 8d87cce6-0cc6-482a-add9-f9726cf535e3
+		sourceLineageTag: 500ff175-09eb-4b6e-a204-e3bfd026ac4c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Net Transactions
+
+		annotation SummarizationSetBy = User
+
+	partition 'Store Activity FC' = entity
+		mode: directQuery
+		source
+			entityName: Store Activity FC
+			expressionSource: 'DirectQuery to AS - DMA Total Business'
+

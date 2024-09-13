@@ -1,0 +1,1023 @@
+relationship 9b90f1aa-d538-4030-a9a4-3851d0b56333
+	fromColumn: Pick.Product_Key
+	toColumn: Products.Product_Key
+
+relationship 3614e520-273f-40e9-9576-58a43c03367a
+	fromColumn: Pick.Size_Key
+	toColumn: Size.Size_Key
+
+relationship de0e848d-1047-46eb-8c7e-cfdc5cef3275
+	fromColumn: Pick.Company_Key
+	toColumn: Region.Company_Key
+
+relationship 48f69892-2985-49cc-b1cb-0096c523a1d2
+	fromColumn: Pick.INVENTTRANSID
+	toColumn: 'Bridge InventTransID'.INVENTTRANSID
+
+relationship 7451eaa2-43d8-40ff-9bb8-e389ababd563
+	fromColumn: Pick.'Selling Status'
+	toColumn: 'Selling Status - Invoice'.'Selling Status'
+
+relationship c2bbacd9-6b8a-404c-8c31-943e97750b5a
+	fromColumn: 'Hours Worked'.Date
+	toColumn: Date.' Date'
+
+relationship 994b3f55-47fe-4c44-ab68-c966c31df33e
+	fromColumn: 'Hours Worked'.'DM Agent'
+	toColumn: 'Order Taker'.'DM Agent'
+
+relationship 3b4bc4e6-bce4-46c1-b6bc-54c38691e57e
+	fromColumn: 'Hours Worked'.'Warehouse ID'
+	toColumn: Warehouse.'Warehouse ID'
+
+relationship 940bb1ab-04c2-4cc1-9630-b6c9d3dc421e
+	fromColumn: 'Seasonal Product Forecast'.Date_key
+	toColumn: Date.Date_Key
+
+relationship acbc9a61-229c-4637-99c4-afe7932bb2ba
+	fromColumn: 'Seasonal Product Forecast'.Product_Key
+	toColumn: Products.Product_Key
+
+relationship c8477ca5-f577-43a1-80b6-2c470f3c1525
+	fromColumn: 'Seasonal Product Forecast'.Customer_Key
+	toColumn: Customer.Customer_Key
+
+relationship 1aa7559e-099a-442e-a00f-02ca7750b90a
+	fromColumn: 'Store Activity FC'.'Forecast Version'
+	toColumn: 'Forecast Version'.'Forecast Version'
+
+relationship 133f5a8f-81d0-4375-a991-b8d5de44e5df
+	fromColumn: 'Store Activity FC'.'Warehouse ID'
+	toColumn: Warehouse.'Warehouse ID'
+
+relationship 7eaf8580-c8da-4f7a-8f18-f3ed477d8a80
+	fromColumn: 'Store Activity FC'.Date
+	toColumn: Date.' Date'
+
+relationship 593d6aa4-e074-44af-a41e-29872192e8a8
+	fromColumn: Forecast.Date
+	toColumn: Date.' Date'
+
+relationship 725dc7a5-ad5f-4d3b-891a-3d13aab57755
+	fromColumn: Forecast.'Forecast Version'
+	toColumn: 'Forecast Version'.'Forecast Version'
+
+relationship 06b95bbf-4dff-483c-80af-0d7e87de25ad
+	fromColumn: Forecast.RetailStore_Key
+	toColumn: 'Account Details'.RetailStore_Key
+
+relationship d24eed88-8d52-4d22-a49e-56688e7f6c2f
+	fromColumn: Forecast.Channel
+	toColumn: Channel.Channel
+
+relationship 9b91c462-f117-4ee3-8e20-8964cdef157f
+	fromColumn: Forecast.Customer_Key
+	toColumn: Customer.Customer_Key
+
+relationship 38358c64-4408-4ce4-8c91-b435a7fa51db
+	fromColumn: Forecast.'Company ID'
+	toColumn: Region.'Company ID'
+
+relationship efaa775d-36df-460b-93e2-dd08cc5d6ef0
+	fromColumn: Forecast.FinancialChannel
+	toColumn: 'Financial Channel'.Channel
+
+relationship 8deeb7aa-fc1d-48ce-89a1-72076f0f6a6d
+	fromColumn: 'Order Type'.'Channel ID'
+	toColumn: Channel.'Channel ID'
+
+relationship 6c05ff24-b477-4fcd-9e96-630a09b7757c
+	fromColumn: Deductions.Customer_Key
+	toColumn: Customer.Customer_Key
+
+relationship 97170fad-b89e-4ca2-96d0-b12965f9a04b
+	fromColumn: Deductions.Date_Key
+	toColumn: Date.Date_Key
+
+relationship 08effb87-e48c-41e6-a8b2-9c212c4333b9
+	fromColumn: Deductions.Company_Key
+	toColumn: Region.Company_Key
+
+relationship 6cc01c59-2c5e-4bf6-9b26-c31ceea26da8
+	fromColumn: SmartRes.'Company ID'
+	toColumn: Region.'Company ID'
+
+relationship 179adc50-c010-4ac0-8f16-0e3039da2e9d
+	fromColumn: SmartRes.Date
+	toColumn: Date.' Date'
+
+relationship 73dad4bd-3ccf-4c68-a10c-c8e39bd7f0bc
+	fromColumn: SmartRes.INVENTTRANSID
+	toColumn: 'Bridge InventTransID'.INVENTTRANSID
+
+relationship f8a43f96-b867-4e7b-a16a-538dc8ca4a22
+	fromColumn: SmartRes.Product_Key
+	toColumn: Products.Product_Key
+
+relationship ca97cb45-e7d2-42bd-bef1-b87a4a6d77e3
+	fromColumn: SmartRes.'Selling Status'
+	toColumn: 'Selling Status - Invoice'.'Selling Status'
+
+relationship aa63f0ac-30cb-4989-a2ef-f7e817bbc931
+	fromColumn: SmartRes.Warehouse_Key
+	toColumn: Warehouse.Warehouse_Key
+
+relationship 58189c7b-71a3-4fe1-9094-44f24f3ad9d0
+	fromColumn: SmartRes.Size_Key
+	toColumn: Size.Size_Key
+
+relationship b622536f-482d-4785-9a19-083cf87568d7
+	fromColumn: SmartRes.'Channel ID'
+	toColumn: Channel.'Channel ID'
+
+relationship b409a004-6143-45fe-9ab8-fa5b5fed2425
+	fromColumn: SmartRes.FinancialChannel
+	toColumn: 'Financial Channel'.Channel
+
+relationship 573a1b9e-f192-4843-a47f-b74ec5b50843
+	fromColumn: Orders.Date_Key
+	toColumn: Date.Date_Key
+
+relationship d7db236c-d635-449f-bd4c-0c4ae7adae74
+	fromColumn: Orders.Customer_Key
+	toColumn: Customer.Customer_Key
+
+relationship 90fe5859-d820-4a3e-807b-63491a2e315c
+	fromColumn: Orders.Product_Key
+	toColumn: Products.Product_Key
+
+relationship a5ac14d4-885d-4150-89f7-a506cdb18a84
+	fromColumn: Orders.Company_Key
+	toColumn: Region.Company_Key
+
+relationship 0f1ae1c2-1654-4e11-8a01-7639a6d2a5fc
+	fromColumn: Orders.INVENTTRANSID
+	toColumn: 'Bridge InventTransID'.INVENTTRANSID
+
+relationship ca231f2b-9140-41b4-ad3d-71e3e92adce1
+	fromColumn: Orders.'Sales Order Number'
+	toColumn: 'Retail Demographics'.'Sales Order Number'
+
+relationship f8ab096d-2cb5-46a1-ac0b-5dd4aa3656e2
+	fromColumn: Orders.'Selling Status'
+	toColumn: 'Selling Status - Invoice'.'Selling Status'
+
+relationship d2fb1f9d-fa49-4b60-adc1-da67ff8572b0
+	fromColumn: Orders.WebSiteCode
+	toColumn: Website.WebSiteCode
+
+relationship 012cf5aa-55ef-4f83-bba6-baebf7ffdc86
+	isActive: false
+	fromColumn: Orders.'Order DateTime'
+	toColumn: Date.' Date'
+
+relationship fc48a3ae-789c-4f7b-9161-f1c07ee3cb47
+	fromColumn: Orders.'DM Agent'
+	toColumn: 'Order Taker'.'DM Agent'
+
+relationship e1f36008-c2f5-451e-a74d-bbed2c265427
+	fromColumn: Orders.Size
+	toColumn: Size.Size
+
+relationship 3571c4cd-9f77-4809-86ec-91d61c2d9f1f
+	fromColumn: Orders.Product_Class_Key
+	toColumn: 'Product Class'.Product_Class_Key
+
+relationship 477bea3c-fe05-41b2-afea-dfa013b867ac
+	isActive: false
+	fromColumn: Orders.'Requested Shipping Date_SOL'
+	toColumn: Date.' Date'
+
+relationship 71cbf8c3-edb5-4f16-b40d-12256aef81c3
+	fromColumn: Orders.SalesOrderNumber_Key
+	toColumn: 'Hold Code Trans'.SalesOrderNumber_Key
+
+relationship 34371538-3e46-4047-92ee-e54bb82c5095
+	fromColumn: Orders.HDMORDERTYPEID
+	toColumn: 'Sales Order Type'.HDMORDERTYPEID
+
+relationship 87d8d197-2624-4df8-8ea8-89430b13c475
+	fromColumn: Orders.Time_Key
+	toColumn: Time.Time_Key
+
+relationship b270ded2-d51a-4884-b8ad-15d782b783ec
+	fromColumn: Orders.Warehouse_Key
+	toColumn: Warehouse.Warehouse_Key
+
+relationship f88580c1-d21d-4639-8623-13d3f5364b3a
+	fromColumn: Orders.'Finance Dimension - Channel'
+	toColumn: 'Financial Channel'.Channel
+
+relationship ba17bdab-8efd-4810-a599-1f60801c39b4
+	crossFilteringBehavior: bothDirections
+	fromColumn: Orders.'Sales Order Number'
+	toColumn: BridgeSalesOrderNumber.'Sales Order Number'
+
+relationship 05a69cb6-4fc8-41d7-981f-076a59993c25
+	fromColumn: Orders.'Selling Status - Order Entry'
+	toColumn: 'Selling Status - Order Entry'.SELLINGSTATUS
+
+relationship 6960f816-6aa0-41c4-9944-865b3f64fe36
+	fromColumn: Orders.SalesOrderPool_Key
+	toColumn: 'Order Type'.SalesOrderPool_Key
+
+relationship 6cab59bd-1542-4376-832d-60c23e4ca5db
+	fromColumn: Orders.Season
+	toColumn: 'Seasons (Product Report)'.Season
+
+relationship a0e326fe-ab02-4089-93b9-0c0801df27bc
+	fromColumn: 'Sales Packing Slip'.INVENTTRANSID
+	toColumn: 'Bridge InventTransID'.INVENTTRANSID
+
+relationship eb87fe4f-b072-4ba4-b495-9e70fa6b45db
+	fromColumn: Region.'Region ID'
+	toColumn: Regions.'Region ID'
+
+relationship d8542024-de4f-4c6f-9575-eeac5309e4b9
+	fromColumn: Warehouse.PARENTSTOREID
+	toColumn: 'Account Details'.STOREID
+
+relationship f3cbb25f-5f48-447e-b58e-2f94ed143249
+	isActive: false
+	fromColumn: Warehouse.WHtoStore_Key
+	toColumn: 'Account Details'.WHtoStore_Key
+
+relationship 88175c74-8bed-4455-bbb6-f80bf5c196ba
+	fromColumn: 'Adjustments CoGS'.AccountingDate_Key
+	toColumn: Date.Date_Key
+
+relationship 865f0dd9-c4ce-4a82-b5bb-d32654a9864c
+	fromColumn: 'Adjustments CoGS'.Company_Key
+	toColumn: Region.Company_Key
+
+relationship 86cc04a9-11d9-4c8a-bf29-0859f97fe225
+	fromColumn: 'Adjustments CoGS'.Channel_Key
+	toColumn: 'Financial Channel'.Channel_Key
+
+relationship 20655026-13b6-415c-8d09-82d5780baf33
+	fromColumn: 'Adjustments Sales'.AccountingDate_Key
+	toColumn: Date.Date_Key
+
+relationship 1b594f70-6ef1-4916-8db0-7914ac99032c
+	fromColumn: 'Adjustments Sales'.Company_Key
+	toColumn: Region.Company_Key
+
+relationship 53151db5-7af5-4542-a957-83c3ff29f033
+	fromColumn: 'Adjustments Sales'.Channel_Key
+	toColumn: 'Financial Channel'.Channel_Key
+
+relationship 7eeb2e8e-1578-47e4-a626-8da593f7d5b3
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Date Slicer'.Date
+	toColumn: Date.' Date'
+
+relationship 14172c92-361e-42a1-a4cb-b32550b71315
+	fromColumn: 'Product Forecast'.'Product Code'
+	toColumn: 'Bridge Product'.'Product Code'
+
+relationship 9cccc759-f7c2-48eb-a25e-a8e4ce0c7af3
+	fromColumn: Footfall.Date
+	toColumn: Date.' Date'
+
+relationship 8624d84c-7d8d-4842-b754-af9e8acf3be9
+	fromColumn: Footfall.Time_Key
+	toColumn: Time.Time_Key
+
+relationship a49809ff-8aa3-4d8b-a486-e4bae6d3a237
+	fromColumn: Footfall.RetailStore_Key
+	toColumn: 'Account Details'.RetailStore_Key
+
+relationship c164dde2-e323-4351-830c-64a60f0f0de9
+	fromColumn: Footfall.Company_Key
+	toColumn: Region.Company_Key
+
+relationship e5ced57a-a6cd-4cbe-9a24-3c036abb0cc8
+	fromColumn: 'Product Weights'.Product_Key
+	toColumn: Products.Product_Key
+
+relationship 9450d872-2b44-4130-8899-02135c884198
+	fromColumn: 'Product Weights'.Size_Key
+	toColumn: Size.Size_Key
+
+relationship 6dc14ef6-b593-46a5-a5c1-5eb12152ed3b
+	fromColumn: 'Seasonal Product Info'.Product_Key
+	toColumn: Products.Product_Key
+
+relationship d302e206-934d-478d-85fe-9ae7c2ffe5af
+	fromColumn: 'Seasonal Product Info'.Company_Key
+	toColumn: Region.Company_Key
+
+relationship 6751984e-960b-492d-84ca-2b887c6bf182
+	fromColumn: 'Customer Sell Out EMEA'.Date_Key
+	toColumn: Date.Date_Key
+
+relationship bc797b97-7cc5-4917-8899-15f2739e89eb
+	fromColumn: 'Customer Sell Out EMEA'.Product_Key
+	toColumn: Products.Product_Key
+
+relationship d1625052-e91e-4872-8a08-bf3481b68231
+	fromColumn: 'Customer Sell Out EMEA'.Customer_Key
+	toColumn: Customer.Customer_Key
+
+relationship 735fa86a-0141-44c7-b9a5-cd41ed24e114
+	fromColumn: 'Customer Sell Out US'.Customer_Key
+	toColumn: Customer.Customer_Key
+
+relationship a0277201-3926-47b9-b44b-5c8be613e4ed
+	fromColumn: 'Customer Sell Out US'.To_Date_Key
+	toColumn: Date.Date_Key
+
+relationship edb29150-eece-4a72-82d3-515455e36c5f
+	fromColumn: 'Customer Sell Out US'.Product_Key
+	toColumn: Products.Product_Key
+
+relationship ac65e010-00eb-4e89-bf1c-a5fbe4a8d97f
+	fromColumn: 'Customer Sell Out US'.'Company ID'
+	toColumn: Region.'Company ID'
+
+relationship b537bb65-d95b-428a-99e0-295e735a6e3d
+	fromColumn: 'Net Transactions'.'Sales Order Number'
+	toColumn: BridgeSalesOrderNumber.'Sales Order Number'
+
+relationship 33f829cb-951f-4a02-a5e2-1027500efa24
+	fromColumn: 'Pick 2'.Product_Key
+	toColumn: 'Products 2'.Product_Key
+
+relationship 6edb5996-da71-4d03-9797-635e36f762f0
+	fromColumn: 'Pick 2'.Size_Key
+	toColumn: 'Size 2'.Size_Key
+
+relationship f4124b15-7622-41d4-8fc7-d66cd8af1f67
+	fromColumn: 'Pick 2'.Company_Key
+	toColumn: 'Region 2'.Company_Key
+
+relationship 2ed50c7f-19b8-4ff1-b93b-e12a3b98992f
+	fromColumn: 'Pick 2'.INVENTTRANSID
+	toColumn: 'Bridge InventTransID 2'.INVENTTRANSID
+
+relationship 26bdc1e3-12ab-4bb9-acae-a877809642e9
+	fromColumn: 'Pick 2'.'Selling Status'
+	toColumn: 'Selling Status - Invoice 2'.'Selling Status'
+
+relationship bed6cf23-835f-431d-9d51-e12011d743fb
+	fromColumn: 'Hours Worked 2'.Date
+	toColumn: 'Date 2'.' Date'
+
+relationship d36f4ad4-d9cb-4917-8bd2-74a97f02fa8f
+	fromColumn: 'Hours Worked 2'.'DM Agent'
+	toColumn: 'Order Taker 2'.'DM Agent'
+
+relationship d4dd7a18-d31b-4186-8f9b-76487b9c3116
+	fromColumn: 'Hours Worked 2'.'Warehouse ID'
+	toColumn: 'Warehouse 2'.'Warehouse ID'
+
+relationship cfc1e1cf-f72a-4673-8c87-213d591ac62e
+	fromColumn: 'Seasonal Product Forecast 2'.Date_key
+	toColumn: 'Date 2'.Date_Key
+
+relationship 92e4a057-04ef-43e4-bdd6-b51d61e51156
+	fromColumn: 'Seasonal Product Forecast 2'.Product_Key
+	toColumn: 'Products 2'.Product_Key
+
+relationship f99721c2-3e72-4455-891c-d5947852892b
+	fromColumn: 'Seasonal Product Forecast 2'.Customer_Key
+	toColumn: 'Customer 2'.Customer_Key
+
+relationship 5db17891-07d8-40c9-abfe-8fa818eb268e
+	fromColumn: 'Store Activity FC 2'.'Forecast Version'
+	toColumn: 'Forecast Version 2'.'Forecast Version'
+
+relationship fe314e80-ed62-42dc-8136-dfd9f3ff97e0
+	fromColumn: 'Store Activity FC 2'.'Warehouse ID'
+	toColumn: 'Warehouse 2'.'Warehouse ID'
+
+relationship 1fdd6bef-dfe6-4e08-9ee3-c31163099bc3
+	fromColumn: 'Store Activity FC 2'.Date
+	toColumn: 'Date 2'.' Date'
+
+relationship 8af74e39-4140-448e-a67b-9b276c2aeb06
+	fromColumn: 'Forecast 2'.Date
+	toColumn: 'Date 2'.' Date'
+
+relationship de9aea45-4c26-4fe5-8bf5-596cd82098bb
+	fromColumn: 'Forecast 2'.'Forecast Version'
+	toColumn: 'Forecast Version 2'.'Forecast Version'
+
+relationship 3f7487b9-f94c-459c-be22-60117ab51f6b
+	fromColumn: 'Forecast 2'.RetailStore_Key
+	toColumn: 'Account Details 2'.RetailStore_Key
+
+relationship cecd7b4d-21ad-4662-badc-22ed0df88373
+	fromColumn: 'Forecast 2'.Channel
+	toColumn: 'Channel 2'.Channel
+
+relationship b3bf002a-1e56-470d-87a9-8da39d36feb3
+	fromColumn: 'Forecast 2'.Customer_Key
+	toColumn: 'Customer 2'.Customer_Key
+
+relationship ff30570b-fc4b-4956-bd51-307b2ec6d160
+	fromColumn: 'Forecast 2'.'Company ID'
+	toColumn: 'Region 2'.'Company ID'
+
+relationship 73160c5a-645b-4190-8da6-0f40a6d5302f
+	fromColumn: 'Forecast 2'.FinancialChannel
+	toColumn: 'Financial Channel 2'.Channel
+
+relationship 24834242-fa01-44c1-86ef-67c6e55cc341
+	fromColumn: 'Order Type 2'.'Channel ID'
+	toColumn: 'Channel 2'.'Channel ID'
+
+relationship 7977da0f-2612-4dac-b1f0-13561616297a
+	fromColumn: 'Deductions 2'.Customer_Key
+	toColumn: 'Customer 2'.Customer_Key
+
+relationship ee1fbcbb-6868-420a-b6e4-f626a61d9426
+	fromColumn: 'Deductions 2'.Date_Key
+	toColumn: 'Date 2'.Date_Key
+
+relationship 51f66e55-9470-404f-b1d3-122a415d8ca2
+	fromColumn: 'Deductions 2'.Company_Key
+	toColumn: 'Region 2'.Company_Key
+
+relationship 3f1cc352-80de-4db7-a440-ecffd34f5e40
+	fromColumn: 'SmartRes 2'.'Company ID'
+	toColumn: 'Region 2'.'Company ID'
+
+relationship 65f03608-03a4-48d6-8739-a05ef58f55d9
+	fromColumn: 'SmartRes 2'.Date
+	toColumn: 'Date 2'.' Date'
+
+relationship 66935edc-5967-4864-ba25-b1c02ae56073
+	fromColumn: 'SmartRes 2'.INVENTTRANSID
+	toColumn: 'Bridge InventTransID 2'.INVENTTRANSID
+
+relationship 7662c83b-1c3a-4e6f-96ef-642e28198400
+	fromColumn: 'SmartRes 2'.Product_Key
+	toColumn: 'Products 2'.Product_Key
+
+relationship 65ddacb3-4411-4975-bd23-6bcff5155971
+	fromColumn: 'SmartRes 2'.'Selling Status'
+	toColumn: 'Selling Status - Invoice 2'.'Selling Status'
+
+relationship dc7f3142-6678-4aba-9df5-fc17ae4f02b7
+	fromColumn: 'SmartRes 2'.Warehouse_Key
+	toColumn: 'Warehouse 2'.Warehouse_Key
+
+relationship 78dfee34-3e72-4506-a8b1-de1039c35459
+	fromColumn: 'SmartRes 2'.Size_Key
+	toColumn: 'Size 2'.Size_Key
+
+relationship 1b26a33e-7501-49c6-b033-805e49866bd7
+	fromColumn: 'SmartRes 2'.'Channel ID'
+	toColumn: 'Channel 2'.'Channel ID'
+
+relationship 11fdd36d-bc66-4300-aede-9bc4e27e75a8
+	fromColumn: 'SmartRes 2'.FinancialChannel
+	toColumn: 'Financial Channel 2'.Channel
+
+relationship 01d6dc84-23cd-4d50-829c-4992c6ce6e26
+	fromColumn: 'Orders 2'.Date_Key
+	toColumn: 'Date 2'.Date_Key
+
+relationship 5241d5a4-fe6c-4f11-9aa4-ef725fb5a50d
+	fromColumn: 'Orders 2'.Customer_Key
+	toColumn: 'Customer 2'.Customer_Key
+
+relationship 71c60a7f-7daa-4953-b47b-991f1a66b303
+	fromColumn: 'Orders 2'.Product_Key
+	toColumn: 'Products 2'.Product_Key
+
+relationship 0427581f-c414-4825-b295-80eb2d920f8a
+	fromColumn: 'Orders 2'.Company_Key
+	toColumn: 'Region 2'.Company_Key
+
+relationship 8b0f5c09-bd92-4cdc-a382-db62303de027
+	fromColumn: 'Orders 2'.INVENTTRANSID
+	toColumn: 'Bridge InventTransID 2'.INVENTTRANSID
+
+relationship deb9c407-7191-484f-8e17-8a7ed67c4a66
+	fromColumn: 'Orders 2'.'Sales Order Number'
+	toColumn: 'Retail Demographics 2'.'Sales Order Number'
+
+relationship 248556d0-d469-47d5-a899-1fa9f54efa4d
+	fromColumn: 'Orders 2'.'Selling Status'
+	toColumn: 'Selling Status - Invoice 2'.'Selling Status'
+
+relationship 94913468-ffec-48f8-aed6-00a6dedf8251
+	fromColumn: 'Orders 2'.WebSiteCode
+	toColumn: 'Website 2'.WebSiteCode
+
+relationship eab148b0-5072-4e90-a430-c0c5221b55af
+	isActive: false
+	fromColumn: 'Orders 2'.'Order DateTime'
+	toColumn: 'Date 2'.' Date'
+
+relationship ece757ef-2f8c-430c-be87-4d5eed1bb134
+	fromColumn: 'Orders 2'.'DM Agent'
+	toColumn: 'Order Taker 2'.'DM Agent'
+
+relationship 1b6d01d7-9443-4788-9b2c-1e55dfded2c7
+	fromColumn: 'Orders 2'.Size
+	toColumn: 'Size 2'.Size
+
+relationship 28fb1e79-729a-4af6-ade1-63d694fc4ef7
+	fromColumn: 'Orders 2'.Product_Class_Key
+	toColumn: 'Product Class 2'.Product_Class_Key
+
+relationship e4174f47-ed09-4c56-b4ba-ccf9ef657f31
+	isActive: false
+	fromColumn: 'Orders 2'.'Requested Shipping Date_SOL'
+	toColumn: 'Date 2'.' Date'
+
+relationship fd62b742-296f-4bd8-8d34-ad628b347e69
+	fromColumn: 'Orders 2'.SalesOrderNumber_Key
+	toColumn: 'Hold Code Trans 2'.SalesOrderNumber_Key
+
+relationship 67533b67-a6b1-448f-8c51-c151d92be341
+	fromColumn: 'Orders 2'.HDMORDERTYPEID
+	toColumn: 'Sales Order Type 2'.HDMORDERTYPEID
+
+relationship 4d339cc7-c507-44ff-8ae5-6b3679e87710
+	fromColumn: 'Orders 2'.Time_Key
+	toColumn: 'Time 2'.Time_Key
+
+relationship 0ad3d88f-afe8-44ff-bee5-e73e00d7f5fb
+	fromColumn: 'Orders 2'.Warehouse_Key
+	toColumn: 'Warehouse 2'.Warehouse_Key
+
+relationship 47586c51-7a84-461a-8b65-98c3ed677a5b
+	fromColumn: 'Orders 2'.'Finance Dimension - Channel'
+	toColumn: 'Financial Channel 2'.Channel
+
+relationship 5f54d2eb-e0fb-406d-845c-338d29bdb14f
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Orders 2'.'Sales Order Number'
+	toColumn: 'BridgeSalesOrderNumber 2'.'Sales Order Number'
+
+relationship 34210fe7-cd9a-4dec-a50a-8d4b51eac68e
+	fromColumn: 'Orders 2'.'Selling Status - Order Entry'
+	toColumn: 'Selling Status - Order Entry 2'.SELLINGSTATUS
+
+relationship 8a8878a5-1546-476e-98b4-dccb15dd59b9
+	fromColumn: 'Orders 2'.SalesOrderPool_Key
+	toColumn: 'Order Type 2'.SalesOrderPool_Key
+
+relationship 54233081-ea65-4f62-a916-89950580fe65
+	fromColumn: 'Orders 2'.Season
+	toColumn: 'Seasons (Product Report) 2'.Season
+
+relationship 704528d8-abee-4745-a814-dcb8c49fc978
+	fromColumn: 'Sales Packing Slip 2'.INVENTTRANSID
+	toColumn: 'Bridge InventTransID 2'.INVENTTRANSID
+
+relationship 8c548fe6-cea6-4e23-846d-28bdc3a9454b
+	fromColumn: 'Region 2'.'Region ID'
+	toColumn: 'Regions 2'.'Region ID'
+
+relationship 3681d4ad-c412-4389-b0b3-93decbfa83de
+	fromColumn: 'Warehouse 2'.PARENTSTOREID
+	toColumn: 'Account Details 2'.STOREID
+
+relationship 0d7b9f32-9a3f-4685-91b2-bb252aaa363f
+	isActive: false
+	fromColumn: 'Warehouse 2'.WHtoStore_Key
+	toColumn: 'Account Details 2'.WHtoStore_Key
+
+relationship 379f1e3b-3525-4057-a173-e3fd9fb6adfe
+	fromColumn: 'Adjustments CoGS 2'.AccountingDate_Key
+	toColumn: 'Date 2'.Date_Key
+
+relationship bca0c04b-342b-4a79-bef6-426655922a1c
+	fromColumn: 'Adjustments CoGS 2'.Company_Key
+	toColumn: 'Region 2'.Company_Key
+
+relationship 9cd1ab09-ad11-43a1-aa91-98647b087a11
+	fromColumn: 'Adjustments CoGS 2'.Channel_Key
+	toColumn: 'Financial Channel 2'.Channel_Key
+
+relationship 3c34e461-1240-41a2-bf8d-3a7a66fe7e9c
+	fromColumn: 'Adjustments Sales 2'.AccountingDate_Key
+	toColumn: 'Date 2'.Date_Key
+
+relationship c2c8fbde-3cad-4b39-936b-7cd4aae35a8f
+	fromColumn: 'Adjustments Sales 2'.Company_Key
+	toColumn: 'Region 2'.Company_Key
+
+relationship 748b46c0-2b78-46fe-8f5c-54f976641557
+	fromColumn: 'Adjustments Sales 2'.Channel_Key
+	toColumn: 'Financial Channel 2'.Channel_Key
+
+relationship f93aafe9-ca5a-4620-bfd6-9d637bcc1e50
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Date Slicer 2'.Date
+	toColumn: 'Date 2'.' Date'
+
+relationship 2a2bebb4-5902-4842-95b5-7228c0cd473b
+	fromColumn: 'Product Forecast 2'.'Product Code'
+	toColumn: 'Bridge Product 2'.'Product Code'
+
+relationship c14b9f5b-d7eb-4a04-82d0-87e83aba750f
+	fromColumn: 'Footfall 2'.Date
+	toColumn: 'Date 2'.' Date'
+
+relationship 00c5dc26-3670-4383-b198-6cc85af3686b
+	fromColumn: 'Footfall 2'.Time_Key
+	toColumn: 'Time 2'.Time_Key
+
+relationship d20538f6-1844-44fa-976d-9627e5303717
+	fromColumn: 'Footfall 2'.RetailStore_Key
+	toColumn: 'Account Details 2'.RetailStore_Key
+
+relationship b5c7160a-842c-4b1a-9d6b-389c85dc8743
+	fromColumn: 'Footfall 2'.Company_Key
+	toColumn: 'Region 2'.Company_Key
+
+relationship 8c5875cd-0858-455a-a998-2c4adfd1d9d7
+	fromColumn: 'Product Weights 2'.Product_Key
+	toColumn: 'Products 2'.Product_Key
+
+relationship bd59ea42-cccb-475d-8a59-a9a24c7826ee
+	fromColumn: 'Product Weights 2'.Size_Key
+	toColumn: 'Size 2'.Size_Key
+
+relationship f91575cb-e3b4-4980-bae5-3d63aee58942
+	fromColumn: 'Seasonal Product Info 2'.Product_Key
+	toColumn: 'Products 2'.Product_Key
+
+relationship 749dbc55-64bf-47ad-b8de-81c0cc404a16
+	fromColumn: 'Seasonal Product Info 2'.Company_Key
+	toColumn: 'Region 2'.Company_Key
+
+relationship 7c79c752-8364-4ea1-8f15-27a0b43a5539
+	fromColumn: 'Customer Sell Out EMEA 2'.Date_Key
+	toColumn: 'Date 2'.Date_Key
+
+relationship 7db1b44e-37c9-4991-95e8-9ab7c048cfcd
+	fromColumn: 'Customer Sell Out EMEA 2'.Product_Key
+	toColumn: 'Products 2'.Product_Key
+
+relationship f21d53b9-4f51-4cb0-938e-621266e277e7
+	fromColumn: 'Customer Sell Out EMEA 2'.Customer_Key
+	toColumn: 'Customer 2'.Customer_Key
+
+relationship 81c42c32-40c2-4aa7-9342-b26908fa59d7
+	fromColumn: 'Customer Sell Out US 2'.Customer_Key
+	toColumn: 'Customer 2'.Customer_Key
+
+relationship b79d49c4-de46-4cab-8704-40fb9839a18b
+	fromColumn: 'Customer Sell Out US 2'.To_Date_Key
+	toColumn: 'Date 2'.Date_Key
+
+relationship 97f3d8c3-aa94-464b-a1e9-dc5b228a3868
+	fromColumn: 'Customer Sell Out US 2'.Product_Key
+	toColumn: 'Products 2'.Product_Key
+
+relationship a0b5a27b-fe17-40f6-92be-ac3fa3babefc
+	fromColumn: 'Customer Sell Out US 2'.'Company ID'
+	toColumn: 'Region 2'.'Company ID'
+
+relationship dc1a24ae-c741-45c9-a9e7-1c3c51e72f11
+	fromColumn: 'Net Transactions 2'.'Sales Order Number'
+	toColumn: 'BridgeSalesOrderNumber 2'.'Sales Order Number'
+
+relationship 1ed7a103-1984-4331-904d-6daf4ea6d41a
+	fromColumn: 'Pick 3'.Product_Key
+	toColumn: 'Products 3'.Product_Key
+
+relationship 850798bf-7bdb-472b-98dc-e6bc9edca835
+	fromColumn: 'Pick 3'.Size_Key
+	toColumn: 'Size 3'.Size_Key
+
+relationship 37638454-3e68-435d-b9bc-c04c8472ac6e
+	fromColumn: 'Pick 3'.Company_Key
+	toColumn: 'Region 3'.Company_Key
+
+relationship 949ad87b-47cf-4833-a0f8-0034196eceee
+	fromColumn: 'Pick 3'.INVENTTRANSID
+	toColumn: 'Bridge InventTransID 3'.INVENTTRANSID
+
+relationship 1eea35bf-2682-4d3a-961c-862e3fe3e55f
+	fromColumn: 'Pick 3'.'Selling Status'
+	toColumn: 'Selling Status - Invoice 3'.'Selling Status'
+
+relationship 14ab007d-cb50-4cfd-b64d-4a7c66119b82
+	fromColumn: 'Hours Worked 3'.Date
+	toColumn: 'Date 3'.' Date'
+
+relationship dd99c0cc-7fe5-44b8-b9f8-a5fca8d967b6
+	fromColumn: 'Hours Worked 3'.'DM Agent'
+	toColumn: 'Order Taker 3'.'DM Agent'
+
+relationship 0d4da376-1091-45fe-ba52-8669ed2475dc
+	fromColumn: 'Hours Worked 3'.'Warehouse ID'
+	toColumn: 'Warehouse 3'.'Warehouse ID'
+
+relationship 42420eeb-9983-487c-878a-1db71f03802a
+	fromColumn: 'Seasonal Product Forecast 3'.Date_key
+	toColumn: 'Date 3'.Date_Key
+
+relationship 155e18e2-f3cf-4cfc-b74c-150a91b7d9f3
+	fromColumn: 'Seasonal Product Forecast 3'.Product_Key
+	toColumn: 'Products 3'.Product_Key
+
+relationship 56b6c7d4-1161-428f-8680-eb9d71646cd8
+	fromColumn: 'Seasonal Product Forecast 3'.Customer_Key
+	toColumn: 'Customer 3'.Customer_Key
+
+relationship 24301f09-45d6-41fe-830d-546f9502d36b
+	fromColumn: 'Store Activity FC 3'.'Forecast Version'
+	toColumn: 'Forecast Version 3'.'Forecast Version'
+
+relationship 976d2923-a238-4013-8835-36bca233be0a
+	fromColumn: 'Store Activity FC 3'.'Warehouse ID'
+	toColumn: 'Warehouse 3'.'Warehouse ID'
+
+relationship fff18f09-c430-4016-a644-23e06844ba20
+	fromColumn: 'Store Activity FC 3'.Date
+	toColumn: 'Date 3'.' Date'
+
+relationship 920b7366-1330-4570-a31e-90fcca3a99b3
+	fromColumn: 'Forecast 3'.Date
+	toColumn: 'Date 3'.' Date'
+
+relationship c7870354-787d-41c9-a4df-69248bdaaf47
+	fromColumn: 'Forecast 3'.'Forecast Version'
+	toColumn: 'Forecast Version 3'.'Forecast Version'
+
+relationship 988db264-6094-4b54-b786-8ce1ed8b87da
+	fromColumn: 'Forecast 3'.RetailStore_Key
+	toColumn: 'Account Details 3'.RetailStore_Key
+
+relationship 884dcff7-4ed4-40bf-a54a-f37a45092e44
+	fromColumn: 'Forecast 3'.Channel
+	toColumn: 'Channel 3'.Channel
+
+relationship 7fb530f0-d61d-4052-b746-82ec02f824fa
+	fromColumn: 'Forecast 3'.Customer_Key
+	toColumn: 'Customer 3'.Customer_Key
+
+relationship e2b34272-694a-47e6-86ee-bc9dfff920a0
+	fromColumn: 'Forecast 3'.'Company ID'
+	toColumn: 'Region 3'.'Company ID'
+
+relationship 81db962e-c735-4982-89f3-721fc543d183
+	fromColumn: 'Forecast 3'.FinancialChannel
+	toColumn: 'Financial Channel 3'.Channel
+
+relationship 93ac5074-875e-4c33-9bc7-aca73d31efbf
+	fromColumn: 'Order Type 3'.'Channel ID'
+	toColumn: 'Channel 3'.'Channel ID'
+
+relationship bcbdccef-a475-49b3-a8e7-e970bb11c436
+	fromColumn: 'Deductions 3'.Customer_Key
+	toColumn: 'Customer 3'.Customer_Key
+
+relationship 2041885f-611b-4b22-8a3f-61928b9531fe
+	fromColumn: 'Deductions 3'.Date_Key
+	toColumn: 'Date 3'.Date_Key
+
+relationship 1a915792-15df-4d9c-9fb7-1c1d0db91d63
+	fromColumn: 'Deductions 3'.Company_Key
+	toColumn: 'Region 3'.Company_Key
+
+relationship 98004567-1662-4dc3-ad7e-3cb25fb74f7f
+	fromColumn: 'SmartRes 3'.'Company ID'
+	toColumn: 'Region 3'.'Company ID'
+
+relationship 3d54aa0d-2f43-465e-b723-602dddc7a3c8
+	fromColumn: 'SmartRes 3'.Date
+	toColumn: 'Date 3'.' Date'
+
+relationship 2f6e9615-6b09-4671-9af4-55d36fbbe833
+	fromColumn: 'SmartRes 3'.INVENTTRANSID
+	toColumn: 'Bridge InventTransID 3'.INVENTTRANSID
+
+relationship 3912f8a8-39a4-4175-b2f3-7b4cf6df6c64
+	fromColumn: 'SmartRes 3'.Product_Key
+	toColumn: 'Products 3'.Product_Key
+
+relationship 008e09a9-156a-423e-ae8c-d8b664068988
+	fromColumn: 'SmartRes 3'.'Selling Status'
+	toColumn: 'Selling Status - Invoice 3'.'Selling Status'
+
+relationship bcd1abd5-c3d1-4ba8-b576-045cea9d3f9c
+	fromColumn: 'SmartRes 3'.Warehouse_Key
+	toColumn: 'Warehouse 3'.Warehouse_Key
+
+relationship 6256c1d1-210e-4da1-8afe-52b53a0053b1
+	fromColumn: 'SmartRes 3'.Size_Key
+	toColumn: 'Size 3'.Size_Key
+
+relationship 02a9f084-0886-4172-977b-2b94b93ee2bd
+	fromColumn: 'SmartRes 3'.'Channel ID'
+	toColumn: 'Channel 3'.'Channel ID'
+
+relationship 6405b145-9d5a-4f58-a64e-58b694a7a9f4
+	fromColumn: 'SmartRes 3'.FinancialChannel
+	toColumn: 'Financial Channel 3'.Channel
+
+relationship 36a8798e-e641-4679-aa2a-8990921f2c9f
+	fromColumn: 'Orders 3'.Date_Key
+	toColumn: 'Date 3'.Date_Key
+
+relationship 88d51881-43b5-4132-8e7d-4b007d251852
+	fromColumn: 'Orders 3'.Customer_Key
+	toColumn: 'Customer 3'.Customer_Key
+
+relationship 79edfd8c-e4a6-4c49-9e3c-19b339be596a
+	fromColumn: 'Orders 3'.Product_Key
+	toColumn: 'Products 3'.Product_Key
+
+relationship 8517d7b5-b52f-4747-aeed-30193ff8934b
+	fromColumn: 'Orders 3'.Company_Key
+	toColumn: 'Region 3'.Company_Key
+
+relationship 2bc7fe99-194e-42b8-9381-9450bf5fc8e3
+	fromColumn: 'Orders 3'.INVENTTRANSID
+	toColumn: 'Bridge InventTransID 3'.INVENTTRANSID
+
+relationship 1dedc5b0-f677-4dd9-a5bf-f534caee865b
+	fromColumn: 'Orders 3'.'Sales Order Number'
+	toColumn: 'Retail Demographics 3'.'Sales Order Number'
+
+relationship 3b9af0fb-78aa-4165-90c4-8640a0ce2e64
+	fromColumn: 'Orders 3'.'Selling Status'
+	toColumn: 'Selling Status - Invoice 3'.'Selling Status'
+
+relationship 23186d0a-961d-43a9-b117-f6ca32886fe4
+	fromColumn: 'Orders 3'.WebSiteCode
+	toColumn: 'Website 3'.WebSiteCode
+
+relationship e2acc03d-8622-436b-a29f-dd81b5ad3afd
+	isActive: false
+	fromColumn: 'Orders 3'.'Order DateTime'
+	toColumn: 'Date 3'.' Date'
+
+relationship 64f88abd-aac9-431a-813d-9c7d975df3ad
+	fromColumn: 'Orders 3'.'DM Agent'
+	toColumn: 'Order Taker 3'.'DM Agent'
+
+relationship c768fd2a-cbed-4cbb-b4f2-d276983a5f20
+	fromColumn: 'Orders 3'.Size
+	toColumn: 'Size 3'.Size
+
+relationship 24a41fa1-d8d9-400a-95b3-0c6d183a4724
+	fromColumn: 'Orders 3'.Product_Class_Key
+	toColumn: 'Product Class 3'.Product_Class_Key
+
+relationship d7fdd75b-3a9e-44ba-8c62-9dccee2ec25a
+	isActive: false
+	fromColumn: 'Orders 3'.'Requested Shipping Date_SOL'
+	toColumn: 'Date 3'.' Date'
+
+relationship b55104cb-dd32-4414-bf99-0af32f101e74
+	fromColumn: 'Orders 3'.SalesOrderNumber_Key
+	toColumn: 'Hold Code Trans 3'.SalesOrderNumber_Key
+
+relationship 18a4a016-1c16-4a79-bdb5-e3f6a7982d05
+	fromColumn: 'Orders 3'.HDMORDERTYPEID
+	toColumn: 'Sales Order Type 3'.HDMORDERTYPEID
+
+relationship 0248dce6-e2b5-4fe9-836d-f7fcfca737c6
+	fromColumn: 'Orders 3'.Time_Key
+	toColumn: 'Time 3'.Time_Key
+
+relationship 9b36eca7-5287-45c3-a5ec-830ab822b1d6
+	fromColumn: 'Orders 3'.Warehouse_Key
+	toColumn: 'Warehouse 3'.Warehouse_Key
+
+relationship 880bfa0e-4ad6-433f-9f75-fc31f24a49d4
+	fromColumn: 'Orders 3'.'Finance Dimension - Channel'
+	toColumn: 'Financial Channel 3'.Channel
+
+relationship ec14002d-65eb-44c8-b963-53802f17cdaa
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Orders 3'.'Sales Order Number'
+	toColumn: 'BridgeSalesOrderNumber 3'.'Sales Order Number'
+
+relationship 9b2ff834-76ff-455e-a07f-88f1495cf9b2
+	fromColumn: 'Orders 3'.'Selling Status - Order Entry'
+	toColumn: 'Selling Status - Order Entry 3'.SELLINGSTATUS
+
+relationship 976b5658-88d5-4806-ab7b-66acac6008e3
+	fromColumn: 'Orders 3'.SalesOrderPool_Key
+	toColumn: 'Order Type 3'.SalesOrderPool_Key
+
+relationship af3a42ec-fd7e-4de3-aced-1d8899b1e69a
+	fromColumn: 'Orders 3'.Season
+	toColumn: 'Seasons (Product Report) 3'.Season
+
+relationship 9256bc2e-a9c3-4c24-8a42-bd2c719cb0de
+	fromColumn: 'Sales Packing Slip 3'.INVENTTRANSID
+	toColumn: 'Bridge InventTransID 3'.INVENTTRANSID
+
+relationship 2e29feac-5785-41a1-9e88-701fed6ff307
+	fromColumn: 'Region 3'.'Region ID'
+	toColumn: 'Regions 3'.'Region ID'
+
+relationship bbb39e49-e02f-4a32-81e0-e3c7f92c4005
+	fromColumn: 'Warehouse 3'.PARENTSTOREID
+	toColumn: 'Account Details 3'.STOREID
+
+relationship ff5c0232-02a7-4ffd-a7c3-70ff862f3887
+	isActive: false
+	fromColumn: 'Warehouse 3'.WHtoStore_Key
+	toColumn: 'Account Details 3'.WHtoStore_Key
+
+relationship ee337495-69b9-4633-85e6-cbb271f66193
+	fromColumn: 'Adjustments CoGS 3'.AccountingDate_Key
+	toColumn: 'Date 3'.Date_Key
+
+relationship 64874741-f7cd-4c07-9aa4-96904a5776df
+	fromColumn: 'Adjustments CoGS 3'.Company_Key
+	toColumn: 'Region 3'.Company_Key
+
+relationship 295286c5-c39c-45fd-9779-feac8e998450
+	fromColumn: 'Adjustments CoGS 3'.Channel_Key
+	toColumn: 'Financial Channel 3'.Channel_Key
+
+relationship 320ba0b2-e404-4ee2-b77a-e5a13aacf9bd
+	fromColumn: 'Adjustments Sales 3'.AccountingDate_Key
+	toColumn: 'Date 3'.Date_Key
+
+relationship 90fbb85d-f7f2-445d-9021-1d00191f36dc
+	fromColumn: 'Adjustments Sales 3'.Company_Key
+	toColumn: 'Region 3'.Company_Key
+
+relationship c12e38e5-f9bc-4f99-b036-0d9800669227
+	fromColumn: 'Adjustments Sales 3'.Channel_Key
+	toColumn: 'Financial Channel 3'.Channel_Key
+
+relationship 9b268674-7f41-4bcc-b910-014eae735d7c
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Date Slicer 3'.Date
+	toColumn: 'Date 3'.' Date'
+
+relationship 219d51ef-8c74-4ce4-b8a9-a14de58b72de
+	fromColumn: 'Product Forecast 3'.'Product Code'
+	toColumn: 'Bridge Product 3'.'Product Code'
+
+relationship 5488b3f5-a92c-4daa-a0ae-c50ca400e7c5
+	fromColumn: 'Footfall 3'.Date
+	toColumn: 'Date 3'.' Date'
+
+relationship 9b388f82-bae6-4c43-8f59-48b4f28ae44a
+	fromColumn: 'Footfall 3'.Time_Key
+	toColumn: 'Time 3'.Time_Key
+
+relationship 8150a5e6-7181-4e14-8f74-5bfea91a10a5
+	fromColumn: 'Footfall 3'.RetailStore_Key
+	toColumn: 'Account Details 3'.RetailStore_Key
+
+relationship f5e6e27c-c485-4bb3-87a2-9559d81b4e7e
+	fromColumn: 'Footfall 3'.Company_Key
+	toColumn: 'Region 3'.Company_Key
+
+relationship c8793815-ae17-4bf6-82df-de48f0fb4135
+	fromColumn: 'Product Weights 3'.Product_Key
+	toColumn: 'Products 3'.Product_Key
+
+relationship c92a7dea-856c-493f-975b-abc56c7a3e34
+	fromColumn: 'Product Weights 3'.Size_Key
+	toColumn: 'Size 3'.Size_Key
+
+relationship c085a3d6-c41d-45e5-a1da-3be3c496b9a4
+	fromColumn: 'Seasonal Product Info 3'.Product_Key
+	toColumn: 'Products 3'.Product_Key
+
+relationship 1ee22acf-9fc1-4307-8da9-24f6bddadacd
+	fromColumn: 'Seasonal Product Info 3'.Company_Key
+	toColumn: 'Region 3'.Company_Key
+
+relationship ae0f24ca-88c2-46c8-826d-5bc61155e196
+	fromColumn: 'Customer Sell Out EMEA 3'.Date_Key
+	toColumn: 'Date 3'.Date_Key
+
+relationship 111c6b70-2868-4b64-8cc6-8855baa326e3
+	fromColumn: 'Customer Sell Out EMEA 3'.Product_Key
+	toColumn: 'Products 3'.Product_Key
+
+relationship b66ce4e7-e365-4e73-aac0-0210d1db6063
+	fromColumn: 'Customer Sell Out EMEA 3'.Customer_Key
+	toColumn: 'Customer 3'.Customer_Key
+
+relationship 9122cee3-b83e-4714-8721-89d0a0732c2e
+	fromColumn: 'Customer Sell Out US 3'.Customer_Key
+	toColumn: 'Customer 3'.Customer_Key
+
+relationship f6eb64cb-a054-449d-b1c3-36271afaa701
+	fromColumn: 'Customer Sell Out US 3'.To_Date_Key
+	toColumn: 'Date 3'.Date_Key
+
+relationship 953ec3b8-b0b5-4166-a1fc-895d99a92c63
+	fromColumn: 'Customer Sell Out US 3'.Product_Key
+	toColumn: 'Products 3'.Product_Key
+
+relationship ec853534-95cd-4b75-92d2-58e3869ddb81
+	fromColumn: 'Customer Sell Out US 3'.'Company ID'
+	toColumn: 'Region 3'.'Company ID'
+
+relationship b63d5a80-c8c0-42ad-befa-6af395ecf81a
+	fromColumn: 'Net Transactions 3'.'Sales Order Number'
+	toColumn: 'BridgeSalesOrderNumber 3'.'Sales Order Number'
+

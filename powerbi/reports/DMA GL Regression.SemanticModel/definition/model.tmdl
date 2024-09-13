@@ -1,0 +1,64 @@
+model Model
+	culture: en-GB
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DirectQuery to AS - DMA GL","DirectQuery to AS - DMA GL 2","DirectQuery to AS - DMA GL 3"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.132.1053.0 (24.08)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table gl
+ref table 'Parameter - Date'
+ref table 'Parameter - Metrics'
+ref table Budget
+ref table Channel
+ref table Analysis
+ref table Region
+ref table 'Cost Centre'
+ref table Country
+ref table 'Main Account'
+ref table 'Retail Store'
+ref table 'General Ledger Fact'
+ref table Comparatives
+ref table Metrics
+ref table Vendor
+ref table 'Selling Status'
+ref table Date
+ref table 'Budget 2'
+ref table 'Channel 2'
+ref table 'Analysis 2'
+ref table 'Region 2'
+ref table 'Cost Centre 2'
+ref table 'Country 2'
+ref table 'Main Account 2'
+ref table 'Retail Store 2'
+ref table 'General Ledger Fact 2'
+ref table 'Comparatives 2'
+ref table 'Metrics 2'
+ref table 'Vendor 2'
+ref table 'Selling Status 2'
+ref table 'Date 2'
+ref table 'Budget 3'
+ref table 'Channel 3'
+ref table 'Analysis 3'
+ref table 'Region 3'
+ref table 'Cost Centre 3'
+ref table 'Country 3'
+ref table 'Main Account 3'
+ref table 'Retail Store 3'
+ref table 'General Ledger Fact 3'
+ref table 'Comparatives 3'
+ref table 'Metrics 3'
+ref table 'Vendor 3'
+ref table 'Selling Status 3'
+ref table 'Date 3'
+
+ref cultureInfo en-GB
+

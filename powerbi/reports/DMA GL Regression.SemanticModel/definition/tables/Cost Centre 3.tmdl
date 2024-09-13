@@ -1,0 +1,82 @@
+table 'Cost Centre 3'
+	lineageTag: 589e1c07-6d3e-4dd7-9304-d8541da22cae
+	sourceLineageTag: 9d13ed96-b5d3-498e-93b8-6fc0ab1c53f1
+
+	column CostCentre_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 0ad95070-0d6a-485f-a0f1-df90277a3f0a
+		sourceLineageTag: 165db10c-53b0-40f4-b029-b285a112a5e2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CostCentre_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Cost Centre'
+		dataType: string
+		lineageTag: 7c15529c-f789-484e-ad05-1d8bf2154aa4
+		sourceLineageTag: cc0b5376-6d7d-4303-b8e6-b62344fa1b24
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cost Centre
+
+		annotation SummarizationSetBy = User
+
+	column 'Cost Centre Description'
+		dataType: string
+		lineageTag: ca583b6f-12cb-4985-aac0-81ab444dbeff
+		sourceLineageTag: a788172d-c7e5-4851-b465-a62731eaec2a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cost Centre Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Cost Centre Owner'
+		dataType: string
+		lineageTag: 37267bc6-217d-4280-8252-4790da58ed5c
+		sourceLineageTag: 96741e4d-640e-4f5e-80fd-971f379482fe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cost Centre Owner
+
+		annotation SummarizationSetBy = User
+
+	column 'Cost Centre Set'
+		dataType: string
+		lineageTag: a53a0fc9-626f-4fbb-9e47-600df82b7f53
+		sourceLineageTag: fc8031ca-67f6-4137-8012-4b6aadc537c5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cost Centre Set
+
+		annotation SummarizationSetBy = User
+
+	column 'Cost Centre Retail Store Status'
+		dataType: string
+		lineageTag: 8416fea8-449f-436d-bab0-0f8469409477
+		sourceLineageTag: ea69f96b-7253-4041-a48d-8542fe5a790e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cost Centre Retail Store Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Cost Centre Group'
+		dataType: string
+		lineageTag: 5eec1b03-f7dc-4254-9c51-8338625d693a
+		sourceLineageTag: 4ea45425-21bc-4b9c-91f0-f6b4953f5584
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cost Centre Group
+
+		annotation SummarizationSetBy = User
+
+	partition 'Cost Centre 3' = entity
+		mode: directQuery
+		source
+			entityName: Cost Centre
+			expressionSource: 'DirectQuery to AS - DMA GL 3'
+

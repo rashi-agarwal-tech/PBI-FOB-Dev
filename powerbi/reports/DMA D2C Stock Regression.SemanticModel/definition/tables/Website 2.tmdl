@@ -1,0 +1,32 @@
+table 'Website 2'
+	lineageTag: 1ac4b3ef-6e1f-40fc-b08d-1882e83a975b
+	sourceLineageTag: 197ff242-2450-4c1b-bbfc-b3771137a15c
+
+	column Website
+		dataType: string
+		lineageTag: db859be2-4560-49e4-83ed-ee3cb7618b3a
+		sourceLineageTag: 92339f8f-68a4-4b5d-a25a-f4af72263601
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Website
+
+		annotation SummarizationSetBy = User
+
+	column WebsiteNameJoin
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: a851c47a-3e9f-415a-839c-1e460b747938
+		sourceLineageTag: 2ff0cec7-206f-4f0d-90c4-03ff397f2bd7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WebsiteNameJoin
+
+		annotation SummarizationSetBy = User
+
+	partition 'Website 2' = entity
+		mode: directQuery
+		source
+			entityName: Website
+			expressionSource: 'DirectQuery to AS - DMA D2C 2'
+

@@ -1,0 +1,189 @@
+table 'Purchase Orders 2'
+	isHidden
+	lineageTag: 5ec0ac34-b742-4aed-9fab-49af4888ad3e
+	sourceLineageTag: e97189ba-e149-405d-90c8-a949b089e3c3
+
+	column Product_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 1d43b2a6-e39e-448a-bdf3-5ad073a73b01
+		sourceLineageTag: 4090dd9a-28d2-4e69-b3b7-44658c45d610
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 1628c520-b574-4a67-b809-b9dd9f2dd2e7
+		sourceLineageTag: 9a122737-2fac-4e3b-8953-a2c301cba583
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 38f40d04-b7ba-4b28-b794-86dccacde191
+		sourceLineageTag: d1267326-e13e-4247-b7e3-c1f7a6b17f0f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		annotation SummarizationSetBy = User
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 164157b0-e4f2-4163-82bf-87a7c9f3e88e
+		sourceLineageTag: 23068c06-254a-4a91-b0cb-75a7a97de4c8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		annotation SummarizationSetBy = User
+
+	column DATAAREAID
+		dataType: string
+		isHidden
+		lineageTag: 8a850c0d-13a0-4f4e-ac32-d0d291b5bf07
+		sourceLineageTag: e230a047-fb29-4c34-823b-faa60cd71972
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DATAAREAID
+
+		annotation SummarizationSetBy = User
+
+	column SELLINGSTATUS
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 6ce0721a-207e-4594-9cc5-be014325813e
+		sourceLineageTag: cf5ada19-1ee1-4486-a324-ac7a8c5b49ed
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		annotation SummarizationSetBy = User
+
+	column OrderedUnits
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 24ec727c-1afb-4d88-bd44-5c9093059895
+		sourceLineageTag: bf64cd2f-9b40-476c-86e9-1b44f6fac4fd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OrderedUnits
+
+		annotation SummarizationSetBy = User
+
+	column CONFIRMEDDELIVERYDATEOld
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 9a4b8ef6-848a-47cf-9997-066011c7b8a2
+		sourceLineageTag: 41a4d3f7-6af3-4a84-8de9-6814454e0ace
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CONFIRMEDDELIVERYDATEOld
+
+		annotation SummarizationSetBy = User
+
+	column 'Receiving Warehouse ID'
+		dataType: string
+		isHidden
+		lineageTag: df23e6d5-3ca1-43cb-9477-64d7a381b53d
+		sourceLineageTag: 46154d68-e024-43dd-80ba-93670771042b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Receiving Warehouse ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Open PO Qty'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: e643f177-e611-4c56-ba3b-772332eae822
+		sourceLineageTag: 0ffae862-ed89-4eea-8fe6-8f1f353269f4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Open PO Qty
+
+		annotation SummarizationSetBy = User
+
+	column REQUESTED_DELIVERY_DATE
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: 0d386a1b-8b70-41ec-b30d-0a6ba90b85af
+		sourceLineageTag: 727c321d-b46d-4ee7-bbf4-ad063c0c5ea7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: REQUESTED_DELIVERY_DATE
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Region Assignment'
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 8b8854a3-31f4-4b66-bb02-927a19dc1d99
+		sourceLineageTag: 3f77d5bb-42a6-4532-923b-0ea3c71921d2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Region Assignment
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Channel'
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 18b2bbc5-2913-45cc-a52b-061f9a71a8b7
+		sourceLineageTag: 12a1d97f-89fc-4d3e-97bb-a12fc31ad3bb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Channel
+
+		annotation SummarizationSetBy = User
+
+	column FinancialChannel
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 8f8990d4-cb70-4b5c-bfac-a2a3f0661b5c
+		sourceLineageTag: a04e0e54-c93a-44f6-be36-72014c83ba73
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FinancialChannel
+
+		annotation SummarizationSetBy = User
+
+	column 'Confirmed Delivery Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 1a5a8917-9f75-40b8-a698-8abbe716c2e2
+		sourceLineageTag: f3db0da8-b68e-4ea3-a98f-dfe4171895ea
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Confirmed Delivery Date
+
+		annotation SummarizationSetBy = User
+
+	partition 'Purchase Orders 2' = entity
+		mode: directQuery
+		source
+			entityName: Purchase Orders
+			expressionSource: 'DirectQuery to AS - DMA D2C 2'
+

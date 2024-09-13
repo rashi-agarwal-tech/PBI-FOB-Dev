@@ -1,0 +1,23 @@
+table 'Regions 2'
+	isHidden
+	lineageTag: fa4c2268-df84-4710-ac7a-192d9ec7b3aa
+	sourceLineageTag: 8a961e34-6489-439b-8096-01d521b9829f
+
+	column 'Region ID'
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 31b95915-970d-4828-b41e-9580c156b4f5
+		sourceLineageTag: b4a89259-39be-489a-8f3e-89c593c89161
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Region ID
+
+		annotation SummarizationSetBy = User
+
+	partition 'Regions 2' = entity
+		mode: directQuery
+		source
+			entityName: Regions
+			expressionSource: 'DirectQuery to AS - DMA Total Business 2'
+

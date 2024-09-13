@@ -1,0 +1,33 @@
+expression 'DirectQuery to AS - DMA B2B' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/Dr.%20Martens%20Datasets", "DMA B2B"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 5b0cf0b3-b829-4ad7-a78a-596655447098
+
+	annotation PBI_IncludeFutureArtifacts = True
+
+expression 'DirectQuery to AS - DMA B2B 2' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/D%26A%20UAT%20-%20Dr.%20Martens%20Datasets", "DMA B2B"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 4e082924-e3fe-4040-9d8f-8b56230d8b00
+
+	annotation PBI_IncludeFutureArtifacts = True
+
+expression 'DirectQuery to AS - DMA B2B 3' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/D%26A%20Dev%20-%20Dr.%20Martens%20Datasets", "DMA B2B"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 0278b741-3b86-41d2-bd91-52d13b86fd5b
+
+	annotation PBI_IncludeFutureArtifacts = True
+

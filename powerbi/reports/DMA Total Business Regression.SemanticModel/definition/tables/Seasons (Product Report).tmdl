@@ -1,0 +1,23 @@
+table 'Seasons (Product Report)'
+	isHidden
+	lineageTag: b5051e68-2690-4b9a-8bb2-4bee35230614
+	sourceLineageTag: 32fcf02a-7ecf-4759-9f15-d1ad6791eb5a
+
+	column Season
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: b0fd45f7-5d1e-4940-9a99-711777ef0edd
+		sourceLineageTag: d9da43a3-1b2f-481b-8731-f536411392af
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = User
+
+	partition 'Seasons (Product Report)' = entity
+		mode: directQuery
+		source
+			entityName: Seasons (Product Report)
+			expressionSource: 'DirectQuery to AS - DMA Total Business'
+

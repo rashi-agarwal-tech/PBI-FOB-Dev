@@ -1,0 +1,45 @@
+table 'Date Slicer 3'
+	lineageTag: 2932cad5-5f49-4b93-b710-78d12b15646f
+	sourceLineageTag: 9d2d8f16-f658-45ce-a73e-8bbbfb84d326
+
+	column SortOrder
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 8b3a2b7f-a100-4f69-aae9-38e4ebe3604c
+		sourceLineageTag: 5d6c36b1-224d-4837-a049-6f56f3b2ba15
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SortOrder
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Slicer'
+		dataType: string
+		lineageTag: a080172e-1029-4e0c-a32e-013199e670d6
+		sourceLineageTag: 63044b10-adba-47ba-ad64-60b63995fba4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Slicer
+
+		annotation SummarizationSetBy = User
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: a46a52ce-5cff-4e44-8092-d89f8a38f695
+		sourceLineageTag: 58106f16-d4a2-4b53-a219-f467e0dc1105
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	partition 'Date Slicer 3' = entity
+		mode: directQuery
+		source
+			entityName: Date Slicer
+			expressionSource: 'DirectQuery to AS - DMA Total Business 3'
+

@@ -1,0 +1,115 @@
+table 'Footfall 2'
+	isHidden
+	lineageTag: 65c924b0-df3d-4510-aa98-d0cdaee19122
+	sourceLineageTag: 599ae319-9f8b-4ddf-957e-0b9913636837
+
+	column Site_Name
+		dataType: string
+		isHidden
+		lineageTag: 31321e63-cf61-43e6-8416-ef3b78b73133
+		sourceLineageTag: bb07fd3b-9ac0-4b66-8932-0af421a21f5b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Site_Name
+
+		annotation SummarizationSetBy = User
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 0b5641bb-364e-4412-b4f7-c866234c0906
+		sourceLineageTag: eb66d961-1ab9-42be-a005-a6442319daa4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column Customers
+		dataType: double
+		isHidden
+		lineageTag: c4333248-51f9-429f-b6eb-00f7aaf30015
+		sourceLineageTag: 12a8f12e-a69e-46d8-957f-73e53b7d0c40
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customers
+
+		annotation SummarizationSetBy = User
+
+	column Time_Key
+		dataType: double
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: f1f6ab31-2cf6-4e55-9456-d75e79a60e22
+		sourceLineageTag: f1078507-e775-4fc7-bb9c-61c8c930dc7d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Time_Key
+
+		annotation SummarizationSetBy = User
+
+	column RetailStore_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: ab4f8f2f-cdfe-459c-bbee-9201d6ac82b8
+		sourceLineageTag: eb1ab4d7-12b3-4ab2-9c5e-0a79e901cc57
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RetailStore_Key
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 057b98c4-2897-47f8-b62d-0827a91af1e7
+		sourceLineageTag: f45f2431-0836-4d19-950a-324dcf005f8c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column PassbyTraffic
+		dataType: int64
+		isHidden
+		lineageTag: a99b22c7-3991-46df-9703-7ffc556944ab
+		sourceLineageTag: ce656d6d-4b7b-493c-8d47-1d1c5128d689
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PassbyTraffic
+
+		annotation SummarizationSetBy = User
+
+	column StoreDateKey
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 50c719f3-1f8d-42f0-820f-562f9e344472
+		sourceLineageTag: 154c5c51-ffe2-4d9d-9e0f-ac0efb15f237
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: StoreDateKey
+
+		annotation SummarizationSetBy = User
+
+	column RefitExclusion
+		dataType: string
+		isHidden
+		lineageTag: 7f2cff8d-b8c5-48a8-8fc8-7ae74bb310ae
+		sourceLineageTag: 10997b0b-b848-41cd-9c6c-d0f57c839d9c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RefitExclusion
+
+		annotation SummarizationSetBy = User
+
+	partition 'Footfall 2' = entity
+		mode: directQuery
+		source
+			entityName: Footfall
+			expressionSource: 'DirectQuery to AS - DMA D2C 2'
+

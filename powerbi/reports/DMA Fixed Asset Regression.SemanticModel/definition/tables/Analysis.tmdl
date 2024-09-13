@@ -1,0 +1,43 @@
+table Analysis
+	lineageTag: 3499c618-c17f-4010-850c-b61bcb1350f9
+	sourceLineageTag: 0909da0a-382e-46ee-a812-94d7b0506fe0
+
+	column Analysis_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: 758620dc-0640-47e2-9841-4b6642dd9121
+		sourceLineageTag: 1380efb3-aa23-4e1e-8bde-6fbd1ea69e0f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Analysis_Key
+
+		annotation SummarizationSetBy = User
+
+	column Analysis
+		dataType: string
+		lineageTag: 46b5abcb-5e08-451d-aa19-c084a2fbb1ba
+		sourceLineageTag: 36d90bde-e6ea-4bf8-a971-78eb77ad810b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Analysis
+
+		annotation SummarizationSetBy = User
+
+	column 'Analysis Description'
+		dataType: string
+		lineageTag: 85adfb8e-dea4-40f6-94b5-afcb6ea7a1e4
+		sourceLineageTag: e7d677b8-4dc4-47e0-b05f-9d65765f0310
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Analysis Description
+
+		annotation SummarizationSetBy = User
+
+	partition Analysis = entity
+		mode: directQuery
+		source
+			entityName: Analysis
+			expressionSource: 'DirectQuery to AS - DMA Fixed Asset'
+

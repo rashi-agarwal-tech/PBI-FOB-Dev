@@ -1,0 +1,186 @@
+table 'Fixed Asset Transactions 3'
+	lineageTag: 425be6e7-247d-4442-b2a8-aebe94fec28d
+	sourceLineageTag: 3e2d1b52-2fdd-40b6-bbc7-14db67d19777
+
+	column Company_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 3755a045-5733-4c38-8a0e-e8500d98c249
+		sourceLineageTag: da55bbd7-93a0-44fd-8792-3e662317f8ec
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column Analysis_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: e9178cb0-d004-4a03-ace6-70ccc889d284
+		sourceLineageTag: 8b121ebb-8df0-4042-92f4-cbb933c97ac5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Analysis_Key
+
+		annotation SummarizationSetBy = User
+
+	column Channel_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 571cb891-36be-43b1-b182-8b9b58df9ea4
+		sourceLineageTag: a12de93d-2862-4b0f-b393-e93e74f6d2e2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel_Key
+
+		annotation SummarizationSetBy = User
+
+	column CostCentre_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 1ee409b3-531c-40ea-85e3-e62d66d42683
+		sourceLineageTag: f7b63d29-63a0-4b1c-af2c-0a8bf7e6622b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CostCentre_Key
+
+		annotation SummarizationSetBy = User
+
+	column Country_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 6b15f8e3-962e-453c-842b-f1342689653e
+		sourceLineageTag: 5d5c211d-6a74-4b78-8b10-9547884536b7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country_Key
+
+		annotation SummarizationSetBy = User
+
+	column MainAccount_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: fcc29428-bb45-43c1-bd8d-e637c24731e2
+		sourceLineageTag: 61406e17-827a-4423-aafa-cc3f10d5d3cf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MainAccount_Key
+
+		annotation SummarizationSetBy = User
+
+	column Asset_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 6916d024-0c5f-4e26-83e6-e65ae493616a
+		sourceLineageTag: 51316ee4-4317-404a-81d6-64beac302f31
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Asset_Key
+
+		annotation SummarizationSetBy = User
+
+	column AssetGroup_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: c94be6e9-cfde-4dd4-bdbf-bab61cd81bc8
+		sourceLineageTag: 26a08f3f-7e5c-4599-bc2f-ace312379ffb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AssetGroup_Key
+
+		annotation SummarizationSetBy = User
+
+	column AssetBook_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: c8b90e43-1eef-4cb7-a2c4-a3c7a8e8e3b7
+		sourceLineageTag: 73e77996-fad9-4055-81b7-f59e34898708
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AssetBook_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Amount Col Trans'
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: c40db9f0-f58b-4432-81a5-d287c8974d90
+		sourceLineageTag: ae97716a-22f1-43d3-be77-57afbc975e2f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Amount Col Trans
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Type'
+		dataType: string
+		lineageTag: 4f3e0c5d-2bf8-4f75-84e2-6dd44b13311b
+		sourceLineageTag: 42ceea8b-1f08-423c-9000-ef4b4eee25d0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Type
+
+		annotation SummarizationSetBy = User
+
+	column Date_Key
+		dataType: int64
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 9021a31f-1505-4e19-83fb-a54b9b822b29
+		sourceLineageTag: 79c9b926-3fa9-42e8-aafd-84307d135a09
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Code'
+		dataType: string
+		lineageTag: 9702fd1c-f67d-49ae-bd16-ffb1efbac627
+		sourceLineageTag: cd7e0da7-c927-4936-bf20-00749a89992f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Amount Col Cons GBP'
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: d3b51e22-cf6e-4cf3-b609-5c740c4ee9d0
+		sourceLineageTag: 51f026b8-d2d9-4858-8007-cc120fe2aaaf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Amount Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Amount Col Avg GBP'
+		dataType: decimal
+		isHidden
+		formatString: #,0.00
+		lineageTag: dc21bd90-447f-48c9-9d57-0e1cb3bcd168
+		sourceLineageTag: 48b5859c-a782-465f-84dc-05c84741bbf4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Amount Col Avg GBP
+
+		annotation SummarizationSetBy = User
+
+	partition 'Fixed Asset Transactions 3' = entity
+		mode: directQuery
+		source
+			entityName: Fixed Asset Transactions
+			expressionSource: 'DirectQuery to AS - DMA Fixed Asset 3'
+

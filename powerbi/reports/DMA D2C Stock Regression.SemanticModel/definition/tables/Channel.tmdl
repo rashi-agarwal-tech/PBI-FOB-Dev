@@ -1,0 +1,49 @@
+table Channel
+	isHidden
+	lineageTag: f51b53d8-5d8c-4c97-9712-41059f2e3aff
+	sourceLineageTag: f631e02a-5382-4f41-a559-d6dcf0007ba5
+
+	column Channel
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: a4338f5a-46ed-4da1-ab60-72bf3392011c
+		sourceLineageTag: 7766189d-5bae-4446-9e8e-20c6ba5a84b7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel ID'
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Misc
+		lineageTag: 3ea726dd-95c8-4d4c-a7f3-02ebd45cf5ab
+		sourceLineageTag: afcd96e4-6706-4611-b901-9462ce540955
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel ID
+
+		annotation SummarizationSetBy = User
+
+	column D2C?
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: zz_Misc
+		lineageTag: 97ef4da4-6e76-496f-8d70-e7afeb038240
+		sourceLineageTag: e2bdaf48-8c0a-4549-a7cc-d2a79fdc2878
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: D2C?
+
+		annotation SummarizationSetBy = User
+
+	partition Channel = entity
+		mode: directQuery
+		source
+			entityName: Channel
+			expressionSource: 'DirectQuery to AS - DMA D2C'
+

@@ -1,0 +1,56 @@
+table 'Model Refresh Time 2'
+	lineageTag: 3580052c-9e47-4c6b-b359-51dbc11386ef
+	sourceLineageTag: cd79b64b-0727-4677-b7ad-d648b36af5be
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		lineageTag: e650eb7e-40e3-4689-b339-d4a81bdbf95c
+		sourceLineageTag: 350ea65a-a5f1-4f3e-b203-afd3b483af7c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Sort Order'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5e65de86-e5a3-490f-9c17-a44e9172fad6
+		sourceLineageTag: 50999b1e-181e-454b-91cd-ad4506a11c10
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Sort Order
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Slicer'
+		dataType: string
+		isHidden
+		lineageTag: 7a924a4a-be82-4fe6-9449-59d7568e1dde
+		sourceLineageTag: 8e13c3c3-a8cb-4fa3-a905-f9a07c12d2cc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Slicer
+
+		annotation SummarizationSetBy = User
+
+	column 'Refresh Time'
+		dataType: dateTime
+		formatString: dd mmmm yyyy hh:nn AM/PM
+		lineageTag: b9295d7b-94b0-47cb-9707-f539dcc0f154
+		sourceLineageTag: 674b7d90-58bf-4d2c-9108-a1e99c3bd4f8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Refresh Time
+
+		annotation SummarizationSetBy = User
+
+	partition 'Model Refresh Time 2' = entity
+		mode: directQuery
+		source
+			entityName: Model Refresh Time
+			expressionSource: 'DirectQuery to AS - DMA D2C 2'
+

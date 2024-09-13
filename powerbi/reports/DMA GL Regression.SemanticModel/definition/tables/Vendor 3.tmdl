@@ -1,0 +1,62 @@
+table 'Vendor 3'
+	lineageTag: a7417386-c9f7-44ac-8cbc-adcc5cb24012
+	sourceLineageTag: b3a4ff4d-5842-4d2b-903f-0c74e76cb8cb
+
+	column Vendor_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: fdac2eef-455f-4029-8dd8-443eb5481c9c
+		sourceLineageTag: 6e1ab532-e19d-41e1-b119-9ba93e699d74
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vendor_Key
+
+		annotation SummarizationSetBy = User
+
+	column Vendor
+		dataType: string
+		lineageTag: dbc31e52-d7ab-4e12-9bf2-82782da5b473
+		sourceLineageTag: 630e301f-0300-4a57-927c-79c4ce27f79d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vendor
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Code'
+		dataType: string
+		lineageTag: 5ce0d7c1-e916-4a7d-9178-19bf7d217471
+		sourceLineageTag: 1566d5db-3200-48be-b532-f1bac174ffe9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Vendor Group ID'
+		dataType: string
+		lineageTag: fa8569e2-d069-4628-8e41-0f13411ebaf3
+		sourceLineageTag: afeaf46a-c4c2-4812-bd14-5f2402fc42b4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vendor Group ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Vendor Name'
+		dataType: string
+		lineageTag: 3f9555a6-2e89-44c2-9890-9eea1dcb627f
+		sourceLineageTag: 67a17d64-7917-4c6f-87a5-cec7342f5ea8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vendor Name
+
+		annotation SummarizationSetBy = User
+
+	partition 'Vendor 3' = entity
+		mode: directQuery
+		source
+			entityName: Vendor
+			expressionSource: 'DirectQuery to AS - DMA GL 3'
+

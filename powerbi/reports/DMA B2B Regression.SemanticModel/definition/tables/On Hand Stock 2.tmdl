@@ -1,0 +1,108 @@
+table 'On Hand Stock 2'
+	isHidden
+	lineageTag: c2ab37db-3df1-445a-b7a7-f8d392cb187a
+	sourceLineageTag: 6901534f-b9dd-47af-8bd9-22070a4acc37
+
+	column Product_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 72cbc268-8c19-4d4a-a6ad-687a41959f92
+		sourceLineageTag: 075c6372-61d5-4009-a18e-c574615c72b7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 720674f0-87d2-4934-84fc-9f23b5c11862
+		sourceLineageTag: 3c918993-55fc-4d25-b458-c1fc95afda32
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 43e6545a-f726-4e63-996f-641eb15006e1
+		sourceLineageTag: efedb6f9-2873-494f-9722-55b3e25b57a8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column AVAILABLEONHANDQUANTITY
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0"
+		displayFolder: zz_Values
+		lineageTag: dde52869-6c5a-44b0-8878-9b3ce4217e01
+		sourceLineageTag: 11fec5f7-220f-4f5d-9709-bb455f3e168d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AVAILABLEONHANDQUANTITY
+
+		annotation SummarizationSetBy = User
+
+	column SELLINGSTATUS
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 37942702-7254-4b9d-b1f8-a29013d2e94e
+		sourceLineageTag: 6aa3cd5a-0289-4ac9-87c0-a57c502ac53a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		annotation SummarizationSetBy = User
+
+	column 'SnapShot Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: 431523ea-d38d-4037-8462-5ddd79402752
+		sourceLineageTag: 188bf2a6-c4e5-4c14-a6ef-19c1cd8377b4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SnapShot Date
+
+		annotation SummarizationSetBy = User
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 62148af6-b126-4d3f-82f5-de745913730c
+		sourceLineageTag: 7c22757e-4bc7-4b1d-ba36-0f0e5c24c685
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		annotation SummarizationSetBy = User
+
+	column WAREHOUSEID
+		dataType: string
+		isHidden
+		lineageTag: 8248129f-15a3-448c-82da-ceb0ecd11dba
+		sourceLineageTag: ebcb4064-421e-4019-b5a3-8e20d9d6077d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WAREHOUSEID
+
+		annotation SummarizationSetBy = User
+
+	partition 'On Hand Stock 2' = entity
+		mode: directQuery
+		source
+			entityName: On Hand Stock
+			expressionSource: 'DirectQuery to AS - DMA B2B 2'
+

@@ -1,0 +1,57 @@
+table 'Selling Status - Order Entry 2'
+	lineageTag: 65e18a99-fa58-4621-9a5d-399434fa2011
+	sourceLineageTag: 4867b275-0411-42d7-b526-8f2bae141f6e
+
+	column SELLINGSTATUS
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		displayFolder: zz_Misc
+		lineageTag: c6641b83-6d3c-4dbf-ad38-8212ea75d1df
+		sourceLineageTag: dbfd800b-bd44-4f2d-a67e-0b6c03a22b82
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		annotation SummarizationSetBy = User
+
+	column 'Selling Status Sort'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 10023cef-a098-4338-8c97-f50e950dd847
+		sourceLineageTag: 7476e6c7-f4f2-49f9-afda-067928d8dfe8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selling Status Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'TBD vs Continuity/Carry Over - Order Entry'
+		dataType: string
+		lineageTag: 8ba823e4-a8c5-449e-9958-1145d52e4703
+		sourceLineageTag: 863350f5-af6a-4516-a7d8-48bc34c75048
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TBD vs Continuity/Carry Over - Order Entry
+
+		annotation SummarizationSetBy = User
+
+	column 'Selling Status - Order Entry'
+		dataType: string
+		lineageTag: fd49c079-afcc-4161-8f41-3339fd82258b
+		sourceLineageTag: 66e6c650-70a9-43f7-a4a7-5adb8aa08a34
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selling Status - Order Entry
+		sortByColumn: 'Selling Status Sort'
+
+		annotation SummarizationSetBy = User
+
+	partition 'Selling Status - Order Entry 2' = entity
+		mode: directQuery
+		source
+			entityName: Selling Status - Order Entry
+			expressionSource: 'DirectQuery to AS - DMA D2C 2'
+

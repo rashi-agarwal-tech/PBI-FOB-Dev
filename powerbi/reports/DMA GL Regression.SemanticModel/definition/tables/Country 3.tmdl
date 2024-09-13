@@ -1,0 +1,42 @@
+table 'Country 3'
+	lineageTag: ac75cc6f-53cf-4fa7-aac4-f6d643e81a04
+	sourceLineageTag: 043837ee-2dc4-4872-be2a-9b676829aafb
+
+	column Country_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 5fc1f6d6-759d-4f8c-99ad-f75092f42b87
+		sourceLineageTag: 37f07282-1515-4e09-b21b-760dc1cd2422
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country_Key
+
+		annotation SummarizationSetBy = User
+
+	column Country
+		dataType: string
+		lineageTag: 199444fa-6913-4f8d-9989-201c3bdd41cc
+		sourceLineageTag: 9e281c07-26ef-4bb7-a9b4-1965e3c5ec8f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Country Description'
+		dataType: string
+		lineageTag: e8d7aa86-1a44-488a-9260-2e997802e546
+		sourceLineageTag: 85dd6b11-8f43-4846-9be5-5b96bb6e2d41
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country Description
+
+		annotation SummarizationSetBy = User
+
+	partition 'Country 3' = entity
+		mode: directQuery
+		source
+			entityName: Country
+			expressionSource: 'DirectQuery to AS - DMA GL 3'
+

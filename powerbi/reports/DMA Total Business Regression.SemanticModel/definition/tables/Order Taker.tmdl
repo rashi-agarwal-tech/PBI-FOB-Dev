@@ -1,0 +1,23 @@
+table 'Order Taker'
+	isHidden
+	lineageTag: b7d113e7-f85f-478c-924c-17643e821acf
+	sourceLineageTag: 51358c20-e3f0-493e-bf5e-be5907a2b33a
+
+	column 'DM Agent'
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: b54b19bd-3c4c-405a-8f89-2e0eeb2f22f4
+		sourceLineageTag: 63af42e9-3641-4592-9b0a-2be14a585c53
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DM Agent
+
+		annotation SummarizationSetBy = User
+
+	partition 'Order Taker' = entity
+		mode: directQuery
+		source
+			entityName: Order Taker
+			expressionSource: 'DirectQuery to AS - DMA Total Business'
+

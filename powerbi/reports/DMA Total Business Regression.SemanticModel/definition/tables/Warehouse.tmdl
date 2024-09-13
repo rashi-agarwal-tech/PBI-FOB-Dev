@@ -1,0 +1,93 @@
+table Warehouse
+	lineageTag: cb3c2fc1-abf4-41e0-bb81-20891929b21b
+	sourceLineageTag: 15b6e244-ce58-4188-ae43-2622644e7632
+
+	column Warehouse_Key
+		dataType: string
+		isNullable: false
+		lineageTag: 8244bba6-ea0a-4a17-b110-c0f89ddfa125
+		sourceLineageTag: 0546bc84-b490-4251-bb83-a6418abffb3b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse ID'
+		dataType: string
+		isNullable: false
+		lineageTag: 8e85aaac-28da-477a-a3c8-d6b1143094ac
+		sourceLineageTag: f6c8a9c9-f5d3-4513-88cd-f47d7666eb33
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse ID
+
+		annotation SummarizationSetBy = User
+
+	column PARENTSTOREID
+		dataType: string
+		lineageTag: ae177d1c-94ee-4389-b094-772e52eab5ea
+		sourceLineageTag: 19c40436-4bf0-4e8f-b1b7-fc9651a26cbb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PARENTSTOREID
+
+		annotation SummarizationSetBy = User
+
+	column 'Company ID'
+		dataType: string
+		lineageTag: 690cd51e-5ea4-4ff9-9a9a-7512fa6e6795
+		sourceLineageTag: d57e12d3-7fc8-406e-ac36-6c5dd3d5357e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Channel'
+		dataType: string
+		lineageTag: 3b5f080a-a394-4f68-9ceb-c528905f1726
+		sourceLineageTag: cf3f3815-43b1-4308-9749-f16a89e14f02
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Channel
+
+		annotation SummarizationSetBy = User
+
+	column FinancialChannel
+		dataType: string
+		lineageTag: 972b3035-6d4d-4e01-9594-6ee0146b2e4a
+		sourceLineageTag: 6173a534-c6c6-4c58-a827-500b253ca9fe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FinancialChannel
+
+		annotation SummarizationSetBy = User
+
+	column WHtoStore_Key
+		dataType: string
+		lineageTag: 3732782a-5a0b-4e3d-9df9-5514ba99958b
+		sourceLineageTag: 6a010875-e362-460c-9c79-1850eb972df0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WHtoStore_Key
+
+		annotation SummarizationSetBy = User
+
+	column WAREHOUSENAME
+		dataType: string
+		isHidden
+		lineageTag: 0ceb6f15-aed8-426a-ba85-161472369bca
+		sourceLineageTag: 38c5bd7e-7dec-47c0-998c-4a2d80e67c59
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WAREHOUSENAME
+
+		annotation SummarizationSetBy = User
+
+	partition Warehouse = entity
+		mode: directQuery
+		source
+			entityName: Warehouse
+			expressionSource: 'DirectQuery to AS - DMA Total Business'
+

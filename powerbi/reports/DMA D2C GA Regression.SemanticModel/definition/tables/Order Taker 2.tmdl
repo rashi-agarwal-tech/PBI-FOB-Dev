@@ -1,0 +1,23 @@
+table 'Order Taker 2'
+	isHidden
+	lineageTag: 5ea91665-5e1c-469e-80fa-0d9bf53ba1d8
+	sourceLineageTag: 78f5e2c0-d0b5-4182-ad95-3bd6d2ad7a28
+
+	column 'DM Agent'
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: c04a5f18-9e8b-4635-9dc5-a16fcedaceb9
+		sourceLineageTag: 13dfd936-4b9f-49aa-829f-e0fedd2e38b8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DM Agent
+
+		annotation SummarizationSetBy = User
+
+	partition 'Order Taker 2' = entity
+		mode: directQuery
+		source
+			entityName: Order Taker
+			expressionSource: 'DirectQuery to AS - DMA D2C 2'
+

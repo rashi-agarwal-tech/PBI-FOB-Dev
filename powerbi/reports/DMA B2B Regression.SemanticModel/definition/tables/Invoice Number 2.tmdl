@@ -1,0 +1,21 @@
+table 'Invoice Number 2'
+	lineageTag: df2ee48c-130d-4bf0-a8ec-ac0fad2ee313
+	sourceLineageTag: 5c96ad32-2d6d-4e02-b88a-868eb10d4be1
+
+	column 'Invoice Number'
+		dataType: string
+		isNullable: false
+		lineageTag: fefb8b40-dc76-4182-a98f-a0408226ab65
+		sourceLineageTag: 9d3b96aa-984d-49f4-b313-a94261558b52
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Number
+
+		annotation SummarizationSetBy = User
+
+	partition 'Invoice Number 2' = entity
+		mode: directQuery
+		source
+			entityName: Invoice Number
+			expressionSource: 'DirectQuery to AS - DMA B2B 2'
+

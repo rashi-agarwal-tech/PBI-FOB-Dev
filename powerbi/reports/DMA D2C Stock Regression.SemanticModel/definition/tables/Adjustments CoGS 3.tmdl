@@ -1,0 +1,60 @@
+table 'Adjustments CoGS 3'
+	isHidden
+	lineageTag: 17415b90-115e-4890-8876-6ff286ebfcd9
+	sourceLineageTag: 8ae11191-1f7f-4819-bfb5-a9048123a9e0
+
+	column 'Amount at Constant Rate'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 30eae322-484d-4530-9839-930650d393ac
+		sourceLineageTag: 866bc307-0e71-4edc-8b49-366b6e3a9a0d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Amount at Constant Rate
+
+		annotation SummarizationSetBy = User
+
+	column AccountingDate_Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Keys
+		lineageTag: cc9a1522-1abd-4832-bbc8-79519d096fd8
+		sourceLineageTag: bea821b5-6f52-4447-bdc1-d0c0d52be399
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AccountingDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 4e2df2d1-a611-472c-a757-a289597e6301
+		sourceLineageTag: 4ef12e82-e830-4c8d-aeae-4092d2b4f43b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column Channel_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: bb311446-ebc7-409b-a799-69bbc22cb0d4
+		sourceLineageTag: 3d98891f-9ed9-45a4-bc72-433a09d467e8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel_Key
+
+		annotation SummarizationSetBy = User
+
+	partition 'Adjustments CoGS 3' = entity
+		mode: directQuery
+		source
+			entityName: Adjustments CoGS
+			expressionSource: 'DirectQuery to AS - DMA D2C 3'
+

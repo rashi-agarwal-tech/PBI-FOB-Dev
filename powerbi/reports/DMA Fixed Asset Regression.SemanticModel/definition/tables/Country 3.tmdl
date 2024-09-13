@@ -1,0 +1,43 @@
+table 'Country 3'
+	lineageTag: 1a7179ff-a0aa-487d-b255-a1099b9ff7f9
+	sourceLineageTag: 43f53033-a790-41a4-ba48-23b35e0fbbac
+
+	column Country_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: dbeaeb04-be57-4905-aa8a-ef3e726330fe
+		sourceLineageTag: 38a091f1-139b-4d6d-803b-c65e30f32db3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country_Key
+
+		annotation SummarizationSetBy = User
+
+	column Country
+		dataType: string
+		lineageTag: 311fb555-4aca-4f91-b6f1-a7ca60d72612
+		sourceLineageTag: 610b5d0d-79fd-4900-a7de-d0960c830cd2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Country Description'
+		dataType: string
+		lineageTag: 54449a1d-6ab0-408d-a1d4-ed3c91b9cedf
+		sourceLineageTag: b888cbb6-360c-4c9f-afd9-e7f860127fd3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country Description
+
+		annotation SummarizationSetBy = User
+
+	partition 'Country 3' = entity
+		mode: directQuery
+		source
+			entityName: Country
+			expressionSource: 'DirectQuery to AS - DMA Fixed Asset 3'
+

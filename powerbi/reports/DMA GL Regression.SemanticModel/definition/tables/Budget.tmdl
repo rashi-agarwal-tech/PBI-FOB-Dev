@@ -1,0 +1,123 @@
+table Budget
+	isHidden
+	lineageTag: d1c6bc57-bf8d-42cb-b4fe-e04a63588489
+	sourceLineageTag: 7d066b26-d98f-4313-a4b0-4e01f7fd2955
+
+	column Company_Key
+		dataType: string
+		isHidden
+		lineageTag: 517b52a9-2c2c-4bc6-b75e-f55a6fb97461
+		sourceLineageTag: 99b6ed83-f4d7-4337-9625-839b24ba8a0c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column Channel_Key
+		dataType: string
+		isHidden
+		lineageTag: b4248f0f-2532-4394-8652-37aca308f3ff
+		sourceLineageTag: 035526e7-bed6-475a-ad8c-da883334ca6c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel_Key
+
+		annotation SummarizationSetBy = User
+
+	column CostCentre_Key
+		dataType: string
+		isHidden
+		lineageTag: da462ff7-2091-471e-a1d7-e777dcbcef3d
+		sourceLineageTag: 35edc600-48c1-4173-bee2-c792ed5da180
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CostCentre_Key
+
+		annotation SummarizationSetBy = User
+
+	column MainAccount_Key
+		dataType: string
+		isHidden
+		lineageTag: 351d26ba-6816-437e-8051-42dca8d7982a
+		sourceLineageTag: 60431344-da6b-42d5-a205-a9b311eb6af8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MainAccount_Key
+
+		annotation SummarizationSetBy = User
+
+	column Date_Key
+		dataType: string
+		isHidden
+		lineageTag: cc71c0ca-f3c1-4c2e-95e1-cf3ff358f084
+		sourceLineageTag: 84015925-c214-4996-975e-fe8d8abb69ff
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		annotation SummarizationSetBy = User
+
+	column AMOUNT_CONS_GBP
+		dataType: double
+		isHidden
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: 96905db5-5b0b-4ed8-945f-0d6aa62dda44
+		sourceLineageTag: 33632cbd-c663-48d2-b2b6-54b285dba4d0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AMOUNT_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column AMOUNT_TRANS
+		dataType: double
+		isHidden
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		lineageTag: c705c290-9479-43e7-8484-674d31eaeb57
+		sourceLineageTag: 16c5aeb4-eaaa-4e2a-b5b2-e03cd13d67be
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AMOUNT_TRANS
+
+		annotation SummarizationSetBy = User
+
+	column Analysis_Key
+		dataType: string
+		isHidden
+		lineageTag: 5fbdd379-e717-40b3-a293-e7d4dfac4a35
+		sourceLineageTag: aa4ad37a-3197-404f-9698-a2cbd829bfcd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Analysis_Key
+
+		annotation SummarizationSetBy = User
+
+	column Country_Key
+		dataType: string
+		isHidden
+		lineageTag: af767d12-31a3-4445-a02e-c99002630ebd
+		sourceLineageTag: 75f0cc3f-5fd5-4dab-b7b3-8f6fd370c333
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Budget Model ID'
+		dataType: string
+		isHidden
+		lineageTag: 44539408-7aaa-4e25-9bf9-e31c1f76dc52
+		sourceLineageTag: 15b96a4a-7b54-4b28-a649-cc293f32d1a7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Budget Model ID
+
+		annotation SummarizationSetBy = User
+
+	partition Budget = entity
+		mode: directQuery
+		source
+			entityName: Budget
+			expressionSource: 'DirectQuery to AS - DMA GL'
+

@@ -1,0 +1,106 @@
+table 'Parameter - Metrics'
+	lineageTag: 35e77544-2544-4074-a099-8fdaaa1f4f95
+
+	column 'Parameter - Metrics'
+		dataType: string
+		lineageTag: 94113e41-da17-4494-90f2-1d4b2db74b74
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter - Metrics Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter - Metrics Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Metrics Fields'
+		dataType: string
+		isHidden
+		lineageTag: 9265534a-368e-42a7-91b9-314c840b9510
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter - Metrics Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Metrics Order'
+		dataType: double
+		isHidden
+		formatString: 0.000
+		lineageTag: f99c51a5-ec8a-4779-853d-90508c0c00ca
+		summarizeBy: sum
+		isDataTypeInferred
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type =
+			
+			IF
+			(
+			    RIGHT(FORMAT([Parameter - Metrics Order],"@"),1)="1"
+			    ,"Actual"
+			    ,"Abs Diff"
+			)
+		dataType: string
+		lineageTag: ad4b0134-41bf-4be9-84ce-8d3ebab207e4
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter - Metrics' = calculated
+		mode: import
+		source =
+				
+				{
+				    ("Open Units Actuals", NAMEOF([sales open units]), 1.011),
+				    ("Open Units AbsDiff", NAMEOF([sales open units Diff]), 1.012),
+				    ("Invoiced Units Actuals", NAMEOF([sales invoiced units]), 1.021),
+				    ("Invoiced Units AbsDiff", NAMEOF([sales invoiced units Diff]), 1.022),
+				    ("Returned Units Actuals", NAMEOF([sales returned units]), 1.031),
+				    ("Returned Units AbsDiff", NAMEOF([sales returned units Diff]), 1.032),
+				    ("Total Units Actuals", NAMEOF([sales total units]), 1.041),
+				    ("Total Units AbsDiff", NAMEOF([sales total units Diff]), 1.042),
+				    ("Net Units Actuals", NAMEOF([sales net units]), 1.051),
+				    ("Net Units AbsDiff", NAMEOF([sales net units Diff]), 1.052),
+				    ("eCom Demand Units Actuals", NAMEOF([sales ecom demand units]), 1.061),
+				    ("eCom Demand Units AbsDiff", NAMEOF([sales ecom demand units Diff]), 1.062),
+				    ("eCom Demand Cancelled Units Actuals", NAMEOF([sales ecom demand cancelled units]), 1.071),
+				    ("eCom Demand Cancelled Units AbsDiff", NAMEOF([sales ecom demand cancelled units Diff]), 1.072),
+				    ("Total Units (eCom) Actuals", NAMEOF([sales total units ecom]), 1.081),
+				    ("Total Units (eCom) AbsDiff", NAMEOF([sales total units ecom Diff]), 1.082),
+				    ("eCom Demand Transactions Actuals", NAMEOF([sales ecom demand transactions]), 1.091),
+				    ("eCom Demand Transactions AbsDiff", NAMEOF([sales ecom demand transactions Diff]), 1.092),
+				    ("eCom Demand Discount Actuals", NAMEOF([sales ecom demand discount]), 1.101),
+				    ("eCom Demand Discount AbsDiff", NAMEOF([sales ecom demand discount Diff]), 1.102),
+				    ("Open Net Value Actuals", NAMEOF([sales open net value]), 1.111),
+				    ("Open Net Value AbsDiff", NAMEOF([sales open net value Diff]), 1.112),
+				    ("Invoiced Net Value Actuals", NAMEOF([sales invoiced net value]), 1.121),
+				    ("Invoiced Net Value AbsDiff", NAMEOF([sales invoiced net value Diff]), 1.122),
+				    ("Returned Net Value Actuals", NAMEOF([sales returned net value]), 1.131),
+				    ("Returned Net Value AbsDiff", NAMEOF([sales returned net value Diff]), 1.132),
+				    ("Total Net Value Actuals", NAMEOF([sales total net value]), 1.141),
+				    ("Total Net Value AbsDiff", NAMEOF([sales total net value Diff]), 1.142),
+				    ("Net Value Actuals", NAMEOF([sales net value]), 1.151),
+				    ("Net Value AbsDiff", NAMEOF([sales net value Diff]), 1.152),
+				    ("eCom Demand Gross Value Actuals", NAMEOF([sales ecom demand gross value]), 1.161),
+				    ("eCom Demand Gross Value AbsDiff", NAMEOF([sales ecom demand gross value Diff]), 1.162),
+				    ("eCom Demand Cancelled Gross Value Actuals", NAMEOF([sales ecom demand cancelled gross value]), 1.171),
+				    ("eCom Demand Cancelled Gross Value AbsDiff", NAMEOF([sales ecom demand cancelled gross value Diff]), 1.172),
+				    ("Total Net Value (eCom) Actuals", NAMEOF([sales total net value ecom]), 1.181),
+				    ("Total Net Value (eCom) AbsDiff", NAMEOF([sales total net value ecom Diff]), 1.182),
+				    ("Footfall Actuals", NAMEOF([sales footfall]), 1.191),
+				    ("Footfall AbsDiff", NAMEOF([sales footfall Diff]), 1.192)
+				}
+
+	annotation PBI_Id = ca6d7977ee0048349af11303548f9228
+

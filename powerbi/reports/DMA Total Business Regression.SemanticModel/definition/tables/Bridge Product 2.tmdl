@@ -1,0 +1,23 @@
+table 'Bridge Product 2'
+	isHidden
+	lineageTag: 487197d4-19ef-4dec-bc88-b10da0dac59b
+	sourceLineageTag: f166b820-3de0-46af-9ff6-9ca258771142
+
+	column 'Product Code'
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 112b0446-8a01-4ab2-b260-cd071b5d9fd1
+		sourceLineageTag: 6f55eb86-3bc3-4ddf-8a0f-6e8bbdb650c4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Code
+
+		annotation SummarizationSetBy = User
+
+	partition 'Bridge Product 2' = entity
+		mode: directQuery
+		source
+			entityName: Bridge Product
+			expressionSource: 'DirectQuery to AS - DMA Total Business 2'
+

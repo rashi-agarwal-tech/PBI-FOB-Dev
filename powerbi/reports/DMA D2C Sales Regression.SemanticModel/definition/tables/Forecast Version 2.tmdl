@@ -1,0 +1,34 @@
+table 'Forecast Version 2'
+	lineageTag: 48a238d7-bedf-40f4-a5d7-9c8de6d61e27
+	sourceLineageTag: 0701f4b3-1e8d-4b4c-b540-ddd95d97dbea
+
+	column 'Forecast Version'
+		dataType: string
+		isNullable: false
+		lineageTag: 1ca05a2b-33f1-42cc-b9e4-f447a25b6369
+		sourceLineageTag: 0451b818-7e4f-48a0-aeee-a56cb397a2c1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Forecast Version
+		sortByColumn: 'Forecast Version Order'
+
+		annotation SummarizationSetBy = User
+
+	column 'Forecast Version Order'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: d527940f-3108-4ad0-9c2c-82fb87e233f9
+		sourceLineageTag: f5fcbd02-c3a3-43e4-a19e-f5d2c79501fa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Forecast Version Order
+
+		annotation SummarizationSetBy = User
+
+	partition 'Forecast Version 2' = entity
+		mode: directQuery
+		source
+			entityName: Forecast Version
+			expressionSource: 'DirectQuery to AS - DMA D2C 2'
+

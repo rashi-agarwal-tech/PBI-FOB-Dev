@@ -1,0 +1,46 @@
+table 'Financial Channel 3'
+	lineageTag: bc825e55-0d3f-4205-b86c-6b6d3dbc8098
+	sourceLineageTag: 6c3c3781-1e3f-49cc-8b49-c9ec04c741e5
+
+	column Channel_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: 85093cfb-ff95-48dd-bc26-5a0a2fb6e8d6
+		sourceLineageTag: a16a86e7-5269-4cdf-a40a-98f7a7955645
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel_Key
+
+		annotation SummarizationSetBy = User
+
+	column Channel
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: 0d19cb2e-a997-4325-b05c-9a2db97f514e
+		sourceLineageTag: 8338af8c-9dc4-4172-8aac-58e23498ed6f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'Financial Channel'
+		dataType: string
+		lineageTag: 1b4f19de-dad4-4187-a84a-1c3bc25490c4
+		sourceLineageTag: e61033c4-67f1-4d7d-845f-37c4ba26c137
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Financial Channel
+
+		annotation SummarizationSetBy = User
+
+	partition 'Financial Channel 3' = entity
+		mode: directQuery
+		source
+			entityName: Financial Channel
+			expressionSource: 'DirectQuery to AS - DMA B2B 3'
+

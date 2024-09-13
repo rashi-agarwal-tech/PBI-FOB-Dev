@@ -1,0 +1,434 @@
+table 'General Ledger Fact 3'
+	lineageTag: ca40b5d7-d011-4687-b483-1847ca408dbb
+	sourceLineageTag: 58b315bb-495d-4fd2-a060-48479684380c
+
+	column Analysis_Key
+		dataType: string
+		isHidden
+		displayFolder: Keys
+		lineageTag: 96a4dff3-9eb3-49c5-99b7-c6b01cb312be
+		sourceLineageTag: c433de1f-742b-40f2-8c98-60c23be6b965
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Analysis_Key
+
+		annotation SummarizationSetBy = User
+
+	column Channel_Key
+		dataType: string
+		isHidden
+		displayFolder: Keys
+		lineageTag: 143e39e0-f438-4b18-9afd-f565223c0732
+		sourceLineageTag: db3b7c67-1c2e-4b3a-a262-a989910dedc1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel_Key
+
+		annotation SummarizationSetBy = User
+
+	column CostCentre_Key
+		dataType: string
+		isHidden
+		displayFolder: Keys
+		lineageTag: 7aaa0b8c-eb35-4bc9-9560-cb9b43f202dd
+		sourceLineageTag: 32f343cc-7dbc-4902-9e65-9b06a02a4898
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CostCentre_Key
+
+		annotation SummarizationSetBy = User
+
+	column Country_Key
+		dataType: string
+		isHidden
+		displayFolder: Keys
+		lineageTag: 1a8bc526-244b-4e47-b4cd-cac50940b0e8
+		sourceLineageTag: e05c06c9-7a2d-4f8a-9160-d5ca481adcd6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country_Key
+
+		annotation SummarizationSetBy = User
+
+	column SellingStatus_Key
+		dataType: string
+		isHidden
+		displayFolder: Keys
+		lineageTag: d5a4d6b9-a794-4eeb-9332-eea1743abf44
+		sourceLineageTag: 0683fc89-5cba-4a76-a939-673727732d27
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SellingStatus_Key
+
+		annotation SummarizationSetBy = User
+
+	column AccountingDate_Key
+		dataType: string
+		isHidden
+		lineageTag: 4ebc57e4-7eed-4726-9681-fb4242175cf3
+		sourceLineageTag: dcda2e6c-2ea5-4bc5-9f72-98badde86be5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AccountingDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column MainAccount_Key
+		dataType: string
+		isHidden
+		displayFolder: Keys
+		lineageTag: 696fe367-ec33-4938-89b7-3d6f1604b41a
+		sourceLineageTag: a4436ff6-3c07-4ee2-9aa8-5f988aa7cc83
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MainAccount_Key
+
+		annotation SummarizationSetBy = User
+
+	column Vendor_Key
+		dataType: string
+		isHidden
+		displayFolder: Keys
+		lineageTag: ed61365f-bded-4eb6-b43d-01da0833a73d
+		sourceLineageTag: fa951c21-f949-4000-81b8-160764f8303c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vendor_Key
+
+		annotation SummarizationSetBy = User
+
+	column LEDGERNAME
+		dataType: string
+		isHidden
+		lineageTag: 82e1c17e-0e72-4ec1-b844-3682d7d49cfc
+		sourceLineageTag: c6e125b3-7bf6-4be1-a425-7ec23b9d46f7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: LEDGERNAME
+
+		annotation SummarizationSetBy = User
+
+	column 'Journal Number'
+		dataType: string
+		lineageTag: 96b9722b-1191-4d47-bc8c-57da0c78a51a
+		sourceLineageTag: 34087dd7-ce0c-44f7-8219-7457a9332a8c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Journal Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Voucher Number'
+		dataType: string
+		lineageTag: 8840a2f7-0ebf-4178-9257-7ed53dad49be
+		sourceLineageTag: bef07674-dcf5-4e56-8dfd-b02f0ca69afa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Voucher Number
+
+		annotation SummarizationSetBy = User
+
+	column Document
+		dataType: string
+		lineageTag: 379401c1-6d33-4679-98cc-58203c0d28a7
+		sourceLineageTag: 6099d396-51ef-4783-aaec-c52ceea69fe1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Document
+
+		annotation SummarizationSetBy = User
+
+	column 'Document Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: e757012c-70e0-4aa5-9a2f-00929cc0adac
+		sourceLineageTag: ca8e621b-4699-4ca9-88cd-ea61f2621dbb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Document Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Posting Type'
+		dataType: string
+		lineageTag: 0e776a99-c3c1-4e10-b4f0-1217653a5b57
+		sourceLineageTag: 1ca0a563-7348-463c-b025-155fecf50fc3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Posting Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Account Entry Description'
+		dataType: string
+		lineageTag: ffcbea7f-eb66-40ac-930b-689ca51eb20c
+		sourceLineageTag: 292a45b4-99e3-42e0-97f6-ac7e0026a792
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Entry Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Ledger Account '
+		dataType: string
+		lineageTag: ca71c98d-4abd-4d16-987d-258b04a677d0
+		sourceLineageTag: fa818430-bc86-4c23-b8d6-33f0e6c785b6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: "Ledger Account "
+
+		annotation SummarizationSetBy = User
+
+	column 'Amount GL'
+		dataType: double
+		isHidden
+		formatString: #,0.00
+		displayFolder: Values
+		lineageTag: 5d552903-6d0b-4805-9fe5-0857c338d36e
+		sourceLineageTag: ebba832a-e418-49a6-8c64-e77cc4caa1ba
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Amount GL
+
+		annotation SummarizationSetBy = User
+
+	column 'Amount at Constant Rate'
+		dataType: double
+		isHidden
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		displayFolder: Values
+		lineageTag: 2bf08b50-8d85-4604-a9da-608a4cedcb49
+		sourceLineageTag: 38339a7a-ad20-42f3-b3be-96d00b093fc8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Amount at Constant Rate
+
+		annotation SummarizationSetBy = User
+
+	column AmountInAccountingCurrency
+		dataType: double
+		isHidden
+		formatString: #,0.00
+		displayFolder: Values
+		lineageTag: 918d3c14-3958-4175-8437-b108f4724837
+		sourceLineageTag: 92485ed1-89a3-49c8-ac75-8d95de4d647a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AmountInAccountingCurrency
+
+		annotation SummarizationSetBy = User
+
+	column AmountInTransactionCurrency
+		dataType: double
+		isHidden
+		formatString: #,0.00
+		displayFolder: Values
+		lineageTag: c37d6e8d-9fd6-448e-b333-9b636f34f221
+		sourceLineageTag: 58d2174d-8166-48fc-aa89-6c9c4283c8e4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AmountInTransactionCurrency
+
+		annotation SummarizationSetBy = User
+
+	column Currency
+		dataType: string
+		lineageTag: a5512261-e8e0-4916-97e1-72233fe5efc0
+		sourceLineageTag: 4a32db2a-d723-4999-b359-b7ccf8602156
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = User
+
+	column 'Document Type'
+		dataType: string
+		lineageTag: ab2fdb83-3662-4d51-9156-3af9661f6a00
+		sourceLineageTag: da270070-ad0d-4d21-9755-bb2c66d1b172
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Document Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Type'
+		dataType: string
+		lineageTag: 4c5fb277-6f28-48b5-bc2e-97026fa8f58f
+		sourceLineageTag: f844f57d-2033-459b-bf0c-5c17a9480037
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Party Number'
+		dataType: string
+		lineageTag: aa96e3d9-78c6-4d2d-9c29-7381c4beddbd
+		sourceLineageTag: a07ccbbd-ad93-455b-b05c-f76abd0018a3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Party Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Party Name'
+		dataType: string
+		lineageTag: 5c19da48-f7f5-40aa-a158-a966c48a69a1
+		sourceLineageTag: e611953a-9b16-4395-a277-5281a9e31736
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Party Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Document Description'
+		dataType: string
+		lineageTag: eb84c56c-7477-462c-904f-615572e5e464
+		sourceLineageTag: ad50239b-116b-4f65-a5e3-b84ae3c55547
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Document Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Document Text'
+		dataType: string
+		lineageTag: aaf2672d-d328-4b35-969f-c9ba19cd2260
+		sourceLineageTag: b9ea701d-e006-4e9e-9983-47926d1a6ff0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Document Text
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Number'
+		dataType: string
+		lineageTag: a63a79ea-9ac7-41eb-891b-13381dbad4d1
+		sourceLineageTag: 5cb244d4-a428-48ab-bc5a-374ee9ad5426
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Line Document Reference'
+		dataType: string
+		lineageTag: 59d8202e-f512-4931-89f7-85c540d59900
+		sourceLineageTag: 44a3ee99-2df2-443b-9a55-e648c5a5b188
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Line Document Reference
+
+		annotation SummarizationSetBy = User
+
+	column 'Line Number'
+		dataType: double
+		formatString: 0
+		lineageTag: a4841bd8-655a-49f6-a667-ddfab322b97f
+		sourceLineageTag: 36f3a767-5046-4dc8-b429-e848187a4b86
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Line Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Line Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 21f9115a-cc22-47f7-bdf5-001ececc7549
+		sourceLineageTag: fc9cf7f4-837a-4799-9c29-c6301f968109
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Line Date
+
+		annotation SummarizationSetBy = User
+
+	column Unit
+		dataType: string
+		lineageTag: 231ac82d-df11-4c48-86a9-a095a013b277
+		sourceLineageTag: 2feb2c96-4858-486b-b1f4-a51568c8844e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Unit
+
+		annotation SummarizationSetBy = User
+
+	column 'Line Text'
+		dataType: string
+		lineageTag: a26aec97-c6ad-4a86-a3dd-138b915cd208
+		sourceLineageTag: 0a83a38d-da5f-486e-b435-3655790613b9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Line Text
+
+		annotation SummarizationSetBy = User
+
+	column 'Line Description'
+		dataType: string
+		lineageTag: 9e26d131-2a87-4a16-a6fc-db7853775a4a
+		sourceLineageTag: b37b4efa-aa5d-4cda-bf97-a177f01e81d8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Line Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Created By'
+		dataType: string
+		lineageTag: eb038c82-f84e-4a17-bcaa-ad17f23dff29
+		sourceLineageTag: 5b29b16c-fb46-461b-811a-4295ab3f6c68
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Created By
+
+		annotation SummarizationSetBy = User
+
+	column 'Created DateTime'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: b0f80089-f5b0-4cb1-a09a-90fbb057aa30
+		sourceLineageTag: 70c00e0f-da98-4daf-a665-6d161a99dc0c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Created DateTime
+
+		annotation SummarizationSetBy = User
+
+	column 'Posting Layer'
+		dataType: double
+		formatString: 0
+		lineageTag: e97b0042-89fb-4e02-b825-d3e94fcb60d1
+		sourceLineageTag: e808b09e-eef5-40d9-ba9a-23ab09424277
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Posting Layer
+
+		annotation SummarizationSetBy = User
+
+	column 'Posting Layer Description'
+		dataType: string
+		lineageTag: c048943c-942a-451a-b4b6-034418b70a2c
+		sourceLineageTag: fb3a190e-c3a7-4e1c-957e-374980963d42
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Posting Layer Description
+
+		annotation SummarizationSetBy = User
+
+	column FirstAmountDigit
+		dataType: string
+		isHidden
+		lineageTag: a0c86b51-e65c-4291-9e6f-724999d8b23f
+		sourceLineageTag: 7d16e7b2-3602-4433-ba1c-155219dd519e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FirstAmountDigit
+
+		annotation SummarizationSetBy = User
+
+	partition 'General Ledger Fact 3' = entity
+		mode: directQuery
+		source
+			entityName: General Ledger Fact
+			expressionSource: 'DirectQuery to AS - DMA GL 3'
+

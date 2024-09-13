@@ -1,0 +1,53 @@
+table 'Sales Packing Slip 3'
+	lineageTag: 3375210f-f106-437d-9107-2595d6ef8e2a
+	sourceLineageTag: e93cf990-2294-4bcd-9b6d-dc5b3cb977d6
+
+	column INVENTTRANSID
+		dataType: string
+		lineageTag: 3597e8f3-a5c5-4af3-ab29-01253affbc65
+		sourceLineageTag: 2ce49d0e-1474-4804-b86b-30307855ff89
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		annotation SummarizationSetBy = User
+
+	column 'Shipped Qty'
+		dataType: int64
+		formatString: " \#\,\#\#\0"
+		lineageTag: 915a9489-a6f8-4499-8e92-7bfcb72d76ee
+		sourceLineageTag: 368dac2a-d8eb-4943-9efc-ca520fe0f6e5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Shipped Qty
+
+		annotation SummarizationSetBy = User
+
+	column INTERCOMPANYINVENTTRANSID
+		dataType: string
+		isHidden
+		lineageTag: 9c40315d-ed1b-45eb-845f-62dc13c70c6e
+		sourceLineageTag: a988938c-da12-409f-831c-0a127860470c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INTERCOMPANYINVENTTRANSID
+
+		annotation SummarizationSetBy = User
+
+	column DATE_KEY
+		dataType: string
+		isHidden
+		lineageTag: f2a22464-b404-4065-bec2-02898c54660d
+		sourceLineageTag: b51d0cf6-2e8b-483d-9853-e25ea574deab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DATE_KEY
+
+		annotation SummarizationSetBy = User
+
+	partition 'Sales Packing Slip 3' = entity
+		mode: directQuery
+		source
+			entityName: Sales Packing Slip
+			expressionSource: 'DirectQuery to AS - DMA B2B 3'
+

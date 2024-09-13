@@ -1,0 +1,42 @@
+table Analysis
+	lineageTag: a137f665-a0e2-494f-9284-3a69d0779240
+	sourceLineageTag: b46d9e77-dd42-4905-9da5-8e82cd33d950
+
+	column Analysis_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 0e9d8216-d32f-4b2d-a55a-2f4cc9d364ec
+		sourceLineageTag: cde9aabb-45ce-4161-b081-2e71b3677bfd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Analysis_Key
+
+		annotation SummarizationSetBy = User
+
+	column Analysis
+		dataType: string
+		lineageTag: bae264a9-33cd-44ae-bb28-7fb6c208d79f
+		sourceLineageTag: be3418de-bc96-43c4-898d-1b9cc89800c3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Analysis
+
+		annotation SummarizationSetBy = User
+
+	column 'Analysis Description'
+		dataType: string
+		lineageTag: 9948e186-cf32-4269-b806-7a2746d42148
+		sourceLineageTag: 16e13490-c165-489d-87d3-f29f1cd1ad02
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Analysis Description
+
+		annotation SummarizationSetBy = User
+
+	partition Analysis = entity
+		mode: directQuery
+		source
+			entityName: Analysis
+			expressionSource: 'DirectQuery to AS - DMA GL'
+

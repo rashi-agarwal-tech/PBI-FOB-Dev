@@ -1,0 +1,60 @@
+table Vendor
+	isHidden
+	lineageTag: db32e1d0-d833-45e0-8e37-4b32995a29e0
+	sourceLineageTag: 6a3b8c95-c94f-4f45-aae2-0b8e4f38e98c
+
+	column VENDORACCOUNTNUMBER
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 6979ebda-5996-478a-83f4-e8efe2e1a8fd
+		sourceLineageTag: 8584c3f2-891d-40e9-b412-ca0819c3ffa2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: VENDORACCOUNTNUMBER
+
+		annotation SummarizationSetBy = User
+
+	column VENDORORGANIZATIONNAME
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 3c4a1d33-9c86-49e5-9321-ad175e36b046
+		sourceLineageTag: 77c76375-d2a5-4316-92fd-991baac19cc7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: VENDORORGANIZATIONNAME
+
+		annotation SummarizationSetBy = User
+
+	column ADDRESSCOUNTRYREGIONISOCODE
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 1ffc8e08-932f-4c3b-b025-7157c79e3768
+		sourceLineageTag: b2ac2191-bc91-4c5f-9617-d36d9e1ce7da
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ADDRESSCOUNTRYREGIONISOCODE
+
+		annotation SummarizationSetBy = User
+
+	column Vendor_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: 55b4124c-ceaf-4759-9614-6ac1dc92a1e1
+		sourceLineageTag: 438ff1bf-2494-4c47-b42d-39c53cd9336c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vendor_Key
+
+		annotation SummarizationSetBy = User
+
+	partition Vendor = entity
+		mode: directQuery
+		source
+			entityName: Vendor
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

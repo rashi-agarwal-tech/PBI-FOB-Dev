@@ -1,0 +1,235 @@
+table 'Google Analytics 3'
+	isHidden
+	lineageTag: 192c6f5b-32a4-42e6-9f7c-0b1370047cfa
+	sourceLineageTag: 481ab5a7-d90c-4694-997f-fdb54102b881
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: f36d9f87-2b85-41f9-aaee-94ee4b4e9978
+		sourceLineageTag: 86a727ec-78c1-4583-a9bf-e0d4de81ef60
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column Hour
+		dataType: string
+		isHidden
+		lineageTag: 55345637-adbf-490e-91e2-d517fd7c28f6
+		sourceLineageTag: 430c1247-96f9-4508-bdf8-f00f80ba56b1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Hour
+
+		annotation SummarizationSetBy = User
+
+	column CurrencyCode
+		dataType: string
+		isHidden
+		lineageTag: 953ad302-a955-47a2-84ec-9da46054b4ec
+		sourceLineageTag: 025a536b-8d8b-48ff-b3d6-9ed41eeb62f7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CurrencyCode
+
+		annotation SummarizationSetBy = User
+
+	column 'Users Col'
+		dataType: int64
+		isHidden
+		lineageTag: b6451274-62a1-45f0-aa4a-b18920c929ab
+		sourceLineageTag: 885bd171-7978-40c5-a7b1-9dc4161be8d3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Users Col
+
+		annotation SummarizationSetBy = User
+
+	column 'NewUsers Col'
+		dataType: int64
+		isHidden
+		lineageTag: eeea6e16-943f-4566-ab9d-916e64145b23
+		sourceLineageTag: aa169717-5ba4-4b83-8142-43bae0d3b237
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NewUsers Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Sessions Col'
+		dataType: int64
+		isHidden
+		lineageTag: 32e1aead-76d2-4f3a-88ef-09df61130934
+		sourceLineageTag: b05b4416-2853-4f03-9077-7ce3e943cb7e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sessions Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Transactions Col'
+		dataType: int64
+		isHidden
+		lineageTag: 36355fc8-cd99-4bb0-9aed-9eb1fbc54661
+		sourceLineageTag: 4b75dbbf-a109-4c73-82f9-443769dce284
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transactions Col
+
+		annotation SummarizationSetBy = User
+
+	column TransactionRevenue
+		dataType: string
+		isHidden
+		lineageTag: 1f2af7e1-61b0-4aab-a3c4-7d6eab0acd7f
+		sourceLineageTag: 4fef1386-6440-43de-ad23-b238d3c968e5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TransactionRevenue
+
+		annotation SummarizationSetBy = User
+
+	column 'PageViews Col'
+		dataType: int64
+		isHidden
+		lineageTag: 40da56d6-ebd3-479a-afa5-a3b25c379a12
+		sourceLineageTag: 94701a15-340f-4e07-b371-f15d869d3da7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PageViews Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Bounces Col'
+		dataType: int64
+		isHidden
+		lineageTag: d805595a-a4ef-4108-8d0a-0d0786083175
+		sourceLineageTag: a95d49a7-a362-4c48-9d9f-b2e86bc9fe45
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Bounces Col
+
+		annotation SummarizationSetBy = User
+
+	column 'ItemQuantity Col'
+		dataType: int64
+		isHidden
+		lineageTag: 9782a0f9-294d-4e38-82af-22f82d9b2fc1
+		sourceLineageTag: 7e6caadf-17ee-4b72-9f48-8af80cbac024
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ItemQuantity Col
+
+		annotation SummarizationSetBy = User
+
+	column 'SessionDuration Col'
+		dataType: decimal
+		isHidden
+		formatString: 0.00
+		lineageTag: 2dea36d4-8804-4248-a2e0-3f7329916880
+		sourceLineageTag: 3b7d7238-9d25-425a-a364-ca24b0c2028e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SessionDuration Col
+
+		annotation SummarizationSetBy = User
+
+	column GAViewID
+		dataType: string
+		isHidden
+		lineageTag: b421c3ff-d300-4fc6-82f2-54467f48930d
+		sourceLineageTag: 1f3dab49-5e8b-425c-91d1-e3c0e5820bfe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: GAViewID
+
+		annotation SummarizationSetBy = User
+
+	column ChannelGrouping_Key
+		dataType: string
+		isHidden
+		lineageTag: 0896422b-21b6-4787-9b5e-15788078dba1
+		sourceLineageTag: 50acb3a0-28e7-452d-a776-6a5f5bfd78cd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ChannelGrouping_Key
+
+		annotation SummarizationSetBy = User
+
+	column DeviceCategory_Key
+		dataType: string
+		isHidden
+		lineageTag: 2acc5429-4bb9-4dc0-83d3-ef7f8c1e74c2
+		sourceLineageTag: f3e7dc6c-7d5a-40fa-83bd-f8288541db85
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DeviceCategory_Key
+
+		annotation SummarizationSetBy = User
+
+	column Country_Key
+		dataType: string
+		isHidden
+		lineageTag: a9066886-df90-4264-ba01-17663ddb68e9
+		sourceLineageTag: b4e06c16-780c-4f98-bc95-94ba9f0366c6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country_Key
+
+		annotation SummarizationSetBy = User
+
+	column Time_Key
+		dataType: int64
+		isHidden
+		lineageTag: 9dad7bf0-a21f-46d6-8773-1620761fce46
+		sourceLineageTag: c74a8dcd-7d75-48cb-90e0-e1a19dfe8b16
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Time_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Company Region'
+		dataType: string
+		isHidden
+		lineageTag: 662ac7be-a8fb-4635-bd44-a131d11cacfa
+		sourceLineageTag: f347bca6-4f13-4060-a926-528d8ee4dd5f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company Region
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Revenue (GBP)'
+		dataType: decimal
+		isHidden
+		formatString: 0.000000
+		lineageTag: e21cc322-2eb4-4b9d-959a-0d14ec0d9832
+		sourceLineageTag: 10016dc5-2f49-43c5-915c-cba694255ffc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Revenue (GBP)
+
+		annotation SummarizationSetBy = User
+
+	column 'XR to GBP'
+		dataType: decimal
+		isHidden
+		formatString: 0.000000
+		lineageTag: 22911f46-5597-4547-b2a2-96f8e53c4656
+		sourceLineageTag: eb7a0e87-d1b4-47d1-b79c-bddbce55605c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: XR to GBP
+
+		annotation SummarizationSetBy = User
+
+	partition 'Google Analytics 3' = entity
+		mode: directQuery
+		source
+			entityName: Google Analytics
+			expressionSource: 'DirectQuery to AS - DMA D2C 3'
+

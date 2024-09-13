@@ -1,0 +1,45 @@
+table 'Retail Payment Details 3'
+	isHidden
+	lineageTag: 4462fc3c-a648-48fb-ac8a-0b6ff61d723c
+	sourceLineageTag: 3dc4aefd-345e-4aad-841d-d88bc6f066aa
+
+	column 'Sales Order ID'
+		dataType: string
+		isHidden
+		lineageTag: a65016f0-e4c2-4ffc-9a56-2c0065759f83
+		sourceLineageTag: ab327040-5d67-4c93-a6e5-4fa5ed5ad0f0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Order ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Payment Method'
+		dataType: string
+		isHidden
+		lineageTag: 75be1f88-e1b5-4b85-b474-b59d5568c7f3
+		sourceLineageTag: fc0782a2-f15f-4f0a-81eb-99d4f822d99f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Payment Method
+
+		annotation SummarizationSetBy = User
+
+	column 'Gross Amount'
+		dataType: double
+		isHidden
+		formatString: #,##0.00
+		lineageTag: da97562c-eef8-44af-835b-988413f943d0
+		sourceLineageTag: bd5f6299-04ad-481d-8f3e-ba50f426bfad
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Gross Amount
+
+		annotation SummarizationSetBy = User
+
+	partition 'Retail Payment Details 3' = entity
+		mode: directQuery
+		source
+			entityName: Retail Payment Details
+			expressionSource: 'DirectQuery to AS - DMA D2C 3'
+

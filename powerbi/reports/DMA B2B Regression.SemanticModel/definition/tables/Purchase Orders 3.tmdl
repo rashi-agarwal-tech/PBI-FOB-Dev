@@ -1,0 +1,164 @@
+table 'Purchase Orders 3'
+	isHidden
+	lineageTag: a96b19af-b809-4d5e-aa76-eb78f2b2fd23
+	sourceLineageTag: 16e7eb85-e423-4ffd-af7f-93870454589e
+
+	column 'PO Number'
+		dataType: string
+		isHidden
+		lineageTag: 360fbb1b-9ffc-47c2-96f7-d6e672d84b34
+		sourceLineageTag: bfe1bf90-4b05-4d1f-b184-800309c942e9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice or Account No'
+		dataType: string
+		isHidden
+		lineageTag: 7a5eff31-4ad2-4809-8f90-b4e5860aebd0
+		sourceLineageTag: 5a37c8be-54cd-4728-84c7-f3ab58195f24
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice or Account No
+
+		annotation SummarizationSetBy = User
+
+	column 'ETD Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: bb7c3cab-42a8-4334-9219-378531726e66
+		sourceLineageTag: 8c34f67e-b85f-48c6-8868-5903acf7f798
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ETD Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Confirmed Delivery Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 095965d2-62e8-4a46-91ba-9d9e103f3236
+		sourceLineageTag: b0041b49-38cc-4065-9d98-c6962db2a629
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Confirmed Delivery Date
+
+		annotation SummarizationSetBy = User
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 926f922c-2b49-4eed-b97e-7ad2083fd15c
+		sourceLineageTag: bcff82dc-a486-4482-be61-c2816343d6b9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Open PO Qty'
+		dataType: int64
+		isHidden
+		formatString: " \#\,\#\#\0"
+		lineageTag: c8109cae-c4cf-4741-92cb-5afb5cb25e1c
+		sourceLineageTag: dd3d3878-c794-4dba-8ff6-08ca03db928e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Open PO Qty
+
+		annotation SummarizationSetBy = User
+
+	column SO_PO_ID
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: 48a85a4b-e38b-44af-98f9-0b8d46187740
+		sourceLineageTag: dd67dac5-0419-48f8-ba10-662760e2dcb8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO_PO_ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Ex-Factory Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 1bf792a5-b81e-40d8-a5d5-04097a29dc78
+		sourceLineageTag: 131e8486-5f25-4de3-8e7a-c9a371e41b26
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column Vendor_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 1a0d062d-aea4-4b17-a331-7276ae5a51b0
+		sourceLineageTag: 5b3e65a7-b3e5-4133-be85-30b53ce2eee1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vendor_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Contractual Ex-Factory Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 9bcc9475-ed98-4d7d-ab96-38f5ec10cfa1
+		sourceLineageTag: 823d806a-7fbf-48da-95cc-4b8339416a1b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Contractual Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column AvailableShipDate
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: d380230f-5f14-43a3-9b65-10220d10b96a
+		sourceLineageTag: 4a0fba60-1a09-43a9-9469-193eead56c9d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AvailableShipDate
+
+		annotation SummarizationSetBy = User
+
+	column FinancialChannel
+		dataType: string
+		displayFolder: zz_Keys
+		lineageTag: 2f0bdfce-35f8-41f4-b410-ecc0b31a6dd7
+		sourceLineageTag: 266f4a97-7637-49ac-83ba-65f4f63c6d36
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FinancialChannel
+
+		annotation SummarizationSetBy = User
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		lineageTag: 6e92e879-97a8-4c0d-8d23-913e842a6ab0
+		sourceLineageTag: a0941296-d2b2-45e0-86d3-6c9acc69b32f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		annotation SummarizationSetBy = User
+
+	partition 'Purchase Orders 3' = entity
+		mode: directQuery
+		source
+			entityName: Purchase Orders
+			expressionSource: 'DirectQuery to AS - DMA B2B 3'
+

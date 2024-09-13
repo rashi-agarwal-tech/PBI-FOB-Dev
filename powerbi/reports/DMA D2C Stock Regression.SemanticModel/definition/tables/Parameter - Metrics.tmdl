@@ -1,0 +1,94 @@
+table 'Parameter - Metrics'
+	lineageTag: 35e77544-2544-4074-a099-8fdaaa1f4f95
+
+	column 'Parameter - Metrics'
+		dataType: string
+		lineageTag: 94113e41-da17-4494-90f2-1d4b2db74b74
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter - Metrics Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter - Metrics Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Metrics Fields'
+		dataType: string
+		isHidden
+		lineageTag: 9265534a-368e-42a7-91b9-314c840b9510
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter - Metrics Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Metrics Order'
+		dataType: double
+		isHidden
+		formatString: 0.000
+		lineageTag: f99c51a5-ec8a-4779-853d-90508c0c00ca
+		summarizeBy: sum
+		isDataTypeInferred
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type =
+			
+			IF
+			(
+			    RIGHT(FORMAT([Parameter - Metrics Order],"@"),1)="1"
+			    ,"Actual"
+			    ,"Abs Diff"
+			)
+		dataType: string
+		lineageTag: ad4b0134-41bf-4be9-84ce-8d3ebab207e4
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter - Metrics' = calculated
+		mode: import
+		source =
+				
+				{
+				    ("1. All On Hand Stock Units Actuals", NAMEOF([stocks 1. All On Hand Stock Units]), 1.071),
+				    ("1. All On Hand Stock Units AbsDiff", NAMEOF([stocks 1. All On Hand Stock Units Diff]), 1.072),
+				    ("2. WH Stock Units Actuals", NAMEOF([stocks 2. WH Stock Units]), 1.091),
+				    ("2. WH Stock Units AbsDiff", NAMEOF([stocks 2. WH Stock Units Diff]), 1.092),
+				    ("4. Store In-Transit Units Actuals", NAMEOF([stocks 4. Store In-Transit Units]), 1.101),
+				    ("4. Store In-Transit Units AbsDiff", NAMEOF([stocks 4. Store In-Transit Units Diff]), 1.102),
+				    ("5. Store Stock Units Actuals", NAMEOF([stocks 5. Store Stock Units]), 1.111),
+				    ("5. Store Stock Units AbsDiff", NAMEOF([stocks 5. Store Stock Units Diff]), 1.112),
+				    ("Item Coverage Actuals", NAMEOF([stocks Item Coverage]), 1.121),
+				    ("Item Coverage AbsDiff", NAMEOF([stocks Item Coverage Diff]), 1.122),
+				    ("On Hand Spot Cover Actuals", NAMEOF([stocks On Hand Spot Cover]), 1.131),
+				    ("On Hand Spot Cover AbsDiff", NAMEOF([stocks On Hand Spot Cover Diff]), 1.132),
+				    ("Stock Outs % Actuals", NAMEOF([stocks Stock Outs %]), 1.141),
+				    ("Stock Outs % AbsDiff", NAMEOF([stocks Stock Outs % Diff]), 1.142),
+				    ("Store Spot Cover Actuals", NAMEOF([stocks Store Spot Cover]), 1.151),
+				    ("Store Spot Cover AbsDiff", NAMEOF([stocks Store Spot Cover Diff]), 1.152),
+				    ("WH Spot Cover Actuals", NAMEOF([stocks WH Spot Cover]), 1.161),
+				    ("WH Spot Cover AbsDiff", NAMEOF([stocks WH Spot Cover Diff]), 1.162),
+				    ("2.2 Available WH Stock Unit Actuals", NAMEOF([stocks 2.2 Available WH Stock Units]), 1.171),
+				    ("2.2 Available WH Stock Unit AbsDiff", NAMEOF([stocks 2.2 Available WH Stock Units Diff]), 1.172),
+				    ("3.1 Allocated Units Arrived Actuals", NAMEOF([stocks 3.1 Allocated Units Arrived]), 1.181),
+				    ("3.1 Allocated Units Arrived AbsDiff", NAMEOF([stocks 3.1 Allocated Units Arrived Diff]), 1.182),
+				    ("4. Reserved Intake Units Actuals", NAMEOF([stocks 4. Reserved Intake Units]), 1.191),
+				    ("4. Reserved Intake Units AbsDiff", NAMEOF([stocks 4. Reserved Intake Units Diff]), 1.192),
+				    ("Ranged Stores Actuals", NAMEOF([stocks Ranged Stores]), 1.201),
+				    ("Ranged Stores AbsDiff", NAMEOF([stocks Ranged Stores Diff]), 1.202)
+				}
+
+	annotation PBI_Id = ca6d7977ee0048349af11303548f9228
+

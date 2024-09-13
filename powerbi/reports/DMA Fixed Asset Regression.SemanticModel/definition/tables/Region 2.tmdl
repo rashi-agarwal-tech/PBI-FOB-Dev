@@ -1,0 +1,63 @@
+table 'Region 2'
+	lineageTag: 77ebf292-8816-43fb-9d6d-1de6f5c1d55a
+	sourceLineageTag: a18d322f-43bd-4295-9368-0f10f01655ea
+
+	column 'Company ShortName'
+		dataType: string
+		lineageTag: 472801dd-e006-4ac5-a6dd-47be30a39ffe
+		sourceLineageTag: 9bd0974f-12b5-4f82-89fd-0f44e2f22014
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company ShortName
+
+		annotation SummarizationSetBy = User
+
+	column 'Company ID'
+		dataType: string
+		lineageTag: 177e59f3-f814-4f2a-bfe5-83b88d17dc7e
+		sourceLineageTag: fc91005f-a963-4cd4-ae04-33e535504ba7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: bbca51b1-58a8-4d4f-aebc-6dfa2c164b39
+		sourceLineageTag: 50d2ab5c-cfc2-4c11-bbed-3331b5ea4497
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column Region
+		dataType: string
+		lineageTag: 6c432fd2-cf36-4b04-8d5a-86be9f230bf3
+		sourceLineageTag: 0d92118b-9da4-4bb9-b265-5fc1362e38c9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = User
+
+	column Sub-Region
+		dataType: string
+		lineageTag: 22745d56-f583-4e32-aa18-27e4f167705c
+		sourceLineageTag: 9f71a482-50dc-4cd7-ba1d-75003136819d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sub-Region
+
+		annotation SummarizationSetBy = User
+
+	partition 'Region 2' = entity
+		mode: directQuery
+		source
+			entityName: Region
+			expressionSource: 'DirectQuery to AS - DMA Fixed Asset 2'
+

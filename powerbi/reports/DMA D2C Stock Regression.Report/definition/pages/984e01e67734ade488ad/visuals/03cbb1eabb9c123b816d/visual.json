@@ -1,0 +1,912 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+  "name": "03cbb1eabb9c123b816d",
+  "position": {
+    "x": 16,
+    "y": 112,
+    "z": 3000,
+    "height": 288,
+    "width": 1248,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "Source"
+                }
+              },
+              "queryRef": "sales.Source",
+              "nativeQueryRef": "Source",
+              "active": true
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "Fiscal Year-Period (544)"
+                }
+              },
+              "queryRef": "stocks.Fiscal Year-Period (544)",
+              "nativeQueryRef": "Fiscal Year-Period (544)1",
+              "active": true,
+              "displayName": "Fiscal Year-Period (544)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "Attribute"
+                }
+              },
+              "queryRef": "sales.Attribute",
+              "nativeQueryRef": "Attribute",
+              "active": true
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Parameter - Date"
+                    }
+                  },
+                  "Property": "Parameter - Date"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "stocks 1. All On Hand Stock Units"
+                }
+              },
+              "queryRef": "sales.sales total units",
+              "nativeQueryRef": "1. All On Hand Stock Units Actuals",
+              "displayName": "1. All On Hand Stock Units Actuals"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "stocks 2. WH Stock Units"
+                }
+              },
+              "queryRef": "sales.sales total units ecom",
+              "nativeQueryRef": "2. WH Stock Units Actuals",
+              "displayName": "2. WH Stock Units Actuals"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "stocks 4. Store In-Transit Units"
+                }
+              },
+              "queryRef": "ga.ga GA Goal 02 Completion",
+              "nativeQueryRef": "4. Store In-Transit Units Actuals",
+              "displayName": "4. Store In-Transit Units Actuals"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "stocks 5. Store Stock Units"
+                }
+              },
+              "queryRef": "ga.ga GA Goal 03 Completion",
+              "nativeQueryRef": "5. Store Stock Units Actuals",
+              "displayName": "5. Store Stock Units Actuals"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "stocks Item Coverage"
+                }
+              },
+              "queryRef": "ga.ga GA Goal 04 Completion",
+              "nativeQueryRef": "Item Coverage Actuals",
+              "displayName": "Item Coverage Actuals"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "stocks On Hand Spot Cover"
+                }
+              },
+              "queryRef": "ga.ga GA Goal 05 Completion",
+              "nativeQueryRef": "On Hand Spot Cover Actuals",
+              "displayName": "On Hand Spot Cover Actuals"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "stocks Stock Outs %"
+                }
+              },
+              "queryRef": "ga.ga GA Goal 06 Completion",
+              "nativeQueryRef": "Stock Outs % Actuals",
+              "displayName": "Stock Outs % Actuals"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "stocks Store Spot Cover"
+                }
+              },
+              "queryRef": "ga.ga GA Goal 07 Completion",
+              "nativeQueryRef": "Store Spot Cover Actuals",
+              "displayName": "Store Spot Cover Actuals"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "stocks WH Spot Cover"
+                }
+              },
+              "queryRef": "ga.ga GA Goal 08 Completion",
+              "nativeQueryRef": "WH Spot Cover Actuals",
+              "displayName": "WH Spot Cover Actuals"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "stocks 2.2 Available WH Stock Units"
+                }
+              },
+              "queryRef": "ga.ga GA Goal 09 Completion",
+              "nativeQueryRef": "2.2 Available WH Stock Unit Actuals",
+              "displayName": "2.2 Available WH Stock Unit Actuals"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "stocks 3.1 Allocated Units Arrived"
+                }
+              },
+              "queryRef": "ga.ga GA Goal 10 Completion",
+              "nativeQueryRef": "3.1 Allocated Units Arrived Actuals",
+              "displayName": "3.1 Allocated Units Arrived Actuals"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "stocks 4. Reserved Intake Units"
+                }
+              },
+              "queryRef": "ga.ga GA Goal 11 Completion",
+              "nativeQueryRef": "4. Reserved Intake Units Actuals",
+              "displayName": "4. Reserved Intake Units Actuals"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "stocks Ranged Stores"
+                }
+              },
+              "queryRef": "ga.ga GA Goal 12 Completion",
+              "nativeQueryRef": "Ranged Stores Actuals",
+              "displayName": "Ranged Stores Actuals"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Parameter - Metrics"
+                    }
+                  },
+                  "Property": "Parameter - Metrics"
+                }
+              },
+              "index": 0,
+              "length": 13
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "stocks.Fiscal Year-Period (544)"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "stocks"
+                    }
+                  },
+                  "Property": "Fiscal Year-Period (544)"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "sales.Attribute"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
+    "objects": {
+      "subTotals": [
+        {
+          "properties": {
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "perRowLevel": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "levelSubtotalEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "sales.Fiscal Year (544)"
+          }
+        },
+        {
+          "properties": {
+            "levelSubtotalEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "sales.Attribute"
+          }
+        },
+        {
+          "properties": {
+            "levelSubtotalEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "stocks. Date"
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "valuesOnRow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "bandedRowHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "blankRows": [
+        {
+          "properties": {
+            "showBlankRows": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Tabular'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "repeatRowHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showExpandCollapseButtons": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowTotal": [
+        {
+          "properties": {
+            "applyToHeaders": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "showVisualInformationButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showVisualWarningButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showVisualErrorButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showDrillRoleSelector": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showDrillUpButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showDrillToggleButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showDrillDownLevelButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showDrillDownExpandButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showPinButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showSeeDataLayoutToggleButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showFilterRestatementButton": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Actuals by Source and Selected Dimension'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "Filter6cfe7a6aa66a067b6953",
+        "ordinal": 0,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Parameter - Metrics"
+              }
+            },
+            "Property": "Type"
+          }
+        },
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "p",
+              "Entity": "Parameter - Metrics",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "p"
+                          }
+                        },
+                        "Property": "Type"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Actual'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter5e7a991561eead19053b",
+        "ordinal": 1,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "Source"
+          }
+        }
+      },
+      {
+        "name": "Filtercb6386a0ea4b2b149834",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "Attribute"
+          }
+        }
+      },
+      {
+        "name": "Filter8c602b44a006c11774c7",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "Fiscal Year (544)"
+          }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filterda2446c62517dc30a356",
+        "ordinal": 4,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks 1. All On Hand Stock Units"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter66721d55a9d08d108e7c",
+        "ordinal": 5,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks 2. WH Stock Units"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter7613ccaa9166b1a1044c",
+        "ordinal": 6,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks 4. Store In-Transit Units"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter5fbe4aca3b5b84acee6d",
+        "ordinal": 7,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks 5. Store Stock Units"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter2e281c71d421c37145aa",
+        "ordinal": 8,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks Item Coverage"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter5765e2031bd8dcd55796",
+        "ordinal": 9,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks On Hand Spot Cover"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter1d93d53000cbb4015224",
+        "ordinal": 10,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks Stock Outs %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter14c1ee890d8c7510770d",
+        "ordinal": 11,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks Store Spot Cover"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter6fb72fea6a06d6e985ce",
+        "ordinal": 12,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks WH Spot Cover"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter77e218c0eab651d70c24",
+        "ordinal": 13,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks 2.2 Available WH Stock Units"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter4559c7c95ce19cb587a7",
+        "ordinal": 14,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks 3.1 Allocated Units Arrived"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter37e28f6dcc90138ceb8a",
+        "ordinal": 15,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks 4. Reserved Intake Units"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "Filter9e661fc6ba0b400bcce0",
+        "ordinal": 16,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks Ranged Stores"
+          }
+        },
+        "type": "Advanced"
+      }
+    ],
+    "filterSortOrder": "Custom"
+  }
+}

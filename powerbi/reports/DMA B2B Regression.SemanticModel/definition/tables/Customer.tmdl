@@ -1,0 +1,684 @@
+table Customer
+	lineageTag: cddc2321-4fef-4044-9dbd-3dfe70289e98
+	sourceLineageTag: 4420175f-4faa-42ec-8040-8069dd739deb
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: 664e85ba-3945-4522-8515-73fc33f9d07f
+		sourceLineageTag: 8ac86adc-29da-417b-a591-ef9006aa4b39
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column DELIVERYADDRESSCOUNTRYREGIONISOCODE
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: c5a8460e-54cc-40cd-8b5c-ca7891afab03
+		sourceLineageTag: 0647684e-94b8-4cce-852b-90beabc48a8d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DELIVERYADDRESSCOUNTRYREGIONISOCODE
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Acct No'
+		dataType: string
+		lineageTag: b3c3153e-0715-4060-b915-6185f21ae7e5
+		sourceLineageTag: 6ad18ca7-3704-4aa5-842d-7e0d54d19fa9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Acct No
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales District'
+		dataType: string
+		lineageTag: d03afbdd-8704-48b6-a1f9-379c28e40d3d
+		sourceLineageTag: 9a8f7b7e-006c-493b-a0bf-d81cdb029447
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales District
+
+		annotation SummarizationSetBy = User
+
+	column 'Credit Rating'
+		dataType: string
+		lineageTag: d1956884-bcee-46ab-8a06-35d1eb246dc7
+		sourceLineageTag: 0d757bdc-99e0-44f0-b925-75e9f1595256
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Credit Rating
+
+		annotation SummarizationSetBy = User
+
+	column 'Credit Limit'
+		dataType: double
+		formatString: " \#\,\#\#\0.\0\0"
+		lineageTag: 00ec09e5-c09f-427d-a98d-a755c8629533
+		sourceLineageTag: a17e0a6b-6f1f-4746-873d-17690f84dd9a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Credit Limit
+
+		annotation SummarizationSetBy = User
+
+	column SALESORDERPOOLID
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 6f65f6ea-beb1-4a24-90f4-0be62a2f0904
+		sourceLineageTag: f32b9370-72f8-4d1d-8b28-ee114c728d23
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SALESORDERPOOLID
+
+		annotation SummarizationSetBy = User
+
+	column 'Payment Terms'
+		dataType: string
+		lineageTag: a8cbeec8-78e3-481f-a2c0-59d1373cc983
+		sourceLineageTag: f676103c-8974-4702-8245-70b682271fe5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Payment Terms
+
+		annotation SummarizationSetBy = User
+
+	column 'Payment Method'
+		dataType: string
+		lineageTag: 0ceea9de-6c49-4745-8377-d72020dd04ad
+		sourceLineageTag: 20936efc-97b6-4c83-ae9f-610387e32af7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Payment Method
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: 2a5f595e-63bd-45ab-b29a-c3ba39ea5956
+		sourceLineageTag: 29468f30-e905-4549-8f0c-a397423fc26a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Name
+
+		annotation SummarizationSetBy = User
+
+	column NAMEALIAS
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: c7d9e8f8-b285-4484-ac9a-bd98a09cbf09
+		sourceLineageTag: c28920a4-da56-4517-800d-36b576af2fdc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NAMEALIAS
+
+		annotation SummarizationSetBy = User
+
+	column 'Line Of Business'
+		dataType: string
+		lineageTag: a5bbabd9-492d-484f-a61c-bf8c9655073e
+		sourceLineageTag: f747c519-527d-4163-8e0c-15e7ccb8e3c1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Line Of Business
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Segment'
+		dataType: string
+		lineageTag: 65898582-09ec-44f3-9a86-17583c70e4b8
+		sourceLineageTag: 2089dbe5-4c08-47be-a5cd-796f81c9a530
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Sub Segment'
+		dataType: string
+		lineageTag: 976ff51f-96f8-4773-b995-eaa9efe36123
+		sourceLineageTag: 78910e70-7dc5-42b6-bbc7-da03194d6b5b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Sub Segment
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Classification'
+		dataType: string
+		lineageTag: 5eab6c12-c2e4-43d2-a379-c2f1ea8338f3
+		sourceLineageTag: 577b8a62-0d08-42d0-b547-acb4c523109a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Classification
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fullfillment %'
+		dataType: double
+		formatString: 0
+		lineageTag: 1f63094e-0052-49e4-ac2b-8a55b2c8ee94
+		sourceLineageTag: d536784b-50fa-4e36-8c5e-a4892a845aed
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fullfillment %
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Group'
+		dataType: string
+		lineageTag: 08c13216-5a32-40ff-8fd8-935419c74c92
+		sourceLineageTag: a2312713-0a35-424a-8dc2-3a40a75b9176
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Account Manager'
+		dataType: string
+		lineageTag: 5bd8b885-05e7-4057-a05d-d97f989a03d4
+		sourceLineageTag: 2a262f73-58d3-4b65-951e-75f41071ce34
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Manager
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer On Hold Status'
+		dataType: string
+		lineageTag: 2310bb7f-304d-422c-b1a9-614b96c2bce6
+		sourceLineageTag: 59ab8c3c-3836-4dce-8d30-3a71b0d31696
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer On Hold Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Invoice Address Street'
+		dataType: string
+		lineageTag: 2e774910-eb5d-4be8-8434-78734ccb0481
+		sourceLineageTag: bbc93d2b-1c9f-4868-9926-393f89dc0902
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Invoice Address Street
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Invoice Address City'
+		dataType: string
+		lineageTag: c72ba724-74ef-4622-844e-daf13cbcac0f
+		sourceLineageTag: b7c13536-8c30-436c-8b88-8e6aae7c6cd6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Invoice Address City
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Channel'
+		dataType: string
+		lineageTag: 66d2f7ae-8866-4a49-adf8-9b7ed1213d64
+		sourceLineageTag: ccffc176-af8e-4b14-b6c1-9c3dba85e877
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Region Channel'
+		dataType: string
+		lineageTag: 63380a6d-1680-4494-9497-a438117f94a8
+		sourceLineageTag: ed9fbde8-8f51-485d-8552-1cd808b65f22
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Region Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'VAS Number'
+		dataType: string
+		lineageTag: 37857794-e4b0-4678-b09e-a3dc131f2ec5
+		sourceLineageTag: 578b9b92-3073-4a4a-beae-ddd7aad2791f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: VAS Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Acct No'
+		dataType: string
+		lineageTag: d9c6a263-bc6f-4c0f-9085-5fa96f2d9b69
+		sourceLineageTag: a2a64ce2-9339-4a0d-961b-d39d9cd7041d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Acct No
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Acct No (Original)'
+		dataType: string
+		lineageTag: 0512d2c0-7e53-4d71-b282-45d2c32ec180
+		sourceLineageTag: 0a2f5bb0-e1e7-4b11-9f5d-ae4b802f87fc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Acct No (Original)
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Invoice Address Zip Code'
+		dataType: string
+		lineageTag: e25047d7-b8f1-409b-999e-93abec679260
+		sourceLineageTag: 189e70f3-b4a8-414e-b981-feb6d242c592
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Invoice Address Zip Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Dimension - Channel'
+		dataType: string
+		displayFolder: 1. Finance Dimensions
+		lineageTag: bc11c030-7bb6-4de3-bece-10ce66a8fd21
+		sourceLineageTag: 49de81df-9266-4e32-ab61-ed0ef7d2d2fd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Dimension - Cost Centre'
+		dataType: string
+		displayFolder: 1. Finance Dimensions
+		lineageTag: d32729c9-c849-4153-9a9e-0e5d60f82520
+		sourceLineageTag: 2abb454b-1846-44f6-9f84-eb40f7001ebf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Cost Centre
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Dimension - Country'
+		dataType: string
+		displayFolder: 1. Finance Dimensions
+		lineageTag: e5db4ed8-a9a5-47d1-92aa-5b5e9d49dad0
+		sourceLineageTag: 570f107c-1f55-4f4e-a29d-6d974579af8f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Known-As'
+		dataType: string
+		lineageTag: 54f59dcc-3dd6-4a49-a60f-f04d75abc4ce
+		sourceLineageTag: 99158d49-3fab-4e0c-84dd-9a52250f950d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Known-As
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Delivery Sequence'
+		dataType: string
+		lineageTag: d93cf688-d09f-4b61-88ce-8c386c665a46
+		sourceLineageTag: afdcf8c7-ff6c-4c82-9e98-1e22830440a4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Delivery Sequence
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Delivery Ship To Location ID'
+		dataType: string
+		lineageTag: 08d6e0b2-3b92-4cf0-9b37-9659065c52eb
+		sourceLineageTag: b2127cd4-c5eb-40b6-a247-b3933abc8517
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Delivery Ship To Location ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Delivery Mode'
+		dataType: string
+		lineageTag: 75b53d0a-8800-424c-b82b-9c18d4039f92
+		sourceLineageTag: 3b182c3a-7412-45d1-9504-31128b16aea8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Delivery Mode
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Address Region Code'
+		dataType: string
+		lineageTag: 5902c09f-3bf5-4f79-8565-9250d4108add
+		sourceLineageTag: 47992ee3-1e40-4ee0-a570-399d5ece4660
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Address Region Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Primary Email'
+		dataType: string
+		lineageTag: e0e4787a-2296-4010-afbd-cf23742cb83b
+		sourceLineageTag: a0805702-e13d-4f14-8518-394645091a03
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Primary Email
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Primary Phone'
+		dataType: string
+		lineageTag: 792cd020-907c-4cae-9393-049f91132d47
+		sourceLineageTag: 9861212f-1686-43ad-aea1-631092485c5e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Primary Phone
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Sales Currency Code'
+		dataType: string
+		lineageTag: e26c64ae-30ad-4bb9-a012-09102fe060f9
+		sourceLineageTag: e3e5abda-f1ab-4994-9bda-6dd8f087ff0e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Sales Currency Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Total Discount Code'
+		dataType: string
+		lineageTag: 2ee1452c-f357-45c1-9000-0d25eaf543e9
+		sourceLineageTag: fc6fa757-74a8-4891-87d1-1282e583a633
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Total Discount Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Cash Discount'
+		dataType: string
+		lineageTag: b722644b-1d14-4fd8-a330-be67b79bf888
+		sourceLineageTag: 6012cc4d-bb4d-4c08-849c-f792d277fa6f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Cash Discount
+
+		annotation SummarizationSetBy = User
+
+	column DELIVERYADDRESSSTREET
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 1d8f65f6-db2d-484d-b38f-e9d2d8ac949f
+		sourceLineageTag: efe4a819-6ce4-43ce-8066-fa9f76f46612
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DELIVERYADDRESSSTREET
+
+		annotation SummarizationSetBy = User
+
+	column DELIVERYADDRESSCITY
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 5a0ddc30-66ad-4deb-9819-cd3640de7081
+		sourceLineageTag: 56df2fcb-5b05-4d59-851e-738ecc06c0e1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DELIVERYADDRESSCITY
+
+		annotation SummarizationSetBy = User
+
+	column 'Mandatory MDA Reference'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 8cbb4764-e92f-40ef-b1ea-5b3a0ac8f50a
+		sourceLineageTag: 5bd280da-bc45-44ab-a787-8628da7c358b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Mandatory MDA Reference
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Address'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 793e45b0-2d59-4498-93dd-2b9411a447ea
+		sourceLineageTag: a78fbb91-e704-49c9-987c-8720cd36b93e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Address
+
+		annotation SummarizationSetBy = User
+
+	column DELIVERYADDRESSZIPCODE
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 6d6ca7fe-9c30-4acb-9e7e-2d7cfcb03ccf
+		sourceLineageTag: 0e660fdf-e590-4b00-a2cf-3f9b76269c93
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DELIVERYADDRESSZIPCODE
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Discount Group'
+		dataType: string
+		lineageTag: 4254a338-7f23-4c9a-ab61-2d5030432565
+		sourceLineageTag: 0c399825-a556-4ace-9c22-184403efc070
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Discount Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Company Chain'
+		dataType: string
+		lineageTag: ccdb5b0e-8c2d-496c-9902-46bf7a8aaf4a
+		sourceLineageTag: a3f8c347-ce29-4d3f-9089-6f94ba9459df
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company Chain
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Price Group'
+		dataType: string
+		lineageTag: e3ad1d74-ba4c-443c-9c7a-439c358b591b
+		sourceLineageTag: 157a931f-134a-42ea-a7de-55bf958bc1e1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Price Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Invoice State'
+		dataType: string
+		lineageTag: e61610c3-62ea-4fb6-a0b6-86b32176de42
+		sourceLineageTag: 27b6a718-1132-4c4d-87ed-350996675bbd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Invoice State
+
+		annotation SummarizationSetBy = User
+
+	column Warehouse
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 2485683c-6a5d-479d-a4ec-d924c0328363
+		sourceLineageTag: bcacca3e-1dcf-414a-964f-83c281e1ea77
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse
+
+		annotation SummarizationSetBy = User
+
+	column Country
+		dataType: string
+		lineageTag: 666bbfc8-ead3-4228-b003-cc755d8bc2dc
+		sourceLineageTag: 9ee29a21-daac-4d68-b9a1-fcf9dd2f114f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Company ID'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: b8c40bdf-18d5-4841-ad75-b9c1880250d8
+		sourceLineageTag: 53b56939-f2be-48d4-aa63-c6fabae0bda7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Linked Customer Account'
+		dataType: string
+		lineageTag: c10a2415-95d6-4653-a6ec-46d7d3ce9d03
+		sourceLineageTag: e2a0d4bc-a43e-48e2-8960-b073d7ad0642
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Linked Customer Account
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Acct Name'
+		dataType: string
+		lineageTag: a39f8008-828d-4316-be00-54618acb5c71
+		sourceLineageTag: 2b7c0901-623f-4df9-a0ad-b01de6d96b69
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Acct Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Acct Hold Status'
+		dataType: string
+		lineageTag: 45e14fb8-e498-4e0e-b5a5-0a43a0c93fe5
+		sourceLineageTag: 14ac0859-a374-440e-bfa8-3b2c6243c984
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Acct Hold Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Acct Payment Terms'
+		dataType: string
+		lineageTag: 63ea794b-9fd1-421f-8a3c-eb0e044672ec
+		sourceLineageTag: 6b329b4b-38fd-4491-9a21-abe579b74f2c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Acct Payment Terms
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Acct Credit Limit'
+		dataType: string
+		lineageTag: 3a24ed50-2fd0-4b75-82c6-3bb8efe022a7
+		sourceLineageTag: e565d060-ffd4-4992-ad37-173d18d485ff
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Acct Credit Limit
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Acct Name (Local Language)'
+		dataType: string
+		lineageTag: 0a6a8c8b-aecd-4f6d-9f6f-6fa38fe77188
+		sourceLineageTag: d5489d33-7a4b-4d47-a976-40af30737d67
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Acct Name (Local Language)
+
+		annotation SummarizationSetBy = User
+
+	column 'VAS Required?'
+		dataType: string
+		lineageTag: 553daefa-e4ad-4fc8-9d69-44b82e4f4ff2
+		sourceLineageTag: 3a1cb42d-922f-455e-af2b-e4a3ee0da6e9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: VAS Required?
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Acct (Grouped)'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: a53ddabc-1480-473c-b71f-09bfbd1be707
+		sourceLineageTag: fa717887-3945-4948-821f-934bae2fd28b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Acct (Grouped)
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Name (Grouped)'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 9d825344-675f-47c0-a944-154fe901e4c8
+		sourceLineageTag: 92550331-9bb3-4661-8752-2f815f2d3a63
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Name (Grouped)
+
+		annotation SummarizationSetBy = User
+
+	column 'Current Customer ADP'
+		dataType: int64
+		formatString: " \#\,\#\#\0"
+		lineageTag: 9b08a3f8-7549-4858-9adb-2ecdf9a6e585
+		sourceLineageTag: d459b627-58e5-4d7a-89a1-e4caf9c21ecf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Current Customer ADP
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Acct Current ADP'
+		dataType: int64
+		formatString: " \0"
+		lineageTag: ad74c6f1-12cd-4a81-9195-7d33cd3681e0
+		sourceLineageTag: b599e074-0330-4798-b116-e94807d83a98
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Acct Current ADP
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Management Rep'
+		dataType: string
+		lineageTag: d02f02f7-d770-4225-a302-75cc4b7eee1a
+		sourceLineageTag: 63fb37d5-ee0e-4fce-a022-db1019ebf018
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Management Rep
+
+		annotation SummarizationSetBy = User
+
+	partition Customer = entity
+		mode: directQuery
+		source
+			entityName: Customer
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

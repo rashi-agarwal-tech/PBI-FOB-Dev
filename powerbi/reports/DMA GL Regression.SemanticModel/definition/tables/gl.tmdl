@@ -1,0 +1,1050 @@
+table gl
+	lineageTag: 10d9ef44-79f6-4df3-af4c-4cebe0c55b56
+
+	measure 'gl Amount (GBC Constant)' =
+			
+			SUMX(gl,IF(gl[Amount (GBC Constant)]=0,BLANK(),gl[Amount (GBC Constant)]))
+		formatString: #,0.00
+		lineageTag: 4002f497-0ea1-4903-a0ea-0b6adf674f53
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'gl Amount (Transaction)' =
+			
+			SUMX(gl,IF(gl[Amount (Transaction)]=0,BLANK(),gl[Amount (Transaction)]))
+		formatString: #,0.00
+		lineageTag: b76792cf-2430-4484-bf72-1d296120bf50
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'gl Amount (Local)' =
+			
+			SUMX(gl,IF(gl[Amount (Local)]=0,BLANK(),gl[Amount (Local)]))
+		formatString: #,0.00
+		lineageTag: 380a0a22-95b5-415a-a222-ab8eb306f490
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'gl Amount (GBC Constant) Diff' =
+			
+			SUM(gl[Amount (GBC Constant) Diff])
+		formatString: #,0.00
+		lineageTag: a2992f2d-a95e-4818-a302-8696ce9275ff
+
+	measure 'gl Amount (Transaction) Diff' =
+			
+			SUM(gl[Amount (Transaction) Diff])
+		formatString: #,0.00
+		lineageTag: 0601968b-9000-4822-95ef-bfdccd828869
+
+	measure 'gl Amount (Local) Diff' =
+			
+			SUM(gl[Amount (Local) Diff])
+		formatString: #,0.00
+		lineageTag: 2e46d351-35cc-44ef-a2b6-0a8f45ec3436
+
+	measure 'sales Sum of AbsDiff' =
+			
+			[gl Amount (Actual) Diff]
+			+[gl Amount (GBC Constant) Diff]
+			+[gl Amount (Local) Diff]
+			+[gl Amount (Transaction) Diff]
+			+[gl Budget (GBC Constant) Diff]
+			+[gl Budget (Local) Diff]
+		formatString: #,0.00
+		lineageTag: 8b855803-9206-471f-96c9-2f3272fc252e
+
+	measure 'gl Amount (Actual)' =
+			
+			SUMX(gl,IF(gl[Amount (Actual)]=0,BLANK(),gl[Amount (Actual)]))
+		formatString: #,0.00
+		lineageTag: 240b6c8d-0b30-4054-b8df-b1aa9c615bb4
+
+	measure 'gl Amount (Actual) Diff' =
+			
+			SUM(gl[Amount (Actual) Diff])
+		formatString: #,0.00
+		lineageTag: 4d8b54c6-6b83-484b-858a-1e00ee096348
+
+	measure 'source parameter' =
+			
+			"1 Footprint PROD"
+		lineageTag: 49ca125c-7480-4aa9-a0a4-0f13f7ede092
+
+	measure 'gl Budget (Local) Diff' =
+			
+			SUM(gl[Budget (Local) Diff])
+		formatString: #,0.00
+		lineageTag: 933d7ea3-a927-4d46-8160-6c72cf16c746
+
+	measure 'gl Budget (GBC Constant) Diff' =
+			
+			SUM(gl[Budget (GBC Constant) Diff])
+		formatString: #,0.00
+		lineageTag: b30348bd-3abb-46ec-8ac5-c00262e6998f
+
+	measure 'gl Budget (GBC Constant)' =
+			
+			SUMX(gl,IF(gl[Budget (GBC Constant)]=0,BLANK(),gl[Budget (GBC Constant)]))
+		formatString: #,0.00
+		lineageTag: cb86f700-4a20-4854-a7c1-3005f15cfc4f
+
+	measure 'gl Budget (Local)' =
+			
+			SUMX(gl,IF(gl[Budget (Local)]=0,BLANK(),gl[Budget (Local)]))
+		formatString: #,0.00
+		lineageTag: 759b993a-d05b-4bf2-a134-abee81cff217
+
+	column Source
+		dataType: string
+		lineageTag: 9120e77a-9f5b-440a-9c65-73dd621799d9
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Source]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dimension
+		dataType: string
+		lineageTag: 58e2b3b4-580e-4a0d-aeec-92bc13efc8c4
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Dimension]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year (544)'
+		dataType: string
+		lineageTag: b7302122-d612-48c7-ade1-95c0e00f1a9c
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Date[Fiscal Year (544)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year-Period (544)'
+		dataType: string
+		lineageTag: 00a1d43d-3fcc-4ff3-a2dd-9c8814b206a6
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Date[Fiscal Year-Period (544)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attribute
+		dataType: string
+		lineageTag: 66b9538b-2307-4087-8c2a-6211fc90c4fd
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Attribute]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: dd-mmm-yyyy
+		lineageTag: 87f55354-fcb3-4db0-85ab-1fd982d97b18
+		summarizeBy: none
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: Date[Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Amount (Actual)'
+		dataType: double
+		lineageTag: adf94254-45da-4bb5-b7db-5a61239c9490
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Amount (Actual)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Amount (GBC Constant)'
+		dataType: double
+		lineageTag: c47f62c4-2269-42f8-969b-783e35c7f500
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Amount (GBC Constant)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Amount (Local)'
+		dataType: double
+		lineageTag: 48ef210c-fa77-4a37-81dc-512551485c3f
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Amount (Local)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Amount (Transaction)'
+		dataType: double
+		lineageTag: 52d0d164-7355-45d8-99d8-d1d3675df816
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Amount (Transaction)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget (GBC Constant)'
+		dataType: double
+		lineageTag: 9f6a6a23-25a7-4045-a445-d10645edccb7
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Budget (GBC Constant)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget (Local)'
+		dataType: double
+		lineageTag: da0d7324-a15b-4157-91b6-c52d03d0bcac
+		summarizeBy: sum
+		isNameInferred
+		isDataTypeInferred
+		sourceColumn: [Budget (Local)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Amount (Actual) Diff' =
+			
+			ABS
+			(
+			    gl[Amount (Actual)]
+			    -LOOKUPVALUE(gl[Amount (Actual)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter])
+			)
+		dataType: double
+		lineageTag: 084ba3f1-ceb7-4db7-a0d7-07d75284ea48
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Amount (GBC Constant) Diff' =
+			
+			ABS
+			(
+			    gl[Amount (GBC Constant)]
+			    -LOOKUPVALUE(gl[Amount (GBC Constant)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter])
+			)
+		dataType: double
+		lineageTag: 1d1fd42a-ea8d-415f-bc27-e3277baeac30
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Amount (Local) Diff' =
+			
+			ABS
+			(
+			    gl[Amount (Local)]
+			    -LOOKUPVALUE(gl[Amount (Local)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter])
+			)
+		dataType: double
+		lineageTag: 1e5ccf2a-6cb6-46cc-9616-ac2b7afadad0
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Amount (Transaction) Diff' =
+			
+			ABS
+			(
+			    gl[Amount (Transaction)]
+			    -LOOKUPVALUE(gl[Amount (Transaction)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter])
+			)
+		dataType: double
+		lineageTag: e67c5f0b-0626-405a-ab41-e58acca9a741
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget (GBC Constant) Diff' =
+			
+			ABS
+			(
+			    gl[Budget (GBC Constant)]
+			    -LOOKUPVALUE(gl[Budget (GBC Constant)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter])
+			)
+		dataType: double
+		lineageTag: ce115c15-6f0a-4e45-ab9c-7f6b18045b4b
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Budget (Local) Diff' =
+			
+			ABS
+			(
+			    gl[Budget (Local)]
+			    -LOOKUPVALUE(gl[Budget (Local)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter])
+			)
+		dataType: double
+		lineageTag: 995e6149-7da5-4055-9fef-06e21b5db33c
+		summarizeBy: sum
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition gl = calculated
+		mode: import
+		source =
+				
+				UNION
+				(
+				    //date
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[Date]
+				        ,"Attribute",""
+				        ,"Dimension","Date"
+				        ,"Source","1 Footprint PROD"
+				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
+				        ,"Amount (Local)",ROUND([Amount (Local)],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
+				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[Date]
+				        ,"Attribute",""
+				        ,"Dimension","Date"
+				        ,"Source","2 Footprint UAT"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[Date]
+				        ,"Attribute",""
+				        ,"Dimension","Date"
+				        ,"Source","3 Footprint DEV"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				    )
+				
+				    //company id
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[Date]
+				        ,'Region'[Company ID]
+				        ,"Dimension","Company ID"
+				        ,"Source","1 Footprint PROD"
+				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
+				        ,"Amount (Local)",ROUND([Amount (Local)],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
+				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[Date]
+				        ,'Region 2'[Company ID]
+				        ,"Dimension","Company ID"
+				        ,"Source","2 Footprint UAT"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[Date]
+				        ,'Region 3'[Company ID]
+				        ,"Dimension","Company ID"
+				        ,"Source","3 Footprint DEV"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				    )
+				
+				    //region
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[Date]
+				        ,'Region'[Region]
+				        ,"Dimension","Region"
+				        ,"Source","1 Footprint PROD"
+				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
+				        ,"Amount (Local)",ROUND([Amount (Local)],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
+				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[Date]
+				        ,'Region 2'[Region]
+				        ,"Dimension","Region"
+				        ,"Source","2 Footprint UAT"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[Date]
+				        ,'Region 3'[Region]
+				        ,"Dimension","Region"
+				        ,"Source","3 Footprint DEV"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				    )
+				
+				    //Channel ID
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[Date]
+				        ,'Channel'[Channel ID]
+				        ,"Dimension","Channel ID"
+				        ,"Source","1 Footprint PROD"
+				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
+				        ,"Amount (Local)",ROUND([Amount (Local)],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
+				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[Date]
+				        ,'Channel 2'[Channel ID]
+				        ,"Dimension","Channel ID"
+				        ,"Source","2 Footprint UAT"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[Date]
+				        ,'Channel 3'[Channel ID]
+				        ,"Dimension","Channel ID"
+				        ,"Source","3 Footprint DEV"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				    )
+				
+				    //Analysis
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[Date]
+				        ,'Analysis'[Analysis]
+				        ,"Dimension","Analysis"
+				        ,"Source","1 Footprint PROD"
+				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
+				        ,"Amount (Local)",ROUND([Amount (Local)],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
+				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[Date]
+				        ,'Analysis 2'[Analysis]
+				        ,"Dimension","Analysis"
+				        ,"Source","2 Footprint UAT"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[Date]
+				        ,'Analysis 3'[Analysis]
+				        ,"Dimension","Analysis"
+				        ,"Source","3 Footprint DEV"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				    )
+				
+				    //Cost Centre
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[Date]
+				        ,'Cost Centre'[Cost Centre]
+				        ,"Dimension","Cost Centre"
+				        ,"Source","1 Footprint PROD"
+				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
+				        ,"Amount (Local)",ROUND([Amount (Local)],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
+				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[Date]
+				        ,'Cost Centre 2'[Cost Centre]
+				        ,"Dimension","Cost Centre"
+				        ,"Source","2 Footprint UAT"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[Date]
+				        ,'Cost Centre 3'[Cost Centre]
+				        ,"Dimension","Cost Centre"
+				        ,"Source","3 Footprint DEV"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				    )
+				
+				    //Main Account
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[Date]
+				        ,'Main Account'[Main Account]
+				        ,"Dimension","Main Account"
+				        ,"Source","1 Footprint PROD"
+				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
+				        ,"Amount (Local)",ROUND([Amount (Local)],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
+				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[Date]
+				        ,'Main Account 2'[Main Account]
+				        ,"Dimension","Main Account"
+				        ,"Source","2 Footprint UAT"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[Date]
+				        ,'Main Account 3'[Main Account]
+				        ,"Dimension","Main Account"
+				        ,"Source","3 Footprint DEV"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				    )
+				
+				    //Country
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[Date]
+				        ,'Country'[Country]
+				        ,"Dimension","Country"
+				        ,"Source","1 Footprint PROD"
+				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
+				        ,"Amount (Local)",ROUND([Amount (Local)],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
+				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[Date]
+				        ,'Country 2'[Country]
+				        ,"Dimension","Country"
+				        ,"Source","2 Footprint UAT"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[Date]
+				        ,'Country 3'[Country]
+				        ,"Dimension","Country"
+				        ,"Source","3 Footprint DEV"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				    )
+				
+				    //Financial Reporting Exchange Rate Type
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[Date]
+				        ,'Main Account'[Financial Reporting Exchange Rate Type ]
+				        ,"Dimension","Financial Reporting Exchange Rate Type"
+				        ,"Source","1 Footprint PROD"
+				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
+				        ,"Amount (Local)",ROUND([Amount (Local)],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
+				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[Date]
+				        ,'Main Account 2'[Financial Reporting Exchange Rate Type ]
+				        ,"Dimension","Financial Reporting Exchange Rate Type"
+				        ,"Source","2 Footprint UAT"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[Date]
+				        ,'Main Account 3'[Financial Reporting Exchange Rate Type ]
+				        ,"Dimension","Financial Reporting Exchange Rate Type"
+				        ,"Source","3 Footprint DEV"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				    )
+				
+				    //Balance Sheet / P&L
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[Date]
+				        ,'Main Account'[Balance Sheet / P&L]
+				        ,"Dimension","Balance Sheet / P&L"
+				        ,"Source","1 Footprint PROD"
+				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
+				        ,"Amount (Local)",ROUND([Amount (Local)],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
+				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[Date]
+				        ,'Main Account 2'[Balance Sheet / P&L]
+				        ,"Dimension","Balance Sheet / P&L"
+				        ,"Source","2 Footprint UAT"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[Date]
+				        ,'Main Account 3'[Balance Sheet / P&L]
+				        ,"Dimension","Balance Sheet / P&L"
+				        ,"Source","3 Footprint DEV"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				    )
+				
+				    //Main Account Category
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[Date]
+				        ,'Main Account'[Main Account Category]
+				        ,"Dimension","Main Account Category"
+				        ,"Source","1 Footprint PROD"
+				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
+				        ,"Amount (Local)",ROUND([Amount (Local)],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
+				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[Date]
+				        ,'Main Account 2'[Main Account Category]
+				        ,"Dimension","Main Account Category"
+				        ,"Source","2 Footprint UAT"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[Date]
+				        ,'Main Account 3'[Main Account Category]
+				        ,"Dimension","Main Account Category"
+				        ,"Source","3 Footprint DEV"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				    )
+				
+				    //Cost Type 1
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[Date]
+				        ,'Main Account'[Cost Type 1]
+				        ,"Dimension","Cost Type 1"
+				        ,"Source","1 Footprint PROD"
+				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
+				        ,"Amount (Local)",ROUND([Amount (Local)],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
+				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[Date]
+				        ,'Main Account 2'[Cost Type 1]
+				        ,"Dimension","Cost Type 1"
+				        ,"Source","2 Footprint UAT"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[Date]
+				        ,'Main Account 3'[Cost Type 1]
+				        ,"Dimension","Cost Type 1"
+				        ,"Source","3 Footprint DEV"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				    )
+				
+				    //Cost Type 2
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[Date]
+				        ,'Main Account'[Cost Type 2]
+				        ,"Dimension","Cost Type 2"
+				        ,"Source","1 Footprint PROD"
+				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
+				        ,"Amount (Local)",ROUND([Amount (Local)],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
+				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[Date]
+				        ,'Main Account 2'[Cost Type 2]
+				        ,"Dimension","Cost Type 2"
+				        ,"Source","2 Footprint UAT"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[Date]
+				        ,'Main Account 3'[Cost Type 2]
+				        ,"Dimension","Cost Type 2"
+				        ,"Source","3 Footprint DEV"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				    )
+				
+				    //Posting Layer
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[Date]
+				        ,'General Ledger Fact'[Posting Layer]
+				        ,"Dimension","Posting Layer"
+				        ,"Source","1 Footprint PROD"
+				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
+				        ,"Amount (Local)",ROUND([Amount (Local)],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
+				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[Date]
+				        ,'General Ledger Fact 2'[Posting Layer]
+				        ,"Dimension","Posting Layer"
+				        ,"Source","2 Footprint UAT"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[Date]
+				        ,'General Ledger Fact 3'[Posting Layer]
+				        ,"Dimension","Posting Layer"
+				        ,"Source","3 Footprint DEV"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				    )
+				
+				    //Currency
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[Date]
+				        ,'General Ledger Fact'[Currency]
+				        ,"Dimension","Currency"
+				        ,"Source","1 Footprint PROD"
+				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
+				        ,"Amount (Local)",ROUND([Amount (Local)],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
+				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[Date]
+				        ,'General Ledger Fact 2'[Currency]
+				        ,"Dimension","Currency"
+				        ,"Source","2 Footprint UAT"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[Date]
+				        ,'General Ledger Fact 3'[Currency]
+				        ,"Dimension","Currency"
+				        ,"Source","3 Footprint DEV"
+				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
+				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
+				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
+				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
+				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
+				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				    )
+				)
+
+	annotation PBI_Id = bfbb319266c0402989b6f5b1de1f669f
+

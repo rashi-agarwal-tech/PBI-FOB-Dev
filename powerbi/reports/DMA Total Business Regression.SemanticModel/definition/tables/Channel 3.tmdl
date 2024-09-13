@@ -1,0 +1,35 @@
+table 'Channel 3'
+	isHidden
+	lineageTag: 902fcfef-af0b-49ff-838a-2d6fcd751340
+	sourceLineageTag: db5f6c24-dddd-463d-b800-a280a993c53e
+
+	column 'Channel ID'
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: b90be7b8-d67a-4844-b131-3227143a5d45
+		sourceLineageTag: 0424610a-842d-487a-bcb2-1150a03b71c8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel ID
+
+		annotation SummarizationSetBy = User
+
+	column Channel
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 30af5917-a32e-494f-b584-c60b16261953
+		sourceLineageTag: 5579e74b-3add-45d9-b5f3-91b31133886d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel
+
+		annotation SummarizationSetBy = User
+
+	partition 'Channel 3' = entity
+		mode: directQuery
+		source
+			entityName: Channel
+			expressionSource: 'DirectQuery to AS - DMA Total Business 3'
+

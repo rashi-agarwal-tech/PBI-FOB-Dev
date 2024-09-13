@@ -1,0 +1,76 @@
+table 'Region 2'
+	lineageTag: feaa282b-cbbd-40bd-b975-cda2c37a7fa6
+	sourceLineageTag: b51cf4f4-f35f-4d36-89fb-d93d5a53b7ef
+
+	column 'Company ShortName'
+		dataType: string
+		lineageTag: 9c15c0e7-0081-4c98-a577-ede030a5715f
+		sourceLineageTag: 43304336-44d7-4c96-93be-e6f8f2218a44
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company ShortName
+
+		annotation SummarizationSetBy = User
+
+	column 'Region ID'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 99d72edd-4b9d-4626-98da-14e4fe4a6e41
+		sourceLineageTag: dbbfa4b5-114e-42af-bb65-124c3d8d97cf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Region ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Company ID'
+		dataType: string
+		isNullable: false
+		lineageTag: 1a615a0d-4e15-4db8-84d4-56a816a07489
+		sourceLineageTag: a21165b9-b5e1-43ac-ac74-6593bfdd114b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: 3a1a1e15-37f8-403b-8520-90861083620a
+		sourceLineageTag: ecc0772b-d6b9-4f75-ba6b-da53368d616b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column Region
+		dataType: string
+		lineageTag: 77824fc6-bfee-4c63-ab67-4aa989673f47
+		sourceLineageTag: 69c634c4-a317-4d0e-8e4b-44ceff3b6097
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = User
+
+	column Sub-Region
+		dataType: string
+		lineageTag: 59f5845f-8907-49c9-9ac8-565e5c353538
+		sourceLineageTag: c52ea5e2-5ced-43ab-b0a1-ef710729c444
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sub-Region
+
+		annotation SummarizationSetBy = User
+
+	partition 'Region 2' = entity
+		mode: directQuery
+		source
+			entityName: Region
+			expressionSource: 'DirectQuery to AS - DMA B2B 2'
+

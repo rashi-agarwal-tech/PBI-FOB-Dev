@@ -1,0 +1,34 @@
+table Seasons
+	isHidden
+	lineageTag: ebd5b627-8654-4620-a133-16306e7cf682
+	sourceLineageTag: 4213b08f-8ed0-4b3f-a5b5-22e20582da0e
+
+	column Season
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 0d7ed561-1a17-43ef-b3d4-7c42f51254b9
+		sourceLineageTag: 26dbd4a7-212e-46c6-a219-2b1be578ebc4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = User
+
+	column 'Season LY'
+		dataType: string
+		isHidden
+		lineageTag: 0a802fa2-00b6-4e6a-9433-dd98ea6c22ff
+		sourceLineageTag: aa24b8a2-b76c-49b3-81c3-9e7e49a57edc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season LY
+
+		annotation SummarizationSetBy = User
+
+	partition Seasons = entity
+		mode: directQuery
+		source
+			entityName: Seasons
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

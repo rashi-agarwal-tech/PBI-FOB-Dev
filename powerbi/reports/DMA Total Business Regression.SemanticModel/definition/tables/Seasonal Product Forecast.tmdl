@@ -1,0 +1,55 @@
+table 'Seasonal Product Forecast'
+	isHidden
+	lineageTag: 2277a013-4478-456e-90a8-eacf130c03bd
+	sourceLineageTag: fd2025a6-4d86-4cbb-877a-c0f1254ca852
+
+	column Date_key
+		dataType: string
+		isHidden
+		lineageTag: d8bc7acf-89b2-4c6a-8987-945b00eb5d57
+		sourceLineageTag: c7482264-4884-48d3-9e30-dd49ede821ad
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_key
+
+		annotation SummarizationSetBy = User
+
+	column Product_Key
+		dataType: string
+		isHidden
+		lineageTag: 0a7137e3-db6a-4663-aaed-46d98199f61a
+		sourceLineageTag: 24933d1d-614c-49a3-b1dc-ee1ae83c4216
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		lineageTag: b8dd6708-cecd-4829-8e48-906445a1fc02
+		sourceLineageTag: e37a98ae-84dd-4d45-8b6a-657a64285b81
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Forecast Quantity'
+		dataType: int64
+		isHidden
+		lineageTag: bc523d80-77e8-4601-929a-47ee381db203
+		sourceLineageTag: d0c49f60-26aa-4d51-b6f0-2f0b3fe3dd31
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Forecast Quantity
+
+		annotation SummarizationSetBy = User
+
+	partition 'Seasonal Product Forecast' = entity
+		mode: directQuery
+		source
+			entityName: Seasonal Product Forecast
+			expressionSource: 'DirectQuery to AS - DMA Total Business'
+

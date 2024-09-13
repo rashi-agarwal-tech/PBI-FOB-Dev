@@ -1,0 +1,43 @@
+table 'Refit Slicer 2'
+	lineageTag: d6306250-741d-4e1e-9faf-23170c38bf95
+	sourceLineageTag: 369544d0-006f-48b1-be27-7e4de5996d8d
+
+	column 'Refit Exclusion'
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 8403f758-9e1d-456a-b32c-37f0e95280da
+		sourceLineageTag: c425a60a-88b1-4825-aed9-eccb6c37be1d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Refit Exclusion
+
+		annotation SummarizationSetBy = User
+
+	column 'Refit Exclusion?'
+		dataType: string
+		lineageTag: 7a090776-bcdf-47a2-a7b8-988aaf4f2f05
+		sourceLineageTag: feb46a24-1c28-4457-afa5-2c7f154b3e46
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Refit Exclusion?
+
+		annotation SummarizationSetBy = User
+
+	column 'Refit Slicer'
+		dataType: string
+		isHidden
+		lineageTag: d41d41a2-4108-4cd0-8ca8-800ed7cf0213
+		sourceLineageTag: af80b211-936f-4448-8d30-73ecc965e992
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Refit Slicer
+
+		annotation SummarizationSetBy = User
+
+	partition 'Refit Slicer 2' = entity
+		mode: directQuery
+		source
+			entityName: Refit Slicer
+			expressionSource: 'DirectQuery to AS - DMA D2C 2'
+

@@ -1,0 +1,104 @@
+table 'Adjustments CoGS 3'
+	isHidden
+	lineageTag: 24ae75d1-69d9-4289-a4ed-76e1d95b0b90
+	sourceLineageTag: 554a171c-fd6e-42ed-95d6-f00709233353
+
+	column 'Amount at Constant Rate'
+		dataType: decimal
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: e522c533-86f3-45c9-877b-59c1a4c10b09
+		sourceLineageTag: 55b4c584-df32-4a5f-85f3-6d4604065bd3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Amount at Constant Rate
+
+		annotation SummarizationSetBy = User
+
+	column AccountingDate_Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Keys
+		lineageTag: af546e1c-a153-4309-ab4a-95ea1768d0f7
+		sourceLineageTag: b4fe8634-656a-47bc-a4d1-e98bc8437ef7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AccountingDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 4d6b5f9e-f26a-4efa-9cb3-f1dda240cfa6
+		sourceLineageTag: 1d15ba9a-a004-4997-8df0-22166a1b0ca9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column Channel_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 0f1dac4a-643c-47c4-ad44-bcc7038a79c2
+		sourceLineageTag: 88bba7b9-6f37-4f00-bd7d-674ab8f5996c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel_Key
+
+		annotation SummarizationSetBy = User
+
+	column TransactionTypeDesc
+		dataType: string
+		isHidden
+		lineageTag: 005c9bac-d6c2-45bf-ae32-4a28b3d46ca3
+		sourceLineageTag: 26466eea-578f-47eb-9761-0c20a0b78b48
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TransactionTypeDesc
+
+		annotation SummarizationSetBy = User
+
+	column CHANNEL
+		dataType: string
+		isHidden
+		lineageTag: 461505be-675b-4f0c-a6c5-572cffcde687
+		sourceLineageTag: 51122b1e-f051-4c86-95d6-8a1430f3b6a6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CHANNEL
+
+		annotation SummarizationSetBy = User
+
+	column MAINACCOUNTID
+		dataType: string
+		isHidden
+		lineageTag: a866fe11-e64e-46b5-b36e-4f0225cef794
+		sourceLineageTag: a03bc71b-e890-4d8c-b83d-0f9273430b87
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MAINACCOUNTID
+
+		annotation SummarizationSetBy = User
+
+	column LEDGERNAME
+		dataType: string
+		isHidden
+		lineageTag: e098f5b9-d299-4caf-af31-827db13d8798
+		sourceLineageTag: d019877f-d161-49fb-b97e-1c7478b5f3b4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: LEDGERNAME
+
+		annotation SummarizationSetBy = User
+
+	partition 'Adjustments CoGS 3' = entity
+		mode: directQuery
+		source
+			entityName: Adjustments CoGS
+			expressionSource: 'DirectQuery to AS - DMA B2B 3'
+
