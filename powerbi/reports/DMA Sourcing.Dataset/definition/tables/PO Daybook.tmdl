@@ -67,7 +67,7 @@ table 'PO Daybook'
 		annotation SummarizationSetBy = Automatic
 
 	column Scheduled_Ex_Factory_Key
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Keys
@@ -77,12 +77,14 @@ table 'PO Daybook'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Confirmed_Ex_Factory_Key
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Keys
@@ -91,6 +93,8 @@ table 'PO Daybook'
 		sourceColumn: Confirmed_Ex_Factory_Key
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1000,7 +1004,7 @@ table 'PO Daybook'
 		annotation SummarizationSetBy = Automatic
 
 	column InvoiceDate_Key
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Keys
@@ -1010,12 +1014,14 @@ table 'PO Daybook'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column ActualExFactoryDate_Key
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Keys
@@ -1025,12 +1031,14 @@ table 'PO Daybook'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column NewPurchasingSeason_Key
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Keys
@@ -1040,12 +1048,14 @@ table 'PO Daybook'
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column ExFactoryDate_Key
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(38, 0)
 		displayFolder: zz_Keys
@@ -1054,6 +1064,8 @@ table 'PO Daybook'
 		sourceColumn: ExFactoryDate_Key
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
