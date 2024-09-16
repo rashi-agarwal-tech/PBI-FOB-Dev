@@ -22,7 +22,7 @@ expression Datasource_Schema = "BFN_PRESENTATION" meta [IsParameterQuery=true, T
 
 	annotation PBI_ResultType = Text
 
-expression NumberOfRows = 0 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
+expression NumberOfRows = 1000 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
 	lineageTag: 32953e50-5c0f-479a-b42a-8345e2beaa0e
 	queryGroup: Parameters
 
