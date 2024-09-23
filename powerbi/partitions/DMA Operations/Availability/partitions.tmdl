@@ -228,9 +228,10 @@
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],				    
-				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2024, 1, 1) and [DATE] < #date(2024, 04, 1))
+				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2024, 1, 1) and [DATE] < #date(2024, 04, 1)),
+					#"Filtered Rows" = Table.SelectRows(PartitionFilter, each not List.Contains({"Rewair"},[#"WH_Channel_Custom"]))
 				in
-				    PartitionFilter
+				    #"Filtered Rows"
 	
 
 	partition 'CY2023 Q4' = m
@@ -240,9 +241,10 @@
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],				    
-				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2023, 10, 1) and [DATE] < #date(2024, 1, 1))
+				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2023, 10, 1) and [DATE] < #date(2024, 1, 1)),
+					#"Filtered Rows" = Table.SelectRows(PartitionFilter, each not List.Contains({"Rewair"},[#"WH_Channel_Custom"]))
 				in
-				    PartitionFilter
+				    #"Filtered Rows"
 
 	partition 'CY2023 Q3' = m
 		source =
@@ -251,9 +253,10 @@
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],	
-				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2023, 7, 1) and [DATE] < #date(2023, 10, 1))
+				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2023, 7, 1) and [DATE] < #date(2023, 10, 1)),
+					#"Filtered Rows" = Table.SelectRows(PartitionFilter, each not List.Contains({"Rewair"},[#"WH_Channel_Custom"]))
 				in
-				    PartitionFilter
+				    #"Filtered Rows"
 
 	partition 'CY2023 Q2' = m
 		source =
@@ -262,9 +265,10 @@
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],	
-				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2023, 4, 1) and [DATE] < #date(2023, 07, 1))
+				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2023, 4, 1) and [DATE] < #date(2023, 07, 1)),
+					#"Filtered Rows" = Table.SelectRows(PartitionFilter, each not List.Contains({"Rewair"},[#"WH_Channel_Custom"]))
 				in
-				    PartitionFilter
+				    #"Filtered Rows"
 
 	partition 'CY2023 Q1' = m
 		source =
@@ -273,9 +277,10 @@
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],				    
-				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2023, 1, 1) and [DATE] < #date(2023, 04, 1))
+				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2023, 1, 1) and [DATE] < #date(2023, 04, 1)),
+					#"Filtered Rows" = Table.SelectRows(PartitionFilter, each not List.Contains({"Rewair"},[#"WH_Channel_Custom"]))
 				in
-				    PartitionFilter
+				    #"Filtered Rows"
 	
 
 	partition 'CY2022 Q4' = m
@@ -285,9 +290,10 @@
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],				    
-				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2022, 10, 1) and [DATE] < #date(2023, 1, 1))
+				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2022, 10, 1) and [DATE] < #date(2023, 1, 1)),
+					#"Filtered Rows" = Table.SelectRows(PartitionFilter, each not List.Contains({"Rewair"},[#"WH_Channel_Custom"]))
 				in
-				    PartitionFilter
+				    #"Filtered Rows"
 
 	partition 'CY2022 Q3' = m
 		source =
@@ -296,9 +302,10 @@
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],				    
-				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2022, 7, 1) and [DATE] < #date(2022, 10, 1))
+				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2022, 7, 1) and [DATE] < #date(2022, 10, 1)),
+					#"Filtered Rows" = Table.SelectRows(PartitionFilter, each not List.Contains({"Rewair"},[#"WH_Channel_Custom"]))
 				in
-				    PartitionFilter
+				    #"Filtered Rows"
 
 	partition 'CY2022 Q2' = m
 		source =
@@ -307,9 +314,10 @@
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],				    
-				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2022, 4, 1) and [DATE] < #date(2022, 07, 1))
+				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2022, 4, 1) and [DATE] < #date(2022, 07, 1)),
+					#"Filtered Rows" = Table.SelectRows(PartitionFilter, each not List.Contains({"Rewair"},[#"WH_Channel_Custom"]))
 				in
-				    PartitionFilter
+				    #"Filtered Rows"
 
 	partition 'CY2022 Q1' = m
 		source =
@@ -318,9 +326,10 @@
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],				    
-				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2022, 1, 1) and [DATE] < #date(2022, 04, 1))
+				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2022, 1, 1) and [DATE] < #date(2022, 04, 1)),
+					#"Filtered Rows" = Table.SelectRows(PartitionFilter, each not List.Contains({"Rewair"},[#"WH_Channel_Custom"]))
 				in
-				    PartitionFilter
+				    #"Filtered Rows"
 
 	partition 'CY2021 Q4' = m
 		source =
@@ -329,9 +338,10 @@
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],				    
-				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2021, 10, 1) and [DATE] < #date(2022, 1, 1))
+				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2021, 10, 1) and [DATE] < #date(2022, 1, 1)),
+					#"Filtered Rows" = Table.SelectRows(PartitionFilter, each not List.Contains({"Rewair"},[#"WH_Channel_Custom"]))
 				in
-				    PartitionFilter
+				    #"Filtered Rows"
 
 	partition 'CY2021 Q3' = m
 		source =
@@ -340,7 +350,8 @@
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],				    
-				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2021, 7, 1) and [DATE] < #date(2021, 10, 1))
+				    PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2021, 7, 1) and [DATE] < #date(2021, 10, 1)),
+					#"Filtered Rows" = Table.SelectRows(PartitionFilter, each not List.Contains({"Rewair"},[#"WH_Channel_Custom"]))
 				in
-				    PartitionFilter
+				    #"Filtered Rows"
 

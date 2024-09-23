@@ -15,7 +15,7 @@ table Products
 		annotation SummarizationSetBy = Automatic
 
 	column 'Current Product Class Sort'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(2, 0)
 		displayFolder: zz_Misc
@@ -25,12 +25,14 @@ table Products
 
 		changedProperty = IsHidden
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Current Selling Status Sort'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(1, 0)
 		displayFolder: zz_Misc
@@ -104,8 +106,7 @@ table Products
 		annotation SummarizationSetBy = Automatic
 
 	column 'Discounted Price Product?'
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
+		dataType: string
 		sourceProviderType: bit
 		displayFolder: 1. Prices
 		lineageTag: a105ce82-c8d2-4a15-8fa5-2b5f12feb07e
@@ -304,6 +305,9 @@ table Products
 		lineageTag: ac47b498-21af-4744-9d52-a8cceb2d49c2
 		summarizeBy: none
 		sourceColumn: Current Selling Status
+		sortByColumn: 'Current Selling Status Sort'
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -604,9 +608,15 @@ table Products
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_DIMPRODUCT",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([Product_Key] <> 0)),
 					#"Kept First Rows" = Table.FirstN(#"Filtered Rows",NumberOfRows),
-					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Filtered Rows"
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Filtered Rows",
+				    #"Changed Type" = Table.TransformColumnTypes(ParameterFilter,{{"Current Selling Status Sort", Int64.Type}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Changed Type",{{"Discounted Price Product?", type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type1","true","True",Replacer.ReplaceText,{"Discounted Price Product?"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","false","False",Replacer.ReplaceText,{"Discounted Price Product?"})
 				in
-					ParameterFilter
+				    #"Replaced Value1"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 
