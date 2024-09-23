@@ -611,8 +611,8 @@ table Products
 					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Filtered Rows",
 				    #"Changed Type" = Table.TransformColumnTypes(ParameterFilter,{{"Current Selling Status Sort", Int64.Type}}),
 				    #"Changed Type1" = Table.TransformColumnTypes(#"Changed Type",{{"Discounted Price Product?", type text}}),
-				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type1","true","True",Replacer.ReplaceText,{"Discounted Price Product?"}),
-				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","false","False",Replacer.ReplaceText,{"Discounted Price Product?"})
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type1","true","-1",Replacer.ReplaceText,{"Discounted Price Product?"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","false","0",Replacer.ReplaceText,{"Discounted Price Product?"})
 				in
 				    #"Replaced Value1"
 

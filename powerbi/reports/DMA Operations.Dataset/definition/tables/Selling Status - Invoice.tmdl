@@ -24,10 +24,14 @@ table 'Selling Status - Invoice'
 		summarizeBy: none
 		sourceColumn: Selling Status - Invoice
 
+		sortByColumn: 'Selling Status Sort'
+
+		changedProperty = SortByColumn
+
 		annotation SummarizationSetBy = Automatic
 
 	column 'Selling Status Sort'
-		dataType: double
+		dataType: int64
 		isHidden
 		sourceProviderType: decimal(1, 0)
 		displayFolder: zz_Misc
@@ -36,6 +40,8 @@ table 'Selling Status - Invoice'
 		sourceColumn: Selling Status Sort
 
 		changedProperty = IsHidden
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
 
