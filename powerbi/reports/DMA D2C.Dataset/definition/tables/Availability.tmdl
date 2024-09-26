@@ -329,147 +329,100 @@ table Availability
 
 		annotation SummarizationSetBy = Automatic
 
-	column FinancialChannel = RELATED ( Warehouse[FinancialChannel] )
+	column FinancialChannel
 		dataType: string
 		isHidden
 		displayFolder: zz_Key
 		lineageTag: bec34f4f-cde6-4866-ae47-6b85144009b5
 		summarizeBy: none
-		isDataTypeInferred
+		sourceColumn: FinancialChannel
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	column Ranged? =
-			IF (
-			    AND (
-			        Availability[ItemCoverage] > 0,
-			        Availability[WH_Channel] IN { "Retail", "eCom" }
-			    ),
-			    TRUE,
-			    FALSE
-			)
+	column Ranged?
 		dataType: boolean
 		isHidden
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		displayFolder: zz_Misc
 		lineageTag: 3c816591-a496-4076-89f7-a95b05ebe06b
 		summarizeBy: none
-		isDataTypeInferred
+		sourceColumn: Ranged?
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Retail Negative Stock?' =
-			IF (
-			    Availability[Retail Store Warehouse?] <> 1,
-			    BLANK (),
-			    IF ( Availability[OnHandUnits] < 0, "Yes", "No" )
-			)
+	column 'Retail Negative Stock?'
 		dataType: string
 		isHidden
 		displayFolder: zz_Misc
 		lineageTag: 76ae0118-a761-42a3-9281-f230fe688c8c
 		summarizeBy: none
-		isDataTypeInferred
+		SourceColumn: Retail Negative Stock?
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Retail Store Warehouse?' = RELATED ( Warehouse[Is Retail Warehouse?] )
+	column 'Retail Store Warehouse?'
 		dataType: int64
 		isHidden
 		displayFolder: zz_Misc
 		lineageTag: 80529116-91ae-437b-82ee-0c47cad1247a
 		summarizeBy: sum
-		isDataTypeInferred
+		sourceColumn: Retail Store Warehouse?
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Stock Out?' =
-			IF (
-			    AND ( Availability[Ranged?] = TRUE, Availability[OnHandUnits] = 0 ),
-			    1,
-			    BLANK ()
-			)
+	column 'Stock Out?'
 		dataType: int64
 		isHidden
 		formatString: 0
 		displayFolder: zz_Misc
 		lineageTag: 50e39685-a96e-4fc2-8eb7-4dc214fda774
 		summarizeBy: none
-		isDataTypeInferred
+		sourceColumn: Stock Out?
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = User
 
-	column Stocked? =
-			IF (
-			    Availability[OnHandUnits] > 0
-			        && Availability[Retail Store Warehouse?] = 1
-			        && Availability[ItemCoverage] > 0,
-			    1,
-			    0
-			)
+	column Stocked?
 		dataType: int64
 		isHidden
 		formatString: 0
 		displayFolder: zz_Misc
 		lineageTag: dba9f16d-2600-46cd-8871-569ecbcb84bd
 		summarizeBy: none
-		isDataTypeInferred
+		sourceColumn: Stocked?
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = User
 
-	column 'In Transit Max' =
-			IF (
-			    Availability[Ranged?] = TRUE,
-			    IF (
-			        Availability[On Hand Max] >= Availability[ItemCoverage],
-			        BLANK (),
-			        IF (
-			            Availability[InTransit] >= Availability[ItemCoverage],
-			            Availability[ItemCoverage],
-			            Availability[InTransit]
-			        )
-			    ),
-			    BLANK ()
-			)
+	column 'In Transit Max'
 		dataType: double
 		isHidden
 		displayFolder: zz_Value
 		lineageTag: c73f84aa-6def-4a78-ac90-91e2fb08ae73
 		summarizeBy: sum
-		isDataTypeInferred
+		sourceColumn: In Transit Max
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'On Hand Max' =
-			IF (
-			    Availability[Ranged?] = TRUE,
-			    IF (
-			        Availability[OnHandUnits] >= Availability[ItemCoverage],
-			        Availability[ItemCoverage],
-			        Availability[OnHandUnits]
-			    ),
-			    BLANK ()
-			)
+	column 'On Hand Max'
 		dataType: double
 		isHidden
 		displayFolder: zz_Value
 		lineageTag: 7be2a8e9-241e-4ea6-8c78-d517bb286b5d
 		summarizeBy: none
-		isDataTypeInferred
+		sourceColumn: On Hand Max
 
 		changedProperty = IsHidden
 
@@ -494,42 +447,25 @@ table Availability
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	column OOS =
-			IF (
-			    Availability[Ranged?] = TRUE,
-			    Availability[ItemCoverage] - Availability[On Hand Max] - Availability[In Transit Max] - Availability[Retail Warehouse On Hand Max],
-			    BLANK ()
-			)
+	column OOS
 		dataType: double
 		isHidden
 		displayFolder: zz_Value
 		lineageTag: 9f8b25e9-3022-4b47-9244-0866fac31f35
 		summarizeBy: none
-		isDataTypeInferred
+		sourceColumn: OOS
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = User
 
-	column 'Retail Warehouse On Hand Max' =
-			IF (
-			    Availability[Ranged?] = TRUE,
-			    IF (
-			        ( Availability[On Hand Max] + Availability[In Transit Max] ) >= Availability[ItemCoverage],
-			        0,
-			        IF (
-			            ( Availability[On Hand Max] + Availability[In Transit Max] + Availability[RetailWarehouseOnHand] ) <= Availability[ItemCoverage],
-			            Availability[RetailWarehouseOnHand],
-			            Availability[ItemCoverage] - ( Availability[In Transit Max] + Availability[On Hand Max] )
-			        )
-			    ),
-			    BLANK ()
-			)
+	column 'Retail Warehouse On Hand Max'
 		dataType: int64
 		isHidden
 		displayFolder: zz_Value
 		lineageTag: bd41b6dd-3410-4c34-a23c-b5a7e87d2386
 		summarizeBy: none
+		sourceColumn: Retail Warehouse On Hand Max
 
 		changedProperty = IsHidden
 
@@ -545,7 +481,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2025, 12, 1) and [DATE] < #date(2026, 1, 1))
 				in
@@ -557,7 +493,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2025, 11, 1) and [DATE] < #date(2025, 12, 1))
 				in
@@ -569,7 +505,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2025, 10, 1) and [DATE] < #date(2025, 11, 1))
 				in
@@ -581,7 +517,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2025, 9, 1) and [DATE] < #date(2025, 10, 1))
 				in
@@ -593,7 +529,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2025, 8, 1) and [DATE] < #date(2025, 9, 1))
 				in
@@ -605,7 +541,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2025, 7, 1) and [DATE] < #date(2025, 8, 1))
 				in
@@ -617,7 +553,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2025, 6, 1) and [DATE] < #date(2025, 7, 1))
 				in
@@ -629,7 +565,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2025, 5, 1) and [DATE] < #date(2025, 6, 1))
 				in
@@ -641,7 +577,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2025, 4, 1) and [DATE] < #date(2025, 5, 1))
 				in
@@ -653,7 +589,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2025, 3, 1) and [DATE] < #date(2025, 4, 1))
 				in
@@ -665,7 +601,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2025, 2, 1) and [DATE] < #date(2025, 3, 1))
 				in
@@ -677,7 +613,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2025, 1, 1) and [DATE] < #date(2025, 2, 1))
 				in
@@ -689,7 +625,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 12, 1) and [DATE] < #date(2025, 1, 1))
 				in
@@ -701,7 +637,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 11, 1) and [DATE] < #date(2024, 12, 1))
 				in
@@ -713,7 +649,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 10, 1) and [DATE] < #date(2024, 11, 1))
 				in
@@ -725,7 +661,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 9, 1) and [DATE] < #date(2024, 10, 1))
 				in
@@ -737,7 +673,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 8, 1) and [DATE] < #date(2024, 9, 1))
 				in
@@ -749,7 +685,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 7, 1) and [DATE] < #date(2024, 8, 1))
 				in
@@ -761,7 +697,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 6, 1) and [DATE] < #date(2024, 7, 1))
 				in
@@ -773,7 +709,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 5, 1) and [DATE] < #date(2024, 6, 1))
 				in
@@ -785,7 +721,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 4, 1) and [DATE] < #date(2024, 5, 1))
 				in
@@ -797,7 +733,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 3, 1) and [DATE] < #date(2024, 4, 1))
 				in
@@ -809,7 +745,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 2, 1) and [DATE] < #date(2024, 3, 1))
 				in
@@ -821,7 +757,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2024, 1, 1) and [DATE] < #date(2024, 2, 1))
 				in
@@ -833,7 +769,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 12, 1) and [DATE] < #date(2024, 1, 1))
 				in
@@ -845,7 +781,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 11, 1) and [DATE] < #date(2023, 12, 1))
 				in
@@ -857,7 +793,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 10, 1) and [DATE] < #date(2023, 11, 1))
 				in
@@ -869,7 +805,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 9, 1) and [DATE] < #date(2023, 10, 1))
 				in
@@ -881,7 +817,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 8, 1) and [DATE] < #date(2023, 9, 1))
 				in
@@ -893,7 +829,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 7, 1) and [DATE] < #date(2023, 8, 1))
 				in
@@ -905,7 +841,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 6, 1) and [DATE] < #date(2023, 7, 1))
 				in
@@ -917,7 +853,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 5, 1) and [DATE] < #date(2023, 6, 1))
 				in
@@ -929,7 +865,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 4, 1) and [DATE] < #date(2023, 5, 1))
 				in
@@ -941,7 +877,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 3, 1) and [DATE] < #date(2023, 4, 1))
 				in
@@ -953,7 +889,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 2, 1) and [DATE] < #date(2023, 3, 1))
 				in
@@ -965,7 +901,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2023, 1, 1) and [DATE] < #date(2023, 2, 1))
 				in
@@ -977,7 +913,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 12, 1) and [DATE] < #date(2023, 1, 1))
 				in
@@ -989,7 +925,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 11, 1) and [DATE] < #date(2022, 12, 1))
 				in
@@ -1001,7 +937,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 10, 1) and [DATE] < #date(2022, 11, 1))
 				in
@@ -1013,7 +949,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 9, 1) and [DATE] < #date(2022, 10, 1))
 				in
@@ -1025,7 +961,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 8, 1) and [DATE] < #date(2022, 9, 1))
 				in
@@ -1037,7 +973,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 7, 1) and [DATE] < #date(2022, 8, 1))
 				in
@@ -1049,7 +985,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 6, 1) and [DATE] < #date(2022, 7, 1))
 				in
@@ -1061,7 +997,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 5, 1) and [DATE] < #date(2022, 6, 1))
 				in
@@ -1073,7 +1009,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 4, 1) and [DATE] < #date(2022, 5, 1))
 				in
@@ -1085,7 +1021,7 @@ table Availability
 				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+				    D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 				    PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 3, 1) and [DATE] < #date(2022, 4, 1))
 				in
@@ -1097,7 +1033,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 2, 1) and [DATE] < #date(2022, 3, 1))
 				in
@@ -1109,7 +1045,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2022, 1, 1) and [DATE] < #date(2022, 2, 1))
 				in
@@ -1121,7 +1057,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 12, 1) and [DATE] < #date(2022, 1, 1))
 				in
@@ -1133,7 +1069,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 11, 1) and [DATE] < #date(2021, 12, 1))
 				in
@@ -1145,7 +1081,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 10, 1) and [DATE] < #date(2021, 11, 1))
 				in
@@ -1157,7 +1093,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 9, 1) and [DATE] < #date(2021, 10, 1))
 				in
@@ -1169,7 +1105,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 8, 1) and [DATE] < #date(2021, 9, 1))
 				in
@@ -1181,7 +1117,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 7, 1) and [DATE] < #date(2021, 8, 1))
 				in
@@ -1193,7 +1129,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 6, 1) and [DATE] < #date(2021, 7, 1))
 				in
@@ -1205,7 +1141,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 5, 1) and [DATE] < #date(2021, 6, 1))
 				in
@@ -1217,7 +1153,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 4, 1) and [DATE] < #date(2021, 5, 1))
 				in
@@ -1229,7 +1165,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 3, 1) and [DATE] < #date(2021, 4, 1))
 				in
@@ -1241,7 +1177,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 2, 1) and [DATE] < #date(2021, 3, 1))
 				in
@@ -1253,7 +1189,7 @@ table Availability
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_AVAILABILITY",Kind="View"]}[Data],
 					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_AVAILABILITY_CURRENT_MONTH_View, each List.Contains({"Retail", "eCom", "B2B"},[WH_Channel])),
 					PartitionFilter = Table.SelectRows(#"Filtered Rows", each [DATE] >= #date(2021, 1, 1) and [DATE] < #date(2021, 2, 1))
 				in
