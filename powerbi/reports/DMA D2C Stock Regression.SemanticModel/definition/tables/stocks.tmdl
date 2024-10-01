@@ -33,22 +33,44 @@ table stocks
 		formatString: #,0
 		lineageTag: 3cd5d233-cb48-43a2-bbf7-7425f5281529
 
-	measure 'stocks Sum of AbsDiff' =
+	measure 'stocks Sum of AbsDiff %' =
 			
-			[stocks 1. All On Hand Stock Units Diff]
-			+[stocks 2. WH Stock Units Diff]
-			+[stocks 4. Store In-Transit Units Diff]
-			+[stocks 5. Store Stock Units Diff]
-			+[stocks Item Coverage Diff]
-			+[stocks On Hand Spot Cover Diff]
-			+[stocks Stock Outs % Diff]
-			+[stocks Store Spot Cover Diff]
-			+[stocks WH Spot Cover Diff]
-			+[stocks 2.2 Available WH Stock Units Diff]
-			+[stocks 3.1 Allocated Units Arrived Diff]
-			+[stocks 4. Reserved Intake Units Diff]
-			+[stocks Ranged Stores Diff]
-		formatString: #,0.00
+			VAR sourceparameter = [source parameter]
+			RETURN
+			DIVIDE
+			(
+			    [stocks 1. All On Hand Stock Units Diff]
+			    +[stocks 2. WH Stock Units Diff]
+			    +[stocks 4. Store In-Transit Units Diff]
+			    +[stocks 5. Store Stock Units Diff]
+			    +[stocks Item Coverage Diff]
+			    +[stocks On Hand Spot Cover Diff]
+			    +[stocks Stock Outs % Diff]
+			    +[stocks Store Spot Cover Diff]
+			    +[stocks WH Spot Cover Diff]
+			    +[stocks 2.2 Available WH Stock Units Diff]
+			    +[stocks 3.1 Allocated Units Arrived Diff]
+			    +[stocks 4. Reserved Intake Units Diff]
+			    +[stocks Ranged Stores Diff]
+			    ,CALCULATE
+			    (
+			        [stocks 1. All On Hand Stock Units]
+			        +[stocks 2. WH Stock Units]
+			        +[stocks 4. Store In-Transit Units]
+			        +[stocks 5. Store Stock Units]
+			        +[stocks Item Coverage]
+			        +[stocks On Hand Spot Cover]
+			        +[stocks Stock Outs %]
+			        +[stocks Store Spot Cover]
+			        +[stocks WH Spot Cover]
+			        +[stocks 2.2 Available WH Stock Units]
+			        +[stocks 3.1 Allocated Units Arrived]
+			        +[stocks 4. Reserved Intake Units]
+			        +[stocks Ranged Stores]
+			        ,stocks[Source]=sourceparameter
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 8b855803-9206-471f-96c9-2f3272fc252e
 
 	measure 'stocks 4. Store In-Transit Units' =
@@ -187,6 +209,214 @@ table stocks
 			
 			"1 Footprint PROD"
 		lineageTag: 43f41ffa-eb98-435a-b0fc-b9ed45262e14
+
+	measure 'stocks 1. All On Hand Stock Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			DIVIDE
+			(
+			    [stocks 1. All On Hand Stock Units Diff]
+			    ,CALCULATE
+			    (
+			        [stocks 1. All On Hand Stock Units]
+			        ,stocks[Source]=sourceparameter
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 0dfbddc7-7d32-404b-84ee-997e6cf18367
+
+	measure 'stocks 2. WH Stock Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			DIVIDE
+			(
+			    [stocks 2. WH Stock Units Diff]
+			    ,CALCULATE
+			    (
+			        [stocks 2. WH Stock Units]
+			        ,stocks[Source]=sourceparameter
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ca4fa677-81df-487b-8bfb-9a7adb7a000d
+
+	measure 'stocks 2.2 Available WH Stock Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			DIVIDE
+			(
+			    [stocks 2.2 Available WH Stock Units Diff]
+			    ,CALCULATE
+			    (
+			        [stocks 2.2 Available WH Stock Units]
+			        ,stocks[Source]=sourceparameter
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 1b5d16a6-2daa-4237-9a10-6e720f26f05b
+
+	measure 'stocks 3.1 Allocated Units Arrived Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			DIVIDE
+			(
+			    [stocks 3.1 Allocated Units Arrived Diff]
+			    ,CALCULATE
+			    (
+			        [stocks 3.1 Allocated Units Arrived]
+			        ,stocks[Source]=sourceparameter
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 26f3fd23-1e9d-40e4-b33a-bc5c083b0ddd
+
+	measure 'stocks 4. Reserved Intake Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			DIVIDE
+			(
+			    [stocks 4. Reserved Intake Units Diff]
+			    ,CALCULATE
+			    (
+			        [stocks 4. Reserved Intake Units]
+			        ,stocks[Source]=sourceparameter
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8d25b29e-d0a3-41b7-9520-02b5ddbc77e5
+
+	measure 'stocks 4. Store In-Transit Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			DIVIDE
+			(
+			    [stocks 4. Store In-Transit Units Diff]
+			    ,CALCULATE
+			    (
+			        [stocks 4. Store In-Transit Units]
+			        ,stocks[Source]=sourceparameter
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 1ece23c1-fab7-4bb6-8693-548215dc329d
+
+	measure 'stocks 5. Store Stock Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			DIVIDE
+			(
+			    [stocks 5. Store Stock Units Diff]
+			    ,CALCULATE
+			    (
+			        [stocks 5. Store Stock Units]
+			        ,stocks[Source]=sourceparameter
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 40577c64-6055-4fe4-9476-e3ddfac6174c
+
+	measure 'stocks Item Coverage Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			DIVIDE
+			(
+			    [stocks Item Coverage Diff]
+			    ,CALCULATE
+			    (
+			        [stocks Item Coverage]
+			        ,stocks[Source]=sourceparameter
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: f74e05cb-580a-4aa7-b066-d7913d299cba
+
+	measure 'stocks On Hand Spot Cover Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			DIVIDE
+			(
+			    [stocks On Hand Spot Cover Diff]
+			    ,CALCULATE
+			    (
+			        [stocks On Hand Spot Cover]
+			        ,stocks[Source]=sourceparameter
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d4971efb-d81d-4c9a-bc70-e36070abf746
+
+	measure 'stocks Ranged Stores Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			DIVIDE
+			(
+			    [stocks Ranged Stores Diff]
+			    ,CALCULATE
+			    (
+			        [stocks Ranged Stores]
+			        ,stocks[Source]=sourceparameter
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8a2d6d26-a9e4-4ca9-81f0-3d14c835f413
+
+	measure 'stocks Stock Outs % Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			DIVIDE
+			(
+			    [stocks Stock Outs % Diff]
+			    ,CALCULATE
+			    (
+			        [stocks Stock Outs %]
+			        ,stocks[Source]=sourceparameter
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: a1797141-bc20-465a-b96c-54e2f2f845d1
+
+	measure 'stocks Store Spot Cover Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			DIVIDE
+			(
+			    [stocks Store Spot Cover Diff]
+			    ,CALCULATE
+			    (
+			        [stocks Store Spot Cover]
+			        ,stocks[Source]=sourceparameter
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 550d3e91-c78c-4443-b08c-140bef9f2897
+
+	measure 'stocks WH Spot Cover Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			DIVIDE
+			(
+			    [stocks WH Spot Cover Diff]
+			    ,CALCULATE
+			    (
+			        [stocks WH Spot Cover]
+			        ,stocks[Source]=sourceparameter
+			    )
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 9387a9d5-2058-4467-9964-4c59d27c8f9e
 
 	column 'Fiscal Year (544)'
 		dataType: string

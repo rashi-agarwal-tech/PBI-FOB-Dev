@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
-  "name": "649a9742c7e5787b71bc",
+  "name": "8babb1653e7fb09bc745",
   "position": {
-    "x": 512,
+    "x": 464,
     "y": 112,
-    "z": 4000,
+    "z": 0,
     "height": 592,
-    "width": 752,
-    "tabOrder": 4000
+    "width": 800,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -45,7 +45,7 @@
                   "Property": "Dimension"
                 }
               },
-              "queryRef": "ga.Dimension",
+              "queryRef": "stocks.Dimension",
               "nativeQueryRef": "Dimension",
               "active": true
             }
@@ -61,12 +61,12 @@
                       "Entity": "stocks"
                     }
                   },
-                  "Property": "stocks 1. All On Hand Stock Units Diff"
+                  "Property": "stocks 1. All On Hand Stock Units Diff %"
                 }
               },
-              "queryRef": "sales.sales total units Diff",
-              "nativeQueryRef": "1. All On Hand Stock Units AbsDiff",
-              "displayName": "1. All On Hand Stock Units AbsDiff"
+              "queryRef": "stocks.stocks 1. All On Hand Stock Units Diff %",
+              "nativeQueryRef": "1. All On Hand Stock Units AbsDiff%",
+              "displayName": "1. All On Hand Stock Units AbsDiff%"
             },
             {
               "field": {
@@ -76,12 +76,12 @@
                       "Entity": "stocks"
                     }
                   },
-                  "Property": "stocks 2. WH Stock Units Diff"
+                  "Property": "stocks 2. WH Stock Units Diff %"
                 }
               },
-              "queryRef": "sales.sales total units ecom Diff",
-              "nativeQueryRef": "2. WH Stock Units AbsDiff",
-              "displayName": "2. WH Stock Units AbsDiff"
+              "queryRef": "stocks.stocks 2. WH Stock Units Diff %",
+              "nativeQueryRef": "2. WH Stock Units AbsDiff%",
+              "displayName": "2. WH Stock Units AbsDiff%"
             },
             {
               "field": {
@@ -91,12 +91,12 @@
                       "Entity": "stocks"
                     }
                   },
-                  "Property": "stocks 4. Store In-Transit Units Diff"
+                  "Property": "stocks 4. Store In-Transit Units Diff %"
                 }
               },
-              "queryRef": "ga.ga GA Goal 02 Completion Diff",
-              "nativeQueryRef": "4. Store In-Transit Units AbsDiff",
-              "displayName": "4. Store In-Transit Units AbsDiff"
+              "queryRef": "stocks.stocks 4. Store In-Transit Units Diff %",
+              "nativeQueryRef": "4. Store In-Transit Units AbsDiff%",
+              "displayName": "4. Store In-Transit Units AbsDiff%"
             },
             {
               "field": {
@@ -106,12 +106,12 @@
                       "Entity": "stocks"
                     }
                   },
-                  "Property": "stocks 5. Store Stock Units Diff"
+                  "Property": "stocks 5. Store Stock Units Diff %"
                 }
               },
-              "queryRef": "ga.ga GA Goal 03 Completion Diff",
-              "nativeQueryRef": "5. Store Stock Units AbsDiff",
-              "displayName": "5. Store Stock Units AbsDiff"
+              "queryRef": "stocks.stocks 5. Store Stock Units Diff %",
+              "nativeQueryRef": "5. Store Stock Units AbsDiff%",
+              "displayName": "5. Store Stock Units AbsDiff%"
             },
             {
               "field": {
@@ -121,12 +121,12 @@
                       "Entity": "stocks"
                     }
                   },
-                  "Property": "stocks Item Coverage Diff"
+                  "Property": "stocks Item Coverage Diff %"
                 }
               },
-              "queryRef": "ga.ga GA Goal 04 Completion Diff",
-              "nativeQueryRef": "Item Coverage AbsDiff",
-              "displayName": "Item Coverage AbsDiff"
+              "queryRef": "stocks.stocks Item Coverage Diff %",
+              "nativeQueryRef": "Item Coverage AbsDiff%",
+              "displayName": "Item Coverage AbsDiff%"
             },
             {
               "field": {
@@ -136,12 +136,12 @@
                       "Entity": "stocks"
                     }
                   },
-                  "Property": "stocks On Hand Spot Cover Diff"
+                  "Property": "stocks On Hand Spot Cover Diff %"
                 }
               },
-              "queryRef": "ga.ga GA Goal 05 Completion Diff",
-              "nativeQueryRef": "On Hand Spot Cover AbsDiff",
-              "displayName": "On Hand Spot Cover AbsDiff"
+              "queryRef": "stocks.stocks On Hand Spot Cover Diff %",
+              "nativeQueryRef": "On Hand Spot Cover AbsDiff%",
+              "displayName": "On Hand Spot Cover AbsDiff%"
             },
             {
               "field": {
@@ -151,12 +151,12 @@
                       "Entity": "stocks"
                     }
                   },
-                  "Property": "stocks Stock Outs % Diff"
+                  "Property": "stocks Stock Outs % Diff %"
                 }
               },
-              "queryRef": "ga.ga GA Goal 06 Completion Diff",
-              "nativeQueryRef": "Stock Outs % AbsDiff",
-              "displayName": "Stock Outs % AbsDiff"
+              "queryRef": "stocks.stocks Stock Outs % Diff %",
+              "nativeQueryRef": "Stock Outs % AbsDiff%",
+              "displayName": "Stock Outs % AbsDiff%"
             },
             {
               "field": {
@@ -166,12 +166,12 @@
                       "Entity": "stocks"
                     }
                   },
-                  "Property": "stocks Store Spot Cover Diff"
+                  "Property": "stocks Store Spot Cover Diff %"
                 }
               },
-              "queryRef": "ga.ga GA Goal 07 Completion Diff",
-              "nativeQueryRef": "Store Spot Cover AbsDiff",
-              "displayName": "Store Spot Cover AbsDiff"
+              "queryRef": "stocks.stocks Store Spot Cover Diff %",
+              "nativeQueryRef": "Store Spot Cover AbsDiff%",
+              "displayName": "Store Spot Cover AbsDiff%"
             },
             {
               "field": {
@@ -181,12 +181,12 @@
                       "Entity": "stocks"
                     }
                   },
-                  "Property": "stocks WH Spot Cover Diff"
+                  "Property": "stocks WH Spot Cover Diff %"
                 }
               },
-              "queryRef": "ga.ga GA Goal 08 Completion Diff",
-              "nativeQueryRef": "WH Spot Cover AbsDiff",
-              "displayName": "WH Spot Cover AbsDiff"
+              "queryRef": "stocks.stocks WH Spot Cover Diff %",
+              "nativeQueryRef": "WH Spot Cover AbsDiff%",
+              "displayName": "WH Spot Cover AbsDiff%"
             },
             {
               "field": {
@@ -196,12 +196,12 @@
                       "Entity": "stocks"
                     }
                   },
-                  "Property": "stocks 2.2 Available WH Stock Units Diff"
+                  "Property": "stocks 2.2 Available WH Stock Units Diff %"
                 }
               },
-              "queryRef": "ga.ga GA Goal 09 Completion Diff",
-              "nativeQueryRef": "2.2 Available WH Stock Unit AbsDiff",
-              "displayName": "2.2 Available WH Stock Unit AbsDiff"
+              "queryRef": "stocks.stocks 2.2 Available WH Stock Units Diff %",
+              "nativeQueryRef": "2.2 Available WH Stock Unit AbsDiff%",
+              "displayName": "2.2 Available WH Stock Unit AbsDiff%"
             },
             {
               "field": {
@@ -211,12 +211,12 @@
                       "Entity": "stocks"
                     }
                   },
-                  "Property": "stocks 3.1 Allocated Units Arrived Diff"
+                  "Property": "stocks 3.1 Allocated Units Arrived Diff %"
                 }
               },
-              "queryRef": "ga.ga GA Goal 10 Completion Diff",
-              "nativeQueryRef": "3.1 Allocated Units Arrived AbsDiff",
-              "displayName": "3.1 Allocated Units Arrived AbsDiff"
+              "queryRef": "stocks.stocks 3.1 Allocated Units Arrived Diff %",
+              "nativeQueryRef": "3.1 Allocated Units Arrived AbsDiff%",
+              "displayName": "3.1 Allocated Units Arrived AbsDiff%"
             },
             {
               "field": {
@@ -226,12 +226,12 @@
                       "Entity": "stocks"
                     }
                   },
-                  "Property": "stocks 4. Reserved Intake Units Diff"
+                  "Property": "stocks 4. Reserved Intake Units Diff %"
                 }
               },
-              "queryRef": "ga.ga GA Goal 11 Completion Diff",
-              "nativeQueryRef": "4. Reserved Intake Units AbsDiff",
-              "displayName": "4. Reserved Intake Units AbsDiff"
+              "queryRef": "stocks.stocks 4. Reserved Intake Units Diff %",
+              "nativeQueryRef": "4. Reserved Intake Units AbsDiff%",
+              "displayName": "4. Reserved Intake Units AbsDiff%"
             },
             {
               "field": {
@@ -241,12 +241,12 @@
                       "Entity": "stocks"
                     }
                   },
-                  "Property": "stocks Ranged Stores Diff"
+                  "Property": "stocks Ranged Stores Diff %"
                 }
               },
-              "queryRef": "ga.ga GA Goal 12 Completion Diff",
-              "nativeQueryRef": "Ranged Stores AbsDiff",
-              "displayName": "Ranged Stores AbsDiff"
+              "queryRef": "stocks.stocks Ranged Stores Diff %",
+              "nativeQueryRef": "Ranged Stores AbsDiff%",
+              "displayName": "Ranged Stores AbsDiff%"
             }
           ],
           "fieldParameters": [
@@ -1128,101 +1128,7 @@
           }
         },
         {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 1,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 2. WH Stock Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#efb5b9'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 2. WH Stock Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 2. WH Stock Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "null"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -2808,101 +2714,7 @@
           }
         },
         {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 1,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 1. All On Hand Stock Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#efb5b9'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 1. All On Hand Stock Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 1. All On Hand Stock Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "null"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -3576,101 +3388,7 @@
           }
         },
         {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 1,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 4. Store In-Transit Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#efb5b9'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 4. Store In-Transit Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 4. Store In-Transit Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "null"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -3696,101 +3414,7 @@
           }
         },
         {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 1,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 5. Store Stock Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#efb5b9'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 5. Store Stock Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 5. Store Stock Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "null"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -3816,101 +3440,7 @@
           }
         },
         {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 1,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks Item Coverage Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#efb5b9'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks Item Coverage Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks Item Coverage Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "null"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -3936,101 +3466,7 @@
           }
         },
         {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 1,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks On Hand Spot Cover Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#efb5b9'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks On Hand Spot Cover Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks On Hand Spot Cover Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "null"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -4056,101 +3492,7 @@
           }
         },
         {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 1,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks Stock Outs % Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#efb5b9'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks Stock Outs % Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks Stock Outs % Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "null"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -4176,101 +3518,7 @@
           }
         },
         {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 1,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks Store Spot Cover Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#efb5b9'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks Store Spot Cover Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks Store Spot Cover Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "null"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -4296,101 +3544,7 @@
           }
         },
         {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 1,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks WH Spot Cover Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#efb5b9'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks WH Spot Cover Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks WH Spot Cover Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "null"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -4416,101 +3570,7 @@
           }
         },
         {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 1,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 2.2 Available WH Stock Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#efb5b9'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 2.2 Available WH Stock Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 2.2 Available WH Stock Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "null"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -4536,101 +3596,7 @@
           }
         },
         {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 1,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 3.1 Allocated Units Arrived Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#efb5b9'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 3.1 Allocated Units Arrived Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 3.1 Allocated Units Arrived Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "null"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -4656,101 +3622,7 @@
           }
         },
         {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 1,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 4. Reserved Intake Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#efb5b9'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 4. Reserved Intake Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks 4. Reserved Intake Units Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "null"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -4776,101 +3648,7 @@
           }
         },
         {
-          "properties": {
-            "backColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 1,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks Ranged Stores Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#efb5b9'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks Ranged Stores Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "0D"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        },
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "stocks"
-                                    }
-                                  },
-                                  "Property": "stocks Ranged Stores Diff"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "null"
-                                }
-                              }
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#a0d1ff'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
+          "properties": {},
           "selector": {
             "data": [
               {
@@ -5720,6 +4498,1527 @@
               }
             ],
             "metadata": "ga.ga GA Goal 19 Completion Diff"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "stocks.stocks 1. All On Hand Stock Units Diff %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 2,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "stocks"
+                                    }
+                                  },
+                                  "Property": "stocks 1. All On Hand Stock Units Diff %"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0.01D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#efb5b9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks 1. All On Hand Stock Units Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks 1. All On Hand Stock Units Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.01D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#a0d1ff'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "stocks.stocks 1. All On Hand Stock Units Diff %"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "stocks.stocks 2. WH Stock Units Diff %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 2,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "stocks"
+                                    }
+                                  },
+                                  "Property": "stocks 2. WH Stock Units Diff %"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0.01D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#efb5b9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks 2. WH Stock Units Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks 2. WH Stock Units Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.01D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#a0d1ff'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "stocks.stocks 2. WH Stock Units Diff %"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "stocks.stocks 4. Store In-Transit Units Diff %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 2,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "stocks"
+                                    }
+                                  },
+                                  "Property": "stocks 4. Store In-Transit Units Diff %"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0.15D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#efb5b9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks 4. Store In-Transit Units Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks 4. Store In-Transit Units Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.15D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#a0d1ff'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "stocks.stocks 4. Store In-Transit Units Diff %"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "stocks.stocks 5. Store Stock Units Diff %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 2,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "stocks"
+                                    }
+                                  },
+                                  "Property": "stocks 5. Store Stock Units Diff %"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0.01D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#efb5b9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks 5. Store Stock Units Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks 5. Store Stock Units Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.01D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#a0d1ff'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "stocks.stocks 5. Store Stock Units Diff %"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "stocks.stocks Item Coverage Diff %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 2,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "stocks"
+                                    }
+                                  },
+                                  "Property": "stocks Item Coverage Diff %"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0.01D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#efb5b9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks Item Coverage Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks Item Coverage Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.01D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#a0d1ff'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "stocks.stocks Item Coverage Diff %"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "stocks.stocks On Hand Spot Cover Diff %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 2,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "stocks"
+                                    }
+                                  },
+                                  "Property": "stocks On Hand Spot Cover Diff %"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0.01D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#efb5b9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks On Hand Spot Cover Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks On Hand Spot Cover Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.01D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#a0d1ff'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "stocks.stocks On Hand Spot Cover Diff %"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "stocks.stocks Stock Outs % Diff %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 2,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "stocks"
+                                    }
+                                  },
+                                  "Property": "stocks Stock Outs % Diff %"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0.01D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#efb5b9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks Stock Outs % Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks Stock Outs % Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.01D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#a0d1ff'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "stocks.stocks Stock Outs % Diff %"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "stocks.stocks Store Spot Cover Diff %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 2,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "stocks"
+                                    }
+                                  },
+                                  "Property": "stocks Store Spot Cover Diff %"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0.01D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#efb5b9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks Store Spot Cover Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks Store Spot Cover Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.01D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#a0d1ff'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "stocks.stocks Store Spot Cover Diff %"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "stocks.stocks WH Spot Cover Diff %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 2,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "stocks"
+                                    }
+                                  },
+                                  "Property": "stocks WH Spot Cover Diff %"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0.01D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#efb5b9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks WH Spot Cover Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks WH Spot Cover Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.01D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#a0d1ff'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "stocks.stocks WH Spot Cover Diff %"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "stocks.stocks 2.2 Available WH Stock Units Diff %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 2,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "stocks"
+                                    }
+                                  },
+                                  "Property": "stocks 2.2 Available WH Stock Units Diff %"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0.01D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#efb5b9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks 2.2 Available WH Stock Units Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks 2.2 Available WH Stock Units Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.01D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#a0d1ff'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "stocks.stocks 2.2 Available WH Stock Units Diff %"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "stocks.stocks 3.1 Allocated Units Arrived Diff %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 2,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "stocks"
+                                    }
+                                  },
+                                  "Property": "stocks 3.1 Allocated Units Arrived Diff %"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0.01D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#efb5b9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks 3.1 Allocated Units Arrived Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks 3.1 Allocated Units Arrived Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.01D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#a0d1ff'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "stocks.stocks 3.1 Allocated Units Arrived Diff %"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "stocks.stocks 4. Reserved Intake Units Diff %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 2,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "stocks"
+                                    }
+                                  },
+                                  "Property": "stocks 4. Reserved Intake Units Diff %"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0.01D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#efb5b9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks 4. Reserved Intake Units Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks 4. Reserved Intake Units Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.01D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#a0d1ff'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "stocks.stocks 4. Reserved Intake Units Diff %"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "stocks.stocks Ranged Stores Diff %"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 2,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "stocks"
+                                    }
+                                  },
+                                  "Property": "stocks Ranged Stores Diff %"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "0.01D"
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#efb5b9'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks Ranged Stores Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "stocks"
+                                        }
+                                      },
+                                      "Property": "stocks Ranged Stores Diff %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.01D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#a0d1ff'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "stocks.stocks Ranged Stores Diff %"
           }
         }
       ],
@@ -5900,7 +6199,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Absolute Difference against PROD by Source and Dimension for each Metric'"
+                  "Value": "'Absolute Difference % against PROD by Source and Dimension for each Metric'"
                 }
               }
             }
@@ -5942,7 +6241,7 @@
         }
       },
       {
-        "name": "Filter7cf56ec4c4059e838842",
+        "name": "Filterf4220043ea49200ad1b4",
         "ordinal": 1,
         "field": {
           "Column": {
@@ -5951,13 +6250,29 @@
                 "Entity": "stocks"
               }
             },
-            "Property": "Dimension"
+            "Property": "Attribute"
           }
-        }
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "Filter037b8448bc2eaa900ad3",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "Fiscal Year (544)"
+          }
+        },
+        "howCreated": "User"
       },
       {
         "name": "Filter093b88d554a6108ea013",
-        "ordinal": 2,
+        "ordinal": 3,
         "field": {
           "Measure": {
             "Expression": {
@@ -5968,11 +6283,12 @@
             "Property": "stocks 1. All On Hand Stock Units Diff"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "Filterd74a60c123b3501e5742",
-        "ordinal": 3,
+        "ordinal": 4,
         "field": {
           "Measure": {
             "Expression": {
@@ -5983,11 +6299,12 @@
             "Property": "stocks 2. WH Stock Units Diff"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "Filter5536a369e2e01a4ee93c",
-        "ordinal": 4,
+        "ordinal": 5,
         "field": {
           "Measure": {
             "Expression": {
@@ -5998,11 +6315,12 @@
             "Property": "stocks 4. Store In-Transit Units Diff"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "Filter2f78844ae8963800738d",
-        "ordinal": 5,
+        "ordinal": 6,
         "field": {
           "Measure": {
             "Expression": {
@@ -6013,11 +6331,12 @@
             "Property": "stocks 5. Store Stock Units Diff"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "Filterb3544731b910e8bb30c1",
-        "ordinal": 6,
+        "ordinal": 7,
         "field": {
           "Measure": {
             "Expression": {
@@ -6028,11 +6347,12 @@
             "Property": "stocks Item Coverage Diff"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "Filterc542e4908050d0a7d59c",
-        "ordinal": 7,
+        "ordinal": 8,
         "field": {
           "Measure": {
             "Expression": {
@@ -6043,11 +6363,12 @@
             "Property": "stocks On Hand Spot Cover Diff"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "Filter87b268325063c0407398",
-        "ordinal": 8,
+        "ordinal": 9,
         "field": {
           "Measure": {
             "Expression": {
@@ -6058,11 +6379,12 @@
             "Property": "stocks Stock Outs % Diff"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "Filter8f8643a6798033036a09",
-        "ordinal": 9,
+        "ordinal": 10,
         "field": {
           "Measure": {
             "Expression": {
@@ -6073,11 +6395,12 @@
             "Property": "stocks Store Spot Cover Diff"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "Filter4a0a625ea7a48341ed74",
-        "ordinal": 10,
+        "ordinal": 11,
         "field": {
           "Measure": {
             "Expression": {
@@ -6088,11 +6411,12 @@
             "Property": "stocks WH Spot Cover Diff"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "Filter191148e8228ebee4070b",
-        "ordinal": 11,
+        "ordinal": 12,
         "field": {
           "Measure": {
             "Expression": {
@@ -6103,11 +6427,12 @@
             "Property": "stocks 2.2 Available WH Stock Units Diff"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "Filter5501aef10d5340cc5de0",
-        "ordinal": 12,
+        "ordinal": 13,
         "field": {
           "Measure": {
             "Expression": {
@@ -6118,11 +6443,12 @@
             "Property": "stocks 3.1 Allocated Units Arrived Diff"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "Filterf2d98420e4e98578140d",
-        "ordinal": 13,
+        "ordinal": 14,
         "field": {
           "Measure": {
             "Expression": {
@@ -6133,11 +6459,12 @@
             "Property": "stocks 4. Reserved Intake Units Diff"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "Filter1a055318e8289a609ea4",
-        "ordinal": 14,
+        "ordinal": 15,
         "field": {
           "Measure": {
             "Expression": {
@@ -6148,7 +6475,217 @@
             "Property": "stocks Ranged Stores Diff"
           }
         },
+        "type": "Advanced",
+        "howCreated": "User"
+      },
+      {
+        "name": "cd33ee5ba24277e7405f",
+        "ordinal": 16,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks 1. All On Hand Stock Units Diff %"
+          }
+        },
         "type": "Advanced"
+      },
+      {
+        "name": "dd79c520c29aad8c282f",
+        "ordinal": 17,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks 2. WH Stock Units Diff %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a5109de13e04b85efee9",
+        "ordinal": 18,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks 4. Store In-Transit Units Diff %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "43c597d84b306f57bf82",
+        "ordinal": 19,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks 5. Store Stock Units Diff %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0cec0e093dbb7043362e",
+        "ordinal": 20,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks Item Coverage Diff %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3a3f60d6afb0c124c6f8",
+        "ordinal": 21,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks On Hand Spot Cover Diff %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c4bbfff4f304a7e11f35",
+        "ordinal": 22,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks Stock Outs % Diff %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ee5a5e1969316b7d8f26",
+        "ordinal": 23,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks Store Spot Cover Diff %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3a4830386b9e792cfab4",
+        "ordinal": 24,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks WH Spot Cover Diff %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "45b3903d219020c23d6c",
+        "ordinal": 25,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks 2.2 Available WH Stock Units Diff %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3fdca2c0668485a4b664",
+        "ordinal": 26,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks 3.1 Allocated Units Arrived Diff %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "14a8e443ef42d3c1bc93",
+        "ordinal": 27,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks 4. Reserved Intake Units Diff %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a5bdb4401eb30858cfa5",
+        "ordinal": 28,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "stocks Ranged Stores Diff %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a7e708b0dce1b0d42fe3",
+        "ordinal": 29,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "stocks"
+              }
+            },
+            "Property": "Dimension"
+          }
+        }
       }
     ],
     "filterSortOrder": "Custom"

@@ -4,9 +4,9 @@
   "position": {
     "x": 16,
     "y": 112,
-    "z": 2000,
+    "z": 3000,
     "height": 592,
-    "width": 480,
+    "width": 432,
     "tabOrder": 2000
   },
   "visual": {
@@ -61,11 +61,11 @@
                       "Entity": "stocks"
                     }
                   },
-                  "Property": "stocks Sum of AbsDiff"
+                  "Property": "stocks Sum of AbsDiff %"
                 }
               },
               "queryRef": "sales.sales Sum of AbsDiff",
-              "nativeQueryRef": "stocks Sum of AbsDiff"
+              "nativeQueryRef": "stocks Sum of AbsDiff %"
             }
           ]
         }
@@ -137,12 +137,12 @@
                                       "Entity": "stocks"
                                     }
                                   },
-                                  "Property": "stocks Sum of AbsDiff"
+                                  "Property": "stocks Sum of AbsDiff %"
                                 }
                               },
                               "Right": {
                                 "Literal": {
-                                  "Value": "1D"
+                                  "Value": "0.01D"
                                 }
                               }
                             }
@@ -166,7 +166,7 @@
                                           "Entity": "stocks"
                                         }
                                       },
-                                      "Property": "stocks Sum of AbsDiff"
+                                      "Property": "stocks Sum of AbsDiff %"
                                     }
                                   },
                                   "Right": {
@@ -186,12 +186,12 @@
                                           "Entity": "stocks"
                                         }
                                       },
-                                      "Property": "stocks Sum of AbsDiff"
+                                      "Property": "stocks Sum of AbsDiff %"
                                     }
                                   },
                                   "Right": {
                                     "Literal": {
-                                      "Value": "1D"
+                                      "Value": "0.01D"
                                     }
                                   }
                                 }
@@ -215,7 +215,7 @@
                                       "Entity": "stocks"
                                     }
                                   },
-                                  "Property": "stocks Sum of AbsDiff"
+                                  "Property": "stocks Sum of AbsDiff %"
                                 }
                               },
                               "Right": {
@@ -427,7 +427,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Absolute Difference against PROD by Source and Dimension for all Metrics'"
+                  "Value": "'Absolute Difference % against PROD by Source and Dimension for all Metrics'"
                 }
               }
             }
@@ -492,7 +492,7 @@
                 "Entity": "stocks"
               }
             },
-            "Property": "stocks Sum of AbsDiff"
+            "Property": "stocks Sum of AbsDiff %"
           }
         },
         "type": "Advanced"

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
   "name": "1e8f48692e21619e4b27",
   "position": {
-    "x": 464,
+    "x": 416,
     "y": 112,
     "z": 7000,
     "height": 32,
     "width": 32,
-    "tabOrder": 7000
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "actionButton",
@@ -50,7 +50,7 @@
             "tooltip": {
               "expr": {
                 "Literal": {
-                  "Value": "'Note:  Blue background indicates less than 1 difference against Footprint PROD.  Red background indicates grater than 1 difference against Footprint PROD.  stocks metrics show sum of stocks across date range, rather than stocks as of last date of date range.'"
+                  "Value": "'Note:  Blue background indicates less than 1% (or 15% for Store In-Transit Units) difference against Footprint PROD.  Red background indicates grater than 1% (or 15% for Store In-Transit Units) difference against Footprint PROD.  stocks metrics show sum of stocks across date range, rather than stocks as of last date of date range.'"
                 }
               }
             }
