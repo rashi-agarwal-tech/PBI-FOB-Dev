@@ -1874,75 +1874,974 @@ table Movements
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	partition 'FY2030' = m
+	partition 'CY2030 12' = m
 		mode: import
 		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],     				    				
-    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20290401 and [Date_Key] < 20300401  )
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20301201 and [Date_Key] < 20310101)
+				in
+					#"Filtered Rows"
+					
+	partition 'CY2030 11' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20301101 and [Date_Key] < 20301201)
 				in
 					#"Filtered Rows"
 
-	partition 'FY2029' = m
+	partition 'CY2030 10' = m
 		mode: import
 		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],     				    				
-    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20280401 and [Date_Key] < 20290401  )
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20301001 and [Date_Key] < 20301101)
 				in
 					#"Filtered Rows"
 
-	partition 'FY2028' = m
+	partition 'CY2030 09' = m
 		mode: import
 		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],     				    				
-    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20270401 and [Date_Key] < 20280401  )
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20300901 and [Date_Key] < 20301001)
+				in
+					#"Filtered Rows"
+					
+	partition 'CY2030 08' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20300801 and [Date_Key] < 20300901)
 				in
 					#"Filtered Rows"
 
-	partition 'FY2027' = m
+	partition 'CY2030 07' = m
 		mode: import
 		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],     				    				
-    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20260401 and [Date_Key] < 20270401  )
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20300701 and [Date_Key] < 20300801)
 				in
 					#"Filtered Rows"
 
-	partition 'FY2026' = m
+	partition 'CY2030 06' = m
 		mode: import
 		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],     				    				
-    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20250401 and [Date_Key] < 20260401  )
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20300601 and [Date_Key] < 20300701)
 				in
 					#"Filtered Rows"
 
-	partition 'FY2025' = m
+	partition 'CY2030 05' = m
 		mode: import
 		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],     				    				
-    				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20240401 and [Date_Key] < 20250401  )
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20300501 and [Date_Key] < 20300601)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2030 04' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20300401 and [Date_Key] < 20300501)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2030 03' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20300301 and [Date_Key] < 20300401)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2030 02' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20300201 and [Date_Key] < 20300301)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2030 01' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20300101 and [Date_Key] < 20300201)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2029 12' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20291201 and [Date_Key] < 20300101)
+				in
+					#"Filtered Rows"
+					
+	partition 'CY2029 11' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20291101 and [Date_Key] < 20291201)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2029 10' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20291001 and [Date_Key] < 20291101)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2029 09' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20290901 and [Date_Key] < 20291001)
+				in
+					#"Filtered Rows"
+					
+	partition 'CY2029 08' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20290801 and [Date_Key] < 20290901)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2029 07' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20290701 and [Date_Key] < 20290801)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2029 06' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20290601 and [Date_Key] < 20290701)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2029 05' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20290501 and [Date_Key] < 20290601)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2029 04' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20290401 and [Date_Key] < 20290501)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2029 03' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20290301 and [Date_Key] < 20290401)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2029 02' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20290201 and [Date_Key] < 20290301)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2029 01' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20290101 and [Date_Key] < 20290201)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2028 12' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20281201 and [Date_Key] < 20290101)
+				in
+					#"Filtered Rows"
+					
+	partition 'CY2028 11' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20281101 and [Date_Key] < 20281201)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2028 10' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20281001 and [Date_Key] < 20281101)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2028 09' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20280901 and [Date_Key] < 20281001)
+				in
+					#"Filtered Rows"
+					
+	partition 'CY2028 08' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20280801 and [Date_Key] < 20280901)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2028 07' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20280701 and [Date_Key] < 20280801)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2028 06' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20280601 and [Date_Key] < 20280701)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2028 05' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20280501 and [Date_Key] < 20280601)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2028 04' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20280401 and [Date_Key] < 20280501)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2028 03' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20280301 and [Date_Key] < 20280401)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2028 02' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20280201 and [Date_Key] < 20280301)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2028 01' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20280101 and [Date_Key] < 20280201)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2027 12' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20271201 and [Date_Key] < 20280101)
+				in
+					#"Filtered Rows"
+					
+	partition 'CY2027 11' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20271101 and [Date_Key] < 20271201)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2027 10' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20271001 and [Date_Key] < 20271101)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2027 09' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20270901 and [Date_Key] < 20271001)
+				in
+					#"Filtered Rows"
+					
+	partition 'CY2027 08' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20270801 and [Date_Key] < 20270901)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2027 07' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20270701 and [Date_Key] < 20270801)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2027 06' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20270601 and [Date_Key] < 20270701)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2027 05' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20270501 and [Date_Key] < 20270601)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2027 04' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20270401 and [Date_Key] < 20270501)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2027 03' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20270301 and [Date_Key] < 20270401)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2027 02' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20270201 and [Date_Key] < 20270301)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2027 01' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20270101 and [Date_Key] < 20270201)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2026 12' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20261201 and [Date_Key] < 20270101)
+				in
+					#"Filtered Rows"
+					
+	partition 'CY2026 11' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20261101 and [Date_Key] < 20261201)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2026 10' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20261001 and [Date_Key] < 20261101)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2026 09' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20260901 and [Date_Key] < 20261001)
+				in
+					#"Filtered Rows"
+					
+	partition 'CY2026 08' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20260801 and [Date_Key] < 20260901)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2026 07' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20260701 and [Date_Key] < 20260801)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2026 06' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20260601 and [Date_Key] < 20260701)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2026 05' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20260501 and [Date_Key] < 20260601)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2026 04' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20260401 and [Date_Key] < 20260501)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2026 03' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20260301 and [Date_Key] < 20260401)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2026 02' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20260201 and [Date_Key] < 20260301)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2026 01' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20260101 and [Date_Key] < 20260201)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2025 12' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+				#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20251201 and [Date_Key] < 20260101)
+				in
+					#"Filtered Rows"
+					
+	partition 'CY2025 11' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20251101 and [Date_Key] < 20251201)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2025 10' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20251001 and [Date_Key] < 20251101)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2025 09' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20250901 and [Date_Key] < 20251001)
+				in
+					#"Filtered Rows"
+					
+	partition 'CY2025 08' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20250801 and [Date_Key] < 20250901)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2025 07' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20250701 and [Date_Key] < 20250801)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2025 06' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20250601 and [Date_Key] < 20250701)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2025 05' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20250501 and [Date_Key] < 20250601)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2025 04' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20250401 and [Date_Key] < 20250501)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2025 03' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20250301 and [Date_Key] < 20250401)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2025 02' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20250201 and [Date_Key] < 20250301)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2025 01' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20250101 and [Date_Key] < 20250201)
+				in
+					#"Filtered Rows"
+	partition 'CY2024 12' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20241201 and [Date_Key] < 20250101)
+				in
+					#"Filtered Rows"
+					
+	partition 'CY2024 11' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20241101 and [Date_Key] < 20241201)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2024 10' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20241001 and [Date_Key] < 20241101)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2024 09' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20240901 and [Date_Key] < 20241001)
+				in
+					#"Filtered Rows"
+					
+	partition 'CY2024 08' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20240801 and [Date_Key] < 20240901)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2024 07' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20240701 and [Date_Key] < 20240801)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2024 06' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20240601 and [Date_Key] < 20240701)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2024 05' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20240501 and [Date_Key] < 20240601)
+				in
+					#"Filtered Rows"
+
+	partition 'CY2024 04' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] >= 20240401 and [Date_Key] < 20240501)
 				in
 					#"Filtered Rows"
 
@@ -1955,7 +2854,7 @@ table Movements
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data], 
 					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each not List.Contains({"108"},[#"Financial Channel Custom"])),     				    				
-    				#"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20230401 and [Date_Key] < 20240401  )
+					#"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20230401 and [Date_Key] < 20240401  )
 				in
 					#"Filtered Rows2"	
 
@@ -1968,7 +2867,7 @@ table Movements
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
 					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each not List.Contains({"108"},[#"Financial Channel Custom"])),   	   				    				
-    				#"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20220401 and [Date_Key] < 20230401  )
+					#"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20220401 and [Date_Key] < 20230401  )
 				in
 					#"Filtered Rows2"
 
@@ -1981,7 +2880,7 @@ table Movements
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data], 
 					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each not List.Contains({"108"},[#"Financial Channel Custom"])),     				    				
-    				#"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20210401 and [Date_Key] < 20220401  )
+					#"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20210401 and [Date_Key] < 20220401  )
 				in
 					#"Filtered Rows2"	
 
@@ -1994,7 +2893,7 @@ table Movements
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],  
 					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each not List.Contains({"108"},[#"Financial Channel Custom"])), 				    				
-    				#"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20200401 and [Date_Key] < 20210401  )
+					#"Filtered Rows2" = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20200401 and [Date_Key] < 20210401  )
 				in
 					#"Filtered Rows2"	
 
