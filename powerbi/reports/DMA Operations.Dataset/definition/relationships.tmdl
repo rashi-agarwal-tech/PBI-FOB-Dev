@@ -95,6 +95,7 @@ relationship 46bce74c-2771-403a-aad4-cb0a9febc16f
 	toColumn: Warehouse.Warehouse_Key
 
 relationship 507dd990-8cf8-4b49-b613-264ff5d18a5b
+	crossFilteringBehavior: bothDirections
 	fromColumn: 'Allocation Details'.INVENTTRANSID
 	toColumn: 'Bridge InventTransID'.INVENTTRANSID
 
@@ -180,6 +181,7 @@ relationship 388f49df-8e1f-47e5-8820-9231ca4b429d
 	toColumn: 'PO ETD Date'.HDMIntETDDate_Key
 
 relationship AutoDetected_abb6486a-387f-4054-8deb-b67bf2b35f55
+	isActive: false
 	fromColumn: 'Allocation Details'.Date_Key
 	toColumn: Date.Date_Key
 
