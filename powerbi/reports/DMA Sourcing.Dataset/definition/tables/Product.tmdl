@@ -378,45 +378,6 @@ table Product
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Product Business Units'
-		dataType: string
-		sourceProviderType: nvarchar(22)
-		lineageTag: 5b997307-bea0-4225-ace9-c6ca49e2dee8
-		summarizeBy: none
-		sourceColumn: Product Business Units
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'FOB Category'
-		dataType: string
-		sourceProviderType: nvarchar(16777216)
-		lineageTag: bfa34966-8f0f-4253-a8a8-b0510e75a890
-		summarizeBy: none
-		sourceColumn: FOB Category
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Product Category'
-		dataType: string
-		sourceProviderType: nvarchar(22)
-		lineageTag: 4998ffbf-8a64-4e43-adfa-f17b6ae9925b
-		summarizeBy: none
-		sourceColumn: Product Category
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Selling Status Group'
-		dataType: string
-		isHidden
-		sourceProviderType: nvarchar(7)
-		lineageTag: 2c00596b-86d6-41ee-a882-93dc59a8daea
-		summarizeBy: none
-		sourceColumn: Selling Status Group
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Launch Month' = FORMAT ( 'Product'[Launch To Retail], "mmmm" )
 		dataType: string
 		lineageTag: cef8003c-1c06-4c6f-a55a-fe2c13d1db87
@@ -529,6 +490,131 @@ table Product
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'FOB Category' =
+			if([Category Major]="MENS" && [Product Segment]="Utility","Work",
+			if([Category Major]="MENS" && [Product Segment]="Redundant Leather","Originals",
+			if([Category Major]="MENS" && [Product Segment]="Redundant","Originals",
+			if([Category Major]="MENS" && [Product Segment]="Originals","Originals",
+			if([Category Major]="MENS" && [Product Segment]="Made In England","Originals",
+			if([Category Major]="MENS" && [Product Segment]="Fusion","Fusion",
+			if([Category Major]="MENS" && [Product Segment]="Casual","Casual",
+			if([Category Major]="KIDS" && [Product Segment]="Originals","Kids",
+			if([Category Major]="KIDS" && [Product Segment]="Fusion","Kids",
+			if([Category Major]="KIDS" && [Product Segment]="Casual","Kids",
+			if([Category Major]="Originals" && [Product Segment]="Casual","Originals",
+			if([Category Major]="Originals" && [Product Segment]="Fusion","Fusion",
+			if([Category Major]="Originals" && [Product Segment]="Made In England","Originals",
+			if([Category Major]="Originals" && [Product Segment]="Originals","Originals",
+			if([Category Major]="Originals" && [Product Segment]="Redundant","Originals",
+			if([Category Major]="Originals" && [Product Segment]="Redundant Leather","Originals",
+			if([Category Major]="WOMENS" && [Product Segment]="Casual","Casual",
+			if([Category Major]="WOMENS" && [Product Segment]="Fusion","Fusion",
+			if([Category Major]="WOMENS" && [Product Segment]="Made In England","Originals",
+			if([Category Major]="WOMENS" && [Product Segment]="Originals","Originals",
+			if([Category Major]="WOMENS" && [Product Segment]="Redundant","Originals",
+			if([Category Major]="WOMENS" && [Product Segment]="Redundant Leather","Originals",
+			if([Category Major]="WOMENS" && [Product Segment]="WOMENS","Originals",
+			if([Category Major]="WORK" && [Product Segment]="Heavy Industry","Work",
+			if([Category Major]="WORK" && [Product Segment]="Light Industry","Work",
+			if([Category Major]="WORK" && [Product Segment]="Service","Work",
+			if([Category Major]="WORK" && [Product Segment]="Utility","Work","N/A")))
+			))))))))))))))))))))))))
+		dataType: string
+		lineageTag: 77d6f602-a6b4-4f43-82fa-634f93157348
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Business Units' =
+			IF (
+			    [Product Segment] = "Kids" || [Product Segment] = "Girls" || [Product Segment] = "Boys", "Kids",
+			    IF (
+			        [Product Segment] = "Accessories" || [Product Segment] = "Clothing", "Clothing & Accessories",
+			        IF (
+			            [Product Segment] = "Light Industry" || [Product Segment] = "Heavy Industry" || [Product Segment] = "Service" || [Product Segment] = "Utility", "Work",
+			            IF (
+			                [Product Segment] = "Casual", "Casual",
+			                IF (
+			                    [Product Segment] = "Fusion", "Fusion",
+			                    IF (
+			                        [Product Segment] = "Originals" || [Product Segment] = "Made In England", "Originals",
+			                        IF (
+			                            [Product Segment] = "Shoecare & Laces", "Shoecare & Laces",
+			                            IF (
+			                                [Product Segment] = "Marketing", "Marketing",
+			                                IF (
+			                                    [Product Segment] = "Redundant" || [Product Segment] = "Redundant Leather", "Redundant", "Originals"
+			                                )
+			                            )
+			                        )
+			                    )
+			                )
+			            )
+			        )
+			    )
+			)
+		dataType: string
+		lineageTag: 67de432f-64a4-4a78-980b-528c95d35eb5
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Category' =
+			IF (
+			    'Product'[Product Type] = "Accessories","Clothing & Accessories",
+			    IF (
+			        'Product'[Product Type] = "Clothing Accessories","Clothing & Accessories",
+			        IF (
+			            'Product'[Product Type] = "Clothing","Clothing & Accessories",
+			            IF (
+			                'Product'[Product Type] = "Soft Accessories","Clothing & Accessories",
+			                IF (
+			                    'Product'[Product Type] = "SLG","Clothing & Accessories",
+			                    IF (
+			                        'Product'[Product Type] = "Bags","Clothing & Accessories",
+			                        IF (
+			                            'Product'[Product Type] = "SLG","Clothing & Accessories",
+			                            IF (
+			                                'Product'[Product Type] = "Sandals","Footwear",
+			                                IF (
+			                                    'Product'[Product Type] = "Boots","Footwear",
+			                                    IF ( 'Product'[Product Type] = "Shoes", "Footwear", "Shoecare & Laces" )
+			                                )
+			                            )
+			                        )
+			                    )
+			                )
+			            )
+			        )
+			    )
+			)
+		dataType: string
+		lineageTag: 84a1094e-48f1-4d79-ad5c-ff9fcfcf7de9
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status Group' =
+			SWITCH (
+			   'Product'[Selling Status] ,
+			    "Carry Over", "C/O",
+			    "Continuity", "C/O",
+			    "Obsolete", "Newness",
+			    "TBD", "Newness",
+			    "n/a"
+			)
+		dataType: string
+		lineageTag: 8f11f377-7d2c-45e7-a6cf-1281bfe5645a
+		summarizeBy: none
+		isDataTypeInferred
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Product = m
 		mode: import
 		source =
@@ -538,9 +624,10 @@ table Product
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="SRC_BFN_VW_PPMDIMPRODUCT",Kind="View"]}[Data],
 					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
-					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View,
+				    #"Removed Columns" = Table.RemoveColumns(ParameterFilter,{"FOB Category", "Product Business Units", "Product Category", "Selling Status Group"})
 				in
-					ParameterFilter
+					#"Removed Columns"
 
 	annotation PBI_ResultType = Exception
 
