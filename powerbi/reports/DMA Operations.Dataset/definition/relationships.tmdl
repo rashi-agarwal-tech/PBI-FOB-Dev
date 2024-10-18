@@ -140,7 +140,6 @@ relationship 1e1b57f4-8095-475d-b1bf-fd4b8017c5c3
 	toColumn: Size.Size_Key
 
 relationship 68b4924a-f193-4f6b-9a2d-b1b70f2c8a68
-	isActive: false
 	fromColumn: Movements.NewPurchasingSeason_Key
 	toColumn: 'Purchase Season'.Season_Key
 
@@ -156,10 +155,6 @@ relationship 0ad87144-72e5-4059-b5dc-9fc3f8c1ccef
 	fromColumn: Availability.SELLINGSTATUS
 	toColumn: 'Selling Status - Invoice'.SELLINGSTATUS
 
-relationship AutoDetected_e31bb7ec-6dbb-488f-b008-afbfe751e650
-	fromColumn: Date.Season
-	toColumn: 'Purchase Season'.Season
-
 relationship a49ea891-f1de-43fc-9336-7ec41c3d246e
 	fromColumn: Intake.SELLINGSTATUS
 	toColumn: 'Selling Status - Invoice'.SELLINGSTATUS
@@ -173,6 +168,7 @@ relationship 03275420-9808-46b1-bc07-2953d8fd212b
 	toColumn: 'Sales Order Type'.ORDERTYPEID
 
 relationship c2835454-6833-4ed9-ae98-64dc02b3fe5c
+	crossFilteringBehavior: bothDirections
 	fromColumn: Movements.INVENTTRANSID
 	toColumn: 'Bridge InventTransID'.INVENTTRANSID
 
@@ -236,4 +232,8 @@ relationship 651d2440-448e-45cc-a813-1175e9e73e59
 relationship 0f76dfd8-dd77-4a9a-8993-3a679476696a
 	fromColumn: 'Customer Sell Out US'.To_Date_Key
 	toColumn: Date.Date_Key
+
+relationship 33450012-d1ca-4a75-bf83-cbbc6c2a1778
+	fromColumn: Movements.'Selling Status - Order Entry'
+	toColumn: 'Selling Status - Order Entry'.SELLINGSTATUS
 
