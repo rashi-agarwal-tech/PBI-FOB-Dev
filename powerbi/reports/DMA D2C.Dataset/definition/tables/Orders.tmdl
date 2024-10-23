@@ -1207,24 +1207,24 @@ table Orders
 
 	column OpeneComReturn_Key =
 			VAR main =
-			    IF (
-			        AND ( 'Orders'[Web Order #] <> "", 'Orders'[ITEMNUMBER_SOL_ROL] <> "" ),
-			        CONCATENATE (
-			            CONCATENATE (
-			                CONCATENATE ( 'Orders'[Web Order #], "_" ),
-			                CONCATENATE ( 'Orders'[ITEMNUMBER_SOL_ROL], "000" )
-			            ),
-			            RELATED ( Size[Size] )
-			        ),
-			        BLANK ()
-			    )
+				IF (
+					AND ( 'Orders'[Web Order #] <> "", 'Orders'[ITEMNUMBER_SOL_ROL] <> "" ),
+					CONCATENATE (
+						CONCATENATE (
+							CONCATENATE ( 'Orders'[Web Order #], "_" ),
+							CONCATENATE ( 'Orders'[ITEMNUMBER_SOL_ROL], "000" )
+						),
+						RELATED ( Size[Size] )
+					),
+					BLANK ()
+				)
 			VAR check =
-			    LOOKUPVALUE (
-			        'Open eCom Return Info'[OpeneComReturn_Key],
-			        'Open eCom Return Info'[OpeneComReturn_Key], main
-			    )
+				LOOKUPVALUE (
+					'Open eCom Return Info'[OpeneComReturn_Key],
+					'Open eCom Return Info'[OpeneComReturn_Key], main
+				)
 			RETURN
-			    IF ( ISBLANK ( check ), BLANK (), main )
+				IF ( ISBLANK ( check ), BLANK (), main )
 		dataType: string
 		isHidden
 		displayFolder: zz_Keys
@@ -1236,40 +1236,13 @@ table Orders
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Full Price or Markdown' =
-			IF (
-			    RELATED ( Region[Company ID] ) = "201",
-			    IF (
-			        Orders[Return Reason] <> "",
-			        "Full Price",
-			        IF (
-			            Orders[Line Discount] < 0.0,
-			            "Full Price",
-			            IF (
-			                Orders[Line Discount] >= 0.0
-			                    && Orders[Line Discount] < 0.095,
-			                "Full Price",
-			                IF (
-			                    Orders[Line Discount] >= 0.095
-			                        && Orders[Line Discount] < 0.155,
-			                    "Customer Acquisition",
-			                    IF ( Orders[Line Discount] >= 0.155, "Promo Markdown", "Undefined" )
-			                )
-			            )
-			        )
-			    ),
-			    IF (
-			        OR ( Orders[Line Discount] >= .20, Orders[Selling Status] = 1001 ),
-			        "Markdown",
-			        "Full Price"
-			    )
-			)
+	column 'Full Price or Markdown'
 		dataType: string
 		isHidden
 		displayFolder: zz_Misc
 		lineageTag: 08859000-a626-4c22-826c-0676832aeb8c
 		summarizeBy: none
-		isDataTypeInferred
+		sourceColumn: Full Price or Markdown
 
 		changedProperty = IsHidden
 
@@ -1287,13 +1260,14 @@ table Orders
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Net Units Col' = Orders[Open Units Col] + Orders[Invoiced Units Col] - Orders[Returned Units Col]
+	column 'Net Units Col'
 		dataType: int64
 		isHidden
 		formatString: #,##0
 		displayFolder: zz_Units
 		lineageTag: c01d3881-e0bb-4389-aa41-36fc90e9dbb9
 		summarizeBy: none
+		sourceColumn: Net Units Col
 
 		changedProperty = IsHidden
 
@@ -1305,10 +1279,10 @@ table Orders
 
 	column 'Open eCom Return Quantity' =
 			IF (
-			    ISBLANK ( RELATED ( 'Open eCom Return Info'[Processed Date] ) ) = TRUE ()
-			        && RELATED ( 'Open eCom Return Info'[Returned Status] ) <> "Expired",
-			    RELATED ( 'Open eCom Return Info'[Quantity] ),
-			    BLANK ()
+				ISBLANK ( RELATED ( 'Open eCom Return Info'[Processed Date] ) ) = TRUE ()
+					&& RELATED ( 'Open eCom Return Info'[Returned Status] ) <> "Expired",
+				RELATED ( 'Open eCom Return Info'[Quantity] ),
+				BLANK ()
 			)
 		dataType: int64
 		isHidden
@@ -1333,43 +1307,25 @@ table Orders
 
 		annotation SummarizationSetBy = User
 
-	column 'eCom Demand Open Value Col' =
-			VAR main = ( Orders[Unit Price] * Orders[Open Units Col] ) - Orders[Open Discounts Col]
-			RETURN
-			    IF (
-			        Orders[SALESORDERPOOLID_SOH] = "EO",
-			        IF ( ISBLANK ( Orders[RMA Number] ), main, BLANK () ),
-			        BLANK ()
-			    )
+	column 'eCom Demand Open Value Col'
 		dataType: double
 		isHidden
 		displayFolder: zz_Values
 		lineageTag: 467b8019-cf44-408d-8379-d9fa43565c37
 		summarizeBy: sum
-		isDataTypeInferred
+		sourceColumn: eCom Demand Open Value Col
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Full Price (inc tax) Invoiced Col' =
-			IF (
-			    Orders[AREPRICESINCLUDINGSALESTAX_SOH] = TRUE,
-			    IF (
-			        Orders[Source] = "AX_Invoiced_US"
-			            && Orders[LINEAMOUNT_SIL_CONS_GBP] > 0
-			            && Orders[Invoiced Units Col] = 0,
-			        Orders[LINEAMOUNT_SIL_CONS_GBP],
-			         ( Orders[Unit Price] * Orders[Invoiced Units Col] )
-			    ),
-			    BLANK ()
-			)
+	column 'Full Price (inc tax) Invoiced Col'
 		dataType: double
 		isHidden
 		displayFolder: zz_Values
 		lineageTag: 98773fe3-5470-46bb-927a-3a0ce60b9c75
 		summarizeBy: sum
-		isDataTypeInferred
+		sourceColumn: Full Price (inc tax) Invoiced Col
 
 		changedProperty = IsHidden
 
@@ -1377,18 +1333,13 @@ table Orders
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Full Price (inc tax) Open Col' =
-			IF (
-			    Orders[AREPRICESINCLUDINGSALESTAX_SOH] = TRUE,
-			     ( Orders[Unit Price] * Orders[Open Units Col] ),
-			    BLANK ()
-			)
+	column 'Full Price (inc tax) Open Col'
 		dataType: double
 		isHidden
 		displayFolder: zz_Values
 		lineageTag: 61fa2ba4-f4fa-4336-84b0-c154289ec301
 		summarizeBy: sum
-		isDataTypeInferred
+		sourceColumn: Full Price (inc tax) Open Col
 
 		changedProperty = IsHidden
 
@@ -1396,18 +1347,13 @@ table Orders
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Invoiced Discounts Col Cons GBP' =
-			IF (
-			    Orders[Invoiced Units Col] > 0,
-			    Orders[HeaderDiscount_CONS_GBP] + Orders[LineDiscount_CONS_GBP],
-			    BLANK ()
-			)
+	column 'Invoiced Discounts Col Cons GBP'
 		dataType: double
 		isHidden
 		displayFolder: zz_Values
 		lineageTag: e2eca71c-0d02-4700-85a5-af1f65c45def
 		summarizeBy: sum
-		isDataTypeInferred
+		sourceColumn: Invoiced Discounts Col Cons GBP
 
 		changedProperty = IsHidden
 
@@ -1415,23 +1361,14 @@ table Orders
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Invoiced Full Value Col Cons GBP' =
-			VAR CHGS = Orders[Invoiced Charges Col Cons GBP]
-			VAR MAIN =
-			    IF (
-			        Orders[Invoiced Units Col] > 0,
-			        Orders[LINEAMOUNT_SIL_CONS_GBP] + Orders[LineDiscount_CONS_GBP],
-			        BLANK ()
-			    )
-			RETURN
-			    IF ( Orders[Transaction Type] IN { "Sale", "Charge" }, MAIN + CHGS, BLANK () )
+	column 'Invoiced Full Value Col Cons GBP'
 		dataType: double
 		isHidden
 		formatString: 0.00
 		displayFolder: zz_Values
 		lineageTag: 99444dd7-6e49-49d2-8282-febd73305dc3
 		summarizeBy: sum
-		isDataTypeInferred
+		sourceColumn: Invoiced Full Value Col Cons GBP
 
 		changedProperty = IsHidden
 
@@ -1439,21 +1376,13 @@ table Orders
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
-	column 'Invoiced Tax Col' =
-			IF (
-			    AND (
-			        'Orders'[Transaction Status] = "Invoiced",
-			        ISBLANK ( Orders[Returned Units Col] )
-			    ),
-			    'Orders'[Tax_CONS_GBP],
-			    BLANK ()
-			)
+	column 'Invoiced Tax Col'
 		dataType: double
 		isHidden
 		displayFolder: zz_Values
 		lineageTag: 6b378e0e-9c3b-42bd-9b54-48ec318cb5ab
 		summarizeBy: sum
-		isDataTypeInferred
+		sourceColumn: Invoiced Tax Col
 
 		changedProperty = IsHidden
 
@@ -1461,14 +1390,14 @@ table Orders
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Open Discounts Col' = Orders[Discounts (inc tax) Open Col]
+	column 'Open Discounts Col'
 		dataType: double
 		isHidden
 		formatString: 0.00
 		displayFolder: zz_Values
 		lineageTag: 30f33a38-6ce9-4fdb-afd6-b9dd27eaf5df
 		summarizeBy: sum
-		isDataTypeInferred
+		sourceColumn: Open Discounts Col
 
 		changedProperty = IsHidden
 
@@ -1478,11 +1407,11 @@ table Orders
 
 	column 'Open eCom Return Full Value Col TRANS' =
 			IF (
-			    ISBLANK ( RELATED ( 'Open eCom Return Info'[Processed Date] ) ) = TRUE ()
-			        && RELATED ( 'Open eCom Return Info'[Returned Status] ) <> "Expired",
-			    RELATED ( 'Open eCom Return Info'[Quantity] )
-			        * RELATED ( 'Open eCom Return Info'[Price] ),
-			    BLANK ()
+				ISBLANK ( RELATED ( 'Open eCom Return Info'[Processed Date] ) ) = TRUE ()
+					&& RELATED ( 'Open eCom Return Info'[Returned Status] ) <> "Expired",
+				RELATED ( 'Open eCom Return Info'[Quantity] )
+					* RELATED ( 'Open eCom Return Info'[Price] ),
+				BLANK ()
 			)
 		dataType: double
 		isHidden
@@ -1497,11 +1426,11 @@ table Orders
 
 	column 'Open eCom Return Net Value Col Cons GBP' =
 			IF (
-			    ISBLANK ( RELATED ( 'Open eCom Return Info'[Processed Date] ) ) = TRUE ()
-			        && RELATED ( 'Open eCom Return Info'[Returned Status] ) <> "Expired",
-			    RELATED ( 'Open eCom Return Info'[Quantity] )
-			        * DIVIDE ( Orders[Invoiced Net Value Col Cons GBP], Orders[Invoiced Units Col] ),
-			    BLANK ()
+				ISBLANK ( RELATED ( 'Open eCom Return Info'[Processed Date] ) ) = TRUE ()
+					&& RELATED ( 'Open eCom Return Info'[Returned Status] ) <> "Expired",
+				RELATED ( 'Open eCom Return Info'[Quantity] )
+					* DIVIDE ( Orders[Invoiced Net Value Col Cons GBP], Orders[Invoiced Units Col] ),
+				BLANK ()
 			)
 		dataType: double
 		isHidden
@@ -1512,11 +1441,11 @@ table Orders
 
 		changedProperty = IsHidden
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = Automatic	
 
 	column 'Ordered eCom Return Net Value Col Cons GBP' =
 			RELATED ( 'Open eCom Return Info'[Quantity] )
-			    * DIVIDE ( Orders[Invoiced Net Value Col Cons GBP], Orders[Invoiced Units Col] )
+				* DIVIDE ( Orders[Invoiced Net Value Col Cons GBP], Orders[Invoiced Units Col] )
 		dataType: double
 		isHidden
 		displayFolder: zz_Values
@@ -1528,18 +1457,13 @@ table Orders
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'Returned Discounts Col Cons GBP' =
-			IF (
-			    Orders[Returned Units Col] > 0,
-			    Orders[HeaderDiscount_CONS_GBP] + Orders[LineDiscount_CONS_GBP],
-			    BLANK ()
-			)
+	column 'Returned Discounts Col Cons GBP'
 		dataType: double
 		isHidden
 		displayFolder: zz_Values
 		lineageTag: f3fabc0a-6aee-451e-a636-3bbd22b8aa22
 		summarizeBy: sum
-		isDataTypeInferred
+		sourceColumn: Returned Discounts Col Cons GBP
 
 		changedProperty = IsHidden
 
@@ -1547,25 +1471,25 @@ table Orders
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column 'Customer Marketing Email' = RELATED('Ecom Email Marketing'[Email Hash])
+	column 'Customer Marketing Email'
 		dataType: string
 		isHidden
 		displayFolder: 2. eCom Details
 		lineageTag: 9e54d50b-5ea0-4f49-808b-6316e52f666d
 		summarizeBy: none
-		isDataTypeInferred
+		sourceColumn: Customer Marketing Email
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	column 'eCom Returning Frequency' = IF(NOT(ISBLANK(Orders[Customer Email])) && Orders[eCom Order Frequency] > 0, Orders[eCom Order Frequency] - 1, BLANK())
+	column 'eCom Returning Frequency'
 		dataType: int64
 		formatString: #,0
 		displayFolder: 2. eCom Details
 		lineageTag: 7d9502d0-c3f1-4a87-820e-a76b44732330
 		summarizeBy: none
-
+		sourceColumn: eCom Returning Frequency
 		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
@@ -1593,13 +1517,13 @@ table Orders
 
 		annotation SummarizationSetBy = Automatic
 
-	column Website = RELATED ( 'Website Name'[Website] )
+	column Website
 		dataType: string
 		isHidden
 		displayFolder: 2. eCom Details
 		lineageTag: bc2ddcee-083e-47c9-bf92-344d5faf39d7
 		summarizeBy: none
-		isDataTypeInferred
+		sourceColumn: Website
 
 		changedProperty = IsHidden
 
@@ -1633,9 +1557,9 @@ table Orders
 
 	column Country =
 			IF (
-			    LEFT ( Orders[Source], 4 ) = "D365",
-			    RELATED ( 'Customer'[Country] ),
-			    BLANK ()
+				LEFT ( Orders[Source], 4 ) = "D365",
+				RELATED ( 'Customer'[Country] ),
+				BLANK ()
 			)
 		dataType: string
 		lineageTag: e2a30388-73cd-4452-9518-b317b592b67e
@@ -1652,16 +1576,11 @@ table Orders
 
 		annotation SummarizationSetBy = Automatic
 
-	column Season =
-			IF (
-			    ISBLANK ( Orders[Order Season] ),
-			    LOOKUPVALUE ( 'Date'[Season], 'Date'[ Date], Orders[DateMaster] ),
-			    Orders[Order Season]
-			)
+	column Season
 		dataType: string
 		lineageTag: 8b4a7c81-91dc-4d81-8c7e-93555abe31ca
 		summarizeBy: none
-		isDataTypeInferred
+		sourceColumn: Season
 
 		annotation SummarizationSetBy = Automatic
 
