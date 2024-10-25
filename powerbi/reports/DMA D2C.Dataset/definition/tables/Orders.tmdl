@@ -1998,6 +1998,22 @@ table Orders
 
 		annotation SummarizationSetBy = Automatic
 
+	column OMNIUPSELL = RELATED('Retail Mpos'[OMNIUPSELL])
+		dataType: string
+		lineageTag: 307063f2-a4a2-483f-80ce-81191ea0ad58
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column OMNIORDERN = related('Retail Mpos'[OMNIORDERN])
+		dataType: string
+		lineageTag: 60654516-d1ae-43d2-afe5-20d7c99cf1df
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
 	partition FY2021 = m
 		mode: import
 		dataView: full
@@ -2084,4 +2100,6 @@ table Orders
 
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

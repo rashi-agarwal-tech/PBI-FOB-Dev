@@ -1,6 +1,14 @@
 {
-  "config": "{\"version\":\"5.44\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY23SU04\",\"version\":\"5.44\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "config": "{\"version\":\"5.44\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY23SU04\",\"version\":\"5.44\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
   "layoutOptimization": 0,
+  "pods": [
+    {
+      "boundSection": "ReportSection",
+      "config": "{}",
+      "name": "c2692cd02c7e3d0bd88d",
+      "referenceScope": 1
+    }
+  ],
   "resourcePackages": [
     {
       "resourcePackage": {
@@ -19,7 +27,7 @@
   ],
   "sections": [
     {
-      "config": "{}",
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"180L\"}}}}}]}}",
       "displayName": "Page 1",
       "displayOption": 1,
       "filters": "[]",
@@ -27,22 +35,22 @@
       "name": "ReportSection",
       "visualContainers": [
         {
-          "config": "{\"name\":\"1cbf9d958a66631f5bb0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"width\":280,\"height\":280,\"z\":0,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"drillFilterOtherVisuals\":true}}",
-          "filters": "[]",
-          "height": 280.00,
-          "width": 280.00,
-          "x": 10.00,
+          "config": "{\"name\":\"5c11437b0d0dc0d9312c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":756.4184731385486,\"y\":0,\"z\":1000,\"width\":387.25730442978323,\"height\":688.8595664467484,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Retail Mpos.OMNIUPSELL\"},{\"queryRef\":\"Retail Mpos.SALESORDERID\"},{\"queryRef\":\"Retail Mpos.OMNIORDERN\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Retail Mpos\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"OMNIUPSELL\"},\"Name\":\"Retail Mpos.OMNIUPSELL\",\"NativeReferenceName\":\"OMNIUPSELL\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"SALESORDERID\"},\"Name\":\"Retail Mpos.SALESORDERID\",\"NativeReferenceName\":\"SALESORDERID\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"OMNIORDERN\"},\"Name\":\"Retail Mpos.OMNIORDERN\",\"NativeReferenceName\":\"OMNIORDERN\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[{\"name\":\"bf6a70bc2c0403ae7ce2\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Retail Mpos\"}},\"Property\":\"OMNIUPSELL\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Retail Mpos\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"OMNIUPSELL\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'C&C - Add On'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{},\"isHiddenInViewMode\":false},{\"name\":\"0e8f5ea0a1e965140074\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Retail Mpos\"}},\"Property\":\"SALESORDERID\"}},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 688.86,
+          "width": 387.26,
+          "x": 756.42,
           "y": 0.00,
-          "z": 0.00
+          "z": 1000.00
         },
         {
-          "config": "{\"name\":\"24b094552f422b03947b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":290,\"width\":280,\"height\":280,\"z\":1000,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Date.Fiscal Year (544)\"},{\"queryRef\":\"Metrics.Web Value\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Metrics\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Fiscal Year (544)\"},\"Name\":\"Date.Fiscal Year (544)\",\"NativeReferenceName\":\"Fiscal Year (544)\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Web Value\"},\"Name\":\"Metrics.Web Value\",\"NativeReferenceName\":\"Web Value\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Web Value\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
-          "filters": "[]",
-          "height": 280.00,
-          "width": 280.00,
-          "x": 10.00,
-          "y": 290.00,
-          "z": 1000.00
+          "config": "{\"name\":\"7b94342bc141b9c0ed6b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":9.651272384542885,\"y\":0,\"z\":0,\"width\":447.5777568331763,\"height\":688.8595664467484,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Orders.Sales Order Number\"},{\"queryRef\":\"Orders.OMNIUPSELL\"},{\"queryRef\":\"Orders.OMNIORDERN\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"o\",\"Entity\":\"Orders\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"o\"}},\"Property\":\"Sales Order Number\"},\"Name\":\"Orders.Sales Order Number\",\"NativeReferenceName\":\"Sales Order Number\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"o\"}},\"Property\":\"OMNIUPSELL\"},\"Name\":\"Orders.OMNIUPSELL\",\"NativeReferenceName\":\"OMNIUPSELL\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"o\"}},\"Property\":\"OMNIORDERN\"},\"Name\":\"Orders.OMNIORDERN\",\"NativeReferenceName\":\"OMNIORDERN\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"o\"}},\"Property\":\"OMNIUPSELL\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[{\"name\":\"88941777aa892e27e392\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Orders\"}},\"Property\":\"Sales Order Number\"}},\"type\":\"Categorical\",\"howCreated\":0,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isHiddenInViewMode\":false}]",
+          "height": 688.86,
+          "width": 447.58,
+          "x": 9.65,
+          "y": 0.00,
+          "z": 0.00
         }
       ],
       "width": 1280.00

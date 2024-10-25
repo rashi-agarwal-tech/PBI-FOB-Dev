@@ -611,3 +611,8 @@ relationship AutoDetected_bbdab7b0-06dd-47f6-8803-b1ac767e94f7
 	fromColumn: 'GA Demand FC'.DeviceJoin
 	toColumn: 'Web Device'.DeviceJoin
 
+relationship bb5d657f-2ad8-4933-0f0c-aa963868a97b
+	crossFilteringBehavior: bothDirections
+	fromColumn: Orders.'Sales Order Number'
+	toColumn: 'Retail Mpos'.SALESORDERID
+

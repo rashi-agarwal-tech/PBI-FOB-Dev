@@ -10,11 +10,11 @@ queryGroup Parameters
 
 	annotation PBI_QueryGroupOrder = 0
 
-annotation PBI_QueryOrder = ["Account Details","Adjustments CoGS","Adjustments Sales","Availability","Bridge InventTransID","BridgeSalesOrderNumber","Channel","Customer","Datasource_Database","Datasource_Schema","Datasource_Server","Datasource_Warehouse","Date","Date - Order Date","Date Slicer","Display Currency","Ecom Email Marketing","Exchange Rates","Financial Channel","Footfall","Forecast","Forecast Additional Ecom","Forecast Ecom Demand","Forecast Version","GA Country","GA Demand FC","Google Analytics","Google Analytics Ads","Google Analytics Goals","Hours Worked","NumberOfRows","Open eCom Return Info","Order Taker","Order Type","Orders","Orders_View","Pick","Product Class","Product Weights","Products","Purchase Orders","RangeEnd","RangeStart","Refit Exclusion","Refit Slicer","Region","Regions","Retail Demographics","Retail Payment Details","Retail Payment Methods","Seasonal Product Forecast","Seasonal Product Info","Selling Status - Invoice","Selling Status - Order Entry","Size","Size Classification","SmartRes","Store Activity FC","TMALL","Territory","Time","Warehouse","Web Channel","Web Device","Website","Website Name"]
+annotation PBI_QueryOrder = ["Account Details","Adjustments CoGS","Adjustments Sales","Availability","Bridge InventTransID","BridgeSalesOrderNumber","Channel","Customer","Datasource_Database","Datasource_Schema","Datasource_Server","Datasource_Warehouse","Date","Date - Order Date","Date Slicer","Display Currency","Ecom Email Marketing","Exchange Rates","Financial Channel","Footfall","Forecast","Forecast Additional Ecom","Forecast Ecom Demand","Forecast Version","GA Country","GA Demand FC","Google Analytics","Google Analytics Ads","Google Analytics Goals","Hours Worked","NumberOfRows","Open eCom Return Info","Order Taker","Order Type","Orders","Orders_View","Pick","Product Class","Product Weights","Products","Purchase Orders","RangeEnd","RangeStart","Refit Exclusion","Refit Slicer","Region","Regions","Retail Demographics","Retail Payment Details","Retail Payment Methods","Seasonal Product Forecast","Seasonal Product Info","Selling Status - Invoice","Selling Status - Order Entry","Size","Size Classification","SmartRes","Store Activity FC","TMALL","Territory","Time","Warehouse","Web Channel","Web Device","Website","Website Name","Retail Mpos"]
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBIDesktopVersion = 2.128.1177.0 (24.04)
+annotation PBIDesktopVersion = 2.137.751.0 (24.10)
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -79,6 +79,7 @@ ref table TMALL
 ref table 'Model Refresh Time'
 ref table Metrics
 ref table 'Net Transactions'
+ref table 'Retail Mpos'
 
 ref role Admin
 ref role 'NA Users'
@@ -92,4 +93,6 @@ ref role 'EMEA Users - Global'
 ref role 'CN Users'
 ref role 'HK Users - Global'
 ref role 'JP Users - Global'
+
+ref cultureInfo en-US
 
