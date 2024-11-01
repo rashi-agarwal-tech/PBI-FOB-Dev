@@ -1,0 +1,82 @@
+table 'Net Transactions'
+	isHidden
+	lineageTag: a6dc0dfb-5849-4fb2-baac-4e2a76e48ac3
+
+	column 'Sales Order Number'
+		isHidden
+		lineageTag: 6ddb9a64-7f28-40ed-988a-5d3d7e875a61
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Orders[Sales Order Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Returns Flg'
+		isHidden
+		lineageTag: b7cf7558-6afc-4dc9-a8e6-aa6dacc36ca2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Returns Flg]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Sales Flg'
+		isHidden
+		lineageTag: 5ee3e9da-2d3d-48ff-b145-d0912c730163
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Sales Flg]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net Trx'
+		isHidden
+		lineageTag: 9d9f3db1-903a-4971-9825-83bb792e1aea
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Net Trx]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Net Value'
+		dataType: decimal
+		isHidden
+		formatString: " 0.00"
+		lineageTag: 2a9effff-a9e6-4ff6-8405-112a37140289
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Total Net Value]
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	partition 'Net Transactions' = calculated
+		mode: import
+		source =
+				VAR ReturnsFlag =
+				    IF ( [Returned Units] > 0, -1, BLANK () )
+				VAR SalesFlag =
+				    IF ( [Invoiced Units] > 0, 1, BLANK () )
+				VAR NetTrx = ReturnsFlag + SalesFlag
+				RETURN
+				    SUMMARIZE (
+				        FILTER ( Orders, Orders[isCarrierBag] = FALSE ),
+				        'Orders'[Sales Order Number],
+				        "Returns Flg", IF ( [Returned Units] > 0, -1, BLANK () ),
+				        "Sales Flg", IF ( [Invoiced Units] > 0, 1, BLANK () ),
+				        "Net Trx",
+				            IF ( [Returned Units] > 0, -1, BLANK () )
+				                + IF ( [Invoiced Units] > 0, 1, BLANK () )
+				                + IF ( [Open Units] > 0, 1, BLANK () ),
+				        "Total Net Value", [Total Net Value]
+				    )
+
+	annotation PBI_Id = f2ee5ec2e9f645388e6bd87dcd08e8db
+

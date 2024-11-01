@@ -1,0 +1,56 @@
+table Q34
+	lineageTag: cc2621ea-c0bb-421e-9dad-c153ae1e9039
+
+	column UNIQUEID
+		dataType: double
+		lineageTag: 3b9e4372-f3fb-4cfd-9aca-25395ba2354b
+		summarizeBy: none
+		sourceColumn: UNIQUEID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BRAND
+		dataType: double
+		lineageTag: b3ee9ea8-0010-4d13-934a-28fde5f0ab97
+		summarizeBy: none
+		sourceColumn: BRAND
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Q34
+		dataType: string
+		lineageTag: e3f22f8e-2b2e-4427-b86e-4e20f2d413b8
+		summarizeBy: none
+		sourceColumn: Q34
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q34_ANSWER
+		dataType: double
+		lineageTag: 3587287b-27b8-45bc-90a6-0df9d5a0b6d0
+		summarizeBy: sum
+		sourceColumn: Q34_ANSWER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Q34-0246564e-be59-4a8f-a014-5cf7c36697d3 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_Q34_View = BS_Schema{[Name="BRANDSURVEY_Q34",Kind="Table"]}[Data]
+				in
+				    VW_Q34_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

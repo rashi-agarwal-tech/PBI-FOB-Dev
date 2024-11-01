@@ -1,0 +1,2073 @@
+table Orders
+	lineageTag: af25ccd6-8c32-4821-9a3f-7cdfaa6189db
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 5f6505e7-b3aa-4617-a68c-849806c50f35
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 5969c3cd-201f-49b1-8c4a-5de9a01369d2
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: e44e7aab-d11a-451c-9272-a657d74c45e6
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: debf67de-027f-493e-a3e9-81bbf8c2b368
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesOrderPool_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: cf4aca30-4e59-4381-8db3-aecc694fdb82
+		summarizeBy: none
+		sourceColumn: SalesOrderPool_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: b84b7169-8e84-479f-be08-8735c9b247b0
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALESORDERPOOLID_SOH
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 1e8dc929-663a-4cff-8c8f-7cc0ba9c6abf
+		summarizeBy: none
+		sourceColumn: SALESORDERPOOLID_SOH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVOICEDQUANTITY_SIL
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Units
+		lineageTag: 24ddadd1-c520-462c-988b-32afb2601904
+		summarizeBy: none
+		sourceColumn: INVOICEDQUANTITY_SIL
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column COSTAMOUNTPOSTED_SILCS
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(31, 11)
+		displayFolder: zz_Values
+		lineageTag: 053857d1-88ea-435b-b54d-044a31c9506f
+		summarizeBy: none
+		sourceColumn: COSTAMOUNTPOSTED_SILCS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Invoice Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8904a284-1fb3-4fa8-a981-96aad4fbce0a
+		summarizeBy: none
+		sourceColumn: Invoice Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discount
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		displayFolder: zz_Values
+		lineageTag: e207bca0-54ae-483f-8173-03a0697bd71f
+		summarizeBy: none
+		sourceColumn: Discount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Customer Order Reference'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4a15662f-5fc2-49c9-a1c4-2c01a1deec31
+		summarizeBy: none
+		sourceColumn: Customer Order Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DM Agent'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5acc0e76-a092-4651-a2b4-97bbf7517792
+		summarizeBy: none
+		sourceColumn: DM Agent
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RMA Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 34e3fac8-e55e-40d1-bcc8-5d8f7c04f0ce
+		summarizeBy: none
+		sourceColumn: RMA Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a1f2df4e-5e4a-4291-bb2a-706b2e1e268c
+		summarizeBy: none
+		sourceColumn: Transaction Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column AREPRICESINCLUDINGSALESTAX_SOH
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		displayFolder: zz_Misc
+		lineageTag: 600d8c84-5312-48aa-8d03-1bb0d1a83eba
+		summarizeBy: none
+		sourceColumn: AREPRICESINCLUDINGSALESTAX_SOH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Barcode
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4ff05cdc-7d3e-4e11-83bc-c57eaa0717e9
+		summarizeBy: none
+		sourceColumn: Barcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVENTORYLOTID_SOL_ROL
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 7c6b9c4c-f183-44bd-bd5e-65e94e6e7ae7
+		summarizeBy: none
+		sourceColumn: INVENTORYLOTID_SOL_ROL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Time_Key
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Keys
+		lineageTag: 6f86537e-fbfd-4660-8053-0b745f02ab22
+		summarizeBy: none
+		sourceColumn: Time_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Order Line'
+		dataType: int64
+		formatString: #,##0
+		sourceProviderType: decimal(38, 5)
+		lineageTag: 4f71cedd-00e8-4cf9-aa55-9faa3351d991
+		summarizeBy: none
+		sourceColumn: Order Line
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Selling Status'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: 9c6528f2-40da-470b-94a9-8d48a72b800f
+		summarizeBy: none
+		sourceColumn: Selling Status
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Source
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 565a6471-ab0d-4ff5-b40b-156f02e100a7
+		summarizeBy: none
+		sourceColumn: Source
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Web Order #'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 2. eCom Details
+		lineageTag: 1eda5ebf-09d1-4a9b-83a6-c07bc960a461
+		summarizeBy: none
+		sourceColumn: Web Order #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Promo Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 2. eCom Details
+		lineageTag: df994c19-d42f-4228-af37-18257838ef81
+		summarizeBy: none
+		sourceColumn: Promo Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Website Code'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 2. eCom Details
+		lineageTag: 43cf9e04-e096-4dda-ab59-39a01f44c021
+		summarizeBy: none
+		sourceColumn: Website Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order DateTime'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		displayFolder: 2. eCom Details
+		lineageTag: 7f23ab2f-2030-4228-8b61-400c56455786
+		summarizeBy: none
+		sourceColumn: Order DateTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column Goodwill?
+		dataType: string
+		displayFolder: 1. Retail Details\Transaction Types
+		lineageTag: 3599ff72-6a7d-447d-b621-fbfa95ac887e
+		summarizeBy: none
+		sourceColumn: Goodwill?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display Order?'
+		dataType: string
+		displayFolder: 1. Retail Details\Transaction Types
+		lineageTag: 4f9c2813-7c2a-4731-a085-b83f8e7888df
+		summarizeBy: none
+		sourceColumn: Display Order?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Employee Discount?'
+		dataType: string
+		displayFolder: 1. Retail Details\Transaction Types
+		lineageTag: 53c03912-9a06-4af6-b091-2e305973302a
+		summarizeBy: none
+		sourceColumn: Employee Discount?
+
+		annotation SummarizationSetBy = Automatic
+
+	column Marketing?
+		dataType: string
+		displayFolder: 1. Retail Details\Transaction Types
+		lineageTag: fd734e9f-3d78-41a3-8465-a306fe5c654e
+		summarizeBy: none
+		sourceColumn: Marketing?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Staff Uniform?'
+		dataType: string
+		displayFolder: 1. Retail Details\Transaction Types
+		lineageTag: b8f8a4a4-b36a-4b51-afd0-6476d9859c67
+		summarizeBy: none
+		sourceColumn: Staff Uniform?
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDEREDSALESQUANTITY_SOL_ZEROS
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Units
+		lineageTag: f03a5a4a-aa96-43a6-b3ac-16343a5cc861
+		summarizeBy: none
+		sourceColumn: ORDEREDSALESQUANTITY_SOL_ZEROS
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Territory_Key
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Keys
+		lineageTag: d39e3cb7-994f-473f-ab8a-5a764234886c
+		summarizeBy: none
+		sourceColumn: Territory_Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'DM Sales Associate'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0c86cb97-f9e1-466a-9d17-e2442786078a
+		summarizeBy: none
+		sourceColumn: DM Sales Associate
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Analysis'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 3. Finance Dimensions
+		lineageTag: 0b714878-5667-4bbd-8492-510ebed37620
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Analysis
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Channel'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 3. Finance Dimensions
+		lineageTag: d48e8e4a-9ddd-4f6a-a3fe-cdde70d86b64
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Cost Centre'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 3. Finance Dimensions
+		lineageTag: 1fac9ba6-f5ba-472c-b51a-c7cabb85b8a9
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Cost Centre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Country'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 3. Finance Dimensions
+		lineageTag: 43d6d5df-8265-4daa-8033-dffa599795eb
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Selling Status'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 3. Finance Dimensions
+		lineageTag: aeb8c18d-923d-4600-a30e-0c24c1c6215b
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Selling Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Web Order Return Reason'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 2. eCom Details
+		lineageTag: 9fb998dd-91ee-4955-9583-c5f99bfed260
+		summarizeBy: none
+		sourceColumn: Web Order Return Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Student Discount?'
+		dataType: string
+		displayFolder: 1. Retail Details\Transaction Types
+		lineageTag: 9c6846c5-05d4-4f50-b9e1-05256c6e4e20
+		summarizeBy: none
+		sourceColumn: Student Discount?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Shipping Warehouse'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2b557fa6-4792-4715-a5e5-d9482507b8ab
+		summarizeBy: none
+		sourceColumn: Shipping Warehouse
+
+		annotation SummarizationSetBy = Automatic
+
+	column EcomMultipleSizeOrderFlag
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		displayFolder: zz_Misc
+		lineageTag: 0cbebed5-21d1-43e5-830c-4a99c1f84e09
+		summarizeBy: none
+		sourceColumn: EcomMultipleSizeOrderFlag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Method'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8cdd4373-583d-4be1-ab08-c9a497075da3
+		summarizeBy: none
+		sourceColumn: Payment Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Address Country'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 4. Delivery Address
+		lineageTag: cf8b6fcb-308f-42f0-aa15-cac4fd133d42
+		summarizeBy: none
+		sourceColumn: Delivery Address Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Address Zip Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 4. Delivery Address
+		lineageTag: 3529aaaf-03c8-4ad4-91de-bd3e21716c59
+		summarizeBy: none
+		sourceColumn: Delivery Address Zip Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Address State'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 4. Delivery Address
+		lineageTag: 57585623-50c4-463c-adee-34d180ca4d81
+		summarizeBy: none
+		sourceColumn: Delivery Address State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Address City'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 4. Delivery Address
+		lineageTag: 44cf5818-8718-4693-a112-079650341819
+		summarizeBy: none
+		sourceColumn: Delivery Address City
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Charge Description Line'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5ccfddad-3bfe-4ce2-9a47-5d716de1e1ad
+		summarizeBy: none
+		sourceColumn: Charge Description Line
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 4fa34cc9-083a-4a02-a606-9c370001ec60
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Order Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ab46ba70-7527-4e63-96b4-76f142e72530
+		summarizeBy: none
+		sourceColumn: Sales Order Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column INVOICECUSTOMERACCOUNTNUMBER_SIH
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 43816f2a-7df8-4dfd-97e5-852f64e93f99
+		summarizeBy: none
+		sourceColumn: INVOICECUSTOMERACCOUNTNUMBER_SIH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cancel Risk Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: 598573d7-a807-48ca-99a0-de844714c671
+		summarizeBy: none
+		sourceColumn: Cancel Risk Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Web Affiliate ID'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 2. eCom Details
+		lineageTag: a0ee8f0f-1301-476b-8dff-fa93a793ee51
+		summarizeBy: none
+		sourceColumn: Web Affiliate ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status - Order Entry'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: 56239c64-3a86-47d1-a758-b52a15cc7777
+		summarizeBy: none
+		sourceColumn: Selling Status - Order Entry
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Delivery Mode'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 050805b6-14be-492c-9ba1-791d910a046b
+		summarizeBy: none
+		sourceColumn: Delivery Mode
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Full Price/Promo/Clearance'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 652f51ef-a743-43f5-941a-7bdd5c5d966f
+		summarizeBy: none
+		sourceColumn: Full Price/Promo/Clearance
+		sortByColumn: 'Full Price/Promo/Clearance Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Marketing Promo'
+		dataType: string
+		displayFolder: 1. Retail Details\Transaction Types
+		lineageTag: c2fde59c-1a7e-4023-a434-20dc6a80d480
+		summarizeBy: none
+		sourceColumn: Marketing Promo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Staff Email'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: ed9b84e2-bd8b-4666-8665-f15d5bd65360
+		summarizeBy: none
+		sourceColumn: Staff Email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retail Returns Reason Col'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 1. Retail Details
+		lineageTag: b9593313-e44b-4fe4-8fed-47bf201fdc9b
+		summarizeBy: none
+		sourceColumn: Retail Returns Reason Col
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Season'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: fb86aced-103a-4a3d-8977-5786d0145808
+		summarizeBy: none
+		sourceColumn: Order Season
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Email
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 9ad5afee-941a-4bf8-ada7-0ec7f7650c01
+		summarizeBy: none
+		sourceColumn: Email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LINEAMOUNT_SIL_CONS_GBP
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 13)
+		displayFolder: zz_Values
+		lineageTag: e2fca302-e699-4ba4-8237-9065d6a5a8ac
+		summarizeBy: none
+		sourceColumn: LINEAMOUNT_SIL_CONS_GBP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LINEAMOUNT_SOL_CONS_GBP
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 13)
+		displayFolder: zz_Values
+		lineageTag: d63962c4-f815-401d-9a28-5cb3e5a769b5
+		summarizeBy: none
+		sourceColumn: LINEAMOUNT_SOL_CONS_GBP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ChargeTotalExcTax_CONS_GBP
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Values
+		lineageTag: 771884dc-c4e2-4fe8-9031-b402bbe54e9f
+		summarizeBy: none
+		sourceColumn: ChargeTotalExcTax_CONS_GBP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HeaderDiscount_CONS_GBP
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 12)
+		displayFolder: zz_Values
+		lineageTag: 289ab71d-dcfc-498e-89cb-657d892ee3fc
+		summarizeBy: none
+		sourceColumn: HeaderDiscount_CONS_GBP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LineDiscount_CONS_GBP
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		displayFolder: zz_Values
+		lineageTag: df99f58b-b2b6-4448-8f77-9f994aefbc17
+		summarizeBy: none
+		sourceColumn: LineDiscount_CONS_GBP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Full Price/Promo/Clearance Sort'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(1, 0)
+		displayFolder: zz_Misc
+		lineageTag: dcec3120-03ed-47c3-af75-f87fb2d818bd
+		summarizeBy: none
+		sourceColumn: Full Price/Promo/Clearance Sort
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column INVOICEDATE_SIL
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: datetime2
+		displayFolder: zz_Misc
+		lineageTag: d9a38104-28da-4dd9-b19c-4cdd0cc7025d
+		summarizeBy: none
+		sourceColumn: INVOICEDATE_SIL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ITEMNUMBER_SOL_ROL
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 698d70c9-28d4-4575-9a80-1a2d70795be1
+		summarizeBy: none
+		sourceColumn: ITEMNUMBER_SOL_ROL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unit Price'
+		dataType: double
+		isHidden
+		formatString: #,##0.00
+		sourceProviderType: decimal(38, 13)
+		displayFolder: zz_Values
+		lineageTag: b724ce7d-9aaf-4a4d-b984-a85dc35231cf
+		summarizeBy: none
+		sourceColumn: Unit Price
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column isCarrierBag
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		sourceProviderType: bit
+		displayFolder: zz_Misc
+		lineageTag: 3f630c8f-f947-431d-b6c7-83802083abd6
+		summarizeBy: none
+		sourceColumn: isCarrierBag
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Digital Doc Shop Transaction?'
+		dataType: string
+		displayFolder: 1. Retail Details
+		lineageTag: 15259b00-3228-4ecd-97fe-e2474c382297
+		summarizeBy: none
+		sourceColumn: Digital Doc Shop Transaction?
+
+		annotation SummarizationSetBy = Automatic
+
+	column DELIVERYDATE_SOL
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		displayFolder: zz_Misc
+		lineageTag: ac41d155-f5e6-481c-956d-2b87d6b0e821
+		summarizeBy: none
+		sourceColumn: DELIVERYDATE_SOL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Date_Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Keys
+		lineageTag: f9ba0f51-a753-4abc-a90c-bb813d55592e
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column REMAININVENTPHYSICAL_SOL_ZEROS
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Units
+		lineageTag: 0caf42ac-8eb2-4fd0-96b1-559e6f79f31f
+		summarizeBy: none
+		sourceColumn: REMAININVENTPHYSICAL_SOL_ZEROS
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RETURNEDSALESQUANTITY_ROL_ZEROS
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Units
+		lineageTag: 376cb25e-361e-48cd-9765-45e95f90c612
+		summarizeBy: none
+		sourceColumn: RETURNEDSALESQUANTITY_ROL_ZEROS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RETURNSALESQUANTITY_ROL_ZEROS
+		dataType: int64
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Units
+		lineageTag: 6f0f881c-c745-437c-908d-40928cf01f91
+		summarizeBy: none
+		sourceColumn: RETURNSALESQUANTITY_ROL_ZEROS
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CompanyProductSize_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(98)
+		displayFolder: zz_Keys
+		lineageTag: dc1b3f05-9100-426d-96b1-00a407786204
+		summarizeBy: none
+		sourceColumn: CompanyProductSize_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Address Region'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 4. Delivery Address
+		lineageTag: 03a61c2e-5de9-447a-8227-1021b908f8cb
+		summarizeBy: none
+		sourceColumn: Delivery Address Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Revenue Affecting?'
+		dataType: string
+		lineageTag: a5639b9f-bdd7-4c6b-8ae5-e0bcd46e43d9
+		summarizeBy: none
+		sourceColumn: Is Revenue Affecting?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Status'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: d952c67f-57b3-4f68-8974-73de23b1c09d
+		summarizeBy: none
+		sourceColumn: Transaction Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cancellation Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: cebeedc2-3fa8-46cb-bfa0-5fba00566d94
+		summarizeBy: none
+		sourceColumn: Cancellation Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Cancellation User'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 897e2cba-c941-453b-b970-0684f422a0cf
+		summarizeBy: none
+		sourceColumn: Cancellation User
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days Since Last Purchase'
+		dataType: int64
+		formatString: #,##0
+		sourceProviderType: decimal(38, 5)
+		displayFolder: 2. eCom Details
+		lineageTag: 71c62256-c3c1-44c2-8338-70ac8230bab6
+		summarizeBy: none
+		sourceColumn: Days Since Last Purchase
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Tax_CONS_GBP
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		displayFolder: zz_Values
+		lineageTag: 351c68e7-1349-4662-8df8-1274c7741b56
+		summarizeBy: none
+		sourceColumn: Tax_CONS_GBP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'eCom Promotion Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 2. eCom Details
+		lineageTag: 18afcc70-4fa3-407a-b7d4-a07d7f86fe46
+		summarizeBy: none
+		sourceColumn: eCom Promotion Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column REMAININVENTPHYSICAL_SOL
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Units
+		lineageTag: 42822a67-82db-4556-a002-ba355b6ba9f9
+		summarizeBy: none
+		sourceColumn: REMAININVENTPHYSICAL_SOL
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ORDEREDSALESQUANTITY_SOL
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Units
+		lineageTag: 35784a01-7d00-44cb-85a0-9174bb977f2f
+		summarizeBy: none
+		sourceColumn: ORDEREDSALESQUANTITY_SOL
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'eCom Order Frequency'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: 2. eCom Details
+		lineageTag: 8903c095-1ae0-4aff-8f09-de2d2bf5ce82
+		summarizeBy: none
+		sourceColumn: eCom Order Frequency
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Return Reason'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 924eb7d4-7e62-4053-b702-0987ebc8fa5a
+		summarizeBy: none
+		sourceColumn: Return Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cancellation Reason'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 77786fa4-473f-4e0a-87e1-154959c8f83f
+		summarizeBy: none
+		sourceColumn: Cancellation Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cancellation Reason Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f97c1d19-50dd-422d-8d38-f8c63e963d62
+		summarizeBy: none
+		sourceColumn: Cancellation Reason Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Requisition Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: cf2239b1-001e-4e83-85c8-56ae21ffd671
+		summarizeBy: none
+		sourceColumn: Customer Requisition Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retail Faulty Returns Information'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 1. Retail Details
+		lineageTag: 056470a4-0a2b-4901-8a30-8b729da02dca
+		summarizeBy: none
+		sourceColumn: Retail Faulty Returns Information
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom New/Returning?'
+		dataType: string
+		displayFolder: 2. eCom Details
+		lineageTag: 61457809-4796-4fbd-8573-847be575b251
+		summarizeBy: none
+		sourceColumn: eCom New/Returning?
+
+		annotation SummarizationSetBy = Automatic
+
+	column SALESORDERCREATEDDATETIME_SOH
+		dataType: dateTime
+		formatString: Long Date
+		displayFolder: zz_Misc
+		lineageTag: b35e45f3-2eae-4058-8ca4-e98d7f1677b6
+		summarizeBy: none
+		sourceColumn: SALESORDERCREATEDDATETIME_SOH
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region Sub Channel'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4ea6fc0b-9110-457c-80bc-08b9460d9790
+		summarizeBy: none
+		sourceColumn: Region Sub Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Charge Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 9abc547f-7183-475b-a534-2f1dc0253d18
+		summarizeBy: none
+		sourceColumn: Charge Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column SO_PO_ID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0eb570ba-1d29-4658-bcf5-48af4b95b327
+		summarizeBy: none
+		sourceColumn: SO_PO_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OpeneComReturn_Key =
+			VAR main =
+				IF (
+					AND ( 'Orders'[Web Order #] <> "", 'Orders'[ITEMNUMBER_SOL_ROL] <> "" ),
+					CONCATENATE (
+						CONCATENATE (
+							CONCATENATE ( 'Orders'[Web Order #], "_" ),
+							CONCATENATE ( 'Orders'[ITEMNUMBER_SOL_ROL], "000" )
+						),
+						RELATED ( Size[Size] )
+					),
+					BLANK ()
+				)
+			VAR check =
+				LOOKUPVALUE (
+					'Open eCom Return Info'[OpeneComReturn_Key],
+					'Open eCom Return Info'[OpeneComReturn_Key], main
+				)
+			RETURN
+				IF ( ISBLANK ( check ), BLANK (), main )
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 8ebb8749-6127-40d1-9887-00296863fe0f
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RefitExclusion = IF(NOT ISBLANK(RELATED('Refit Exclusion'[StoreDateKey])), "Refit", "No Refit")
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: a0332d76-8dc2-4125-a6b0-9462ce90bc05
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Open eCom Return Quantity' =
+			IF (
+				ISBLANK ( RELATED ( 'Open eCom Return Info'[Processed Date] ) ) = TRUE ()
+					&& RELATED ( 'Open eCom Return Info'[Returned Status] ) <> "Expired",
+				RELATED ( 'Open eCom Return Info'[Quantity] ),
+				BLANK ()
+			)
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 5532b8db-6b13-4770-a6c5-63df3d5dbafc
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Ordered eCom Return Quantity' = RELATED ( 'Open eCom Return Info'[Quantity] )
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: a59cf077-d8b3-4509-bf55-0d22c764c522
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+	column 'Open eCom Return Full Value Col TRANS' =
+			IF (
+				ISBLANK ( RELATED ( 'Open eCom Return Info'[Processed Date] ) ) = TRUE ()
+					&& RELATED ( 'Open eCom Return Info'[Returned Status] ) <> "Expired",
+				RELATED ( 'Open eCom Return Info'[Quantity] )
+					* RELATED ( 'Open eCom Return Info'[Price] ),
+				BLANK ()
+			)
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: c423612c-abe3-4eba-9e39-a8f2f9882e6f
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Open eCom Return Net Value Col Cons GBP' =
+			IF (
+				ISBLANK ( RELATED ( 'Open eCom Return Info'[Processed Date] ) ) = TRUE ()
+					&& RELATED ( 'Open eCom Return Info'[Returned Status] ) <> "Expired",
+				RELATED ( 'Open eCom Return Info'[Quantity] )
+					* DIVIDE ( Orders[Invoiced Net Value Col Cons GBP], Orders[Invoiced Units Col] ),
+				BLANK ()
+			)
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: d450700e-26ec-405c-afb0-9dead1b5b998
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ordered eCom Return Net Value Col Cons GBP' =
+			RELATED ( 'Open eCom Return Info'[Quantity] )
+				* DIVIDE ( Orders[Invoiced Net Value Col Cons GBP], Orders[Invoiced Units Col] )
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 28fffdde-5913-4f48-b47d-291868f2b35e
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'In Bronto Database?' = IF(AND(NOT(ISBLANK(Orders[Customer Marketing Email])), Orders[Customer Marketing Email] = Orders[Email]), "Yes", "No")
+		displayFolder: 2. eCom Details
+		lineageTag: e0d98016-f01a-4071-ad34-91bdd0dbd5a9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'US Promotion Type' = IF(ISBLANK(Orders[Promo Code]), BLANK(), Orders[eCom Promotion Type])
+		isHidden
+		displayFolder: 2. eCom Details
+		lineageTag: 10f9b55d-6de4-4b16-a5be-6393bf9135d6
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age = IF(ISBLANK(RELATED('Retail Demographics'[Age])), "Unknown", RELATED('Retail Demographics'[Age]))
+		displayFolder: 1. Retail Details
+		lineageTag: eede14fa-f0a3-4e96-bdcc-2a40a1345535
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender = IF(ISBLANK(RELATED('Retail Demographics'[Gender])), "Unknown", RELATED('Retail Demographics'[Gender]))
+		displayFolder: 1. Retail Details
+		lineageTag: ff7d751a-69f4-410f-8142-43d3d2abb2e5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Core/Fringe = RELATED('Size Classification'[Core/Fringe])
+		lineageTag: 088625f7-39cc-494a-8483-47277207c592
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country =
+			IF (
+				LEFT ( Orders[Source], 4 ) = "D365",
+				RELATED ( 'Customer'[Country] ),
+				BLANK ()
+			)
+		lineageTag: e2a30388-73cd-4452-9518-b317b592b67e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Retail Payment Method' = RELATED('Retail Payment Methods'[Payment Methods])
+		lineageTag: a78dc176-b9d0-4a85-9776-9c9a99f0a312
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column REQUESTEDSHIPPINGDATE_SOL
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 08324179-1d7e-4bd2-91ba-1c992c791d2e
+		summarizeBy: none
+		sourceColumn: REQUESTEDSHIPPINGDATE_SOL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DELIVERYADDRESSDESCRIPTION_SOL
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 22083cdb-4d79-4819-9e7a-03e77a3c5b13
+		summarizeBy: none
+		sourceColumn: DELIVERYADDRESSDESCRIPTION_SOL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RETURNDISPOSITIONCODE_ROL
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ae47947b-a4e0-4cf6-9c21-807164f953a0
+		summarizeBy: none
+		sourceColumn: RETURNDISPOSITIONCODE_ROL
+
+		annotation SummarizationSetBy = Automatic
+
+	column CURRENCYCODE_SOH_ROH
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: dc38e1b5-0467-402d-9b70-e53c4a1eb0fd
+		summarizeBy: none
+		sourceColumn: CURRENCYCODE_SOH_ROH
+
+		annotation SummarizationSetBy = Automatic
+
+	column LINESTATUS_SOL_ROL
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f2dd3d8a-c365-4a1d-8002-2a92668b4f81
+		summarizeBy: none
+		sourceColumn: LINESTATUS_SOL_ROL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HDMSALESPRICELINEPERCENTOVERRIDE
+		dataType: string
+		lineageTag: 5f117573-4943-40d0-8c1f-5b070478628b
+		summarizeBy: none
+		sourceColumn: HDMSALESPRICELINEPERCENTOVERRIDE
+
+		annotation SummarizationSetBy = Automatic
+
+	column isHistorical
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 6bd52ef2-e85e-48d1-be9a-3a1f90cfae26
+		summarizeBy: none
+		sourceColumn: isHistorical
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HDMSALESPRICEMANUALOVERRIDE
+		dataType: string
+		lineageTag: 74ffaa3c-a97f-4d32-a27b-d407015f07c4
+		summarizeBy: none
+		sourceColumn: HDMSALESPRICEMANUALOVERRIDE
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Email'
+		dataType: string
+		lineageTag: 0bba8f76-24e8-4942-b118-ed1b4cf5d89d
+		summarizeBy: none
+		sourceColumn: Customer Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateMaster
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: c509eca1-a616-4d0b-bd39-7cbf60820e68
+		summarizeBy: none
+		sourceColumn: DateMaster
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Multiple Warehouse Order?'
+		dataType: string
+		lineageTag: 1744651a-0824-47c8-abaf-75329042547f
+		summarizeBy: none
+		sourceColumn: Multiple Warehouse Order?
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrdersEmailWebsiteCode_Key
+		dataType: string
+		lineageTag: 095bffd6-0c65-439b-ae36-a39cf3b1284c
+		summarizeBy: none
+		sourceColumn: OrdersEmailWebsiteCode_Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Returned Units Col'
+		dataType: double
+		lineageTag: c580f27c-b74a-4d0d-88ed-1df4e2d673fa
+		summarizeBy: sum
+		sourceColumn: Returned Units Col
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ordered Units Col'
+		dataType: double
+		lineageTag: 69b79bf5-fb4f-4488-a903-4509bdc09af3
+		summarizeBy: sum
+		sourceColumn: Ordered Units Col
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Line Discount %'
+		dataType: double
+		formatString: 0%;-0%;0%
+		lineageTag: c7187f72-a07b-45fd-86d7-e675779e8170
+		summarizeBy: sum
+		sourceColumn: Line Discount %
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Delivery Address Shortened Zip'
+		dataType: string
+		lineageTag: 459f59eb-996f-4cb8-8a03-c09dbbd80d81
+		summarizeBy: none
+		sourceColumn: Delivery Address Shortened Zip
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time Since Last Purchase Bucket Sort'
+		dataType: string
+		lineageTag: 60454868-d54e-4108-8c4c-cefe8cf786b1
+		summarizeBy: none
+		sourceColumn: Time Since Last Purchase Bucket Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Returned Net Value Col Cons GBP'
+		dataType: double
+		lineageTag: d75d0d02-6fbc-457f-a14d-75d1f4a7ff1e
+		summarizeBy: sum
+		sourceColumn: Returned Net Value Col Cons GBP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Returned Net Value Col Cons GBP (inc tax)'
+		dataType: double
+		lineageTag: cfaa1a58-b89e-4b2f-9796-c97ba1f1b701
+		summarizeBy: sum
+		sourceColumn: Returned Net Value Col Cons GBP (inc tax)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Open Units Col'
+		dataType: double
+		lineageTag: 056ee54d-3238-4ec7-9562-0d62d9a9e5ca
+		summarizeBy: sum
+		sourceColumn: Open Units Col
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Time Since Last Purchase Bucket'
+		dataType: string
+		lineageTag: a507da25-fc74-4769-ae61-8828ecd41071
+		summarizeBy: none
+		sourceColumn: Time Since Last Purchase Bucket
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Returned Tax Col'
+		dataType: double
+		lineageTag: f8bac1bd-5833-4c24-b873-c6642183f7da
+		summarizeBy: sum
+		sourceColumn: Returned Tax Col
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Open Units Pct'
+		dataType: double
+		lineageTag: f180d178-cfd8-4021-a19f-7589dcfccae8
+		summarizeBy: sum
+		sourceColumn: Open Units Pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Line Discount'
+		dataType: double
+		lineageTag: 7aca5edf-ee62-4cce-bbb1-d62cde0316e3
+		summarizeBy: sum
+		sourceColumn: Line Discount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Invoiced Charges Col Cons GBP'
+		dataType: double
+		lineageTag: f087837f-16cd-4510-ad57-5dabe5d5edc8
+		summarizeBy: sum
+		sourceColumn: Invoiced Charges Col Cons GBP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Returned COGs Col'
+		dataType: double
+		lineageTag: b2aa6f56-610f-4845-8eb2-912db058773c
+		summarizeBy: sum
+		sourceColumn: Returned COGs Col
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Discount Bucket EMEA/Americas'
+		dataType: string
+		lineageTag: af52f19a-936e-42c4-832e-4f3029e61626
+		summarizeBy: none
+		sourceColumn: Discount Bucket EMEA/Americas
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Discount Bucket'
+		dataType: string
+		lineageTag: d081ddde-e03f-4b93-a5d3-5ec09de84940
+		summarizeBy: none
+		sourceColumn: Discount Bucket
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom Demand Value Col'
+		dataType: double
+		lineageTag: 41f6b603-d368-4442-98de-7b62001d3c57
+		summarizeBy: sum
+		sourceColumn: eCom Demand Value Col
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'DateMaster Order'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0056c9b4-c868-4526-94bf-d70740be9466
+		summarizeBy: none
+		sourceColumn: DateMaster Order
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Discounts (inc tax) Open Col'
+		dataType: double
+		lineageTag: 350d9e78-cc85-48bc-9508-4c2525402f37
+		summarizeBy: sum
+		sourceColumn: Discounts (inc tax) Open Col
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Open Net Value Col Cons GBP'
+		dataType: double
+		lineageTag: 3d259c25-065d-4594-b9ef-2e5b75ac831d
+		summarizeBy: sum
+		sourceColumn: Open Net Value Col Cons GBP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Invoiced Net Value Col Cons GBP'
+		dataType: double
+		lineageTag: 8277aa79-0c5a-40d3-aaec-5be23ab92a51
+		summarizeBy: sum
+		sourceColumn: Invoiced Net Value Col Cons GBP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Invoiced Units Col'
+		dataType: double
+		lineageTag: 555d2258-77f6-4846-b86b-15b12872db29
+		summarizeBy: sum
+		sourceColumn: Invoiced Units Col
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cancelled Units Col'
+		dataType: double
+		lineageTag: 8c93ffc4-04f4-4440-aa8f-3f44764583f7
+		summarizeBy: sum
+		sourceColumn: Cancelled Units Col
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Retail Returns Reason'
+		dataType: string
+		lineageTag: 87663d42-478a-48c9-bddf-a8452f47ab9b
+		summarizeBy: none
+		sourceColumn: Retail Returns Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Returned Full Value Col Cons GBP'
+		dataType: double
+		lineageTag: 3840ad00-5307-40ef-88a0-eb0fe4a33ee2
+		summarizeBy: sum
+		sourceColumn: Returned Full Value Col Cons GBP
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Promo Code?'
+		dataType: string
+		lineageTag: f40c57a4-2727-4132-8f72-a07bf11b7bfb
+		summarizeBy: none
+		sourceColumn: Promo Code?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom Demand Cancelled Value Calc'
+		dataType: double
+		lineageTag: c8858e61-b5b9-4f14-ba21-45f73d7c03b2
+		summarizeBy: sum
+		sourceColumn: eCom Demand Cancelled Value Calc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'eCom Demand Cancelled Value Col'
+		dataType: double
+		lineageTag: 624c9359-c425-4d7f-bf69-45f83de398c8
+		summarizeBy: sum
+		sourceColumn: eCom Demand Cancelled Value Col
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Digital Doc Shop'
+		dataType: string
+		lineageTag: bff41a48-3fc6-4a0e-a35a-0faa39dcdf7d
+		summarizeBy: none
+		sourceColumn: Digital Doc Shop
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoiced COGs Col'
+		dataType: double
+		lineageTag: 9d35fd6a-d5dc-4c19-af83-24582555951e
+		summarizeBy: sum
+		sourceColumn: Invoiced COGs Col
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column StoreDateKey
+		dataType: string
+		lineageTag: ba3ce70a-f945-4ad6-b035-953bb9242fad
+		summarizeBy: none
+		sourceColumn: StoreDateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Full Price or Markdown'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 08859000-a626-4c22-826c-0676832aeb8c
+		summarizeBy: none
+		sourceColumn: Full Price or Markdown
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net Units Col'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		displayFolder: zz_Units
+		lineageTag: c01d3881-e0bb-4389-aa41-36fc90e9dbb9
+		summarizeBy: none
+		sourceColumn: Net Units Col
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'eCom Demand Open Value Col'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 467b8019-cf44-408d-8379-d9fa43565c37
+		summarizeBy: sum
+		sourceColumn: eCom Demand Open Value Col
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Full Price (inc tax) Invoiced Col'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 98773fe3-5470-46bb-927a-3a0ce60b9c75
+		summarizeBy: sum
+		sourceColumn: Full Price (inc tax) Invoiced Col
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Full Price (inc tax) Open Col'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 61fa2ba4-f4fa-4336-84b0-c154289ec301
+		summarizeBy: sum
+		sourceColumn: Full Price (inc tax) Open Col
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Invoiced Discounts Col Cons GBP'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: e2eca71c-0d02-4700-85a5-af1f65c45def
+		summarizeBy: sum
+		sourceColumn: Invoiced Discounts Col Cons GBP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Invoiced Full Value Col Cons GBP'
+		dataType: double
+		isHidden
+		formatString: 0.00
+		displayFolder: zz_Values
+		lineageTag: 99444dd7-6e49-49d2-8282-febd73305dc3
+		summarizeBy: sum
+		sourceColumn: Invoiced Full Value Col Cons GBP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Invoiced Tax Col'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 6b378e0e-9c3b-42bd-9b54-48ec318cb5ab
+		summarizeBy: sum
+		sourceColumn: Invoiced Tax Col
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Open Discounts Col'
+		dataType: double
+		isHidden
+		formatString: 0.00
+		displayFolder: zz_Values
+		lineageTag: 30f33a38-6ce9-4fdb-afd6-b9dd27eaf5df
+		summarizeBy: sum
+		sourceColumn: Open Discounts Col
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Returned Discounts Col Cons GBP'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: f3fabc0a-6aee-451e-a636-3bbd22b8aa22
+		summarizeBy: sum
+		sourceColumn: Returned Discounts Col Cons GBP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Customer Marketing Email'
+		dataType: string
+		isHidden
+		displayFolder: 2. eCom Details
+		lineageTag: 9e54d50b-5ea0-4f49-808b-6316e52f666d
+		summarizeBy: none
+		sourceColumn: Customer Marketing Email
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom Returning Frequency'
+		dataType: int64
+		formatString: #,0
+		displayFolder: 2. eCom Details
+		lineageTag: 7d9502d0-c3f1-4a87-820e-a76b44732330
+		summarizeBy: none
+		sourceColumn: eCom Returning Frequency
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Website
+		dataType: string
+		isHidden
+		displayFolder: 2. eCom Details
+		lineageTag: bc2ddcee-083e-47c9-bf92-344d5faf39d7
+		summarizeBy: none
+		sourceColumn: Website
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Season
+		dataType: string
+		lineageTag: 8b4a7c81-91dc-4d81-8c7e-93555abe31ca
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = Automatic
+
+	column OMNIUPSELL = RELATED('Retail Mpos'[OMNIUPSELL])
+		lineageTag: 307063f2-a4a2-483f-80ce-81191ea0ad58
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column OMNIORDERN = related('Retail Mpos'[OMNIORDERN])
+		lineageTag: 60654516-d1ae-43d2-afe5-20d7c99cf1df
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FY2021 = m
+		mode: import
+		dataView: full
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[#"Finance Dimension - Channel"])),
+					Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20200330 and [Date_Key] < 20210329)
+				in
+					Date_Key_Filter
+
+	partition FY2022 = m
+		mode: import
+		dataView: full
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[#"Finance Dimension - Channel"])),
+					Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20210329 and [Date_Key] < 20220328)
+				in
+					Date_Key_Filter
+
+	partition FY2023 = m
+		mode: import
+		dataView: full
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[#"Finance Dimension - Channel"])),
+					Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20220328 and [Date_Key] < 20230403)
+				in
+					Date_Key_Filter
+
+	partition FY2024 = m
+		mode: import
+		dataView: full
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102"},[#"Finance Dimension - Channel"])),
+					Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20230403 and [Date_Key] < 20240401)
+				in
+					Date_Key_Filter
+
+	partition FY2025 = m
+		mode: import
+		dataView: full
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102", "108"},[#"Finance Dimension - Channel"])),
+					Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20240401 and [Date_Key] < 20250331)
+				in
+					Date_Key_Filter
+
+	partition FY2026 = m
+		mode: import
+		dataView: full
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_D365_FACT_SALES_View = BFN_PRESENTATION_Schema{[Name=Orders_View,Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_SALES_View, each List.Contains({"101", "102", "108"},[#"Finance Dimension - Channel"])),
+					Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20250331 and [Date_Key] < 20260330)
+				in
+					Date_Key_Filter
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

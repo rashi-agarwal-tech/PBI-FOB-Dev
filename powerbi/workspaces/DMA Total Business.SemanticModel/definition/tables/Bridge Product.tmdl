@@ -1,0 +1,33 @@
+table 'Bridge Product'
+	isHidden
+	lineageTag: f166b820-3de0-46af-9ff6-9ca258771142
+
+	column 'Product Code'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6f55eb86-3bc3-4ddf-8a0f-6e8bbdb650c4
+		summarizeBy: none
+		sourceColumn: Product Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Bridge Product' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_DIM_PRODUCT_BRIDGE_PRODUCT_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_DIM_PRODUCT_BRIDGE_PRODUCT",Kind="View"]}[Data],
+				    #"Kept First Rows" = Table.FirstN(TB_BFN_VW_DIM_PRODUCT_BRIDGE_PRODUCT_View,NumberOfRows),
+				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else TB_BFN_VW_DIM_PRODUCT_BRIDGE_PRODUCT_View
+				in
+				    ParameterFilter
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

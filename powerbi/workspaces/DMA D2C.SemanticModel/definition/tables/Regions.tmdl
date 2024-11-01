@@ -1,0 +1,43 @@
+table Regions
+	isHidden
+	lineageTag: a1040861-c589-4a68-836d-c8ad838cf62f
+
+	column ADDRESSCOUNTRYREGIONID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c537b765-a2c3-4626-9352-037a68519beb
+		summarizeBy: none
+		sourceColumn: ADDRESSCOUNTRYREGIONID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c0d1cedb-4311-4c23-9bf9-76e569451153
+		summarizeBy: none
+		sourceColumn: Region
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Regions-58c93e65-d42f-414b-bde2-6ccdb155b9fe = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_DIM_REGIONS_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_DIM_REGIONS",Kind="View"]}[Data]
+				in
+				    D2C_BFN_DIM_REGIONS_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

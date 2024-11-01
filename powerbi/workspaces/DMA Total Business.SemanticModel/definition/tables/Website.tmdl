@@ -1,0 +1,38 @@
+table Website
+	lineageTag: 8ba0d072-287a-49c3-a708-4545b170f3f2
+
+	column Website
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b8577e84-28ba-4ec5-90f2-422c1b02aa6e
+		summarizeBy: none
+		sourceColumn: Website
+
+		annotation SummarizationSetBy = Automatic
+
+	column WebSiteCode
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 2773450f-7ad7-489e-a5ca-fb6c1d2e00dd
+		summarizeBy: none
+		sourceColumn: WebSiteCode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Website = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_GA_DIM_WEBSITE_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_GA_DIM_WEBSITE",Kind="View"]}[Data]
+				in
+				    TB_BFN_VW_GA_DIM_WEBSITE_View
+
+	annotation PBI_ResultType = Table
+

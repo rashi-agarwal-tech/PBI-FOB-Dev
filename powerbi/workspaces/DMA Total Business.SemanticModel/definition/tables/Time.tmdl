@@ -1,0 +1,116 @@
+table Time
+	lineageTag: 94227e65-6d13-4cf0-bf8b-d0e1c49a37c0
+
+	column Time_Key
+		dataType: string
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Misc
+		lineageTag: 372dddfd-de5c-4976-9053-f07ec110f0df
+		summarizeBy: none
+		sourceColumn: Time_Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Time
+		dataType: dateTime
+		formatString: HH:mm
+		sourceProviderType: time
+		lineageTag: 9a40902a-c7c3-4800-b288-dd93006ff934
+		summarizeBy: none
+		sourceColumn: Time
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Hour
+		dataType: decimal
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Misc
+		lineageTag: 0a665cf1-72d5-4b93-b5da-9a15d2217455
+		summarizeBy: none
+		sourceColumn: Hour
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AM/PM
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6236749b-e201-4635-924c-d06a97ea3e5c
+		summarizeBy: none
+		sourceColumn: AM/PM
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hour Period' =
+			
+			VAR main =
+			    IF ( LEN ( 'Time'[Hour] ) = 1, "0" & 'Time'[Hour], 'Time'[Hour] )
+			VAR main2 =
+			    IF (
+			        LEN ( 'Time'[Hour] ) = 1,
+			        "0" & ( 'Time'[Hour] + 1 ),
+			        ( 'Time'[Hour] + 1 )
+			    )
+			RETURN
+			    main & "-" & main2
+		lineageTag: ca85cfff-c3d2-48d2-b8f7-1af23fff4b5f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Time of Day' =
+			
+			IF (
+			    'Time'[Hour] < 6,
+			    "Overnight",
+			    IF (
+			        'Time'[Hour] < 9,
+			        "Breakfast",
+			        IF (
+			            'Time'[Hour] < 12,
+			            "Morning",
+			            IF (
+			                'Time'[Hour] < 14,
+			                "Lunch",
+			                IF (
+			                    'Time'[Hour] < 18,
+			                    "Afternoon",
+			                    IF ( 'Time'[Hour] < 20, "Dinner", "Evening" )
+			                )
+			            )
+			        )
+			    )
+			)
+		lineageTag: 024be2f6-bfe1-4c88-aea5-2c2dad01adcb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Time = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_DIM_TIME_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_DIM_TIME",Kind="View"]}[Data]
+				in
+				    TB_BFN_VW_DIM_TIME_View
+
+	annotation PBI_ResultType = Table
+

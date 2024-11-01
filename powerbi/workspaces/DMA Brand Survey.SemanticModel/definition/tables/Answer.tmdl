@@ -1,0 +1,87 @@
+table Answer
+	isHidden
+	lineageTag: 25dc834e-dcc4-438d-addc-9298cf8b8784
+
+	column VARIABLE
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b2a5eef2-dafa-4d3f-8738-7bceea1440ac
+		summarizeBy: none
+		sourceColumn: VARIABLE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALUE
+		dataType: double
+		isHidden
+		isNullable: false
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: a546661c-81f7-4e2d-b856-10b8fa0c41e5
+		summarizeBy: none
+		sourceColumn: VALUE
+
+		changedProperty = FormatString
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column LABEL
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: cdb83801-3bee-40b6-aef6-406da296dbd0
+		summarizeBy: none
+		sourceColumn: LABEL
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ANSWER_KEY
+		dataType: string
+		lineageTag: 843e0f9b-71c3-4eb6-9350-02261cba8067
+		summarizeBy: none
+		sourceColumn: ANSWER_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOAD_TIMESTAMP
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9cdad075-fbd7-4e77-9b37-02a6e3979239
+		summarizeBy: none
+		sourceColumn: LOAD_TIMESTAMP
+
+		variation Variation
+			isDefault
+			relationship: 4be679b9-e52b-4dcb-93f1-fd58c6777deb
+			defaultHierarchy: LocalDateTable_b658729c-7866-4dbd-abe6-4f2795bc1788.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Answer-19336f78-5b3b-42f5-b9a8-618826213ec4 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    DIM_ANSWERS_Table = BS_Schema{[Name="BRANDSURVEY_DIM_ANSWER",Kind="Table"]}[Data],
+				    #"Uppercased Text" = Table.TransformColumns(DIM_ANSWERS_Table,{{"VARIABLE", Text.Upper, type text}})
+				in
+				    #"Uppercased Text"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

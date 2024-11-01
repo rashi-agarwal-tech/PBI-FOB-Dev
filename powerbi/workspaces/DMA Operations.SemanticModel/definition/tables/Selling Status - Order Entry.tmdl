@@ -1,0 +1,67 @@
+table 'Selling Status - Order Entry'
+	lineageTag: 944b9452-db47-409a-acad-b5947fc5cac6
+
+	column SELLINGSTATUS
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Misc
+		lineageTag: 52cd0f5b-519f-4278-82be-3be87e05c8c3
+		summarizeBy: sum
+		sourceColumn: SELLINGSTATUS
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status - Order Entry'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ad9f3e74-37f9-4100-9210-7ffff37591c1
+		summarizeBy: none
+		sourceColumn: Selling Status - Order Entry
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status Sort'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(1, 0)
+		displayFolder: zz_Misc
+		lineageTag: 5585ac9e-30b6-42cf-913c-29c60c19d726
+		summarizeBy: sum
+		sourceColumn: Selling Status Sort
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'TBD vs Continuity/Carry Over - Order Entry'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6bacd47d-63ed-45a3-a016-407b965b3bf1
+		summarizeBy: none
+		sourceColumn: TBD vs Continuity/Carry Over - Order Entry
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Selling Status - Order Entry' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_DIMPRODUCTSELLINGSTATUSORDERENTRY",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	annotation PBI_ResultType = Table
+

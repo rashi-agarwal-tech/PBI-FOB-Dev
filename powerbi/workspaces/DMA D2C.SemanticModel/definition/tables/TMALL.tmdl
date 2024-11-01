@@ -1,0 +1,130 @@
+table TMALL
+	isHidden
+	lineageTag: a96ceae5-2fcf-42c8-b421-a425daab2890
+
+	column DeviceId
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 7e2f8a4b-fac7-4f63-90ed-a161a40ead23
+		summarizeBy: none
+		sourceColumn: DeviceId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChannelId
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: e7ae64f4-be64-46aa-8f37-5d12913d28b4
+		summarizeBy: none
+		sourceColumn: ChannelId
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 033037a0-3674-466a-8b11-5a526f948246
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Sessions
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 316251b8-0b3c-4543-ab16-203f349c3ee9
+		summarizeBy: none
+		sourceColumn: Sessions
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Transactions
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 26d36330-60d1-4c20-a986-b0f995e8980f
+		summarizeBy: none
+		sourceColumn: Transactions
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Revenue (GBP)'
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 4edcc8f7-6c68-4e05-bccd-1bef52004242
+		summarizeBy: none
+		sourceColumn: Revenue (GBP)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WebsiteName
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: nvarchar(5)
+		lineageTag: 6f0cdfe7-ceb5-4321-bb86-9b1c1fd81d98
+		summarizeBy: none
+		sourceColumn: WebsiteName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CompanyRegion
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: nvarchar(8)
+		lineageTag: d79b2754-b8c0-4e11-a2e8-f0e60dd93c40
+		summarizeBy: none
+		sourceColumn: CompanyRegion
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TMALL-ef86a6e1-9176-40ad-b7f1-aed9a6c05b3b = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_TMALL_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_TMALL",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_TMALL_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

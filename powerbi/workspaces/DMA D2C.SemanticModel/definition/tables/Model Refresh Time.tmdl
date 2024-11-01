@@ -1,0 +1,47 @@
+table 'Model Refresh Time'
+	lineageTag: cd79b64b-0727-4677-b7ad-d648b36af5be
+
+	column Date
+		isHidden
+		formatString: General Date
+		lineageTag: 350ea65a-a5f1-4f3e-b203-afd3b483af7c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Date Slicer[Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sort Order'
+		isHidden
+		formatString: 0
+		lineageTag: 50999b1e-181e-454b-91cd-ad4506a11c10
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Date Slicer[Sort Order]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Slicer'
+		isHidden
+		lineageTag: 8e13c3c3-a8cb-4fa3-a905-f9a07c12d2cc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Date Slicer[Date Slicer]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Time' = NOW()
+		formatString: dd MMMM yyyy hh:mm AM/PM
+		lineageTag: 674b7d90-58bf-4d2c-9108-a1e99c3bd4f8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	partition 'Model Refresh Time-bc5f3303-634c-43c0-89f2-b9e8841aca4b' = calculated
+		mode: import
+		source = 'Date Slicer'
+
+	annotation PBI_Id = b785fe388fe943f1bf59108d0a9028c9
+

@@ -1,0 +1,94 @@
+table 'Cost Centre'
+	lineageTag: 9d13ed96-b5d3-498e-93b8-6fc0ab1c53f1
+
+	column CostCentre_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 165db10c-53b0-40f4-b029-b285a112a5e2
+		summarizeBy: none
+		sourceColumn: CostCentre_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Centre'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: cc0b5376-6d7d-4303-b8e6-b62344fa1b24
+		summarizeBy: none
+		sourceColumn: Cost Centre
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Centre Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a788172d-c7e5-4851-b465-a62731eaec2a
+		summarizeBy: none
+		sourceColumn: Cost Centre Description
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Centre Owner'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 96741e4d-640e-4f5e-80fd-971f379482fe
+		summarizeBy: none
+		sourceColumn: Cost Centre Owner
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Centre Set'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: fc8031ca-67f6-4137-8012-4b6aadc537c5
+		summarizeBy: none
+		sourceColumn: Cost Centre Set
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Centre Retail Store Status'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ea69f96b-7253-4041-a48d-8542fe5a790e
+		summarizeBy: none
+		sourceColumn: Cost Centre Retail Store Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Centre Group'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4ea45425-21bc-4b9c-91f0-f6b4953f5584
+		summarizeBy: none
+		sourceColumn: Cost Centre Group
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Cost Centre-496829b7-9b64-4cf4-8b4b-97d77f90d510' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_BFN_D365DIMCOSTCENTRE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365DIMCOSTCENTRE",Kind="View"]}[Data]
+				in
+				    VW_BFN_D365DIMCOSTCENTRE_View
+
+	annotation PBI_ResultType = Table
+

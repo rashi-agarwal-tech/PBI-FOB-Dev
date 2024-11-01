@@ -1,0 +1,43 @@
+table 'Days Late Groupings'
+	isHidden
+	lineageTag: 1a8cb251-567d-4b57-8dd0-f83e4a21d811
+
+	column 'DL Bin'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ae6fab36-0ace-46f7-9a4c-d795e375409f
+		summarizeBy: none
+		sourceColumn: DL Bin
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days Late Groupings'
+		dataType: string
+		isHidden
+		lineageTag: 1e60ab9c-003a-47cb-8d1c-79022e131a2d
+		summarizeBy: none
+		sourceColumn: Days Late Groupings
+		sortByColumn: 'DL Bin'
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Days Late Groupings' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlTSUXJNLMqp1PfPUwjJzE1VitWJVjICihrqmiu4JFYWK/gklkBEjYGiFrqGJmjCJiDFprpGhmjipkBxIyNdY1M0cTOguH9ZapECqkwsAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"DL Bin" = _t, #"Days Late Groupings" = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"DL Bin", Int64.Type}, {"Days Late Groupings", type text}})
+				in
+				    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

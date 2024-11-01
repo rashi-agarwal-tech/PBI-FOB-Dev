@@ -1,0 +1,178 @@
+table 'Forecast Additional Ecom'
+	isHidden
+	lineageTag: 8c6b0187-28ff-4feb-bd94-d3d193657ada
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: e5a463a8-1c7c-4938-b66f-34e8531085c8
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Forecast Version'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4af85c62-1af1-4eb5-8d3b-8fbf2eb91d2b
+		summarizeBy: none
+		sourceColumn: Forecast Version
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 7b21548a-5db1-407a-8cc8-9ac99f4125d5
+		summarizeBy: none
+		sourceColumn: Company
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Website
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: be597979-7a81-43e8-9ea1-cae9dadf6903
+		summarizeBy: none
+		sourceColumn: Website
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Demand ex VAT'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 2b913426-5121-4fa1-a5aa-7c7bdc4cb94d
+		summarizeBy: none
+		sourceColumn: GA Demand ex VAT
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'DDS Demand'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: cb62144b-6107-4701-ac67-93a5339ec7a9
+		summarizeBy: none
+		sourceColumn: DDS Demand
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Cancelled Demand'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: d0a4d443-217d-4bb6-b391-900c6f715b23
+		summarizeBy: none
+		sourceColumn: Cancelled Demand
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net Invoiced from LW'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		lineageTag: 345f7fa8-295e-4157-aba2-c3ceb4ea0940
+		summarizeBy: none
+		sourceColumn: Net Invoiced from LW
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net Invoiced from TW'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		lineageTag: 668cb3c7-bfa7-4729-b8c1-53b9bdb1486e
+		summarizeBy: none
+		sourceColumn: Net Invoiced from TW
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Open Net Sales'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		lineageTag: 86ebbcd0-e85d-473d-b6b2-8ce7512bedb4
+		summarizeBy: none
+		sourceColumn: Open Net Sales
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net Returns by Order week'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 6)
+		lineageTag: c8cdf0a0-ce8a-4380-beef-62852aca3290
+		summarizeBy: none
+		sourceColumn: Net Returns by Order week
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Forecast Additional Ecom-e368a6b9-64f1-4741-9497-3b4093942840' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_AZURE_ECOM_FC_V1_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_AZURE_ECOM_FC_V1",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_AZURE_ECOM_FC_V1_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

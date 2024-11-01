@@ -1,0 +1,115 @@
+table 'Construction Capacity'
+	lineageTag: d67283b3-9629-477d-ae0c-3aad6b5c27db
+
+	column PPM_Constuction_Capacity_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: c8432c9e-598b-4063-a8c1-1298f437097c
+		summarizeBy: none
+		sourceColumn: PPM_Constuction_Capacity_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supplier_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: 1d7b04b1-cc49-4b01-8c47-1337299f6e75
+		summarizeBy: none
+		sourceColumn: Supplier_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Current Capacity'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Misc
+		lineageTag: f752f619-f7f0-4ea1-a1de-11894c4063f0
+		summarizeBy: none
+		sourceColumn: Current Capacity
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column StartDate_Key
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		displayFolder: zz_Misc
+		lineageTag: f2884c3b-20d6-4209-9ade-b01eee944e50
+		summarizeBy: none
+		sourceColumn: StartDate_Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Capacity Lead Time'
+		dataType: int64
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 804bd283-292b-4f94-ac84-dbcac1fa5a31
+		summarizeBy: none
+		sourceColumn: Capacity Lead Time
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Amended_StartDate_Key = [StartDate_Key] + 19
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 8f31c4ae-989c-45a9-a4c2-74823c419138
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ConstructionCode
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 4db53c28-fb9f-4713-af04-feec8f363b74
+		summarizeBy: none
+		sourceColumn: ConstructionCode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Construction Capacity' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="SRC_BFN_VW_PPMFACTCONSTRUCTIONCAPACITY",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	annotation PBI_ResultType = Table
+

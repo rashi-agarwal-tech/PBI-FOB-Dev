@@ -1,0 +1,9 @@
+role 'HK Users'
+	modelPermission: read
+
+	tablePermission Region = [Company ID] == "273"
+
+	tablePermission 'General Ledger Fact' = [LEDGERNAME] IN {"273"}
+
+	annotation PBI_Id = fce87d2c21514662bea72045232acd86
+

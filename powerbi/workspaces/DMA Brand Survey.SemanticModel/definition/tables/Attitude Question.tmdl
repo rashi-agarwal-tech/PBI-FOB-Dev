@@ -1,0 +1,42 @@
+table 'Attitude Question'
+	lineageTag: 8b90a90c-3384-4944-9dd0-a6eb7e842ada
+
+	column Q_ATTITUDE
+		dataType: string
+		lineageTag: a820b7dc-0efa-47d2-9937-9cfc101c0bdc
+		summarizeBy: none
+		sourceColumn: Q_ATTITUDE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q_ATTITUDE_QUESTION
+		dataType: string
+		lineageTag: 84d5713f-9f19-4a8f-8965-322527dabcb9
+		summarizeBy: none
+		sourceColumn: Q_ATTITUDE_QUESTION
+
+		annotation SummarizationSetBy = Automatic
+
+	column ATTITUDE_CATEGORY
+		dataType: string
+		lineageTag: 2af1e81d-7934-44c6-85bd-b051dde8efa8
+		summarizeBy: none
+		sourceColumn: ATTITUDE_CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Attitude Question-7853d608-0fd3-4169-b3fe-5e19ee30dd1f' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_ATTITUDE_QUESTION_View = BS_Schema{[Name="BRANDSURVEY_ATTITUDEQUESTION",Kind="Table"]}[Data]
+				in
+				    VW_ATTITUDE_QUESTION_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

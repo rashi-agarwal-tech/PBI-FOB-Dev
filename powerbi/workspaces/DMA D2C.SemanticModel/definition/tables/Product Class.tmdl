@@ -1,0 +1,76 @@
+table 'Product Class'
+	lineageTag: 1c93d27c-b54c-426f-a7b3-7fc26052f2c7
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: 9cd2597b-4499-4d32-afae-51c02cc3b025
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3fc52f07-98bc-437d-b2e5-60d97317273b
+		summarizeBy: none
+		sourceColumn: Product Class
+		sortByColumn: 'Product Class Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0f645ce6-3643-4f50-b5cc-d4d14ac07368
+		summarizeBy: none
+		sourceColumn: Product Class Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class Group'
+		dataType: string
+		sourceProviderType: nvarchar(7)
+		lineageTag: cad79da8-bed9-4bb7-93e7-e380c7586b86
+		summarizeBy: none
+		sourceColumn: Product Class Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class Sort'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(2, 0)
+		displayFolder: zz_Misc
+		lineageTag: eb80270d-ed09-47a5-834a-b8294f7c3e45
+		summarizeBy: none
+		sourceColumn: Product Class Sort
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Product Class-b9b99f14-f3ad-4517-8700-eaadd853ab9b' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365DIMPRODUCTCLASS_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365DIMPRODUCTCLASS",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_D365DIMPRODUCTCLASS_View
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,113 @@
+table 'Exchange Rates'
+	isHidden
+	lineageTag: f7feabff-3d25-4d91-8cfc-5655613c2b0d
+
+	column FROMCURRENCY
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 1a37ad67-a8e9-47b9-8b9e-3f865171c11a
+		summarizeBy: none
+		sourceColumn: FROMCURRENCY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOCURRENCY
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 73fcf01c-8ead-454e-89a6-83fe48cd2065
+		summarizeBy: none
+		sourceColumn: TOCURRENCY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RATETYPENAME
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 60f16fd6-6b94-42be-8b1c-989725db749c
+		summarizeBy: none
+		sourceColumn: RATETYPENAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RATE
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(16, 6)
+		lineageTag: 45db0499-be97-4318-a370-18e9b4a20935
+		summarizeBy: sum
+		sourceColumn: RATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DATE
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 1cc845dc-64ff-49d2-8cc4-1ed612d17084
+		summarizeBy: none
+		sourceColumn: DATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column START_DATE
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 7574042f-fcc2-4069-afdd-a4bf83584ab3
+		summarizeBy: none
+		sourceColumn: START_DATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column END_DATE
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 6c0c5cb4-f817-41a5-a56d-f33c1fda7010
+		summarizeBy: none
+		sourceColumn: END_DATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Exchange Rates' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTCURRENCYEXCHANGERATE2",Kind="View"]}[Data],
+					#"Changed Type"   = Table.TransformColumnTypes(BFN_Datatable_View,{{"DATE", type date}}),
+					#"Filtered Rows"  = Table.SelectRows(#"Changed Type", each [RATETYPENAME] = "BUDGET"),
+					#"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [DATE] = DateTime.Date(DateTime.LocalNow()))
+				in
+					#"Filtered Rows1"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

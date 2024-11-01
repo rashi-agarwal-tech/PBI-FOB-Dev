@@ -1,0 +1,864 @@
+table 'Dim Date'
+	lineageTag: e0f7f5b7-cb14-49f4-9058-75c35dcc3bd2
+
+	column 'Cal Month Year' = CONCATENATE(CONCATENATE('Dim Date'[CALENDAR_MONTH_SHORT_NAME], " "),  'Dim Date'[CALENDAR_YEAR])
+		lineageTag: f1add187-cb5a-4a96-908c-daf3ae9e41d9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE_KEY
+		dataType: string
+		lineageTag: dec0e7c2-4b80-4934-ba74-213306123a58
+		summarizeBy: none
+		sourceColumn: DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9b6c59de-14f9-493d-8a77-b8ffbff68c32
+		summarizeBy: none
+		sourceColumn: DATE
+
+		variation Variation
+			isDefault
+			relationship: 741cc638-c8aa-4c18-bb70-b7f42760a9f6
+			defaultHierarchy: LocalDateTable_00e417d1-1914-42dd-bfc3-b3c6b5c6ab65.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALENDAR_DAY_OF_WEEK_SHORT_NAME
+		dataType: string
+		lineageTag: 7344630b-ef31-4acd-a3c9-360a2b993637
+		summarizeBy: none
+		sourceColumn: CALENDAR_DAY_OF_WEEK_SHORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALENDAR_DAY_OF_WEEK_LONG_NAME
+		dataType: string
+		lineageTag: 1cce9552-9def-40b8-9a17-ed5183c1000c
+		summarizeBy: none
+		sourceColumn: CALENDAR_DAY_OF_WEEK_LONG_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALENDAR_DAY_NUMBER_OF_WEEK
+		dataType: double
+		lineageTag: 01e2949b-60c8-40bf-af14-c7250beeaa9c
+		summarizeBy: sum
+		sourceColumn: CALENDAR_DAY_NUMBER_OF_WEEK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CALENDAR_DAY_NUMBER_OF_MONTH
+		dataType: double
+		lineageTag: 4dd2503f-9cfe-4c8e-ab90-7105678f8ab0
+		summarizeBy: sum
+		sourceColumn: CALENDAR_DAY_NUMBER_OF_MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CALENDAR_DAY_NUMBER_OF_YEAR
+		dataType: double
+		lineageTag: 8c9e9355-cb16-4fb1-a87e-aad8b0c6054b
+		summarizeBy: sum
+		sourceColumn: CALENDAR_DAY_NUMBER_OF_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CALENDAR_WEEK_NUMBER
+		dataType: double
+		lineageTag: 4d3d8e66-4fc1-401d-8717-044d32cda31b
+		summarizeBy: sum
+		sourceColumn: CALENDAR_WEEK_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CALENDAR_WEEK_SHORT_NAME
+		dataType: string
+		lineageTag: a24f278e-3966-4798-b1c2-1ae325d7302e
+		summarizeBy: none
+		sourceColumn: CALENDAR_WEEK_SHORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALENDAR_MONTH_SHORT_NAME
+		dataType: string
+		lineageTag: a7768073-b7f3-458d-a604-9d61b5cf8bb5
+		summarizeBy: none
+		sourceColumn: CALENDAR_MONTH_SHORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALENDAR_MONTH_LONG_NAME
+		dataType: string
+		lineageTag: 90bdf82c-8e31-4270-8527-596d1dd4de22
+		summarizeBy: none
+		sourceColumn: CALENDAR_MONTH_LONG_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALENDAR_MONTH_NUMBER
+		dataType: double
+		lineageTag: f4e0d10d-2966-4d68-9bf5-a0ae96510dbe
+		summarizeBy: sum
+		sourceColumn: CALENDAR_MONTH_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CALENDAR_YEAR
+		dataType: double
+		lineageTag: 462c4420-4d1d-44d0-8c42-9348cf8fd38c
+		summarizeBy: sum
+		sourceColumn: CALENDAR_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CALENDAR_YEAR_WEEK
+		dataType: string
+		lineageTag: 5455ef2f-23e0-484d-af9b-48a0f444d3d4
+		summarizeBy: none
+		sourceColumn: CALENDAR_YEAR_WEEK
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALENDAR_YEAR_MONTH
+		dataType: double
+		lineageTag: 8372c79e-b4a2-400e-8dca-6695cf4a03fa
+		summarizeBy: sum
+		sourceColumn: CALENDAR_YEAR_MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CALENDAR_MONTH_YEAR_SHORT_NAME
+		dataType: string
+		lineageTag: 85326a32-4186-4ad7-a5c2-de4e9049c6ca
+		summarizeBy: none
+		sourceColumn: CALENDAR_MONTH_YEAR_SHORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALENDAR_HALF
+		dataType: string
+		lineageTag: 2b1de03b-0e63-4da4-b50d-0fe8e586c4df
+		summarizeBy: none
+		sourceColumn: CALENDAR_HALF
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALENDAR_YEAR_HALF
+		dataType: string
+		lineageTag: da7481c7-e974-40f0-9642-f27951663fbb
+		summarizeBy: none
+		sourceColumn: CALENDAR_YEAR_HALF
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALENDAR_QUARTER
+		dataType: string
+		lineageTag: ed49198a-1865-4f79-9cdf-067754fcfbbc
+		summarizeBy: none
+		sourceColumn: CALENDAR_QUARTER
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALENDAR_YEAR_QUARTER
+		dataType: string
+		lineageTag: f3074adb-142b-43fa-a137-98ea06f67dc8
+		summarizeBy: none
+		sourceColumn: CALENDAR_YEAR_QUARTER
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_YEAR
+		dataType: string
+		lineageTag: e85dbdf0-06a9-4c80-ae2d-d0f071ad43bd
+		summarizeBy: none
+		sourceColumn: FISCAL_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_QUARTER_SHORT_NAME
+		dataType: string
+		lineageTag: db47d828-5366-451b-bdb8-6beb3f68bcbe
+		summarizeBy: none
+		sourceColumn: FISCAL_QUARTER_SHORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_QUARTER_NUMBER
+		dataType: double
+		lineageTag: f27c534d-fd42-4634-9291-9c5719b9da3a
+		summarizeBy: sum
+		sourceColumn: FISCAL_QUARTER_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_PERIOD_SHORT_NAME
+		dataType: string
+		lineageTag: 568cb227-ff5d-4d46-a714-728f7b58f902
+		summarizeBy: none
+		sourceColumn: FISCAL_PERIOD_SHORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_PERIOD_LONG_NAME
+		dataType: string
+		lineageTag: c86200c3-ea0c-4a65-9a15-80a2a0f88065
+		summarizeBy: none
+		sourceColumn: FISCAL_PERIOD_LONG_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_PERIOD_NUMBER
+		dataType: double
+		lineageTag: 21da702c-6b45-4607-9add-a56ca9e58734
+		summarizeBy: sum
+		sourceColumn: FISCAL_PERIOD_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_YEAR_PERIOD
+		dataType: string
+		lineageTag: dadbcf7f-b9df-4158-9977-3086ec8faeaf
+		summarizeBy: none
+		sourceColumn: FISCAL_YEAR_PERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_MONTH_NUMBER
+		dataType: double
+		lineageTag: 5c12cb69-51d2-4245-8e92-f7536d5d6442
+		summarizeBy: sum
+		sourceColumn: FISCAL_MONTH_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_MONTH_SHORT_NAME
+		dataType: string
+		lineageTag: 674b0d79-c2aa-46d4-821f-84fe25a20831
+		summarizeBy: none
+		sourceColumn: FISCAL_MONTH_SHORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_MONTH_LONG_NAME
+		dataType: string
+		lineageTag: 05312af8-b08e-47b8-b873-0af538fac530
+		summarizeBy: none
+		sourceColumn: FISCAL_MONTH_LONG_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_WEEK_SHORT_NAME
+		dataType: string
+		lineageTag: e9b98feb-89b5-4718-bb0e-6c4620e47818
+		summarizeBy: none
+		sourceColumn: FISCAL_WEEK_SHORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_WEEK_LONG_NAME
+		dataType: string
+		lineageTag: f903d019-609e-4a92-ac7c-94dc13476465
+		summarizeBy: none
+		sourceColumn: FISCAL_WEEK_LONG_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_WEEK_NUMBER
+		dataType: double
+		lineageTag: ac2ce0eb-625e-40e8-9dff-beb4c6231e76
+		summarizeBy: sum
+		sourceColumn: FISCAL_WEEK_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_YEAR_WEEK
+		dataType: string
+		lineageTag: 4cd3d772-2ca9-4fb3-a28a-d43167000604
+		summarizeBy: none
+		sourceColumn: FISCAL_YEAR_WEEK
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_YEAR_DAY_NUMBER
+		dataType: double
+		lineageTag: 95436d8b-ad59-46d8-927b-e91b3cb7699f
+		summarizeBy: sum
+		sourceColumn: FISCAL_YEAR_DAY_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SEASON_SHORT_NAME
+		dataType: string
+		lineageTag: 559e36f5-1cfc-4556-a8dc-b4707784bf29
+		summarizeBy: none
+		sourceColumn: SEASON_SHORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEASON_LONG_NAME
+		dataType: string
+		lineageTag: 8668ba3e-9a92-4d3a-9dd3-bff2f8058983
+		summarizeBy: none
+		sourceColumn: SEASON_LONG_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEASON_START_DATE
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2dacb5fc-3c6c-4774-9fd7-b85bdb408b20
+		summarizeBy: none
+		sourceColumn: SEASON_START_DATE
+
+		variation Variation
+			isDefault
+			relationship: 5dde5d2f-21f3-45a9-ae30-978b04ea8391
+			defaultHierarchy: LocalDateTable_b87130e6-e6af-42b9-804f-133ffe587582.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEASON_DAY_NUMBER
+		dataType: double
+		lineageTag: a4d64a5d-0eea-40be-8b24-02480bf8e8a8
+		summarizeBy: sum
+		sourceColumn: SEASON_DAY_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SEASON
+		dataType: string
+		lineageTag: e71c4ef4-5be7-4bc4-a786-9d9fdead43db
+		summarizeBy: none
+		sourceColumn: SEASON
+
+		annotation SummarizationSetBy = Automatic
+
+	column PURCHASE_SEASON
+		dataType: string
+		lineageTag: a1c4feed-4842-4972-a456-b4004f74bde4
+		summarizeBy: none
+		sourceColumn: PURCHASE_SEASON
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_UK_BANK_HOLIDAY
+		dataType: string
+		lineageTag: c2fe62ae-4d1f-4c91-90ae-905b74f11435
+		summarizeBy: none
+		sourceColumn: IS_UK_BANK_HOLIDAY
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_BLACK_FRIDAY
+		dataType: string
+		lineageTag: dbba6513-71ce-4130-ab3d-3c46f165c27b
+		summarizeBy: none
+		sourceColumn: IS_BLACK_FRIDAY
+
+		annotation SummarizationSetBy = Automatic
+
+	column WEEKDAY_OR_WEEKEND
+		dataType: string
+		lineageTag: 6fc17c62-8e33-45fa-8281-5960b6f41467
+		summarizeBy: none
+		sourceColumn: WEEKDAY_OR_WEEKEND
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_LEAP_YEAR
+		dataType: string
+		lineageTag: d344a6b1-5007-468d-8e27-490d66d0cdc3
+		summarizeBy: none
+		sourceColumn: IS_LEAP_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_END_OF_MONTH
+		dataType: string
+		lineageTag: ffcf2342-195b-49f4-a9dd-19cb36e05e48
+		summarizeBy: none
+		sourceColumn: IS_END_OF_MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_YEAR_NUMBER
+		dataType: double
+		lineageTag: 59a4718d-1ee8-4c32-a230-f5e0e9c0c4e6
+		summarizeBy: sum
+		sourceColumn: FISCAL_YEAR_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column YEAR_PIT
+		dataType: string
+		lineageTag: 03593040-a598-4d2f-925f-0920d3d0bf3a
+		summarizeBy: none
+		sourceColumn: YEAR_PIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_END_OF_PERIOD
+		dataType: string
+		lineageTag: f2763170-cb24-456b-8697-b090cbf1e8c7
+		summarizeBy: none
+		sourceColumn: IS_END_OF_PERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_END_OF_QUARTER
+		dataType: string
+		lineageTag: 78886245-eece-4dd8-8976-51108e743049
+		summarizeBy: none
+		sourceColumn: IS_END_OF_QUARTER
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_YEAR_PIT
+		dataType: string
+		lineageTag: 8049abb2-7fb2-4c6c-a07e-1c9d5db5909b
+		summarizeBy: none
+		sourceColumn: FISCAL_YEAR_PIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_YESTERDAY
+		dataType: string
+		lineageTag: 1be756bb-18cf-4622-9953-e7f2f4b3c915
+		summarizeBy: none
+		sourceColumn: IS_YESTERDAY
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_TODAY
+		dataType: string
+		lineageTag: 2652ac26-d288-4c5b-940d-15d10f75950f
+		summarizeBy: none
+		sourceColumn: IS_TODAY
+
+		annotation SummarizationSetBy = Automatic
+
+	column RELATIVE_WEEK
+		dataType: string
+		lineageTag: e5c2bd3a-4ad6-4a74-9cdf-3f4b634f5c05
+		summarizeBy: none
+		sourceColumn: RELATIVE_WEEK
+
+		annotation SummarizationSetBy = Automatic
+
+	column RELATIVE_WEEK_SORT
+		dataType: string
+		lineageTag: 0d2d2c61-3aff-45e3-ac82-3e6769b90969
+		summarizeBy: none
+		sourceColumn: RELATIVE_WEEK_SORT
+
+		annotation SummarizationSetBy = Automatic
+
+	column RELATIVE_MONTH
+		dataType: string
+		lineageTag: 5e3cd995-6e62-4b1f-ac06-86480eee9b2d
+		summarizeBy: none
+		sourceColumn: RELATIVE_MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	column RELATIVE_YEAR
+		dataType: string
+		lineageTag: 42045571-2f58-4ab0-9e4c-ed13aa33867c
+		summarizeBy: none
+		sourceColumn: RELATIVE_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column RELATIVE_FISCAL_WEEK
+		dataType: string
+		lineageTag: 52b90abe-c1b6-4363-b867-8d145f9fe0f8
+		summarizeBy: none
+		sourceColumn: RELATIVE_FISCAL_WEEK
+
+		annotation SummarizationSetBy = Automatic
+
+	column RELATIVE_FISCAL_PERIOD
+		dataType: string
+		lineageTag: a236be3e-a111-4fc5-9e80-0eafec9df133
+		summarizeBy: none
+		sourceColumn: RELATIVE_FISCAL_PERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column RELATIVE_FISCAL_YEAR
+		dataType: string
+		lineageTag: 42ed516d-358e-425c-9b5f-c409f7a50c37
+		summarizeBy: none
+		sourceColumn: RELATIVE_FISCAL_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_WEEK
+		dataType: string
+		lineageTag: f97319cd-d419-4284-92db-b8d81938431b
+		summarizeBy: none
+		sourceColumn: IS_WEEK
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_MONTH
+		dataType: string
+		lineageTag: a5dad538-c21b-4ddf-b66b-04299feb830a
+		summarizeBy: none
+		sourceColumn: IS_MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	column REPORTING_YEAR
+		dataType: double
+		lineageTag: af5a497c-7559-4375-ba68-1f98a3b50b7d
+		summarizeBy: sum
+		sourceColumn: REPORTING_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column REPORTING_CAL_WEEK_INDEX
+		dataType: double
+		lineageTag: 710cd8bd-27a5-437f-874c-c0da17ce63d5
+		summarizeBy: sum
+		sourceColumn: REPORTING_CAL_WEEK_INDEX
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 544_WEEK_NUMBER
+		dataType: double
+		lineageTag: 89d18e6e-5367-4a6d-8f14-ad68a5ee5d22
+		summarizeBy: sum
+		sourceColumn: 544_WEEK_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 544_FISCAL_PERIOD_NUMBER
+		dataType: double
+		lineageTag: 896262ae-ba91-43e2-b180-70ee95c76cfc
+		summarizeBy: sum
+		sourceColumn: 544_FISCAL_PERIOD_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 544_FISCAL_QUARTER
+		dataType: double
+		lineageTag: 914b1a78-f836-4967-8bcf-e627c9d9d472
+		summarizeBy: sum
+		sourceColumn: 544_FISCAL_QUARTER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 544_FISCAL_HALF
+		dataType: double
+		lineageTag: fbd378e5-1c9a-40a7-9ac2-6a2217a9d0c5
+		summarizeBy: sum
+		sourceColumn: 544_FISCAL_HALF
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 544_FISCAL_YEAR
+		dataType: string
+		lineageTag: b053ae84-ca39-4112-ac13-9500d6f304cb
+		summarizeBy: none
+		sourceColumn: 544_FISCAL_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column 544_FISCAL_YEAR_NUMBER
+		dataType: double
+		lineageTag: f75c58de-5485-4fde-9ac3-d59c71f61615
+		summarizeBy: sum
+		sourceColumn: 544_FISCAL_YEAR_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 544_FISCAL_YEAR_WEEK
+		dataType: string
+		lineageTag: da824364-26d4-495e-937d-5079b697cfc5
+		summarizeBy: none
+		sourceColumn: 544_FISCAL_YEAR_WEEK
+
+		annotation SummarizationSetBy = Automatic
+
+	column 544_FISCAL_YEAR_PERIOD
+		dataType: string
+		lineageTag: 3e3ba5e2-a35e-4307-9ab5-878146a35e57
+		summarizeBy: none
+		sourceColumn: 544_FISCAL_YEAR_PERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column RELATIVE_FISCAL_PERIOD_544
+		dataType: string
+		lineageTag: 053ad9dd-46fa-44b4-bf24-08607245b229
+		summarizeBy: none
+		sourceColumn: RELATIVE_FISCAL_PERIOD_544
+
+		annotation SummarizationSetBy = Automatic
+
+	column RELATIVE_FISCAL_YEAR_544
+		dataType: string
+		lineageTag: d6befcc2-b94d-4f08-82eb-529f82d9e3c6
+		summarizeBy: none
+		sourceColumn: RELATIVE_FISCAL_YEAR_544
+
+		annotation SummarizationSetBy = Automatic
+
+	column US_IS_END_OF_PERIOD
+		dataType: string
+		lineageTag: cc36d1cf-d1fd-4464-aa10-213180bb6753
+		summarizeBy: none
+		sourceColumn: US_IS_END_OF_PERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column US_IS_END_OF_QUARTER
+		dataType: string
+		lineageTag: 4d3c94d3-9bb6-4b9a-b17b-96782953dbdc
+		summarizeBy: none
+		sourceColumn: US_IS_END_OF_QUARTER
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_US_PERIOD
+		dataType: string
+		lineageTag: 0f228669-3fb7-4107-a836-1d82119afbd0
+		summarizeBy: none
+		sourceColumn: FISCAL_US_PERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_US_QUARTER
+		dataType: string
+		lineageTag: 9002509e-2812-4f45-96a2-354584bc5ec8
+		summarizeBy: none
+		sourceColumn: FISCAL_US_QUARTER
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_US_DAY
+		dataType: double
+		lineageTag: 74a51615-ba77-4a5c-adce-5edba8bae7d9
+		summarizeBy: sum
+		sourceColumn: FISCAL_US_DAY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_US_PERIOD_NUM
+		dataType: double
+		lineageTag: b4c87161-ea69-4131-8d64-e52e40404b1c
+		summarizeBy: sum
+		sourceColumn: FISCAL_US_PERIOD_NUM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_US_WEEK
+		dataType: double
+		lineageTag: ecca784a-5aa9-4ee6-9074-b30ec177db39
+		summarizeBy: sum
+		sourceColumn: FISCAL_US_WEEK
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_US_YEAR
+		dataType: string
+		lineageTag: ca1d166c-5bd9-44d1-97c9-300ca5299046
+		summarizeBy: none
+		sourceColumn: FISCAL_US_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_US_YEAR_NUMBER
+		dataType: double
+		lineageTag: f8fb2b61-b70b-4c49-ae43-9fcbca2daa98
+		summarizeBy: sum
+		sourceColumn: FISCAL_US_YEAR_NUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_US_YEAR_PERIOD
+		dataType: string
+		lineageTag: 81da22b9-cff6-49c6-abe2-6f9b2a920e24
+		summarizeBy: none
+		sourceColumn: FISCAL_US_YEAR_PERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_US_YEAR_WEEK
+		dataType: string
+		lineageTag: d95a6411-66b6-40a0-aff7-dc1347dea582
+		summarizeBy: none
+		sourceColumn: FISCAL_US_YEAR_WEEK
+
+		annotation SummarizationSetBy = Automatic
+
+	column US_FISCAL_YEAR_PIT
+		dataType: string
+		lineageTag: fdf9cc7c-e87f-40a7-aed8-e262d8516f60
+		summarizeBy: none
+		sourceColumn: US_FISCAL_YEAR_PIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column US_RELATIVE_FISCAL_PERIOD
+		dataType: string
+		lineageTag: 9d5245f4-9656-4500-8155-0471b7d5074a
+		summarizeBy: none
+		sourceColumn: US_RELATIVE_FISCAL_PERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column US_RELATIVE_FISCAL_WEEK
+		dataType: string
+		lineageTag: 475ffd05-c17d-43c1-83ce-666ad978a52e
+		summarizeBy: none
+		sourceColumn: US_RELATIVE_FISCAL_WEEK
+
+		annotation SummarizationSetBy = Automatic
+
+	column US_RELATIVE_FISCAL_YEAR
+		dataType: string
+		lineageTag: d43d5d7c-7060-4cf5-8847-484a3c289083
+		summarizeBy: none
+		sourceColumn: US_RELATIVE_FISCAL_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCAL_MONTH_NUMBER_GB
+		dataType: double
+		lineageTag: 239bf0f6-5bba-4fb7-9354-dd00acb4dd28
+		summarizeBy: sum
+		sourceColumn: FISCAL_MONTH_NUMBER_GB
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FISCAL_YEAR_GB
+		dataType: string
+		lineageTag: 393628f0-647e-4cae-ba0e-8e7ab1adada5
+		summarizeBy: none
+		sourceColumn: FISCAL_YEAR_GB
+
+		annotation SummarizationSetBy = Automatic
+
+	column YOY_DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d43c283a-dea6-4913-ae83-3e301a021910
+		summarizeBy: none
+		sourceColumn: YOY_DATE
+
+		variation Variation
+			isDefault
+			relationship: 711a934b-7d55-43f8-8ba4-9f2acb12194c
+			defaultHierarchy: LocalDateTable_36751eb9-b29d-429b-a3e5-d5e721e6216e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EXCLUDE_53RD_WEEK
+		dataType: string
+		lineageTag: 29fcc61c-d983-4995-b85e-38b70a0235ef
+		summarizeBy: none
+		sourceColumn: EXCLUDE_53RD_WEEK
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_WEEK_FILTER
+		dataType: string
+		lineageTag: 6622e84d-dd6b-421d-b309-de9cb266d134
+		summarizeBy: none
+		sourceColumn: IS_WEEK_FILTER
+
+		annotation SummarizationSetBy = Automatic
+
+	column YOY_DATE_2
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b5fc1d1b-7094-4824-b278-af0eca63f8fb
+		summarizeBy: none
+		sourceColumn: YOY_DATE_2
+
+		variation Variation
+			isDefault
+			relationship: 975e8f69-5cdd-4582-bed0-44668dc57ff4
+			defaultHierarchy: LocalDateTable_a8986a6a-47ab-44a5-ba84-1caf03854241.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'Dim Date-82b5cc28-85e3-4d86-91e4-d1c4dc980af8' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Date_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Date_Schema,Kind="Schema"]}[Data],
+				    VW_DIMDATE_Table = BS_Schema{[Name="VW_DIMDATE",Kind="Table"]}[Data]
+				in
+				    VW_DIMDATE_Table
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

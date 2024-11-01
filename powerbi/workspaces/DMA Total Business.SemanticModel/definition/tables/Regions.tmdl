@@ -1,0 +1,31 @@
+table Regions
+	isHidden
+	lineageTag: 8a961e34-6489-439b-8096-01d521b9829f
+
+	column 'Region ID'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b4a89259-39be-489a-8f3e-89c593c89161
+		summarizeBy: none
+		sourceColumn: Region ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Regions = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_DIM_REGIONS_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_DIM_REGIONS",Kind="View"]}[Data]
+				in
+				    TB_BFN_DIM_REGIONS_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Exception
+

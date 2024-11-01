@@ -1,0 +1,58 @@
+table 'Hours Worked'
+	isHidden
+	lineageTag: 24997f6c-7921-4f5a-80c8-733547a79e4c
+
+	column 'DM Agent'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 56c9954e-e2f7-4d88-99d0-8d611326c8a5
+		summarizeBy: none
+		sourceColumn: DM Agent
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: a008f335-b0e1-4dc6-89da-725099743ac3
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Store
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: af439999-b2a7-409a-b8ad-bbe9bb77b876
+		summarizeBy: none
+		sourceColumn: Store
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Hours Worked-99b35946-5b98-43f1-a017-9cfee1725d56' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_AZURE_HOURS_WORKED_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_AZURE_HOURS_WORKED",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_AZURE_HOURS_WORKED_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

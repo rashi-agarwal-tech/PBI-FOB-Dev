@@ -1,0 +1,44 @@
+table Familiarity
+	lineageTag: da54a4af-6d15-4641-90f9-6d8110c95a7c
+
+	column RECQ2_Question
+		dataType: string
+		lineageTag: 1c1d8a2b-3938-474e-802b-3e9527a947cb
+		summarizeBy: none
+		sourceColumn: RECQ2_Question
+
+		annotation SummarizationSetBy = Automatic
+
+	column RECQ2
+		dataType: double
+		lineageTag: d437ef66-06dd-4a6d-ab4b-197c69a0b317
+		summarizeBy: none
+		sourceColumn: RECQ2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column RECQ2_Label
+		dataType: string
+		lineageTag: 199dfeda-d3b6-4706-9b35-29017255cfeb
+		summarizeBy: none
+		sourceColumn: RECQ2_Label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Familiarity-041265f2-65c6-488b-83ba-c35e9328df26 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_FAMILIARITY_RECQ2_View = BS_Schema{[Name="BRANDSURVEY_DIM_FAMILIARITY",Kind="Table"]}[Data]
+				in
+				    VW_FAMILIARITY_RECQ2_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

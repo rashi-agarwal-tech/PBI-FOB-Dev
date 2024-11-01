@@ -1,0 +1,831 @@
+table 'Google Analytics'
+	isHidden
+	lineageTag: 481ab5a7-d90c-4694-997f-fdb54102b881
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 86a727ec-78c1-4583-a9bf-e0d4de81ef60
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Hour
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 430c1247-96f9-4508-bdf8-f00f80ba56b1
+		summarizeBy: none
+		sourceColumn: Hour
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencyCode
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 025a536b-8d8b-48ff-b3d6-9ed41eeb62f7
+		summarizeBy: none
+		sourceColumn: CurrencyCode
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Users Col'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 885bd171-7978-40c5-a7b1-9dc4161be8d3
+		summarizeBy: none
+		sourceColumn: Users Col
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'NewUsers Col'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: aa169717-5ba4-4b83-8142-43bae0d3b237
+		summarizeBy: none
+		sourceColumn: NewUsers Col
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Sessions Col'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: b05b4416-2853-4f03-9077-7ce3e943cb7e
+		summarizeBy: none
+		sourceColumn: Sessions Col
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Transactions Col'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 4b75dbbf-a109-4c73-82f9-443769dce284
+		summarizeBy: none
+		sourceColumn: Transactions Col
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TransactionRevenue
+		dataType: string
+		isHidden
+		sourceProviderType: decimal(16, 6)
+		lineageTag: 4fef1386-6440-43de-ad23-b238d3c968e5
+		summarizeBy: none
+		sourceColumn: TransactionRevenue
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'PageViews Col'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 94701a15-340f-4e07-b371-f15d869d3da7
+		summarizeBy: none
+		sourceColumn: PageViews Col
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Bounces Col'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: a95d49a7-a362-4c48-9d9f-b2e86bc9fe45
+		summarizeBy: sum
+		sourceColumn: Bounces Col
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'ItemQuantity Col'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 7e6caadf-17ee-4b72-9f48-8af80cbac024
+		summarizeBy: none
+		sourceColumn: ItemQuantity Col
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'SessionDuration Col'
+		dataType: decimal
+		isHidden
+		formatString: 0.00
+		sourceProviderType: decimal(10, 1)
+		lineageTag: 3b7d7238-9d25-425a-a364-ca24b0c2028e
+		summarizeBy: none
+		sourceColumn: SessionDuration Col
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column GAViewID
+		dataType: string
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		lineageTag: 1f3dab49-5e8b-425c-91d1-e3c0e5820bfe
+		summarizeBy: none
+		sourceColumn: GAViewID
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChannelGrouping_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 50acb3a0-28e7-452d-a776-6a5f5bfd78cd
+		summarizeBy: none
+		sourceColumn: ChannelGrouping_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeviceCategory_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: f3e7dc6c-7d5a-40fa-83bd-f8288541db85
+		summarizeBy: none
+		sourceColumn: DeviceCategory_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: b4e06c16-780c-4f98-bc95-94ba9f0366c6
+		summarizeBy: none
+		sourceColumn: Country_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Time_Key
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: c74a8dcd-7d75-48cb-90e0-e1a19dfe8b16
+		summarizeBy: none
+		sourceColumn: Time_Key
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Company Region' = RELATED ( 'Website Name'[CompanyRegion] )
+		isHidden
+		lineageTag: f347bca6-4f13-4060-a926-528d8ee4dd5f
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Revenue (GBP)' = 'Google Analytics'[TransactionRevenue] * 'Google Analytics'[XR to GBP]
+		dataType: decimal
+		isHidden
+		formatString: 0.000000
+		lineageTag: 10016dc5-2f49-43c5-915c-cba694255ffc
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column 'XR to GBP' =
+			IF (
+				ISBLANK (
+					LOOKUPVALUE (
+						'Exchange Rates'[RATE],
+						'Exchange Rates'[TOCURRENCY], 'Google Analytics'[CurrencyCode],
+						'Exchange Rates'[FROMCURRENCY], "GBP"
+					)
+				),
+				1,
+				DIVIDE (
+					1,
+					LOOKUPVALUE (
+						'Exchange Rates'[RATE],
+						'Exchange Rates'[TOCURRENCY], 'Google Analytics'[CurrencyCode],
+						'Exchange Rates'[FROMCURRENCY], "GBP"
+					)
+				)
+			)
+		dataType: decimal
+		isHidden
+		formatString: 0.000000
+		lineageTag: eb7a0e87-d1b4-47d1-b79c-bddbce55605c
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	partition 'CY2027 12' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2027, 12, 1) and [Date] < #date(2028, 1, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 11' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2027, 11, 1) and [Date] < #date(2027, 12, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 10' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2027, 10, 1) and [Date] < #date(2027, 11, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 09' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2027, 9, 1) and [Date] < #date(2027, 10, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 08' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2027, 8, 1) and [Date] < #date(2027, 9, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 07' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2027, 7, 1) and [Date] < #date(2027, 8, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 06' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2027, 6, 1) and [Date] < #date(2027, 7, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 05' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2027, 5, 1) and [Date] < #date(2027, 6, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 04' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2027, 4, 1) and [Date] < #date(2027, 5, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 03' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2027, 3, 1) and [Date] < #date(2027, 4, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 02' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2027, 2, 1) and [Date] < #date(2027, 3, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 01' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2027, 1, 1) and [Date] < #date(2027, 2, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 12' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2026, 12, 1) and [Date] < #date(2027, 1, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 11' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2026, 11, 1) and [Date] < #date(2026, 12, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 10' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2026, 10, 1) and [Date] < #date(2026, 11, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 09' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2026, 9, 1) and [Date] < #date(2026, 10, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 08' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2026, 8, 1) and [Date] < #date(2026, 9, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 07' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2026, 7, 1) and [Date] < #date(2026, 8, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 06' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2026, 6, 1) and [Date] < #date(2026, 7, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 05' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2026, 5, 1) and [Date] < #date(2026, 6, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 04' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2026, 4, 1) and [Date] < #date(2026, 5, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 03' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2026, 3, 1) and [Date] < #date(2026, 4, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 02' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2026, 2, 1) and [Date] < #date(2026, 3, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 01' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2026, 1, 1) and [Date] < #date(2026, 2, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2025 12' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2025, 12, 1) and [Date] < #date(2026, 1, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2025 11' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2025, 11, 1) and [Date] < #date(2025, 12, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2025 10' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2025, 10, 1) and [Date] < #date(2025, 11, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2025 09' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2025, 9, 1) and [Date] < #date(2025, 10, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2025 08' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2025, 8, 1) and [Date] < #date(2025, 9, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2025 07' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2025, 7, 1) and [Date] < #date(2025, 8, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2025 06' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2025, 6, 1) and [Date] < #date(2025, 7, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2025 05' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2025, 5, 1) and [Date] < #date(2025, 6, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2025 04' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2025, 4, 1) and [Date] < #date(2025, 5, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2025 03' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2025, 3, 1) and [Date] < #date(2025, 4, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2025 02' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2025, 2, 1) and [Date] < #date(2025, 3, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2025 01' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2025, 1, 1) and [Date] < #date(2025, 2, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2024 12' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2024, 12, 1) and [Date] < #date(2025, 1, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2024 11' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2024, 11, 1) and [Date] < #date(2024, 12, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2024 10' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2024, 10, 1) and [Date] < #date(2024, 11, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2024 09' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2024, 9, 1) and [Date] < #date(2024, 10, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2024 08' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View,NumberOfRows),
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2024, 8, 1) and [Date] < #date(2024, 9, 1))
+				in
+					PartitionFilter
+
+	partition 'Google Analytics Historic' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] < #date(2024, 8, 1))
+				in
+					PartitionFilter
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

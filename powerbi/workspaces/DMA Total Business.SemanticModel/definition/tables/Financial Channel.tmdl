@@ -1,0 +1,51 @@
+table 'Financial Channel'
+	lineageTag: 0a37e540-cdc6-4e96-b7aa-19998c1332ef
+
+	column Channel_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 92689a38-3717-4e8a-82fc-f99c18db4a3e
+		summarizeBy: none
+		sourceColumn: Channel_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Channel
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 8c1bb9cd-24d6-4944-8f11-3c7f858c411a
+		summarizeBy: none
+		sourceColumn: Channel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Financial Channel'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 29a288b1-aa3e-4ab2-8f3f-9acac3c0ce58
+		summarizeBy: none
+		sourceColumn: Financial Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Financial Channel' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_D365DIMCHANNEL_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365DIMCHANNEL",Kind="View"]}[Data]
+				in
+				    TB_BFN_VW_D365DIMCHANNEL_View
+
+	annotation PBI_ResultType = Table
+

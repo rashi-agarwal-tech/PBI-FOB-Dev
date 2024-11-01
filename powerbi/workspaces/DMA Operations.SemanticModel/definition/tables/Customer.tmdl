@@ -1,0 +1,349 @@
+table Customer
+	lineageTag: 4f6d636e-ef10-444d-853e-c2087117119d
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: Misc
+		lineageTag: b62f1ffa-794d-4f7d-9c4e-f733fe6a0e0a
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HDM_EDI_CUSTOMER
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Misc
+		lineageTag: d52c9276-b8ea-4df0-ac4d-fe9e78460ed0
+		summarizeBy: sum
+		sourceColumn: HDM_EDI_CUSTOMER
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HDM_DIR_CUSTOMER
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Misc
+		lineageTag: 78d54e47-9a5b-4c6b-8eee-3165cea7c91d
+		summarizeBy: sum
+		sourceColumn: HDM_DIR_CUSTOMER
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HDM_RETAIL_CUSTOMER
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Misc
+		lineageTag: 9b6aaeb3-2c5b-46af-9f63-69b62da2f1d0
+		summarizeBy: sum
+		sourceColumn: HDM_RETAIL_CUSTOMER
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HDM_VR_LINK_CUSTOMER
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: Misc
+		lineageTag: f758214d-4b7a-4097-8414-a28fb10423a0
+		summarizeBy: sum
+		sourceColumn: HDM_VR_LINK_CUSTOMER
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Finance Dimension - Channel'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 1. Finance Dimensions
+		lineageTag: a3b374cd-5169-4a88-9ebf-e8a3d1c3fdf1
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Cost Centre'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 1. Finance Dimensions
+		lineageTag: dcb633f3-3a3e-4fa3-a275-aef9fbcfcab7
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Cost Centre
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Country'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 1. Finance Dimensions
+		lineageTag: c5d92c96-e90b-4ed6-b8cf-e80394a85c62
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Finance Dimension - Selling Status'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: 1. Finance Dimensions
+		lineageTag: 90be401b-c4a4-42ab-a894-e464ff47d30f
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Selling Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Account Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3f726c25-cc75-4c2a-a329-c42130338045
+		summarizeBy: none
+		sourceColumn: Customer Account Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 181e7f61-5754-44ef-b5f0-4247099102ee
+		summarizeBy: none
+		sourceColumn: Customer Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Group'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 972e45df-7d77-4351-85c3-ac60a8ff3e0a
+		summarizeBy: none
+		sourceColumn: Customer Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line Of Business'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f0471ed4-3cb8-40f5-bba3-15f6d93fb39c
+		summarizeBy: none
+		sourceColumn: Line Of Business
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Segment'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 592c2ccf-0635-4613-9e2b-a0cd8c7d35db
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Sub Segment'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4a65b91c-c782-464e-a556-7e7cf9684870
+		summarizeBy: none
+		sourceColumn: Customer Sub Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Credit Rating'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e75700d3-c051-4b59-8e1e-916c14b9c693
+		summarizeBy: none
+		sourceColumn: Credit Rating
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Credit Limit'
+		dataType: double
+		formatString: " #,##0.00"
+		sourceProviderType: decimal(32, 6)
+		lineageTag: 06277216-13d0-485d-9ded-11c53d9e4f3a
+		summarizeBy: none
+		sourceColumn: Credit Limit
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Payment Terms'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e8b4f328-8123-46ab-a597-3e47c995d2ff
+		summarizeBy: none
+		sourceColumn: Payment Terms
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Method'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a42a7bd6-617e-4f27-ab22-92be916f15f3
+		summarizeBy: none
+		sourceColumn: Payment Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Manager'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: df3911ca-0f0a-420e-83b3-c26f9c913860
+		summarizeBy: none
+		sourceColumn: Account Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Channel'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f194553e-484d-4343-889f-e439f97042fa
+		summarizeBy: none
+		sourceColumn: Customer Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Region Channel'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: efb13bb9-49bc-4c72-958a-8f1f36b1eb33
+		summarizeBy: none
+		sourceColumn: Customer Region Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Known-As'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8abc856b-81c1-4025-ab66-120275f788a4
+		summarizeBy: none
+		sourceColumn: Customer Known-As
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Linked Customer Account'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 78fa9b8d-a822-4e73-8e5a-f017c1ef1207
+		summarizeBy: none
+		sourceColumn: Linked Customer Account
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Account Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f1b5701f-bd09-48d5-a3fa-393470679663
+		summarizeBy: none
+		sourceColumn: Invoice Account Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Account Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c31f6c27-5626-4351-9d3a-9deb9f9eb8a7
+		summarizeBy: none
+		sourceColumn: Invoice Account Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'VAS Required?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		lineageTag: a4b7fd5b-9e8d-46bb-b6a2-defd73bf06df
+		summarizeBy: none
+		sourceColumn: VAS Required?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'EDI Customer?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		lineageTag: 53ecc34b-23f4-45dd-97c3-7394014c07fc
+		summarizeBy: none
+		sourceColumn: EDI Customer?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Direct Ship Customer?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		lineageTag: 71d1acf0-00c8-46df-8ff4-e54e5279c776
+		summarizeBy: none
+		sourceColumn: Direct Ship Customer?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DM Retail Customer?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		lineageTag: 64283091-40a3-4076-9c2a-dbd910fe8da3
+		summarizeBy: none
+		sourceColumn: DM Retail Customer?
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'VR Link Customer?'
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		lineageTag: 5ee62fff-348e-4565-9655-4012d3c8c229
+		summarizeBy: none
+		sourceColumn: VR Link Customer?
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Last External Sell Thru Upload (US)' = CALCULATE ( LASTDATE(  'Customer Sell Out US'[To Date] ), ALL ( Products ) )
+		formatString: Short Date
+		lineageTag: bdc8c1ce-3020-47b0-8556-12b90d8243b4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'VAS Number'
+		dataType: string
+		lineageTag: 1be35ea2-0c6e-4d86-b897-91629d5588e3
+		summarizeBy: none
+		sourceColumn: VAS Number
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Customer = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365DIMCUSTOMER",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

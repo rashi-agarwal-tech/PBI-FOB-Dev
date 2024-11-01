@@ -1,0 +1,293 @@
+table 'VW_POWERBI_REFRESH_STATUS (DEV)'
+	isHidden
+	lineageTag: d2c48793-0289-4749-984b-c601707c3943
+
+	column 'Status Refresh DT'
+		dataType: dateTime
+		isHidden
+		isNullable: false
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: fc59be5f-510b-4a7e-b734-1f58b35788b7
+		summarizeBy: none
+		sourceColumn: Status Refresh DT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status Refresh Time'
+		dataType: dateTime
+		isHidden
+		isNullable: false
+		formatString: Long Time
+		sourceProviderType: time
+		lineageTag: 8f22e839-632b-407d-81fc-e4043399a815
+		summarizeBy: none
+		sourceColumn: Status Refresh Time
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Airflow DAG Start DT'
+		dataType: dateTime
+		isHidden
+		isNullable: false
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 5d2678c7-4a1b-45a4-b874-4162f37f1908
+		summarizeBy: none
+		sourceColumn: Airflow DAG Start DT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2a779b52-fb06-485c-ae2e-7506cdcad647
+		summarizeBy: none
+		sourceColumn: Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Model Status Order Number'
+		dataType: double
+		isHidden
+		isNullable: false
+		sourceProviderType: decimal(18, 0)
+		lineageTag: f5b38be1-e2ba-4a48-b31d-229f976a2764
+		summarizeBy: sum
+		sourceColumn: Model Status Order Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Model Status Refresh Order Number'
+		dataType: double
+		isHidden
+		isNullable: false
+		sourceProviderType: decimal(18, 0)
+		lineageTag: 4a688e22-0c1f-46d1-a935-58b4daab63c6
+		summarizeBy: sum
+		sourceColumn: Model Status Refresh Order Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Model Refresh Start Time'
+		dataType: dateTime
+		isHidden
+		formatString: Long Time
+		sourceProviderType: time
+		lineageTag: 6f2dcfb5-9be2-45a7-8c71-c0b600fd7b6e
+		summarizeBy: none
+		sourceColumn: Model Refresh Start Time
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'Region Refresh Number'
+		dataType: double
+		isHidden
+		isNullable: false
+		sourceProviderType: decimal(18, 0)
+		lineageTag: 5dd506e5-6a55-4970-81b5-701b4e841916
+		summarizeBy: sum
+		sourceColumn: Region Refresh Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Airflow Scheudle Id'
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0fd570fb-aba2-4249-919a-b6f6420a46c7
+		summarizeBy: none
+		sourceColumn: Airflow Scheudle Id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Environment
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4dae9a45-b93c-4a49-905b-140627b8779e
+		summarizeBy: none
+		sourceColumn: Environment
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Model Name'
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: cc281684-52e3-4a47-91a0-2cf39617ac84
+		summarizeBy: none
+		sourceColumn: Model Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: nvarchar(7)
+		lineageTag: bf9d5515-62fb-43f3-88a9-247add1ec29f
+		summarizeBy: none
+		sourceColumn: Region
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SLA
+		dataType: dateTime
+		isHidden
+		formatString: Long Time
+		sourceProviderType: time
+		lineageTag: fe338c33-7dc8-4b58-92c0-841773c438a5
+		summarizeBy: none
+		sourceColumn: SLA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Time
+
+	column 'SLA Delta'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(9, 0)
+		lineageTag: c2a06ca1-4880-42ef-bca9-60168967be91
+		summarizeBy: sum
+		sourceColumn: SLA Delta
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Refresh Execution Time'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(9, 0)
+		lineageTag: 747a8d95-09c7-4ded-9c16-228ec397325c
+		summarizeBy: sum
+		sourceColumn: Refresh Execution Time
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Environment Short'
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e0e61824-7cd2-4be3-9237-762ce52a231c
+		summarizeBy: none
+		sourceColumn: Environment Short
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SLA DT'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 72308851-15fa-45dc-bdac-8d1661e7afa4
+		summarizeBy: none
+		sourceColumn: SLA DT
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Status DT Local'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: fbdb17e2-3ee0-44d9-97ec-904c087ff51c
+		summarizeBy: none
+		sourceColumn: Status DT Local
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Local Time Zone'
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(14)
+		lineageTag: 3b56edd1-a0c3-48b3-a48c-6e83770fd03e
+		summarizeBy: none
+		sourceColumn: Local Time Zone
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start DT Local'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 771f1554-0ab9-47e2-92a4-59aa95c7422f
+		summarizeBy: none
+		sourceColumn: Start DT Local
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start Date Local'
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 056f7316-619a-4716-a4f4-2b49e41af348
+		summarizeBy: none
+		sourceColumn: Start Date Local
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'VW_POWERBI_REFRESH_STATUS (DEV)' = m
+		mode: directQuery
+		source =
+				let
+				    Source = Snowflake.Databases("drmartensdev.west-europe.azure.snowflakecomputing.com","REPORTER"),
+				    Database = Source{[Name="PRESENTATION",Kind="Database"]}[Data],
+				    Schema = Database{[Name="BFN_PRESENTATION",Kind="Schema"]}[Data],
+				    VW_POWERBI_REFRESH_STATUS_View = Schema{[Name="VW_BFN_POWERBI_REFRESH_STATUS",Kind="View"]}[Data]
+				in
+				    VW_POWERBI_REFRESH_STATUS_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

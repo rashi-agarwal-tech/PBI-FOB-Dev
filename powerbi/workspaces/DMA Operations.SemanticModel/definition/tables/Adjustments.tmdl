@@ -1,0 +1,330 @@
+table Adjustments
+	lineageTag: 290093f2-7f07-4526-aa6e-06074d548778
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: a9db2028-3af1-49ab-8bc3-d4629c15f772
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: dd500249-9f98-4dd6-af5b-c7556ef20580
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: 57b5f5a0-8756-4089-8754-6133c7998a91
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: 32028223-ba5d-485a-8c38-21bd2360f4d1
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: 2dafbddc-2573-49e8-be10-1b494455805e
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Amount'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(32, 6)
+		displayFolder: zz_Misc
+		lineageTag: 06435ae2-f232-4cea-9be0-8d9e8e8ad02b
+		summarizeBy: none
+		sourceColumn: Cost Amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Inventory Quantity'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(32, 6)
+		displayFolder: zz_Misc
+		lineageTag: dbbf9146-6688-42fa-86e6-7b9eae9753eb
+		summarizeBy: none
+		sourceColumn: Inventory Quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Transaction Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: datetime2
+		displayFolder: zz_Misc
+		lineageTag: dd44cae1-5923-4ae4-a72e-e5904ff4be35
+		summarizeBy: none
+		sourceColumn: Transaction Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Journal Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a5d09950-62e1-4d70-a58d-22665269048c
+		summarizeBy: none
+		sourceColumn: Journal Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Journal Name ID'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 77cf3b5b-377d-427d-b2ca-c393728036ec
+		summarizeBy: none
+		sourceColumn: Journal Name ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Counting Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: datetime2
+		displayFolder: zz_Misc
+		lineageTag: 775a8ec0-e73a-4298-a649-ae35291cea90
+		summarizeBy: none
+		sourceColumn: Counting Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Counted Quantity'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(32, 6)
+		displayFolder: zz_Misc
+		lineageTag: 0ae5d0da-cfd5-4882-bf71-8e7a555c89bc
+		summarizeBy: none
+		sourceColumn: Counted Quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'On hand Quantity'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(32, 6)
+		displayFolder: zz_Misc
+		lineageTag: 87c64bae-8b5c-42c7-a263-87b9164d3570
+		summarizeBy: none
+		sourceColumn: On hand Quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Adjustment Quantity'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(32, 6)
+		displayFolder: zz_Misc
+		lineageTag: 163f83f6-4e97-4eaa-a046-c6bf466e01fe
+		summarizeBy: none
+		sourceColumn: Adjustment Quantity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Item Number'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 13afd2c7-1258-48b8-9fb6-2d4b76666ddd
+		summarizeBy: none
+		sourceColumn: Item Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Inventory_Warehouse_ID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 3f7a3bfa-7967-41f1-b20d-aa4eb58be845
+		summarizeBy: none
+		sourceColumn: Inventory_Warehouse_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Inventory_Site_ID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 2a508f6c-0d53-46a1-a02d-521076ce6d4e
+		summarizeBy: none
+		sourceColumn: Inventory_Site_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Size_ID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: c14f54ac-8bbb-4fcc-9c97-992a91ed0a69
+		summarizeBy: none
+		sourceColumn: Product_Size_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data_Area_ID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: fc492bcf-a8e3-4660-acd6-ad0f07f1430f
+		summarizeBy: none
+		sourceColumn: Data_Area_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Posted?
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Misc
+		lineageTag: 5270c9c6-46e5-42f1-8508-abffe6c73f04
+		summarizeBy: none
+		sourceColumn: Posted?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Posted_Datetime
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: datetime2
+		displayFolder: zz_Misc
+		lineageTag: d12d1fbe-2203-42ef-9eb7-8d75c6bee696
+		summarizeBy: none
+		sourceColumn: Posted_Datetime
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column User
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 8ba46b4d-8111-44ec-9ba2-2dbff740552f
+		summarizeBy: none
+		sourceColumn: User
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 16198fe2-edd1-43fe-9ab5-9cf740865ef9
+		summarizeBy: none
+		sourceColumn: Description
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Adjustments = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTINVENTORYADJMOVCOU",Kind="View"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(BFN_Datatable_View,{{"Transaction Date", type date}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type", each (if [Inventory_Warehouse_ID]="USRWTA01" and [Transaction Date] >=Date.FromText("2024-04-01") then List.Contains({"USRWTA01"},[Inventory_Warehouse_ID]) else not List.Contains({"USRWTA01"},[Inventory_Warehouse_ID]) )),
+					#"Kept First Rows" = Table.FirstN(#"Filtered Rows" ,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Changed Type"
+				in
+					ParameterFilter
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

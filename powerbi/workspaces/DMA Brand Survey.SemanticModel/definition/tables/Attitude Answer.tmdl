@@ -1,0 +1,36 @@
+table 'Attitude Answer'
+	lineageTag: 88e916b3-3d71-4117-acb7-9abb2dd67e7e
+
+	column Q_ATTITUDE
+		dataType: string
+		lineageTag: 65ec00e5-6a43-47b4-bf29-7da8ec1bebe5
+		summarizeBy: none
+		sourceColumn: Q_ATTITUDE
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q_ATTITUDE_ANSWER
+		dataType: double
+		lineageTag: e1d40571-4ae4-4e4b-ae63-01cddd9dc2a0
+		summarizeBy: sum
+		sourceColumn: Q_ATTITUDE_ANSWER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Attitude Answer-30b5566c-07fe-4f2b-8c65-3f85cd67268a' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_ATTITUDE_ANSWER_View = BS_Schema{[Name="BRANDSURVEY_ATTITUDEANSWER",Kind="Table"]}[Data]
+				in
+				    VW_ATTITUDE_ANSWER_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

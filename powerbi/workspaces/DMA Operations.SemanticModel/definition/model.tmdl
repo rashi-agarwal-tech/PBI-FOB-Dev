@@ -1,0 +1,72 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup Parameters
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBIDesktopVersion = 2.128.952.0 (24.04)
+
+annotation PBI_QueryOrder = ["Datasource_Server","Datasource_Warehouse","Datasource_Database","Datasource_Schema","NumberOfRows","Global Product Forecast","Bridge InventTransID","Display Currency","Customer","Product Class","Sales Order Pool","Sales Order Type","Size","Vendor","Warehouse","Allocation Details","Availability","Exchange Rates","Intake","Adjustments","Movements","Pick","Products - Last PO","Products - Last PO SKU","Purchase Season","PO ETD Date","Date Slicer","Products","Selling Status - Invoice","Selling Status - Order Entry","Bridge PPM Supplier PO","Product Weights","Customer Sell Out US","From Warehouse","To Warehouse","Metrics","Date"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+ref table 'Global Product Forecast'
+ref table 'Bridge InventTransID'
+ref table 'Display Currency'
+ref table Customer
+ref table 'Product Class'
+ref table 'Sales Order Pool'
+ref table 'Sales Order Type'
+ref table Size
+ref table Vendor
+ref table Warehouse
+ref table 'Allocation Details'
+ref table Availability
+ref table 'Exchange Rates'
+ref table Intake
+ref table Adjustments
+ref table Movements
+ref table Pick
+ref table 'Products - Last PO'
+ref table Date
+ref table 'Products - Last PO SKU'
+ref table 'Purchase Season'
+ref table 'PO ETD Date'
+ref table 'Date Slicer'
+ref table Products
+ref table 'Selling Status - Invoice'
+ref table 'Selling Status - Order Entry'
+ref table 'Bridge PPM Supplier PO'
+ref table 'Product Weights'
+ref table 'Customer Sell Out US'
+ref table 'From Warehouse'
+ref table 'To Warehouse'
+ref table 'Model Refresh Time'
+ref table Metrics
+
+ref role Admin
+ref role 'AsiaPac Users'
+ref role 'EMEA Retail Stores'
+ref role 'NA Users'
+ref role 'NA Users - Global'
+ref role PUGs
+ref role Users
+ref role 'EMEA Test'
+ref role 'EMEA Users - No Restrictions Yet'
+ref role 'CN Users'
+ref role 'HK Users'
+ref role 'HK Users - Global'
+ref role 'JP Users'
+ref role 'JP Users - Global'
+ref role 'Use for new Global users'
+
+ref cultureInfo en-US
+

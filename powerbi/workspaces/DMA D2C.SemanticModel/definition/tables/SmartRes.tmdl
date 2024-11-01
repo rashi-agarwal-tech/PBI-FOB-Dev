@@ -1,0 +1,231 @@
+table SmartRes
+	isHidden
+	lineageTag: ff1d0e8c-f2ac-4abe-a7e3-59fe45dcba7c
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 1c41577f-7e44-4510-a8b5-e469c547fa23
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATAAREAID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: f18174a9-d1c2-40f0-ac81-50b30e33c94d
+		summarizeBy: none
+		sourceColumn: DATAAREAID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 4c65799b-a8d1-4674-b977-7442b7cb4a09
+		summarizeBy: none
+		sourceColumn: Status
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QtyAllocated
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(32, 6)
+		displayFolder: zz_Values
+		lineageTag: f4286aa8-7e2e-4d2e-8626-505c0a61aebf
+		summarizeBy: none
+		sourceColumn: QtyAllocated
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: datetime2
+		displayFolder: zz_Misc
+		lineageTag: 167a807e-15b3-4a85-98b4-9c5988e284a1
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QtyReserved
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(32, 6)
+		displayFolder: zz_Values
+		lineageTag: 5fe1ca11-35ea-4248-a57e-29b15bea5e05
+		summarizeBy: none
+		sourceColumn: QtyReserved
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: ef772fa4-58bd-457a-a615-44c4c7d1c10f
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 18e64ea4-a9ad-4972-a0f7-1c0f9efcdc41
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column WarehouseTo_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Keys
+		lineageTag: 72e249bc-195a-4a1d-8fb4-13ad9b7ec8a9
+		summarizeBy: none
+		sourceColumn: WarehouseTo_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TOWAREHOUSEID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: b1384b0c-45e7-4db3-82da-0a1065ab272a
+		summarizeBy: none
+		sourceColumn: TOWAREHOUSEID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SELLINGSTATUS
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		displayFolder: zz_Keys
+		lineageTag: d5cfe8f3-6244-4e4f-a389-bbda324cc740
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QtyOutstanding
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(32, 6)
+		displayFolder: zz_Values
+		lineageTag: e5e5ae51-d6d3-4ae3-a6c6-2cc0cf98fe86
+		summarizeBy: none
+		sourceColumn: QtyOutstanding
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Channel = RELATED ( 'Warehouse'[Warehouse Channel] )
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 9719eed8-5632-4402-92f9-7078a8801076
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinancialChannel = RELATED ( Warehouse[FinancialChannel] )
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 5ef852e0-089c-4c0f-b2cc-f7ad3291eb82
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region Assignment' =
+			IF (
+			    SmartRes[TOWAREHOUSEID] IN { "NLRET01", "NLD2C01", "NLB2B01" },
+			    "239",
+			    SmartRes[DATAAREAID]
+			)
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: d012f7e4-7345-4793-b1f1-8861b3b14a0b
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SmartRes-3f44e319-0c21-487f-a9f2-d8f71473de41 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365_FACT_FSB_IM_RESV_OPEN_UNPIVOTED_WITH_TRANSFER_ORDERS_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_FSB_IM_RESV_OPEN_UNPIVOTED_WITH_TRANSFER_ORDERS",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365_FACT_FSB_IM_RESV_OPEN_UNPIVOTED_WITH_TRANSFER_ORDERS_View, each List.Contains({"UKD2C01", "UKRET01", "UKRET02", "UKRET03", "NLD2C01", "NLRET01", "NLRET02", "NLRET03", "USRET01", "USD2C01", "USD2CNJ01", "USRETNJ01", "UKD2CRG01", "UKRETRG01", "UKRETRG02", "USRETLA01", "USD2CLA01", "HKD2C01", "HKRET01", "UKRETNH01"}, [TOWAREHOUSEID])),
+				    #"Replaced Value"  = Table.ReplaceValue(#"Filtered Rows"  ,"Red"   ,"3. Red"   ,Replacer.ReplaceText,{"Status"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value" ,"Green" ,"1. Green" ,Replacer.ReplaceText,{"Status"}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value1","Yellow","2. Yellow",Replacer.ReplaceText,{"Status"})
+				in
+				    #"Replaced Value2"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

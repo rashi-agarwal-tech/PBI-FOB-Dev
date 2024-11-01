@@ -1,0 +1,52 @@
+table 'Date Slicer'
+	lineageTag: 6af72e7e-6234-4c8f-ac76-0a5816569d5e
+
+	column 'Date Slicer'
+		dataType: string
+		lineageTag: a202d94c-c782-4b42-b957-c24784681918
+		summarizeBy: none
+		sourceColumn: Date Slicer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: 0cc8b106-380a-450e-a9e9-ec3d9943a795
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SortOrder
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Misc
+		lineageTag: 6415b0b9-b4bd-4f2f-bbf9-0e354735dd1f
+		summarizeBy: none
+		sourceColumn: SortOrder
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	partition 'Date Slicer-15d54d6f-540e-4bef-8695-dccc6a93d70d' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VW_DIMDATESLICER_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_DIMDATESLICER",Kind="View"]}[Data]
+				in
+				    BFN_VW_DIMDATESLICER_View
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,47 @@
+table D8
+	lineageTag: fd3148af-b640-4fb4-9b97-6347eab7426e
+
+	column UNIQUEID
+		dataType: double
+		formatString: 0
+		lineageTag: 26639480-4c55-44f3-af69-01023b3237c6
+		summarizeBy: none
+		sourceColumn: UNIQUEID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column D8
+		dataType: string
+		lineageTag: deef93f5-0636-4f20-b3bf-a4657aeed685
+		summarizeBy: none
+		sourceColumn: D8
+
+		annotation SummarizationSetBy = Automatic
+
+	column D8_ANSWER
+		dataType: double
+		lineageTag: 76f22d56-012b-4b2e-a157-b19f206ab6e4
+		summarizeBy: sum
+		sourceColumn: D8_ANSWER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition D8-d59b165f-d658-4736-8863-768e837bcf38 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BRANDSURVEY_D8_Table = BS_Schema{[Name="BRANDSURVEY_D8",Kind="Table"]}[Data]
+				in
+				    BRANDSURVEY_D8_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,71 @@
+table 'Selling Status - Invoice'
+	lineageTag: 8c4add76-0c1b-42ea-bd9b-d9ad74cab034
+
+	column SELLINGSTATUS
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Misc
+		lineageTag: e05f6c7e-ec78-47d0-a6ef-33d2cb0d1e1a
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status - Invoice'
+		dataType: string
+		lineageTag: 184ed211-1aae-45ef-95f3-3077acf41b0a
+		summarizeBy: none
+		sourceColumn: Selling Status - Invoice
+		sortByColumn: 'Selling Status Sort'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status Sort'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: bb110682-3a88-4d59-83f6-fa2dc2166cff
+		summarizeBy: none
+		sourceColumn: Selling Status Sort
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'TBD vs Continuity/Carry Over - Invoice' =
+			IF (
+			    'Selling Status - Invoice'[Selling Status - Invoice]
+			        IN { "Continuity", "Carry Over" },
+			    "Continuity/Carry Over",
+			    'Selling Status - Invoice'[Selling Status - Invoice]
+			)
+		lineageTag: 949f3e20-b380-4a4d-abf6-4c1e0afe679c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Selling Status - Invoice-0712cca9-293a-409b-b91d-4259304b074b' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BFN_VW_DIM_PRODUCT_SELLING_STATUS_INVOICE_View = BFN_PRESENTATION_Schema{[Name="BFN_VW_DIM_PRODUCT_SELLING_STATUS_INVOICE",Kind="View"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(BFN_VW_DIM_PRODUCT_SELLING_STATUS_INVOICE_View,{"SELLINGSTATUS", "Selling Status - Invoice", "Selling Status Sort"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns", {"SELLINGSTATUS"}),
+				    #"Removed Blank Rows" = Table.SelectRows(#"Removed Duplicates", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null})))
+				in
+				    #"Removed Blank Rows"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,38 @@
+table 'Model Refresh Time'
+	lineageTag: 67fa758c-bf95-432c-8c0f-7b1ad2462758
+
+	column Order_Type_Key
+		isHidden
+		lineageTag: bb50d3e9-01fb-4466-a618-109484f51099
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Order Type[Order_Type_Key]
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Type'
+		isHidden
+		lineageTag: 8881ea0f-5f9b-4475-beaa-adadf7a236ee
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Order Type[Order Type]
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Refresh Time' = NOW()
+		formatString: General Date
+		lineageTag: 2a95685a-e644-423e-9aec-5896ee046da9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Model Refresh Time' = calculated
+		mode: import
+		source = 'Order Type'
+
+	annotation PBI_Id = dc82e22fe7df46a9b77a65d1bb7296dd
+

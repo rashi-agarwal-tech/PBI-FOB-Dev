@@ -1,0 +1,60 @@
+table Metrics
+	lineageTag: a5d32ac4-2984-4b0e-bc7e-37e70518f26f
+
+	measure 'Amount Local' = SUM ( 'Fixed Asset Transactions'[Amount Col Trans] )
+		lineageTag: 79a09a03-a99e-4fdd-a6f2-8a2b0d65eb65
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Amount Constant' = SUM ( 'Fixed Asset Transactions'[Amount Col Cons GBP] )
+		lineageTag: 994825fe-b910-444c-bcc5-85d9ac331506
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Amount Average' = SUM ( 'Fixed Asset Transactions'[Amount Col Avg GBP] )
+		lineageTag: a1b5f1d6-515d-459a-8544-aababc459422
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Amount Constant To Date' =
+			VAR LastVisibleDate  = MAX ( 'Date'[Date_Key] )
+			VAR FirstVisibleDate = MIN ( 'Date'[Date_Key] )
+			VAR LastDateWithSales =
+			    CALCULATE (
+			        MAX ( 'Fixed Asset Transactions'[Date_Key] ),
+			        REMOVEFILTERS () -- Use ALL ( Sales ) if REMOVEFILTERS () and ALL ()
+			        -- are not available
+			    )
+			VAR Result =
+			    IF (
+			        FirstVisibleDate <= LastDateWithSales,
+			        CALCULATE (
+			            [Amount Constant],
+			            'Date'[Date_Key] <= LastVisibleDate,
+			            REMOVEFILTERS ( 'Date' )
+			        )
+			    )
+			RETURN
+			    Result
+		lineageTag: a2fd4f94-775f-4f9f-8614-71fd8e98a404
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: 7011c6a6-4371-466d-8429-632c7a9a0e24
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Metrics = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = ed593c1ab0194fc792243b8dfe7c5a0c
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

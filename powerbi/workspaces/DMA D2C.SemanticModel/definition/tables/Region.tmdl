@@ -1,0 +1,106 @@
+table Region
+	lineageTag: 64c747e9-aa92-432b-9b4e-3cc9a1595964
+
+	column 'Company ShortName'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 0b5f2e8f-6fec-429f-b82f-70b24fb27149
+		summarizeBy: none
+		sourceColumn: Company ShortName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Region ID'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: d510a057-0efb-4595-8188-3ce8e5fa0dc0
+		summarizeBy: none
+		sourceColumn: Region ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company ID'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 524f828b-7f37-4b2b-9fbd-83a52f43c5ab
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: db510b75-f4c9-489b-b312-93ef9dbe5c13
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 52642833-eab9-4d6b-a97a-15541403988c
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sub-Region
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 893643e6-ada1-40b0-8aa3-181fab65c401
+		summarizeBy: none
+		sourceColumn: Sub-Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column NAME
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: 84275d49-0a97-4c1a-9116-e02b5301f900
+		summarizeBy: none
+		sourceColumn: NAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Company Region' = 'Region'[Company ID] & " " & 'Region'[Region]
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: a93d3e1c-d1d6-4fc0-b538-a275fe07757a
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Region-82ced7dc-8542-4dc9-92cb-59bd56253292 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365DIMCOMPANY_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365DIMCOMPANY",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_D365DIMCOMPANY_View, each ([Company_Key] <> 0))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+

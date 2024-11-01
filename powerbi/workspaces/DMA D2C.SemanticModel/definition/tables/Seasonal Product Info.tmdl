@@ -1,0 +1,43 @@
+table 'Seasonal Product Info'
+	isHidden
+	lineageTag: 847e4d5b-33e0-4b8e-af64-db52b9113c18
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 2f44289e-a241-43af-8999-5a2201d52bd5
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 7165cd8a-b570-41e2-980f-75576b36dec7
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Seasonal Product Info-835c8608-e1b4-4bc8-9823-7724bab735af' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_PPM_FACT_SEASONAL_PRODUCT_INFO_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_PPM_FACT_SEASONAL_PRODUCT_INFO",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_PPM_FACT_SEASONAL_PRODUCT_INFO_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

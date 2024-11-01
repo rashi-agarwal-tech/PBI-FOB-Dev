@@ -1,0 +1,49 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["NumberOfRows","Datasource_Database","Datasource_Schema","Datasource_Server","Datasource_Warehouse","Analysis","Budget","Channel","Comparatives","Cost Centre","Country","Date","General Ledger Fact","Main Account","Metrics","Region","Retail Store","Selling Status","Vendor"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.128.1177.0 (24.04)
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Budget
+ref table Channel
+ref table Analysis
+ref table Region
+ref table 'Cost Centre'
+ref table Country
+ref table 'Main Account'
+ref table 'Retail Store'
+ref table 'General Ledger Fact'
+ref table Comparatives
+ref table Metrics
+ref table Vendor
+ref table 'Selling Status'
+ref table Date
+
+ref role Admin
+ref role 'EMEA Users - Global'
+ref role 'EMEA Users'
+ref role 'CN Users'
+ref role 'EMEA Retail Stores'
+ref role ITAndDigitalCostCentres
+ref role 'HK Users'
+ref role 'HK Users - Global'
+ref role 'JP Users'
+ref role 'JP Users - Global'
+ref role 'NA Users - Global'
+ref role 'NA Users'
+ref role 'AsiaPac Users'
+ref role Users
+ref role PUGs
+
+ref cultureInfo en-US
+

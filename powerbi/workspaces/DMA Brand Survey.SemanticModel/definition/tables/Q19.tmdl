@@ -1,0 +1,56 @@
+table Q19
+	lineageTag: ff0c8aec-0f13-4b67-8733-9739103450ee
+
+	column DATE_KEY
+		dataType: string
+		lineageTag: 62c456f6-fc29-45b8-9dd6-50d00da8f30b
+		summarizeBy: none
+		sourceColumn: DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q19
+		dataType: string
+		lineageTag: 3a4ce441-07c4-4674-ab42-c5af1a60b3ab
+		summarizeBy: none
+		sourceColumn: Q19
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q19_ANSWER
+		dataType: double
+		formatString: 0
+		lineageTag: 6f3b0e94-7ad5-460a-861b-13c2ff3824c2
+		summarizeBy: sum
+		sourceColumn: Q19_ANSWER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column UNIQUEID
+		dataType: double
+		formatString: 0
+		lineageTag: 3bdc432f-8ee1-4855-aba0-abcaae92ed4a
+		summarizeBy: none
+		sourceColumn: UNIQUEID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	partition Q19-a5e7444d-2212-462d-b90e-39a9b3204c05 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_Q19_View = BS_Schema{[Name="BRANDSURVEY_Q19",Kind="Table"]}[Data]
+				in
+				    VW_Q19_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

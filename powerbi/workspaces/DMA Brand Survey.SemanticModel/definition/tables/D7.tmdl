@@ -1,0 +1,55 @@
+table D7
+	lineageTag: d6b44fe1-dbe3-4487-853a-93a34a31ee61
+
+	column UNIQUEID
+		dataType: double
+		formatString: 0
+		lineageTag: f300c4e9-0e34-4a32-82f3-22da2a59ce50
+		summarizeBy: none
+		sourceColumn: UNIQUEID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column D7
+		dataType: string
+		lineageTag: a423722a-28e9-4802-a754-69292f4c7149
+		summarizeBy: none
+		sourceColumn: D7
+
+		annotation SummarizationSetBy = Automatic
+
+	column D7_ANSWER
+		dataType: double
+		lineageTag: b7a71c20-ea50-4b39-a7a1-21757b41a299
+		summarizeBy: sum
+		sourceColumn: D7_ANSWER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column D7_12_OTHER
+		dataType: string
+		lineageTag: 1b13eb0e-46b0-490b-ab1a-ac9b31932261
+		summarizeBy: none
+		sourceColumn: D7_12_OTHER
+
+		annotation SummarizationSetBy = Automatic
+
+	partition D7-989779f5-fb35-4b3b-9ca9-bd65e177eec6 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BRANDSURVEY_D7_Table = BS_Schema{[Name="BRANDSURVEY_D7",Kind="Table"]}[Data]
+				in
+				    BRANDSURVEY_D7_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,273 @@
+table Forecast
+	isHidden
+	lineageTag: 7741ecad-70ad-453f-896a-6b7bb8dec012
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: c063a9e1-fbe7-43ad-bedc-4a186faada03
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Version'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: aaa560d9-c24c-4bc7-85de-4d2d458a277e
+		summarizeBy: none
+		sourceColumn: Forecast Version
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Code'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5f0a5eb4-fecf-4e03-944b-7d10b7c3dcd3
+		summarizeBy: none
+		sourceColumn: Product Code
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoiced Units'
+		dataType: double
+		isHidden
+		formatString: #,##0.00
+		sourceProviderType: double
+		lineageTag: 77ba1ccd-c7c9-41f6-b7f7-04ee1430c8d7
+		summarizeBy: none
+		sourceColumn: Invoiced Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Returned Units'
+		dataType: double
+		isHidden
+		formatString: #,##0.00
+		sourceProviderType: double
+		lineageTag: 029fdc4d-ed81-4df9-a4ec-3dbe01a918fc
+		summarizeBy: none
+		sourceColumn: Returned Units
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Total Net Value'
+		dataType: double
+		isHidden
+		formatString: #,##0.00
+		sourceProviderType: double
+		lineageTag: c7127282-f319-47d7-9afa-fc1cafb5833a
+		summarizeBy: none
+		sourceColumn: Total Net Value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Total Discounts'
+		dataType: double
+		isHidden
+		formatString: #,##0.00
+		sourceProviderType: double
+		lineageTag: 917f25cc-7f91-45c0-97aa-822e7ad582fa
+		summarizeBy: none
+		sourceColumn: Total Discounts
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Total Charges'
+		dataType: double
+		isHidden
+		formatString: #,##0.00
+		sourceProviderType: double
+		lineageTag: 7c6dbf3b-ea45-4b2e-9718-f30ae760f4c0
+		summarizeBy: none
+		sourceColumn: Total Charges
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Total COGS'
+		dataType: double
+		isHidden
+		formatString: #,##0.00
+		sourceProviderType: double
+		lineageTag: 55f763fc-ba16-4fcf-88d2-15db69ec3068
+		summarizeBy: none
+		sourceColumn: Total COGS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Invoiced Net Value'
+		dataType: double
+		isHidden
+		formatString: #,##0.00
+		sourceProviderType: double
+		lineageTag: fddc6f46-5cee-4121-8d98-54f8789536ed
+		summarizeBy: none
+		sourceColumn: Invoiced Net Value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Returned Net Value'
+		dataType: double
+		isHidden
+		formatString: #,##0.00
+		sourceProviderType: double
+		lineageTag: ee972723-2d95-4a8e-a46e-f758abf01eb0
+		summarizeBy: none
+		sourceColumn: Returned Net Value
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Company
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 838da213-1765-4d18-b5c1-58f25d33a065
+		summarizeBy: none
+		sourceColumn: Company
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column Channel
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: cc00db70-2996-4c15-9efe-d708fbbcb108
+		summarizeBy: none
+		sourceColumn: Channel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Store|Website
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: dea62cc3-0e17-4e8d-b12b-08b2415f4525
+		summarizeBy: none
+		sourceColumn: Store|Website
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RetailStore_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: ca324ae6-85e9-4338-9ef1-07200de7cfce
+		summarizeBy: none
+		sourceColumn: RetailStore_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinancialChannel
+		dataType: string
+		isHidden
+		isNullable: false
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 92330bfb-8a20-442c-a637-a0a642302161
+		summarizeBy: none
+		sourceColumn: FinancialChannel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company_ProductCode = Forecast[Company] & "_" & Forecast[Product Code]
+		isHidden
+		lineageTag: 9988b670-df03-4a26-9cdb-ce27932a0809
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FCRanker =
+			IF (
+			    ISBLANK ( FIND ( "+", Forecast[Forecast Version], 1, BLANK () ) ),
+			    BLANK (),
+			    YEAR ( Forecast[Date] )
+			        + LEFT (
+			            Forecast[Forecast Version],
+			            LEN ( Forecast[Forecast Version] )
+			                - FIND ( "+", Forecast[Forecast Version], 1, BLANK () )
+			        )
+			)
+		isHidden
+		formatString: #,##0.00
+		lineageTag: af1541f0-7a59-46cd-9091-25bd3ababadb
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	partition Forecast-43c2a6b9-f873-44d3-8c25-8eda9e55832c = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_AZURE_TOTAL_BUS_FC_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_AZURE_TOTAL_BUS_FC",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(D2C_BFN_VW_AZURE_TOTAL_BUS_FC_View, each ([Channel] <> "B2B"))
+				in
+				    #"Filtered Rows"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

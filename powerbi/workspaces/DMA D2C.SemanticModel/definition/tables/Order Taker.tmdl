@@ -1,0 +1,33 @@
+table 'Order Taker'
+	isHidden
+	lineageTag: 78f5e2c0-d0b5-4182-ad95-3bd6d2ad7a28
+
+	column 'DM Agent'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 13dfd936-4b9f-49aa-829f-e0fedd2e38b8
+		summarizeBy: none
+		sourceColumn: DM Agent
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Order Taker-842489d5-dff8-4db7-ae51-9b974768ecae' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_AZURE_ORDER_TAKER_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_AZURE_ORDER_TAKER",Kind="View"]}[Data],
+				    #"Removed Columns"    = Table.RemoveColumns(D2C_BFN_VW_AZURE_ORDER_TAKER_View,{"INVENT_LOCATION_ID_SIL", "INVOICED_QUANTITY_SIL", "ROW_NUM"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns")
+				in
+				    #"Removed Duplicates"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

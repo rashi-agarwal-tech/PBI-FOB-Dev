@@ -1,0 +1,73 @@
+table 'Product Class'
+	lineageTag: 90659163-475d-4e50-b5bc-dc42d7464b23
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: 5cccc473-1840-4c8d-900a-9cb185644af0
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 562ce11c-cae8-460f-bb81-792c07d922ce
+		summarizeBy: none
+		sourceColumn: Product Class Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 15312e0f-25d0-4be2-b516-5dc43fc66e2e
+		summarizeBy: none
+		sourceColumn: Product Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class Group'
+		dataType: string
+		sourceProviderType: nvarchar(7)
+		lineageTag: 2b2661a1-9d0c-4377-b06e-c3d6211f83c0
+		summarizeBy: none
+		sourceColumn: Product Class Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class Sort'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(2, 0)
+		displayFolder: zz_Misc
+		lineageTag: d6712970-0a7b-4347-a586-0e9b5a31c79e
+		summarizeBy: none
+		sourceColumn: Product Class Sort
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Product Class' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_D365DIMPRODUCTCLASS_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365DIMPRODUCTCLASS",Kind="View"]}[Data]
+				in
+				    TB_BFN_VW_D365DIMPRODUCTCLASS_View
+
+	annotation PBI_ResultType = Table
+

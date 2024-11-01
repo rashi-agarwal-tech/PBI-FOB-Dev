@@ -1,0 +1,75 @@
+table 'Product Class'
+	lineageTag: c4dd9059-eba4-4dfc-ba35-bbb24b97f0ac
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Misc
+		lineageTag: 4ca2b5aa-dfd2-4ad4-b595-94909b5004c5
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class Sort'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(2, 0)
+		displayFolder: zz_Misc
+		lineageTag: 3c4bb9e4-61dc-4ad8-8534-0d4ca92fadbe
+		summarizeBy: none
+		sourceColumn: Product Class Sort
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Product Class Code'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 96dbd00a-e836-4422-ada7-6c0e19bafb25
+		summarizeBy: none
+		sourceColumn: Product Class Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 63c20dbd-b4ad-42a7-a1e8-2f6da2761df9
+		summarizeBy: none
+		sourceColumn: Product Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class Group'
+		dataType: string
+		sourceProviderType: nvarchar(7)
+		lineageTag: 1f9ac4ad-cf50-4f43-856a-d54d34267d4d
+		summarizeBy: none
+		sourceColumn: Product Class Group
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Product Class' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365DIMPRODUCTCLASS",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	annotation PBI_ResultType = Exception
+

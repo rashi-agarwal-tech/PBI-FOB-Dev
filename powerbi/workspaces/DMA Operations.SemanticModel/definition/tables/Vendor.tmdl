@@ -1,0 +1,70 @@
+table Vendor
+	lineageTag: 7df71d00-08f3-4dfa-868b-98310a6380e2
+
+	column Vendor_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 4ae045c9-25cd-440c-87c2-74f493bdbefc
+		summarizeBy: none
+		sourceColumn: Vendor_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor #'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 01a26712-8a3a-4c57-adc3-97f1a83773b6
+		summarizeBy: none
+		sourceColumn: Vendor #
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor On Hold Status'
+		dataType: int64
+		sourceProviderType: decimal(38, 0)
+		lineageTag: de2dce97-3644-4c7a-ab5a-a040eedc7653
+		summarizeBy: none
+		sourceColumn: Vendor On Hold Status
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Vendor Country'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 56a82a0c-7a83-4ccc-aad8-b8879a663804
+		summarizeBy: none
+		sourceColumn: Vendor Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Vendor Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 50cd8f40-e147-49ee-a8f4-7f5e65104893
+		summarizeBy: none
+		sourceColumn: Vendor Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Vendor = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365DIMVENDOR",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	annotation PBI_ResultType = Exception
+

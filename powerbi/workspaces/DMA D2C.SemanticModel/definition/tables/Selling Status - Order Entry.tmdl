@@ -1,0 +1,74 @@
+table 'Selling Status - Order Entry'
+	lineageTag: 4867b275-0411-42d7-b526-8f2bae141f6e
+
+	column SELLINGSTATUS
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: nvarchar(16777216)
+		displayFolder: zz_Misc
+		lineageTag: dbfd800b-bd44-4f2d-a67e-0b6c03a22b82
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status Sort'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(1, 0)
+		displayFolder: zz_Misc
+		lineageTag: 7476e6c7-f4f2-49f9-afda-067928d8dfe8
+		summarizeBy: none
+		sourceColumn: Selling Status Sort
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'TBD vs Continuity/Carry Over - Order Entry' =
+			IF (
+			    'Selling Status - Order Entry'[Selling Status - Order Entry]
+			        IN { "Continuity", "Carry Over" },
+			    "Continuity/Carry Over",
+			    'Selling Status - Order Entry'[Selling Status - Order Entry]
+			)
+		lineageTag: 863350f5-af6a-4516-a7d8-48bc34c75048
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status - Order Entry'
+		dataType: string
+		lineageTag: 66e6c650-70a9-43f7-a4a7-5adb8aa08a34
+		summarizeBy: none
+		sourceColumn: Selling Status - Order Entry
+		sortByColumn: 'Selling Status Sort'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Selling Status - Order Entry-2c17ee92-6e64-4575-b381-bc085a072b68' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365DIMPRODUCTSELLINGSTATUS_ORDER_ENTRY_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365DIMPRODUCTSELLINGSTATUS_ORDER_ENTRY",Kind="View"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(D2C_BFN_VW_D365DIMPRODUCTSELLINGSTATUS_ORDER_ENTRY_View,{"SELLINGSTATUS", "SELLINGSTATUSDESC", "Selling Status Sort"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns", {"SELLINGSTATUS"}),
+				    #"Removed Blank Rows" = Table.SelectRows(#"Removed Duplicates", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Renamed Columns" = Table.RenameColumns(#"Removed Blank Rows",{{"SELLINGSTATUSDESC", "Selling Status - Order Entry"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+

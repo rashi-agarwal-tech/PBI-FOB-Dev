@@ -1,0 +1,37 @@
+table 'GA Country'
+	lineageTag: 098a09ed-d104-45c8-8e86-e924b07980e2
+
+	column Country_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 198c58c0-1825-47ad-a007-aa6bcfedef21
+		summarizeBy: none
+		sourceColumn: Country_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'GA Country'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: aa11575b-c3a5-47e7-8be4-72eb8d46dae6
+		summarizeBy: none
+		sourceColumn: GA Country
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'GA Country-249415f0-98bf-4897-a618-6874e33954c3' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_GA_DIM_COUNTRY_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_GA_DIM_COUNTRY",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_GA_DIM_COUNTRY_View
+
+	annotation PBI_ResultType = Table
+

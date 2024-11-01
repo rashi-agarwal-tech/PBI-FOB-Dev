@@ -1,0 +1,36 @@
+table Gender
+	lineageTag: 2c78a741-b4ee-4569-baea-6ec50a5b7336
+
+	column GENDER_CODE
+		dataType: double
+		lineageTag: b485b1cf-30b9-416e-8664-a03b7a8d3df5
+		summarizeBy: none
+		sourceColumn: GENDER_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GENDER_LABEL
+		dataType: string
+		lineageTag: f2e31cb1-fbe7-4a1c-a7be-4fb9976cedd3
+		summarizeBy: none
+		sourceColumn: GENDER_LABEL
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Gender-2afc7835-4c91-46da-8364-75bc490032b8 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_DIM_GENDER_View = BS_Schema{[Name="BRANDSURVEY_DIM_GENDER",Kind="Table"]}[Data]
+				in
+				    VW_DIM_GENDER_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

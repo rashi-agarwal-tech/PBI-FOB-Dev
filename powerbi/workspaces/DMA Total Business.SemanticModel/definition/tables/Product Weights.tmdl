@@ -1,0 +1,77 @@
+table 'Product Weights'
+	isHidden
+	lineageTag: e32f0859-08a7-4042-a190-3c1b670128b5
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: e2ded143-838e-4912-82ca-f17429754580
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net Weight'
+		dataType: decimal
+		isHidden
+		sourceProviderType: decimal(18, 3)
+		lineageTag: 31c73636-17dc-4580-bcc2-b5b3f541c054
+		summarizeBy: none
+		sourceColumn: Net Weight
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pack Weight'
+		dataType: decimal
+		isHidden
+		sourceProviderType: decimal(6, 3)
+		lineageTag: 4887dc99-e0c9-40d5-a870-b6ebd658a9a5
+		summarizeBy: none
+		sourceColumn: Pack Weight
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: zz_Keys
+		lineageTag: 0a7fa1f6-2513-45cc-b4f6-7425a5835155
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Product Weights' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_PPM_FACT_PRODUCT_WEIGHTS_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_PPM_FACT_PRODUCT_WEIGHTS",Kind="View"]}[Data]
+				in
+				    TB_BFN_VW_PPM_FACT_PRODUCT_WEIGHTS_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

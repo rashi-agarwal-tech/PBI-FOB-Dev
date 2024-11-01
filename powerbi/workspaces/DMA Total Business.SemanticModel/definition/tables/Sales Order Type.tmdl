@@ -1,0 +1,56 @@
+table 'Sales Order Type'
+	isHidden
+	lineageTag: 75cc9c7e-c195-4778-9540-d510c1d9dd6e
+
+	column DESCRIPTION
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f1ad007c-619d-4036-b143-0217934da929
+		summarizeBy: none
+		sourceColumn: DESCRIPTION
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column HDMORDERTYPEID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e7cea391-4fea-4799-adee-e33f74e1bcfe
+		summarizeBy: none
+		sourceColumn: HDMORDERTYPEID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDERTYPEID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d4c75887-9a5b-4035-bf2b-69473cd43658
+		summarizeBy: none
+		sourceColumn: ORDERTYPEID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sales Order Type' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_D365DIMSALESORDERTYPE_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365DIMSALESORDERTYPE",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(TB_BFN_VW_D365DIMSALESORDERTYPE_View, each [ORDERTYPEID] <> null and [ORDERTYPEID] <> "")
+				in
+				    #"Filtered Rows"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

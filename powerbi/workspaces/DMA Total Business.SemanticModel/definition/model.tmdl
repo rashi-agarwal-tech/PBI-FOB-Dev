@@ -1,0 +1,90 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup Parameters
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["Account Details","Adjustments CoGS","Adjustments Sales","Bridge InventTransID","Bridge Product","BridgeSalesOrderNumber","Channel","Customer","Customer Sell Out EMEA","Customer Sell Out US","Datasource_Database","Datasource_Schema","Datasource_Server","Datasource_Warehouse","Date","Date Slicer","Deductions","Display Currency","Exchange Rates","Financial Channel","Footfall","Forecast","Forecast Version","Hold Code Trans","Hours Worked","NumberOfRows","Order Taker","Order Type","Orders","Pick","Product Class","Product Forecast","Product Weights","Products","Purchase Orders","Refit Slicer","Region","Regions","Retail Demographics","Sales Order Type","Sales Packing Slip","Seasonal Product Forecast","Seasonal Product Info","Seasons","Seasons (Product Report)","Selling Status - Invoice","Selling Status - Order Entry","Size","SmartRes","Store Activity FC","Time","Warehouse","Website"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.128.1177.0 (24.04)
+
+annotation __TEdtr = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Channel
+ref table Regions
+ref table Pick
+ref table 'Hours Worked'
+ref table 'Order Taker'
+ref table 'Seasonal Product Forecast'
+ref table 'Store Activity FC'
+ref table Forecast
+ref table 'Bridge InventTransID'
+ref table BridgeSalesOrderNumber
+ref table 'Order Type'
+ref table Deductions
+ref table 'Hold Code Trans'
+ref table SmartRes
+ref table 'Retail Demographics'
+ref table Orders
+ref table 'Sales Packing Slip'
+ref table 'Financial Channel'
+ref table Region
+ref table 'Display Currency'
+ref table Customer
+ref table 'Product Class'
+ref table 'Account Details'
+ref table 'Sales Order Type'
+ref table 'Selling Status - Invoice'
+ref table Size
+ref table Warehouse
+ref table 'Adjustments CoGS'
+ref table 'Adjustments Sales'
+ref table 'Exchange Rates'
+ref table 'Purchase Orders'
+ref table Products
+ref table 'Selling Status - Order Entry'
+ref table Time
+ref table Date
+ref table 'Date Slicer'
+ref table 'Product Forecast'
+ref table Seasons
+ref table Footfall
+ref table Website
+ref table 'Product Weights'
+ref table 'Seasonal Product Info'
+ref table 'Customer Sell Out EMEA'
+ref table 'Customer Sell Out US'
+ref table 'Forecast Version'
+ref table 'Seasons (Product Report)'
+ref table 'Bridge Product'
+ref table Metrics
+ref table 'Model Refresh Time'
+ref table 'Net Transactions'
+ref table 'Refit Slicer'
+
+ref role Admin
+ref role 'NA Users'
+ref role 'NA Users - Global'
+ref role 'JP Users'
+ref role 'AsiaPac Users'
+ref role 'EMEA Users'
+ref role 'EMEA Users - Wholesale Sell Through'
+ref role 'EMEA Users - Global'
+ref role 'EMEA Users - Global - Wholesale Sell Through'
+ref role 'HK Users'
+ref role 'CN Users'
+ref role 'HK Users - Global'
+ref role 'JP Users - Global'
+
+ref cultureInfo en-US
+

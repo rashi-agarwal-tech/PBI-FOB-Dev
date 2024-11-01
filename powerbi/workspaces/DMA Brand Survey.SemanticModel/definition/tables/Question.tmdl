@@ -1,0 +1,69 @@
+table Question
+	lineageTag: 450bbe01-9848-4061-91f2-2cd92515ac26
+
+	column VARIABLE
+		dataType: string
+		isNullable: false
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4c8fe804-870a-4b07-bce3-1a48b950420c
+		summarizeBy: none
+		sourceColumn: VARIABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column LABEL
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5b7e68d8-1224-4861-a3ed-8051e79c6b66
+		summarizeBy: none
+		sourceColumn: LABEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column VARIABLE_CATEGORY
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 20083a4b-6c4e-4980-9ef4-5214399fc3ff
+		summarizeBy: none
+		sourceColumn: VARIABLE_CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUESTION_KEY
+		dataType: string
+		lineageTag: bb33ffd2-825f-4d61-b5ac-8b2c03f96aee
+		summarizeBy: none
+		sourceColumn: QUESTION_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOAD_TIMESTAMP
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7da4eebc-a43c-49c6-a24f-f95a19316134
+		summarizeBy: none
+		sourceColumn: LOAD_TIMESTAMP
+
+		variation Variation
+			isDefault
+			relationship: 2bb09390-38f2-408d-9ea9-2bffe304b080
+			defaultHierarchy: LocalDateTable_3856437a-dd0a-43a3-846d-6a9f7da5954b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Question-9592070e-6e1e-4c83-8aef-2867e7ad6f29 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    DIM_QUESTIONS_Table = BS_Schema{[Name="BRANDSURVEY_DIM_QUESTION",Kind="Table"]}[Data],
+				    #"Uppercased Text" = Table.TransformColumns(DIM_QUESTIONS_Table,{{"VARIABLE", Text.Upper, type text}})
+				in
+				    #"Uppercased Text"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

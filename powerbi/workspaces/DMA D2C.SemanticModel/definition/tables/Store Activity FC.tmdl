@@ -1,0 +1,96 @@
+table 'Store Activity FC'
+	isHidden
+	lineageTag: f3de6e2c-61d9-41ae-8d78-17c53aab78c7
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: d66b0d58-551f-49db-86e1-2dac1affbff8
+		summarizeBy: none
+		sourceColumn: Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Version'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b40354c1-362f-48ec-9ff6-7c63905ac959
+		summarizeBy: none
+		sourceColumn: Forecast Version
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store Number'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4f45ed66-9b0d-4364-917f-7359381097b5
+		summarizeBy: none
+		sourceColumn: Store Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Footfall'
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: 80686531-dce4-4c18-a5b8-bd883e360c7a
+		summarizeBy: none
+		sourceColumn: Total Footfall
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net Transactions'
+		dataType: double
+		isHidden
+		sourceProviderType: double
+		lineageTag: f449a4af-7f33-4d26-bda7-4be0e37a18d6
+		summarizeBy: none
+		sourceColumn: Net Transactions
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 8cd2ab61-9fcb-41f7-9c91-73c033c5f1a8
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Store Activity FC-b7c7750f-d1b0-42ef-8bbe-e28d86ecb294' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_AZURE_STORE_ACTIVITY_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_AZURE_STORE_ACTIVITY",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_AZURE_STORE_ACTIVITY_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

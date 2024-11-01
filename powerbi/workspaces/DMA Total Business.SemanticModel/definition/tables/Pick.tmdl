@@ -1,0 +1,127 @@
+table Pick
+	isHidden
+	lineageTag: 37647a4a-deb6-4f37-9671-4341822c66a1
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: cf5c201c-2e65-4940-8e77-a3ac927b545a
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 5196e6c4-50bd-4214-90ce-8ea6f2eb4774
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: a8b05d2d-10dc-4fd2-8318-dcd3c1249774
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 3b992748-090a-4d9f-ac55-eeb0eca9afcc
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selling Status'
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 5)
+		lineageTag: aea1c583-83cf-4845-b8f5-fff6a3ddd52a
+		summarizeBy: none
+		sourceColumn: Selling Status
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column HandlingStatusDesc
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c57491fe-b480-4a7d-836b-34c44df6b632
+		summarizeBy: none
+		sourceColumn: HandlingStatusDesc
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pick Qty'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 82f6a69a-4135-4b84-925a-4b167e6c962a
+		summarizeBy: none
+		sourceColumn: Pick Qty
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column INVENTLOCATIONID_WMS
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f1c71b9a-dca7-4707-8ebd-137134854050
+		summarizeBy: none
+		sourceColumn: INVENTLOCATIONID_WMS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Pick = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_FACT_D365PICKING_LIST_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_FACT_D365PICKING_LIST",Kind="View"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(TB_BFN_FACT_D365PICKING_LIST_View, each List.Contains({"UKD2C01", "UKRET01", "UKRET02", "UKRET03", "NLRET01", "NLRET02", "NLRET03", "UKB2B01", "UKB2B03", "NLB2B01", "NLB2B02", "NLB2B03", "USRET01", "USD2C01", "USB2B01", "CAB2B01", "CAB2BBC01", "CAB2BBC02", "CAD2CBC01", "CARETBC01"}, [INVENTLOCATIONID_WMS])),
+				    #"Kept First Rows" = Table.FirstN(#"Filtered Rows",NumberOfRows),
+				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Filtered Rows"
+				in
+				    ParameterFilter
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

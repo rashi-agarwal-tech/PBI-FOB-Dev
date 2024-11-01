@@ -1,0 +1,50 @@
+table 'SLA Delta Measures'
+	lineageTag: 0782eb83-80bc-44ba-b467-00af81c76378
+
+	column 'SLA Delta Measures'
+		lineageTag: b7932bf4-e4c6-48e1-b31a-56f1f8b18257
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'SLA Delta Measures Order'
+
+		relatedColumnDetails
+			groupByColumn: 'SLA Delta Measures Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SLA Delta Measures Fields'
+		isHidden
+		lineageTag: 3f03d56d-3f1e-4b2e-b706-3805f9a2dacf
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'SLA Delta Measures Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'SLA Delta Measures Order'
+		isHidden
+		formatString: 0
+		lineageTag: a8d3a56f-8697-473e-9e8a-b8e923b14108
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'SLA Delta Measures' = calculated
+		mode: import
+		source =
+				{
+				    ("SLA Delta (7 day avg)", NAMEOF('Power BI Model Refresh Status'[SLA Delta (7 day avg)]), 0),
+				    ("SLA Delta (min)", NAMEOF('Power BI Model Refresh Status'[SLA Delta  (7 day min)]), 1),
+				    ("SLA Delta Latest", NAMEOF('Power BI Model Refresh Status'[SLA Delta Latest]), 2),
+				    ("SLA Delta (max)", NAMEOF('Power BI Model Refresh Status'[SLA Delta (7 day max)]), 3)
+				}
+
+	annotation PBI_Id = 74445e420b8c44bca3587b1ba0b5ec9d
+

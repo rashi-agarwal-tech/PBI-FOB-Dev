@@ -1,0 +1,46 @@
+table Q13
+	lineageTag: e2d6e281-f232-42d2-9eed-ec687a54c447
+
+	column UNIQUEID
+		dataType: double
+		lineageTag: 3119c6b3-f9e1-42c7-acab-8b47c3e87dc2
+		summarizeBy: none
+		sourceColumn: UNIQUEID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Q13
+		dataType: string
+		lineageTag: c111d457-21fe-4659-9309-85b3d64384e4
+		summarizeBy: none
+		sourceColumn: Q13
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q13_ANSWER
+		dataType: double
+		lineageTag: dfbfc7a2-400c-42c6-b1d9-2f5caf2fef65
+		summarizeBy: sum
+		sourceColumn: Q13_ANSWER
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Q13-d0296bfd-73ee-4064-bb36-36fdcb870555 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_Q13_View = BS_Schema{[Name="BRANDSURVEY_Q13",Kind="Table"]}[Data]
+				in
+				    VW_Q13_View
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

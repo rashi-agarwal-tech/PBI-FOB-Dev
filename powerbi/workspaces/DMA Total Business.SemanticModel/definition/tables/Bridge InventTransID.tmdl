@@ -1,0 +1,46 @@
+table 'Bridge InventTransID'
+	isHidden
+	lineageTag: 0898d278-3554-4b92-8aff-a423ef31a0e6
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c1d05ed2-8a13-4fd1-b502-11214a99dc51
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SRMaxDateTmp = CALCULATE ( MAX ( SmartRes[Date] ) )
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: cc943e5c-f26c-480f-8d06-e3145c81d01d
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Bridge InventTransID' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_VW_D365_BRIDGE_INVENT_TRANS_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_VW_D365_BRIDGE_INVENT_TRANS",Kind="View"]}[Data],
+				    #"Kept First Rows" = Table.FirstN(TB_BFN_VW_D365_BRIDGE_INVENT_TRANS_View,NumberOfRows),
+				    ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else TB_BFN_VW_D365_BRIDGE_INVENT_TRANS_View
+				in
+				    ParameterFilter
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

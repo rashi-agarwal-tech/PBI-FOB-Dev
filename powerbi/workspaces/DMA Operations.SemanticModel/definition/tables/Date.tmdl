@@ -1,0 +1,1218 @@
+table Date
+	lineageTag: 3d845017-d102-4c7e-bb87-f91f912b7d78
+
+	column Date_Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: Calendar Dates
+		lineageTag: dad2b8b2-d9bf-4ead-abf0-9e63ed3f3fe7
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Month Number'
+		dataType: int64
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: 3d91f34b-641f-4ee8-a99a-5b92ee4d56f4
+		summarizeBy: none
+		sourceColumn: Calendar Month Number
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 429246c8-2bf3-4cfb-b07f-8bab53ccf8d0
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year-Week'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 7c4e4f98-8489-4503-a5b7-7b6a6614fec1
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Week
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Season
+		dataType: string
+		lineageTag: a5dbf7bb-8efd-437a-add1-8fc11cfe11b8
+		summarizeBy: none
+		sourceColumn: Season
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Fiscal Point in Time?'
+		dataType: string
+		isHidden
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: d8181ff8-7f28-4b98-8d49-cdf4361e0f5a
+		summarizeBy: none
+		sourceColumn: - Is Fiscal Point in Time?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 34f7e847-0361-42ad-96c4-28e0857034ff
+		summarizeBy: none
+		sourceColumn: " Date"
+
+		changedProperty = DataType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Full Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Calendar Dates
+		lineageTag: b87deaf0-dcc0-4a9d-9667-b7394520b394
+		summarizeBy: none
+		sourceColumn: Full Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: a5d50ad5-e981-4891-a06e-ff2f4a41c4c7
+		summarizeBy: none
+		sourceColumn: Day of Week
+		sortByColumn: 'Day # of Week'
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day # of Week'
+		dataType: int64
+		isHidden
+		formatString: " #,##0"
+		displayFolder: Calendar Dates
+		lineageTag: 92c9797c-b728-4dab-9df4-971915b74e58
+		summarizeBy: none
+		sourceColumn: Day # of Week
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Day # of Month'
+		dataType: int64
+		formatString: " #,##0"
+		displayFolder: Calendar Dates
+		lineageTag: a890acb7-e786-4d30-bb55-70cf0b410bfb
+		summarizeBy: none
+		sourceColumn: Day # of Month
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column 'Day # of Year'
+		dataType: int64
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: 2e977fdd-9b85-4e1f-b60c-f1a44a6639b0
+		summarizeBy: none
+		sourceColumn: Day # of Year
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Week Name'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: c4108c44-c35b-42c4-a5f7-30a9995c7b8d
+		summarizeBy: none
+		sourceColumn: Week Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mon
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 68e399fe-3f44-4142-9f8d-adcadb32620d
+		summarizeBy: none
+		sourceColumn: Mon
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 0b3935a5-6033-44e9-977e-ef3c6048edb8
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: 'Calendar Month Number'
+
+		changedProperty = IsHidden
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		displayFolder: Calendar Dates
+		lineageTag: 147e43a9-2e52-4a36-a146-fba92ecb9352
+		summarizeBy: none
+		sourceColumn: Year
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Month-Yearold
+		dataType: int64
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: c56465ee-634b-4a3f-8584-2d007cb5e6c2
+		summarizeBy: none
+		sourceColumn: Month-Yearold
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Quarter'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 944e3bee-5669-4103-94f3-cc6b9c99693e
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year-Period'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 132cc821-a2f5-4c44-9593-f02f121f491f
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Period
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Period - Year'
+		dataType: string
+		isHidden
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 672b1192-4b5f-43f6-91ca-e0a2969ad0cb
+		summarizeBy: none
+		sourceColumn: Fiscal Period - Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Week #'
+		dataType: int64
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: d0c259b5-ef3e-4377-9ed2-d85351bbbf97
+		summarizeBy: none
+		sourceColumn: Fiscal Week #
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Day #'
+		dataType: int64
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: b55ab221-bba3-4636-bf19-35edaa75e67c
+		summarizeBy: none
+		sourceColumn: Fiscal Day #
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Is UK Bank Holiday?'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 91acb570-7eb8-442a-935c-851b79a19d94
+		summarizeBy: none
+		sourceColumn: Is UK Bank Holiday?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Black Friday?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 568bf55c-13ec-400b-9ef7-26b1075af6ed
+		summarizeBy: none
+		sourceColumn: - Is Black Friday?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Weekend?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 83c00f31-6410-4e11-8a05-90343b1293ec
+		summarizeBy: none
+		sourceColumn: - Is Weekend?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Leap Year?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 90bd7a3e-6d83-4b3a-bb87-3e1e305ac1c5
+		summarizeBy: none
+		sourceColumn: - Is Leap Year?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End Of Month?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: a93c5286-6799-4813-962a-0792f408d2cf
+		summarizeBy: none
+		sourceColumn: - Is End Of Month?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Point in Time?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: a06c5a71-3579-4897-9f03-b05935572462
+		summarizeBy: none
+		sourceColumn: - Is Point in Time?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End Of Period?'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: f7eda880-00b1-461c-abc8-3e6c6ceb3ecf
+		summarizeBy: none
+		sourceColumn: - Is End Of Period?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End Of Quarter?'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 519f07ef-5f2f-442e-b5af-7fc741852b24
+		summarizeBy: none
+		sourceColumn: - Is End Of Quarter?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Period Number'
+		dataType: int64
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: a1782e45-62ee-4d4a-9588-2a6e8a0cddda
+		summarizeBy: none
+		sourceColumn: Fiscal Period Number
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year Number'
+		dataType: int64
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 0579e831-6a7e-4a0e-8b3b-ba7447aba62a
+		summarizeBy: none
+		sourceColumn: Fiscal Year Number
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Year-Week
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: eaed9cc4-531f-4066-b091-c0cb2d3a6775
+		summarizeBy: none
+		sourceColumn: Year-Week
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Week Number'
+		dataType: int64
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: 64b1db45-dcbf-40ac-b61e-c9ebae6ee400
+		summarizeBy: none
+		sourceColumn: Calendar Week Number
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Half
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: c36a692a-426f-4611-945c-62cc2856073f
+		summarizeBy: none
+		sourceColumn: Half
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Half'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 03ad72db-1e6f-48e4-af21-a98f28dc547a
+		summarizeBy: none
+		sourceColumn: Year Half
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 7d3d7bd4-4a09-476d-93c2-265425c8c803
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Quarter'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 9e86b1bf-b04c-4bb1-8d1c-6da7f18b8422
+		summarizeBy: none
+		sourceColumn: Year Quarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Week'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 43cdee0f-086c-4ee2-a6a7-353a102f290f
+		summarizeBy: none
+		sourceColumn: Relative Week
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Month'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: ea98bafc-d6f2-4d3b-b05b-1639cd26aa6d
+		summarizeBy: none
+		sourceColumn: Relative Month
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Year'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 6fd0c39c-1fcb-49bc-ab6b-92c6475d78b3
+		summarizeBy: none
+		sourceColumn: Relative Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Week'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 827850ab-ac6d-4501-9e2d-6453e32bad26
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Week
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Period'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: dc07d141-05a9-4a7b-8f2b-713e91851dbc
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Period
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Year'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: a256d925-66c3-4a76-98df-2d0bbf9b6bba
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Yesterday?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 72b9e7f9-d2d0-493f-868e-ab475bd12c60
+		summarizeBy: none
+		sourceColumn: - Is Yesterday?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Today?'
+		dataType: string
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: 4fa62b7f-e18b-4fd3-b64c-30abf0493038
+		summarizeBy: none
+		sourceColumn: - Is Today?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Week?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 20a5ed75-c115-43fc-af7e-674bf641ab68
+		summarizeBy: none
+		sourceColumn: - Is Week?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is Month?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: d956c740-8b6d-4079-8567-151067cc2c2e
+		summarizeBy: none
+		sourceColumn: - Is Month?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reporting Year'
+		dataType: int64
+		displayFolder: Calendar Dates
+		lineageTag: 7ea323c0-87c6-456f-ab0f-d82df33779be
+		summarizeBy: none
+		sourceColumn: Reporting Year
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Reporting Cal Week Index'
+		dataType: int64
+		lineageTag: 50488e00-7a71-450d-994f-870ab49bd2e6
+		summarizeBy: none
+		sourceColumn: Reporting Cal Week Index
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Period Number (544)'
+		dataType: int64
+		displayFolder: 544 Dates
+		lineageTag: 49d6d0e4-a17c-4306-a52e-9b641da5fd23
+		summarizeBy: none
+		sourceColumn: Fiscal Period Number (544)
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Quarter (544)'
+		dataType: int64
+		displayFolder: 544 Dates
+		lineageTag: 856e32a6-9fd8-416d-b6fa-d35fd9d8f3d3
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter (544)
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Half (544)'
+		dataType: int64
+		displayFolder: 544 Dates
+		lineageTag: 39bd10fd-c23c-413b-8099-e23e6fa22415
+		summarizeBy: none
+		sourceColumn: Fiscal Half (544)
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: cde29d1e-3985-4275-aad8-499cc80a076d
+		summarizeBy: none
+		sourceColumn: Fiscal Year (544)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year Number (544)'
+		dataType: int64
+		displayFolder: 544 Dates
+		lineageTag: 940d506c-64ee-448c-95ed-db162bb18fdf
+		summarizeBy: none
+		sourceColumn: Fiscal Year Number (544)
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Week Number (544)'
+		dataType: int64
+		displayFolder: 544 Dates
+		lineageTag: 4a2892cc-ac98-4ee9-86d8-09dfb440ba8c
+		summarizeBy: none
+		sourceColumn: Fiscal Week Number (544)
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year-Week (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: 5f1bec20-bd06-443c-a2ec-0b1ba79dc3ef
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Week (544)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Period (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: affef155-7001-49eb-8a84-ffbbbee3b66b
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Period (544)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal Year (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: 48a77910-c7b1-4c65-8210-6baf71327b5f
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Year (544)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End of US Period?'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: 1aa6c2a1-aa64-4285-9c2c-a45507aecf13
+		summarizeBy: none
+		sourceColumn: - Is End of US Period?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is End of US Quarter?'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: 47a59c05-49bc-4c1d-ba81-766a09e930f3
+		summarizeBy: none
+		sourceColumn: - Is End of US Quarter?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column '- Is US Fiscal Point in Time?'
+		dataType: string
+		isHidden
+		displayFolder: US Fiscal Dates
+		lineageTag: 32161a81-44b3-487d-b06b-d4966231f7c7
+		summarizeBy: none
+		sourceColumn: - Is US Fiscal Point in Time?
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal US Period'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: edda60b6-fdc9-417d-87e2-9e454385af2f
+		summarizeBy: none
+		sourceColumn: Relative Fiscal US Period
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal US Week'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: f941f2cf-3af4-44a4-aba6-dff54a69baf3
+		summarizeBy: none
+		sourceColumn: Relative Fiscal US Week
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Relative Fiscal US Year'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: 6d40aaea-c795-4bed-9097-46639744ef94
+		summarizeBy: none
+		sourceColumn: Relative Fiscal US Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal US Period'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: 30a67218-1d03-4ceb-b09b-66746ea03e57
+		summarizeBy: none
+		sourceColumn: Fiscal US Period
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal US Quarter'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: 285b0f54-e5f7-466a-9248-9d0eaf28790c
+		summarizeBy: none
+		sourceColumn: Fiscal US Quarter
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal US Period Number'
+		dataType: int64
+		displayFolder: US Fiscal Dates
+		lineageTag: 39b4aff9-9c55-482e-bc7a-30ac097ab200
+		summarizeBy: none
+		sourceColumn: Fiscal US Period Number
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal US Year'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: 191a8577-87a6-4372-9098-06fa974ffd08
+		summarizeBy: none
+		sourceColumn: Fiscal US Year
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal US Year Number'
+		dataType: int64
+		displayFolder: US Fiscal Dates
+		lineageTag: c7329a92-28ca-44f2-a602-72e5315bb7e3
+		summarizeBy: none
+		sourceColumn: Fiscal US Year Number
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal US Day #'
+		dataType: int64
+		displayFolder: US Fiscal Dates
+		lineageTag: 470df797-b861-4547-bc7c-4d1f0fffe1f0
+		summarizeBy: none
+		sourceColumn: Fiscal US Day #
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal US Week #'
+		dataType: int64
+		displayFolder: US Fiscal Dates
+		lineageTag: d3c9cf56-a97c-465f-919d-193b1b696e24
+		summarizeBy: none
+		sourceColumn: Fiscal US Week #
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal US Year-Period'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: 67c4ba9a-89cc-4507-8875-06bf53f13e8d
+		summarizeBy: none
+		sourceColumn: Fiscal US Year-Period
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal US Year-Week'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: cd995dc3-14f3-4c47-aa9b-dfd00b71160a
+		summarizeBy: none
+		sourceColumn: Fiscal US Year-Week
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year-Period (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: e66a2e9e-e084-4e00-a8df-132360305022
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Period (544)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RelativeWeekSort
+		dataType: string
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: d3b7955a-7ee1-4e2f-a06a-646f5249ee37
+		summarizeBy: none
+		sourceColumn: RelativeWeekSort
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Last Year Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: abf0bc79-fe0b-4cac-9c4b-2131cadfd5df
+		summarizeBy: none
+		sourceColumn: " Last Year Date"
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Exclude 53rd Week (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: aeebbee9-7d86-43ee-a4d0-b73f2fd1fc7f
+		summarizeBy: none
+		sourceColumn: Exclude 53rd Week (544)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Two Year Date '
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: ab302c18-29c2-48e4-9c2f-b415bdd38a84
+		summarizeBy: none
+		sourceColumn: " Two Year Date "
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Is Week Filter (544)'
+		dataType: string
+		isHidden
+		displayFolder: 544 Dates
+		lineageTag: 35746576-f0e6-4831-804c-7b6105503c70
+		summarizeBy: none
+		sourceColumn: Is Week Filter (544)
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month-Year =
+			'Date'[Mon] & "-"
+			    & RIGHT ( 'Date'[Year], 2 )
+		displayFolder: Calendar Dates
+		lineageTag: a56177ce-4192-4262-9896-c6b1aeb6022c
+		summarizeBy: none
+		sortByColumn: Month-Yearold
+
+		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Commencing Date' = 'Date'[ Date]  - WEEKDAY('Date'[ Date],2) +1
+		formatString: Short Date
+		displayFolder: Calendar Dates
+		lineageTag: 89b99878-3376-4e44-a954-9d6137c7b6a0
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Commencing Date Name' = FORMAT('Date'[Week Commencing Date], "dd-MMM")
+		displayFolder: Calendar Dates
+		lineageTag: f7bde972-51ab-4549-a18d-6ca4a439dd91
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Period' = "F" & RIGHT ( 'Date'[Fiscal Period - Year], 3 )
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: bcd2524b-2e22-428a-874d-968819c47327
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Season Short Name'
+		dataType: string
+		lineageTag: 72ac1a1e-03d2-4897-aa23-9c27555d15b9
+		summarizeBy: none
+		sourceColumn: Season Short Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Season Long Name'
+		dataType: string
+		lineageTag: 9ff405b9-d9c9-48f4-b221-6b8769ce1064
+		summarizeBy: none
+		sourceColumn: Season Long Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Season Day Number'
+		dataType: int64
+		lineageTag: 0d49bd06-f5f9-4559-a577-193552454c0c
+		summarizeBy: none
+		sourceColumn: Season Day Number
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Purchase Season'
+		dataType: string
+		lineageTag: 560e610f-7c26-4a81-9a77-3880ac277487
+		summarizeBy: none
+		sourceColumn: Purchase Season
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Season Start Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 3d57843b-b7b3-4965-9d57-10bd85d82d26
+		summarizeBy: none
+		sourceColumn: Season Start Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month Number'
+		dataType: int64
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 1611aea3-69af-447f-89f3-7edea38a4a72
+		summarizeBy: none
+		sourceColumn: Fiscal Month Number
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Long Short Name'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: e409b780-134d-453f-9596-dbf5c9e00114
+		summarizeBy: none
+		sourceColumn: Fiscal Long Short Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month Short Name'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: b235f6b1-9ae1-493b-b22f-ee12b7139ef0
+		summarizeBy: none
+		sourceColumn: Fiscal Month Short Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Period Long Name'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 58cad79a-dd6d-4731-be57-c7d5504f9d31
+		summarizeBy: none
+		sourceColumn: Fiscal Period Long Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter Number'
+		dataType: int64
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 7506363e-88ce-4d30-8f95-9cf46b0cefc2
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter Number
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Week Short Name'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 97cb2011-517e-491e-bcee-784d2fdb15de
+		summarizeBy: none
+		sourceColumn: Fiscal Week Short Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Week Long Name'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: f09f569c-9daa-4698-911f-545fbb45137e
+		summarizeBy: none
+		sourceColumn: Fiscal Week Long Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Day Of Week Long Name'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 602db303-a164-4990-9f52-6d75f18f97e8
+		summarizeBy: none
+		sourceColumn: Calendar Day Of Week Long Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Calendar Month Year Short Name'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: ca56f768-7d74-4bb4-8bdf-dea8033d3787
+		summarizeBy: none
+		sourceColumn: Calendar Month Year Short Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Date = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_DIMDATE",Kind="View"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(BFN_Datatable_View,{{"Date_Key", Int64.Type}}),
+					#"Kept First Rows" = Table.FirstN(#"Changed Type",NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else #"Changed Type",
+				    #"Renamed Columns" = Table.RenameColumns(ParameterFilter,{{"- Is UK Bank Holiday?", "Is UK Bank Holiday?"}, {"- Is End of Quarter?", "- Is End Of Quarter?"}, {"- Is End of Period?", "- Is End Of Period?"}, {"- Is End of Month?", "- Is End Of Month?"}, {"Day Of Week", "Day of Week"}})
+				in
+					#"Renamed Columns"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

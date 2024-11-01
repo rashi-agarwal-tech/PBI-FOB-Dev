@@ -1,0 +1,97 @@
+table Image
+	lineageTag: 8f5d1260-9821-464f-88aa-dcab946149bf
+
+	column IMAGE_KEY
+		dataType: string
+		sourceProviderType: nvarchar(32)
+		lineageTag: 33db4d09-eb0e-4441-b94a-a0e57bfb6356
+		summarizeBy: none
+		sourceColumn: IMAGE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column UNIQUEID
+		dataType: double
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 1f26a520-d5f3-42d4-b2b5-0116d7250348
+		summarizeBy: none
+		sourceColumn: UNIQUEID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column DATE_KEY
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c45805e9-67d4-4a2c-bd5c-613212d8df18
+		summarizeBy: none
+		sourceColumn: DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column RESPID
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 0760b221-b1ca-4afb-a2aa-c8a1a8bbf5da
+		summarizeBy: count
+		sourceColumn: RESPID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IMAGE
+		dataType: double
+		sourceProviderType: decimal(38, 0)
+		lineageTag: 93173d26-b888-4054-8d77-5ed9eb4042a0
+		summarizeBy: sum
+		sourceColumn: IMAGE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Image Label'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 920e30c0-b647-45ea-a2d6-0c1c1282094c
+		summarizeBy: none
+		sourceColumn: Image Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q56_1
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 3cc8a085-8e09-4dd6-87b9-3241d21398a7
+		summarizeBy: none
+		sourceColumn: Q56_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q57_1_NEW
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 21627ef1-4a83-4a12-abf2-dffc807ee559
+		summarizeBy: none
+		sourceColumn: Q57_1_NEW
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Image-f8f21bb6-684b-4baa-9c00-595f837c7bfe = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BS_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    BRANDSURVEY_FACT_IMAGE_Table = BS_Schema{[Name="BRANDSURVEY_FACT_IMAGE",Kind="Table"]}[Data]
+				in
+				    BRANDSURVEY_FACT_IMAGE_Table
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

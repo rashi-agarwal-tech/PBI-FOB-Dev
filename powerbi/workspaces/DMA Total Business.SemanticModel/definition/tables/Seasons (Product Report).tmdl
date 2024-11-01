@@ -1,0 +1,31 @@
+table 'Seasons (Product Report)'
+	isHidden
+	lineageTag: 32fcf02a-7ecf-4759-9f15-d1ad6791eb5a
+
+	column Season
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: d9da43a3-1b2f-481b-8731-f536411392af
+		summarizeBy: none
+		sourceColumn: Season
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Seasons (Product Report)' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    TB_BFN_SEASON_PRODUCT_REPORT_View = BFN_PRESENTATION_Schema{[Name="TB_BFN_SEASON_PRODUCT_REPORT",Kind="View"]}[Data]
+				in
+				    TB_BFN_SEASON_PRODUCT_REPORT_View
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

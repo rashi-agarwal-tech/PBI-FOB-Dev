@@ -1,0 +1,128 @@
+table 'Products - Last PO SKU'
+	isHidden
+	lineageTag: 9678aba2-15cd-4de3-ac49-e3d6f87955fb
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 27d7e243-250a-46d1-a795-0f78c2c2387d
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 78e9c2f0-67e7-43a4-a8a5-6e7020e8886b
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last PO Number'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 9ed6bb64-a1b2-4e88-8451-6d03e8053779
+		summarizeBy: none
+		sourceColumn: Last PO Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last PO Receipt Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		sourceProviderType: date
+		lineageTag: 17dd22a8-005a-435e-b6df-9923b1028617
+		summarizeBy: none
+		sourceColumn: Last PO Receipt Date
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Last PO Price'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(32, 6)
+		lineageTag: 1ab132aa-6c04-4bd3-9386-928adda90a60
+		summarizeBy: sum
+		sourceColumn: Last PO Price
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Last PO Price Clos GBP'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 12)
+		lineageTag: b2d9c7af-93dc-4555-9166-62bc7c5642d8
+		summarizeBy: sum
+		sourceColumn: Last PO Price Clos GBP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Last PO Charges'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(34, 8)
+		lineageTag: e932fa16-48d0-4c9c-b563-40b1f03210c3
+		summarizeBy: sum
+		sourceColumn: Last PO Charges
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Last PO Charges Clos GBP'
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 12)
+		lineageTag: 8bb1967e-8b8a-492b-ac68-3d88a87d1c5b
+		summarizeBy: sum
+		sourceColumn: Last PO Charges Clos GBP
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Products - Last PO SKU' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTPRODUCTLASTPURCHASEPRICESKU",Kind="View"]}[Data],
+					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
+				in
+					ParameterFilter
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

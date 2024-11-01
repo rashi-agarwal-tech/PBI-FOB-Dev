@@ -1,0 +1,529 @@
+table 'General Ledger Fact'
+	lineageTag: 58b315bb-495d-4fd2-a060-48479684380c
+
+	column Analysis_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: Keys
+		lineageTag: c433de1f-742b-40f2-8c98-60c23be6b965
+		summarizeBy: none
+		sourceColumn: Analysis_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Channel_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: Keys
+		lineageTag: db3b7c67-1c2e-4b3a-a262-a989910dedc1
+		summarizeBy: none
+		sourceColumn: Channel_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CostCentre_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: Keys
+		lineageTag: 32f343cc-7dbc-4902-9e65-9b06a02a4898
+		summarizeBy: none
+		sourceColumn: CostCentre_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: Keys
+		lineageTag: e05c06c9-7a2d-4f8a-9160-d5ca481adcd6
+		summarizeBy: none
+		sourceColumn: Country_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SellingStatus_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: Keys
+		lineageTag: 0683fc89-5cba-4a76-a939-673727732d27
+		summarizeBy: none
+		sourceColumn: SellingStatus_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountingDate_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: dcda2e6c-2ea5-4bc5-9f72-98badde86be5
+		summarizeBy: none
+		sourceColumn: AccountingDate_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MainAccount_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		displayFolder: Keys
+		lineageTag: a4436ff6-3c07-4ee2-9aa8-5f988aa7cc83
+		summarizeBy: none
+		sourceColumn: MainAccount_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vendor_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(64)
+		displayFolder: Keys
+		lineageTag: fa951c21-f949-4000-81b8-160764f8303c
+		summarizeBy: none
+		sourceColumn: Vendor_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEDGERNAME
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c6e125b3-7bf6-4be1-a425-7ec23b9d46f7
+		summarizeBy: none
+		sourceColumn: LEDGERNAME
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Journal Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 34087dd7-ce0c-44f7-8219-7457a9332a8c
+		summarizeBy: none
+		sourceColumn: Journal Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Voucher Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: bef07674-dcf5-4e56-8dfd-b02f0ca69afa
+		summarizeBy: none
+		sourceColumn: Voucher Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Document
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 6099d396-51ef-4783-aaec-c52ceea69fe1
+		summarizeBy: none
+		sourceColumn: Document
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: ca8e621b-4699-4ca9-88cd-ea61f2621dbb
+		summarizeBy: none
+		sourceColumn: Document Date
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Posting Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 1ca0a563-7348-463c-b025-155fecf50fc3
+		summarizeBy: none
+		sourceColumn: Posting Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Account Entry Description'
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 292a45b4-99e3-42e0-97f6-ac7e0026a792
+		summarizeBy: none
+		sourceColumn: Account Entry Description
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ledger Account '
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: fa818430-bc86-4c23-b8d6-33f0e6c785b6
+		summarizeBy: none
+		sourceColumn: "Ledger Account "
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Amount GL'
+		dataType: double
+		isHidden
+		formatString: #,0.00
+		sourceProviderType: decimal(38, 12)
+		displayFolder: Values
+		lineageTag: ebba832a-e418-49a6-8c64-e77cc4caa1ba
+		summarizeBy: none
+		sourceColumn: Amount GL
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column 'Amount at Constant Rate'
+		dataType: double
+		isHidden
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		sourceProviderType: decimal(38, 12)
+		displayFolder: Values
+		lineageTag: 38339a7a-ad20-42f3-b3be-96d00b093fc8
+		summarizeBy: none
+		sourceColumn: Amount at Constant Rate
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column AmountInAccountingCurrency
+		dataType: double
+		isHidden
+		formatString: #,0.00
+		sourceProviderType: decimal(32, 6)
+		displayFolder: Values
+		lineageTag: 92485ed1-89a3-49c8-ac75-8d95de4d647a
+		summarizeBy: none
+		sourceColumn: AmountInAccountingCurrency
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column AmountInTransactionCurrency
+		dataType: double
+		isHidden
+		formatString: #,0.00
+		sourceProviderType: decimal(33, 6)
+		displayFolder: Values
+		lineageTag: 58d2174d-8166-48fc-aa89-6c9c4283c8e4
+		summarizeBy: none
+		sourceColumn: AmountInTransactionCurrency
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column Currency
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 4a32db2a-d723-4999-b359-b7ccf8602156
+		summarizeBy: none
+		sourceColumn: Currency
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: da270070-ad0d-4d21-9755-bb2c66d1b172
+		summarizeBy: none
+		sourceColumn: Document Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Type'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: f844f57d-2033-459b-bf0c-5c17a9480037
+		summarizeBy: none
+		sourceColumn: Transaction Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Party Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: a07ccbbd-ad93-455b-b05c-f76abd0018a3
+		summarizeBy: none
+		sourceColumn: Party Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Party Name'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: e611953a-9b16-4395-a277-5281a9e31736
+		summarizeBy: none
+		sourceColumn: Party Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ad50239b-116b-4f65-a5e3-b84ae3c55547
+		summarizeBy: none
+		sourceColumn: Document Description
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Document Text'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b9ea701d-e006-4e9e-9983-47926d1a6ff0
+		summarizeBy: none
+		sourceColumn: Document Text
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Number'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5cb244d4-a428-48ab-bc5a-374ee9ad5426
+		summarizeBy: none
+		sourceColumn: Product Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line Document Reference'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 44a3ee99-2df2-443b-9a55-e648c5a5b188
+		summarizeBy: none
+		sourceColumn: Line Document Reference
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line Number'
+		dataType: double
+		formatString: 0
+		sourceProviderType: decimal(38, 16)
+		lineageTag: 36f3a767-5046-4dc8-b429-e848187a4b86
+		summarizeBy: none
+		sourceColumn: Line Number
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column 'Line Date'
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
+		lineageTag: fc9cf7f4-837a-4799-9c29-c6301f968109
+		summarizeBy: none
+		sourceColumn: Line Date
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column Unit
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 2feb2c96-4858-486b-b1f4-a51568c8844e
+		summarizeBy: none
+		sourceColumn: Unit
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line Text'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 0a83a38d-da5f-486e-b435-3655790613b9
+		summarizeBy: none
+		sourceColumn: Line Text
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Line Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: b37b4efa-aa5d-4cda-bf97-a177f01e81d8
+		summarizeBy: none
+		sourceColumn: Line Description
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Created By'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 5b29b16c-fb46-461b-811a-4295ab3f6c68
+		summarizeBy: none
+		sourceColumn: Created By
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Created DateTime'
+		dataType: dateTime
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 70c00e0f-da98-4daf-a665-6d161a99dc0c
+		summarizeBy: none
+		sourceColumn: Created DateTime
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Posting Layer'
+		dataType: double
+		formatString: 0
+		sourceProviderType: decimal(38, 0)
+		lineageTag: e808b09e-eef5-40d9-ba9a-23ab09424277
+		summarizeBy: none
+		sourceColumn: Posting Layer
+
+		changedProperty = IsHidden
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column 'Posting Layer Description' =
+			SWITCH (
+			    TRUE (),
+			    'General Ledger Fact'[Posting Layer] = 0, "Current",
+			    'General Ledger Fact'[Posting Layer] = 1, "Operations",
+			    'General Ledger Fact'[Posting Layer] = 2, "Tax",
+			    'General Ledger Fact'[Posting Layer] = 18, "GAAP",
+			    'General Ledger Fact'[Posting Layer] = 19, "Restatement",
+			    'General Ledger Fact'[Posting Layer] = 20, "IFRS16",
+			    ""
+			)
+		lineageTag: fb3a190e-c3a7-4e1c-957e-374980963d42
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstAmountDigit = LEFT ( ABS ( 'General Ledger Fact'[AmountInTransactionCurrency] ), 1 )
+		isHidden
+		lineageTag: 7d16e7b2-3602-4433-ba1c-155219dd519e
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FY2025 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_BFN_D365FACTASE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365FACTASE",Kind="View"]}[Data],
+				    #"Uppercased Text" = Table.TransformColumns(VW_BFN_D365FACTASE_View,{{"Currency", Text.Upper, type text}}),
+					Date_Filter = Table.SelectRows(#"Uppercased Text", each [AccountingDate_Key] >= "20240401" and [AccountingDate_Key] < "20250331")
+				in
+					Date_Filter
+
+	partition FY2024 = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					VW_BFN_D365FACTASE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365FACTASE",Kind="View"]}[Data],
+					#"Uppercased Text" = Table.TransformColumns(VW_BFN_D365FACTASE_View,{{"Currency", Text.Upper, type text}}),
+					Date_Filter = Table.SelectRows(#"Uppercased Text", each [AccountingDate_Key] >= "20230403" and [AccountingDate_Key] < "20240401")
+				in
+					Date_Filter
+
+	partition FY2023 = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					VW_BFN_D365FACTASE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365FACTASE",Kind="View"]}[Data],
+					#"Uppercased Text" = Table.TransformColumns(VW_BFN_D365FACTASE_View,{{"Currency", Text.Upper, type text}}),
+					Date_Filter = Table.SelectRows(#"Uppercased Text", each [AccountingDate_Key] >= "20220328" and [AccountingDate_Key] < "20230403")
+				in
+					Date_Filter
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

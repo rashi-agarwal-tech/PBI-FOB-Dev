@@ -1,0 +1,42 @@
+table 'Retail Mpos'
+	lineageTag: 3981b0e4-8d11-4a10-b8dd-3ecff5b4e7c7
+
+	column SALESORDERID
+		dataType: string
+		lineageTag: 3483b6fc-c68a-46a4-878a-ba741cb7e93b
+		summarizeBy: none
+		sourceColumn: SALESORDERID
+
+		annotation SummarizationSetBy = Automatic
+
+	column OMNIUPSELL
+		dataType: string
+		lineageTag: 407c5728-c116-4d3a-9d51-9b1fa62fb9b5
+		summarizeBy: none
+		sourceColumn: OMNIUPSELL
+
+		annotation SummarizationSetBy = Automatic
+
+	column OMNIORDERN
+		dataType: string
+		lineageTag: 319f5df5-6820-4476-be42-3ddcc32e2f11
+		summarizeBy: none
+		sourceColumn: OMNIORDERN
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Retail Mpos' = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    D2C_BFN_VW_D365_FACT_RETAIL_TRANSACTION_MPOS_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_VW_D365_FACT_RETAIL_TRANSACTION_MPOS",Kind="View"]}[Data]
+				in
+				    D2C_BFN_VW_D365_FACT_RETAIL_TRANSACTION_MPOS_View
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

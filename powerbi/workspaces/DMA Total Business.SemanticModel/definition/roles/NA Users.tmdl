@@ -1,0 +1,12 @@
+role 'NA Users'
+	modelPermission: read
+
+	tablePermission Region =
+			Region[Company ID] = "201"
+			    || Region[Company ID] = "203"
+
+	tablePermission 'Customer Sell Out EMEA'
+		metadataPermission: none
+
+	annotation PBI_Id = 7697bd3fc9da4343b804564b30728a9d
+
