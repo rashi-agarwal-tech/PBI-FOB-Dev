@@ -1,23 +1,49 @@
 [tool.poetry]
-name = "powerbi"
+name = "pbi-tools"
 version = "0.1.0"
 description = ""
-authors = ["martin.kingston <martin.kingston@drmartens.com>"]
+authors = ["Martin Kingston"]
 readme = "README.md"
-
-
-[tool.poetry.scripts]
-pbi = "powerbi.utils.pbi:app"
+packages = [{include = "pbi_tools"}]
 
 [tool.poetry.dependencies]
-python = "^3.10"
-typer = "^0.12.0"
-pyyaml = "^6.0.1"
+python = "^3.11"
+xmltodict = "^0.13.0"
+typer = "^0.12.5"
+python-dotenv = "^1.0.1"
+msal = "^1.26.0"
+pendulum = "^3.0.0"
+pytest-azurepipelines = "^1.0.5"
 fiscalyear = "^0.4.0"
+pyyaml = "^6.0.1"
 xlsxwriter = "^3.2.0"
 networkx = "^3.3"
 matplotlib = "^3.8.4"
 
+[tool.poetry.scripts]
+pbi-api = "pbi_tools.mspbi_cli:app"
+pbi = "pbi_tools.pbi:app"
+
+
+[tool.poetry.group.dev.dependencies]
+artifacts-keyring = "^0.4.0"
+pytest = "^8.3.3"
+pytest-sugar = "^1.0.0"
+ruff = "^0.7.1"
+mypy = "^1.13.0"
+pre-commit = "^4.0.1"
+twine = "^5.1.1"
+commitizen = "^3.30.0"
+types-requests = "^2.32.0.20241016"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.1.0"
+version_files = [
+    "powerbi/pbi_tools/__version__.py",
+    "pyproject.toml:version"
+]
+update_changelog_on_bump = true
 
 [build-system]
 requires = ["poetry-core"]
