@@ -607,14 +607,15 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'Web Affiliate ID'
-		dataType: string
-		sourceProviderType: nvarchar(16777216)
+		dataType: double
 		displayFolder: 2. eCom Details
 		lineageTag: a0ee8f0f-1301-476b-8dff-fa93a793ee51
-		summarizeBy: none
+		summarizeBy: count
 		sourceColumn: Web Affiliate ID
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Selling Status - Order Entry'
 		dataType: int64

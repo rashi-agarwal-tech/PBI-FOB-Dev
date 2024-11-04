@@ -1,27 +1,37 @@
 table 'Retail Mpos'
+	isHidden
 	lineageTag: 3981b0e4-8d11-4a10-b8dd-3ecff5b4e7c7
 
 	column SALESORDERID
 		dataType: string
+		isHidden
 		lineageTag: 3483b6fc-c68a-46a4-878a-ba741cb7e93b
 		summarizeBy: none
 		sourceColumn: SALESORDERID
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column OMNIUPSELL
 		dataType: string
+		isHidden
 		lineageTag: 407c5728-c116-4d3a-9d51-9b1fa62fb9b5
 		summarizeBy: none
 		sourceColumn: OMNIUPSELL
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column OMNIORDERN
 		dataType: string
+		isHidden
 		lineageTag: 319f5df5-6820-4476-be42-3ddcc32e2f11
 		summarizeBy: none
 		sourceColumn: OMNIORDERN
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -36,7 +46,8 @@ table 'Retail Mpos'
 				in
 				    D2C_BFN_VW_D365_FACT_RETAIL_TRANSACTION_MPOS_View
 
+	changedProperty = IsHidden
+
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
-
