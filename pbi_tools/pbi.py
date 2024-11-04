@@ -21,8 +21,7 @@ def swap_partitions(original: bool = True):
                 tmdl_file = (
                     REPORT_DIR
                     / workspace.name
-                    / "datasets"
-                    / f"{partition_dir.name}.Dataset"
+                    / f"{partition_dir.name}.SemanticModel"
                     / "definition"
                     / "tables"
                     / f"{table_dir.name}.tmdl"
@@ -175,7 +174,7 @@ def get_models(write: bool = False) -> dict:
     models = {}
     sn_table_mapper = {}
     params = get_model_parameters()
-    for f in REPORT_DIR.glob("**/datasets/**/tables/*.tmdl"):
+    for f in REPORT_DIR.glob("**/tables/*.tmdl"):
         model = f.parent.parent.parent.stem
         table = f.stem
         _, _, partitions_str = remove_partitions(f)

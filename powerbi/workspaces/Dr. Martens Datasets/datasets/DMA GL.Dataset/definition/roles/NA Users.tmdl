@@ -1,9 +1,0 @@
-role 'NA Users'
-	modelPermission: read
-
-	tablePermission Region = [Company ID] IN {"201","203"}
-
-	tablePermission 'General Ledger Fact' = [LEDGERNAME] IN {"201","203"}
-
-	annotation PBI_Id = 0fc8f374ca654886b5c6048b7feb5eb0
-

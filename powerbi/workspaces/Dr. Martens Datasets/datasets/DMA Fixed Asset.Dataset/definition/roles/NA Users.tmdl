@@ -1,9 +1,0 @@
-role 'NA Users'
-	modelPermission: read
-
-	tablePermission Region =
-			Region[Company ID] = "201"
-			    || Region[Company ID] = "203"
-
-	annotation PBI_Id = b275a04d143844188c5a392ff9a3b2b9
-
