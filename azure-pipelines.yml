@@ -1,0 +1,101 @@
+pr:
+  branches:
+    include:
+      - development
+      - uat
+      - master
+      - ci-update
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  PYTHON_VERSION: '3.10'
+  ARTIFACT_FEED: 'Windermere Discovery/windermere_artifactory'
+  isMaster: $[eq(variables['build.sourceBranch'], 'refs/heads/master')]
+  CI_USERNAME: "Power BI CI Pipeline"
+  CI_EMAIL: powerbi_ci@drmartens.com
+  SOURCE_BRANCH: $[ replace(variables['Build.SourceBranch'], 'refs/heads/', '') ]
+  TARGET_BRANCH: $[ coalesce(variables['System.PullRequest.targetBranchName'], variables['SOURCE_BRANCH']) ]
+
+
+jobs:
+  - job: CheckChanges
+    steps:
+      - script: |
+          echo "Target branch is: $(TARGET_BRANCH)"
+          if git diff --name-only $TARGET_BRANCH...$SOURCE_BRANCH | grep '^powerbi/'; then
+              echo "##vso[task.setvariable variable=powerbiChanged;isOutput=true]true"
+          else
+              echo "##vso[task.setvariable variable=powerbiChanged;isOutput=true]false"
+          fi
+          if git diff --name-only $TARGET_BRANCH...$SOURCE_BRANCH | grep '^pbi_tools/'; then
+              echo "##vso[task.setvariable variable=pbi_toolsChanged;isOutput=true]true"
+          else
+              echo "##vso[task.setvariable variable=pbi_toolsChanged;isOutput=true]false"
+          fi
+          echo "Has Power BI changed: $(powerbiChanged)"
+
+  - job: DeployPBIReports
+    condition: eq(variables['powerbiChanged'], 'true')
+    steps:
+      - script: |
+          echo "Deploying Power BI changes..."
+          echo "USE POWER BI API TO SYNC TO WORKSPACE"
+
+
+  - job: DeployPBITools
+    condition: eq(variables['pbi_toolsChanged'], 'true')
+    steps:
+      - task: UsePythonVersion@0
+        inputs:
+          versionSpec: '$(PYTHON_VERSION)'
+
+      - script: |
+          python -m pip install --upgrade pip
+          pip install poetry
+        displayName: 'Install Poetry'
+
+      - script: |
+          poetry install --sync --no-interaction --with dev
+        displayName: 'Install Dependencies with Poetry'
+
+      - script: |
+          poetry run pytest
+        displayName: 'pytest'
+
+      - script: |
+          poetry run ruff check .
+        displayName: 'Run Ruff'
+
+      - script: |
+          poetry build
+        displayName: 'Build Python Package with Poetry'
+
+      - script: |
+          python -m pip install twine
+        displayName: 'Install twine dependencies'
+
+      - task: TwineAuthenticate@1
+        inputs:
+          artifactFeed: '$(ARTIFACT_FEED)'
+        displayName: 'Twine Authenticate'
+
+      - script: |
+          python -m twine upload -r windermere_artifactory --config-file $(PYPIRC_PATH) dist/*
+        displayName: 'Upload to feed'
+
+
+
+  - job: CheckDifferences
+    displayName: "Check Differences between Source and Target Branch"
+    steps:
+      - checkout: self
+        fetchDepth: 0
+
+      - script: |
+          echo "Target Branch: $TARGET_BRANCH"
+          echo "Changes between incomming branch and $TARGET_BRANCH:"
+          echo "$(git diff --name-only origin/$TARGET_BRANCH...HEAD)"
+          cat azure-pipelines.yml
+        displayName: "Compare Source and Target Branches"
