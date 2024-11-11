@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.136.1202.0 (24.09)"
+        "value": "2.137.1102.0 (24.10)"
       }
     ],
     "culture": "en-GB",
@@ -4161,6 +4161,40 @@
             "expression": "EXTERNALMEASURE(\"Amount Constant To Date\", CURRENCY, \"DirectQuery to AS - DMA Fixed Asset\")",
             "lineageTag": "bb63979a-9180-43c1-bae1-ed83685a63c7",
             "sourceLineageTag": "a2fd4f94-775f-4f9f-8614-71fd8e98a404"
+          },
+          {
+            "name": "RowCount of FixedAssetTransactions",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "COUNTROWS('Fixed Asset Transactions')"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "ee02d475-cbcb-48bb-89a6-dde6d96259c8"
+          },
+          {
+            "name": "Count of Date_Key",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "DISTINCTCOUNT('Fixed Asset Transactions'[Date_Key])"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "d96d7e5e-e826-4d15-86d4-ca327ab10745"
           }
         ],
         "partitions": [
@@ -6828,6 +6862,40 @@
             "expression": "EXTERNALMEASURE(\"Amount Constant To Date\", CURRENCY, \"DirectQuery to AS - DMA Fixed Asset 2\")",
             "lineageTag": "1360f6b5-ca13-4fba-aac6-d15f690c20ba",
             "sourceLineageTag": "a2fd4f94-775f-4f9f-8614-71fd8e98a404"
+          },
+          {
+            "name": "RowCount of FixedAssetTransactions diff UAT",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "COUNTROWS('Fixed Asset Transactions 2') - [RowCount of FixedAssetTransactions]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "dc90d14a-4ffd-48c9-9fa6-e98fe88fa1b0"
+          },
+          {
+            "name": "Count of Date_Key diff UAT",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "DISTINCTCOUNT('Fixed Asset Transactions 2'[Date_Key]) - [Count of Date_Key]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "42703dbd-da81-4e38-a09e-6a334bd628b3"
           }
         ],
         "partitions": [
@@ -9495,6 +9563,40 @@
             "expression": "EXTERNALMEASURE(\"Amount Constant To Date\", CURRENCY, \"DirectQuery to AS - DMA Fixed Asset 3\")",
             "lineageTag": "52b3979d-5cee-41f3-848a-d243470e9766",
             "sourceLineageTag": "a2fd4f94-775f-4f9f-8614-71fd8e98a404"
+          },
+          {
+            "name": "RowCount of FixedAssetTransactions diff DEV",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "COUNTROWS('Fixed Asset Transactions 3') - [RowCount of FixedAssetTransactions]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "7827bc94-caa2-49b9-a297-1f049d29b89c"
+          },
+          {
+            "name": "Count of Date_Key diff DEV",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "DISTINCTCOUNT('Fixed Asset Transactions 3'[Date_Key]) - [Count of Date_Key]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "24ee7fb3-fb22-4531-8a46-e576842e1ac0"
           }
         ],
         "partitions": [

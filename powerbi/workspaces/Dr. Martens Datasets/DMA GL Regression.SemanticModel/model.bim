@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.136.1202.0 (24.09)"
+        "value": "2.137.1102.0 (24.10)"
       }
     ],
     "culture": "en-GB",
@@ -4452,6 +4452,40 @@
             "expression": "EXTERNALMEASURE(\"Amount (GBC Constant) vs LFYP %\", DOUBLE, \"DirectQuery to AS - DMA GL\")",
             "lineageTag": "cf05f356-0a27-4dc2-a0ad-f1eca690a97b",
             "sourceLineageTag": "b02ac0b5-7c9a-4c43-b113-c2b13f9dedb9"
+          },
+          {
+            "name": "Count of Date_Key",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "DISTINCTCOUNT('General Ledger Fact'[AccountingDate_Key])"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "b96c25ca-5788-4032-b953-8449a2b0584e"
+          },
+          {
+            "name": "RowCount of GeneralLedgerFact",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "COUNTROWS('General Ledger Fact')"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "7e31e187-7114-4197-8d9f-4342cceb492a"
           }
         ],
         "partitions": [
@@ -8163,6 +8197,40 @@
             "expression": "EXTERNALMEASURE(\"Amount (GBC Constant) vs LFYP %\", DOUBLE, \"DirectQuery to AS - DMA GL 2\")",
             "lineageTag": "58c2bb28-3c8d-434a-8003-bc286cbe7f94",
             "sourceLineageTag": "b02ac0b5-7c9a-4c43-b113-c2b13f9dedb9"
+          },
+          {
+            "name": "Count of Date_Key diff UAT",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "DISTINCTCOUNT('General Ledger Fact 2'[AccountingDate_Key]) - [Count of Date_Key]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "d73ef5e5-97ab-4300-9d55-ff9c78bb3751"
+          },
+          {
+            "name": "RowCount of GeneralLedgerFact diff UAT",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "COUNTROWS('General Ledger Fact 2') - [RowCount of GeneralLedgerFact]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "5257b3d3-c86f-4f8a-b899-0d484efb715f"
           }
         ],
         "partitions": [
@@ -11874,6 +11942,40 @@
             "expression": "EXTERNALMEASURE(\"Amount (GBC Constant) vs LFYP %\", DOUBLE, \"DirectQuery to AS - DMA GL 3\")",
             "lineageTag": "0e8ae9c1-7cae-44e2-8a1f-422c797ead15",
             "sourceLineageTag": "b02ac0b5-7c9a-4c43-b113-c2b13f9dedb9"
+          },
+          {
+            "name": "Count of Date_Key diff DEV",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "DISTINCTCOUNT('General Ledger Fact 3'[AccountingDate_Key]) - [Count of Date_Key]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "a2327e3f-e3be-4c77-9793-5ac23e0daa9c"
+          },
+          {
+            "name": "RowCount of GeneralLedgerFact diff DEV",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "COUNTROWS('General Ledger Fact 3') - [RowCount of GeneralLedgerFact]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "9181f351-a80f-4fda-a4c6-31ca056e1446"
           }
         ],
         "partitions": [

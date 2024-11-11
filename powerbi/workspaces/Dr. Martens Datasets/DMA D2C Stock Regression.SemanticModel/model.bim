@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.137.952.0 (24.10)"
+        "value": "2.137.1102.0 (24.10)"
       }
     ],
     "culture": "en-GB",
@@ -22994,6 +22994,44 @@
             "formatString": "#,0",
             "lineageTag": "df21be58-1e70-4d48-953a-dc5eb9104725",
             "sourceLineageTag": "6a0ae533-0356-4f2d-89c9-fbfaa21f5d9f"
+          },
+          {
+            "name": "RowCount of SmartRes",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "COUNTROWS(SmartRes)"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "d507b9c1-222a-485c-8347-e5f5361353e4"
+          },
+          {
+            "name": "RowCount of Availability (Today only)",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "CALCULATE",
+              "(",
+              "    COUNTROWS(Availability)",
+              "    ,'Date'[- Is Today?]=\"Yes\"",
+              ")"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "88b4822f-d3ab-452f-90a3-132ca052b286"
           }
         ],
         "partitions": [
@@ -42589,6 +42627,44 @@
             "formatString": "#,0",
             "lineageTag": "915d2620-6be0-4acf-94ee-56f0bb2e17aa",
             "sourceLineageTag": "6a0ae533-0356-4f2d-89c9-fbfaa21f5d9f"
+          },
+          {
+            "name": "RowCount of SmartRes diff UAT",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "COUNTROWS('SmartRes 2') - [RowCount of SmartRes]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "eabcd1e2-b6d4-4036-b807-05eff7a2d992"
+          },
+          {
+            "name": "RowCount of Availability (Today only) diff UAT",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "CALCULATE",
+              "(",
+              "    COUNTROWS('Availability 2')",
+              "    ,'Date 2'[- Is Today?]=\"Yes\"",
+              ") - [RowCount of Availability (Today only)]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "2c839971-6805-4659-a54c-9e06e5bef597"
           }
         ],
         "partitions": [
@@ -62184,6 +62260,44 @@
             "formatString": "#,0",
             "lineageTag": "65449722-a4c6-4f2c-9b90-dd257d4c9803",
             "sourceLineageTag": "6a0ae533-0356-4f2d-89c9-fbfaa21f5d9f"
+          },
+          {
+            "name": "RowCount of SmartRes diff DEV",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "COUNTROWS('SmartRes 3') - [RowCount of SmartRes]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "bc7f6329-3713-44c8-9e79-d41c137a3e89"
+          },
+          {
+            "name": "RowCount of Availability (Today only) diff DEV",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "CALCULATE",
+              "(",
+              "    COUNTROWS('Availability 3')",
+              "    ,'Date 3'[- Is Today?]=\"Yes\"",
+              ") - [RowCount of Availability (Today only)]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "3f15d5f8-b9ce-44b3-9366-eb965df783ae"
           }
         ],
         "partitions": [
@@ -62651,25 +62765,6 @@
             "type": "calculatedTableColumn"
           },
           {
-            "name": "Weekday",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "User"
-              }
-            ],
-            "dataType": "int64",
-            "expression": [
-              "",
-              "WEEKDAY([ Date],2)"
-            ],
-            "formatString": "0",
-            "isDataTypeInferred": true,
-            "lineageTag": "2fc99278-72b0-4fb0-8b46-567005d17068",
-            "summarizeBy": "none",
-            "type": "calculated"
-          },
-          {
             "name": "1. All On Hand Stock Units Diff",
             "annotations": [
               {
@@ -63057,8 +63152,6 @@
             "name": "stocks Sum of AbsDiff %",
             "expression": [
               "",
-              "VAR sourceparameter = [source parameter]",
-              "RETURN",
               "DIVIDE",
               "(",
               "    [stocks 1. All On Hand Stock Units Diff %]",
@@ -63565,7 +63658,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -63587,7 +63680,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -63609,7 +63702,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //Financial Channel",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -63633,7 +63726,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -63655,7 +63748,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -63677,7 +63770,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //Size",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -63701,7 +63794,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -63723,7 +63816,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -63745,7 +63838,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //Region",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -63769,7 +63862,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -63791,7 +63884,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -63813,7 +63906,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //Sub-Region",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -63837,7 +63930,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -63859,7 +63952,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -63881,7 +63974,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //Price Profile",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -63905,7 +63998,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -63927,7 +64020,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -63949,7 +64042,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //Store Number",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -63973,7 +64066,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -63995,7 +64088,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -64017,7 +64110,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //Store Name",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -64041,7 +64134,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -64063,7 +64156,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -64085,7 +64178,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //Warehouse Group",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -64109,7 +64202,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -64131,7 +64224,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -64153,7 +64246,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //Warehouse Region",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -64177,7 +64270,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -64199,7 +64292,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -64221,7 +64314,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //Warehouse Sub-Region",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -64245,7 +64338,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -64267,7 +64360,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -64289,7 +64382,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //Warehouse Channel",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -64313,7 +64406,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -64335,7 +64428,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -64357,7 +64450,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //Current Selling Price Currency",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -64381,7 +64474,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -64403,7 +64496,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -64425,7 +64518,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //Current Selling Status",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -64449,7 +64542,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -64471,7 +64564,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -64493,7 +64586,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //D2C Product Definition",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -64517,7 +64610,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -64539,7 +64632,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -64561,7 +64654,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //Product General",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -64585,7 +64678,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -64607,7 +64700,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -64629,7 +64722,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
                 "    //Product Type",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
@@ -64653,7 +64746,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -64675,7 +64768,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -64697,9 +64790,9 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 "",
-                "/*    //Product Code",
+                "    //Product Code",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date'[Fiscal Year (544)]",
@@ -64721,7 +64814,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units]",
                 "        ,\"Ranged Stores\",[Ranged Stores]",
-                "    ), 'Date'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 2'[Fiscal Year (544)]",
@@ -64743,7 +64836,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 2]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 2]",
                 "        ,\"Ranged Stores\",[Ranged Stores 2]",
-                "    ), 'Date 2'[Fiscal Year (544)]=\"FY25\")",
+                "    ), 'Date 2'[- Is Today?]=\"Yes\")",
                 "    ,CALCULATETABLE(SUMMARIZECOLUMNS",
                 "    (",
                 "        'Date 3'[Fiscal Year (544)]",
@@ -64765,7 +64858,7 @@
                 "        ,\"3.1 Allocated Units Arrived\",[3.1 Allocated Units Arrived 3]",
                 "        ,\"4. Reserved Intake Units\",[4. Reserved Intake Units 3]",
                 "        ,\"Ranged Stores\",[Ranged Stores 3]",
-                "    ), 'Date 3'[Fiscal Year (544)]=\"FY25\")*/",
+                "    ), 'Date 3'[- Is Today?]=\"Yes\")",
                 ")"
               ],
               "type": "calculated"

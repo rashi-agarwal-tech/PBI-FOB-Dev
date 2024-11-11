@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.136.1202.0 (24.09)"
+        "value": "2.137.1102.0 (24.10)"
       }
     ],
     "culture": "en-GB",
@@ -16385,6 +16385,40 @@
             "formatString": "#,0.00",
             "lineageTag": "827d282e-d25b-480d-b898-c12451f547b4",
             "sourceLineageTag": "6f2e5110-bf04-4fb9-b076-8b103d65ad8e"
+          },
+          {
+            "name": "Count of SalesOrderNumber",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "DISTINCTCOUNT(Orders[Sales Order Number])"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "8ef4264e-45a0-4064-9925-6e17457d840e"
+          },
+          {
+            "name": "RowCount of Orders",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "COUNTROWS(Orders)"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "3cbe69ba-d7ba-40c5-a2ac-6ea325e4263a"
           }
         ],
         "partitions": [
@@ -28565,6 +28599,40 @@
             "formatString": "#,0.00",
             "lineageTag": "fb1d0e07-4ab8-4772-afe0-0b4f86b62287",
             "sourceLineageTag": "6f2e5110-bf04-4fb9-b076-8b103d65ad8e"
+          },
+          {
+            "name": "Count of SalesOrderNumber diff UAT",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "DISTINCTCOUNT('Orders 2'[Sales Order Number]) - [Count of SalesOrderNumber]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "35e1690e-14d9-4e42-ae50-bfa9a473f3bb"
+          },
+          {
+            "name": "RowCount of Orders diff UAT",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "COUNTROWS('Orders 2') - [RowCount of Orders]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "0241f7a0-0fa6-4f00-acb2-48bc61cd2884"
           }
         ],
         "partitions": [
@@ -40745,6 +40813,40 @@
             "formatString": "#,0.00",
             "lineageTag": "bbfb18f2-851f-46e6-b966-883ad3ad311f",
             "sourceLineageTag": "6f2e5110-bf04-4fb9-b076-8b103d65ad8e"
+          },
+          {
+            "name": "Count of SalesOrderNumber diff DEV",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "DISTINCTCOUNT('Orders 3'[Sales Order Number]) - [Count of SalesOrderNumber]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "4f60482a-bf7f-4d25-a359-b5a14be3a886"
+          },
+          {
+            "name": "RowCount of Orders diff DEV",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "COUNTROWS('Orders 3') - [RowCount of Orders]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "801a6aea-7517-4965-887e-f7ba92d03ce0"
           }
         ],
         "partitions": [

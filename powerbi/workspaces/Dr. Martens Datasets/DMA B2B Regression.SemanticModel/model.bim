@@ -22,6 +22,90 @@
         "linguisticMetadata": {
           "content": {
             "Entities": {
+              "metrics_2.count_of_salesorders_diff_uat": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Metrics 2",
+                    "ConceptualProperty": "Count of SalesOrderNumber diff UAT"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "UAT diff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "metrics_2.rowcount_of_factsales_diff_uat": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Metrics 2",
+                    "ConceptualProperty": "RowCount of Orders diff UAT"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "UAT diff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "metrics_3.count_of_salesorders_diff_dev": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Metrics 3",
+                    "ConceptualProperty": "Count of SalesOrderNumber diff DEV"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "DEV diff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "metrics_3.rowcount_of_factsales_diff_dev": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "Metrics 3",
+                    "ConceptualProperty": "RowCount of Orders diff DEV"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "DEV diff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "parameter__date.parameter__date": {
                 "Definition": {
                   "Binding": {
@@ -199,6 +283,48 @@
                   }
                 ]
               },
+              "sales.sales_net_sell_out_units": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "sales",
+                    "ConceptualProperty": "sales net sell out units"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Net Sell Out Units Actuals": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "sales.sales_net_sell_out_units_diff": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "sales",
+                    "ConceptualProperty": "sales net sell out units Diff"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Net Sell Out Units AbsDiff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "sales.sales_net_units": {
                 "Definition": {
                   "Binding": {
@@ -357,6 +483,216 @@
                 "Terms": [
                   {
                     "Open Units AbsDiff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "sales.sales_ordered_net_value": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "sales",
+                    "ConceptualProperty": "sales ordered net value"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Ordered Net Value Actuals": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "sales.sales_ordered_net_value_diff": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "sales",
+                    "ConceptualProperty": "sales ordered net value Diff"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Ordered Net Value AbsDiff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "sales.sales_ordered_units": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "sales",
+                    "ConceptualProperty": "sales ordered units"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Ordered Units Actuals": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "sales.sales_ordered_units_diff": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "sales",
+                    "ConceptualProperty": "sales ordered units Diff"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Ordered Units AbsDiff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "sales.sales_pick_activated_units": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "sales",
+                    "ConceptualProperty": "sales pick activated units"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Pick Activated Units Actuals": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "sales.sales_pick_activated_units_diff": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "sales",
+                    "ConceptualProperty": "sales pick activated units Diff"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Pick Activated Units AbsDiff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "sales.sales_pick_complete_units": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "sales",
+                    "ConceptualProperty": "sales pick complete units"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Pick Complete Units Actuals": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "sales.sales_pick_complete_units_diff": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "sales",
+                    "ConceptualProperty": "sales pick complete units Diff"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Pick Complete Units AbsDiff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "sales.sales_reserved_units": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "sales",
+                    "ConceptualProperty": "sales reserved units"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Reserved Units Actuals": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "sales.sales_reserved_units_diff": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "sales",
+                    "ConceptualProperty": "sales reserved units Diff"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Reserved Units AbsDiff": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -13878,6 +14214,40 @@
             "formatString": "#,0.00",
             "lineageTag": "deb76fb7-cf4f-489b-ba0c-e59778f088f9",
             "sourceLineageTag": "59fedcb4-cec8-4801-a009-482996377096"
+          },
+          {
+            "name": "RowCount of Orders",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "COUNTROWS(Orders)"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "1310f575-eb0d-4b7c-b4ae-20c7f828b201"
+          },
+          {
+            "name": "Count of SalesOrderNumber",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "DISTINCTCOUNT(Orders[Sales Order Number])"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "544cc52a-3a6f-462f-b00e-4db2ff3ba7c5"
           }
         ],
         "partitions": [
@@ -28132,6 +28502,40 @@
             "formatString": "#,0.00",
             "lineageTag": "2a991b91-affc-483e-b787-0bb84b8fb4b8",
             "sourceLineageTag": "59fedcb4-cec8-4801-a009-482996377096"
+          },
+          {
+            "name": "RowCount of Orders diff UAT",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "COUNTROWS('Orders 2') - [RowCount of Orders]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "4252dd2e-bfe4-4d18-b003-0eedd31d7535"
+          },
+          {
+            "name": "Count of SalesOrderNumber diff UAT",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "DISTINCTCOUNT('Orders 2'[Sales Order Number]) - [Count of SalesOrderNumber]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "1d81dfbe-8bc7-45fe-b0c4-d4b03ff27173"
           }
         ],
         "partitions": [
@@ -42386,6 +42790,40 @@
             "formatString": "#,0.00",
             "lineageTag": "a8dbfde8-e2aa-4c5c-895e-665ba81156e0",
             "sourceLineageTag": "59fedcb4-cec8-4801-a009-482996377096"
+          },
+          {
+            "name": "RowCount of Orders diff DEV",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "COUNTROWS('Orders 3') - [RowCount of Orders]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "0682e0df-361b-476c-b936-c27d8738ad45"
+          },
+          {
+            "name": "Count of SalesOrderNumber diff DEV",
+            "changedProperties": [
+              {
+                "property": "Name"
+              },
+              {
+                "property": "FormatString"
+              }
+            ],
+            "expression": [
+              "",
+              "DISTINCTCOUNT('Orders 3'[Sales Order Number]) - [Count of SalesOrderNumber]"
+            ],
+            "formatString": "#,0",
+            "lineageTag": "8a99fbf7-4811-4eb3-8e3a-869f5d40c6ac"
           }
         ],
         "partitions": [
