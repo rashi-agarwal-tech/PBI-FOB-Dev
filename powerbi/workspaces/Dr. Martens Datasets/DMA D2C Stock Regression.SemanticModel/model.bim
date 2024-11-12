@@ -22,132 +22,6 @@
         "linguisticMetadata": {
           "content": {
             "Entities": {
-              "metrics_2.count_of_date_exc__weekends_diff_uat": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Metrics 2",
-                    "ConceptualProperty": "Count of Date (exc. weekends) diff UAT"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "UAT diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
-              },
-              "metrics_2.rowcount_of_availability_t0_diff_uat": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Metrics 2",
-                    "ConceptualProperty": "RowCount of Availability Today diff UAT"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "UAT diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
-              },
-              "metrics_2.rowcount_of_smartres_diff_uat": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Metrics 2",
-                    "ConceptualProperty": "RowCount of SmartRes diff UAT"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "UAT diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
-              },
-              "metrics_3.count_of_date_exc__weekends_diff_dev": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Metrics 3",
-                    "ConceptualProperty": "Count of Date (exc. weekends) diff DEV"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "DEV diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
-              },
-              "metrics_3.rowcount_of_availability_t0_diff_dev": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Metrics 3",
-                    "ConceptualProperty": "RowCount of Availability Today diff DEV"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "DEV diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
-              },
-              "metrics_3.rowcount_of_smartres_diff_dev": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Metrics 3",
-                    "ConceptualProperty": "RowCount of SmartRes diff DEV"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "DEV diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
-              },
               "parameter__date.parameter__date": {
                 "Definition": {
                   "Binding": {
@@ -23603,65 +23477,6 @@
             "formatString": "#,0",
             "lineageTag": "df21be58-1e70-4d48-953a-dc5eb9104725",
             "sourceLineageTag": "6a0ae533-0356-4f2d-89c9-fbfaa21f5d9f"
-          },
-          {
-            "name": "RowCount of SmartRes",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS(SmartRes)"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "d507b9c1-222a-485c-8347-e5f5361353e4"
-          },
-          {
-            "name": "RowCount of Availability Today",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "CALCULATE",
-              "(",
-              "    COUNTROWS(Availability)",
-              "    ,'Date'[- Is Today?]=\"Yes\"",
-              ")"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "88b4822f-d3ab-452f-90a3-132ca052b286"
-          },
-          {
-            "name": "Count of Date (exc. weekends)",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "CALCULATE",
-              "(",
-              "    DISTINCTCOUNT('Availability'[DATE])",
-              "    ,'Date'[- Is Weekend?]=\"Weekday\"",
-              ")"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "c2dc2990-6ce7-487d-8520-4d1c2e91f473"
           }
         ],
         "partitions": [
@@ -43257,65 +43072,6 @@
             "formatString": "#,0",
             "lineageTag": "915d2620-6be0-4acf-94ee-56f0bb2e17aa",
             "sourceLineageTag": "6a0ae533-0356-4f2d-89c9-fbfaa21f5d9f"
-          },
-          {
-            "name": "RowCount of SmartRes diff UAT",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('SmartRes 2') - [RowCount of SmartRes]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "eabcd1e2-b6d4-4036-b807-05eff7a2d992"
-          },
-          {
-            "name": "RowCount of Availability Today diff UAT",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "CALCULATE",
-              "(",
-              "    COUNTROWS('Availability 2')",
-              "    ,'Date 2'[- Is Today?]=\"Yes\"",
-              ") - [RowCount of Availability Today]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "2c839971-6805-4659-a54c-9e06e5bef597"
-          },
-          {
-            "name": "Count of Date (exc. weekends) diff UAT",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "CALCULATE",
-              "(",
-              "    DISTINCTCOUNT('Availability 2'[DATE])",
-              "    ,'Date 2'[- Is Weekend?]=\"Weekday\"",
-              ") - [Count of Date (exc. weekends)]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "31f6f57b-e877-4ea7-b97f-8235c64cb533"
           }
         ],
         "partitions": [
@@ -62911,65 +62667,6 @@
             "formatString": "#,0",
             "lineageTag": "65449722-a4c6-4f2c-9b90-dd257d4c9803",
             "sourceLineageTag": "6a0ae533-0356-4f2d-89c9-fbfaa21f5d9f"
-          },
-          {
-            "name": "RowCount of SmartRes diff DEV",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('SmartRes 3') - [RowCount of SmartRes]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "bc7f6329-3713-44c8-9e79-d41c137a3e89"
-          },
-          {
-            "name": "RowCount of Availability Today diff DEV",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "CALCULATE",
-              "(",
-              "    COUNTROWS('Availability 3')",
-              "    ,'Date 3'[- Is Today?]=\"Yes\"",
-              ") - [RowCount of Availability Today]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "3f15d5f8-b9ce-44b3-9366-eb965df783ae"
-          },
-          {
-            "name": "Count of Date (exc. weekends) diff DEV",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "CALCULATE",
-              "(",
-              "    DISTINCTCOUNT('Availability 3'[DATE])",
-              "    ,'Date 3'[- Is Weekend?]=\"Weekday\"",
-              ") - [Count of Date (exc. weekends)]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "f343674c-55ce-4ec4-af82-e14c131c0a7d"
           }
         ],
         "partitions": [
@@ -65840,6 +65537,196 @@
                 "    #\"Changed Type\""
               ],
               "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "stocks summary",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "00745480cc0b42ab921be4d425457988"
+          }
+        ],
+        "columns": [
+          {
+            "name": "RowCount of Availability Today",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "69a49438-2681-4f4c-9a51-dbcfc0f77524",
+            "sourceColumn": "[RowCount of Availability Today]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of Availability Today diff UAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "4f9dd843-cbe8-4d32-8ef9-5aaf2363f8ad",
+            "sourceColumn": "[RowCount of Availability Today diff UAT]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of Availability Today diff DEV",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "b97d075f-b98b-4bac-971a-6c743fd40326",
+            "sourceColumn": "[RowCount of Availability Today diff DEV]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Count of Date (exc. weekends)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "34e261c3-68b6-4462-8371-39e089417f87",
+            "sourceColumn": "[Count of Date (exc. weekends)]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Count of Date (exc. weekends) diff UAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "7d9c62c2-4b02-44ab-b59f-2f2f842ba2f7",
+            "sourceColumn": "[Count of Date (exc. weekends) diff UAT]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Count of Date (exc. weekends) diff DEV",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "bf61e59e-4b55-49bd-807d-5503568a6b4e",
+            "sourceColumn": "[Count of Date (exc. weekends) diff DEV]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of SmartRes",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "9e4abc00-7cf4-464b-a3d3-f1562ae034f4",
+            "sourceColumn": "[RowCount of SmartRes]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of SmartRes diff UAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "7f590655-78f5-426c-82b1-3bb733dfbcfe",
+            "sourceColumn": "[RowCount of SmartRes diff UAT]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of SmartRes diff DEV",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "81911b97-93a7-43ae-bf08-a5dfc5e2023a",
+            "sourceColumn": "[RowCount of SmartRes diff DEV]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "e86548d5-beff-488f-b90e-d5dad353ba8b",
+        "partitions": [
+          {
+            "name": "stocks summary",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "",
+                "SUMMARIZE",
+                "(",
+                "    Metrics",
+                "    ,\"RowCount of Availability Today\",CALCULATE(COUNTROWS('Availability'),'Date'[- Is Today?]=\"Yes\")",
+                "    ,\"RowCount of Availability Today diff UAT\",CALCULATE(COUNTROWS('Availability 2'),'Date 2'[- Is Today?]=\"Yes\")-CALCULATE(COUNTROWS('Availability'),'Date'[- Is Today?]=\"Yes\")",
+                "    ,\"RowCount of Availability Today diff DEV\",CALCULATE(COUNTROWS('Availability 3'),'Date 3'[- Is Today?]=\"Yes\")-CALCULATE(COUNTROWS('Availability'),'Date'[- Is Today?]=\"Yes\")",
+                "    ,\"Count of Date (exc. weekends)\",CALCULATE(DISTINCTCOUNT('Availability'[DATE]),'Date'[- Is Weekend?]=\"Weekday\")",
+                "    ,\"Count of Date (exc. weekends) diff UAT\",CALCULATE(DISTINCTCOUNT('Availability 2'[DATE]),'Date 2'[- Is Weekend?]=\"Weekday\")-CALCULATE(DISTINCTCOUNT('Availability'[DATE]),'Date'[- Is Weekend?]=\"Weekday\")",
+                "    ,\"Count of Date (exc. weekends) diff DEV\",CALCULATE(DISTINCTCOUNT('Availability 3'[DATE]),'Date 3'[- Is Weekend?]=\"Weekday\")-CALCULATE(DISTINCTCOUNT('Availability'[DATE]),'Date'[- Is Weekend?]=\"Weekday\")",
+                "    ,\"RowCount of SmartRes\",COUNTROWS('SmartRes')",
+                "    ,\"RowCount of SmartRes diff UAT\",COUNTROWS('SmartRes 2')-COUNTROWS('SmartRes')",
+                "    ,\"RowCount of SmartRes diff DEV\",COUNTROWS('SmartRes 3')-COUNTROWS('SmartRes')",
+                ")"
+              ],
+              "type": "calculated"
             }
           }
         ]

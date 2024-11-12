@@ -22,6 +22,90 @@
         "linguisticMetadata": {
           "content": {
             "Entities": {
+              "gl.gl_budget_gbc_constant": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "gl",
+                    "ConceptualProperty": "gl Budget (GBC Constant)"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Budget (GBC Constant) Actuals": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "gl.gl_budget_gbc_constant_diff": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "gl",
+                    "ConceptualProperty": "gl Budget (GBC Constant) Diff"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Budget (GBC Constant) AbsDiff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "gl.gl_budget_local": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "gl",
+                    "ConceptualProperty": "gl Budget (Local)"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Budget (Local) Actuals": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "gl.gl_budget_local_diff": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "gl",
+                    "ConceptualProperty": "gl Budget (Local) Diff"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Budget (Local) AbsDiff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "parameter__date.parameter__date": {
                 "Definition": {
                   "Binding": {
@@ -125,7 +209,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Invoiced Net Value Actuals": {
+                    "Amount (GBC Constant) Actuals": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -146,7 +230,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Invoiced Net Value AbsDiff": {
+                    "Amount (GBC Constant) AbsDiff": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -167,7 +251,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Net Value Actuals": {
+                    "Amount (Transaction) Actuals": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -188,7 +272,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Net Value AbsDiff": {
+                    "Amount (Transaction) AbsDiff": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -209,7 +293,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Open Net Value Actuals": {
+                    "Amount (Actual) Actuals": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -230,7 +314,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Open Net Value AbsDiff": {
+                    "Amount (Actual) AbsDiff": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -251,7 +335,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Returned Net Value Actuals": {
+                    "Amount (Local) Actuals": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -272,7 +356,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Returned Net Value AbsDiff": {
+                    "Amount (Local) AbsDiff": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -4452,40 +4536,6 @@
             "expression": "EXTERNALMEASURE(\"Amount (GBC Constant) vs LFYP %\", DOUBLE, \"DirectQuery to AS - DMA GL\")",
             "lineageTag": "cf05f356-0a27-4dc2-a0ad-f1eca690a97b",
             "sourceLineageTag": "b02ac0b5-7c9a-4c43-b113-c2b13f9dedb9"
-          },
-          {
-            "name": "Count of Date_Key",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "DISTINCTCOUNT('General Ledger Fact'[AccountingDate_Key])"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "b96c25ca-5788-4032-b953-8449a2b0584e"
-          },
-          {
-            "name": "RowCount of GeneralLedgerFact",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('General Ledger Fact')"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "7e31e187-7114-4197-8d9f-4342cceb492a"
           }
         ],
         "partitions": [
@@ -8197,40 +8247,6 @@
             "expression": "EXTERNALMEASURE(\"Amount (GBC Constant) vs LFYP %\", DOUBLE, \"DirectQuery to AS - DMA GL 2\")",
             "lineageTag": "58c2bb28-3c8d-434a-8003-bc286cbe7f94",
             "sourceLineageTag": "b02ac0b5-7c9a-4c43-b113-c2b13f9dedb9"
-          },
-          {
-            "name": "Count of Date_Key diff UAT",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "DISTINCTCOUNT('General Ledger Fact 2'[AccountingDate_Key]) - [Count of Date_Key]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "d73ef5e5-97ab-4300-9d55-ff9c78bb3751"
-          },
-          {
-            "name": "RowCount of GeneralLedgerFact diff UAT",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('General Ledger Fact 2') - [RowCount of GeneralLedgerFact]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "5257b3d3-c86f-4f8a-b899-0d484efb715f"
           }
         ],
         "partitions": [
@@ -11942,40 +11958,6 @@
             "expression": "EXTERNALMEASURE(\"Amount (GBC Constant) vs LFYP %\", DOUBLE, \"DirectQuery to AS - DMA GL 3\")",
             "lineageTag": "0e8ae9c1-7cae-44e2-8a1f-422c797ead15",
             "sourceLineageTag": "b02ac0b5-7c9a-4c43-b113-c2b13f9dedb9"
-          },
-          {
-            "name": "Count of Date_Key diff DEV",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "DISTINCTCOUNT('General Ledger Fact 3'[AccountingDate_Key]) - [Count of Date_Key]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "a2327e3f-e3be-4c77-9793-5ac23e0daa9c"
-          },
-          {
-            "name": "RowCount of GeneralLedgerFact diff DEV",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('General Ledger Fact 3') - [RowCount of GeneralLedgerFact]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "9181f351-a80f-4fda-a4c6-31ca056e1446"
           }
         ],
         "partitions": [
@@ -13548,6 +13530,142 @@
                 "    #\"Changed Type\""
               ],
               "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "gl summary",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "3aa7e7e2b8e1496fa2e55e15d7663873"
+          }
+        ],
+        "columns": [
+          {
+            "name": "RowCount of GeneralLedgerFact",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "3550881f-f69a-4ce6-940a-7c312e5998ee",
+            "sourceColumn": "[RowCount of GeneralLedgerFact]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of GeneralLedgerFact diff UAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "92321b29-93b6-4ce1-9718-9badaf780310",
+            "sourceColumn": "[RowCount of GeneralLedgerFact diff UAT]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of GeneralLedgerFact diff DEV",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "eb2bb893-42e8-43d2-954f-6bbfbed8b44b",
+            "sourceColumn": "[RowCount of GeneralLedgerFact diff DEV]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Count of Date_Key",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "44094c1e-2b52-40d5-bf84-34aa72c2ede2",
+            "sourceColumn": "[Count of Date_Key]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Count of Date_Key diff UAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "184a69b3-0cf6-4477-a0a5-7c00c5c14e59",
+            "sourceColumn": "[Count of Date_Key diff UAT]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Count of Date_Key diff DEV",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "6d495939-6256-4f3c-9b7b-12d03b7ea09f",
+            "sourceColumn": "[Count of Date_Key diff DEV]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "8ce2bf21-b0fb-4f85-a573-577c32d8fa3b",
+        "partitions": [
+          {
+            "name": "gl summary",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "",
+                "SUMMARIZE",
+                "(",
+                "    'Parameter - Metrics'",
+                "    ,\"RowCount of GeneralLedgerFact\",COUNTROWS('General Ledger Fact')",
+                "    ,\"RowCount of GeneralLedgerFact diff UAT\",COUNTROWS('General Ledger Fact 2')-COUNTROWS('General Ledger Fact')",
+                "    ,\"RowCount of GeneralLedgerFact diff DEV\",COUNTROWS('General Ledger Fact 3')-COUNTROWS('General Ledger Fact')",
+                "    ,\"Count of Date_Key\",DISTINCTCOUNT('General Ledger Fact'[AccountingDate_Key])",
+                "    ,\"Count of Date_Key diff UAT\",DISTINCTCOUNT('General Ledger Fact 2'[AccountingDate_Key])-DISTINCTCOUNT('General Ledger Fact'[AccountingDate_Key])",
+                "    ,\"Count of Date_Key diff DEV\",DISTINCTCOUNT('General Ledger Fact 3'[AccountingDate_Key])-DISTINCTCOUNT('General Ledger Fact'[AccountingDate_Key])",
+                ")"
+              ],
+              "type": "calculated"
             }
           }
         ]

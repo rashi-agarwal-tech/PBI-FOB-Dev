@@ -22,90 +22,6 @@
         "linguisticMetadata": {
           "content": {
             "Entities": {
-              "metrics_2.count_of_salesorders_diff_uat": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Metrics 2",
-                    "ConceptualProperty": "Count of SalesOrderNumber diff UAT"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "UAT diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
-              },
-              "metrics_2.rowcount_of_factsales_diff_uat": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Metrics 2",
-                    "ConceptualProperty": "RowCount of Orders diff UAT"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "UAT diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
-              },
-              "metrics_3.count_of_salesorders_diff_dev": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Metrics 3",
-                    "ConceptualProperty": "Count of SalesOrderNumber diff DEV"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "DEV diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
-              },
-              "metrics_3.rowcount_of_factsales_diff_dev": {
-                "Definition": {
-                  "Binding": {
-                    "ConceptualEntity": "Metrics 3",
-                    "ConceptualProperty": "RowCount of Orders diff DEV"
-                  }
-                },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "DEV diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
-              },
               "parameter__date.parameter__date": {
                 "Definition": {
                   "Binding": {
@@ -14214,40 +14130,6 @@
             "formatString": "#,0.00",
             "lineageTag": "deb76fb7-cf4f-489b-ba0c-e59778f088f9",
             "sourceLineageTag": "59fedcb4-cec8-4801-a009-482996377096"
-          },
-          {
-            "name": "RowCount of Orders",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS(Orders)"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "1310f575-eb0d-4b7c-b4ae-20c7f828b201"
-          },
-          {
-            "name": "Count of SalesOrderNumber",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "DISTINCTCOUNT(Orders[Sales Order Number])"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "544cc52a-3a6f-462f-b00e-4db2ff3ba7c5"
           }
         ],
         "partitions": [
@@ -28502,40 +28384,6 @@
             "formatString": "#,0.00",
             "lineageTag": "2a991b91-affc-483e-b787-0bb84b8fb4b8",
             "sourceLineageTag": "59fedcb4-cec8-4801-a009-482996377096"
-          },
-          {
-            "name": "RowCount of Orders diff UAT",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('Orders 2') - [RowCount of Orders]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "4252dd2e-bfe4-4d18-b003-0eedd31d7535"
-          },
-          {
-            "name": "Count of SalesOrderNumber diff UAT",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "DISTINCTCOUNT('Orders 2'[Sales Order Number]) - [Count of SalesOrderNumber]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "1d81dfbe-8bc7-45fe-b0c4-d4b03ff27173"
           }
         ],
         "partitions": [
@@ -42790,40 +42638,6 @@
             "formatString": "#,0.00",
             "lineageTag": "a8dbfde8-e2aa-4c5c-895e-665ba81156e0",
             "sourceLineageTag": "59fedcb4-cec8-4801-a009-482996377096"
-          },
-          {
-            "name": "RowCount of Orders diff DEV",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('Orders 3') - [RowCount of Orders]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "0682e0df-361b-476c-b936-c27d8738ad45"
-          },
-          {
-            "name": "Count of SalesOrderNumber diff DEV",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "DISTINCTCOUNT('Orders 3'[Sales Order Number]) - [Count of SalesOrderNumber]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "8a99fbf7-4811-4eb3-8e3a-869f5d40c6ac"
           }
         ],
         "partitions": [
@@ -48722,6 +48536,142 @@
                 "    #\"Changed Type\""
               ],
               "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "sales summary",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "cf6c8b0ae82344bea0dcb748c91de8d1"
+          }
+        ],
+        "columns": [
+          {
+            "name": "RowCount of Orders",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "9bd9d86c-6b6a-4f08-888d-fd669e619c88",
+            "sourceColumn": "[RowCount of Orders]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Count of SalesOrderNumber",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "0bdf8419-d494-4f82-84d9-37029877db47",
+            "sourceColumn": "[Count of SalesOrderNumber]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of Orders diff UAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "4ac16ee3-ecea-482b-af59-1b0454b63a0e",
+            "sourceColumn": "[RowCount of Orders diff UAT]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of Orders diff DEV",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "14f4e691-189d-4fa1-9c7c-88091432510c",
+            "sourceColumn": "[RowCount of Orders diff DEV]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Count of SalesOrderNumber diff UAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "1fe1f54a-d34d-4ed6-839a-162caf3612f7",
+            "sourceColumn": "[Count of SalesOrderNumber diff UAT]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Count of SalesOrderNumber diff DEV",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "f3515643-f09b-4708-97f3-57ada0f8b3b4",
+            "sourceColumn": "[Count of SalesOrderNumber diff DEV]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "d0f5edb4-d2bf-4bef-9a17-61efa487f00b",
+        "partitions": [
+          {
+            "name": "sales summary",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "",
+                "SUMMARIZE",
+                "(",
+                "    Metrics",
+                "    ,\"RowCount of Orders\",COUNTROWS('Orders')",
+                "    ,\"RowCount of Orders diff UAT\",COUNTROWS('Orders 2')-COUNTROWS('Orders')",
+                "    ,\"RowCount of Orders diff DEV\",COUNTROWS('Orders 3')-COUNTROWS('Orders')",
+                "    ,\"Count of SalesOrderNumber\",DISTINCTCOUNT('Orders'[Sales Order Number])",
+                "    ,\"Count of SalesOrderNumber diff UAT\",DISTINCTCOUNT('Orders 2'[Sales Order Number])-DISTINCTCOUNT('Orders'[Sales Order Number])",
+                "    ,\"Count of SalesOrderNumber diff DEV\",DISTINCTCOUNT('Orders 3'[Sales Order Number])-DISTINCTCOUNT('Orders'[Sales Order Number])",
+                ")"
+              ],
+              "type": "calculated"
             }
           }
         ]

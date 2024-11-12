@@ -125,7 +125,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Invoiced Net Value Actuals": {
+                    "Amount Constant Actuals": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -146,7 +146,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Invoiced Net Value AbsDiff": {
+                    "Amount Constant AbsDiff": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -167,7 +167,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Net Value Actuals": {
+                    "Amount Local Actuals": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -188,7 +188,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Net Value AbsDiff": {
+                    "Amount Local AbsDiff": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -209,7 +209,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Open Net Value Actuals": {
+                    "Amount Average Actuals": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -230,7 +230,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Open Net Value AbsDiff": {
+                    "Amount Average AbsDiff": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -251,7 +251,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Returned Net Value Actuals": {
+                    "Amount Constant To Date Actuals": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -272,7 +272,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "Returned Net Value AbsDiff": {
+                    "Amount Constant To Date AbsDiff": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -4161,40 +4161,6 @@
             "expression": "EXTERNALMEASURE(\"Amount Constant To Date\", CURRENCY, \"DirectQuery to AS - DMA Fixed Asset\")",
             "lineageTag": "bb63979a-9180-43c1-bae1-ed83685a63c7",
             "sourceLineageTag": "a2fd4f94-775f-4f9f-8614-71fd8e98a404"
-          },
-          {
-            "name": "RowCount of FixedAssetTransactions",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('Fixed Asset Transactions')"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "ee02d475-cbcb-48bb-89a6-dde6d96259c8"
-          },
-          {
-            "name": "Count of Date_Key",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "DISTINCTCOUNT('Fixed Asset Transactions'[Date_Key])"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "d96d7e5e-e826-4d15-86d4-ca327ab10745"
           }
         ],
         "partitions": [
@@ -6862,40 +6828,6 @@
             "expression": "EXTERNALMEASURE(\"Amount Constant To Date\", CURRENCY, \"DirectQuery to AS - DMA Fixed Asset 2\")",
             "lineageTag": "1360f6b5-ca13-4fba-aac6-d15f690c20ba",
             "sourceLineageTag": "a2fd4f94-775f-4f9f-8614-71fd8e98a404"
-          },
-          {
-            "name": "RowCount of FixedAssetTransactions diff UAT",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('Fixed Asset Transactions 2') - [RowCount of FixedAssetTransactions]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "dc90d14a-4ffd-48c9-9fa6-e98fe88fa1b0"
-          },
-          {
-            "name": "Count of Date_Key diff UAT",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "DISTINCTCOUNT('Fixed Asset Transactions 2'[Date_Key]) - [Count of Date_Key]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "42703dbd-da81-4e38-a09e-6a334bd628b3"
           }
         ],
         "partitions": [
@@ -9563,40 +9495,6 @@
             "expression": "EXTERNALMEASURE(\"Amount Constant To Date\", CURRENCY, \"DirectQuery to AS - DMA Fixed Asset 3\")",
             "lineageTag": "52b3979d-5cee-41f3-848a-d243470e9766",
             "sourceLineageTag": "a2fd4f94-775f-4f9f-8614-71fd8e98a404"
-          },
-          {
-            "name": "RowCount of FixedAssetTransactions diff DEV",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('Fixed Asset Transactions 3') - [RowCount of FixedAssetTransactions]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "7827bc94-caa2-49b9-a297-1f049d29b89c"
-          },
-          {
-            "name": "Count of Date_Key diff DEV",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "DISTINCTCOUNT('Fixed Asset Transactions 3'[Date_Key]) - [Count of Date_Key]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "24ee7fb3-fb22-4531-8a46-e576842e1ac0"
           }
         ],
         "partitions": [
@@ -9660,6 +9558,142 @@
                 "    #\"Changed Type\""
               ],
               "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "fa summary",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "3ba86927e4e44d5ca3ee6c9d9c8b4e01"
+          }
+        ],
+        "columns": [
+          {
+            "name": "RowCount of FixedAssetTransactions",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "3add6494-d3da-4e7d-990e-74bd9fcf6bd1",
+            "sourceColumn": "[RowCount of FixedAssetTransactions]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of FixedAssetTransactions diff UAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "402ce4ef-3213-46cb-8522-b6619e5e1ae1",
+            "sourceColumn": "[RowCount of FixedAssetTransactions diff UAT]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of FixedAssetTransactions diff DEV",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "35897ebf-ab0d-4288-a504-97dbe1c7cc8a",
+            "sourceColumn": "[RowCount of FixedAssetTransactions diff DEV]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Count of Date_Key",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "4aca4554-fd5a-4c78-ad99-ca7f7f957365",
+            "sourceColumn": "[Count of Date_Key]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Count of Date_Key diff UAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "92b81878-4b80-4e62-b6b5-4f11d3a0714c",
+            "sourceColumn": "[Count of Date_Key diff UAT]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Count of Date_Key diff DEV",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "1b34ff78-201b-4039-9c00-fc75898dcd59",
+            "sourceColumn": "[Count of Date_Key diff DEV]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "1efe03f8-eed7-4f75-ace3-29dc86de7e87",
+        "partitions": [
+          {
+            "name": "fa summary",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "",
+                "SUMMARIZE",
+                "(",
+                "    Metrics",
+                "    ,\"RowCount of FixedAssetTransactions\",COUNTROWS('Fixed Asset Transactions')",
+                "    ,\"RowCount of FixedAssetTransactions diff UAT\",COUNTROWS('Fixed Asset Transactions 2')-COUNTROWS('Fixed Asset Transactions')",
+                "    ,\"RowCount of FixedAssetTransactions diff DEV\",COUNTROWS('Fixed Asset Transactions 3')-COUNTROWS('Fixed Asset Transactions')",
+                "    ,\"Count of Date_Key\",DISTINCTCOUNT('Fixed Asset Transactions'[Date_Key])",
+                "    ,\"Count of Date_Key diff UAT\",DISTINCTCOUNT('Fixed Asset Transactions 2'[Date_Key])-DISTINCTCOUNT('Fixed Asset Transactions'[Date_Key])",
+                "    ,\"Count of Date_Key diff DEV\",DISTINCTCOUNT('Fixed Asset Transactions 3'[Date_Key])-DISTINCTCOUNT('Fixed Asset Transactions'[Date_Key])",
+                ")"
+              ],
+              "type": "calculated"
             }
           }
         ]

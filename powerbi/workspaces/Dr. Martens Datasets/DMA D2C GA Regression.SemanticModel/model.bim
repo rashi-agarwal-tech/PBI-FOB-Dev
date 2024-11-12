@@ -785,19 +785,7 @@
                     "ConceptualProperty": "RowCount of GA Ads diff UAT"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "UAT diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "metrics_2.rowcount_of_ga_diff_uat": {
                 "Definition": {
@@ -806,19 +794,7 @@
                     "ConceptualProperty": "RowCount of GA diff UAT"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "UAT diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "metrics_2.rowcount_of_ga_goals_diff_uat": {
                 "Definition": {
@@ -827,19 +803,7 @@
                     "ConceptualProperty": "RowCount of GA Goals diff UAT"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "UAT diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "metrics_3.rowcount_of_ga_ads_diff_dev": {
                 "Definition": {
@@ -848,19 +812,7 @@
                     "ConceptualProperty": "RowCount of GA Ads diff DEV"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "DEV diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "metrics_3.rowcount_of_ga_diff_dev": {
                 "Definition": {
@@ -869,19 +821,7 @@
                     "ConceptualProperty": "RowCount of GA diff DEV"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "DEV diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "metrics_3.rowcount_of_ga_goals_diff_dev": {
                 "Definition": {
@@ -890,19 +830,7 @@
                     "ConceptualProperty": "RowCount of GA Goals diff DEV"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "DEV diff": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "parameter__date.parameter__date": {
                 "Definition": {
@@ -24169,57 +24097,6 @@
             "formatString": "#,0",
             "lineageTag": "1da1ba1f-a400-4ce9-9690-fc1aa362e638",
             "sourceLineageTag": "6a0ae533-0356-4f2d-89c9-fbfaa21f5d9f"
-          },
-          {
-            "name": "RowCount of GA",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('Google Analytics')"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "ad2d3b3e-db01-4e3c-8e20-b1f668634575"
-          },
-          {
-            "name": "RowCount of GA Ads",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('Google Analytics Ads')"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "8f519ac3-2fa2-487b-96bc-eb8de7d25c57"
-          },
-          {
-            "name": "RowCount of GA Goals",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('Google Analytics Goals')"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "53b01e39-a511-4c13-9647-6a7934235f97"
           }
         ],
         "partitions": [
@@ -43815,54 +43692,6 @@
             "formatString": "#,0",
             "lineageTag": "8f3d6890-116b-4af4-88e8-d671b1d23069",
             "sourceLineageTag": "6a0ae533-0356-4f2d-89c9-fbfaa21f5d9f"
-          },
-          {
-            "name": "RowCount of GA diff UAT",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('Google Analytics 2') - [RowCount of GA]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "9ea519f7-0f7b-4e09-8ca9-56cb051fc4e9"
-          },
-          {
-            "name": "RowCount of GA Ads diff UAT",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('Google Analytics Ads 2') - [RowCount of GA Ads]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "2524d36c-f78b-438b-a94d-f60bfe6206c0"
-          },
-          {
-            "name": "RowCount of GA Goals diff UAT",
-            "changedProperties": [
-              {
-                "property": "Name"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('Google Analytics Goals 2') - [RowCount of GA Goals]"
-            ],
-            "formatString": "0",
-            "lineageTag": "e47fb97e-90d9-4972-afbe-a889d638e4a7"
           }
         ],
         "partitions": [
@@ -63458,57 +63287,6 @@
             "formatString": "#,0",
             "lineageTag": "a95ead25-84fb-448c-a27c-8b12de1ed860",
             "sourceLineageTag": "6a0ae533-0356-4f2d-89c9-fbfaa21f5d9f"
-          },
-          {
-            "name": "RowCount of GA diff DEV",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('Google Analytics 3') - [RowCount of GA]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "d153f8b4-0860-4e96-bcbe-105ee1822813"
-          },
-          {
-            "name": "RowCount of GA Ads diff DEV",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('Google Analytics Ads 3') - [RowCount of GA Ads]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "23a6eaae-e24d-4d04-9ad6-d4b780ff3021"
-          },
-          {
-            "name": "RowCount of GA Goals diff DEV",
-            "changedProperties": [
-              {
-                "property": "Name"
-              },
-              {
-                "property": "FormatString"
-              }
-            ],
-            "expression": [
-              "",
-              "COUNTROWS('Google Analytics Goals 3') - [RowCount of GA Goals]"
-            ],
-            "formatString": "#,0",
-            "lineageTag": "ec0fe45e-78b3-4e21-a1d0-5c5dbd63e49f"
           }
         ],
         "partitions": [
@@ -66222,6 +66000,196 @@
                 "    #\"Changed Type\""
               ],
               "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "ga summary",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "c0c984e8d25a4ab398b92d75dbc9c878"
+          }
+        ],
+        "columns": [
+          {
+            "name": "RowCount of GA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "639c44f5-d0b1-4e1e-91b3-2393746c79c8",
+            "sourceColumn": "[RowCount of GA]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of GA diff UAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "cef637e7-2e95-460b-9f94-488394d2b23a",
+            "sourceColumn": "[RowCount of GA diff UAT]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of GA diff DEV",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "ea095d6b-1709-4d26-89c8-9d8a5f21eb10",
+            "sourceColumn": "[RowCount of GA diff DEV]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of GA Ads",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "e02444ea-869d-489b-8a4e-e0add9f9db78",
+            "sourceColumn": "[RowCount of GA Ads]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of GA Ads diff UAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "2d78f626-e1a9-4592-9cb7-d856efaf3e0c",
+            "sourceColumn": "[RowCount of GA Ads diff UAT]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of GA Ads diff DEV",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "4c8f099f-e77c-49fb-a1ce-a7ee2f5d33da",
+            "sourceColumn": "[RowCount of GA Ads diff DEV]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of GA Goals",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "1847cf97-4bb4-4444-9cf3-1ddf84774375",
+            "sourceColumn": "[RowCount of GA Goals]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of GA Goals diff UAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "8b426653-b4c8-4726-a36a-47ebb0162942",
+            "sourceColumn": "[RowCount of GA Goals diff UAT]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of GA Goals diff DEV",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "e4bbb9cc-7bba-4780-8c4a-d4378cdf557c",
+            "sourceColumn": "[RowCount of GA Goals diff DEV]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "b3b6d3c4-f8e5-45c8-a530-3923cbe68319",
+        "partitions": [
+          {
+            "name": "ga summary",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "",
+                "SUMMARIZE",
+                "(",
+                "    Metrics",
+                "    ,\"RowCount of GA\",COUNTROWS('Google Analytics')",
+                "    ,\"RowCount of GA diff UAT\",COUNTROWS('Google Analytics 2')-COUNTROWS('Google Analytics')",
+                "    ,\"RowCount of GA diff DEV\",COUNTROWS('Google Analytics 3')-COUNTROWS('Google Analytics')",
+                "    ,\"RowCount of GA Ads\",COUNTROWS('Google Analytics Ads')",
+                "    ,\"RowCount of GA Ads diff UAT\",COUNTROWS('Google Analytics Ads 2')-COUNTROWS('Google Analytics Ads')",
+                "    ,\"RowCount of GA Ads diff DEV\",COUNTROWS('Google Analytics Ads 3')-COUNTROWS('Google Analytics Ads')",
+                "    ,\"RowCount of GA Goals\",COUNTROWS('Google Analytics Goals')",
+                "    ,\"RowCount of GA Goals diff UAT\",COUNTROWS('Google Analytics Goals 2')-COUNTROWS('Google Analytics Goals')",
+                "    ,\"RowCount of GA Goals diff DEV\",COUNTROWS('Google Analytics Goals 3')-COUNTROWS('Google Analytics Goals')",
+                ")"
+              ],
+              "type": "calculated"
             }
           }
         ]
