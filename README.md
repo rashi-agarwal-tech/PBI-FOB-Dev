@@ -36,6 +36,9 @@ This repository is synced to the [D&A Dev - Dr. Martens Datasets](#https://app.p
     - [Report Settings:](#report-settings)
     - [Profiling and Performance.](#profiling-and-performance)
     - [Notes and Issues:](#notes-and-issues)
+    - [Exporting a Report in the API:](#exporting-a-report-in-the-api)
+    - [Using Fabric to sync Power BI From Repo:](#using-fabric-to-sync-power-bi-from-repo)
+    - [CI/ CD Notes:](#ci-cd-notes)
 - [Contribute:](#contribute)
 >>>>>>> e0d289d (docs: update readme file)
 - [Utilities Installation](#utilities-installation)
@@ -264,10 +267,10 @@ Report are owned by the service account `PowerBISA-SVC@drmartens.com` and author
 
 #### Azure Application Principle:
 We have installed the [Microsoft Fabric Capacity Metrics app
-](https://app.powerbi.com/groups/me/apps/b4f68cde-3225-4a69-9de2-039942d27d37?experience=power-bi) to help monitor our primium capacity workspaces.
+](https://app.powerbi.com/groups/me/apps/b4f68cde-3225-4a69-9de2-039942d27d37?experience=power-bi) to help monitor our premium capacity workspaces.
 Fabric resides on a capacity which is a pool of resources allocated to our platform. Each capacity has its own number of Capacity Units (CU). CUs are used to measure the compute power available for our capacity.
 
-The application is currently owned by `Chione Taoself` but I believe that `Karthik Ramani` can also grant access to this application. You will not be able to access the report unless you have specifically granted acess.
+The application is currently owned by `Chione Taoself` but I believe that `Karthik Ramani` can also grant access to this application. You will not be able to access the report unless you have specifically granted access.
 
 ![Workspace source control](docs/images/fab_cap_metrics_capacity.PNG)
 
@@ -286,7 +289,17 @@ The application is currently owned by `Chione Taoself` but I believe that `Karth
 
 ### Notes and Issues:
 
+### Exporting a Report in the API:
 
+https://learn.microsoft.com/en-us/power-bi/developer/embedded/export-to
+
+### Using Fabric to sync Power BI From Repo: 
+
+
+
+### CI/ CD Notes:
+
+We are only going to version the application and not power bi to start off with. 
 
 # Contribute:
 Contributions should try to follow conventional commits if possible. As a minimum requirement a ticket number should be present in the branch and the commit message.

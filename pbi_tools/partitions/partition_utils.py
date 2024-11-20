@@ -1,7 +1,7 @@
 import fiscalyear
 import pendulum
 from datetime import datetime
-from pbi_tools.constants import FISCAL_YEAR_START_MONTH, PBI_META_FILE
+from pbi_tools.utils.constants import FISCAL_YEAR_START_MONTH, PBI_META_FILE
 import json
 
 fiscalyear.START_MONTH = FISCAL_YEAR_START_MONTH
@@ -9,7 +9,9 @@ fiscalyear.START_MONTH = FISCAL_YEAR_START_MONTH
 if PBI_META_FILE.exists():
     models = json.loads(PBI_META_FILE.read_text())
 else:
-    raise FileExistsError("It appear that the table partition meta data is not present, f{PBI_META_FILE}")
+    raise FileExistsError(
+        f"It appear that the table partition meta data is not present, {PBI_META_FILE}"
+    )
 
 
 def get_current_fin_year() -> str:
@@ -70,8 +72,13 @@ def get_current_cy_qq_partition() -> str:
     month = datetime.now().month
     return f"CY{get_current_year()} {-(-3 // month)}"
 
+
 def get_tables(dataset: str, partitioned: bool | None = None) -> list:
-    return [ table for table, v in models[dataset].items() if v["partitioned"] == partitioned or partitioned is None]
+    return [
+        table
+        for table, v in models[dataset].items()
+        if v["partitioned"] == partitioned or partitioned is None
+    ]
 
 
 if __name__ == "__main__":

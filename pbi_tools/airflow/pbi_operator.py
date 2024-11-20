@@ -1,7 +1,7 @@
 from airflow.models.baseoperator import BaseOperator
 from pbi_tools.mspbi_api import (
-    PowerBIToken,
-    PowerBiAPIDataset,
+    MSAuthToken,
+    MSApiDataset,
     Environment,
 )
 from typing import Literal
@@ -28,13 +28,13 @@ class PowerBIRefreshOperator(BaseOperator):
         self.env = env
 
     def execute(self, context):
-        pbi_token = PowerBIToken(
+        pbi_token = MSAuthToken(
             client_id=os.getenv("client_id"),
             client_secret=os.getenv("client_secret"),
             get_token_method="msal",
         )
 
-        refresh_api = PowerBiAPIDataset(
+        refresh_api = MSApiDataset(
             token=pbi_token,
             dataset=self.dataset,
             table_partition=self.table_partition,

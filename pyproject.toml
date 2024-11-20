@@ -11,19 +11,17 @@ python = "^3.11"
 xmltodict = "^0.13.0"
 typer = "^0.12.5"
 python-dotenv = "^1.0.1"
-msal = "^1.26.0"
 pendulum = "^3.0.0"
-pytest-azurepipelines = "^1.0.5"
 fiscalyear = "^0.4.0"
 pyyaml = "^6.0.1"
+pydantic = "^2.9.2"
 xlsxwriter = "^3.2.0"
 networkx = "^3.3"
 matplotlib = "^3.8.4"
+msal = "^1.26.0"
 
 [tool.poetry.scripts]
-pbi-api = "pbi_tools.mspbi_cli:app"
-pbi = "pbi_tools.pbi:app"
-
+pbi = "pbi_tools.cli:app"
 
 [tool.poetry.group.dev.dependencies]
 artifacts-keyring = "^0.4.0"
@@ -36,15 +34,33 @@ twine = "^5.1.1"
 commitizen = "^3.30.0"
 types-requests = "^2.32.0.20241016"
 rust-just = "^1.36.0"
+pytest-depends = "^1.0.1"
+pytest-xdist = "^3.6.1"
+pytest-azurepipelines = "^1.0.5"
+cz-github-jira-conventional = "^3.0.0"
 
 [tool.commitizen]
-name = "cz_conventional_commits"
+name = "cz_github_jira_conventional"
 version = "0.1.0"
 version_files = [
-    "powerbi/pbi_tools/__version__.py",
+    "pbi_tools/__version__.py",
     "pyproject.toml:version"
 ]
 update_changelog_on_bump = true
+gpg_sign = false
+tag_format = "v$version"
+annotated_tag = true
+check_consistency = true
+jira_prefix = "FP-"
+jira_base_url = "https://drmartens.atlassian.net/"
+github_repo = "https://projectreboot.visualstudio.com/Windermere%20Discovery/_git/"
+
+
+[tool.pytest.ini_options]
+markers = [
+    "api: marks tests using api calls (deselect with '-m \"not api\"')",
+    "cli",
+]
 
 [build-system]
 requires = ["poetry-core"]
