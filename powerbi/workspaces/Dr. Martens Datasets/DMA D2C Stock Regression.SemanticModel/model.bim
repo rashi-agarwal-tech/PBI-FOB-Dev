@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.137.1102.0 (24.10)"
+        "value": "2.138.782.0 (24.11)"
       }
     ],
     "culture": "en-GB",
@@ -32,7 +32,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "SELECT Date Dimension(s)": {
+                    "Date Dimensions": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -53,7 +53,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "SELECT Metric(s)": {
+                    "Metrics": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -101,19 +101,7 @@
                     "ConceptualProperty": "Fiscal Year-Period (544)"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "Fiscal Year-Period (544)": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "sales.sales_sum_of_absdiff": {
                 "Definition": {
@@ -247,6 +235,27 @@
                   }
                 ]
               },
+              "stocks.stocks_1__all_on_hand_stock_units_diff_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "stocks",
+                    "ConceptualProperty": "stocks 1. All On Hand Stock Units Diff %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "1. All On Hand Stock Units AbsDiff%": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "stocks.stocks_2_2_available_wh_stock_units": {
                 "Definition": {
                   "Binding": {
@@ -279,6 +288,48 @@
                 "Terms": [
                   {
                     "2.2 Available WH Stock Unit AbsDiff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "stocks.stocks_2_2_available_wh_stock_units_diff_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "stocks",
+                    "ConceptualProperty": "stocks 2.2 Available WH Stock Units Diff %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "2.2 Available WH Stock Unit AbsDiff%": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "stocks.stocks_2__wh_stock_units_diff_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "stocks",
+                    "ConceptualProperty": "stocks 2. WH Stock Units Diff %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "2. WH Stock Units AbsDiff%": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -331,6 +382,27 @@
                   }
                 ]
               },
+              "stocks.stocks_3_1_allocated_units_arrived_diff_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "stocks",
+                    "ConceptualProperty": "stocks 3.1 Allocated Units Arrived Diff %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "3.1 Allocated Units Arrived AbsDiff%": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "stocks.stocks_4__reserved_intake_units": {
                 "Definition": {
                   "Binding": {
@@ -363,6 +435,27 @@
                 "Terms": [
                   {
                     "4. Reserved Intake Units AbsDiff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "stocks.stocks_4__reserved_intake_units_diff_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "stocks",
+                    "ConceptualProperty": "stocks 4. Reserved Intake Units Diff %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "4. Reserved Intake Units AbsDiff%": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -415,6 +508,27 @@
                   }
                 ]
               },
+              "stocks.stocks_4__store_intransit_units_diff_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "stocks",
+                    "ConceptualProperty": "stocks 4. Store In-Transit Units Diff %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "4. Store In-Transit Units AbsDiff%": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "stocks.stocks_5__store_stock_units": {
                 "Definition": {
                   "Binding": {
@@ -447,6 +561,27 @@
                 "Terms": [
                   {
                     "5. Store Stock Units AbsDiff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "stocks.stocks_5__store_stock_units_diff_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "stocks",
+                    "ConceptualProperty": "stocks 5. Store Stock Units Diff %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "5. Store Stock Units AbsDiff%": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -499,6 +634,27 @@
                   }
                 ]
               },
+              "stocks.stocks_item_coverage_diff_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "stocks",
+                    "ConceptualProperty": "stocks Item Coverage Diff %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Item Coverage AbsDiff%": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "stocks.stocks_on_hand_spot_cover": {
                 "Definition": {
                   "Binding": {
@@ -531,6 +687,27 @@
                 "Terms": [
                   {
                     "On Hand Spot Cover AbsDiff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "stocks.stocks_on_hand_spot_cover_diff_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "stocks",
+                    "ConceptualProperty": "stocks On Hand Spot Cover Diff %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "On Hand Spot Cover AbsDiff%": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -583,6 +760,27 @@
                   }
                 ]
               },
+              "stocks.stocks_ranged_stores_diff_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "stocks",
+                    "ConceptualProperty": "stocks Ranged Stores Diff %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Ranged Stores AbsDiff%": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "stocks.stocks_stock_outs_": {
                 "Definition": {
                   "Binding": {
@@ -615,6 +813,27 @@
                 "Terms": [
                   {
                     "Stock Outs % AbsDiff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "stocks.stocks_stock_outs__diff_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "stocks",
+                    "ConceptualProperty": "stocks Stock Outs % Diff %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Stock Outs % AbsDiff%": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -667,6 +886,27 @@
                   }
                 ]
               },
+              "stocks.stocks_store_spot_cover_diff_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "stocks",
+                    "ConceptualProperty": "stocks Store Spot Cover Diff %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Store Spot Cover AbsDiff%": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
               "stocks.stocks_wh_spot_cover": {
                 "Definition": {
                   "Binding": {
@@ -699,6 +939,27 @@
                 "Terms": [
                   {
                     "WH Spot Cover AbsDiff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "stocks.stocks_wh_spot_cover_diff_": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "stocks",
+                    "ConceptualProperty": "stocks WH Spot Cover Diff %"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "WH Spot Cover AbsDiff%": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -63477,7 +63738,12 @@
             ],
             "expression": [
               "",
-              "SUMX(stocks,IF(stocks[1. All On Hand Stock Units]=0,BLANK(),stocks[1. All On Hand Stock Units]))"
+              "IF",
+              "(",
+              "    SUM(stocks[1. All On Hand Stock Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[1. All On Hand Stock Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "5c8ac23b-df61-4b8b-845f-b76c1c219596"
@@ -63494,7 +63760,12 @@
             ],
             "expression": [
               "",
-              "SUMX(stocks,IF(stocks[2. WH Stock Units]=0,BLANK(),stocks[2. WH Stock Units]))"
+              "IF",
+              "(",
+              "    SUM(stocks[2. WH Stock Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[2. WH Stock Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "6c1a26ae-8b1c-46ed-bcae-0c2f205ab011"
@@ -63503,7 +63774,12 @@
             "name": "stocks 1. All On Hand Stock Units Diff",
             "expression": [
               "",
-              "SUM(stocks[1. All On Hand Stock Units Diff])"
+              "IF",
+              "(",
+              "    SUM(stocks[1. All On Hand Stock Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[1. All On Hand Stock Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "187b0453-f7a5-44d6-94e8-6615aa5a11c6"
@@ -63512,7 +63788,12 @@
             "name": "stocks 2. WH Stock Units Diff",
             "expression": [
               "",
-              "SUM(stocks[2. WH Stock Units Diff])"
+              "IF",
+              "(",
+              "    SUM(stocks[2. WH Stock Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[2. WH Stock Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "3cd5d233-cb48-43a2-bbf7-7425f5281529"
@@ -63546,7 +63827,12 @@
             "name": "stocks 4. Store In-Transit Units",
             "expression": [
               "",
-              "SUMX(stocks,IF(stocks[4. Store In-Transit Units]=0,BLANK(),stocks[4. Store In-Transit Units]))"
+              "IF",
+              "(",
+              "    SUM(stocks[4. Store In-Transit Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[4. Store In-Transit Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "738660bd-f882-4fa5-bb9e-5ec631d8b5cd"
@@ -63555,7 +63841,12 @@
             "name": "stocks 5. Store Stock Units",
             "expression": [
               "",
-              "SUMX(stocks,IF(stocks[5. Store Stock Units]=0,BLANK(),stocks[5. Store Stock Units]))"
+              "IF",
+              "(",
+              "    SUM(stocks[5. Store Stock Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[5. Store Stock Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "d356d0e2-5b23-4383-8b2e-b30424fd68cf"
@@ -63564,7 +63855,12 @@
             "name": "stocks Item Coverage",
             "expression": [
               "",
-              "SUMX(stocks,IF(stocks[Item Coverage]=0,BLANK(),stocks[Item Coverage]))"
+              "IF",
+              "(",
+              "    SUM(stocks[Item Coverage])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[Item Coverage])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "7db4c723-fe7d-4cfb-928d-2d8f98f5910c"
@@ -63573,7 +63869,12 @@
             "name": "stocks On Hand Spot Cover",
             "expression": [
               "",
-              "SUMX(stocks,IF(stocks[On Hand Spot Cover]=0,BLANK(),stocks[On Hand Spot Cover]))"
+              "IF",
+              "(",
+              "    SUM(stocks[On Hand Spot Cover])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[On Hand Spot Cover])",
+              ")"
             ],
             "formatString": "#,0.0",
             "lineageTag": "9b5cc46d-02ab-46b7-8064-1998357c6afc"
@@ -63582,7 +63883,12 @@
             "name": "stocks Stock Outs %",
             "expression": [
               "",
-              "SUMX(stocks,IF(stocks[Stock Outs %]=0,BLANK(),stocks[Stock Outs %]))"
+              "IF",
+              "(",
+              "    SUM(stocks[Stock Outs %])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[Stock Outs %])",
+              ")"
             ],
             "formatString": "#,0.0%;-#,0.0%;#,0.0%",
             "lineageTag": "c8ff1cc4-aaab-4368-9d63-7185a7594e51"
@@ -63591,7 +63897,12 @@
             "name": "stocks Store Spot Cover",
             "expression": [
               "",
-              "SUMX(stocks,IF(stocks[Store Spot Cover]=0,BLANK(),stocks[Store Spot Cover]))"
+              "IF",
+              "(",
+              "    SUM(stocks[Store Spot Cover])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[Store Spot Cover])",
+              ")"
             ],
             "formatString": "#,0.0",
             "lineageTag": "ab1bd50b-2977-4e56-b0fb-29c5f1993d4c"
@@ -63600,7 +63911,12 @@
             "name": "stocks WH Spot Cover",
             "expression": [
               "",
-              "SUMX(stocks,IF(stocks[WH Spot Cover]=0,BLANK(),stocks[WH Spot Cover]))"
+              "IF",
+              "(",
+              "    SUM(stocks[WH Spot Cover])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[WH Spot Cover])",
+              ")"
             ],
             "formatString": "#,0.0",
             "lineageTag": "77160fa4-2ecf-43bc-848b-b884f8627d9c"
@@ -63609,7 +63925,12 @@
             "name": "stocks 2.2 Available WH Stock Units",
             "expression": [
               "",
-              "SUMX(stocks,IF(stocks[2.2 Available WH Stock Units]=0,BLANK(),stocks[2.2 Available WH Stock Units]))"
+              "IF",
+              "(",
+              "    SUM(stocks[2.2 Available WH Stock Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[2.2 Available WH Stock Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "b42301a0-a891-4227-bf67-ca5aa74e6ba3"
@@ -63618,7 +63939,12 @@
             "name": "stocks 3.1 Allocated Units Arrived",
             "expression": [
               "",
-              "SUMX(stocks,IF(stocks[3.1 Allocated Units Arrived]=0,BLANK(),stocks[3.1 Allocated Units Arrived]))"
+              "IF",
+              "(",
+              "    SUM(stocks[3.1 Allocated Units Arrived])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[3.1 Allocated Units Arrived])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "d15aca5c-e5b9-4491-beb8-d08912b5a1a3"
@@ -63627,7 +63953,12 @@
             "name": "stocks 4. Reserved Intake Units",
             "expression": [
               "",
-              "SUMX(stocks,IF(stocks[4. Reserved Intake Units]=0,BLANK(),stocks[4. Reserved Intake Units]))"
+              "IF",
+              "(",
+              "    SUM(stocks[4. Reserved Intake Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[4. Reserved Intake Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "53fb2883-ac1c-4b07-abbe-9ebbacd14a9d"
@@ -63636,7 +63967,12 @@
             "name": "stocks Ranged Stores",
             "expression": [
               "",
-              "SUMX(stocks,IF(stocks[Ranged Stores]=0,BLANK(),stocks[Ranged Stores]))"
+              "IF",
+              "(",
+              "    SUM(stocks[Ranged Stores])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[Ranged Stores])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "faed7ebf-fdd6-4085-9ea6-c0a1646edd73"
@@ -63645,7 +63981,12 @@
             "name": "stocks 4. Store In-Transit Units Diff",
             "expression": [
               "",
-              "SUM(stocks[4. Store In-Transit Units Diff])"
+              "IF",
+              "(",
+              "    SUM(stocks[4. Store In-Transit Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[4. Store In-Transit Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "3b743228-02c2-4bc8-a0c9-8fcbec9e436d"
@@ -63654,7 +63995,12 @@
             "name": "stocks 5. Store Stock Units Diff",
             "expression": [
               "",
-              "SUM(stocks[5. Store Stock Units Diff])"
+              "IF",
+              "(",
+              "    SUM(stocks[5. Store Stock Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[5. Store Stock Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "60f5f0e3-d02a-436e-ab3c-75b0a54a4214"
@@ -63663,7 +64009,12 @@
             "name": "stocks Item Coverage Diff",
             "expression": [
               "",
-              "SUM(stocks[Item Coverage Diff])"
+              "IF",
+              "(",
+              "    SUM(stocks[Item Coverage Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[Item Coverage Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "5a9bd270-43ae-4e5d-ab79-9f4d523e00c9"
@@ -63672,7 +64023,12 @@
             "name": "stocks On Hand Spot Cover Diff",
             "expression": [
               "",
-              "SUM(stocks[On Hand Spot Cover Diff])"
+              "IF",
+              "(",
+              "    SUM(stocks[On Hand Spot Cover Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[On Hand Spot Cover Diff])",
+              ")"
             ],
             "formatString": "#,0.0",
             "lineageTag": "557be608-2561-4b9a-8751-b8b44b592a8f"
@@ -63681,7 +64037,12 @@
             "name": "stocks Stock Outs % Diff",
             "expression": [
               "",
-              "SUM(stocks[Stock Outs % Diff])"
+              "IF",
+              "(",
+              "    SUM(stocks[Stock Outs % Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[Stock Outs % Diff])",
+              ")"
             ],
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "8cc872bb-8ca3-42dc-bb3a-203d3d39deaf"
@@ -63690,7 +64051,12 @@
             "name": "stocks Store Spot Cover Diff",
             "expression": [
               "",
-              "SUM(stocks[Store Spot Cover Diff])"
+              "IF",
+              "(",
+              "    SUM(stocks[Store Spot Cover Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[Store Spot Cover Diff])",
+              ")"
             ],
             "formatString": "#,0.0",
             "lineageTag": "76906cc8-51eb-4fc0-b557-34c2b56ed10d"
@@ -63699,7 +64065,12 @@
             "name": "stocks WH Spot Cover Diff",
             "expression": [
               "",
-              "SUM(stocks[WH Spot Cover Diff])"
+              "IF",
+              "(",
+              "    SUM(stocks[WH Spot Cover Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[WH Spot Cover Diff])",
+              ")"
             ],
             "formatString": "#,0.0",
             "lineageTag": "4279c16f-cf05-41d4-b2aa-3a631023732c"
@@ -63708,7 +64079,12 @@
             "name": "stocks 2.2 Available WH Stock Units Diff",
             "expression": [
               "",
-              "SUM(stocks[2.2 Available WH Stock Units Diff])"
+              "IF",
+              "(",
+              "    SUM(stocks[2.2 Available WH Stock Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[2.2 Available WH Stock Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "3d4feb6b-e7b3-4fb1-8402-85da1f8452ad"
@@ -63717,7 +64093,12 @@
             "name": "stocks 3.1 Allocated Units Arrived Diff",
             "expression": [
               "",
-              "SUM(stocks[3.1 Allocated Units Arrived Diff])"
+              "IF",
+              "(",
+              "    SUM(stocks[3.1 Allocated Units Arrived Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[3.1 Allocated Units Arrived Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "51705957-f003-41c5-a383-67987d1abb39"
@@ -63726,7 +64107,12 @@
             "name": "stocks 4. Reserved Intake Units Diff",
             "expression": [
               "",
-              "SUM(stocks[4. Reserved Intake Units Diff])"
+              "IF",
+              "(",
+              "    SUM(stocks[4. Reserved Intake Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[4. Reserved Intake Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "7ab00c08-f28a-4bcb-939d-7a3049965339"
@@ -63735,7 +64121,12 @@
             "name": "stocks Ranged Stores Diff",
             "expression": [
               "",
-              "SUM(stocks[Ranged Stores Diff])"
+              "IF",
+              "(",
+              "    SUM(stocks[Ranged Stores Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(stocks[Ranged Stores Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "40b98151-18a2-48cc-8e8c-25a64356d6af"
@@ -63754,7 +64145,7 @@
               "",
               "VAR sourceparameter = [source parameter]",
               "RETURN",
-              "DIVIDE",
+              "ROUND(DIVIDE",
               "(",
               "    [stocks 1. All On Hand Stock Units Diff]",
               "    ,CALCULATE",
@@ -63762,7 +64153,7 @@
               "        [stocks 1. All On Hand Stock Units]",
               "        ,stocks[Source]=sourceparameter",
               "    )",
-              ")"
+              "),3)"
             ],
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "0dfbddc7-7d32-404b-84ee-997e6cf18367"
@@ -63773,7 +64164,7 @@
               "",
               "VAR sourceparameter = [source parameter]",
               "RETURN",
-              "DIVIDE",
+              "ROUND(DIVIDE",
               "(",
               "    [stocks 2. WH Stock Units Diff]",
               "    ,CALCULATE",
@@ -63781,7 +64172,7 @@
               "        [stocks 2. WH Stock Units]",
               "        ,stocks[Source]=sourceparameter",
               "    )",
-              ")"
+              "),3)"
             ],
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "ca4fa677-81df-487b-8bfb-9a7adb7a000d"
@@ -63792,7 +64183,7 @@
               "",
               "VAR sourceparameter = [source parameter]",
               "RETURN",
-              "DIVIDE",
+              "ROUND(DIVIDE",
               "(",
               "    [stocks 2.2 Available WH Stock Units Diff]",
               "    ,CALCULATE",
@@ -63800,7 +64191,7 @@
               "        [stocks 2.2 Available WH Stock Units]",
               "        ,stocks[Source]=sourceparameter",
               "    )",
-              ")"
+              "),3)"
             ],
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "1b5d16a6-2daa-4237-9a10-6e720f26f05b"
@@ -63811,7 +64202,7 @@
               "",
               "VAR sourceparameter = [source parameter]",
               "RETURN",
-              "DIVIDE",
+              "ROUND(DIVIDE",
               "(",
               "    [stocks 3.1 Allocated Units Arrived Diff]",
               "    ,CALCULATE",
@@ -63819,7 +64210,7 @@
               "        [stocks 3.1 Allocated Units Arrived]",
               "        ,stocks[Source]=sourceparameter",
               "    )",
-              ")"
+              "),3)"
             ],
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "26f3fd23-1e9d-40e4-b33a-bc5c083b0ddd"
@@ -63830,7 +64221,7 @@
               "",
               "VAR sourceparameter = [source parameter]",
               "RETURN",
-              "DIVIDE",
+              "ROUND(DIVIDE",
               "(",
               "    [stocks 4. Reserved Intake Units Diff]",
               "    ,CALCULATE",
@@ -63838,7 +64229,7 @@
               "        [stocks 4. Reserved Intake Units]",
               "        ,stocks[Source]=sourceparameter",
               "    )",
-              ")"
+              "),3)"
             ],
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "8d25b29e-d0a3-41b7-9520-02b5ddbc77e5"
@@ -63849,7 +64240,7 @@
               "",
               "VAR sourceparameter = [source parameter]",
               "RETURN",
-              "DIVIDE",
+              "ROUND(DIVIDE",
               "(",
               "    [stocks 4. Store In-Transit Units Diff]",
               "    ,CALCULATE",
@@ -63857,7 +64248,7 @@
               "        [stocks 4. Store In-Transit Units]",
               "        ,stocks[Source]=sourceparameter",
               "    )",
-              ")"
+              "),3)"
             ],
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "1ece23c1-fab7-4bb6-8693-548215dc329d"
@@ -63868,7 +64259,7 @@
               "",
               "VAR sourceparameter = [source parameter]",
               "RETURN",
-              "DIVIDE",
+              "ROUND(DIVIDE",
               "(",
               "    [stocks 5. Store Stock Units Diff]",
               "    ,CALCULATE",
@@ -63876,7 +64267,7 @@
               "        [stocks 5. Store Stock Units]",
               "        ,stocks[Source]=sourceparameter",
               "    )",
-              ")"
+              "),3)"
             ],
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "40577c64-6055-4fe4-9476-e3ddfac6174c"
@@ -63887,7 +64278,7 @@
               "",
               "VAR sourceparameter = [source parameter]",
               "RETURN",
-              "DIVIDE",
+              "ROUND(DIVIDE",
               "(",
               "    [stocks Item Coverage Diff]",
               "    ,CALCULATE",
@@ -63895,7 +64286,7 @@
               "        [stocks Item Coverage]",
               "        ,stocks[Source]=sourceparameter",
               "    )",
-              ")"
+              "),3)"
             ],
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "f74e05cb-580a-4aa7-b066-d7913d299cba"
@@ -63906,7 +64297,7 @@
               "",
               "VAR sourceparameter = [source parameter]",
               "RETURN",
-              "DIVIDE",
+              "ROUND(DIVIDE",
               "(",
               "    [stocks On Hand Spot Cover Diff]",
               "    ,CALCULATE",
@@ -63914,7 +64305,7 @@
               "        [stocks On Hand Spot Cover]",
               "        ,stocks[Source]=sourceparameter",
               "    )",
-              ")"
+              "),3)"
             ],
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "d4971efb-d81d-4c9a-bc70-e36070abf746"
@@ -63925,7 +64316,7 @@
               "",
               "VAR sourceparameter = [source parameter]",
               "RETURN",
-              "DIVIDE",
+              "ROUND(DIVIDE",
               "(",
               "    [stocks Ranged Stores Diff]",
               "    ,CALCULATE",
@@ -63933,7 +64324,7 @@
               "        [stocks Ranged Stores]",
               "        ,stocks[Source]=sourceparameter",
               "    )",
-              ")"
+              "),3)"
             ],
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "8a2d6d26-a9e4-4ca9-81f0-3d14c835f413"
@@ -63944,7 +64335,7 @@
               "",
               "VAR sourceparameter = [source parameter]",
               "RETURN",
-              "DIVIDE",
+              "ROUND(DIVIDE",
               "(",
               "    [stocks Stock Outs % Diff]",
               "    ,CALCULATE",
@@ -63952,7 +64343,7 @@
               "        [stocks Stock Outs %]",
               "        ,stocks[Source]=sourceparameter",
               "    )",
-              ")"
+              "),3)"
             ],
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "a1797141-bc20-465a-b96c-54e2f2f845d1"
@@ -63963,7 +64354,7 @@
               "",
               "VAR sourceparameter = [source parameter]",
               "RETURN",
-              "DIVIDE",
+              "ROUND(DIVIDE",
               "(",
               "    [stocks Store Spot Cover Diff]",
               "    ,CALCULATE",
@@ -63971,7 +64362,7 @@
               "        [stocks Store Spot Cover]",
               "        ,stocks[Source]=sourceparameter",
               "    )",
-              ")"
+              "),3)"
             ],
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "550d3e91-c78c-4443-b08c-140bef9f2897"
@@ -63982,7 +64373,7 @@
               "",
               "VAR sourceparameter = [source parameter]",
               "RETURN",
-              "DIVIDE",
+              "ROUND(DIVIDE",
               "(",
               "    [stocks WH Spot Cover Diff]",
               "    ,CALCULATE",
@@ -63990,7 +64381,7 @@
               "        [stocks WH Spot Cover]",
               "        ,stocks[Source]=sourceparameter",
               "    )",
-              ")"
+              "),3)"
             ],
             "formatString": "0.0%;-0.0%;0.0%",
             "lineageTag": "9387a9d5-2058-4467-9964-4c59d27c8f9e"
@@ -65602,57 +65993,6 @@
             "type": "calculatedTableColumn"
           },
           {
-            "name": "Count of Date (exc. weekends)",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "#,0",
-            "isDataTypeInferred": true,
-            "isNameInferred": true,
-            "lineageTag": "34e261c3-68b6-4462-8371-39e089417f87",
-            "sourceColumn": "[Count of Date (exc. weekends)]",
-            "summarizeBy": "sum",
-            "type": "calculatedTableColumn"
-          },
-          {
-            "name": "Count of Date (exc. weekends) diff UAT",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "#,0",
-            "isDataTypeInferred": true,
-            "isNameInferred": true,
-            "lineageTag": "7d9c62c2-4b02-44ab-b59f-2f2f842ba2f7",
-            "sourceColumn": "[Count of Date (exc. weekends) diff UAT]",
-            "summarizeBy": "sum",
-            "type": "calculatedTableColumn"
-          },
-          {
-            "name": "Count of Date (exc. weekends) diff DEV",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "#,0",
-            "isDataTypeInferred": true,
-            "isNameInferred": true,
-            "lineageTag": "bf61e59e-4b55-49bd-807d-5503568a6b4e",
-            "sourceColumn": "[Count of Date (exc. weekends) diff DEV]",
-            "summarizeBy": "sum",
-            "type": "calculatedTableColumn"
-          },
-          {
             "name": "RowCount of SmartRes",
             "annotations": [
               {
@@ -65702,6 +66042,57 @@
             "sourceColumn": "[RowCount of SmartRes diff DEV]",
             "summarizeBy": "sum",
             "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Count of Availability Date (exc. weekends)",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "d6f6dc7f-1505-40a3-85e5-810668c720d8",
+            "sourceColumn": "[Count of Availability Date (exc. weekends)]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Count of Availability Date (exc. weekends) diff UAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "c29af4fd-3407-4668-b60d-e1d45b52e250",
+            "sourceColumn": "[Count of Availability Date (exc. weekends) diff UAT]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Count of Availability Date (exc. weekends) diff DEV",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "384bc57f-aed5-42cc-9452-50fc85e64364",
+            "sourceColumn": "[Count of Availability Date (exc. weekends) diff DEV]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
           }
         ],
         "lineageTag": "e86548d5-beff-488f-b90e-d5dad353ba8b",
@@ -65714,13 +66105,13 @@
                 "",
                 "SUMMARIZE",
                 "(",
-                "    Metrics",
+                "    stocks",
                 "    ,\"RowCount of Availability Today\",CALCULATE(COUNTROWS('Availability'),'Date'[- Is Today?]=\"Yes\")",
                 "    ,\"RowCount of Availability Today diff UAT\",CALCULATE(COUNTROWS('Availability 2'),'Date 2'[- Is Today?]=\"Yes\")-CALCULATE(COUNTROWS('Availability'),'Date'[- Is Today?]=\"Yes\")",
                 "    ,\"RowCount of Availability Today diff DEV\",CALCULATE(COUNTROWS('Availability 3'),'Date 3'[- Is Today?]=\"Yes\")-CALCULATE(COUNTROWS('Availability'),'Date'[- Is Today?]=\"Yes\")",
-                "    ,\"Count of Date (exc. weekends)\",CALCULATE(DISTINCTCOUNT('Availability'[DATE]),'Date'[- Is Weekend?]=\"Weekday\")",
-                "    ,\"Count of Date (exc. weekends) diff UAT\",CALCULATE(DISTINCTCOUNT('Availability 2'[DATE]),'Date 2'[- Is Weekend?]=\"Weekday\")-CALCULATE(DISTINCTCOUNT('Availability'[DATE]),'Date'[- Is Weekend?]=\"Weekday\")",
-                "    ,\"Count of Date (exc. weekends) diff DEV\",CALCULATE(DISTINCTCOUNT('Availability 3'[DATE]),'Date 3'[- Is Weekend?]=\"Weekday\")-CALCULATE(DISTINCTCOUNT('Availability'[DATE]),'Date'[- Is Weekend?]=\"Weekday\")",
+                "    ,\"Count of Availability Date (exc. weekends)\",CALCULATE(DISTINCTCOUNT('Availability'[DATE]),'Date'[- Is Weekend?]=\"Weekday\")",
+                "    ,\"Count of Availability Date (exc. weekends) diff UAT\",CALCULATE(DISTINCTCOUNT('Availability 2'[DATE]),'Date 2'[- Is Weekend?]=\"Weekday\")-CALCULATE(DISTINCTCOUNT('Availability'[DATE]),'Date'[- Is Weekend?]=\"Weekday\")",
+                "    ,\"Count of Availability Date (exc. weekends) diff DEV\",CALCULATE(DISTINCTCOUNT('Availability 3'[DATE]),'Date 3'[- Is Weekend?]=\"Weekday\")-CALCULATE(DISTINCTCOUNT('Availability'[DATE]),'Date'[- Is Weekend?]=\"Weekday\")",
                 "    ,\"RowCount of SmartRes\",COUNTROWS('SmartRes')",
                 "    ,\"RowCount of SmartRes diff UAT\",COUNTROWS('SmartRes 2')-COUNTROWS('SmartRes')",
                 "    ,\"RowCount of SmartRes diff DEV\",COUNTROWS('SmartRes 3')-COUNTROWS('SmartRes')",

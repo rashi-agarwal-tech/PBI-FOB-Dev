@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.137.1102.0 (24.10)"
+        "value": "2.138.782.0 (24.11)"
       }
     ],
     "culture": "en-GB",
@@ -32,7 +32,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "SELECT Date Dimension(s)": {
+                    "Date Dimensions": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -53,7 +53,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "SELECT Metric(s)": {
+                    "Metrics": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -3617,7 +3617,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Invoiced Units]=0,BLANK(),sales[Invoiced Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Invoiced Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Invoiced Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "512295a2-737f-42bc-9d87-2fbe138a0f0c"
@@ -3634,7 +3639,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Net Units]=0,BLANK(),sales[Net Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Net Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Net Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "21f8b5a8-15aa-41b6-97a9-f73c212fde07"
@@ -3651,7 +3661,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Open Units]=0,BLANK(),sales[Open Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Open Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Open Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "91238688-0bb8-4e90-bf80-4e1b61d2cd63"
@@ -3668,7 +3683,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Returned Units]=0,BLANK(),sales[Returned Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Returned Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Returned Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "66f7a299-54f2-410f-9d22-aa1a731e977c"
@@ -3685,7 +3705,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Total Units]=0,BLANK(),sales[Total Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Total Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Total Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "5c8ac23b-df61-4b8b-845f-b76c1c219596"
@@ -3702,7 +3727,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Invoiced Net Value]=0,BLANK(),sales[Invoiced Net Value]))"
+              "IF",
+              "(",
+              "    SUM(sales[Invoiced Net Value])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Invoiced Net Value])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "4002f497-0ea1-4903-a0ea-0b6adf674f53"
@@ -3719,7 +3749,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Net Value]=0,BLANK(),sales[Net Value]))"
+              "IF",
+              "(",
+              "    SUM(sales[Net Value])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Net Value])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "b76792cf-2430-4484-bf72-1d296120bf50"
@@ -3736,7 +3771,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Returned Net Value]=0,BLANK(),sales[Returned Net Value]))"
+              "IF",
+              "(",
+              "    SUM(sales[Returned Net Value])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Returned Net Value])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "380a0a22-95b5-415a-a222-ab8eb306f490"
@@ -3753,7 +3793,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Total Net Value]=0,BLANK(),sales[Total Net Value]))"
+              "IF",
+              "(",
+              "    SUM(sales[Total Net Value])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Total Net Value])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "0c3a1ca8-141c-47ab-94c2-0f3682c28020"
@@ -3762,7 +3807,12 @@
             "name": "sales invoiced net value Diff",
             "expression": [
               "",
-              "SUM(sales[Invoiced Net Value Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Invoiced Net Value Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Invoiced Net Value Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "a2992f2d-a95e-4818-a302-8696ce9275ff"
@@ -3771,7 +3821,12 @@
             "name": "sales invoiced units Diff",
             "expression": [
               "",
-              "SUM(sales[Invoiced Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Invoiced Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Invoiced Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "90008c86-de5e-4605-886f-9174c4cb6b0e"
@@ -3780,7 +3835,12 @@
             "name": "sales net value Diff",
             "expression": [
               "",
-              "SUM(sales[Net Value Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Net Value Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Net Value Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "0601968b-9000-4822-95ef-bfdccd828869"
@@ -3789,7 +3849,12 @@
             "name": "sales net units Diff",
             "expression": [
               "",
-              "SUM(sales[Net Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Net Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Net Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "cf5fbcbf-1594-4871-b9f0-28b41beff897"
@@ -3798,7 +3863,12 @@
             "name": "sales open units Diff",
             "expression": [
               "",
-              "SUM(sales[Open Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Open Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Open Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "fa2502e5-f484-46d6-b16b-e4a0be556cc1"
@@ -3807,7 +3877,12 @@
             "name": "sales returned units Diff",
             "expression": [
               "",
-              "SUM(sales[Returned Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Returned Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Returned Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "1a531c0d-f668-4fd5-98d7-d4a6f82164a3"
@@ -3816,7 +3891,12 @@
             "name": "sales total units Diff",
             "expression": [
               "",
-              "SUM(sales[Total Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Total Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Total Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "187b0453-f7a5-44d6-94e8-6615aa5a11c6"
@@ -3825,7 +3905,12 @@
             "name": "sales total net value Diff",
             "expression": [
               "",
-              "SUM(sales[Total Net Value Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Total Net Value Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Total Net Value Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "3c026ed6-a944-469f-8417-01b6feaae994"
@@ -3834,7 +3919,12 @@
             "name": "sales returned net value Diff",
             "expression": [
               "",
-              "SUM(sales[Returned Net Value Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Returned Net Value Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Returned Net Value Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "2e46d351-35cc-44ef-a2b6-0a8f45ec3436"
@@ -3867,7 +3957,12 @@
             "name": "sales open net value",
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Open Net Value]=0,BLANK(),sales[Open Net Value]))"
+              "IF",
+              "(",
+              "    SUM(sales[Open Net Value])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Open Net Value])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "240b6c8d-0b30-4054-b8df-b1aa9c615bb4"
@@ -3876,7 +3971,12 @@
             "name": "sales open net value Diff",
             "expression": [
               "",
-              "SUM(sales[Open Net Value Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Open Net Value Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Open Net Value Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "4d8b54c6-6b83-484b-858a-1e00ee096348"
@@ -3893,7 +3993,12 @@
             "name": "sales net sell out units",
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Net Sell Out Units]=0,BLANK(),sales[Net Sell Out Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Net Sell Out Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Net Sell Out Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "e2a5966c-61fd-455d-9951-c04e84e525cf"
@@ -3902,7 +4007,12 @@
             "name": "sales net sell out units Diff",
             "expression": [
               "",
-              "SUM(sales[Net Sell Out Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Net Sell Out Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Net Sell Out Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "c662df83-d146-4b40-b7c1-211dbc1b724b"
@@ -3911,7 +4021,12 @@
             "name": "sales ordered units",
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Ordered Units]=0,BLANK(),sales[Ordered Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Ordered Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Ordered Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "125a52f4-d364-4c48-a731-b0a6eeedd787"
@@ -3920,7 +4035,12 @@
             "name": "sales ordered net value",
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Ordered Net Value]=0,BLANK(),sales[Ordered Net Value]))"
+              "IF",
+              "(",
+              "    SUM(sales[Ordered Net Value])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Ordered Net Value])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "a7eb653c-b86b-4818-a26c-f95ad1b798bb"
@@ -3929,7 +4049,12 @@
             "name": "sales ordered net value Diff",
             "expression": [
               "",
-              "SUM(sales[Ordered Net Value Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Ordered Net Value Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Ordered Net Value Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "5823be1d-307b-43b6-8ff2-2ba96797f630"
@@ -3938,7 +4063,12 @@
             "name": "sales ordered units Diff",
             "expression": [
               "",
-              "SUM(sales[Ordered Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Ordered Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Ordered Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "ca1884b0-e34c-4895-a331-8500106b33a3"
@@ -3947,7 +4077,12 @@
             "name": "sales reserved units Diff",
             "expression": [
               "",
-              "SUM(sales[Reserved Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Reserved Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Reserved Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "531610fa-1ff6-49f3-8c9a-6cdb9e353ab3"
@@ -3956,7 +4091,12 @@
             "name": "sales reserved units",
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Reserved Units]=0,BLANK(),sales[Reserved Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Reserved Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Reserved Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "4d169e1a-3b7a-4f86-9a19-d42f0c7e85bc"
@@ -3965,7 +4105,12 @@
             "name": "sales pick activated units",
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Pick Activated Units]=0,BLANK(),sales[Pick Activated Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Pick Activated Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Pick Activated Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "97df56da-9828-467f-b459-b0b78504c320"
@@ -3974,7 +4119,12 @@
             "name": "sales pick complete units",
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Pick Complete Units]=0,BLANK(),sales[Pick Complete Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Pick Complete Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Pick Complete Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "8f96ea23-e753-4e35-9ae6-90fa309c922f"
@@ -3983,7 +4133,12 @@
             "name": "sales pick activated units Diff",
             "expression": [
               "",
-              "SUM(sales[Pick Activated Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Pick Activated Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Pick Activated Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "07ec1a00-0ec9-4c6d-8a74-5c639501f712"
@@ -3992,7 +4147,12 @@
             "name": "sales pick complete units Diff",
             "expression": [
               "",
-              "SUM(sales[Pick Complete Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Pick Complete Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Pick Complete Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "9737e43a-040f-4d71-ab9a-a178c13edaf0"
@@ -48567,23 +48727,6 @@
             "type": "calculatedTableColumn"
           },
           {
-            "name": "Count of SalesOrderNumber",
-            "annotations": [
-              {
-                "name": "SummarizationSetBy",
-                "value": "Automatic"
-              }
-            ],
-            "dataType": "int64",
-            "formatString": "#,0",
-            "isDataTypeInferred": true,
-            "isNameInferred": true,
-            "lineageTag": "0bdf8419-d494-4f82-84d9-37029877db47",
-            "sourceColumn": "[Count of SalesOrderNumber]",
-            "summarizeBy": "sum",
-            "type": "calculatedTableColumn"
-          },
-          {
             "name": "RowCount of Orders diff UAT",
             "annotations": [
               {
@@ -48592,7 +48735,7 @@
               }
             ],
             "dataType": "int64",
-            "formatString": "0",
+            "formatString": "#,0",
             "isDataTypeInferred": true,
             "isNameInferred": true,
             "lineageTag": "4ac16ee3-ecea-482b-af59-1b0454b63a0e",
@@ -48609,7 +48752,7 @@
               }
             ],
             "dataType": "int64",
-            "formatString": "0",
+            "formatString": "#,0",
             "isDataTypeInferred": true,
             "isNameInferred": true,
             "lineageTag": "14f4e691-189d-4fa1-9c7c-88091432510c",
@@ -48618,7 +48761,7 @@
             "type": "calculatedTableColumn"
           },
           {
-            "name": "Count of SalesOrderNumber diff UAT",
+            "name": "RowCount of Deductions",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -48626,16 +48769,16 @@
               }
             ],
             "dataType": "int64",
-            "formatString": "0",
+            "formatString": "#,0",
             "isDataTypeInferred": true,
             "isNameInferred": true,
-            "lineageTag": "1fe1f54a-d34d-4ed6-839a-162caf3612f7",
-            "sourceColumn": "[Count of SalesOrderNumber diff UAT]",
+            "lineageTag": "b1f70c0c-8916-4d20-b2d4-8b3e16ddd67e",
+            "sourceColumn": "[RowCount of Deductions]",
             "summarizeBy": "sum",
             "type": "calculatedTableColumn"
           },
           {
-            "name": "Count of SalesOrderNumber diff DEV",
+            "name": "RowCount of Deductions diff UAT",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -48643,11 +48786,79 @@
               }
             ],
             "dataType": "int64",
-            "formatString": "0",
+            "formatString": "#,0",
             "isDataTypeInferred": true,
             "isNameInferred": true,
-            "lineageTag": "f3515643-f09b-4708-97f3-57ada0f8b3b4",
-            "sourceColumn": "[Count of SalesOrderNumber diff DEV]",
+            "lineageTag": "8d7543c9-8471-45c5-b96a-732398f64439",
+            "sourceColumn": "[RowCount of Deductions diff UAT]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of Deductions diff DEV",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "94835441-115a-41d6-bca1-9ed8260653df",
+            "sourceColumn": "[RowCount of Deductions diff DEV]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of Customer Sell Out EMEA",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "5acf5ba7-1ba1-4f41-82c3-60b58c00d8cf",
+            "sourceColumn": "[RowCount of Customer Sell Out EMEA]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of Customer Sell Out EMEA diff UAT",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "dc094115-665f-4059-b451-94f7f8c6e657",
+            "sourceColumn": "[RowCount of Customer Sell Out EMEA diff UAT]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "RowCount of Customer Sell Out EMEA diff DEV",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "#,0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "d2e3c1e8-5ea3-44c6-86a9-74c26acdd349",
+            "sourceColumn": "[RowCount of Customer Sell Out EMEA diff DEV]",
             "summarizeBy": "sum",
             "type": "calculatedTableColumn"
           }
@@ -48662,13 +48873,16 @@
                 "",
                 "SUMMARIZE",
                 "(",
-                "    Metrics",
+                "    sales",
                 "    ,\"RowCount of Orders\",COUNTROWS('Orders')",
                 "    ,\"RowCount of Orders diff UAT\",COUNTROWS('Orders 2')-COUNTROWS('Orders')",
                 "    ,\"RowCount of Orders diff DEV\",COUNTROWS('Orders 3')-COUNTROWS('Orders')",
-                "    ,\"Count of SalesOrderNumber\",DISTINCTCOUNT('Orders'[Sales Order Number])",
-                "    ,\"Count of SalesOrderNumber diff UAT\",DISTINCTCOUNT('Orders 2'[Sales Order Number])-DISTINCTCOUNT('Orders'[Sales Order Number])",
-                "    ,\"Count of SalesOrderNumber diff DEV\",DISTINCTCOUNT('Orders 3'[Sales Order Number])-DISTINCTCOUNT('Orders'[Sales Order Number])",
+                "    ,\"RowCount of Deductions\",COUNTROWS('Deductions')",
+                "    ,\"RowCount of Deductions diff UAT\",COUNTROWS('Deductions 2')-COUNTROWS('Deductions')",
+                "    ,\"RowCount of Deductions diff DEV\",COUNTROWS('Deductions 3')-COUNTROWS('Deductions')",
+                "    ,\"RowCount of Customer Sell Out EMEA\",COUNTROWS('Customer Sell Out EMEA')",
+                "    ,\"RowCount of Customer Sell Out EMEA diff UAT\",COUNTROWS('Customer Sell Out EMEA 2')-COUNTROWS('Customer Sell Out EMEA')",
+                "    ,\"RowCount of Customer Sell Out EMEA diff DEV\",COUNTROWS('Customer Sell Out EMEA 3')-COUNTROWS('Customer Sell Out EMEA')",
                 ")"
               ],
               "type": "calculated"

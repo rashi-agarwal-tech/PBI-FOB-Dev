@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.137.1102.0 (24.10)"
+        "value": "2.138.782.0 (24.11)"
       }
     ],
     "culture": "en-GB",
@@ -32,7 +32,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "SELECT Date Dimension(s)": {
+                    "Date Dimensions": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -53,7 +53,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "SELECT Metric(s)": {
+                    "Metrics": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -651,6 +651,48 @@
                 "Terms": [
                   {
                     "Open Units AbsDiff": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "sales.sales_ordered_units": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "sales",
+                    "ConceptualProperty": "sales ordered units"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Ordered Units Actuals": {
+                      "Source": {
+                        "Agent": "PowerBI.VisualColumnRename",
+                        "Type": "External"
+                      },
+                      "State": "Suggested",
+                      "Weight": 0.9
+                    }
+                  }
+                ]
+              },
+              "sales.sales_ordered_units_diff": {
+                "Definition": {
+                  "Binding": {
+                    "ConceptualEntity": "sales",
+                    "ConceptualProperty": "sales ordered units Diff"
+                  }
+                },
+                "State": "Generated",
+                "Terms": [
+                  {
+                    "Ordered Units AbsDiff": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -63959,7 +64001,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[eCom Demand Cancelled Units]=0,BLANK(),sales[eCom Demand Cancelled Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[eCom Demand Cancelled Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[eCom Demand Cancelled Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "3743355e-abf2-4686-a3c3-2d0d9d3851cf"
@@ -63976,7 +64023,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[eCom Demand Transactions]=0,BLANK(),sales[eCom Demand Transactions]))"
+              "IF",
+              "(",
+              "    SUM(sales[eCom Demand Transactions])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[eCom Demand Transactions])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "46eaa005-b0f2-4084-9e6b-fb643d9bd3d3"
@@ -63993,7 +64045,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[eCom Demand Units]=0,BLANK(),sales[eCom Demand Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[eCom Demand Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[eCom Demand Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "1db44f18-2936-437f-858d-d6cc4231109f"
@@ -64010,7 +64067,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Footfall]=0,BLANK(),sales[Footfall]))"
+              "IF",
+              "(",
+              "    SUM(sales[Footfall])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Footfall])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "cda54037-87b2-4774-b0ba-410ba69a6a86"
@@ -64027,7 +64089,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Invoiced Units]=0,BLANK(),sales[Invoiced Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Invoiced Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Invoiced Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "512295a2-737f-42bc-9d87-2fbe138a0f0c"
@@ -64044,7 +64111,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Net Units]=0,BLANK(),sales[Net Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Net Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Net Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "21f8b5a8-15aa-41b6-97a9-f73c212fde07"
@@ -64061,7 +64133,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Open Units]=0,BLANK(),sales[Open Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Open Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Open Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "91238688-0bb8-4e90-bf80-4e1b61d2cd63"
@@ -64078,7 +64155,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Returned Units]=0,BLANK(),sales[Returned Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Returned Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Returned Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "66f7a299-54f2-410f-9d22-aa1a731e977c"
@@ -64095,7 +64177,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Total Units]=0,BLANK(),sales[Total Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Total Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Total Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "5c8ac23b-df61-4b8b-845f-b76c1c219596"
@@ -64112,7 +64199,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Total Units (eCom)]=0,BLANK(),sales[Total Units (eCom)]))"
+              "IF",
+              "(",
+              "    SUM(sales[Total Units (eCom)])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Total Units (eCom)])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "6c1a26ae-8b1c-46ed-bcae-0c2f205ab011"
@@ -64129,7 +64221,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[eCom Demand Gross Value]=0,BLANK(),sales[eCom Demand Gross Value]))"
+              "IF",
+              "(",
+              "    SUM(sales[eCom Demand Gross Value])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[eCom Demand Gross Value])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "cbabe61a-6364-447b-9e2c-6795c40bbb16"
@@ -64146,7 +64243,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[eCom Demand Cancelled Gross Value]=0,BLANK(),sales[eCom Demand Cancelled Gross Value]))"
+              "IF",
+              "(",
+              "    SUM(sales[eCom Demand Cancelled Gross Value])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[eCom Demand Cancelled Gross Value])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "7747e09f-e27a-40e4-8541-7bf1db0004fc"
@@ -64163,7 +64265,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[eCom Demand Discount]=0,BLANK(),sales[eCom Demand Discount]))"
+              "IF",
+              "(",
+              "    SUM(sales[eCom Demand Discount])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[eCom Demand Discount])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "145dfdfe-b1ac-43bf-b3b3-dc9797e84e55"
@@ -64180,7 +64287,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Invoiced Net Value]=0,BLANK(),sales[Invoiced Net Value]))"
+              "IF",
+              "(",
+              "    SUM(sales[Invoiced Net Value])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Invoiced Net Value])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "4002f497-0ea1-4903-a0ea-0b6adf674f53"
@@ -64197,7 +64309,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Net Value]=0,BLANK(),sales[Net Value]))"
+              "IF",
+              "(",
+              "    SUM(sales[Net Value])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Net Value])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "b76792cf-2430-4484-bf72-1d296120bf50"
@@ -64214,7 +64331,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Returned Net Value]=0,BLANK(),sales[Returned Net Value]))"
+              "IF",
+              "(",
+              "    SUM(sales[Returned Net Value])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Returned Net Value])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "380a0a22-95b5-415a-a222-ab8eb306f490"
@@ -64231,7 +64353,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Total Net Value (eCom)]=0,BLANK(),sales[Total Net Value (eCom)]))"
+              "IF",
+              "(",
+              "    SUM(sales[Total Net Value (eCom)])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Total Net Value (eCom)])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "37641d7d-e852-45eb-86b3-57b68488124c"
@@ -64248,7 +64375,12 @@
             ],
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Total Net Value]=0,BLANK(),sales[Total Net Value]))"
+              "IF",
+              "(",
+              "    SUM(sales[Total Net Value])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Total Net Value])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "0c3a1ca8-141c-47ab-94c2-0f3682c28020"
@@ -64257,7 +64389,12 @@
             "name": "sales ecom demand cancelled gross value Diff",
             "expression": [
               "",
-              "SUM(sales[eCom Demand Cancelled Gross Value Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[eCom Demand Cancelled Gross Value Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[eCom Demand Cancelled Gross Value Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "3e22896d-4125-4d5c-9328-f8622007aef5"
@@ -64266,7 +64403,12 @@
             "name": "sales ecom demand cancelled units Diff",
             "expression": [
               "",
-              "SUM(sales[eCom Demand Cancelled Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[eCom Demand Cancelled Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[eCom Demand Cancelled Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "6967b422-8ae1-4437-8aa3-7075cf81641c"
@@ -64275,7 +64417,12 @@
             "name": "sales ecom demand discount Diff",
             "expression": [
               "",
-              "SUM(sales[eCom Demand Discount Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[eCom Demand Discount Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[eCom Demand Discount Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "5c133bfb-df0b-4c99-9184-083670855001"
@@ -64284,7 +64431,12 @@
             "name": "sales ecom demand gross value Diff",
             "expression": [
               "",
-              "SUM(sales[eCom Demand Gross Value Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[eCom Demand Gross Value Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[eCom Demand Gross Value Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "950e6509-816d-4d0e-8a25-d9d8f9fc5ecb"
@@ -64293,7 +64445,12 @@
             "name": "sales ecom demand units Diff",
             "expression": [
               "",
-              "SUM(sales[eCom Demand Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[eCom Demand Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[eCom Demand Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "04536b84-785c-4d5f-86f5-ca0d6ee7ee2e"
@@ -64302,7 +64459,12 @@
             "name": "sales footfall Diff",
             "expression": [
               "",
-              "SUM(sales[Footfall Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Footfall Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Footfall Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "e60caf96-b720-4b8f-ab61-6bc4cb28d6fd"
@@ -64311,7 +64473,12 @@
             "name": "sales invoiced net value Diff",
             "expression": [
               "",
-              "SUM(sales[Invoiced Net Value Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Invoiced Net Value Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Invoiced Net Value Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "a2992f2d-a95e-4818-a302-8696ce9275ff"
@@ -64320,7 +64487,12 @@
             "name": "sales invoiced units Diff",
             "expression": [
               "",
-              "SUM(sales[Invoiced Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Invoiced Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Invoiced Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "90008c86-de5e-4605-886f-9174c4cb6b0e"
@@ -64329,7 +64501,12 @@
             "name": "sales ecom demand transactions Diff",
             "expression": [
               "",
-              "SUM(sales[eCom Demand Transactions Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[eCom Demand Transactions Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[eCom Demand Transactions Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "e5d82bb4-7d4d-4533-b12f-b43167c19015"
@@ -64338,7 +64515,12 @@
             "name": "sales net value Diff",
             "expression": [
               "",
-              "SUM(sales[Net Value Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Net Value Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Net Value Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "0601968b-9000-4822-95ef-bfdccd828869"
@@ -64347,7 +64529,12 @@
             "name": "sales net units Diff",
             "expression": [
               "",
-              "SUM(sales[Net Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Net Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Net Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "cf5fbcbf-1594-4871-b9f0-28b41beff897"
@@ -64356,7 +64543,12 @@
             "name": "sales open units Diff",
             "expression": [
               "",
-              "SUM(sales[Open Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Open Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Open Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "fa2502e5-f484-46d6-b16b-e4a0be556cc1"
@@ -64365,7 +64557,12 @@
             "name": "sales returned units Diff",
             "expression": [
               "",
-              "SUM(sales[Returned Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Returned Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Returned Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "1a531c0d-f668-4fd5-98d7-d4a6f82164a3"
@@ -64374,7 +64571,12 @@
             "name": "sales total units Diff",
             "expression": [
               "",
-              "SUM(sales[Total Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Total Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Total Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "187b0453-f7a5-44d6-94e8-6615aa5a11c6"
@@ -64383,7 +64585,12 @@
             "name": "sales total units ecom Diff",
             "expression": [
               "",
-              "SUM(sales[Total Units (eCom) Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Total Units (eCom) Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Total Units (eCom) Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "3cd5d233-cb48-43a2-bbf7-7425f5281529"
@@ -64392,7 +64599,12 @@
             "name": "sales total net value ecom Diff",
             "expression": [
               "",
-              "SUM(sales[Total Net Value (eCom) Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Total Net Value (eCom) Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Total Net Value (eCom) Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "faf4f9bc-ac15-43d7-b052-03b6dcb56a01"
@@ -64401,7 +64613,12 @@
             "name": "sales total net value Diff",
             "expression": [
               "",
-              "SUM(sales[Total Net Value Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Total Net Value Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Total Net Value Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "3c026ed6-a944-469f-8417-01b6feaae994"
@@ -64410,7 +64627,12 @@
             "name": "sales returned net value Diff",
             "expression": [
               "",
-              "SUM(sales[Returned Net Value Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Returned Net Value Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Returned Net Value Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "2e46d351-35cc-44ef-a2b6-0a8f45ec3436"
@@ -64447,7 +64669,12 @@
             "name": "sales open net value",
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Open Net Value]=0,BLANK(),sales[Open Net Value]))"
+              "IF",
+              "(",
+              "    SUM(sales[Open Net Value])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Open Net Value])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "240b6c8d-0b30-4054-b8df-b1aa9c615bb4"
@@ -64456,7 +64683,12 @@
             "name": "sales open net value Diff",
             "expression": [
               "",
-              "SUM(sales[Open Net Value Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Open Net Value Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Open Net Value Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "4d8b54c6-6b83-484b-858a-1e00ee096348"
@@ -64473,7 +64705,12 @@
             "name": "sales ordered units",
             "expression": [
               "",
-              "SUMX(sales,IF(sales[Ordered Units]=0,BLANK(),sales[Ordered Units]))"
+              "IF",
+              "(",
+              "    SUM(sales[Ordered Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Ordered Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "f0bd5e99-dd06-4d20-ac7e-d8a7c0d88c55"
@@ -64482,7 +64719,12 @@
             "name": "sales ordered units Diff",
             "expression": [
               "",
-              "SUM(sales[Ordered Units Diff])"
+              "IF",
+              "(",
+              "    SUM(sales[Ordered Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(sales[Ordered Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "e3a0c169-a3c7-4ac5-ab39-6001f978f202"
@@ -66743,7 +66985,7 @@
             "type": "calculatedTableColumn"
           },
           {
-            "name": "Count of SalesOrderNumber",
+            "name": "RowCount of Footfall",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -66754,13 +66996,13 @@
             "formatString": "#,0",
             "isDataTypeInferred": true,
             "isNameInferred": true,
-            "lineageTag": "20d959c2-7dfe-42d3-9564-7ba94b1305af",
-            "sourceColumn": "[Count of SalesOrderNumber]",
+            "lineageTag": "82c997da-bc9c-44aa-a644-fde53bfc03d6",
+            "sourceColumn": "[RowCount of Footfall]",
             "summarizeBy": "sum",
             "type": "calculatedTableColumn"
           },
           {
-            "name": "Count of SalesOrderNumber diff UAT",
+            "name": "RowCount of Footfall diff UAT",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -66771,13 +67013,13 @@
             "formatString": "#,0",
             "isDataTypeInferred": true,
             "isNameInferred": true,
-            "lineageTag": "79829795-d9b0-4247-9b18-d20f8d83e876",
-            "sourceColumn": "[Count of SalesOrderNumber diff UAT]",
+            "lineageTag": "aab30f8a-6fbc-4b86-808b-8b6d461cee39",
+            "sourceColumn": "[RowCount of Footfall diff UAT]",
             "summarizeBy": "sum",
             "type": "calculatedTableColumn"
           },
           {
-            "name": "Count of SalesOrderNumber diff DEV",
+            "name": "RowCount of Footfall diff DEV",
             "annotations": [
               {
                 "name": "SummarizationSetBy",
@@ -66788,8 +67030,8 @@
             "formatString": "#,0",
             "isDataTypeInferred": true,
             "isNameInferred": true,
-            "lineageTag": "b3609fac-40f1-4a85-9537-e6a15cdfbe66",
-            "sourceColumn": "[Count of SalesOrderNumber diff DEV]",
+            "lineageTag": "fc3a7722-0946-43fb-8c96-6dcc853fca08",
+            "sourceColumn": "[RowCount of Footfall diff DEV]",
             "summarizeBy": "sum",
             "type": "calculatedTableColumn"
           }
@@ -66804,13 +67046,13 @@
                 "",
                 "SUMMARIZE",
                 "(",
-                "    Metrics",
+                "    sales",
                 "    ,\"RowCount of Orders\",COUNTROWS('Orders')",
                 "    ,\"RowCount of Orders diff UAT\",COUNTROWS('Orders 2')-COUNTROWS('Orders')",
                 "    ,\"RowCount of Orders diff DEV\",COUNTROWS('Orders 3')-COUNTROWS('Orders')",
-                "    ,\"Count of SalesOrderNumber\",DISTINCTCOUNT('Orders'[Sales Order Number])",
-                "    ,\"Count of SalesOrderNumber diff UAT\",DISTINCTCOUNT('Orders 2'[Sales Order Number])-DISTINCTCOUNT('Orders'[Sales Order Number])",
-                "    ,\"Count of SalesOrderNumber diff DEV\",DISTINCTCOUNT('Orders 3'[Sales Order Number])-DISTINCTCOUNT('Orders'[Sales Order Number])",
+                "    ,\"RowCount of Footfall\",COUNTROWS('Footfall')",
+                "    ,\"RowCount of Footfall diff UAT\",COUNTROWS('Footfall 2')-COUNTROWS('Footfall')",
+                "    ,\"RowCount of Footfall diff DEV\",COUNTROWS('Footfall 3')-COUNTROWS('Footfall')",
                 ")"
               ],
               "type": "calculated"

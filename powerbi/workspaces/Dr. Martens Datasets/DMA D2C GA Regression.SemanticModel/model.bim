@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.137.1102.0 (24.10)"
+        "value": "2.138.782.0 (24.11)"
       }
     ],
     "culture": "en-GB",
@@ -842,7 +842,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "SELECT Date Dimension(s)": {
+                    "Date Dimensions": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -863,7 +863,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "SELECT Metric(s)": {
+                    "Metrics": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -902,19 +902,7 @@
                     "ConceptualProperty": "Fiscal Year (544)"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "Fiscal Year (544)": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "sales.fiscal_yearperiod_544": {
                 "Definition": {
@@ -64615,7 +64603,12 @@
             ],
             "expression": [
               "",
-              "SUMX(ga,IF(ga[Web Sessions]=0,BLANK(),ga[Web Sessions]))"
+              "IF",
+              "(",
+              "    SUM(ga[Web Sessions])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[Web Sessions])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "cda54037-87b2-4774-b0ba-410ba69a6a86"
@@ -64632,7 +64625,12 @@
             ],
             "expression": [
               "",
-              "SUMX(ga,IF(ga[Web Transactions]=0,BLANK(),ga[Web Transactions]))"
+              "IF",
+              "(",
+              "    SUM(ga[Web Transactions])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[Web Transactions])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "512295a2-737f-42bc-9d87-2fbe138a0f0c"
@@ -64649,7 +64647,12 @@
             ],
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Units]=0,BLANK(),ga[GA Units]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Units])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Units])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "21f8b5a8-15aa-41b6-97a9-f73c212fde07"
@@ -64666,7 +64669,12 @@
             ],
             "expression": [
               "",
-              "SUMX(ga,IF(ga[Users]=0,BLANK(),ga[Users]))"
+              "IF",
+              "(",
+              "    SUM(ga[Users])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[Users])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "91238688-0bb8-4e90-bf80-4e1b61d2cd63"
@@ -64683,7 +64691,12 @@
             ],
             "expression": [
               "",
-              "SUMX(ga,IF(ga[New Users]=0,BLANK(),ga[New Users]))"
+              "IF",
+              "(",
+              "    SUM(ga[New Users])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[New Users])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "66f7a299-54f2-410f-9d22-aa1a731e977c"
@@ -64700,7 +64713,12 @@
             ],
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Ads Impressions]=0,BLANK(),ga[GA Ads Impressions]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Ads Impressions])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Ads Impressions])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "5c8ac23b-df61-4b8b-845f-b76c1c219596"
@@ -64717,7 +64735,12 @@
             ],
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 01 Completion]=0,BLANK(),ga[GA Goal 01 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 01 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 01 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "6c1a26ae-8b1c-46ed-bcae-0c2f205ab011"
@@ -64734,7 +64757,12 @@
             ],
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Ads Cost]=0,BLANK(),ga[GA Ads Cost]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Ads Cost])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Ads Cost])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "37641d7d-e852-45eb-86b3-57b68488124c"
@@ -64751,7 +64779,12 @@
             ],
             "expression": [
               "",
-              "SUMX(ga,IF(ga[Web Value]=0,BLANK(),ga[Web Value]))"
+              "IF",
+              "(",
+              "    SUM(ga[Web Value])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[Web Value])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "0c3a1ca8-141c-47ab-94c2-0f3682c28020"
@@ -64760,7 +64793,12 @@
             "name": "ga Web Sessions Diff",
             "expression": [
               "",
-              "SUM(ga[Web Sessions Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[Web Sessions Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[Web Sessions Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "e60caf96-b720-4b8f-ab61-6bc4cb28d6fd"
@@ -64769,7 +64807,12 @@
             "name": "ga Web Transactions Diff",
             "expression": [
               "",
-              "SUM(ga[Web Transactions Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[Web Transactions Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[Web Transactions Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "90008c86-de5e-4605-886f-9174c4cb6b0e"
@@ -64778,7 +64821,12 @@
             "name": "ga GA units Diff",
             "expression": [
               "",
-              "SUM(ga[GA Units Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Units Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Units Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "cf5fbcbf-1594-4871-b9f0-28b41beff897"
@@ -64787,7 +64835,12 @@
             "name": "ga Users Diff",
             "expression": [
               "",
-              "SUM(ga[Users Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[Users Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[Users Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "fa2502e5-f484-46d6-b16b-e4a0be556cc1"
@@ -64796,7 +64849,12 @@
             "name": "ga New Users Diff",
             "expression": [
               "",
-              "SUM(ga[New Users Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[New Users Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[New Users Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "1a531c0d-f668-4fd5-98d7-d4a6f82164a3"
@@ -64805,7 +64863,12 @@
             "name": "ga GA Ads Impressions Diff",
             "expression": [
               "",
-              "SUM(ga[GA Ads Impressions Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Ads Impressions Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Ads Impressions Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "187b0453-f7a5-44d6-94e8-6615aa5a11c6"
@@ -64814,7 +64877,12 @@
             "name": "ga GA Goal 01 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 01 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 01 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 01 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "3cd5d233-cb48-43a2-bbf7-7425f5281529"
@@ -64823,7 +64891,12 @@
             "name": "ga GA Ads Cost Diff",
             "expression": [
               "",
-              "SUM(ga[GA Ads Cost Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Ads Cost Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Ads Cost Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "faf4f9bc-ac15-43d7-b052-03b6dcb56a01"
@@ -64832,7 +64905,12 @@
             "name": "ga Web Value Diff",
             "expression": [
               "",
-              "SUM(ga[Web Value Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[Web Value Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[Web Value Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "3c026ed6-a944-469f-8417-01b6feaae994"
@@ -64876,7 +64954,12 @@
             "name": "ga GA Goal 02 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 02 Completion]=0,BLANK(),ga[GA Goal 02 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 02 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 02 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "738660bd-f882-4fa5-bb9e-5ec631d8b5cd"
@@ -64885,7 +64968,12 @@
             "name": "ga GA Goal 03 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 03 Completion]=0,BLANK(),ga[GA Goal 03 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 03 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 03 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "d356d0e2-5b23-4383-8b2e-b30424fd68cf"
@@ -64894,7 +64982,12 @@
             "name": "ga GA Goal 04 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 04 Completion]=0,BLANK(),ga[GA Goal 04 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 04 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 04 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "7db4c723-fe7d-4cfb-928d-2d8f98f5910c"
@@ -64903,7 +64996,12 @@
             "name": "ga GA Goal 05 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 05 Completion]=0,BLANK(),ga[GA Goal 05 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 05 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 05 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "9b5cc46d-02ab-46b7-8064-1998357c6afc"
@@ -64912,7 +65010,12 @@
             "name": "ga GA Goal 06 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 06 Completion]=0,BLANK(),ga[GA Goal 06 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 06 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 06 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "c8ff1cc4-aaab-4368-9d63-7185a7594e51"
@@ -64921,7 +65024,12 @@
             "name": "ga GA Goal 07 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 07 Completion]=0,BLANK(),ga[GA Goal 07 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 07 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 07 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "ab1bd50b-2977-4e56-b0fb-29c5f1993d4c"
@@ -64930,7 +65038,12 @@
             "name": "ga GA Goal 08 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 08 Completion]=0,BLANK(),ga[GA Goal 08 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 08 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 08 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "77160fa4-2ecf-43bc-848b-b884f8627d9c"
@@ -64939,7 +65052,12 @@
             "name": "ga GA Goal 09 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 09 Completion]=0,BLANK(),ga[GA Goal 09 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 09 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 09 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "b42301a0-a891-4227-bf67-ca5aa74e6ba3"
@@ -64948,7 +65066,12 @@
             "name": "ga GA Goal 10 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 10 Completion]=0,BLANK(),ga[GA Goal 10 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 10 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 10 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "d15aca5c-e5b9-4491-beb8-d08912b5a1a3"
@@ -64957,7 +65080,12 @@
             "name": "ga GA Goal 11 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 11 Completion]=0,BLANK(),ga[GA Goal 11 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 11 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 11 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "53fb2883-ac1c-4b07-abbe-9ebbacd14a9d"
@@ -64966,7 +65094,12 @@
             "name": "ga GA Goal 12 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 12 Completion]=0,BLANK(),ga[GA Goal 12 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 12 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 12 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "faed7ebf-fdd6-4085-9ea6-c0a1646edd73"
@@ -64975,7 +65108,12 @@
             "name": "ga GA Goal 13 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 13 Completion]=0,BLANK(),ga[GA Goal 13 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 13 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 13 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "374b2857-74c6-4725-b13f-f99d919179cd"
@@ -64984,7 +65122,12 @@
             "name": "ga GA Goal 14 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 14 Completion]=0,BLANK(),ga[GA Goal 14 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 14 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 14 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "a8013b95-aa42-4234-b39e-3e3937d11516"
@@ -64993,7 +65136,12 @@
             "name": "ga GA Goal 15 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 15 Completion]=0,BLANK(),ga[GA Goal 15 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 15 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 15 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "b47acc7d-1bbc-492e-9fa7-f956298199da"
@@ -65002,7 +65150,12 @@
             "name": "ga GA Goal 16 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 16 Completion]=0,BLANK(),ga[GA Goal 16 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 16 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 16 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "b55a864d-8bc1-4a06-99fc-b640513ca825"
@@ -65011,7 +65164,12 @@
             "name": "ga GA Goal 17 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 17 Completion]=0,BLANK(),ga[GA Goal 17 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 17 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 17 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "6ff260a8-3f3c-49e6-81ab-8a5d3b5574c6"
@@ -65020,7 +65178,12 @@
             "name": "ga GA Goal 18 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 18 Completion]=0,BLANK(),ga[GA Goal 18 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 18 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 18 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "8cf538df-ad76-48ad-9632-c7dec5ac3597"
@@ -65029,7 +65192,12 @@
             "name": "ga GA Goal 19 Completion",
             "expression": [
               "",
-              "SUMX(ga,IF(ga[GA Goal 19 Completion]=0,BLANK(),ga[GA Goal 19 Completion]))"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 19 Completion])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 19 Completion])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "07e4b3cd-2781-421a-99a9-181db702abf9"
@@ -65038,7 +65206,12 @@
             "name": "ga GA Goal 02 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 02 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 02 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 02 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "3b743228-02c2-4bc8-a0c9-8fcbec9e436d"
@@ -65047,7 +65220,12 @@
             "name": "ga GA Goal 03 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 03 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 03 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 03 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "60f5f0e3-d02a-436e-ab3c-75b0a54a4214"
@@ -65056,7 +65234,12 @@
             "name": "ga GA Goal 04 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 04 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 04 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 04 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "5a9bd270-43ae-4e5d-ab79-9f4d523e00c9"
@@ -65065,7 +65248,12 @@
             "name": "ga GA Goal 05 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 05 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 05 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 05 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "557be608-2561-4b9a-8751-b8b44b592a8f"
@@ -65074,7 +65262,12 @@
             "name": "ga GA Goal 06 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 06 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 06 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 06 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "8cc872bb-8ca3-42dc-bb3a-203d3d39deaf"
@@ -65083,7 +65276,12 @@
             "name": "ga GA Goal 07 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 07 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 07 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 07 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "76906cc8-51eb-4fc0-b557-34c2b56ed10d"
@@ -65092,7 +65290,12 @@
             "name": "ga GA Goal 08 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 08 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 08 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 08 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "4279c16f-cf05-41d4-b2aa-3a631023732c"
@@ -65101,7 +65304,12 @@
             "name": "ga GA Goal 09 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 09 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 09 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 09 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "3d4feb6b-e7b3-4fb1-8402-85da1f8452ad"
@@ -65110,7 +65318,12 @@
             "name": "ga GA Goal 10 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 10 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 10 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 10 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "51705957-f003-41c5-a383-67987d1abb39"
@@ -65119,7 +65332,12 @@
             "name": "ga GA Goal 11 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 11 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 11 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 11 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "7ab00c08-f28a-4bcb-939d-7a3049965339"
@@ -65128,7 +65346,12 @@
             "name": "ga GA Goal 12 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 12 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 12 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 12 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "40b98151-18a2-48cc-8e8c-25a64356d6af"
@@ -65137,7 +65360,12 @@
             "name": "ga GA Goal 13 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 13 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 13 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 13 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "a7153fcc-597c-4b79-9631-dd575fea1c5b"
@@ -65146,7 +65374,12 @@
             "name": "ga GA Goal 14 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 14 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 14 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 14 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "0cb896fa-4574-4231-a533-f59b21ee6d7c"
@@ -65155,7 +65388,12 @@
             "name": "ga GA Goal 15 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 15 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 15 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 15 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "8f94cfb7-2f48-4f4f-9830-6103a26e5717"
@@ -65164,7 +65402,12 @@
             "name": "ga GA Goal 16 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 16 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 16 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 16 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "63ac78e7-d793-4a81-9a3b-5ba58a81ae94"
@@ -65173,7 +65416,12 @@
             "name": "ga GA Goal 17 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 17 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 17 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 17 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "fa3000e3-fe54-460e-a0d3-1ce158d952ff"
@@ -65182,7 +65430,12 @@
             "name": "ga GA Goal 18 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 18 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 18 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 18 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "d1b41c9b-7454-4a1a-a525-fa1c1742adb0"
@@ -65191,7 +65444,12 @@
             "name": "ga GA Goal 19 Completion Diff",
             "expression": [
               "",
-              "SUM(ga[GA Goal 19 Completion Diff])"
+              "IF",
+              "(",
+              "    SUM(ga[GA Goal 19 Completion Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(ga[GA Goal 19 Completion Diff])",
+              ")"
             ],
             "formatString": "#,0",
             "lineageTag": "1e279e55-d35d-45f3-b29b-5621f9e6757b"
@@ -66177,7 +66435,7 @@
                 "",
                 "SUMMARIZE",
                 "(",
-                "    Metrics",
+                "    ga",
                 "    ,\"RowCount of GA\",COUNTROWS('Google Analytics')",
                 "    ,\"RowCount of GA diff UAT\",COUNTROWS('Google Analytics 2')-COUNTROWS('Google Analytics')",
                 "    ,\"RowCount of GA diff DEV\",COUNTROWS('Google Analytics 3')-COUNTROWS('Google Analytics')",

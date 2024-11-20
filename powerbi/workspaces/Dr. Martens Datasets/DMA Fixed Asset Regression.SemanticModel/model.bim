@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.137.1102.0 (24.10)"
+        "value": "2.138.782.0 (24.11)"
       }
     ],
     "culture": "en-GB",
@@ -32,7 +32,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "SELECT Date Dimension(s)": {
+                    "Date Dimensions": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -53,7 +53,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "SELECT Metric(s)": {
+                    "Metrics": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -92,19 +92,7 @@
                     "ConceptualProperty": "Fiscal Year (544)"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "Fiscal Year (544)": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "sales.fiscal_yearperiod_544": {
                 "Definition": {
@@ -917,7 +905,12 @@
             ],
             "expression": [
               "",
-              "SUMX(fa,IF(fa[Amount Constant]=0,BLANK(),fa[Amount Constant]))"
+              "IF",
+              "(",
+              "    SUM(fa[Amount Constant])=0",
+              "    ,BLANK()",
+              "    ,SUM(fa[Amount Constant])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "4002f497-0ea1-4903-a0ea-0b6adf674f53"
@@ -934,7 +927,12 @@
             ],
             "expression": [
               "",
-              "SUMX(fa,IF(fa[Amount Local]=0,BLANK(),fa[Amount Local]))"
+              "IF",
+              "(",
+              "    SUM(fa[Amount Local])=0",
+              "    ,BLANK()",
+              "    ,SUM(fa[Amount Local])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "b76792cf-2430-4484-bf72-1d296120bf50"
@@ -951,7 +949,12 @@
             ],
             "expression": [
               "",
-              "SUMX(fa,IF(fa[Amount Constant To Date]=0,BLANK(),fa[Amount Constant To Date]))"
+              "IF",
+              "(",
+              "    SUM(fa[Amount Constant To Date])=0",
+              "    ,BLANK()",
+              "    ,SUM(fa[Amount Constant To Date])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "380a0a22-95b5-415a-a222-ab8eb306f490"
@@ -960,7 +963,12 @@
             "name": "fa Amount Constant Diff",
             "expression": [
               "",
-              "SUM(fa[Amount Constant Diff])"
+              "IF",
+              "(",
+              "    SUM(fa[Amount Constant Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(fa[Amount Constant Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "a2992f2d-a95e-4818-a302-8696ce9275ff"
@@ -969,7 +977,12 @@
             "name": "fa Amount Local Diff",
             "expression": [
               "",
-              "SUM(fa[Amount Local Diff])"
+              "IF",
+              "(",
+              "    SUM(fa[Amount Local Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(fa[Amount Local Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "0601968b-9000-4822-95ef-bfdccd828869"
@@ -978,7 +991,12 @@
             "name": "fa Amount Constant To Date Diff",
             "expression": [
               "",
-              "SUM(fa[Amount Constant To Date Diff])"
+              "IF",
+              "(",
+              "    SUM(fa[Amount Constant To Date Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(fa[Amount Constant To Date Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "2e46d351-35cc-44ef-a2b6-0a8f45ec3436"
@@ -999,7 +1017,12 @@
             "name": "fa Amount Average",
             "expression": [
               "",
-              "SUMX(fa,IF(fa[Amount Average]=0,BLANK(),fa[Amount Average]))"
+              "IF",
+              "(",
+              "    SUM(fa[Amount Average])=0",
+              "    ,BLANK()",
+              "    ,SUM(fa[Amount Average])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "240b6c8d-0b30-4054-b8df-b1aa9c615bb4"
@@ -1008,7 +1031,12 @@
             "name": "fa Amount Average Diff",
             "expression": [
               "",
-              "SUM(fa[Amount Average Diff])"
+              "IF",
+              "(",
+              "    SUM(fa[Amount Average Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(fa[Amount Average Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "4d8b54c6-6b83-484b-858a-1e00ee096348"
@@ -9684,7 +9712,7 @@
                 "",
                 "SUMMARIZE",
                 "(",
-                "    Metrics",
+                "    fa",
                 "    ,\"RowCount of FixedAssetTransactions\",COUNTROWS('Fixed Asset Transactions')",
                 "    ,\"RowCount of FixedAssetTransactions diff UAT\",COUNTROWS('Fixed Asset Transactions 2')-COUNTROWS('Fixed Asset Transactions')",
                 "    ,\"RowCount of FixedAssetTransactions diff DEV\",COUNTROWS('Fixed Asset Transactions 3')-COUNTROWS('Fixed Asset Transactions')",

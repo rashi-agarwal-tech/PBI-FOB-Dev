@@ -12,7 +12,7 @@
       },
       {
         "name": "PBIDesktopVersion",
-        "value": "2.137.1102.0 (24.10)"
+        "value": "2.138.782.0 (24.11)"
       }
     ],
     "culture": "en-GB",
@@ -116,7 +116,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "SELECT Date Dimension(s)": {
+                    "Date Dimensions": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -137,7 +137,7 @@
                 "State": "Generated",
                 "Terms": [
                   {
-                    "SELECT Metric(s)": {
+                    "Metrics": {
                       "Source": {
                         "Agent": "PowerBI.VisualColumnRename",
                         "Type": "External"
@@ -176,19 +176,7 @@
                     "ConceptualProperty": "Fiscal Year (544)"
                   }
                 },
-                "State": "Generated",
-                "Terms": [
-                  {
-                    "Fiscal Year (544)": {
-                      "Source": {
-                        "Agent": "PowerBI.VisualColumnRename",
-                        "Type": "External"
-                      },
-                      "State": "Suggested",
-                      "Weight": 0.9
-                    }
-                  }
-                ]
+                "State": "Generated"
               },
               "sales.fiscal_yearperiod_544": {
                 "Definition": {
@@ -1256,7 +1244,12 @@
             ],
             "expression": [
               "",
-              "SUMX(gl,IF(gl[Amount (GBC Constant)]=0,BLANK(),gl[Amount (GBC Constant)]))"
+              "IF",
+              "(",
+              "    SUM(gl[Amount (GBC Constant)])=0",
+              "    ,BLANK()",
+              "    ,SUM(gl[Amount (GBC Constant)])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "4002f497-0ea1-4903-a0ea-0b6adf674f53"
@@ -1273,7 +1266,12 @@
             ],
             "expression": [
               "",
-              "SUMX(gl,IF(gl[Amount (Transaction)]=0,BLANK(),gl[Amount (Transaction)]))"
+              "IF",
+              "(",
+              "    SUM(gl[Amount (Transaction)])=0",
+              "    ,BLANK()",
+              "    ,SUM(gl[Amount (Transaction)])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "b76792cf-2430-4484-bf72-1d296120bf50"
@@ -1290,7 +1288,12 @@
             ],
             "expression": [
               "",
-              "SUMX(gl,IF(gl[Amount (Local)]=0,BLANK(),gl[Amount (Local)]))"
+              "IF",
+              "(",
+              "    SUM(gl[Amount (Local)])=0",
+              "    ,BLANK()",
+              "    ,SUM(gl[Amount (Local)])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "380a0a22-95b5-415a-a222-ab8eb306f490"
@@ -1299,7 +1302,12 @@
             "name": "gl Amount (GBC Constant) Diff",
             "expression": [
               "",
-              "SUM(gl[Amount (GBC Constant) Diff])"
+              "IF",
+              "(",
+              "    SUM(gl[Amount (GBC Constant) Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(gl[Amount (GBC Constant) Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "a2992f2d-a95e-4818-a302-8696ce9275ff"
@@ -1308,7 +1316,12 @@
             "name": "gl Amount (Transaction) Diff",
             "expression": [
               "",
-              "SUM(gl[Amount (Transaction) Diff])"
+              "IF",
+              "(",
+              "    SUM(gl[Amount (Transaction) Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(gl[Amount (Transaction) Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "0601968b-9000-4822-95ef-bfdccd828869"
@@ -1317,7 +1330,12 @@
             "name": "gl Amount (Local) Diff",
             "expression": [
               "",
-              "SUM(gl[Amount (Local) Diff])"
+              "IF",
+              "(",
+              "    SUM(gl[Amount (Local) Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(gl[Amount (Local) Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "2e46d351-35cc-44ef-a2b6-0a8f45ec3436"
@@ -1340,7 +1358,12 @@
             "name": "gl Amount (Actual)",
             "expression": [
               "",
-              "SUMX(gl,IF(gl[Amount (Actual)]=0,BLANK(),gl[Amount (Actual)]))"
+              "IF",
+              "(",
+              "    SUM(gl[Amount (Actual)])=0",
+              "    ,BLANK()",
+              "    ,SUM(gl[Amount (Actual)])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "240b6c8d-0b30-4054-b8df-b1aa9c615bb4"
@@ -1349,7 +1372,12 @@
             "name": "gl Amount (Actual) Diff",
             "expression": [
               "",
-              "SUM(gl[Amount (Actual) Diff])"
+              "IF",
+              "(",
+              "    SUM(gl[Amount (Actual) Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(gl[Amount (Actual) Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "4d8b54c6-6b83-484b-858a-1e00ee096348"
@@ -1366,7 +1394,12 @@
             "name": "gl Budget (Local) Diff",
             "expression": [
               "",
-              "SUM(gl[Budget (Local) Diff])"
+              "IF",
+              "(",
+              "    SUM(gl[Budget (Local) Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(gl[Budget (Local) Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "933d7ea3-a927-4d46-8160-6c72cf16c746"
@@ -1375,7 +1408,12 @@
             "name": "gl Budget (GBC Constant) Diff",
             "expression": [
               "",
-              "SUM(gl[Budget (GBC Constant) Diff])"
+              "IF",
+              "(",
+              "    SUM(gl[Budget (GBC Constant) Diff])=0",
+              "    ,BLANK()",
+              "    ,SUM(gl[Budget (GBC Constant) Diff])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "b30348bd-3abb-46ec-8ac5-c00262e6998f"
@@ -1384,7 +1422,12 @@
             "name": "gl Budget (GBC Constant)",
             "expression": [
               "",
-              "SUMX(gl,IF(gl[Budget (GBC Constant)]=0,BLANK(),gl[Budget (GBC Constant)]))"
+              "IF",
+              "(",
+              "    SUM(gl[Budget (GBC Constant)])=0",
+              "    ,BLANK()",
+              "    ,SUM(gl[Budget (GBC Constant)])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "cb86f700-4a20-4854-a7c1-3005f15cfc4f"
@@ -1393,7 +1436,12 @@
             "name": "gl Budget (Local)",
             "expression": [
               "",
-              "SUMX(gl,IF(gl[Budget (Local)]=0,BLANK(),gl[Budget (Local)]))"
+              "IF",
+              "(",
+              "    SUM(gl[Budget (Local)])=0",
+              "    ,BLANK()",
+              "    ,SUM(gl[Budget (Local)])",
+              ")"
             ],
             "formatString": "#,0.00",
             "lineageTag": "759b993a-d05b-4bf2-a134-abee81cff217"
@@ -13656,7 +13704,7 @@
                 "",
                 "SUMMARIZE",
                 "(",
-                "    'Parameter - Metrics'",
+                "    gl",
                 "    ,\"RowCount of GeneralLedgerFact\",COUNTROWS('General Ledger Fact')",
                 "    ,\"RowCount of GeneralLedgerFact diff UAT\",COUNTROWS('General Ledger Fact 2')-COUNTROWS('General Ledger Fact')",
                 "    ,\"RowCount of GeneralLedgerFact diff DEV\",COUNTROWS('General Ledger Fact 3')-COUNTROWS('General Ledger Fact')",
