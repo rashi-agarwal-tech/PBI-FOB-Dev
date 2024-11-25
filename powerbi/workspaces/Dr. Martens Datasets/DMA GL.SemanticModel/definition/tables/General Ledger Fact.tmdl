@@ -468,21 +468,50 @@ table 'General Ledger Fact'
 			    'General Ledger Fact'[Posting Layer] = 20, "IFRS16",
 			    ""
 			)
+		dataType: string
 		lineageTag: fb3a190e-c3a7-4e1c-957e-374980963d42
 		summarizeBy: none
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column FirstAmountDigit = LEFT ( ABS ( 'General Ledger Fact'[AmountInTransactionCurrency] ), 1 )
+		dataType: string
 		isHidden
 		lineageTag: 7d16e7b2-3602-4433-ba1c-155219dd519e
 		summarizeBy: none
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
+
+	column 'Type Description'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 512a8d5e-2304-425e-802b-9310364ff544
+		summarizeBy: none
+		sourceColumn: Type Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: afdacb8c-2945-42ea-99a3-2b89d3d0d845
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Party Number 2'
+		dataType: string
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: c70b0829-eb41-442b-9531-17bd94bf9315
+		summarizeBy: none
+		sourceColumn: Party Number 2
 
 	partition FY2025 = m
 		mode: import
@@ -522,6 +551,7 @@ table 'General Ledger Fact'
 					Date_Filter = Table.SelectRows(#"Uppercased Text", each [AccountingDate_Key] >= "20220328" and [AccountingDate_Key] < "20230403")
 				in
 					Date_Filter
+
 
 	annotation PBI_ResultType = Table
 

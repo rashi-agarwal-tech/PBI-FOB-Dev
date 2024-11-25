@@ -1,7 +1,7 @@
 
 	partition 'CY2027 12' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -13,7 +13,7 @@
 
 	partition 'CY2027 11' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -25,7 +25,7 @@
 
 	partition 'CY2027 10' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -38,7 +38,7 @@
 
 	partition 'CY2027 09' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -50,7 +50,7 @@
 
 	partition 'CY2027 08' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -60,11 +60,10 @@
 					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2027, 8, 1) and [Date] < #date(2027, 9, 1))
 				in
 					PartitionFilter
-	
 
 	partition 'CY2027 07' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -76,7 +75,7 @@
 
 	partition 'CY2027 06' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -89,7 +88,7 @@
 
 	partition 'CY2027 05' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -101,7 +100,7 @@
 
 	partition 'CY2027 04' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -114,7 +113,7 @@
 
 	partition 'CY2027 03' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -127,7 +126,7 @@
 
 	partition 'CY2027 02' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -139,7 +138,7 @@
 
 	partition 'CY2027 01' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -152,7 +151,7 @@
 
 	partition 'CY2026 12' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -164,7 +163,7 @@
 
 	partition 'CY2026 11' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -176,7 +175,7 @@
 
 	partition 'CY2026 10' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -189,7 +188,7 @@
 
 	partition 'CY2026 09' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -201,7 +200,7 @@
 
 	partition 'CY2026 08' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -211,11 +210,10 @@
 					PartitionFilter = Table.SelectRows(D2C_BFN_VW_FACT_GA_GOOGLE_ANALYTICS_CURRENT_MONTH_View, each [Date] >= #date(2026, 8, 1) and [Date] < #date(2026, 9, 1))
 				in
 					PartitionFilter
-				 
 
 	partition 'CY2026 07' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -227,7 +225,7 @@
 
 	partition 'CY2026 06' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -240,7 +238,7 @@
 
 	partition 'CY2026 05' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -252,7 +250,7 @@
 
 	partition 'CY2026 04' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -265,7 +263,7 @@
 
 	partition 'CY2026 03' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -278,7 +276,7 @@
 
 	partition 'CY2026 02' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -290,7 +288,7 @@
 
 	partition 'CY2026 01' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -303,7 +301,7 @@
 
 	partition 'CY2025 12' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -315,7 +313,7 @@
 
 	partition 'CY2025 11' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -327,7 +325,7 @@
 
 	partition 'CY2025 10' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -340,7 +338,7 @@
 
 	partition 'CY2025 09' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -352,7 +350,7 @@
 
 	partition 'CY2025 08' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -365,7 +363,7 @@
 
 	partition 'CY2025 07' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -377,7 +375,7 @@
 
 	partition 'CY2025 06' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -390,7 +388,7 @@
 
 	partition 'CY2025 05' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -402,7 +400,7 @@
 
 	partition 'CY2025 04' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -415,7 +413,7 @@
 
 	partition 'CY2025 03' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -428,7 +426,7 @@
 
 	partition 'CY2025 02' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -440,7 +438,7 @@
 
 	partition 'CY2025 01' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -453,7 +451,7 @@
 
 	partition 'CY2024 12' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -465,7 +463,7 @@
 
 	partition 'CY2024 11' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -477,7 +475,7 @@
 
 	partition 'CY2024 10' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -490,7 +488,7 @@
 
 	partition 'CY2024 09' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -502,7 +500,7 @@
 
 	partition 'CY2024 08' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
@@ -515,7 +513,7 @@
 
 	partition 'Google Analytics Historic' = m
 		mode: import
-		source = 
+		source =
 				let
 					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
 					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
