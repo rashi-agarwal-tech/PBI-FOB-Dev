@@ -88,9 +88,9 @@ def save_meta_pbi_tools():
 def order_tables():
     for f in REPORT_DIR.glob("**/model.tmdl"):
         lines = f.read_text().split("\n")
-        for i, l in enumerate(lines):
-            if l.startswith("annotation PBI_QueryOrder ="):
-                tables = eval(l[28:])
+        for i, line in enumerate(lines):
+            if line.startswith("annotation PBI_QueryOrder ="):
+                tables = eval(line[28:])
                 tables.sort()
                 lines[i] = f"annotation PBI_QueryOrder = {tables}".replace("'", '"')
         f.write_text("\n".join(lines))

@@ -1,5 +1,4 @@
 import fiscalyear
-from datetime import datetime
 
 fiscalyear.START_MONTH = 4
 

@@ -63,19 +63,19 @@ def remove_partitions(file: Path):
     with open(file) as f:
         lines = f.readlines()
         found = False
-        for i, l in enumerate(lines):
+        for i, line in enumerate(lines):
             if found:
-                matched = re.search(r"^\t\w", l)
+                matched = re.search(r"^\t\w", line)
                 if matched:
                     found = False
-            if l.startswith("\tpartition "):
+            if line.startswith("\tpartition "):
                 partitions.append("\n")
                 first_partition.append(i)
                 found = True
             if not found:
-                output.append(l)
+                output.append(line)
             else:
-                partitions.append(l)
+                partitions.append(line)
     partitions = remove_duplicate_blanks(partitions)
     return min(first_partition), "".join(output), "".join(partitions)
 
@@ -163,6 +163,7 @@ def test():
 
 def update_partitions():
     partitions = get_multi_partitions()
+    return partitions
 
 
 @app.command()
@@ -268,9 +269,9 @@ def write_tables(models: dict, table_mapper: dict) -> None:
 def order_tables():
     for f in REPORT_DIR.glob("**/model.tmdl"):
         lines = f.read_text().split("\n")
-        for i, l in enumerate(lines):
-            if l.startswith("annotation PBI_QueryOrder ="):
-                tables = eval(l[28:])
+        for i, line in enumerate(lines):
+            if line.startswith("annotation PBI_QueryOrder ="):
+                tables = eval(line[28:])
                 tables.sort()
                 lines[i] = f"annotation PBI_QueryOrder = {tables}".replace("'", '"')
         f.write_text("\n".join(lines))
@@ -285,12 +286,12 @@ def get_relationships(model: str) -> list[dict]:
                 t = r.split("\n")[1:]
                 t[0].split(" ")[1]
                 from_tbl_col = [
-                    " ".join(l.split(" ")[1:]) for l in t if "fromColumn" in l
+                    " ".join(line.split(" ")[1:]) for line in t if "fromColumn" in line
                 ][0]
                 from_tbl, from_col = [
                     c.strip("'").strip('"') for c in from_tbl_col.split(".")
                 ]
-                toColumn = [" ".join(l.split(" ")[1:]) for l in t if "toColumn" in l][0]
+                toColumn = [" ".join(line.split(" ")[1:]) for line in t if "toColumn" in line][0]
                 to_tbl, to_col = [c.strip("'").strip('"') for c in toColumn.split(".")]
                 relationships.append(
                     {

@@ -1,0 +1,51 @@
+trigger:
+  branches:
+    include:
+      - development
+      - uat
+      - master
+      - prod
+  paths:
+    include:
+      - powerbi/*
+
+variables:
+  PYTHON_VERSION: '3.11'
+
+jobs:
+  - job: DeployPBIReportsCD
+    displayName: 'PBI Report Deployment to Workspace.'
+    steps:
+
+      - task: UsePythonVersion@0
+        inputs:
+          versionSpec: '$(PYTHON_VERSION)'
+        
+      - script: |
+          echo "Deploying Power BI changes to workspace..."
+          BRANCH="${{ variables['Build.SourceBranchName'] }}"
+          if [[ "$BRANCH" == "development" ]]; then
+            ENV="dev"
+          elif [[ "$BRANCH" == "uat" ]]; then
+            ENV="uat"
+          elif [[ "$BRANCH" == "prod" ]]; then
+            ENV="prod"
+          else
+            ENV="ignore"
+          fi
+          echo "Target branch is $BRANCH"
+          echo "Target environment is $ENV"
+          if [[ "$ENV" != "ignore" ]]; then
+            pip install rust-just
+            just install-poetry-no-dev
+            poetry run pbi sync-workspace-git --env $ENV
+          else
+            echo "Target branch not one of development, uat or prod so no deployment has taken place."
+          fi
+        displayName: 'Sync workspace to repository'
+        env:
+          API_PASSWORD: $(API_PASSWORD)
+          API_USERNAME: $(API_USERNAME)
+          CLIENT_ID: $(CLIENT_ID)
+          CLIENT_SECRET: $(CLIENT_SECRET)
+          

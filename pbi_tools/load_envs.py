@@ -7,24 +7,26 @@ load_dotenv(env_file)
 
 
 def get_client_id():
-    return os.getenv("client_id")
+    client_id = os.getenv("CLIENT_ID")
+    print(f"CLIENT ID IS: {client_id}")
+    return os.getenv("CLIENT_ID")
 
 
 def get_client_secret() -> str:
-    return os.getenv("client_secret")
+    return os.getenv("CLIENT_SECRET")
 
 
 def get_db_password():
-    return os.getenv("db_password")
+    return os.getenv("DB_PASSWORD")
 
 
 def get_db_username() -> str:
-    return os.getenv("db_username")
+    return os.getenv("DB_USERNAME")
 
 
 def get_api_password():
-    return os.getenv("api_password")
+    return os.getenv("API_PASSWORD")
 
 
 def get_api_username() -> str:
-    return os.getenv("api_username")
+    return os.getenv("API_USERNAME")

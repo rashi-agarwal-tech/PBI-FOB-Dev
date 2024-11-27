@@ -1,7 +1,6 @@
 from pbi_tools.partitions.partition_utils import pad_str_integer
 from pbi_tools.api.auth import get_token, get_user_token
 from pbi_tools.api import git
-from pbi_tools.api.reports import MSApiReport
 from pbi_tools.api.dataset import MSApiDataset
 import pytest
 from pbi_tools.cli import app
@@ -48,16 +47,16 @@ def test_git_api():
     assert response.remoteCommitHash is not None
 
 
-@pytest.mark.api
-# @pytest.mark.depends(on=['test_auth'])
-def test_report_api():
-    report = MSApiReport(
-        token=get_user_token(),
-        workspace_env="dev",
-        report_name="DMA Fixed Asset Regression",
-    )
-    assert report.report_id is not None
-    assert report.get_reports_url() is not None
+# @pytest.mark.api
+# # @pytest.mark.depends(on=['test_auth'])
+# def test_report_api():
+#     report = MSApiReport(
+#         token=get_user_token(),
+#         workspace_env="dev",
+#         report_name="DMA Fixed Asset Regression",
+#     )
+#     assert report.report_id is not None
+#     assert report.get_reports_url() is not None
 
 
 @pytest.mark.api

@@ -1,10 +1,10 @@
 from pbi_tools.api.requester import MSApi
 from dataclasses import dataclass
 from requests import Response
-from pbi_tools.utils.constants import *
+from pbi_tools.utils.constants import FABRIC_BASE_URL, ENV
 from pbi_tools.api.workspace import get_workspace_id
 from pydantic import BaseModel, Field, ConfigDict
-from typing import List, Annotated
+from typing import List, Annotated, TypeAlias, Literal
 from datetime import datetime
 from pbi_tools.api.models import ExportStatus
 from time import sleep
@@ -136,8 +136,12 @@ class MSApiFabric(MSApi):
     def update_workspace_from_git(self, git_sts: GitStatusResponse | None = None):
         if git_sts is None:
             git_sts = self.get_git_status()
-        if git_sts.workspaceHead == git_sts.remoteCommitHash:
-            print(f"No changes to be synced from git {self.workspace_env} branch")
+        if not git_sts.changes or any(
+            [c for c in git_sts.changes if c.conflictType != "None"]
+        ):
+            print(
+                f"No changes to be synced from git {self.workspace_env} branch or conflicts exist"
+            )
             return git_sts
         print(f"Updating {self.workspace_env} workspace changes from git")
         return self.post_request(
@@ -173,6 +177,7 @@ class MSApiFabric(MSApi):
         if git_sts is None:
             git_sts = self.get_git_status()
         if git_sts.changes:
+            print(git_sts)
             changes_msg = "\n".split(
                 [
                     f"{c.workspaceChange}:{c.itemMetadata.itemType}, {c.itemMetadata.displayName}"

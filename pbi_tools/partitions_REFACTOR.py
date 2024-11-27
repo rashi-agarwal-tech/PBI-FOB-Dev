@@ -4,10 +4,11 @@ from typing import Literal
 import fiscalyear as fy
 from datetime import datetime
 from pbi_tools.utils.constants import FISCAL_YEAR_START_MONTH
+from abc import ABC, abstractmethod
 
 fy.START_MONTH = FISCAL_YEAR_START_MONTH
 
-
+# TODO This module is not used do!!!!!!!!
 def get_tables() -> dict:
     tables = {}
     for f in REPORT_DIR.glob("**/tables/*.tmdl"):
@@ -63,7 +64,7 @@ def get_current_year(financial: bool = False) -> int:
 
 # Define a standard partition name... This is the only way we can consitantly pick up the latest partition date...
 # {FY|CY}YYYY{M|P}MM{W}WW
-class Partition:
+class Partition(ABC):
     def __init__(
         self,
         template: str,
@@ -87,8 +88,9 @@ class Partition:
                 if self.calendar == "FINANCIAL"
                 else get_current_year(True)
             )
+        return latest_partition, year
 
-    @abstract
+    @abstractmethod 
     def partition(year: str, month: str, day: str):
         """
 

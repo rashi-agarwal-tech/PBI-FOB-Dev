@@ -1,0 +1,45 @@
+pr:
+  branches:
+    include:
+      - development
+      - uat
+      - prod
+  paths:
+    include:
+      - pbi_tools/*
+
+variables:
+  PYTHON_VERSION: '3.11'
+
+jobs:
+- job: PowerBIAppCI
+  displayName: 'PBI App integration.'
+  steps:
+
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '$(PYTHON_VERSION)'
+
+    - script: |
+        pip install rust-just
+        just install-poetry
+      displayName: 'Install Python requirements with Poetry'
+
+    - script: |
+        branchName=$(basename $(System.PullRequest.TargetBranch))
+        COMMITS=$(git log $(git merge-base origin/$branchName  HEAD)..HEAD --pretty=format:%s)
+        echo "$COMMITS" | poetry run cz check
+      displayName: 'Check new commits follow conventional commits.'
+
+    - script: |
+        just check-ruff
+      displayName: 'Run Ruff checks'
+
+    - script: |
+        just test-all
+      env:
+        API_PASSWORD: $(api_password)
+        API_USERNAME: $(api_username)
+        CLIENT_ID: $(client_id)
+        CLIENT_SECRET: $(client_secret)
+      displayName: 'Run Pyest Tests'

@@ -1,0 +1,126 @@
+pr:
+  branches:
+    include:
+      - development
+      - uat
+      - master
+      - prod
+  paths:
+    include:
+      - pbi_tools/*
+      - azure-pipelines-powerbi-app.yml
+
+variables:
+  PYTHON_VERSION: '3.11'
+  ARTIFACT_FEED: 'Windermere Discovery/windermere_artifactory'
+  CI_USERNAME: "Power BI CI Pipeline"
+  CI_EMAIL: powerbi_ci@drmartens.com
+  SOURCE_BRANCH_BUILD: $[ variables['Build.SourceBranch'] ]
+  SOURCE_BRANCH_BUILD_NAME: $[variables['Build.SourceBranchName']]
+  SOURCE_BRANCH_BUILD_NAME_FQ: $[variables['Build.PullRequest.SourceBranchName']]
+  SOURCE_BRANCH_SYSTEM: $[ variables['System.PullRequest.SourceBranch'] ]
+  TARGET_BRANCH_SYSTEM: $[ variables['System.PullRequest.TargetBranch'] ]
+  TARGET_BRANCH_BUILD: $[ variables['Build.PullRequest.TargetBranchName'] ]
+  TARGET_BRANCH_TEST: $(BUILD_PULLREQUEST_TARGETBRANCHNAME)
+  TAG_PUSH: $[ startsWith(variables['Build.SourceBranch'], 'refs/tags/') ]
+  REASON_BUILD: $[ variables['Build.Reason' ] ]
+  
+
+jobs:
+- job: PowerBIAppIntegrationJob
+  displayName: 'PBI Appp integration, will not run on tag PR.'
+  steps:
+
+    - script: |
+        echo "Python Version: $(PYTHON_VERSION)"
+        echo "SOURCE_BRANCH_BUILD: $(SOURCE_BRANCH_BUILD)"
+        echo "SOURCE_BRANCH_BUILD_NAME: $(SOURCE_BRANCH_BUILD_NAME)"
+        echo "SOURCE_BRANCH_SYSTEM: $(SOURCE_BRANCH_SYSTEM)"
+        echo "TARGET_BRANCH_SYSTEM: $(TARGET_BRANCH_SYSTEM)"
+        echo "TARGET_BRANCH_BUILD $(TARGET_BRANCH_BUILD)"
+        echo "TARGET_BRANCH_TEST: $(TARGET_BRANCH_TEST)"
+        echo "TAG_PUSH: $(TAG_PUSH)"
+        echo "REASON_BUILD: $(REASON_BUILD)"
+        echo "SOURCE_BRANCH_BUILD_NAME_FQ:  $(SOURCE_BRANCH_BUILD_NAME_FQ)"
+      displayName: 'Debuging....'
+
+    - script: |
+        echo ${{ variables['Build.SourceBranchName'] }}
+        echo ${{ variables['Build.Reason'] }}
+        echo $(System.PullRequest.targetBranch)
+        echo $(System.PullRequest.SourceBranch)
+        branchName=$(basename $(System.PullRequest.TargetBranch))
+        echo $branchName
+      displayName: 'Debuging2'
+
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '$(PYTHON_VERSION)'
+
+    - script: |
+        pip install rust-just
+        just install-poetry
+      displayName: 'Install Python requirements with Poetry'
+
+    - script: |
+        branchName=$(basename $(System.PullRequest.TargetBranch))
+        COMMITS=$(git log $(git merge-base origin/$branchName  HEAD)..HEAD --pretty=format:%s)
+        echo "$COMMITS" | poetry run cz check
+      displayName: 'Check new commits follow conventional commits.'
+
+    - script: |
+        just test-all
+      env:
+        API_PASSWORD: $(api_password)
+        API_USERNAME: $(api_username)
+        CLIENT_ID: $(client_id)
+        CLIENT_SECRET: $(client_secret)
+      displayName: 'Run Tests'
+
+    - script: |
+        just check-ruff
+      displayName: 'Run Ruff'
+
+    - script: |
+        just bump
+        echo "Fetching the latest Git tag..."
+        GIT_TAG=$(git describe --abbrev=0)
+        git push origin $GIT_TAG
+        echo "##vso[task.setvariable variable=gitTag]$GIT_TAG"
+      displayName: 'Bump Version, and tag version and merge.'
+      condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/')
+
+    - script: |
+        git checkout $(gitTag)
+        poetry build
+      displayName: 'Build Python Package with Poetry'
+      condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+
+    - task: TwineAuthenticate@1
+      inputs:
+        artifactFeed: '$(ARTIFACT_FEED)'
+      displayName: 'Twine Authenticate'
+
+    - script: |
+        python -m twine upload -r windermere_artifactory --config-file $(PYPIRC_PATH) dist/*
+      displayName: 'Upload to feed'
+      condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+
+- job: PowerBIAppDeployment
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+  dependsOn: PowerBIAppIntegrationJob
+  variables:
+    latestGitTag: $[dependencies.PowerBIAppIntegrationJob.outputs['PowerBIAppIntegrationJob.gitTag']
+  steps:
+    - script: |
+        poetry build
+      displayName: 'Build Python Package with Poetry'
+
+    - task: TwineAuthenticate@1
+      inputs:
+        artifactFeed: '$(ARTIFACT_FEED)'
+      displayName: 'Twine Authenticate'
+
+    - script: |
+        python -m twine upload -r windermere_artifactory --config-file $(PYPIRC_PATH) dist/*
+      displayName: 'Upload to feed'

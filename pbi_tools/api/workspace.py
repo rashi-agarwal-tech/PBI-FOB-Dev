@@ -1,7 +1,7 @@
 from typing import List
 from dataclasses import dataclass
 from requests import Response
-from pbi_tools.utils.constants import *
+from pbi_tools.utils.constants import ENV, WORKSPACE_IDS
 import logging
 from pbi_tools.api.models import PowerBIReport
 from pbi_tools.api.requester import MSApi

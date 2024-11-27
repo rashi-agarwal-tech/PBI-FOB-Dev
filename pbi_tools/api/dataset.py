@@ -2,7 +2,6 @@ import time
 from typing import Literal, List
 from dataclasses import dataclass
 from pprint import pp
-from pbi_tools.utils.constants import *
 from pbi_tools.api import xmla
 from pbi_tools.api.workspace import MSApiWorkspace
 
@@ -170,7 +169,7 @@ class MSApiDataset(MSApiWorkspace):
         tbls_parts = {
             t: [None] if not p else p for t, p in self.table_partition.items()
         }
-        xmla = xmla.PowerBIRefreshPartition(
+        xmla_partition = xmla.PowerBIRefreshPartition(
             datasets=[
                 xmla.PowerBIDataset(database=self.dataset, table=t, partition=p)
                 for t, partitions in tbls_parts.items()
@@ -179,4 +178,4 @@ class MSApiDataset(MSApiWorkspace):
             commit_mode=self.commit_mode,
             max_parallelism=self.max_parallelism,
         ).to_dict()
-        return xmla
+        return xmla_partition

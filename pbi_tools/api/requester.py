@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 import requests
 from requests import Response
-from pbi_tools.utils.constants import *
+from pbi_tools.utils.constants import RETRY_LIST, ATTEMPTS, PBI_BASE_URL
 import logging
 from time import sleep
 import functools
