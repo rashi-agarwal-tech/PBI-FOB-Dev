@@ -26,6 +26,12 @@ bump:
     bump-dry
     bump-version
 
+bump-push:
+    just bump
+    echo "Fetching the latest Git tag..."
+    GIT_TAG=$(git describe --abbrev=0)
+    git push origin $GIT_TAG
+
 list-tags:
     git tag
 
