@@ -1,0 +1,25 @@
+
+variables:
+  PYTHON_VERSION: '3.11'
+  
+steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(PYTHON_VERSION)'
+
+  - script: |
+      pip install rust-just
+      just install-poetry
+    displayName: 'Install Python requirements with Poetry'
+
+  - script: |
+      branchName=$(basename $(System.PullRequest.TargetBranch))
+      echo "Checking branch: $branchName"
+      COMMITS=$(git log $(git merge-base origin/$branchName  HEAD)..HEAD --pretty=format:%s)
+      echo "$COMMITS" | poetry run cz check
+    displayName: 'Check new commits follow conventional commits.'
+
+  - script: |
+      echo "Test bumping the version."
+      just bump-dry
+    displayName: 'Test bump version'

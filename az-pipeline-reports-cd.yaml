@@ -1,0 +1,9 @@
+steps:
+  - script: |
+      poetry run pbi sync-workspace-git --env ${{ parameters.env }}
+    env:
+      API_PASSWORD: $(API_PASSWORD)
+      API_USERNAME: $(API_USERNAME)
+      CLIENT_ID: $(CLIENT_ID)
+      CLIENT_SECRET: $(CLIENT_SECRET)
+          

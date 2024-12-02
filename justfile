@@ -22,15 +22,29 @@ bump-version:
     echo "Bump version, create release notes and tag version"
     poetry run cz bump --yes
 
+bump-skip-ci:
+    bump-version
+    push-tags
+    add-skip-ci
+
+
+add-skip-ci:
+    current_message=$(git log -1 --pretty=%B)
+    new_message="${current_message} [skip ci]"
+    git commit --amend -m "$new_message"
+
 bump:
     bump-dry
     bump-version
 
-bump-push:
-    just bump
+push-tag:
     echo "Fetching the latest Git tag..."
     GIT_TAG=$(git describe --abbrev=0)
     git push origin $GIT_TAG
+
+bump-push:
+    bump
+    push-tag
 
 list-tags:
     git tag

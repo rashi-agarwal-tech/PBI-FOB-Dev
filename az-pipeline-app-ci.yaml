@@ -16,20 +16,7 @@ jobs:
   displayName: 'PBI App integration.'
   steps:
 
-    - task: UsePythonVersion@0
-      inputs:
-        versionSpec: '$(PYTHON_VERSION)'
-
-    - script: |
-        pip install rust-just
-        just install-poetry
-      displayName: 'Install Python requirements with Poetry'
-
-    - script: |
-        branchName=$(basename $(System.PullRequest.TargetBranch))
-        COMMITS=$(git log $(git merge-base origin/$branchName  HEAD)..HEAD --pretty=format:%s)
-        echo "$COMMITS" | poetry run cz check
-      displayName: 'Check new commits follow conventional commits.'
+    - template: az-pipelines-env.yaml
 
     - script: |
         just check-ruff

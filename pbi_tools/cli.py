@@ -20,6 +20,7 @@ from rich.table import Table, box
 from rich.text import Text
 import json
 import networkx as nx
+from collections import defaultdict
 
 app = typer.Typer()
 console = Console()
@@ -29,6 +30,43 @@ def chunks(data, size=10000):
     it = iter(data)
     for i in range(0, len(data), size):
         yield {k: data[k] for k in islice(it, size)}
+
+
+def non_zero_variables() -> list[str]:
+    return [m for m, v in tmdl.get_variable_values("NumberOfRows").items() if v != "0"]
+
+
+@app.command()
+def check_num_rows_vars_zero() -> str:
+    non_zero = non_zero_variables()
+    if non_zero:
+        print(
+            f"Warning: Non-zero NumberOfRows variable detected in the following models: {non_zero}."
+        )
+    else:
+        print("Success: All NumberOfRows set to zero.")
+
+
+def check_tables_partitioned() -> dict | None:
+    models = tmdl.get_models()
+    result = defaultdict(list)
+    for m, tables in models.items():
+        for t, details in tables.items():
+            if (
+                details["partitioned"] is False
+                and details["multi_partition_expected"] is True
+            ):
+                result[m].append(t)
+    return result
+
+
+@app.command()
+def check_partitions() -> str:
+    result = check_tables_partitioned()
+    if result:
+        print(f"Warning: The following tables have missing partitions: {result}.")
+    else:
+        print("Success: All tables partitioned.")
 
 
 @app.command()
@@ -72,6 +110,7 @@ def swap_partitions(original: bool = True):
 @app.command()
 def partitions():
     print(tmdl.get_multi_partitions())
+    print(tmdl.get_expected_partitions())
 
 
 @app.command()
@@ -422,9 +461,9 @@ def flatten_status(status: list[dict]) -> list[dict] | None:
                     {
                         "name": r["name"],
                         "table": o["table"],
-                        "partition": o["partition"]
-                        if len(o["partition"]) < 37
-                        else "Full",
+                        "partition": (
+                            o["partition"] if len(o["partition"]) < 37 else "Full"
+                        ),
                         "startTime": r["startTime"],
                         "endTime": r.get("endTime"),
                         "status": o["status"],
@@ -472,6 +511,7 @@ def sync_workspace_git(env: str = "dev"):
 if __name__ == "__main__":
     # refresh_d2c_availability_partition("dev", current=False)
     app()
+    # partitions()
     # status_all()
     # TODO Parameters, set number of row if exists to some number!
     # TODO Can we ensure that "Large semantic model storage format" is on...

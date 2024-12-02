@@ -1,5 +1,5 @@
 from pathlib import Path
-from pbi_tools.utils.constants import REPORT_DIR
+from pbi_tools.utils.constants import REPORT_DIR, PARTITIONS_DIR
 import re
 import networkx as nx
 
@@ -64,6 +64,17 @@ def set_variable(variable: str, value: str):
         f.write_text(" ".join(tmdl_out))
 
 
+def get_variable_values(variable: str) -> dict:
+    values = {}
+    for f in REPORT_DIR.glob("**/expressions.tmdl"):
+        tokens = f.read_text().split(" ")
+        for i, t in enumerate(tokens):
+            if i > 2 and tokens[i - 2] == variable and tokens[i - 1] == "=":
+                values[f.parent.parent.stem] = t
+                break
+    return values
+
+
 def get_partitions(file) -> list:
     partitions = []
     with open(file) as f:
@@ -113,27 +124,40 @@ def update_partitions():
     return partitions
 
 
+def get_expected_partitions():
+    return {
+        m.name: [t.name for t in m.iterdir()]
+        for w in PARTITIONS_DIR.iterdir()
+        for m in w.iterdir()
+    }
+
+
 def get_models(write: bool = False) -> dict:
     models = {}
     sn_table_mapper = {}
     params = get_model_parameters()
+    exp_partitions = get_expected_partitions()
     for f in REPORT_DIR.glob("**/tables/*.tmdl"):
         model = f.parent.parent.parent.stem
         table = f.stem
         _, _, partitions_str = remove_partitions(f)
         sn_table = extract_sf_object(partitions_str)
         sn_table = (
-            params[model].get(sn_table) if params[model].get(sn_table) else sn_table
+            params.get(model).get(sn_table)
+            if params.get(model, {}).get(sn_table)
+            else sn_table
         )
         sn_table_mapper[sn_table] = table
         partition_names = get_partitions(f)
         columns = get_source_columns(f)
+        tbl_exp_partition = table in exp_partitions.get(model, [])
         if models.get(model) is None:
             models[model] = {
                 table: {
                     "db_table": sn_table,
                     "columns": columns,
                     "partitioned": len(partition_names) > 1,
+                    "multi_partition_expected": tbl_exp_partition,
                 }
             }
         else:
@@ -142,6 +166,7 @@ def get_models(write: bool = False) -> dict:
                     "db_table": sn_table,
                     "columns": columns,
                     "partitioned": len(partition_names) > 1,
+                    "multi_partition_expected": tbl_exp_partition,
                 }
             }
     if write:
@@ -211,7 +236,9 @@ def get_relationships(model: str) -> list[dict]:
                 from_tbl, from_col = [
                     c.strip("'").strip('"') for c in from_tbl_col.split(".")
                 ]
-                toColumn = [" ".join(line.split(" ")[1:]) for line in t if "toColumn" in line][0]
+                toColumn = [
+                    " ".join(line.split(" ")[1:]) for line in t if "toColumn" in line
+                ][0]
                 to_tbl, to_col = [c.strip("'").strip('"') for c in toColumn.split(".")]
                 relationships.append(
                     {

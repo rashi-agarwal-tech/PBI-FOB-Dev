@@ -1,0 +1,13 @@
+  steps:
+    - script: |
+        poetry build
+      displayName: 'Build Python Package with Poetry'
+
+    - task: TwineAuthenticate@1
+      inputs:
+        artifactFeed: '$(ARTIFACT_FEED)'
+      displayName: 'Twine Authenticate'
+
+    - script: |
+        python -m twine upload -r windermere_artifactory --config-file $(PYPIRC_PATH) dist/*
+      displayName: 'Upload to feed'
