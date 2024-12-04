@@ -29,17 +29,20 @@ bump-skip-ci:
 
 
 add-skip-ci:
+    #!/usr/bin/env bash
     current_message=$(git log -1 --pretty=%B)
     new_message="${current_message} [skip ci]"
-    git commit --amend -m "$new_message"
+    echo "New commit message: ${new_message}"
+    git commit --amend -m $new_message
 
 bump:
     bump-dry
     bump-version
 
 push-tag:
-    echo "Fetching the latest Git tag..."
+    #!/usr/bin/env bash
     GIT_TAG=$(git describe --abbrev=0)
+    echo "Pushing git tag ${GIT_TAG}..."
     git push origin $GIT_TAG
 
 bump-push:

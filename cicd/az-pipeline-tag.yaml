@@ -1,0 +1,9 @@
+steps:
+  - checkout: self
+    persistCredentials: true
+    clean: true
+
+  - script: |
+      echo "Running commitizen to bump version and update release log."
+      just bump-skip-ci
+    displayName: 'Bump and push.'

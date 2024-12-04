@@ -1,23 +1,5 @@
-pr:
-  branches:
-    include:
-      - development
-      - uat
-      - prod
-  paths:
-    include:
-      - pbi_tools/*
-
-variables:
-  PYTHON_VERSION: '3.11'
-
-jobs:
-- job: PowerBIAppCI
-  displayName: 'PBI App integration.'
-  steps:
-
-    - template: az-pipelines-env.yaml
-
+steps:
+  - ${{ if eq(parameters.shouldRun, true) }}:
     - script: |
         just check-ruff
       displayName: 'Run Ruff checks'

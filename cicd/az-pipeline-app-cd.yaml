@@ -1,4 +1,5 @@
-  steps:
+steps:
+  - ${{ if eq(parameters.shouldRun, true) }}:
     - script: |
         poetry build
       displayName: 'Build Python Package with Poetry'

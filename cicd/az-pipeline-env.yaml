@@ -1,11 +1,11 @@
-
-variables:
-  PYTHON_VERSION: '3.11'
-  
 steps:
   - task: UsePythonVersion@0
     inputs:
       versionSpec: '$(PYTHON_VERSION)'
+
+  - checkout: self
+    persistCredentials: true
+    clean: true
 
   - script: |
       pip install rust-just
@@ -13,7 +13,9 @@ steps:
     displayName: 'Install Python requirements with Poetry'
 
   - script: |
-      branchName=$(basename $(System.PullRequest.TargetBranch))
+      echo "Running commitizen"
+      echo $(System.PullRequest.TargetBranch)
+      branchName=$(Build.TargetBranch)
       echo "Checking branch: $branchName"
       COMMITS=$(git log $(git merge-base origin/$branchName  HEAD)..HEAD --pretty=format:%s)
       echo "$COMMITS" | poetry run cz check

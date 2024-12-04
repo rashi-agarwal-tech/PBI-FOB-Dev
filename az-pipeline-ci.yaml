@@ -1,0 +1,33 @@
+pr:
+  branches:
+    include:
+      - development
+      - uat
+      - prod
+
+variables:
+- template: cicd/vars.yaml
+  
+jobs:
+- job: PowerBIAppCI
+  displayName: 'PBI App integration.'
+  steps:
+    - script: |
+        echo "Running PBI Application pipeline...."
+        echo variables['Build.ChangedFiles']
+        echo $(System.PullRequest.TargetBranch)
+        echo $(System.PullRequest.targetBranchName)
+        echo $(Build.SourceBranch)
+        echo "Build.SourceBranchName:  $(Build.SourceBranchName)" 
+        echo "Build.Reason:  $(Build.Reason)" 
+      displayName: debug
+
+    - template: cicd/az-pipeline-env.yaml
+
+    - template: cicd/az-pipeline-app-ci.yaml
+      parameters:
+        shouldRun: contains(variables['Build.ChangedFiles'], 'pbi_tools/')
+
+    - template: cicd/az-pipeline-reports-ci.yaml
+      parameters:
+        shouldRun: contains(variables['Build.ChangedFiles'], 'powerbi/')

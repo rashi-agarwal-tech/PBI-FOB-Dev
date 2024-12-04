@@ -1,0 +1,63 @@
+trigger:
+  branches:
+    include:
+      - development
+      - uat
+      - master
+      - prod
+      - main
+
+variables:
+- template: cicd/vars.yaml
+
+stages:
+  - stage: debug
+    jobs:
+      - script: |
+            echo variables['Build.SourceBranchName']
+            echo variables['Build.ChangedFiles']
+            echo $(System.PullRequest.TargetBranch)
+
+  - stage: DEV_PBI_CD
+    condition: eq(variables['Build.SourceBranchName'], 'development')
+    jobs:
+
+      - script: |
+          echo "Running DEV cd pipeline....."
+
+      - template: cicd/az-pipeline-env.yaml
+
+      - template: cicd/az-pipeline-tag.yaml
+
+      - template: cicd/az-pipeline-reports-cd.yaml
+        parameters:
+          env: dev
+
+
+
+  - stage: UAT_PBI_CD
+    condition: eq(variables['Build.SourceBranchName'], 'uat')
+    jobs:
+      - script: |
+          echo "Running UAT cd pipeline...."
+
+      - template: cicd/az-pipeline-env.yaml
+
+      - template: cicd/az-pipeline-reports-cd.yaml
+        parameters:
+          env: uat
+
+  - stage: PROD_PBI_CD
+    condition: in(variables['Build.SourceBranchName'], 'master', 'prod', 'main')
+    jobs:
+      - script: |
+          echo "Running PROD cd pipeline...."
+
+      - template: cicd/az-pipeline-env.yaml
+
+      - template: cicd/az-pipeline-reports-cd.yaml
+        parameters:
+          env: prod
+
+      - template: cicd/az-pipeline-app-cd.yaml
+        condition: contains(variables['Build.ChangedFiles'], 'powerbi/')
