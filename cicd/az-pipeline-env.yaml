@@ -6,6 +6,7 @@ steps:
   - checkout: self
     persistCredentials: true
     clean: true
+    fetchDepth: 100
 
   - script: |
       pip install rust-just
@@ -15,9 +16,18 @@ steps:
   - script: |
       echo "Running commitizen"
       echo $(System.PullRequest.TargetBranch)
-      branchName=$(Build.TargetBranch)
+      branchName=$(basename $(System.PullRequest.TargetBranch))
       echo "Checking branch: $branchName"
+      git fetch origin
+      echo $(git branch -r)
+      git fetch origin development --depth=100
+      git log
+      echo "git merge-base origin/$branchName  HEAD"
+      echo $(git merge-base origin/$branchName  HEAD)
+      echo $(git log $(git merge-base origin/$branchName  HEAD)..HEAD --pretty=format:%s)
       COMMITS=$(git log $(git merge-base origin/$branchName  HEAD)..HEAD --pretty=format:%s)
+      echo "These are the commits....."
+      echo $COMMITS
       echo "$COMMITS" | poetry run cz check
     displayName: 'Check new commits follow conventional commits.'
 

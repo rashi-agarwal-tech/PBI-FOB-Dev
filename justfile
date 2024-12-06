@@ -16,7 +16,7 @@ pbi-version:
 
 bump-dry:
     echo "Dry run bump version, create release notes and tag version"
-    poetry run cz bump --dry-run
+    poetry run cz bump --dry-run --yes
 
 bump-version:
     echo "Bump version, create release notes and tag version"

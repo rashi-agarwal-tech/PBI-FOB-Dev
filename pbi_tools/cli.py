@@ -64,7 +64,7 @@ def check_tables_partitioned() -> dict | None:
 def check_partitions() -> str:
     result = check_tables_partitioned()
     if result:
-        print(f"Warning: The following tables have missing partitions: {result}.")
+        print(f"Warning: The following tables have missing partitions: {dict(result)}.")
     else:
         print("Success: All tables partitioned.")
 
@@ -87,8 +87,11 @@ def swap_partitions(original: bool = True):
                     / f"{table_dir.name}.tmdl"
                 )
                 line_no, tmdl_str, partitions_str = tmdl.remove_partitions(tmdl_file)
+                # This is a crude approximation as by default PBI will add a unique 36 character hash to the name of the partition
                 default_partition = (
-                    True if len(partitions_str.split(" ")[1]) > 38 else False
+                    True
+                    if len(tmdl.get_first_partition_name(partitions_str)) > 38
+                    else False
                 )
                 if not default_partition:
                     (table_dir / "partitions.tmdl").write_text(partitions_str)
@@ -510,7 +513,7 @@ def sync_workspace_git(env: str = "dev"):
 
 if __name__ == "__main__":
     # refresh_d2c_availability_partition("dev", current=False)
-    app()
+    swap_partitions(original=False)
     # partitions()
     # status_all()
     # TODO Parameters, set number of row if exists to some number!

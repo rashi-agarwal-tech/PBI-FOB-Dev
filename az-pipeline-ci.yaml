@@ -1,3 +1,10 @@
+trigger:
+  branches:
+    exclude:
+      - development
+      - uat
+      - prod
+
 pr:
   branches:
     include:
@@ -18,8 +25,8 @@ jobs:
         echo $(System.PullRequest.TargetBranch)
         echo $(System.PullRequest.targetBranchName)
         echo $(Build.SourceBranch)
-        echo "Build.SourceBranchName:  $(Build.SourceBranchName)" 
-        echo "Build.Reason:  $(Build.Reason)" 
+        echo "Build.SourceBranchName:    $(Build.SourceBranchName)" 
+        echo "Build.Reason:    $(Build.Reason)" 
       displayName: debug
 
     - template: cicd/az-pipeline-env.yaml
@@ -31,3 +38,9 @@ jobs:
     - template: cicd/az-pipeline-reports-ci.yaml
       parameters:
         shouldRun: contains(variables['Build.ChangedFiles'], 'powerbi/')
+
+    - script: |
+        echo "All Parsed Stages: $(AllStages)"
+        echo "Current Stage: $SYSTEM_STAGE_NAME"
+      condition: always()
+      displayName: 'Log all stages'

@@ -1,12 +1,27 @@
 
 steps:
-  
-  - script: |
-      echo "Checking number of rows set to zero"
-      poetry run pbi check-num-rows-vars-zero
-    displayName: 'Check number of rows set to zero'
+  - ${{ if eq(parameters.shouldRun, true) }}:
+    - script: |
+        echo "Checking number of rows set to zero"
+        RESULT=$(poetry run pbi check-num-rows-vars-zero)
+        echo $RESULT
+        if [[ $RESULT == Warning* ]] ;
+        then
+          echo "##vso[task.logissue type=warning;]$RESULT"
+        else
+          echo "##vso[task.logissue type=info]$RESULT"
+        fi
+      displayName: 'Check number of rows set to zero'
 
-  - script: |
-      echo "Checking multi partitions are in place."
-      poetry run pbi check-partitions
-    displayName: 'Check multi partitions'
+    - script: |
+        echo "Checking multi partitions are in place."
+        RESULT=$(poetry run pbi check-partitions)
+        echo $RESULT
+        if [[ $RESULT == Warning* ]] ;
+        then
+          echo "##vso[task.logissue type=error;]$RESULT"
+          exit 1
+        else
+          echo "##vso[task.logissue type=info]$RESULT"
+        fi
+      displayName: 'Check multi partitions'

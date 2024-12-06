@@ -37,6 +37,13 @@ def remove_partitions(file: Path):
     return min(first_partition), "".join(output), "".join(partitions)
 
 
+def get_first_partition_name(partition: str) -> str:
+    lines = partition.split("\n")
+    for line in lines:
+        if line.startswith("\tpartition "):
+            return line.split("=")[0][11:-1].strip("'")
+
+
 def remove_duplicate_blanks(partitions: list) -> list:
     found = False
     clean_partitions = []

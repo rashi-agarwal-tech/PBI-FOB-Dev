@@ -513,7 +513,20 @@ table 'General Ledger Fact'
 		summarizeBy: none
 		sourceColumn: Party Number 2
 
-	partition 'General Ledger Fact-bf6ecc72-4fc7-48ef-8414-6042cacc2471' = m
+	partition FY2025 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_BFN_D365FACTASE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365FACTASE",Kind="View"]}[Data],
+				    #"Uppercased Text" = Table.TransformColumns(VW_BFN_D365FACTASE_View,{{"Currency", Text.Upper, type text}}),
+					Date_Filter = Table.SelectRows(#"Uppercased Text", each [AccountingDate_Key] >= "20240401" and [AccountingDate_Key] < "20250331")
+				in
+					Date_Filter
+
+	partition FY2024 = m
 		mode: import
 		source =
 				let
@@ -522,13 +535,24 @@ table 'General Ledger Fact'
 					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 					VW_BFN_D365FACTASE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365FACTASE",Kind="View"]}[Data],
 					#"Uppercased Text" = Table.TransformColumns(VW_BFN_D365FACTASE_View,{{"Currency", Text.Upper, type text}}),
-					#"Kept First Rows" = Table.FirstN(#"Uppercased Text",NumberOfRows),
-					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else VW_BFN_D365FACTASE_View
+					Date_Filter = Table.SelectRows(#"Uppercased Text", each [AccountingDate_Key] >= "20230403" and [AccountingDate_Key] < "20240401")
 				in
-					ParameterFilter
-	
+					Date_Filter
+
+	partition FY2023 = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					VW_BFN_D365FACTASE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365FACTASE",Kind="View"]}[Data],
+					#"Uppercased Text" = Table.TransformColumns(VW_BFN_D365FACTASE_View,{{"Currency", Text.Upper, type text}}),
+					Date_Filter = Table.SelectRows(#"Uppercased Text", each [AccountingDate_Key] >= "20220328" and [AccountingDate_Key] < "20230403")
+				in
+					Date_Filter
+
 
 	annotation PBI_ResultType = Table
 
 	annotation PBI_NavigationStepName = Navigation
-
