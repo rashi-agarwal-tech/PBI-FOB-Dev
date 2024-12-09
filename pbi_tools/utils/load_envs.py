@@ -5,6 +5,8 @@ import os
 env_file = (Path(__file__).parent.parent / ".env").absolute()
 load_dotenv(env_file)
 
+print(Path(__file__).parent.parent)
+
 
 def get_client_id():
     return os.getenv("CLIENT_ID")

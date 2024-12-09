@@ -39,6 +39,10 @@ This repository is synced to the [D&A Dev - Dr. Martens Datasets](#https://app.p
     - [Notes and Issues:](#notes-and-issues)
     - [Exporting a Report in the API:](#exporting-a-report-in-the-api)
     - [Using Fabric to sync Power BI From Repo:](#using-fabric-to-sync-power-bi-from-repo)
+    - [API:](#api)
+      - [Running DAX Queries:](#running-dax-queries)
+        - [Limitations:](#limitations)
+        - [Used Fields in Power BI data sets:](#used-fields-in-power-bi-data-sets)
     - [CI/ CD Notes:](#ci-cd-notes)
 - [Contribute:](#contribute)
 
@@ -272,6 +276,8 @@ Fabric resides on a capacity which is a pool of resources allocated to our platf
 The application is currently owned by `Chione Taoself` but I believe that `Karthik Ramani` can also grant access to this application. You will not be able to access the report unless you have specifically granted access.
 
 ![Workspace source control](docs/images/fab_cap_metrics_capacity.PNG)
+##
+#
 
 ### Premium Workspace:
 
@@ -294,7 +300,34 @@ https://learn.microsoft.com/en-us/power-bi/developer/embedded/export-to
 
 ### Using Fabric to sync Power BI From Repo: 
 
+### API:
+The API is used to many aspects such as refreshing reports and dataset, syncing git to the workspace and executing DAX queries.
 
+#### Running DAX Queries:
+You can execute DAX queries witht the following class, `MSApiQuery` but there are many [limitations](#limitations) to the service.
+
+This class extends the `MSApi` class and can be run with the following code by passing a user authentication token to the class. You can then execute queries against the Analysis Services engine (Power BI back end)
+
+```python
+pbi_query = MSApiQuery(token=get_user_token())
+pbi_query.execute_query(PBI_REPORT_ID, "DAX QUERY TO EXECUTE")
+```
+
+##### Limitations:
+Datasets that are hosted in Azure Analysis Services or that have a live connection to an on-premises Azure Analysis Services model aren't supported.
+One query per API call.
+One table request per query.
+Maximum of 100,000 rows or 1,000,000 values per query (whichever is hit first). For example if you query for 5 columns, you can get back max 100,000 rows. If you query for 20 columns, you can get back max 50,000 rows (1 million divided by 20).
+Maximum of 15MB of data per query. Once 15MB is exceeded, the current row will be completed but no additional rows will be written.
+There's a limit of 120 query requests per minute per user, regardless of the dataset that's queried.
+To use Service Principals, make sure the admin tenant setting Allow service principals to use Power BI APIs under Developer settings is enabled. However, regardless of the admin tenant setting, Service Principals aren't supported for datasets with RLS per RLS limitations or datasets with SSO enabled.
+Only DAX queries are supported at this time. MDX and DMV queries are not supported.
+
+##### Used Fields in Power BI data sets:
+We can see the queries that are run against the DMA Dr Marten's Workspace in the following dataset, [PBIASEngine](https://app.powerbi.com/datahub/datasets/4e51d2a3-55a8-428e-a923-6ed48c902dd7?experience=power-bi). 
+Due to limitations we and the size of the dataset we can only extract one hour of data at a time. The query that extracts the data has a large column which contains the whole of the
+DAX query. Ideally this would be parsed down to just the table and column to reduce the size of the query, given the limitations, but it appears that DAX does not have regular expression function that can perform this action. 
+As we need to run many API calls I have implemented the calls using multi threading to minimise the time taking to extract the data as we have to run 24 calls to get a days data.
 
 ### CI/ CD Notes:
 

@@ -25,12 +25,19 @@ WORKSPACE_IDS = {
     "dev": "e8649e55-b7f9-42aa-91f7-326ed4c8a36d",
     "uat": "1c9ba3dd-9e1d-474b-94ca-9d8d844e656b",
     "prod": "c0d45d23-3054-4aea-b360-e68dd9d877c9",
+    "svc": "7949eec9-bff5-4560-aa4a-fba8ab055d6c",
 }
 
 SF_ENVS = {
     "dev": "drmartensdev.west-europe.azure.snowflakecomputing.com",
     "uat": "drmartensuat.west-europe.azure.snowflakecomputing.com",
     "prod": "drmartensprod.west-europe.azure.snowflakecomputing.com",
+}
+
+SF_ENV_ACCOUNT = {
+    "dev": "drmartensdev.west-europe.azure",
+    "uat": "drmartensuat.west-europe.azure",
+    "prod": "drmartensprod.west-europe.azure",
 }
 
 PBI_STATUS_LIST = ["Unknown", "Disabled", "Failed", "Completed"]
@@ -53,6 +60,8 @@ TENANT_ID: str = "7949eec9-bff5-4560-aa4a-fba8ab055d6c"
 PBI_RESOURCE_URL: str = "https://analysis.windows.net/powerbi/api"
 AUTHORITY_BASE_URL: str = "https://login.microsoftonline.com/"
 FABRIC_BASE_URL: str = "https://api.fabric.microsoft.com"
+
+PBI_AS_ENGINE_ID = "4e51d2a3-55a8-428e-a923-6ed48c902dd7"
 
 if __name__ == "__main__":
     print(f"Here you go: {PROJECT_DIR}")

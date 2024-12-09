@@ -1,14 +1,20 @@
 steps:
-  - ${{ if eq(parameters.shouldRun, true) }}:
-    - script: |
-        poetry build
-      displayName: 'Build Python Package with Poetry'
+  - script: |
+      echo $parameters.shouldRun
+    displayName: 'Should Run or not'
 
-    - task: TwineAuthenticate@1
-      inputs:
-        artifactFeed: '$(ARTIFACT_FEED)'
-      displayName: 'Twine Authenticate'
+  - script: |
+      poetry build
+    displayName: 'Build Python Package with Poetry'
+    condition: eq(variables['getChangedFiles.pbi_changes'], 'true')
 
-    - script: |
-        python -m twine upload -r windermere_artifactory --config-file $(PYPIRC_PATH) dist/*
-      displayName: 'Upload to feed'
+  - task: TwineAuthenticate@1
+    inputs:
+      artifactFeed: '$(ARTIFACT_FEED)'
+    displayName: 'Twine Authenticate'
+    condition: eq(variables['getChangedFiles.pbi_changes'], 'true')
+
+  - script: |
+      poetry run python -m twine upload -r windermere_artifactory --config-file $(PYPIRC_PATH) dist/*
+    displayName: 'Upload to feed'
+    condition: eq(variables['getChangedFiles.pbi_changes'], 'true')

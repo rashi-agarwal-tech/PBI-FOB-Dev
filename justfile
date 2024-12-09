@@ -23,9 +23,9 @@ bump-version:
     poetry run cz bump --yes
 
 bump-skip-ci:
-    bump-version
-    push-tags
-    add-skip-ci
+    just bump-version
+    just push-tags
+    just add-skip-ci
 
 
 add-skip-ci:
@@ -33,13 +33,14 @@ add-skip-ci:
     current_message=$(git log -1 --pretty=%B)
     new_message="${current_message} [skip ci]"
     echo "New commit message: ${new_message}"
-    git commit --amend -m $new_message
+    git commit --amend -m "$new_message"
+    git push origin HEAD:development --force-with-lease
 
 bump:
-    bump-dry
-    bump-version
+    just bump-dry
+    just bump-version
 
-push-tag:
+push-tag branch:
     #!/usr/bin/env bash
     GIT_TAG=$(git describe --abbrev=0)
     echo "Pushing git tag ${GIT_TAG}..."
@@ -83,7 +84,14 @@ check-commit num:
     poetry run cz check --rev-range HEAD~{{num}}..HEAD
 
 install-commitizen:
-    pre-commit install --hook-type commit-msg --hook-type pre-push  
+    pre-commit install --hook-type commit-msg --hook-type pre-push
+
+local-deploy:
+    git commit -v -a --no-edit --amend
+    git commit -v -a --no-edit --amend
+    poetry build
+    cp dist/pbi_tools-0.1.0-py3-none-any.whl ../windermere_airflow/dist/
+
 
 
 

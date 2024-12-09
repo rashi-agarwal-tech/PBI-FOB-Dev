@@ -1,17 +1,17 @@
 [tool.poetry]
 name = "pbi-tools"
-version = "0.1.0"
+version = "0.3.0"
 description = ""
 authors = ["Martin Kingston"]
 readme = "README.md"
 packages = [{include = "pbi_tools"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.10,<3.13"
 xmltodict = "^0.13.0"
 typer = "^0.12.5"
 python-dotenv = "^1.0.1"
-pendulum = "^3.0.0"
+pendulum = ">=2.0.0,<4.0.0"
 fiscalyear = "^0.4.0"
 pyyaml = "^6.0.1"
 pydantic = "^2.9.2"
@@ -19,9 +19,13 @@ xlsxwriter = "^3.2.0"
 networkx = "^3.3"
 matplotlib = "^3.8.4"
 msal = "^1.26.0"
+snowflake-connector-python = {extras = ["pandas"], version = "^3.12.4"}
 
 [tool.poetry.scripts]
 pbi = "pbi_tools.cli:app"
+
+[tool.poetry.group.dev]
+optional = true
 
 [tool.poetry.group.dev.dependencies]
 artifacts-keyring = "^0.4.0"
@@ -38,12 +42,16 @@ pytest-depends = "^1.0.1"
 pytest-xdist = "^3.6.1"
 pytest-azurepipelines = "^1.0.5"
 cz-github-jira-conventional = "^3.0.0"
+apache-airflow = "^2.10.4"
+apache-airflow-providers-google = "^12.0.0"
+apache-airflow-providers-snowflake = "^6.0.0"
 
 [tool.commitizen]
 name = "cz_github_jira_conventional"
-version = "0.1.0"
+version = "0.3.0"
 version_files = [
-    "pbi_tools/__version__.py",
+    "pyproject.toml:tool.poetry.version",
+    "pbi_tools/__init__.py",
     "pyproject.toml:version"
 ]
 update_changelog_on_bump = true

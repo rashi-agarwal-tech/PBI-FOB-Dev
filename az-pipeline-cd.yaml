@@ -10,34 +10,55 @@ trigger:
 variables:
 - template: cicd/vars.yaml
 
-stages:
-  - stage: debug
-    jobs:
-      - script: |
-            echo variables['Build.SourceBranchName']
-            echo variables['Build.ChangedFiles']
-            echo $(System.PullRequest.TargetBranch)
-
-  - stage: DEV_PBI_CD
+jobs:
+  - job:
+    displayName: 'DEV_PB_CD'
     condition: eq(variables['Build.SourceBranchName'], 'development')
-    jobs:
+    steps:
+      - checkout: self
+        persistCredentials: true
+        clean: true
+        fetchDepth: 0
 
       - script: |
           echo "Running DEV cd pipeline....."
+          git config --global user.email "azuredevops@drmartens.com"
+          git config --global user.name "Azure Devops PBI"
+          git diff --name-only HEAD~1 HEAD> changed_files.txt
+          CHANGED_FILES=$(paste -sd " " changed_files.txt)
+          echo $CHANGED_FILES
+          echo "##vso[task.setvariable variable=changes;isOutput=true]$CHANGED_FILES"
+          if [[ "$CHANGED_FILES" == *"pbi_tools/"* ]]; then
+            PBI_CHANGES=true
+          else
+            PBI_CHANGES=false
+          fi
+          echo "##vso[task.setvariable variable=pbi_changes;isOutput=true]$PBI_CHANGES"
+        displayName: 'Get Changed Files'
+        name: getChangedFiles
 
       - template: cicd/az-pipeline-env.yaml
+        parameters:
+          cicd: cd
+      
+      - bash: |
+          echo "Changed files: $(getChangedFiles.changes)"
+          echo "PBI Changes: $(getChangedFiles.pbi_changes)"
+        displayName: 'Changes Printed..'
 
       - template: cicd/az-pipeline-tag.yaml
+
+      - template: cicd/az-pipeline-app-cd.yaml
 
       - template: cicd/az-pipeline-reports-cd.yaml
         parameters:
           env: dev
 
 
-
-  - stage: UAT_PBI_CD
+  - job:
+    displayName: 'UAT_PB_CD'
     condition: eq(variables['Build.SourceBranchName'], 'uat')
-    jobs:
+    steps:
       - script: |
           echo "Running UAT cd pipeline...."
 
@@ -47,9 +68,10 @@ stages:
         parameters:
           env: uat
 
-  - stage: PROD_PBI_CD
+  - job:
+    displayName: 'PROD_PB_CD'
     condition: in(variables['Build.SourceBranchName'], 'master', 'prod', 'main')
-    jobs:
+    steps:
       - script: |
           echo "Running PROD cd pipeline...."
 
@@ -59,5 +81,3 @@ stages:
         parameters:
           env: prod
 
-      - template: cicd/az-pipeline-app-cd.yaml
-        condition: contains(variables['Build.ChangedFiles'], 'powerbi/')

@@ -10,6 +10,7 @@ from pbi_tools.utils.constants import (
     REPORT_DIR,
     PARTITIONS_DIR,
     PBI_META_FILE,
+    PBI_AS_ENGINE_ID,
 )
 from typing import List
 from pbi_tools import tmdl
@@ -21,6 +22,7 @@ from rich.text import Text
 import json
 import networkx as nx
 from collections import defaultdict
+from pbi_tools.dax.query import get_event_query
 
 app = typer.Typer()
 console = Console()
@@ -124,6 +126,27 @@ def print_models(write: bool = False):
 @app.command()
 def save_meta_pbi_tools():
     PBI_META_FILE.write_text(json.dumps(tmdl.get_models()))
+
+
+@app.command()
+def save_model_metadata_db():
+    import pbi_tools.utils.sn_connector as sn
+    from snowflake.connector.pandas_tools import write_pandas
+    import pandas as pd
+
+    models = tmdl.get_models()
+    models_flat = [
+        (k, t, c) for k, v in models.items() for t, p in v.items() for c in p["columns"]
+    ]
+    sn_con = sn.get_snowflake_connection()
+    models_df = pd.DataFrame(
+        models_flat, columns=["DATASET_NAME", "TABLE_NAME", "FIELD_NAME"]
+    )
+    print(models_df.shape)
+    print(models_df.head())
+    write_pandas(sn_con, models_df, "POWERBI_FIELDS")
+    sn_con.close()
+    print(models_flat)
 
 
 @app.command()
@@ -356,6 +379,16 @@ def list_tables(dataset: str, env: str = "dev"):
     )
 
 
+@app.command()
+def get_queries():
+    from pbi_tools.api.auth import get_user_token
+    from pbi_tools.api.dax_query import MSApiQuery
+
+    MSApiQuery(token=get_user_token()).execute_query(
+        PBI_AS_ENGINE_ID, get_event_query(10, 12, 2024, 12, 8)
+    )
+
+
 def get_rowcount_dax(
     table: str,
     filter_column: str | None = None,
@@ -512,8 +545,9 @@ def sync_workspace_git(env: str = "dev"):
 
 
 if __name__ == "__main__":
+    app()
     # refresh_d2c_availability_partition("dev", current=False)
-    swap_partitions(original=False)
+    # swap_partitions(original=False)
     # partitions()
     # status_all()
     # TODO Parameters, set number of row if exists to some number!

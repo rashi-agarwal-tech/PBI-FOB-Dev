@@ -9,6 +9,9 @@ from abc import ABC, abstractmethod
 fy.START_MONTH = FISCAL_YEAR_START_MONTH
 
 # TODO This module is not used do!!!!!!!!
+# TODO trigger pipeline
+
+
 def get_tables() -> dict:
     tables = {}
     for f in REPORT_DIR.glob("**/tables/*.tmdl"):
@@ -90,7 +93,7 @@ class Partition(ABC):
             )
         return latest_partition, year
 
-    @abstractmethod 
+    @abstractmethod
     def partition(year: str, month: str, day: str):
         """
 

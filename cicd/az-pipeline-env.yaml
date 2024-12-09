@@ -3,12 +3,8 @@ steps:
     inputs:
       versionSpec: '$(PYTHON_VERSION)'
 
-  - checkout: self
-    persistCredentials: true
-    clean: true
-    fetchDepth: 100
-
   - script: |
+      pwd
       pip install rust-just
       just install-poetry
     displayName: 'Install Python requirements with Poetry'
@@ -30,8 +26,10 @@ steps:
       echo $COMMITS
       echo "$COMMITS" | poetry run cz check
     displayName: 'Check new commits follow conventional commits.'
+    condition: contains(variables['Build.cicd'], 'cd')
 
   - script: |
       echo "Test bumping the version."
       just bump-dry
     displayName: 'Test bump version'
+    condition: contains(variables['Build.cicd'], 'cd')

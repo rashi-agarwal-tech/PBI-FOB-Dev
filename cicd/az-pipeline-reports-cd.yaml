@@ -1,6 +1,7 @@
 steps:
   - script: |
       poetry run pbi sync-workspace-git --env ${{ parameters.env }}
+    displayName: 'Sync with Power BI workspace'
     env:
       API_PASSWORD: $(API_PASSWORD)
       API_USERNAME: $(API_USERNAME)
