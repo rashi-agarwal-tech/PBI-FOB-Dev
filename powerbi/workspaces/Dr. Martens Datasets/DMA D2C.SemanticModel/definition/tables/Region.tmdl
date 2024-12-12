@@ -81,10 +81,12 @@ table Region
 		annotation SummarizationSetBy = Automatic
 
 	column 'Company Region' = 'Region'[Company ID] & " " & 'Region'[Region]
+		dataType: string
 		isHidden
 		displayFolder: zz_Misc
 		lineageTag: a93d3e1c-d1d6-4fc0-b538-a275fe07757a
 		summarizeBy: none
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 

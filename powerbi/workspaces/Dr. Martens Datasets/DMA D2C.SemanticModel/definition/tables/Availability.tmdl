@@ -332,11 +332,13 @@ table Availability
 	column 'OnHandUnits Value' =
 			Availability[OnHandUnits]
 			    * RELATED ( 'Products'[Current Selling Price (excl. VAT)] )
+		dataType: double
 		isHidden
 		formatString: #,##0.00
 		displayFolder: zz_Value
 		lineageTag: e5d92165-6cbe-429f-a259-272eebf5cc78
 		summarizeBy: none
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 
@@ -382,7 +384,7 @@ table Availability
 		annotation SummarizationSetBy = Automatic
 
 	column 'Retail Store Warehouse?'
-		dataType: int64
+		dataType: double
 		isHidden
 		displayFolder: zz_Misc
 		lineageTag: 80529116-91ae-437b-82ee-0c47cad1247a
@@ -393,8 +395,10 @@ table Availability
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column 'Stock Out?'
-		dataType: int64
+		dataType: double
 		isHidden
 		formatString: 0
 		displayFolder: zz_Misc
@@ -407,7 +411,7 @@ table Availability
 		annotation SummarizationSetBy = User
 
 	column Stocked?
-		dataType: int64
+		dataType: double
 		isHidden
 		formatString: 0
 		displayFolder: zz_Misc

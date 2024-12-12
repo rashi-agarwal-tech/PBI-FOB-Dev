@@ -750,16 +750,20 @@ table 'Date - Order Date'
 	column 'Order Month-Year' =
 			'Date - Order Date'[Order Mon] & "-"
 			    & RIGHT ( 'Date - Order Date'[Order Year], 2 )
+		dataType: string
 		displayFolder: Calendar Dates
 		lineageTag: 9ea19fad-2e88-4e8f-82cb-6a3ee22ec01c
 		summarizeBy: none
+		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Order Fiscal Period' = "F" & RIGHT ( 'Date - Order Date'[Order Fiscal Period Long Name], 3 )
+		dataType: string
 		displayFolder: EMEA Fiscal Dates
 		lineageTag: ec982f34-1006-4bfe-8899-875d94fbc81f
 		summarizeBy: none
+		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 

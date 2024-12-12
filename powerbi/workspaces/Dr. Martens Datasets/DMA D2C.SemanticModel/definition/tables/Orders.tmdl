@@ -1226,20 +1226,24 @@ table Orders
 				)
 			RETURN
 				IF ( ISBLANK ( check ), BLANK (), main )
+		dataType: string
 		isHidden
 		displayFolder: zz_Keys
 		lineageTag: 8ebb8749-6127-40d1-9887-00296863fe0f
 		summarizeBy: none
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column RefitExclusion = IF(NOT ISBLANK(RELATED('Refit Exclusion'[StoreDateKey])), "Refit", "No Refit")
+		dataType: string
 		isHidden
 		displayFolder: zz_Misc
 		lineageTag: a0332d76-8dc2-4125-a6b0-9462ce90bc05
 		summarizeBy: none
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 
@@ -1252,20 +1256,24 @@ table Orders
 				RELATED ( 'Open eCom Return Info'[Quantity] ),
 				BLANK ()
 			)
+		dataType: int64
 		isHidden
 		displayFolder: zz_Units
 		lineageTag: 5532b8db-6b13-4770-a6c5-63df3d5dbafc
 		summarizeBy: none
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = User
 
 	column 'Ordered eCom Return Quantity' = RELATED ( 'Open eCom Return Info'[Quantity] )
+		dataType: int64
 		isHidden
 		displayFolder: zz_Units
 		lineageTag: a59cf077-d8b3-4509-bf55-0d22c764c522
 		summarizeBy: none
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 
@@ -1279,10 +1287,12 @@ table Orders
 					* RELATED ( 'Open eCom Return Info'[Price] ),
 				BLANK ()
 			)
+		dataType: double
 		isHidden
 		displayFolder: zz_Values
 		lineageTag: c423612c-abe3-4eba-9e39-a8f2f9882e6f
 		summarizeBy: sum
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 
@@ -1296,10 +1306,12 @@ table Orders
 					* DIVIDE ( Orders[Invoiced Net Value Col Cons GBP], Orders[Invoiced Units Col] ),
 				BLANK ()
 			)
+		dataType: double
 		isHidden
 		displayFolder: zz_Values
 		lineageTag: d450700e-26ec-405c-afb0-9dead1b5b998
 		summarizeBy: sum
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 
@@ -1308,49 +1320,61 @@ table Orders
 	column 'Ordered eCom Return Net Value Col Cons GBP' =
 			RELATED ( 'Open eCom Return Info'[Quantity] )
 				* DIVIDE ( Orders[Invoiced Net Value Col Cons GBP], Orders[Invoiced Units Col] )
+		dataType: double
 		isHidden
 		displayFolder: zz_Values
 		lineageTag: 28fffdde-5913-4f48-b47d-291868f2b35e
 		summarizeBy: sum
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'In Bronto Database?' = IF(AND(NOT(ISBLANK(Orders[Customer Marketing Email])), Orders[Customer Marketing Email] = Orders[Email]), "Yes", "No")
+		dataType: string
 		displayFolder: 2. eCom Details
 		lineageTag: e0d98016-f01a-4071-ad34-91bdd0dbd5a9
 		summarizeBy: none
+		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'US Promotion Type' = IF(ISBLANK(Orders[Promo Code]), BLANK(), Orders[eCom Promotion Type])
+		dataType: string
 		isHidden
 		displayFolder: 2. eCom Details
 		lineageTag: 10f9b55d-6de4-4b16-a5be-6393bf9135d6
 		summarizeBy: none
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column Age = IF(ISBLANK(RELATED('Retail Demographics'[Age])), "Unknown", RELATED('Retail Demographics'[Age]))
+		dataType: string
 		displayFolder: 1. Retail Details
 		lineageTag: eede14fa-f0a3-4e96-bdcc-2a40a1345535
 		summarizeBy: none
+		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
 	column Gender = IF(ISBLANK(RELATED('Retail Demographics'[Gender])), "Unknown", RELATED('Retail Demographics'[Gender]))
+		dataType: string
 		displayFolder: 1. Retail Details
 		lineageTag: ff7d751a-69f4-410f-8142-43d3d2abb2e5
 		summarizeBy: none
+		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
 	column Core/Fringe = RELATED('Size Classification'[Core/Fringe])
+		dataType: string
 		lineageTag: 088625f7-39cc-494a-8483-47277207c592
 		summarizeBy: none
+		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1360,14 +1384,18 @@ table Orders
 				RELATED ( 'Customer'[Country] ),
 				BLANK ()
 			)
+		dataType: string
 		lineageTag: e2a30388-73cd-4452-9518-b317b592b67e
 		summarizeBy: none
+		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Retail Payment Method' = RELATED('Retail Payment Methods'[Payment Methods])
+		dataType: string
 		lineageTag: a78dc176-b9d0-4a85-9776-9c9a99f0a312
 		summarizeBy: none
+		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1973,14 +2001,42 @@ table Orders
 		annotation SummarizationSetBy = Automatic
 
 	column 'OMNI Upsell' = RELATED('Retail Mpos'[OMNIUPSELL])
+		dataType: string
 		lineageTag: 307063f2-a4a2-483f-80ce-81191ea0ad58
 		summarizeBy: none
+		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'OMNI Original Order No.' = related('Retail Mpos'[OMNIORDERN])
+		dataType: string
 		lineageTag: 60654516-d1ae-43d2-afe5-20d7c99cf1df
 		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mail Marketing Opt In' = RELATED('Customer'[Mail Marketing Opt In])
+		dataType: string
+		lineageTag: 217e437f-e57c-4fa9-814e-e30033b0f0a3
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Phone Marketing Opt In' = RELATED('Customer'[Phone Marketing Opt In])
+		dataType: string
+		lineageTag: 0529304c-dd3e-4d75-b2a1-9215e3651c2d
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ecom Email Marketing'
+		dataType: string
+		lineageTag: d419f08f-f161-434a-8f52-d492268a595d
+		summarizeBy: none
+		sourceColumn: Ecom Email Marketing
 
 		annotation SummarizationSetBy = Automatic
 

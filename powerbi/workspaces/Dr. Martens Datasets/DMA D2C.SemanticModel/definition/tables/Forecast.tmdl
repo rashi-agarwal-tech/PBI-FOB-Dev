@@ -225,9 +225,11 @@ table Forecast
 		annotation SummarizationSetBy = Automatic
 
 	column Company_ProductCode = Forecast[Company] & "_" & Forecast[Product Code]
+		dataType: string
 		isHidden
 		lineageTag: 9988b670-df03-4a26-9cdb-ce27932a0809
 		summarizeBy: none
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 
@@ -244,10 +246,12 @@ table Forecast
 			                - FIND ( "+", Forecast[Forecast Version], 1, BLANK () )
 			        )
 			)
+		dataType: double
 		isHidden
 		formatString: #,##0.00
 		lineageTag: af1541f0-7a59-46cd-9091-25bd3ababadb
 		summarizeBy: none
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 

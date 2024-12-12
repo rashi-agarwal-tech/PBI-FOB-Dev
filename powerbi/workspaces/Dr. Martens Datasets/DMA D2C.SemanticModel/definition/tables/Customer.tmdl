@@ -50,6 +50,26 @@ table Customer
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Mail Marketing Opt In'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: ae088b63-cfdf-4d8c-ab3b-9a3fc6cdf384
+		summarizeBy: none
+		sourceColumn: Mail Marketing Opt In
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Phone Marketing Opt In'
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(16777216)
+		lineageTag: 1a61f16a-6ba3-4417-af01-dcd8e5d227f3
+		summarizeBy: none
+		sourceColumn: Phone Marketing Opt In
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Customer-88b5ecc5-c2b1-440b-8642-d3639770424e = m
 		mode: import
 		source =

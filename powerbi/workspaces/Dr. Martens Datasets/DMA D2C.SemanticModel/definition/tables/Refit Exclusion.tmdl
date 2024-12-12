@@ -28,10 +28,12 @@ table 'Refit Exclusion'
 		annotation SummarizationSetBy = Automatic
 
 	column StoreDateKey = FORMAT ( 'Refit Exclusion'[Exclusion Date], "YYYYMMDD" ) & "-" & 'Refit Exclusion'[Store Number]
+		dataType: string
 		isHidden
 		displayFolder: zz_Misc
 		lineageTag: f54b7e0f-574d-4b04-a0f8-d498e3c3eb9d
 		summarizeBy: none
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 

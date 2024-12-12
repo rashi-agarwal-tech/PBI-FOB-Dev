@@ -249,9 +249,11 @@ table 'Google Analytics'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Company Region' = RELATED ( 'Website Name'[CompanyRegion] )
+		dataType: string
 		isHidden
 		lineageTag: f347bca6-4f13-4060-a926-528d8ee4dd5f
 		summarizeBy: none
+		isDataTypeInferred
 
 		changedProperty = IsHidden
 
