@@ -549,10 +549,6 @@ relationship 0fb8e9d9-9d15-49f2-b885-cdf6609b7297
 	fromColumn: 'Google Analytics'.'Company Region'
 	toColumn: Region.'Company Region'
 
-relationship 4865ad2d-7e3e-42c7-824d-9fc9dd64fe32
-	fromColumn: 'Net Transactions'.'Sales Order Number'
-	toColumn: BridgeSalesOrderNumber.Salesordernumber_soh
-
 relationship 90499436-11ee-4978-a96f-15eeb1b9587f
 	fromColumn: Orders.RefitExclusion
 	toColumn: 'Refit Slicer'.'Refit Exclusion'
@@ -615,4 +611,8 @@ relationship bb5d657f-2ad8-4933-0f0c-aa963868a97b
 	crossFilteringBehavior: bothDirections
 	fromColumn: Orders.'Sales Order Number'
 	toColumn: 'Retail Mpos'.SALESORDERID
+
+relationship 9dd9c1a5-33e8-9cf7-6336-8aaa8934139c
+	fromColumn: 'Net Transactions'.'Sales Order Number'
+	toColumn: BridgeSalesOrderNumber.Salesordernumber_soh
 

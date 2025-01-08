@@ -161,36 +161,30 @@ table 'Purchase Orders'
 			    "239",
 			    'Purchase Orders'[DATAAREAID]
 			)
-		dataType: string
 		isHidden
 		displayFolder: zz_Keys
 		lineageTag: 3f77d5bb-42a6-4532-923b-0ea3c71921d2
 		summarizeBy: none
-		isDataTypeInferred
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'PO Channel' = RELATED(Warehouse[Warehouse Channel])
-		dataType: string
 		isHidden
 		displayFolder: zz_Keys
 		lineageTag: 12a1d97f-89fc-4d3e-97bb-a12fc31ad3bb
 		summarizeBy: none
-		isDataTypeInferred
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column FinancialChannel = RELATED ( Warehouse[FinancialChannel] )
-		dataType: string
 		isHidden
 		displayFolder: zz_Keys
 		lineageTag: a04e0e54-c93a-44f6-be36-72014c83ba73
 		summarizeBy: none
-		isDataTypeInferred
 
 		changedProperty = IsHidden
 

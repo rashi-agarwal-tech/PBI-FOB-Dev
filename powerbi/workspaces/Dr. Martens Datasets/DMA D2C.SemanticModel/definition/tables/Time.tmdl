@@ -102,10 +102,8 @@ table Time
 			return
 			
 			main&"-"&main2
-		dataType: string
 		lineageTag: 46aa8ea6-65c3-4707-a10f-4cfb6df48b9b
 		summarizeBy: none
-		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
@@ -116,10 +114,8 @@ table Time
 			if('Time'[Hour]<14,"Lunch",
 			if('Time'[Hour]<18,"Afternoon",
 			if('Time'[Hour]<20,"Dinner","Evening"))))))
-		dataType: string
 		lineageTag: 1a59744c-53ac-418a-836c-7647ea0ed849
 		summarizeBy: none
-		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
@@ -131,10 +127,8 @@ table Time
 			return
 			
 			main&"-"&main2
-		dataType: string
 		lineageTag: ddc81706-8fba-4c1d-ba45-c2ffa7f90155
 		summarizeBy: none
-		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
@@ -145,10 +139,8 @@ table Time
 			if('Time'[US Hour]<14,"Lunch",
 			if('Time'[US Hour]<18,"Afternoon",
 			if('Time'[US Hour]<20,"Dinner","Evening"))))))
-		dataType: string
 		lineageTag: 5a4c24b0-d5da-4825-9ed6-e64b29c4cda6
 		summarizeBy: none
-		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 

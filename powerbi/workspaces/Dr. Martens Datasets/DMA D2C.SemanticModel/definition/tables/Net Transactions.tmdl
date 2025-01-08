@@ -1,73 +1,71 @@
 table 'Net Transactions'
 	isHidden
-	lineageTag: 1a599557-4ab8-4cba-82f5-a2d3c18ae9f3
+	lineageTag: e9d96033-4963-4ffd-9e99-4ffee6503ab2
 
 	column 'Sales Order Number'
 		dataType: string
 		isHidden
-		lineageTag: 683d3a98-c74d-4643-a69a-d6df8ff38556
+		lineageTag: 015afc6d-b26a-4629-8822-93ab72469740
 		summarizeBy: none
-		isNameInferred
-		isDataTypeInferred
-		sourceColumn: Orders[Sales Order Number]
+		sourceColumn: Sales Order Number
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Returns Flg'
-		dataType: int64
+		dataType: double
 		isHidden
-		formatString: 0
-		lineageTag: 8dc8dd80-fba6-44f0-8980-bb38c767e877
+		lineageTag: e558b1ee-7eec-4e82-a161-33ef67e304a3
 		summarizeBy: sum
-		isNameInferred
-		isDataTypeInferred
-		sourceColumn: [Returns Flg]
+		sourceColumn: Returns Flg
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Sales Flg'
-		dataType: int64
+		dataType: double
 		isHidden
-		formatString: 0
-		lineageTag: 24d2d582-5f32-4620-9fbf-6c77fafa39a3
+		lineageTag: 6908bf5d-5155-461b-8c8f-e9a278bd598a
 		summarizeBy: sum
-		isNameInferred
-		isDataTypeInferred
-		sourceColumn: [Sales Flg]
+		sourceColumn: Sales Flg
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Net Trx'
-		dataType: int64
+		dataType: double
 		isHidden
-		formatString: 0
-		lineageTag: dde4286f-c8f3-4096-b80b-483a7e4a58c1
+		lineageTag: 8c455ab2-dddb-4e96-8ec1-7d1ae8676ae5
 		summarizeBy: sum
-		isNameInferred
-		isDataTypeInferred
-		sourceColumn: [Net Trx]
+		sourceColumn: Net Trx
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
-	partition 'Net Transactions-a4947697-306b-42c7-b876-6976b0f9fe34' = calculated
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Net Transactions' = m
 		mode: import
 		source =
-				VAR ReturnsFlag =
-				    IF ( [Returned Units] > 0, -1, BLANK () )
-				VAR SalesFlag =
-				    IF ( [Invoiced Units] > 0, 1, BLANK () )
-				VAR NetTrx = ReturnsFlag + SalesFlag
-				RETURN
-				    SUMMARIZECOLUMNS (
-				        'Orders'[Sales Order Number],
-				        FILTER ( Orders, Orders[isCarrierBag] = FALSE ),
-				        "Returns Flg", IF ( [Returned Units] > 0, -1, BLANK () ),
-				        "Sales Flg", IF ( [Invoiced Units] > 0, 1, BLANK () ),
-				        "Net Trx",
-				            IF ( [Returned Units] > 0, -1, BLANK () )
-				                + IF ( [Invoiced Units] > 0, 1, BLANK () )
-				                + IF ( [Open Units] > 0, 1, BLANK () )
-				    )
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name="PRESENTATION",Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name="BFN_PRESENTATION",Kind="Schema"]}[Data],
+				    D2C_BFN_FACT_NET_TRANSACTIONS_View = BFN_PRESENTATION_Schema{[Name="D2C_BFN_FACT_NET_TRANSACTIONS",Kind="View"]}[Data]
+				in
+				    D2C_BFN_FACT_NET_TRANSACTIONS_View
 
-	annotation PBI_Id = 2c7ccc70d656467eafa72be2870f0280
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

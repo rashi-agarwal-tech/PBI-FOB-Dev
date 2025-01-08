@@ -99,12 +99,10 @@ table Footfall
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column StoreDateKey = FORMAT ( Footfall[Date], "YYYYMMDD" ) & "-" & Footfall[Site_Name]
-		dataType: string
 		isHidden
 		displayFolder: zz_Keys
 		lineageTag: 154c5c51-ffe2-4d9d-9e0f-ac0efb15f237
 		summarizeBy: none
-		isDataTypeInferred
 
 		changedProperty = IsHidden
 
@@ -116,11 +114,9 @@ table Footfall
 			    "Refit",
 			    "No Refit"
 			)
-		dataType: string
 		isHidden
 		lineageTag: 10997b0b-b848-41cd-9c6c-d0f57c839d9c
 		summarizeBy: none
-		isDataTypeInferred
 
 		changedProperty = IsHidden
 

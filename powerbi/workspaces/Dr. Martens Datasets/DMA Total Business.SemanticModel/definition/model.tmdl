@@ -10,11 +10,11 @@ queryGroup Parameters
 
 	annotation PBI_QueryGroupOrder = 0
 
-annotation PBI_QueryOrder = ["Account Details","Adjustments CoGS","Adjustments Sales","Bridge InventTransID","Bridge Product","BridgeSalesOrderNumber","Channel","Customer","Customer Sell Out EMEA","Customer Sell Out US","Datasource_Database","Datasource_Schema","Datasource_Server","Datasource_Warehouse","Date","Date Slicer","Deductions","Display Currency","Exchange Rates","Financial Channel","Footfall","Forecast","Forecast Version","Hold Code Trans","Hours Worked","NumberOfRows","Order Taker","Order Type","Orders","Pick","Product Class","Product Forecast","Product Weights","Products","Purchase Orders","Refit Slicer","Region","Regions","Retail Demographics","Sales Order Type","Sales Packing Slip","Seasonal Product Forecast","Seasonal Product Info","Seasons","Seasons (Product Report)","Selling Status - Invoice","Selling Status - Order Entry","Size","SmartRes","Store Activity FC","Time","Warehouse","Website"]
+annotation PBI_QueryOrder = ["Account Details","Adjustments CoGS","Adjustments Sales","Bridge InventTransID","Bridge Product","BridgeSalesOrderNumber","Channel","Customer","Customer Sell Out EMEA","Customer Sell Out US","Datasource_Database","Datasource_Schema","Datasource_Server","Datasource_Warehouse","Date","Date Slicer","Deductions","Display Currency","Exchange Rates","Financial Channel","Footfall","Forecast","Forecast Version","Hold Code Trans","Hours Worked","Net Transactions","NumberOfRows","Order Taker","Order Type","Orders","Pick","Product Class","Product Forecast","Product Weights","Products","Purchase Orders","Refit Slicer","Region","Regions","Retail Demographics","Sales Order Type","Sales Packing Slip","Seasonal Product Forecast","Seasonal Product Info","Seasons","Seasons (Product Report)","Selling Status - Invoice","Selling Status - Order Entry","Size","SmartRes","Store Activity FC","Time","Warehouse","Website"]
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBIDesktopVersion = 2.128.1177.0 (24.04)
+annotation PBIDesktopVersion = 2.138.1452.0 (24.11)
 
 annotation __TEdtr = 1
 
@@ -69,8 +69,8 @@ ref table 'Seasons (Product Report)'
 ref table 'Bridge Product'
 ref table Metrics
 ref table 'Model Refresh Time'
-ref table 'Net Transactions'
 ref table 'Refit Slicer'
+ref table 'Net Transactions'
 
 ref role Admin
 ref role 'NA Users'
