@@ -102,11 +102,9 @@ table 'Forecast Ecom Demand'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Company_ProductCode = 'Forecast Ecom Demand'[Company] & "_" & 'Forecast Ecom Demand'[Product Code]
-		dataType: string
 		isHidden
 		lineageTag: 5bc3b72c-6171-4156-bce3-5fdf63989303
 		summarizeBy: none
-		isDataTypeInferred
 
 		changedProperty = IsHidden
 

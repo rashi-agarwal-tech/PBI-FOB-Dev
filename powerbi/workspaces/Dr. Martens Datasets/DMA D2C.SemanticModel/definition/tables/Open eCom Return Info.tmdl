@@ -184,10 +184,8 @@ table 'Open eCom Return Info'
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Warehouse Group' = LOOKUPVALUE ( Warehouse[Warehouse Group], Warehouse[Warehouse ID], 'Open eCom Return Info'[Warehouse] )
-		dataType: string
 		lineageTag: 4f30178c-c5c2-4b75-8e03-4b84ba01594a
 		summarizeBy: none
-		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
@@ -208,11 +206,9 @@ table 'Open eCom Return Info'
 			        ),
 			    BLANK ()
 			)
-		dataType: int64
 		formatString: #,##0
 		lineageTag: 5242413b-56f8-4a75-af6b-fe7870e0d2c0
 		summarizeBy: none
-		isDataTypeInferred
 
 		annotation SummarizationSetBy = User
 
@@ -232,10 +228,8 @@ table 'Open eCom Return Info'
 			        a <= 35, "4-5 Weeks",
 			        "5+ Weeks"
 			    )
-		dataType: string
 		lineageTag: 4865db5c-e1ca-437d-b09b-58dcf45dd716
 		summarizeBy: none
-		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 

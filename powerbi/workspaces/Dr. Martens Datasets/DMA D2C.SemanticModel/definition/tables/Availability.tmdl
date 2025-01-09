@@ -332,13 +332,11 @@ table Availability
 	column 'OnHandUnits Value' =
 			Availability[OnHandUnits]
 			    * RELATED ( 'Products'[Current Selling Price (excl. VAT)] )
-		dataType: double
 		isHidden
 		formatString: #,##0.00
 		displayFolder: zz_Value
 		lineageTag: e5d92165-6cbe-429f-a259-272eebf5cc78
 		summarizeBy: none
-		isDataTypeInferred
 
 		changedProperty = IsHidden
 

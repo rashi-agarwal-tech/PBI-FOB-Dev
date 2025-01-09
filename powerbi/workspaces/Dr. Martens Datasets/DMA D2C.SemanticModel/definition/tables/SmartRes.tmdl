@@ -176,24 +176,20 @@ table SmartRes
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Channel = RELATED ( 'Warehouse'[Warehouse Channel] )
-		dataType: string
 		isHidden
 		displayFolder: zz_Keys
 		lineageTag: 9719eed8-5632-4402-92f9-7078a8801076
 		summarizeBy: none
-		isDataTypeInferred
 
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column FinancialChannel = RELATED ( Warehouse[FinancialChannel] )
-		dataType: string
 		isHidden
 		displayFolder: zz_Keys
 		lineageTag: 5ef852e0-089c-4c0f-b2cc-f7ad3291eb82
 		summarizeBy: none
-		isDataTypeInferred
 
 		changedProperty = IsHidden
 
@@ -205,12 +201,10 @@ table SmartRes
 			    "239",
 			    SmartRes[DATAAREAID]
 			)
-		dataType: string
 		isHidden
 		displayFolder: zz_Keys
 		lineageTag: d012f7e4-7345-4793-b1f1-8861b3b14a0b
 		summarizeBy: none
-		isDataTypeInferred
 
 		changedProperty = IsHidden
 

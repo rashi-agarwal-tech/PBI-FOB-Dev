@@ -959,11 +959,9 @@ table Date
 		annotation SummarizationSetBy = Automatic
 
 	column Month-Year = 'Date'[Mon] & "-" & RIGHT ( 'Date'[Year], 2 )
-		dataType: string
 		displayFolder: Calendar Dates
 		lineageTag: ad532830-16ad-4dae-93a8-f1c2fba5d7f6
 		summarizeBy: none
-		isDataTypeInferred
 		sortByColumn: Month-Yearold
 
 		changedProperty = SortByColumn
@@ -971,21 +969,17 @@ table Date
 		annotation SummarizationSetBy = Automatic
 
 	column 'Fiscal Period' = "F" & RIGHT ( 'Date'[Fiscal Period - Year], 3 )
-		dataType: string
 		displayFolder: EMEA Fiscal Dates
 		lineageTag: d0892ea0-9f56-45e2-86d0-073a5bb5457b
 		summarizeBy: none
-		isDataTypeInferred
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Financial Year' = 'Date'[Fiscal Year Number]
-		dataType: int64
 		isHidden
 		displayFolder: EMEA Fiscal Dates
 		lineageTag: 1d6739e3-b13a-4c67-8c41-ad36925bd22c
 		summarizeBy: none
-		isDataTypeInferred
 
 		changedProperty = IsHidden
 
