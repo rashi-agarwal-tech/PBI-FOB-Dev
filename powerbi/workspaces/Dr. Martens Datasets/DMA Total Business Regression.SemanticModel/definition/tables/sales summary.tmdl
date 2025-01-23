@@ -1,0 +1,74 @@
+table 'sales summary'
+	lineageTag: 864c0f53-570d-4313-8310-50239fe4bf48
+
+	column 'RowCount of Orders'
+		formatString: #,0
+		lineageTag: 3941e299-7992-4ee5-8a81-a98b8004f4ac
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Orders]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Orders diff UAT'
+		formatString: #,0
+		lineageTag: 224c8258-42b7-425b-ae75-36b2a800ecf5
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Orders diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Orders diff DEV'
+		formatString: #,0
+		lineageTag: 9a74708a-cb5f-41f1-9338-5783ade3e51e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Orders diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Deductions'
+		formatString: #,0
+		lineageTag: 33f1944f-75f1-4eda-8f72-4ba0b128a4fa
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Deductions]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Deductions diff UAT'
+		formatString: #,0
+		lineageTag: f492ce79-4c8f-4f72-8fea-2365e49ed7ba
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Deductions diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Deductions diff DEV'
+		formatString: #,0
+		lineageTag: e7c0e939-b16c-4305-85d3-6c52f3c20888
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Deductions diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'sales summary' = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE
+				(
+				    sales
+				    ,"RowCount of Orders",COUNTROWS('Orders')
+				    ,"RowCount of Orders diff UAT",COUNTROWS('Orders 2')-COUNTROWS('Orders')
+				    ,"RowCount of Orders diff DEV",COUNTROWS('Orders 3')-COUNTROWS('Orders')
+				    ,"RowCount of Deductions",COUNTROWS('Deductions')
+				    ,"RowCount of Deductions diff UAT",COUNTROWS('Deductions 2')-COUNTROWS('Deductions')
+				    ,"RowCount of Deductions diff DEV",COUNTROWS('Deductions 3')-COUNTROWS('Deductions')
+				)
+
+	annotation PBI_Id = bdd289d1fd3c483a92d432244936afef
+

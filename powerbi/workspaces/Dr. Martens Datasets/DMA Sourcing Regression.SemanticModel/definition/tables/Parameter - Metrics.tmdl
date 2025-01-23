@@ -1,0 +1,174 @@
+table 'Parameter - Metrics'
+	lineageTag: 35e77544-2544-4074-a099-8fdaaa1f4f95
+
+	column 'Parameter - Metrics'
+		lineageTag: 94113e41-da17-4494-90f2-1d4b2db74b74
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter - Metrics Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter - Metrics Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Metrics Fields'
+		isHidden
+		lineageTag: 9265534a-368e-42a7-91b9-314c840b9510
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter - Metrics Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Metrics Order'
+		isHidden
+		formatString: 0.0
+		lineageTag: f99c51a5-ec8a-4779-853d-90508c0c00ca
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type =
+			
+			IF
+			(
+			    RIGHT(FORMAT([Parameter - Metrics Order],"@"),1)="1"
+			    ,"Actual"
+			    ,"Abs Diff"
+			)
+		lineageTag: ad4b0134-41bf-4be9-84ce-8d3ebab207e4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter - Metrics' = calculated
+		mode: import
+		source =
+				
+				{
+				    ("01. Ordered Units Actuals", NAMEOF([sourcing 01. Ordered Units]), 1.1),
+				    ("01. Ordered Units AbsDiff", NAMEOF([sourcing 01. Ordered Units Diff]), 1.2),
+				    ("01. Ordered Value Actuals", NAMEOF([sourcing 01. Ordered Value]), 2.1),
+				    ("01. Ordered Value AbsDiff", NAMEOF([sourcing 01. Ordered Value Diff]), 2.2),
+				    ("02. Approved Units Actuals", NAMEOF([sourcing 02. Approved Units]), 3.1),
+				    ("02. Approved Units AbsDiff", NAMEOF([sourcing 02. Approved Units Diff]), 3.2),
+				    ("02. Approved Value Actuals", NAMEOF([sourcing 02. Approved Value]), 4.1),
+				    ("02. Approved Value AbsDiff", NAMEOF([sourcing 02. Approved Value Diff]), 4.2),
+				    ("03. Confirmed Units Actuals", NAMEOF([sourcing 03. Confirmed Units]), 5.1),
+				    ("03. Confirmed Units AbsDiff", NAMEOF([sourcing 03. Confirmed Units Diff]), 5.2),
+				    ("03. Confirmed Value Actuals", NAMEOF([sourcing 03. Confirmed Value]), 6.1),
+				    ("03. Confirmed Value AbsDiff", NAMEOF([sourcing 03. Confirmed Value Diff]), 6.2),
+				    ("04. Unconfirmed Units Actuals", NAMEOF([sourcing 04. Unconfirmed Units]), 7.1),
+				    ("04. Unconfirmed Units AbsDiff", NAMEOF([sourcing 04. Unconfirmed Units Diff]), 7.2),
+				    ("04. Unconfirmed Value Actuals", NAMEOF([sourcing 04. Unconfirmed Value]), 8.1),
+				    ("04. Unconfirmed Value AbsDiff", NAMEOF([sourcing 04. Unconfirmed Value Diff]), 8.2),
+				    ("05. Placed to Factory Units Actuals", NAMEOF([sourcing 05. Placed to Factory Units]), 9.1),
+				    ("05. Placed to Factory Units AbsDiff", NAMEOF([sourcing 05. Placed to Factory Units Diff]), 9.2),
+				    ("05. Placed to Factory Value Actuals", NAMEOF([sourcing 05. Placed to Factory Value]), 10.1),
+				    ("05. Placed to Factory Value AbsDiff", NAMEOF([sourcing 05. Placed to Factory Value Diff]), 10.2),
+				    ("06. Rejected Units Actuals", NAMEOF([sourcing 06. Rejected Units]), 11.1),
+				    ("06. Rejected Units AbsDiff", NAMEOF([sourcing 06. Rejected Units Diff]), 11.2),
+				    ("06. Rejected Value Actuals", NAMEOF([sourcing 06. Rejected Value]), 12.1),
+				    ("06. Rejected Value AbsDiff", NAMEOF([sourcing 06. Rejected Value Diff]), 12.2),
+				    ("07. To Be Shipped Units Actuals", NAMEOF([sourcing 07. To Be Shipped Units]), 13.1),
+				    ("07. To Be Shipped Units AbsDiff", NAMEOF([sourcing 07. To Be Shipped Units Diff]), 13.2),
+				    ("07. To Be Shipped Value Actuals", NAMEOF([sourcing 07. To Be Shipped Value]), 14.1),
+				    ("07. To Be Shipped Value AbsDiff", NAMEOF([sourcing 07. To Be Shipped Value Diff]), 14.2),
+				    ("08. Shipped Units Actuals", NAMEOF([sourcing 08. Shipped Units]), 15.1),
+				    ("08. Shipped Units AbsDiff", NAMEOF([sourcing 08. Shipped Units Diff]), 15.2),
+				    ("08. Shipped Value Actuals", NAMEOF([sourcing 08. Shipped Value]), 16.1),
+				    ("08. Shipped Value AbsDiff", NAMEOF([sourcing 08. Shipped Value Diff]), 16.2),
+				    ("09. Received Units Actuals", NAMEOF([sourcing 09. Received Units]), 17.1),
+				    ("09. Received Units AbsDiff", NAMEOF([sourcing 09. Received Units Diff]), 17.2),
+				    ("09. Received Value Actuals", NAMEOF([sourcing 09. Received Value]), 18.1),
+				    ("09. Received Value AbsDiff", NAMEOF([sourcing 09. Received Value Diff]), 18.2),
+				    ("10. Invoiced Units Actuals", NAMEOF([sourcing 10. Invoiced Units]), 19.1),
+				    ("10. Invoiced Units AbsDiff", NAMEOF([sourcing 10. Invoiced Units Diff]), 19.2),
+				    ("10. Invoiced Value Actuals", NAMEOF([sourcing 10. Invoiced Value]), 20.1),
+				    ("10. Invoiced Value AbsDiff", NAMEOF([sourcing 10. Invoiced Value Diff]), 20.2),
+				    ("11. Duty Actuals", NAMEOF([sourcing 11. Duty]), 21.1),
+				    ("11. Duty AbsDiff", NAMEOF([sourcing 11. Duty Diff]), 21.2),
+				    ("Gross Weight Actuals", NAMEOF([sourcing Gross Weight]), 22.1),
+				    ("Gross Weight AbsDiff", NAMEOF([sourcing Gross Weight Diff]), 22.2),
+				    ("Max. Net Weight Actuals", NAMEOF([sourcing Max. Net Weight]), 23.1),
+				    ("Max. Net Weight AbsDiff", NAMEOF([sourcing Max. Net Weight Diff]), 23.2),
+				    ("Max. Pack Weight Actuals", NAMEOF([sourcing Max. Pack Weight]), 24.1),
+				    ("Max. Pack Weight AbsDiff", NAMEOF([sourcing Max. Pack Weight Diff]), 24.2),
+				    ("Total Capacity Actuals", NAMEOF([sourcing Total Capacity]), 25.1),
+				    ("Total Capacity AbsDiff", NAMEOF([sourcing Total Capacity Diff]), 25.2),
+				    ("Total Cube Actuals", NAMEOF([sourcing Total Cube]), 26.1),
+				    ("Total Cube AbsDiff", NAMEOF([sourcing Total Cube Diff]), 26.2),
+				    ("Welted Capacity Actuals", NAMEOF([sourcing Welted Capacity]), 27.1),
+				    ("Welted Capacity AbsDiff", NAMEOF([sourcing Welted Capacity Diff]), 27.2),
+				    ("# Booked on time (%) Actuals", NAMEOF([sourcing # Booked on time (%)]), 28.1),
+				    ("# Booked on time (%) AbsDiff", NAMEOF([sourcing # Booked on time (%) Diff]), 28.2),
+				    ("# Booked on time (units) Actuals", NAMEOF([sourcing # Booked on time (units)]), 29.1),
+				    ("# Booked on time (units) AbsDiff", NAMEOF([sourcing # Booked on time (units) Diff]), 29.2),
+				    ("# Ordered Units (Available) Actuals", NAMEOF([sourcing # Ordered Units (Available)]), 30.1),
+				    ("# Ordered Units (Available) AbsDiff", NAMEOF([sourcing # Ordered Units (Available) Diff]), 30.2),
+				    ("# Ordered Units (Backlog Available) Actuals", NAMEOF([sourcing # Ordered Units (Backlog Available)]), 31.1),
+				    ("# Ordered Units (Backlog Available) AbsDiff", NAMEOF([sourcing # Ordered Units (Backlog Available) Diff]), 31.2),
+				    ("# Ordered Units (Backlog) Actuals", NAMEOF([sourcing # Ordered Units (Backlog)]), 32.1),
+				    ("# Ordered Units (Backlog) AbsDiff", NAMEOF([sourcing # Ordered Units (Backlog) Diff]), 32.2),
+				    ("# Ordered Units (Delayed) Actuals", NAMEOF([sourcing # Ordered Units (Delayed)]), 33.1),
+				    ("# Ordered Units (Delayed) AbsDiff", NAMEOF([sourcing # Ordered Units (Delayed) Diff]), 33.2),
+				    ("# Ordered Units (Non-Prebuy) Actuals", NAMEOF([sourcing # Ordered Units (Non-Prebuy)]), 34.1),
+				    ("# Ordered Units (Non-Prebuy) AbsDiff", NAMEOF([sourcing # Ordered Units (Non-Prebuy) Diff]), 34.2),
+				    ("# Ordered Units (On Time) Actuals", NAMEOF([sourcing # Ordered Units (On Time)]), 35.1),
+				    ("# Ordered Units (On Time) AbsDiff", NAMEOF([sourcing # Ordered Units (On Time) Diff]), 35.2),
+				    ("# Ordered Units (Past dues) Actuals", NAMEOF([sourcing # Ordered Units (Past dues)]), 36.1),
+				    ("# Ordered Units (Past dues) AbsDiff", NAMEOF([sourcing # Ordered Units (Past dues) Diff]), 36.2),
+				    ("# Ordered Units (Prebuy) Actuals", NAMEOF([sourcing # Ordered Units (Prebuy)]), 37.1),
+				    ("# Ordered Units (Prebuy) AbsDiff", NAMEOF([sourcing # Ordered Units (Prebuy) Diff]), 37.2),
+				    ("# Ordered Units (Shipped) Actuals", NAMEOF([sourcing # Ordered Units (Shipped)]), 38.1),
+				    ("# Ordered Units (Shipped) AbsDiff", NAMEOF([sourcing # Ordered Units (Shipped) Diff]), 38.2),
+				    ("# Ordered Units (To be Shipped) Actuals", NAMEOF([sourcing # Ordered Units (To be Shipped)]), 39.1),
+				    ("# Ordered Units (To be Shipped) AbsDiff", NAMEOF([sourcing # Ordered Units (To be Shipped) Diff]), 39.2),
+				    ("# OT Ackno (%) Actuals", NAMEOF([sourcing # OT Ackno (%)]), 40.1),
+				    ("# OT Ackno (%) AbsDiff", NAMEOF([sourcing # OT Ackno (%) Diff]), 40.2),
+				    ("# OT Ackno (units) Actuals", NAMEOF([sourcing # OT Ackno (units)]), 41.1),
+				    ("# OT Ackno (units) AbsDiff", NAMEOF([sourcing # OT Ackno (units) Diff]), 41.2),
+				    ("# OT Availability (%) Actuals", NAMEOF([sourcing # OT Availability (%)]), 42.1),
+				    ("# OT Availability (%) AbsDiff", NAMEOF([sourcing # OT Availability (%) Diff]), 42.2),
+				    ("# OT Availability (units) Actuals", NAMEOF([sourcing # OT Availability (units)]), 43.1),
+				    ("# OT Availability (units) AbsDiff", NAMEOF([sourcing # OT Availability (units) Diff]), 43.2),
+				    ("# OT Confirmed (%) Actuals", NAMEOF([sourcing # OT Confirmed (%)]), 44.1),
+				    ("# OT Confirmed (%) AbsDiff", NAMEOF([sourcing # OT Confirmed (%) Diff]), 44.2),
+				    ("# OT Confirmed (units) Actuals", NAMEOF([sourcing # OT Confirmed (units)]), 45.1),
+				    ("# OT Confirmed (units) AbsDiff", NAMEOF([sourcing # OT Confirmed (units) Diff]), 45.2),
+				    ("# OT Placement: (Subm vs Approved) (%) Actuals", NAMEOF([sourcing # OT Placement: (Subm vs Approved) (%)]), 46.1),
+				    ("# OT Placement: (Subm vs Approved) (%) AbsDiff", NAMEOF([sourcing # OT Placement: (Subm vs Approved) (%) Diff]), 46.2),
+				    ("# OT Placement: (Subm vs Approved) (units) Actuals", NAMEOF([sourcing # OT Placement: (Subm vs Approved) (units)]), 47.1),
+				    ("# OT Placement: (Subm vs Approved) (units) AbsDiff", NAMEOF([sourcing # OT Placement: (Subm vs Approved) (units) Diff]), 47.2),
+				    ("# OT Supplier (%) Actuals", NAMEOF([sourcing # OT Supplier (%)]), 48.1),
+				    ("# OT Supplier (%) AbsDiff", NAMEOF([sourcing # OT Supplier (%) Diff]), 48.2),
+				    ("# OT Supplier (units) Actuals", NAMEOF([sourcing # OT Supplier (units)]), 49.1),
+				    ("# OT Supplier (units) AbsDiff", NAMEOF([sourcing # OT Supplier (units) Diff]), 49.2),
+				    ("# Packed Quantity Actuals", NAMEOF([sourcing # Packed Quantity]), 50.1),
+				    ("# Packed Quantity AbsDiff", NAMEOF([sourcing # Packed Quantity Diff]), 50.2),
+				    ("# POs Actuals", NAMEOF([sourcing # POs]), 51.1),
+				    ("# POs AbsDiff", NAMEOF([sourcing # POs Diff]), 51.2),
+				    ("# POs (Non-Prebuy) Actuals", NAMEOF([sourcing # POs (Non-Prebuy)]), 52.1),
+				    ("# POs (Non-Prebuy) AbsDiff", NAMEOF([sourcing # POs (Non-Prebuy) Diff]), 52.2),
+				    ("# POs (Prebuy) Actuals", NAMEOF([sourcing # POs (Prebuy)]), 53.1),
+				    ("# POs (Prebuy) AbsDiff", NAMEOF([sourcing # POs (Prebuy) Diff]), 53.2),
+				    ("# Shipped Units (Non-Prebuy) Actuals", NAMEOF([sourcing # Shipped Units (Non-Prebuy)]), 54.1),
+				    ("# Shipped Units (Non-Prebuy) AbsDiff", NAMEOF([sourcing # Shipped Units (Non-Prebuy) Diff]), 54.2),
+				    ("# Shipped Units (Prebuy) Actuals", NAMEOF([sourcing # Shipped Units (Prebuy)]), 55.1),
+				    ("# Shipped Units (Prebuy) AbsDiff", NAMEOF([sourcing # Shipped Units (Prebuy) Diff]), 55.2),
+				    ("# To be Shipped Units (Non-Prebuy) Actuals", NAMEOF([sourcing # To be Shipped Units (Non-Prebuy)]), 56.1),
+				    ("# To be Shipped Units (Non-Prebuy) AbsDiff", NAMEOF([sourcing # To be Shipped Units (Non-Prebuy) Diff]), 56.2),
+				    ("# To be Shipped Units (Prebuy) Actuals", NAMEOF([sourcing # To be Shipped Units (Prebuy)]), 57.1),
+				    ("# To be Shipped Units (Prebuy) AbsDiff", NAMEOF([sourcing # To be Shipped Units (Prebuy) Diff]), 57.2)
+				}
+
+	annotation PBI_Id = ca6d7977ee0048349af11303548f9228
+

@@ -1,0 +1,92 @@
+table 'Warehouse 3'
+	lineageTag: 35baf6be-af38-492d-9c80-7c58ad632dc8
+	sourceLineageTag: 8e60e9ea-14c8-4a20-ace2-2c83f0c5c496
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 6beaa7bf-b698-4276-9e48-5a531e39419f
+		sourceLineageTag: 57015bf5-37bb-4419-a278-aba56c99fd61
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Name'
+		dataType: string
+		lineageTag: cc7a70e4-3a47-49e9-ad1e-b6ab0d0d87d9
+		sourceLineageTag: 1abef4ff-574c-43b2-8116-e57fc1a629f5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse ID'
+		dataType: string
+		lineageTag: db6782cf-c75f-4790-9077-747c68dbb7b3
+		sourceLineageTag: 0319ebe1-1c35-4638-b7ad-5c8e6c0b98e7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Group'
+		dataType: string
+		lineageTag: dc9fc590-8f93-44bd-afd2-3fcb4d50958c
+		sourceLineageTag: bf6d9c3f-3fd1-4055-835b-cf9f07566890
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Sub-Group'
+		dataType: string
+		lineageTag: e9269dfa-58f2-40ec-9e12-5e48d12be7a2
+		sourceLineageTag: 0b7de5ac-950b-42c4-8620-a3263c849761
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Sub-Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Channel'
+		dataType: string
+		lineageTag: 51c201e8-e992-4d02-bd93-9aa3808babea
+		sourceLineageTag: 3caeb3da-a9b6-4d22-bd3e-88af276ac39c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Sub-Region'
+		dataType: string
+		lineageTag: 5b9c58a1-7f4b-4eb1-b28d-0f177db5b342
+		sourceLineageTag: dcba5e39-9515-4a83-9e86-1c38376ad234
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Sub-Region
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Country'
+		dataType: string
+		lineageTag: fe2b129d-eafd-47d0-b6c9-72c626e1b09d
+		sourceLineageTag: 589f34d2-93a1-40be-9b53-a59481289db0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Country
+
+		annotation SummarizationSetBy = User
+
+	partition 'Warehouse 3' = entity
+		mode: directQuery
+		source
+			entityName: Warehouse
+			expressionSource: 'DirectQuery to AS - DMA Sourcing 3'
+

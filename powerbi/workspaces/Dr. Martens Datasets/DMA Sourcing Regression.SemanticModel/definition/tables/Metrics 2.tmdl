@@ -1,0 +1,895 @@
+table 'Metrics 2'
+	lineageTag: ac0a21d1-480d-480f-8d47-0aca32ce6705
+	sourceLineageTag: 5a6a8f6f-9842-4214-9039-66667bd1dd17
+
+	measure 'Total Capacity 2' = EXTERNALMEASURE("Total Capacity", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\0"
+		displayFolder: 2. Capacity
+		lineageTag: e8479ed0-bc3c-41b1-a6a1-3d3fb78a685b
+		sourceLineageTag: 55ac0fcd-589e-4ae5-8b23-8e3cbf56f89c
+		dataCategory: Uncategorized
+
+	measure 'Welted Capacity 2' = EXTERNALMEASURE("Welted Capacity", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\0"
+		displayFolder: 2. Capacity
+		lineageTag: 6a28428e-6b94-4ea4-9565-2bfb60922b7d
+		sourceLineageTag: 5780cbf2-5766-4be1-9cdc-c351da3776af
+		dataCategory: Uncategorized
+
+	measure 'Gross Weight 2' = EXTERNALMEASURE("Gross Weight", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 2. Capacity
+		lineageTag: 99bbd8d9-b701-4c84-9f45-909e2565a280
+		sourceLineageTag: 152853d7-4f65-4c12-9ff4-33eb0b237610
+		dataCategory: Uncategorized
+
+	measure 'Total Cube 2' = EXTERNALMEASURE("Total Cube", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 2. Capacity
+		lineageTag: e5bfd530-a077-49a5-8a65-5d605654c0db
+		sourceLineageTag: dc88f94f-2b33-4281-98ed-7337ae931859
+		dataCategory: Uncategorized
+
+	measure 'Max. Net Weight 2' = EXTERNALMEASURE("Max. Net Weight", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0\0"
+		displayFolder: 2. Capacity
+		lineageTag: a52f5ce5-d69f-4c1e-9316-8f8adc41dc40
+		sourceLineageTag: b7ddfc56-b921-4086-8a22-a15af6c09869
+		dataCategory: Uncategorized
+
+	measure 'Max. Pack Weight 2' = EXTERNALMEASURE("Max. Pack Weight", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0\0"
+		displayFolder: 2. Capacity
+		lineageTag: 63a68fba-0af5-41f5-b724-2f543d2f3b4e
+		sourceLineageTag: 0e5253fd-a9b2-483b-a140-3d0c39eda405
+		dataCategory: Uncategorized
+
+	measure '01. Ordered Units 2' = EXTERNALMEASURE("01. Ordered Units", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: #,##0
+		displayFolder: 1. Order Placement
+		lineageTag: d7a4c351-dfd0-4930-8300-86f6fd16b766
+		sourceLineageTag: 07347819-fb84-4f9e-942f-6fd1e4c3d9c3
+		dataCategory: Uncategorized
+
+	measure '02. Approved Units 2' = EXTERNALMEASURE("02. Approved Units", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 1. Order Placement
+		lineageTag: 2138c565-0520-4542-9781-77bcdd2f0675
+		sourceLineageTag: 404595df-7b9b-40f4-8bfe-4475d6739068
+		dataCategory: Uncategorized
+
+	measure 'XR 2' = EXTERNALMEASURE("XR", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		isHidden
+		displayFolder: Internal
+		lineageTag: 479eaddb-a42f-41b3-98b4-e9d73c1c8a16
+		sourceLineageTag: ff1896ee-e2fa-449b-860b-88e2666a62c7
+		dataCategory: Uncategorized
+
+	measure '02. Approved Value 2' = EXTERNALMEASURE("02. Approved Value", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 1. Order Placement
+		lineageTag: fddeee3e-ec7c-4efe-9612-94a32e089851
+		sourceLineageTag: 7cfde2ba-c1a5-479f-a6bf-6f9c442d82a4
+		dataCategory: Uncategorized
+
+	measure '03. Confirmed Units 2' = EXTERNALMEASURE("03. Confirmed Units", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: #,##0
+		displayFolder: 1. Order Placement
+		lineageTag: fab52a01-5b7e-48c5-97a9-6a25fb11fed4
+		sourceLineageTag: 2a7635ba-26e1-4824-a49e-4ba0145249f7
+		dataCategory: Uncategorized
+
+	measure '04. Unconfirmed Units 2' = EXTERNALMEASURE("04. Unconfirmed Units", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: #,##0
+		displayFolder: 1. Order Placement
+		lineageTag: 343ee82c-5a0d-4eb0-a0df-7c22d1ef9fbc
+		sourceLineageTag: c49d4868-0cfa-4ffc-a18e-1106607a0bb5
+		dataCategory: Uncategorized
+
+	measure '05. Placed to Factory Units 2' = EXTERNALMEASURE("05. Placed to Factory Units", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 1. Order Placement
+		lineageTag: 6f4d7ff0-6ac4-4d98-ba8e-058e6a22dc00
+		sourceLineageTag: ba54b80c-909a-4476-8915-4b55a6a08fa8
+		dataCategory: Uncategorized
+
+	measure '06. Rejected Units 2' = EXTERNALMEASURE("06. Rejected Units", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 1. Order Placement
+		lineageTag: 9d085c49-eb26-4924-8274-a1bfd788552e
+		sourceLineageTag: 3391aa9d-1559-45e5-9c7a-5f2132fa6390
+		dataCategory: Uncategorized
+
+	measure '07. To Be Shipped Units 2' = EXTERNALMEASURE("07. To Be Shipped Units", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 1. Order Placement
+		lineageTag: 2142d4a6-16c5-4731-a6a5-43c7280c78a8
+		sourceLineageTag: 0d9adc95-3ec3-4490-a3ab-a0698cf809ae
+		dataCategory: Uncategorized
+
+	measure '08. Shipped Units 2' = EXTERNALMEASURE("08. Shipped Units", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: #,##0
+		displayFolder: 1. Order Placement
+		lineageTag: d9bed0fc-8c48-4e86-9e59-1c443bf3964b
+		sourceLineageTag: c5074bdd-2411-4a2f-aff0-5cd7c4f4c24a
+		dataCategory: Uncategorized
+
+	measure '09. Received Units 2' = EXTERNALMEASURE("09. Received Units", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 1. Order Placement
+		lineageTag: ba8d9972-51bf-4a0d-95e7-79751ca71be7
+		sourceLineageTag: 64280109-3c87-4c24-b6f4-9a06025ec395
+		dataCategory: Uncategorized
+
+	measure '10. Invoiced Units 2' = EXTERNALMEASURE("10. Invoiced Units", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 1. Order Placement
+		lineageTag: 449c5c48-c0d9-4249-9d11-aa4ecf903cd9
+		sourceLineageTag: dc07edd7-6c20-4db6-9f84-25d3cf440054
+		dataCategory: Uncategorized
+
+	measure '10. Invoiced Value 2' = EXTERNALMEASURE("10. Invoiced Value", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 1. Order Placement
+		lineageTag: e9eced39-57a5-49e9-a991-d1c341c2f380
+		sourceLineageTag: 50c23dbe-58a5-445c-aa77-2f415df1926c
+		dataCategory: Uncategorized
+
+	measure '01. Ordered Value 2' = EXTERNALMEASURE("01. Ordered Value", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 1. Order Placement
+		lineageTag: bd66860d-fbcb-4be8-8ced-e9236031d163
+		sourceLineageTag: c0bcda2a-2d6b-4b80-8b06-a15bd8184838
+		dataCategory: Uncategorized
+
+	measure '03. Confirmed Value 2' = EXTERNALMEASURE("03. Confirmed Value", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: #,##0.00
+		displayFolder: 1. Order Placement
+		lineageTag: 47ad4ccd-488c-4282-bf78-fa8889d3f511
+		sourceLineageTag: 51aa7d8a-3bbc-49e3-8144-bf974dcfac62
+		dataCategory: Uncategorized
+
+	measure '04. Unconfirmed Value 2' = EXTERNALMEASURE("04. Unconfirmed Value", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: #,##0.00
+		displayFolder: 1. Order Placement
+		lineageTag: f4778875-85fe-4ecc-ae88-b01048242bb9
+		sourceLineageTag: 0f22e28c-b30e-4a4a-83b2-64a0708c6bec
+		dataCategory: Uncategorized
+
+	measure '05. Placed to Factory Value 2' = EXTERNALMEASURE("05. Placed to Factory Value", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0"
+		displayFolder: 1. Order Placement
+		lineageTag: bb32ef77-82bc-4cc2-bbdf-471b18317d72
+		sourceLineageTag: f3d08fa3-e9ba-4b6b-8fae-63150b45dbba
+		dataCategory: Uncategorized
+
+	measure '06. Rejected Value 2' = EXTERNALMEASURE("06. Rejected Value", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 1. Order Placement
+		lineageTag: dc3d3157-5b08-4f06-96a5-808f8d6b3c78
+		sourceLineageTag: 279ba81b-c917-4a00-beb6-e13e16bff3a2
+		dataCategory: Uncategorized
+
+	measure '07. To Be Shipped Value 2' = EXTERNALMEASURE("07. To Be Shipped Value", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 1. Order Placement
+		lineageTag: 7bf8e803-9017-4424-ae88-edc56e7b8a67
+		sourceLineageTag: 2a2d23e4-aa4c-42ea-86a5-3bf7a4b2db69
+		dataCategory: Uncategorized
+
+	measure '09. Received Value 2' = EXTERNALMEASURE("09. Received Value", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 1. Order Placement
+		lineageTag: 54533018-126f-4d8f-bb49-d974628eeaa8
+		sourceLineageTag: fb308518-47fe-4f6f-b28b-785432a293af
+		dataCategory: Uncategorized
+
+	measure '08. Shipped Value 2' = EXTERNALMEASURE("08. Shipped Value", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: #,##0.00
+		displayFolder: 1. Order Placement
+		lineageTag: 9f1ddf75-35ed-4be9-a145-0221f5d44521
+		sourceLineageTag: a3d1695c-b233-4ce6-a9c8-af9402fbe918
+		dataCategory: Uncategorized
+
+	measure '11. Duty 2' = EXTERNALMEASURE("11. Duty", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		displayFolder: 1. Order Placement
+		lineageTag: 4014f1fe-538d-4e3f-bb6c-af381194a475
+		sourceLineageTag: 81d56aac-64b9-4b3c-896b-53510413b503
+		dataCategory: Uncategorized
+
+	measure '# Shipped Units (Prebuy) 2' = EXTERNALMEASURE("# Shipped Units (Prebuy)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: #,##0
+		displayFolder: 3. GSC
+		lineageTag: 4998b5e2-241d-4e7c-a04f-5fa245cbd871
+		sourceLineageTag: c2afb0bb-fe6b-41f9-b488-809f73adf61a
+		dataCategory: Uncategorized
+
+	measure '# Shipped Units (Non-Prebuy) 2' = EXTERNALMEASURE("# Shipped Units (Non-Prebuy)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: #,##0
+		displayFolder: 3. GSC
+		lineageTag: 1efc861f-3f5d-447e-a194-fdead44d7908
+		sourceLineageTag: be70c078-df05-455d-9bab-03e64b149bd2
+		dataCategory: Uncategorized
+
+	measure '# To be Shipped Units (Prebuy) 2' = EXTERNALMEASURE("# To be Shipped Units (Prebuy)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: b30076ab-75ea-45e8-82ad-1a33b3b4e83d
+		sourceLineageTag: b5e7ccde-95e1-4c5a-a0d2-25231446a896
+		dataCategory: Uncategorized
+
+	measure '# To be Shipped Units (Non-Prebuy) 2' = EXTERNALMEASURE("# To be Shipped Units (Non-Prebuy)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: 283c834a-949d-40f6-af3c-a1c437015df2
+		sourceLineageTag: 914e460b-b369-4b39-9666-f076912b855d
+		dataCategory: Uncategorized
+
+	/// # Number of PO
+	measure '# POs 2' = EXTERNALMEASURE("# POs", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		displayFolder: 3. GSC
+		lineageTag: 33c2ca9a-953e-40a8-8163-dd0efc37ae0e
+		sourceLineageTag: 2a27da0b-fd63-4322-8acc-d7bd3ee56ed3
+		dataCategory: Uncategorized
+
+	measure '# POs (Prebuy) 2' = EXTERNALMEASURE("# POs (Prebuy)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		displayFolder: 3. GSC
+		lineageTag: 1c85d949-a74d-483d-ae8e-875124471447
+		sourceLineageTag: 09783eaf-04fb-42dd-980c-4ef6faea40de
+		dataCategory: Uncategorized
+
+	measure '# POs (Non-Prebuy) 2' = EXTERNALMEASURE("# POs (Non-Prebuy)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: #,##0
+		displayFolder: 3. GSC
+		lineageTag: da34b614-0080-4921-b089-b99c58859c50
+		sourceLineageTag: 6874db9f-a88d-4bbd-8eb4-cb75825a9435
+		dataCategory: Uncategorized
+
+	measure '# Ordered Units (Prebuy) 2' = EXTERNALMEASURE("# Ordered Units (Prebuy)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: 98a93495-1e59-448a-9cd9-5e6b871dfd38
+		sourceLineageTag: 8fe66be1-8af9-4a32-a77e-946114add652
+		dataCategory: Uncategorized
+
+	measure '# Ordered Units (Non-Prebuy) 2' = EXTERNALMEASURE("# Ordered Units (Non-Prebuy)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: c0114fb4-5188-4750-b68e-535adf907def
+		sourceLineageTag: ed1936c0-15a1-448b-8400-d6bf8de39b84
+		dataCategory: Uncategorized
+
+	measure '# Ordered Units (Backlog) 2' = EXTERNALMEASURE("# Ordered Units (Backlog)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: d36b6f65-cf63-412f-97b5-6c5c995b9b81
+		sourceLineageTag: 5f87bc02-1874-4fb9-9947-03ccb81de0a8
+		dataCategory: Uncategorized
+
+	measure '# Ordered Units (Backlog Available) 2' = EXTERNALMEASURE("# Ordered Units (Backlog Available)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: 51c551e6-1a55-4520-840d-3a141fbdc92a
+		sourceLineageTag: 3a514df1-b35c-4440-b4cc-1d57f7141b21
+		dataCategory: Uncategorized
+
+	measure '# OT Ackno (units) 2' = EXTERNALMEASURE("# OT Ackno (units)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: ece33825-9ee9-445b-b325-b33a3d6a8512
+		sourceLineageTag: c1f5d5b5-bc31-4973-abf9-9cf51bc9d8fc
+		dataCategory: Uncategorized
+
+	measure '# OT Ackno (%) 2' = EXTERNALMEASURE("# OT Ackno (%)", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0 "
+		displayFolder: 3. GSC
+		lineageTag: 75d49de2-0bce-485d-8e0d-83e8e1d6e406
+		sourceLineageTag: 1498d52d-b9e8-483c-8fc3-0937c752c87b
+		dataCategory: Uncategorized
+
+	measure '# OT Placement: (Subm vs Approved) (units) 2' = EXTERNALMEASURE("# OT Placement: (Subm vs Approved) (units)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: 899815ef-c20d-406e-bbd3-1c65bf37aea7
+		sourceLineageTag: fd889182-00bd-43b1-9a35-0d7676659dc5
+		dataCategory: Uncategorized
+
+	measure '# OT Placement: (Subm vs Approved) (%) 2' = EXTERNALMEASURE("# OT Placement: (Subm vs Approved) (%)", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0 "
+		displayFolder: 3. GSC
+		lineageTag: 5c3960bb-b3d6-4a94-bd42-e674f87e1bf8
+		sourceLineageTag: c98db059-13ed-4b7e-acc2-611fc6db2f20
+		dataCategory: Uncategorized
+
+	measure '# OT Confirmed (units) 2' = EXTERNALMEASURE("# OT Confirmed (units)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: 40af6a6d-428f-462a-a76d-2279ddee771e
+		sourceLineageTag: 5a459786-f76b-4c4f-a663-3d06c3f0216e
+		dataCategory: Uncategorized
+
+	measure '# OT Confirmed (%) 2' = EXTERNALMEASURE("# OT Confirmed (%)", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0 "
+		displayFolder: 3. GSC
+		lineageTag: cbf40d1f-b331-4fa7-9d4d-5b727312a10b
+		sourceLineageTag: 214bcd92-1c52-4ebf-90db-f00ee3568f0c
+		dataCategory: Uncategorized
+
+	measure '# OT Availability (units) 2' = EXTERNALMEASURE("# OT Availability (units)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: 1ac24509-56f8-43cd-8188-d62aec7aef0b
+		sourceLineageTag: 4a5687ce-f6fa-496e-9c12-eaa78cf75ccd
+		dataCategory: Uncategorized
+
+	measure '# OT Availability (%) 2' = EXTERNALMEASURE("# OT Availability (%)", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0 "
+		displayFolder: 3. GSC
+		lineageTag: 605468b2-a907-4ed1-8be0-05a7b56ba856
+		sourceLineageTag: 45d1db39-447a-4053-834d-5efe3f13e33c
+		dataCategory: Uncategorized
+
+	measure '# Booked on time (units) 2' = EXTERNALMEASURE("# Booked on time (units)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: e9826b73-fc47-4b12-a414-fadf8f98b86a
+		sourceLineageTag: ca79fc92-93ff-4c83-ba94-34754f5bbd3c
+		dataCategory: Uncategorized
+
+	measure '# Booked on time (%) 2' = EXTERNALMEASURE("# Booked on time (%)", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0 "
+		displayFolder: 3. GSC
+		lineageTag: e5e1f035-2a52-4418-8f3f-02c3a2f12db4
+		sourceLineageTag: c9a0fcea-ba64-439d-8e25-40fd4188a5ff
+		dataCategory: Uncategorized
+
+	measure '# OT Supplier (units) 2' = EXTERNALMEASURE("# OT Supplier (units)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: 45811893-c782-4a28-ac91-b1362ab89973
+		sourceLineageTag: 84f3e7ab-18dc-4c89-912f-02ded695b346
+		dataCategory: Uncategorized
+
+	measure '# OT Supplier (%) 2' = EXTERNALMEASURE("# OT Supplier (%)", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0 "
+		displayFolder: 3. GSC
+		lineageTag: bbfb8a65-e792-4485-870e-4c6abb77a8f1
+		sourceLineageTag: b1852480-1ebe-4f6a-967d-db7ad0501873
+		dataCategory: Uncategorized
+
+	measure '# Ordered Units (Past dues) 2' = EXTERNALMEASURE("# Ordered Units (Past dues)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: ed82901f-4f9c-4c6b-82e3-f2ae0730f253
+		sourceLineageTag: 135352e7-d4f9-4f13-ab6b-bf63c799f1af
+		dataCategory: Uncategorized
+
+	measure '# Ordered Units (Available) 2' = EXTERNALMEASURE("# Ordered Units (Available)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: be8b7ba3-4306-415c-9519-9ec8722d3345
+		sourceLineageTag: f4be4392-b4b7-4b88-aa12-bff6cf08e6c8
+		dataCategory: Uncategorized
+
+	measure '# Ordered Units (Delayed) 2' = EXTERNALMEASURE("# Ordered Units (Delayed)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: 0870b1f3-371f-4cff-8881-5694b212c894
+		sourceLineageTag: e4d1e039-68fb-4d5f-b48f-fe4528ebfca7
+		dataCategory: Uncategorized
+
+	measure '# Ordered Units (On Time) 2' = EXTERNALMEASURE("# Ordered Units (On Time)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: face6fea-63f6-444d-a46b-cdd9a7e0ed18
+		sourceLineageTag: c333405a-dc5f-4490-82e3-5977db37e3f1
+		dataCategory: Uncategorized
+
+	measure '# Ordered Units (To be Shipped)  2' = EXTERNALMEASURE("# Ordered Units (To be Shipped) ", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		displayFolder: 3. GSC
+		lineageTag: 417e19de-6d07-4633-8bdb-926b38bc7f7b
+		sourceLineageTag: 4150248a-33c9-4825-895d-79531c7c4d33
+		dataCategory: Uncategorized
+
+	measure '# Ordered Units (Shipped) 2' = EXTERNALMEASURE("# Ordered Units (Shipped)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 3. GSC
+		lineageTag: b8f2d3f5-d9f4-4f76-a880-34853501eb39
+		sourceLineageTag: d6ae3808-e644-4eb9-b41d-ddf4ea4e0ef3
+		dataCategory: Uncategorized
+
+	measure '# Packed Quantity 2' = EXTERNALMEASURE("# Packed Quantity", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		displayFolder: 3. GSC
+		lineageTag: f430fcf4-1040-490c-895d-56f4fc3f872f
+		sourceLineageTag: b9f7ea72-82c2-4f87-a670-f06748368738
+		dataCategory: Uncategorized
+
+	measure 'Quantity To Be Shipped (Current Season) 2' = EXTERNALMEASURE("Quantity To Be Shipped (Current Season)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 020c2504-42c4-4b38-a1cf-6cf9c133e9ba
+		sourceLineageTag: db5c81e8-5efb-4db4-b500-c9362602e673
+		dataCategory: Uncategorized
+
+	measure 'Current Week 2' = EXTERNALMEASURE("Current Week", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: a811227a-be1a-4d78-b39c-10ab23ae5d59
+		sourceLineageTag: 81616829-061f-4f66-b0ee-0358e9f66d1f
+		dataCategory: Uncategorized
+
+	measure 'Shipped (Current Week) 2' = EXTERNALMEASURE("Shipped (Current Week)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 18b531b3-c1e6-4dea-bc4f-3be6390d7f7c
+		sourceLineageTag: 3bbdc9e9-f960-4415-aeaa-bcab1a13a42d
+		dataCategory: Uncategorized
+
+	measure 'Shipped (Current Month) 2' = EXTERNALMEASURE("Shipped (Current Month)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 3ca618ec-6d72-42f0-81ac-8a9c4d1cd52a
+		sourceLineageTag: bf31142f-56af-4cc4-81fc-a1ef14914193
+		dataCategory: Uncategorized
+
+	measure 'Current Month Name 2' = EXTERNALMEASURE("Current Month Name", STRING, "DirectQuery to AS - DMA Sourcing 2")
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: ad5e526d-c52c-478a-82e9-e2a32a164c62
+		sourceLineageTag: 892f95ac-b18c-4c85-8f13-dd5d14cdd8e2
+		dataCategory: Uncategorized
+
+	measure 'To Be Shipped (Current Month) 2' = EXTERNALMEASURE("To Be Shipped (Current Month)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 3982a4f0-7cf5-4d47-a349-59eb1d171248
+		sourceLineageTag: 17e405e1-bfc2-4590-8335-13245c8f84ee
+		dataCategory: Uncategorized
+
+	measure 'To Be Shipped (Current Week) 2' = EXTERNALMEASURE("To Be Shipped (Current Week)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: c0e45b64-8855-42bc-9acf-2050d3826524
+		sourceLineageTag: f756b572-382c-495d-ab90-9f7c25f7c680
+		dataCategory: Uncategorized
+
+	measure '% Country of Manufacture (Current Season) 2' = EXTERNALMEASURE("% Country of Manufacture (Current Season)", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 9e1b3ef4-884c-457e-821f-030f9bd57f3b
+		sourceLineageTag: 7bc0d443-ab1e-4024-a43e-ec44875e6915
+		dataCategory: Uncategorized
+
+	measure '% Submitted vs Confirmed Ex-Factory (Last Season) 2' = EXTERNALMEASURE("% Submitted vs Confirmed Ex-Factory (Last Season)", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: ae66bcf6-7300-4227-8fde-1712040f01f6
+		sourceLineageTag: 4a464614-e69b-427d-b68f-7aef4b8531ff
+		dataCategory: Uncategorized
+
+	measure '% Submitted vs Confirmed Ex-Factory (Current Season) 2' = EXTERNALMEASURE("% Submitted vs Confirmed Ex-Factory (Current Season)", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: c88fa1b7-a757-4bef-8924-c8004d45e549
+		sourceLineageTag: 4b3d39ba-fb04-462d-a300-3ca0ccad727a
+		dataCategory: Uncategorized
+
+	measure 'Quantity Shipped & to be Shipped 2' = EXTERNALMEASURE("Quantity Shipped & to be Shipped", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: afd857b0-2847-46da-9c7e-fb68011968e6
+		sourceLineageTag: 13ca3dc7-c360-4f58-b0b1-6877ea0c87a3
+		dataCategory: Uncategorized
+
+	measure 'Submitted Qty 2' = EXTERNALMEASURE("Submitted Qty", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: f0bf8dba-3641-4caf-b8bd-8d1274592b3d
+		sourceLineageTag: 82a7b665-ec5e-407b-bf02-4a879c646b20
+		dataCategory: Uncategorized
+
+	measure 'Ranking Leathers 2' = EXTERNALMEASURE("Ranking Leathers", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 084b81ca-b2be-49a4-a219-5999e7e156c7
+		sourceLineageTag: 024eb0ad-d961-4f0c-8489-0f8d677315c9
+		dataCategory: Uncategorized
+
+	measure 'Ranking Products 2' = EXTERNALMEASURE("Ranking Products", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 950d0aa5-18a1-4012-b576-2cda466c121c
+		sourceLineageTag: cb4177c8-bec2-49b1-96ff-04cb3a609eb3
+		dataCategory: Uncategorized
+
+	measure '% Submitted vs Confirmed Ex-Factory 2' = EXTERNALMEASURE("% Submitted vs Confirmed Ex-Factory", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 185e88bb-c8a7-430c-a56c-963b10609e3c
+		sourceLineageTag: ce78e751-9d27-4e6e-8141-42f3ffab4755
+		dataCategory: Uncategorized
+
+	measure 'Submitted Qty (Current Season) 2' = EXTERNALMEASURE("Submitted Qty (Current Season)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: d29f7670-c3c5-4f77-8db1-a6e9272cb685
+		sourceLineageTag: 87eae2e7-c716-49aa-b3c3-bb0d64f11383
+		dataCategory: Uncategorized
+
+	/// % Difference of the current vs previous season for submissions (Order Placement reports)
+	measure 'Submitted Qty (% Diff LS) 2' = EXTERNALMEASURE("Submitted Qty (% Diff LS)", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: cc3e5342-ad13-4ba8-a887-0e28517566d1
+		sourceLineageTag: 807f8e40-7e97-494d-b571-5222d0610473
+		dataCategory: Uncategorized
+
+	measure '% Submitted by Supplier Country 2' = EXTERNALMEASURE("% Submitted by Supplier Country", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 19d04b92-5608-4bb1-97e0-ecb70373a474
+		sourceLineageTag: f6f953e0-06c9-4178-88c9-0434d8f44183
+		dataCategory: Uncategorized
+
+	measure 'Approved PO Value (With Currency) 2' = EXTERNALMEASURE("Approved PO Value (With Currency)", STRING, "DirectQuery to AS - DMA Sourcing 2")
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 7f8a25fc-6c15-4b65-8caa-0d4652b848a9
+		sourceLineageTag: 8ec298ef-8396-43d8-9ad6-fe2ac5c6a31e
+		dataCategory: Uncategorized
+
+	measure 'Confirmed (From today) 2' = EXTERNALMEASURE("Confirmed (From today)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: e9155273-9eef-47f9-8b23-d24999a85b36
+		sourceLineageTag: 0b1d150e-eaf2-4a51-92d2-1c5e81677681
+		dataCategory: Uncategorized
+
+	measure 'Unconfirmed (From today) 2' = EXTERNALMEASURE("Unconfirmed (From today)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 582ed1b2-ea50-4162-9aac-3e36a90a26e6
+		sourceLineageTag: afda6cd6-5dab-4593-acf9-a51ade3ccd57
+		dataCategory: Uncategorized
+
+	measure 'CurrentSeasonAWLabel 2' = EXTERNALMEASURE("CurrentSeasonAWLabel", STRING, "DirectQuery to AS - DMA Sourcing 2")
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 95f6f28c-d153-42d8-8d34-601e28d88ebf
+		sourceLineageTag: 610d483f-fdb3-42d3-8d8d-b7be5818b084
+		dataCategory: Uncategorized
+
+	measure 'CurrentSeasonSSLabel 2' = EXTERNALMEASURE("CurrentSeasonSSLabel", STRING, "DirectQuery to AS - DMA Sourcing 2")
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 30a9ce61-a7c5-4c83-8e4f-e559cb588ec5
+		sourceLineageTag: 7c822c0a-9615-47d5-8cf5-14b7914f8d07
+		dataCategory: Uncategorized
+
+	measure 'Quantity Shipped & to be Shipped (SS Current Season) 2' = EXTERNALMEASURE("Quantity Shipped & to be Shipped (SS Current Season)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 9c88d656-f0c2-4c64-9a28-fc773caa94a0
+		sourceLineageTag: fda08a63-c894-4ceb-a5d3-779f0a1259e4
+		dataCategory: Uncategorized
+
+	measure 'Max Season 2' = EXTERNALMEASURE("Max Season", STRING, "DirectQuery to AS - DMA Sourcing 2")
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 53e6b743-d702-406b-8f6f-012b216328dc
+		sourceLineageTag: 441e81ad-52b4-45a4-a084-35552b867254
+		dataCategory: Uncategorized
+
+	measure 'Quantity Shipped & to be Shipped (AW Current Season) 2' = EXTERNALMEASURE("Quantity Shipped & to be Shipped (AW Current Season)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 0fc8e54c-3f48-4ac1-b3cd-1025caba8ac4
+		sourceLineageTag: ac87a303-b044-4983-a3aa-9da2154e0b1a
+		dataCategory: Uncategorized
+
+	measure 'Quantity Shipped & to be Shipped (Current Seasons) 2' = EXTERNALMEASURE("Quantity Shipped & to be Shipped (Current Seasons)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 36facad8-3cc9-4d95-946d-c86fb6bd6085
+		sourceLineageTag: 5d8a8a4f-7b8d-4af3-9225-5d71ba1ffd93
+		dataCategory: Uncategorized
+
+	measure 'PreviousSeasonAWLabel 2' = EXTERNALMEASURE("PreviousSeasonAWLabel", STRING, "DirectQuery to AS - DMA Sourcing 2")
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: a4ec8ad2-cc5f-4b08-874d-b500d2a0fe79
+		sourceLineageTag: b5d0b9a6-3a9a-478c-b34f-93499d7cdce1
+		dataCategory: Uncategorized
+
+	measure 'PreviousSeasonSSLabel 2' = EXTERNALMEASURE("PreviousSeasonSSLabel", STRING, "DirectQuery to AS - DMA Sourcing 2")
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 0037824f-169a-47ea-9228-8315a57d694d
+		sourceLineageTag: 65ec3697-867b-4b21-8628-10aa56954fb9
+		dataCategory: Uncategorized
+
+	measure 'Quantity Shipped & to be Shipped (AW Previous Season) 2' = EXTERNALMEASURE("Quantity Shipped & to be Shipped (AW Previous Season)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 979aa6c3-d1f6-4f23-920a-5af11925c210
+		sourceLineageTag: f813442a-3a04-486c-9404-a745cdfa3ea3
+		dataCategory: Uncategorized
+
+	measure 'Quantity Shipped & to be Shipped (SS Previous Season) 2' = EXTERNALMEASURE("Quantity Shipped & to be Shipped (SS Previous Season)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 45bcbe9d-1edb-4bdd-a9d4-4b951fe785be
+		sourceLineageTag: e3aabc13-a54f-4af4-8a0c-59c520d90885
+		dataCategory: Uncategorized
+
+	measure 'Quantity Shipped & to be Shipped (Previous Seasons) 2' = EXTERNALMEASURE("Quantity Shipped & to be Shipped (Previous Seasons)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 920c4133-c61c-4ac2-af91-07296d7c5d32
+		sourceLineageTag: 78aa285c-4493-45d0-a96e-a896facf994b
+		dataCategory: Uncategorized
+
+	measure '% Submitted vs Confirmed Ex-Factory (Previous Season) 2' = EXTERNALMEASURE("% Submitted vs Confirmed Ex-Factory (Previous Season)", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: ca4bad6e-17d9-4303-8fd0-a04106ea939a
+		sourceLineageTag: 3cd1201c-f79c-4ec4-9075-6419cd0fd618
+		dataCategory: Uncategorized
+
+	measure 'Shipped (Current Season) 2' = EXTERNALMEASURE("Shipped (Current Season)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: f53dbc65-fdb0-48b5-aa55-1781056818d2
+		sourceLineageTag: 5d97c549-08a0-42b1-bd6f-349fe03f310b
+		dataCategory: Uncategorized
+
+	measure 'To Be Shipped (Current Season) 2' = EXTERNALMEASURE("To Be Shipped (Current Season)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: c9470042-cb45-4f81-968a-5d97aa297de8
+		sourceLineageTag: d48163a9-2efb-4e69-9a6b-9f4ba7fe1cb1
+		dataCategory: Uncategorized
+
+	measure '% Country of Manufacture (Previous Season) 2' = EXTERNALMEASURE("% Country of Manufacture (Previous Season)", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: e24ec72b-cfc7-460d-a71d-9cc7cb5b5d05
+		sourceLineageTag: f90a4285-f4f9-4b9e-9dc1-de919e59fa6a
+		dataCategory: Uncategorized
+
+	measure 'Submitted Qty (AW Current Season) 2' = EXTERNALMEASURE("Submitted Qty (AW Current Season)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 4ffc43ef-a128-41ff-bf56-161a5659c308
+		sourceLineageTag: 970755b8-c18c-4c79-b719-ec31561e9f7c
+		dataCategory: Uncategorized
+
+	measure 'Submitted Qty (AW Previous Season) 2' = EXTERNALMEASURE("Submitted Qty (AW Previous Season)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: a41e51a6-f94c-4b13-9fee-938766374114
+		sourceLineageTag: 169540e1-ca3a-4e64-a94c-194e707298b2
+		dataCategory: Uncategorized
+
+	measure 'Submitted Qty (SS Current Season) 2' = EXTERNALMEASURE("Submitted Qty (SS Current Season)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 685c9e6c-c54e-4fe3-823d-7be06d23c83a
+		sourceLineageTag: e169adbf-cda9-4cca-8e58-9794bd633a68
+		dataCategory: Uncategorized
+
+	measure 'Submitted Qty (SS Previous Season) 2' = EXTERNALMEASURE("Submitted Qty (SS Previous Season)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: f1ecbc56-646d-4e78-8267-c38ad3e4f02b
+		sourceLineageTag: 15b4980f-e454-43b9-a1dc-352652d7a312
+		dataCategory: Uncategorized
+
+	measure 'Submitted Qty (Previous Seasons) 2' = EXTERNALMEASURE("Submitted Qty (Previous Seasons)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: f9ffe30a-f532-41ac-858d-8ba5930f5c41
+		sourceLineageTag: 12ac1ba1-10cc-4330-9588-6a1644721b5e
+		dataCategory: Uncategorized
+
+	measure 'Submitted Qty (Current Seasons) 2' = EXTERNALMEASURE("Submitted Qty (Current Seasons)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: b1c76554-3cbc-4b84-9bb0-8b11e0e19246
+		sourceLineageTag: 9689bb26-e560-4c6d-9912-eda4208b69a5
+		dataCategory: Uncategorized
+
+	measure 'Submitted Running Totals 2' = EXTERNALMEASURE("Submitted Running Totals", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 24196558-45e7-4e28-8d29-a3d6fe27a3fb
+		sourceLineageTag: 7ec1c36c-4a8a-43f6-8907-00cb280dc11a
+		dataCategory: Uncategorized
+
+	measure 'Submitted Same Season Period Last Year 2' = EXTERNALMEASURE("Submitted Same Season Period Last Year", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: a233cef9-1b57-4cd5-a02b-afcf854154ca
+		sourceLineageTag: 5fb9cb9f-4c2d-47a8-bdb0-4258d4cfd9de
+		dataCategory: Uncategorized
+
+	measure '% Difference Submitted Current Season vs Last Season PIT 2' = EXTERNALMEASURE("% Difference Submitted Current Season vs Last Season PIT", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 742eabb6-cc28-444d-ae36-d1b9c320cd0a
+		sourceLineageTag: 518c12ed-dbad-4b59-8e77-b6b2c4e548f7
+		dataCategory: Uncategorized
+
+	measure 'To Be Shipped 2' = EXTERNALMEASURE("To Be Shipped", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: d9c137c1-55d0-4295-bbe5-e9003d47ea38
+		sourceLineageTag: b358612d-4cba-49d7-bd79-8bd1b6a150d1
+		dataCategory: Uncategorized
+
+	measure 'Quantity Shipped & to be Shipped (Last Season) 2' = EXTERNALMEASURE("Quantity Shipped & to be Shipped (Last Season)", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: z. PBI
+		lineageTag: 30c554c9-5a7e-4704-abcf-773a231caf9e
+		sourceLineageTag: a78595c3-28dc-48c8-b9a9-91e003c35614
+		dataCategory: Uncategorized
+
+	measure 'Quantity Submitted 2' = EXTERNALMEASURE("Quantity Submitted", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 897b06b8-9214-48c9-b0ed-034df192e58c
+		sourceLineageTag: 492cc88c-ca4e-4ae8-8a34-8ffd17272d86
+		dataCategory: Uncategorized
+
+	measure 'Quantity Approved 2' = EXTERNALMEASURE("Quantity Approved", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 625a527f-acc7-44d0-b842-24f1ff6b905e
+		sourceLineageTag: a87f4e4a-75ec-4bf9-aedf-95fce243c1e7
+		dataCategory: Uncategorized
+
+	measure 'Approved PO Value 2' = EXTERNALMEASURE("Approved PO Value", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0"
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: c1cb5e1d-fdae-4e93-855f-59156bd9840c
+		sourceLineageTag: 226fb5cc-abe3-47d3-ba6e-51e9af4341fa
+		dataCategory: Uncategorized
+
+	measure 'Quantity to be Shipped 2' = EXTERNALMEASURE("Quantity to be Shipped", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: b5714976-5365-4b23-a4af-7dfcdeef24ed
+		sourceLineageTag: 57dc8253-9d0e-485e-a6a5-dd0a6e5e9d5e
+		dataCategory: Uncategorized
+
+	measure 'Quantity Placed to Factory 2' = EXTERNALMEASURE("Quantity Placed to Factory", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 6065444f-0176-491c-8f95-79a0c561bc0a
+		sourceLineageTag: 61f7533a-2cfb-4371-b759-907c391792fc
+		dataCategory: Uncategorized
+
+	measure 'Quantity Rejected 2' = EXTERNALMEASURE("Quantity Rejected", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 9f65879d-7250-4471-a3f0-95c4c50a6a04
+		sourceLineageTag: 9fd670b7-92e4-476d-b2f0-6c4e28c44b4c
+		dataCategory: Uncategorized
+
+	measure 'Quantity Shipped 2' = EXTERNALMEASURE("Quantity Shipped", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: b2cc21c0-07ee-4e9e-86d7-bfeec03c8fcc
+		sourceLineageTag: 4c67b8d9-9f16-4bb2-8ea4-57b0bea7704a
+		dataCategory: Uncategorized
+
+	measure 'Quantity Confirmed 2' = EXTERNALMEASURE("Quantity Confirmed", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: df9541de-ba98-4119-8128-082738f46e3b
+		sourceLineageTag: 412e3a2c-4b7a-41fc-af81-45e995f68d57
+		dataCategory: Uncategorized
+
+	measure 'Quantity Unconfirmed 2' = EXTERNALMEASURE("Quantity Unconfirmed", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: d2fc0870-0ca7-4dd5-9e25-501d32ceed3d
+		sourceLineageTag: 22751141-749a-4e71-9bc9-f5443e330e05
+		dataCategory: Uncategorized
+
+	/// FOB (Freight on Board)
+	measure 'FOB 2' = EXTERNALMEASURE("FOB", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: a523b989-23af-4f45-b5ff-d6f039ceaafc
+		sourceLineageTag: 4e64930c-668c-4663-bb59-be8dc9e0c876
+		dataCategory: Uncategorized
+
+	measure 'Quantity Ordered 2' = EXTERNALMEASURE("Quantity Ordered", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: 0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 63b1c721-7c47-480d-916e-b79697c2b91e
+		sourceLineageTag: 81eedee5-3b7c-4a96-ab06-4220673d6c24
+		dataCategory: Uncategorized
+
+	measure 'Invoice Value 2' = EXTERNALMEASURE("Invoice Value", DOUBLE, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: " \#\,\#\#\0.\0\0"
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 45f022b9-d76c-4208-a855-7da2f213c1d0
+		sourceLineageTag: 02e25a6d-4a5c-42ed-8029-b5dfb9ced9d7
+		dataCategory: Uncategorized
+
+	measure 'Quantity Invoiced 2' = EXTERNALMEASURE("Quantity Invoiced", INTEGER, "DirectQuery to AS - DMA Sourcing 2")
+		formatString: #,0
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 6874e278-22ec-48c9-a513-e42159e71537
+		sourceLineageTag: 8304fdd3-f743-4e5c-9dfd-26c5c815a003
+		dataCategory: Uncategorized
+
+	column Column
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 51b36743-924f-41de-a3d4-c3e38d811035
+		sourceLineageTag: 1e9662a4-dc2a-494e-8dfe-9526c22fa7b2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Column
+
+		annotation SummarizationSetBy = User
+
+	partition 'Metrics 2' = entity
+		mode: directQuery
+		source
+			entityName: Metrics
+			expressionSource: 'DirectQuery to AS - DMA Sourcing 2'
+

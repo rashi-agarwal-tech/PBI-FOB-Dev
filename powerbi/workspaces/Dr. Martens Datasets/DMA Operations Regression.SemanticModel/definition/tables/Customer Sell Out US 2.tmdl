@@ -1,0 +1,78 @@
+table 'Customer Sell Out US 2'
+	isHidden
+	lineageTag: f19e5f21-f651-4db9-896e-d4dad67e989b
+	sourceLineageTag: 6e79ec86-893e-4d8e-9e5b-3e6f7dfcaeef
+
+	column To_Date_Key
+		dataType: string
+		isHidden
+		lineageTag: be284a04-a2c5-4b00-84fa-d9f3c4ffcc4a
+		sourceLineageTag: 467c8fd6-34d6-4067-84c0-72ee9b7299c8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: To_Date_Key
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		lineageTag: 2c9661a4-82f2-405b-a85f-a7781e9b0e11
+		sourceLineageTag: 838af59a-a6ff-49c8-8c83-426959c50c4a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'To Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: abc8966c-099a-408b-88f0-ec7020887f63
+		sourceLineageTag: 51338a4a-5d81-46a7-beb8-78b0c5066ab0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: To Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Qty Sold'
+		dataType: int64
+		isHidden
+		lineageTag: f2143702-2cfe-448f-aa99-8e758d4e43a6
+		sourceLineageTag: 246160f4-5d0b-4813-95f1-07399380cee3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Qty Sold
+
+		annotation SummarizationSetBy = User
+
+	column 'Qty On Hand'
+		dataType: int64
+		isHidden
+		lineageTag: e12557d3-0f45-416b-88fc-6af9ce4ccbae
+		sourceLineageTag: f05df1dd-51c2-45db-af3e-d79d8dbc2132
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Qty On Hand
+
+		annotation SummarizationSetBy = User
+
+	column Product_Key
+		dataType: string
+		isHidden
+		lineageTag: 6730db88-8e19-47c3-8e9e-937fd999aea9
+		sourceLineageTag: 57452e0c-e3e3-47d5-9ff0-e135e3799f1e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	partition 'Customer Sell Out US 2' = entity
+		mode: directQuery
+		source
+			entityName: Customer Sell Out US
+			expressionSource: 'DirectQuery to AS - DMA Operations 2'
+

@@ -1,0 +1,36 @@
+table 'Sales Order Type 2'
+	isHidden
+	lineageTag: 084d1ef1-0d27-4070-8d84-afdb784e76a0
+	sourceLineageTag: e4d60697-a00c-47e5-a682-b1b408b5baaf
+
+	column DESCRIPTION
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 77ccb359-f05c-470b-b14c-3a35f5d82f73
+		sourceLineageTag: c4a5c6fc-a7df-4bdb-bf54-bfe1a1b9cefd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DESCRIPTION
+
+		annotation SummarizationSetBy = User
+
+	column ORDERTYPEID
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Misc
+		lineageTag: 94a2c10e-b1eb-494b-8138-c3c5957b04ee
+		sourceLineageTag: d4bbd399-c100-4f3e-873e-c6d2e8da44b6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ORDERTYPEID
+
+		annotation SummarizationSetBy = User
+
+	partition 'Sales Order Type 2' = entity
+		mode: directQuery
+		source
+			entityName: Sales Order Type
+			expressionSource: 'DirectQuery to AS - DMA B2B 2'
+

@@ -1,0 +1,35 @@
+table 'Channel 2'
+	isHidden
+	lineageTag: 747cb0cf-2b8f-471d-9881-18a76be2d84a
+	sourceLineageTag: db5f6c24-dddd-463d-b800-a280a993c53e
+
+	column 'Channel ID'
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: e1206f44-e894-463d-90c5-4ffd577e5916
+		sourceLineageTag: 0424610a-842d-487a-bcb2-1150a03b71c8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel ID
+
+		annotation SummarizationSetBy = User
+
+	column Channel
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 45b26fd2-66d7-480b-b1b0-e33805e400c3
+		sourceLineageTag: 5579e74b-3add-45d9-b5f3-91b31133886d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel
+
+		annotation SummarizationSetBy = User
+
+	partition 'Channel 2' = entity
+		mode: directQuery
+		source
+			entityName: Channel
+			expressionSource: 'DirectQuery to AS - DMA Total Business 2'
+

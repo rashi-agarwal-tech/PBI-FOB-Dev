@@ -1,0 +1,34 @@
+table 'Hold Code Trans 2'
+	isHidden
+	lineageTag: 8c021b32-e43c-4ada-a213-202a0b6894e6
+	sourceLineageTag: 246b8669-da8b-4775-9059-0e88c9dbf68e
+
+	column SalesOrderNumber_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: cc5ab64f-bdad-4fc3-9be2-15df2b6684c8
+		sourceLineageTag: e84503f2-4aa5-4a70-b33e-c1c8e0fcca97
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SalesOrderNumber_Key
+
+		annotation SummarizationSetBy = User
+
+	column HOLDCODEDESCRIPTION
+		dataType: string
+		isHidden
+		lineageTag: 9d891b4c-b7cc-4d58-9403-024ddac439e1
+		sourceLineageTag: acfb7ed5-ff8c-429a-8b45-9bb95ec26095
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: HOLDCODEDESCRIPTION
+
+		annotation SummarizationSetBy = User
+
+	partition 'Hold Code Trans 2' = entity
+		mode: directQuery
+		source
+			entityName: Hold Code Trans
+			expressionSource: 'DirectQuery to AS - DMA Total Business 2'
+

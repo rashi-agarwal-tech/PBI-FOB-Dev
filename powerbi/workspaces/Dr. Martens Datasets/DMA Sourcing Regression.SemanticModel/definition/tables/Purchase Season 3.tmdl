@@ -1,0 +1,130 @@
+table 'Purchase Season 3'
+	lineageTag: 876299d9-d730-4f8c-a205-d06230014960
+	sourceLineageTag: 8300726f-5cc0-42c4-bece-6f20d2e8afbf
+
+	column Season
+		dataType: string
+		lineageTag: a8408b83-b1d2-4fc7-81cf-e53b6a597504
+		sourceLineageTag: 1997b67d-0b75-4b84-8c52-645c936590c5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season
+		sortByColumn: 'Season Key'
+
+		annotation SummarizationSetBy = User
+
+	column 'Season Short Name'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 09d2ae5b-7aca-44c5-99b9-44ab180098ea
+		sourceLineageTag: 27257f25-60fa-4134-bd6b-38e8703a4ee0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season Short Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Season Long Name'
+		dataType: string
+		isHidden
+		lineageTag: 367313e3-0aac-4541-8f72-ed545fb7c441
+		sourceLineageTag: a503ed0f-9177-4517-8020-759d353173f7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season Long Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Season Year'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 2b175146-7618-4c4e-a616-139575853687
+		sourceLineageTag: b77b9d0c-dbeb-4854-b9b1-2f031046fdf2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Season Key'
+		dataType: int64
+		isNullable: false
+		displayFolder: zz_Misc
+		lineageTag: 5ba87172-0355-49b6-a6dd-3e772bd40f6d
+		sourceLineageTag: 206dc978-85bf-41ae-851d-97c30a1f6cbf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season Key
+
+		annotation SummarizationSetBy = User
+
+	column StartSeason
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		displayFolder: zz_Misc
+		lineageTag: 48fb73ee-6bee-4131-a7bd-efb793783dad
+		sourceLineageTag: 3b4dc827-f262-4d95-8efe-104c9fd8cb73
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: StartSeason
+
+		annotation SummarizationSetBy = User
+
+	column EndSeason
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		displayFolder: zz_Misc
+		lineageTag: 1e258662-51fc-45dc-a159-0073240c2d58
+		sourceLineageTag: abf415b2-8957-4441-87b3-c60f6c341c78
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: EndSeason
+
+		annotation SummarizationSetBy = User
+
+	column 'Current Year Number'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 65603932-b949-4a4d-87a4-ea25e8517300
+		sourceLineageTag: fb5e61e8-2487-4bed-834f-79f5029298fc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Current Year Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Last Year'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 68cee397-1d26-41ee-acbb-5352c65a22fc
+		sourceLineageTag: f4e19e8c-e4af-49b3-b085-0c7a0a511741
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Last Year
+
+		annotation SummarizationSetBy = User
+
+	column CurrentSeasonYear
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 5c65fed8-a863-4d7a-9013-ec937f334644
+		sourceLineageTag: 682efe47-1898-48c3-89ba-1faa4247e946
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CurrentSeasonYear
+
+		annotation SummarizationSetBy = User
+
+	partition 'Purchase Season 3' = entity
+		mode: directQuery
+		source
+			entityName: Purchase Season
+			expressionSource: 'DirectQuery to AS - DMA Sourcing 3'
+

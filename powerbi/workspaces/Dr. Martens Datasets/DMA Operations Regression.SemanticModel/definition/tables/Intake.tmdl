@@ -1,0 +1,146 @@
+table Intake
+	isHidden
+	lineageTag: c7ace873-ca9e-432a-9873-4ebee6f13b42
+	sourceLineageTag: 486140a3-4c3a-4324-8302-2915347fdb3c
+
+	column Date_Key
+		dataType: int64
+		isHidden
+		lineageTag: 338b4fa3-e83a-4073-82fd-01914b44d5f1
+		sourceLineageTag: 48417f44-a4b2-4742-ac25-b9bebe313508
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Date_Key
+
+		annotation SummarizationSetBy = User
+
+	column Product_Key
+		dataType: string
+		isHidden
+		lineageTag: a603c29e-e007-4e49-9a7d-b56d95b7169f
+		sourceLineageTag: c37c3a30-124c-4087-a348-305687b56434
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		lineageTag: 10b218e1-c487-404b-8bd7-8ce3f24637f6
+		sourceLineageTag: 32d8c581-c5ee-41f1-857e-3d563beff1ed
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size_Key
+		dataType: string
+		isHidden
+		lineageTag: 3134d5dd-10eb-419b-beab-bc952b6ad6d4
+		sourceLineageTag: c9d42323-540f-480c-a55b-8f728035b469
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'SnapShot Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: bfdd08a5-d206-4620-a334-7f43e83f7ab1
+		sourceLineageTag: 9daf6a2f-8ce4-4c01-b0f7-9c15c329e689
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SnapShot Date
+
+		annotation SummarizationSetBy = User
+
+	column QTYFREE
+		dataType: int64
+		isHidden
+		lineageTag: 99d365f6-fe94-4e3d-9ac7-3744b378ec0d
+		sourceLineageTag: 3ee5f59d-6237-4e5c-a215-12061efaf8e3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: QTYFREE
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: dbbf45cb-cb67-4732-b3bb-0b464338d9e7
+		sourceLineageTag: 1fb1fb1f-842f-4779-ae91-87351712a4db
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse ID'
+		dataType: string
+		isHidden
+		lineageTag: 610256af-d78b-4536-83f6-5f92f64d7a5c
+		sourceLineageTag: 5226b5cb-235f-4023-9e1b-02cb04cf1363
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse ID
+
+		annotation SummarizationSetBy = User
+
+	column SELLINGSTATUS
+		dataType: int64
+		isHidden
+		lineageTag: 2cf24e87-b637-4ac8-8840-ffbf1361d3fd
+		sourceLineageTag: 52d72e4e-8c7e-4472-b9a3-2dc6379b1b1d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		annotation SummarizationSetBy = User
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		lineageTag: d21c39cc-827f-4ad9-a87a-6004ebdff089
+		sourceLineageTag: 54ba7adf-3af1-4b14-b18d-5ac1c26406fd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		annotation SummarizationSetBy = User
+
+	column AVAILDATE
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 5a61b989-53fc-4c9c-8f8b-589d081dcf1c
+		sourceLineageTag: f55361df-a63c-4a42-8e73-8bf3c99e4d3e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AVAILDATE
+
+		annotation SummarizationSetBy = User
+
+	column RECEIPTTYPE
+		dataType: double
+		isHidden
+		lineageTag: add69159-ea7b-4a71-9ffb-ce0eee3fdb39
+		sourceLineageTag: ff99ba8c-8759-4379-b51f-a671dc14e05d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: RECEIPTTYPE
+
+		annotation SummarizationSetBy = User
+
+	partition Intake = entity
+		mode: directQuery
+		source
+			entityName: Intake
+			expressionSource: 'DirectQuery to AS - DMA Operations'
+

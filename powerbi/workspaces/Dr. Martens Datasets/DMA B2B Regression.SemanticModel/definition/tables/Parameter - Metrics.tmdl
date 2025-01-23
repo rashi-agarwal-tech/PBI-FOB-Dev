@@ -1,0 +1,92 @@
+table 'Parameter - Metrics'
+	lineageTag: 35e77544-2544-4074-a099-8fdaaa1f4f95
+
+	column 'Parameter - Metrics'
+		lineageTag: 94113e41-da17-4494-90f2-1d4b2db74b74
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter - Metrics Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter - Metrics Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Metrics Fields'
+		isHidden
+		lineageTag: 9265534a-368e-42a7-91b9-314c840b9510
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter - Metrics Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Metrics Order'
+		isHidden
+		formatString: 0.0
+		lineageTag: f99c51a5-ec8a-4779-853d-90508c0c00ca
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type =
+			
+			IF
+			(
+			    RIGHT(FORMAT([Parameter - Metrics Order],"@"),1)="1"
+			    ,"Actual"
+			    ,"Abs Diff"
+			)
+		lineageTag: ad4b0134-41bf-4be9-84ce-8d3ebab207e4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter - Metrics' = calculated
+		mode: import
+		source =
+				
+				{
+				    ("Open Units Actuals", NAMEOF([sales open units]), 1.1),
+				    ("Open Units AbsDiff", NAMEOF([sales open units Diff]), 1.2),
+				    ("Open Net Value Actuals", NAMEOF([sales open net value]), 2.1),
+				    ("Open Net Value AbsDiff", NAMEOF([sales open net value Diff]), 2.2),
+				    ("Invoiced Units Actuals", NAMEOF([sales invoiced units]), 3.1),
+				    ("Invoiced Units AbsDiff", NAMEOF([sales invoiced units Diff]), 3.2),
+				    ("Invoiced Net Value Actuals", NAMEOF([sales invoiced net value]), 4.1),
+				    ("Invoiced Net Value AbsDiff", NAMEOF([sales invoiced net value Diff]), 4.2),
+				    ("Returned Units Actuals", NAMEOF([sales returned units]), 5.1),
+				    ("Returned Units AbsDiff", NAMEOF([sales returned units Diff]), 5.2),
+				    ("Returned Net Value Actuals", NAMEOF([sales returned net value]), 6.1),
+				    ("Returned Net Value AbsDiff", NAMEOF([sales returned net value Diff]), 6.2),
+				    ("Total Units Actuals", NAMEOF([sales total units]), 7.1),
+				    ("Total Units AbsDiff", NAMEOF([sales total units Diff]), 7.2),
+				    ("Total Net Value Actuals", NAMEOF([sales total net value]), 8.1),
+				    ("Total Net Value AbsDiff", NAMEOF([sales total net value Diff]), 8.2),
+				    ("Net Units Actuals", NAMEOF([sales net units]), 9.1),
+				    ("Net Units AbsDiff", NAMEOF([sales net units Diff]), 9.2),
+				    ("Net Value Actuals", NAMEOF([sales net value]), 10.1),
+				    ("Net Value AbsDiff", NAMEOF([sales net value Diff]), 10.2),
+				    ("Ordered Units Actuals", NAMEOF([sales ordered units]), 11.1),
+				    ("Ordered Units AbsDiff", NAMEOF([sales ordered units Diff]), 11.2),
+				    ("Ordered Net Value Actuals", NAMEOF([sales ordered net value]), 12.1),
+				    ("Ordered Net Value AbsDiff", NAMEOF([sales ordered net value Diff]), 12.2),
+				    ("Net Sell Out Units Actuals", NAMEOF([sales net sell out units]), 13.1),
+				    ("Net Sell Out Units AbsDiff", NAMEOF([sales net sell out units Diff]), 13.2),
+				    ("Reserved Units Actuals", NAMEOF([sales reserved units]), 14.1),
+				    ("Reserved Units AbsDiff", NAMEOF([sales reserved units Diff]), 14.2),
+				    ("Pick Activated Units Actuals", NAMEOF([sales pick activated units]), 15.1),
+				    ("Pick Activated Units AbsDiff", NAMEOF([sales pick activated units Diff]), 15.2),
+				    ("Pick Complete Units Actuals", NAMEOF([sales pick complete units]), 16.1),
+				    ("Pick Complete Units AbsDiff", NAMEOF([sales pick complete units Diff]), 16.2)
+				}
+
+	annotation PBI_Id = ca6d7977ee0048349af11303548f9228
+

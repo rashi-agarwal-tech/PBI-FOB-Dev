@@ -1,0 +1,36 @@
+table 'Days Late Groupings 2'
+	isHidden
+	lineageTag: c5f30bf0-c8dc-446b-abaa-e3847d499e4a
+	sourceLineageTag: 1a8cb251-567d-4b57-8dd0-f83e4a21d811
+
+	column 'DL Bin'
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		lineageTag: 0f6262af-8440-4f6c-aba5-644e4903b516
+		sourceLineageTag: ae6fab36-0ace-46f7-9a4c-d795e375409f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DL Bin
+
+		annotation SummarizationSetBy = User
+
+	column 'Days Late Groupings'
+		dataType: string
+		isHidden
+		lineageTag: 31f836be-87d6-40c1-a2bc-c0921473ca91
+		sourceLineageTag: 1e60ab9c-003a-47cb-8d1c-79022e131a2d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Days Late Groupings
+		sortByColumn: 'DL Bin'
+
+		annotation SummarizationSetBy = User
+
+	partition 'Days Late Groupings 2' = entity
+		mode: directQuery
+		source
+			entityName: Days Late Groupings
+			expressionSource: 'DirectQuery to AS - DMA Sourcing 2'
+

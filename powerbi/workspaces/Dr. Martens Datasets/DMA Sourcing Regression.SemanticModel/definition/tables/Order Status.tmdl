@@ -1,0 +1,33 @@
+table 'Order Status'
+	lineageTag: 4307400a-6c32-4a3b-aa0f-086d3f5eaf17
+	sourceLineageTag: 615e0e57-a54c-400d-ae69-e822e1ca5f5b
+
+	column Order_Status_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Misc
+		lineageTag: d1687d36-b7b5-455c-9a91-e56edee671ea
+		sourceLineageTag: 10e52ed5-9600-4a8c-9532-e2a161c9bcab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order_Status_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Status'
+		dataType: string
+		lineageTag: 0ffe3b5d-1569-4b2e-b93d-c7425a87f97e
+		sourceLineageTag: d4582dd4-9a48-4c41-b302-041be95ddb2e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Status
+
+		annotation SummarizationSetBy = User
+
+	partition 'Order Status' = entity
+		mode: directQuery
+		source
+			entityName: Order Status
+			expressionSource: 'DirectQuery to AS - DMA Sourcing'
+

@@ -1,0 +1,184 @@
+table 'Pack One Carton Dimensions'
+	lineageTag: 6346e224-8d3a-44b8-b623-8bf1fd0fac5e
+	sourceLineageTag: b317e347-8407-404e-b9ff-5f29b5083a21
+
+	column 'Sscc Number'
+		dataType: string
+		lineageTag: 135c921e-45c6-4266-9679-5a02e02f2ea6
+		sourceLineageTag: da89cf63-a018-4025-9c32-2f46be6a076b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sscc Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Number'
+		dataType: string
+		lineageTag: 8f6cfd1b-a5fb-4393-9cb8-3665de219736
+		sourceLineageTag: f011c597-2ecc-43fc-81f4-008d725e2b7d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Pack Number'
+		dataType: int64
+		lineageTag: f0b083c2-ee02-4854-b9ad-1278e5279c97
+		sourceLineageTag: c6e6a0b4-e69d-4ccc-887a-3a2169644418
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Pack Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Item Id'
+		dataType: double
+		lineageTag: a5368b87-4853-475b-8be4-7ee90ce5c7ec
+		sourceLineageTag: a2fccd10-e288-428d-944c-d1b0ebd3c893
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Item Id
+
+		annotation SummarizationSetBy = User
+
+	column PPMProduct_Key
+		dataType: string
+		isHidden
+		lineageTag: b3e6defa-d607-4200-93d8-d7bad49f8eee
+		sourceLineageTag: 03a0eb70-449e-4b4b-a9b4-4e752ce993cc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PPMProduct_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size_Key
+		dataType: string
+		isHidden
+		lineageTag: 63d07c7c-95cf-4d9c-965f-f1e4437ba38e
+		sourceLineageTag: 64b97aef-1234-4c07-abca-7dd64fce4732
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Pack Item Seq'
+		dataType: double
+		lineageTag: df06552c-dd1d-4e5c-abab-07edb0328365
+		sourceLineageTag: ce07f28a-8f67-4efd-93ec-6454acf42561
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Pack Item Seq
+
+		annotation SummarizationSetBy = User
+
+	column 'Gross Weight'
+		dataType: double
+		lineageTag: a9f6aa74-c3fe-4340-a40f-625f52c830ec
+		sourceLineageTag: e36dc162-ff60-4fd9-a8d9-d8f8cf463744
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Gross Weight
+
+		annotation SummarizationSetBy = User
+
+	column 'Net Weight'
+		dataType: double
+		lineageTag: f2aa56b2-543e-440d-a21b-6505f091d1be
+		sourceLineageTag: f573ac03-4687-4504-85d5-7a56b34eefef
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Net Weight
+
+		annotation SummarizationSetBy = User
+
+	column 'Net Net Weight'
+		dataType: double
+		lineageTag: b2a035ab-7a91-4f53-a7fe-6e1f80bf0102
+		sourceLineageTag: aed03a08-1786-457d-952d-9bee3caa8568
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Net Net Weight
+
+		annotation SummarizationSetBy = User
+
+	column 'Weight Unit'
+		dataType: string
+		lineageTag: 22a8cd1c-58ee-4f58-ad8e-32f6001c1f42
+		sourceLineageTag: 1443f06e-18c0-430f-9ea8-a6fcfa62c9ab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Weight Unit
+
+		annotation SummarizationSetBy = User
+
+	column Length
+		dataType: double
+		lineageTag: e7594802-d5f9-4706-a3ef-3538b7099031
+		sourceLineageTag: f0538bb2-b65a-42ea-88e9-6c20c2994fcd
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Length
+
+		annotation SummarizationSetBy = User
+
+	column Height
+		dataType: double
+		lineageTag: 8f4b3177-a36a-44c0-ab00-6a818c098994
+		sourceLineageTag: ee53f817-f6a9-4374-9fcd-3704729f95e7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Height
+
+		annotation SummarizationSetBy = User
+
+	column Width
+		dataType: double
+		lineageTag: cc6a93b5-4f5f-42f5-bc53-381e99ffe9be
+		sourceLineageTag: 0f2bb2db-cb8d-4faa-b488-4e39b4b1b101
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Width
+
+		annotation SummarizationSetBy = User
+
+	column LwhUnit
+		dataType: string
+		lineageTag: 7aad8d58-17d3-4d9a-9e1c-be6e9e240f81
+		sourceLineageTag: 8f73ec7b-050b-42e3-8175-83d2c2d20a57
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: LwhUnit
+
+		annotation SummarizationSetBy = User
+
+	column PackedQty
+		dataType: int64
+		formatString: #,0
+		lineageTag: 86796efb-1ff8-47ae-88d9-acf44e411f97
+		sourceLineageTag: f3c719c4-a106-4892-9833-ca8888e2f0c1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: PackedQty
+
+		annotation SummarizationSetBy = User
+
+	column 'Packed Date Key'
+		dataType: int64
+		isHidden
+		lineageTag: ec0300a7-55d5-462d-ac0f-e5f5811f694f
+		sourceLineageTag: 1fa98ac4-ab3a-485d-ad8f-d00b3c3d9d1e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Packed Date Key
+
+		annotation SummarizationSetBy = User
+
+	partition 'Pack One Carton Dimensions' = entity
+		mode: directQuery
+		source
+			entityName: Pack One Carton Dimensions
+			expressionSource: 'DirectQuery to AS - DMA Sourcing'
+

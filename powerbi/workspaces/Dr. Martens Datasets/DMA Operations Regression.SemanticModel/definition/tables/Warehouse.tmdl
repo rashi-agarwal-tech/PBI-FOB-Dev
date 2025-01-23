@@ -1,0 +1,135 @@
+table Warehouse
+	lineageTag: 76581fc2-d9fc-4a64-ac15-da23fc5e963a
+	sourceLineageTag: e36f5888-5437-4c8e-b209-de4651587000
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: ee774b8f-6e13-4e5f-b714-00ae7d30b111
+		sourceLineageTag: 49658cb0-5e12-4db6-8367-f8c82ecdff6b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Name'
+		dataType: string
+		lineageTag: c9cd713e-e489-4c15-af93-589d3b2014d2
+		sourceLineageTag: 9e7e4fbb-ef87-4a0e-85de-246fb9c349a3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse ID'
+		dataType: string
+		isNullable: false
+		lineageTag: 093e5858-3d54-4eb8-b5fb-8d2e4d62375e
+		sourceLineageTag: bd80f57c-a760-403b-b4be-e99bbd842180
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Is Retail Warehouse?'
+		dataType: double
+		isHidden
+		lineageTag: 59f37fba-b620-4e5f-8a38-27da8421d201
+		sourceLineageTag: 00378335-1e46-4be7-b20d-17a0a8412e5e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Is Retail Warehouse?
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Group'
+		dataType: string
+		lineageTag: 61c356a7-869a-4d91-b422-27debbb69db3
+		sourceLineageTag: 3388f2c0-7928-4add-b9ee-8ebe1bd4ae41
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Sub-Group'
+		dataType: string
+		lineageTag: 528e1572-c489-4465-8d15-fa40cf70b4cf
+		sourceLineageTag: b91becac-4f40-4f27-be80-80a08fc0eb87
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Sub-Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Channel'
+		dataType: string
+		lineageTag: 8aa113bd-1e7e-420a-b2f1-4d0d26b37215
+		sourceLineageTag: 2ab73285-aabf-43ca-91b6-9c95e1d1679d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Region'
+		dataType: string
+		lineageTag: 626f47b3-dbe6-4f8d-b960-1a5c285c3d4f
+		sourceLineageTag: 3b4788ff-f9bd-4bc9-988d-d316da598b1c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Region
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Sub-Region'
+		dataType: string
+		lineageTag: 1654c71a-23fb-4eee-a071-84e551fb3634
+		sourceLineageTag: 859f5849-969b-4b30-9eaf-94e60d05435c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Sub-Region
+
+		annotation SummarizationSetBy = User
+
+	column FinancialChannel
+		dataType: string
+		isHidden
+		lineageTag: 0b7d2bb6-576c-4d95-8f09-cf2f41c42689
+		sourceLineageTag: c8958694-fbb2-4dba-bd49-2fa4851a57c2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FinancialChannel
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Address Region ID'
+		dataType: string
+		lineageTag: 0774d49e-4a57-40e9-805c-f488b8a52f7a
+		sourceLineageTag: cc853d2a-99c9-43ee-af70-8d9edde57c4d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Address Region ID
+
+		annotation SummarizationSetBy = User
+
+	column Company
+		dataType: string
+		lineageTag: 76939db0-0c07-467b-bfe6-3471bd2c84a1
+		sourceLineageTag: df5f617c-9f78-4f4f-ae8c-ac0f7282dea7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = User
+
+	partition Warehouse = entity
+		mode: directQuery
+		source
+			entityName: Warehouse
+			expressionSource: 'DirectQuery to AS - DMA Operations'
+

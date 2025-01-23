@@ -1,0 +1,74 @@
+table 'sales summary'
+	lineageTag: 35f8728b-4f53-4d07-a28c-65735e84684a
+
+	column 'RowCount of Orders'
+		formatString: #,0
+		lineageTag: bb57ddb2-531a-4f1f-bbb9-171928e0e142
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Orders]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Orders diff UAT'
+		formatString: #,0
+		lineageTag: de706c37-7e93-4a2b-9ae2-dd76cf531040
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Orders diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Orders diff DEV'
+		formatString: #,0
+		lineageTag: b5fcdf86-1660-4674-a030-b64dd900527d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Orders diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Footfall'
+		formatString: #,0
+		lineageTag: 82c997da-bc9c-44aa-a644-fde53bfc03d6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Footfall]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Footfall diff UAT'
+		formatString: #,0
+		lineageTag: aab30f8a-6fbc-4b86-808b-8b6d461cee39
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Footfall diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Footfall diff DEV'
+		formatString: #,0
+		lineageTag: fc3a7722-0946-43fb-8c96-6dcc853fca08
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Footfall diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'sales summary' = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE
+				(
+				    sales
+				    ,"RowCount of Orders",COUNTROWS('Orders')
+				    ,"RowCount of Orders diff UAT",COUNTROWS('Orders 2')-COUNTROWS('Orders')
+				    ,"RowCount of Orders diff DEV",COUNTROWS('Orders 3')-COUNTROWS('Orders')
+				    ,"RowCount of Footfall",COUNTROWS('Footfall')
+				    ,"RowCount of Footfall diff UAT",COUNTROWS('Footfall 2')-COUNTROWS('Footfall')
+				    ,"RowCount of Footfall diff DEV",COUNTROWS('Footfall 3')-COUNTROWS('Footfall')
+				)
+
+	annotation PBI_Id = 7ddb33d4a9ed43b0b28594fb3cc85687
+

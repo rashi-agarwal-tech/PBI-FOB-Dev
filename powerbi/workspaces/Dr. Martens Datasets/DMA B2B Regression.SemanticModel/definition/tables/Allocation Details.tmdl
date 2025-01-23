@@ -1,0 +1,89 @@
+table 'Allocation Details'
+	lineageTag: 82620cc7-f88d-46fc-bac8-335496716e6d
+	sourceLineageTag: cc81e6b6-4825-46cc-a9d3-77f6101863cd
+
+	column ALLOCATIONQTY
+		dataType: int64
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 74708bbe-68c8-4613-9eb8-95e11b76b707
+		sourceLineageTag: 233ba09f-9caf-40ee-af1b-a8bc00463b12
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ALLOCATIONQTY
+
+		annotation SummarizationSetBy = User
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: c730fc0d-06aa-4ddf-87ee-4606c5a5ae3b
+		sourceLineageTag: c4865e28-d80b-49ad-a0b3-a65436bb5356
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		annotation SummarizationSetBy = User
+
+	column Date_Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Misc
+		lineageTag: 5be2483c-a276-4b81-9812-b7b7ffa6200f
+		sourceLineageTag: dfe2d1db-e060-46aa-aeb5-8ee1996df29a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocation Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 40cf9489-8940-475c-b80b-917052ce9c75
+		sourceLineageTag: 0691a8b7-1085-4071-9fce-2b182d8eaf4c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Allocation Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocation Type'
+		dataType: string
+		lineageTag: 6e982b7e-8405-422b-ba5c-aa140ffae920
+		sourceLineageTag: 37fed1cd-c6b1-418f-b894-aa48afcabf3a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Allocation Type
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Cancel Risk Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 9e947f47-1652-4d8e-a664-56cfad6b9257
+		sourceLineageTag: 61fcddb0-d8ab-49b4-8bde-b0d4f69211ff
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO Cancel Risk Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Is Alloc Date Prior Cancel Risk?'
+		dataType: string
+		lineageTag: 61060c6e-cada-427a-bacf-fd07723f30ce
+		sourceLineageTag: 723abe85-ffc1-45b7-b7f1-d4630d0bb0ae
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Is Alloc Date Prior Cancel Risk?
+
+		annotation SummarizationSetBy = User
+
+	partition 'Allocation Details' = entity
+		mode: directQuery
+		source
+			entityName: Allocation Details
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

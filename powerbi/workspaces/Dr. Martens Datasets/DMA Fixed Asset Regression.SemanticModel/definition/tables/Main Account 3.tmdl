@@ -1,0 +1,124 @@
+table 'Main Account 3'
+	lineageTag: 1566d42f-8d25-4714-b2af-363ad7a43032
+	sourceLineageTag: d03963ea-0b50-46c3-ba8a-dc93e75f19ec
+
+	column MainAccount_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: 83814312-186d-4286-8f82-8d18fdcfb293
+		sourceLineageTag: 6b1e23f6-7d8d-4e44-8f12-1100be153af9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MainAccount_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Main Account Category'
+		dataType: string
+		lineageTag: d7fc5206-b24b-45ad-a937-68b3c97bf168
+		sourceLineageTag: 73f585fa-4dc0-4b85-9292-75a4768b7bcd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Main Account Category
+
+		annotation SummarizationSetBy = User
+
+	column 'Default Currency'
+		dataType: string
+		lineageTag: 640ca25b-205f-4bc5-bc83-95fb1d628743
+		sourceLineageTag: 3fa42e0a-22e2-4916-9f7d-6960783c7ff7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Default Currency
+
+		annotation SummarizationSetBy = User
+
+	column 'Debit / Credit Default '
+		dataType: int64
+		formatString: #,0
+		lineageTag: 1fdde319-5e31-49ee-a295-21c0813de98a
+		sourceLineageTag: 6db100da-3945-40d2-ab87-081cabc839d9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: "Debit / Credit Default "
+
+		annotation SummarizationSetBy = User
+
+	column 'Main Account'
+		dataType: string
+		lineageTag: dc05caab-c4d8-4adc-99f2-fed8f461b8ed
+		sourceLineageTag: 42ab7222-ef5f-4e01-a6b0-c3034ee1b814
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Main Account
+
+		annotation SummarizationSetBy = User
+
+	column 'Main Account Name'
+		dataType: string
+		lineageTag: 79e807ab-b020-4b06-a748-31b095bae14c
+		sourceLineageTag: 89c502c3-9575-4606-8de0-a3d53eebc7fb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Main Account Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Chart of Accounts'
+		dataType: string
+		lineageTag: c33721f4-82a6-4d60-aa79-579b8238358b
+		sourceLineageTag: 6e792017-0e41-42a9-8dc0-41ff9e880176
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Chart of Accounts
+
+		annotation SummarizationSetBy = User
+
+	column 'Financial Reporting Exchange Rate Type '
+		dataType: string
+		lineageTag: 1549a39b-0eba-48c2-9452-f512d7413a63
+		sourceLineageTag: 97d82276-cd7d-4c45-8f8f-22bafdf7887e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: "Financial Reporting Exchange Rate Type "
+
+		annotation SummarizationSetBy = User
+
+	column 'Main Account Category Description'
+		dataType: string
+		lineageTag: 659ce0fa-48e8-4863-925b-d58f0c001a06
+		sourceLineageTag: 5e6aa259-bc9c-42c6-89fe-8464191297bc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Main Account Category Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Balance Sheet / P&L'
+		dataType: string
+		lineageTag: 9684aac0-7791-449e-9663-1866afabf677
+		sourceLineageTag: 0cd2cd79-402d-4ab6-9e82-c26d841da2a3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Balance Sheet / P&L
+
+		annotation SummarizationSetBy = User
+
+	column 'Report Type'
+		dataType: string
+		lineageTag: a35fc3be-7e0a-4231-9d36-2259d5b5312c
+		sourceLineageTag: 11fe049e-89c0-4c44-84b7-4af6aecf3bdf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Report Type
+
+		annotation SummarizationSetBy = User
+
+	partition 'Main Account 3' = entity
+		mode: directQuery
+		source
+			entityName: Main Account
+			expressionSource: 'DirectQuery to AS - DMA Fixed Asset 3'
+

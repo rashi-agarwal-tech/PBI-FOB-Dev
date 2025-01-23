@@ -1,0 +1,375 @@
+table 'PO Details 2'
+	lineageTag: b55e29f8-172f-4f1e-b8bf-40e70dd21680
+	sourceLineageTag: da5b1979-6801-43da-a267-ba7569a3ddcd
+
+	column PONumber
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: b12e96cd-77cc-40bb-9a83-b9e459515df4
+		sourceLineageTag: 73880327-5998-4378-8871-06d01524f3c6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PONumber
+
+		annotation SummarizationSetBy = User
+
+	column SizeCode
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 99c3cbf5-e11b-4a81-88f9-2e227a302e07
+		sourceLineageTag: 57b5a054-add4-45be-9eee-9eedd564c969
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SizeCode
+
+		annotation SummarizationSetBy = User
+
+	column QtyOrdered
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 6e46c686-4b19-4dfb-80a8-e6d21ed410f7
+		sourceLineageTag: 25176467-7bda-491f-98de-eb7e6df487ed
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: QtyOrdered
+
+		annotation SummarizationSetBy = User
+
+	column QtyApproved
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 517df967-9404-488f-9ff3-647d25ad4d26
+		sourceLineageTag: 17f59b71-a1ee-49c5-82c7-0ab02fdb1944
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: QtyApproved
+
+		annotation SummarizationSetBy = User
+
+	column QtyPlacedToFcty
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: d7c83418-9ced-4e2a-aca3-23c8ab622a34
+		sourceLineageTag: 4eec1834-cfad-4602-8084-6cdfd6bc5299
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: QtyPlacedToFcty
+
+		annotation SummarizationSetBy = User
+
+	column QtyRejected
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 84604f37-f315-4c76-94fd-5b35a2ec75e8
+		sourceLineageTag: 01c1a499-0d3c-43e6-ac0d-f4bd121ee32b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: QtyRejected
+
+		annotation SummarizationSetBy = User
+
+	column QtyToBeShipped
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: a58afde9-13bf-4993-95b7-acd15bce4d17
+		sourceLineageTag: f2e93352-0f42-44fa-bae0-04b3a7638e54
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: QtyToBeShipped
+
+		annotation SummarizationSetBy = User
+
+	column QtyReceived
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 71602d64-4cd4-4f21-9631-c58e2d1230d5
+		sourceLineageTag: 7ac9feae-9962-405e-b375-57e528ad4522
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: QtyReceived
+
+		annotation SummarizationSetBy = User
+
+	column QtyInvoiced
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: d053615b-5cdd-4761-bc80-39b7a97f5c27
+		sourceLineageTag: bdd1850b-ba67-4aa3-8331-38b9ddc87f9b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: QtyInvoiced
+
+		annotation SummarizationSetBy = User
+
+	column Unit_Cost_CONS_GBP
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 66c5fec0-f36b-4e3c-a715-46a1b3aabfe3
+		sourceLineageTag: fdd1321f-aae0-4d69-83eb-37823b2edf17
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Unit_Cost_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column CostCurrency
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 0d88be4e-0966-4895-96cb-b1384d1d651f
+		sourceLineageTag: 80d9ac5f-75a0-43fd-a48b-aa2c63c7f841
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CostCurrency
+
+		annotation SummarizationSetBy = User
+
+	column DutyAmount_CONS_GBP
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 5c5d7f22-ab1d-466f-bed5-551aac13b8fe
+		sourceLineageTag: 067be362-2ae7-4517-b331-0461c2457766
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DutyAmount_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Production Status'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 08ca42a9-b188-4f77-9ae2-6ef23bc90788
+		sourceLineageTag: bc03ac0c-706f-4b3e-b301-1327b65846eb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Production Status
+
+		annotation SummarizationSetBy = User
+
+	column ShippedDate
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: 1c34a742-465c-4484-96b6-85ef67bd9dc3
+		sourceLineageTag: 8a10febe-3994-4ea7-9ab1-8019dd3a154a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ShippedDate
+
+		annotation SummarizationSetBy = User
+
+	column PONumberLine_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 98974d27-e7a2-4670-8e52-2d7801fcc33f
+		sourceLineageTag: 8a444879-1363-4fb7-8972-cafc943ed0a5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PONumberLine_Key
+
+		annotation SummarizationSetBy = User
+
+	column UPC
+		dataType: string
+		lineageTag: 7eb6bef4-43e9-4eb5-babb-ef1e21557b24
+		sourceLineageTag: bdbe1b6e-acb9-4531-ad7c-c701d4e73e9c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: UPC
+
+		annotation SummarizationSetBy = User
+
+	column 'HTS Tariff Code US'
+		dataType: string
+		lineageTag: 6b39a264-5888-4be4-b2f3-c9a9528c41f4
+		sourceLineageTag: 1d2fda77-4dbf-47ce-b39f-efe7a64a28d0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: HTS Tariff Code US
+
+		annotation SummarizationSetBy = User
+
+	column 'HTS Tariff Code CAD'
+		dataType: string
+		lineageTag: 084a14b1-29a4-4631-bf4f-6321a7ea2cc5
+		sourceLineageTag: cf79b9a7-64ec-4a19-a3e5-0d5979ed160d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: HTS Tariff Code CAD
+
+		annotation SummarizationSetBy = User
+
+	column 'Is Multiple 6'
+		dataType: string
+		lineageTag: 16307350-7078-415b-a548-d2ca610580df
+		sourceLineageTag: 7b828f8f-be6c-49b2-9b7d-4642b55bdac4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Is Multiple 6
+
+		annotation SummarizationSetBy = User
+
+	column 'Is Multiple 8'
+		dataType: string
+		lineageTag: 19f9e05b-cd76-47b6-baa1-1b004eefff8b
+		sourceLineageTag: 988ed67c-9b57-47e9-a117-53a977cbb280
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Is Multiple 8
+
+		annotation SummarizationSetBy = User
+
+	column 'Related PO Number'
+		dataType: string
+		lineageTag: c0ca6906-805b-4cb0-9dc8-d8b023a07ec9
+		sourceLineageTag: 65344a14-d4a2-41ff-8b89-4499163db7a0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Related PO Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Duty Currency'
+		dataType: string
+		lineageTag: 9bad129a-ecde-4af1-a7a5-26a22047ffa5
+		sourceLineageTag: a5033c06-20fd-47e7-941f-c697d940a233
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Duty Currency
+
+		annotation SummarizationSetBy = User
+
+	column Barcode
+		dataType: string
+		lineageTag: f19d5b38-d895-4bdc-a7e1-27fdf9003d99
+		sourceLineageTag: 1af54cc2-e1a4-4c4f-8d13-8082bede764e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Barcode
+
+		annotation SummarizationSetBy = User
+
+	column Xmit_PO
+		dataType: string
+		lineageTag: e6818fb3-85d2-42a6-b366-2ad3de4360c6
+		sourceLineageTag: 48bcfc3c-a0fe-4ca4-9554-05f4be614c12
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Xmit_PO
+
+		annotation SummarizationSetBy = User
+
+	column 'Intercompany SO Invoice Number'
+		dataType: string
+		lineageTag: ad9746d3-0efc-41b7-9a6d-92d920b8dfe5
+		sourceLineageTag: 46d264e2-ec0f-4da7-a5f7-c159fc52be97
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Intercompany SO Invoice Number
+
+		annotation SummarizationSetBy = User
+
+	column ValueOrdered
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 764db52c-63c9-427c-888f-7276a0a6ac0e
+		sourceLineageTag: fc3a05e8-2097-439c-b7ef-e951695f66b2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ValueOrdered
+
+		annotation SummarizationSetBy = User
+
+	column ValueApproved
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: b29c7cf0-81cc-44ea-bed8-1a377a57392e
+		sourceLineageTag: eaf40866-2dc7-4ac9-8bf9-f499bda7a7d8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ValueApproved
+
+		annotation SummarizationSetBy = User
+
+	column ValuePlacedToFcty
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 219e19ea-4d47-4c1d-92e2-e5fb9cea590a
+		sourceLineageTag: d3a13dee-5fd3-4f63-a3b5-cae3002d8931
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ValuePlacedToFcty
+
+		annotation SummarizationSetBy = User
+
+	column ValueRejected
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: c4152fef-8b2a-4ba3-bc06-285d09ac99e4
+		sourceLineageTag: 20d197b4-1d6c-41ba-ab0e-6f50939058dc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ValueRejected
+
+		annotation SummarizationSetBy = User
+
+	column ValueToBeShipped
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 2329a6fd-76f3-4be6-be0c-33b1743baea8
+		sourceLineageTag: c7fee13d-604a-425c-a258-3fddeb159bf5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ValueToBeShipped
+
+		annotation SummarizationSetBy = User
+
+	column ValueReceived
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 4c55fc23-f966-46ba-a6e8-153df16d4dfc
+		sourceLineageTag: 4b7e7766-8163-403c-ac51-d477aa7e0f81
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ValueReceived
+
+		annotation SummarizationSetBy = User
+
+	column ValueInvoiced
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: e8e603e1-3484-422e-b1d7-cf307950fb4c
+		sourceLineageTag: 927a2e5b-5c1e-42a7-ab10-0ec1fe2f2f25
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ValueInvoiced
+
+		annotation SummarizationSetBy = User
+
+	partition 'PO Details 2' = entity
+		mode: directQuery
+		source
+			entityName: PO Details
+			expressionSource: 'DirectQuery to AS - DMA Sourcing 2'
+

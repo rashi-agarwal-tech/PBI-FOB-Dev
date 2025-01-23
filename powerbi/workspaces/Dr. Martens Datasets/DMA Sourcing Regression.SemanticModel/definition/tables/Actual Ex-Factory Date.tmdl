@@ -1,0 +1,66 @@
+table 'Actual Ex-Factory Date'
+	lineageTag: dd95882a-eb42-4f7f-85c6-53d1c886be5e
+	sourceLineageTag: 8b0d20d5-0ee5-4959-b697-a01c3d89aa07
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		isNullable: false
+		lineageTag: 71b6f0d7-94d4-4c8e-ad52-80a6ec95a00a
+		sourceLineageTag: da419461-d23d-4da7-a10c-fdb9190c35ed
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year'
+		dataType: string
+		displayFolder: Fiscal Dates
+		lineageTag: 9301fc43-854b-4884-9a1b-561fd0f656a4
+		sourceLineageTag: 70885403-4f59-48ff-8e1c-4b92625294a2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Period Number'
+		dataType: int64
+		displayFolder: Fiscal Dates
+		lineageTag: 83f9671a-c5ec-4a89-8c02-69982ca99722
+		sourceLineageTag: b7fd0eae-a87a-46f9-8dd2-f0403541b866
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Period Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year-Period'
+		dataType: string
+		displayFolder: Fiscal Dates
+		lineageTag: cba29eba-f435-472c-bd32-6c084a3a3080
+		sourceLineageTag: 1d645912-cd96-4bf9-bd47-13e098502690
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Week Number'
+		dataType: int64
+		displayFolder: Fiscal Dates
+		lineageTag: 6d43e925-1044-475b-93ba-57ff409867d3
+		sourceLineageTag: 170ded76-1146-4639-923d-29fc3b8f135d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Week Number
+
+		annotation SummarizationSetBy = User
+
+	partition 'Actual Ex-Factory Date' = entity
+		mode: directQuery
+		source
+			entityName: Actual Ex-Factory Date
+			expressionSource: 'DirectQuery to AS - DMA Sourcing'
+

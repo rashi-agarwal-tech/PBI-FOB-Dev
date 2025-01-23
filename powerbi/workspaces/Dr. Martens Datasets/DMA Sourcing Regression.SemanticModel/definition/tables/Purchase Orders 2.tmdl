@@ -1,0 +1,33 @@
+table 'Purchase Orders 2'
+	lineageTag: b1934ce7-6f2c-44bb-8225-54af3e578643
+	sourceLineageTag: ae51895a-4a4c-453f-a0fc-39c2d0b6c52a
+
+	column PONumberLine_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Misc
+		lineageTag: 10d017e6-2862-4829-83b8-ae31b39c98de
+		sourceLineageTag: 3cb9dc4f-503d-4817-9803-e65e436b8706
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PONumberLine_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Number'
+		dataType: string
+		lineageTag: 0e2a9149-54da-4c66-9820-a6623d38e390
+		sourceLineageTag: 0a75026b-19ca-41c0-8f0f-a7d82c31bd6d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Number
+
+		annotation SummarizationSetBy = User
+
+	partition 'Purchase Orders 2' = entity
+		mode: directQuery
+		source
+			entityName: Purchase Orders
+			expressionSource: 'DirectQuery to AS - DMA Sourcing 2'
+

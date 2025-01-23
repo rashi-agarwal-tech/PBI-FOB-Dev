@@ -1,0 +1,65 @@
+table 'PO ETD Date'
+	lineageTag: dc5a1eeb-7a70-4f03-acb7-b1c837b0019d
+	sourceLineageTag: 97d06d1c-d443-4f2b-b96e-2665bb37347e
+
+	column HDMIntETDDate_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: cc5d7cab-a001-4cbe-9ca2-7ecfce96707e
+		sourceLineageTag: 0ef96193-bc14-4404-a200-0870d4a67dec
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: HDMIntETDDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'PO ETD Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 9fbcf306-8521-46f9-8e33-f6689eae7724
+		sourceLineageTag: 4c81b655-eeee-49f7-b9fd-efbd5ecf4133
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO ETD Date
+
+		annotation SummarizationSetBy = User
+
+	column Mon
+		dataType: string
+		isHidden
+		lineageTag: 232f4604-2704-4603-8b3c-e99c799ca808
+		sourceLineageTag: 13ed1c47-5182-4686-9ef4-c0c47c3378fa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Mon
+
+		annotation SummarizationSetBy = User
+
+	column Year
+		dataType: int64
+		isHidden
+		lineageTag: a98dba17-24b3-4828-b204-d3f7bcf6fff2
+		sourceLineageTag: 327ae1e8-397c-4236-b498-3280d083602c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = User
+
+	column Month-Year
+		dataType: string
+		lineageTag: 8312505c-6e51-4794-a987-24a071949080
+		sourceLineageTag: 49c7ec0b-70b1-48b5-b5a5-2527f2044fcb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Month-Year
+
+		annotation SummarizationSetBy = User
+
+	partition 'PO ETD Date' = entity
+		mode: directQuery
+		source
+			entityName: PO ETD Date
+			expressionSource: 'DirectQuery to AS - DMA Operations'
+

@@ -1,0 +1,44 @@
+table Size
+	lineageTag: 1d4ce831-8c11-4a2a-a3ab-1bdd6cca3c17
+	sourceLineageTag: bb98b766-8bd2-4490-a182-2a1a67f2e359
+
+	column Size_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 4379e644-d222-4e49-a544-c0ee95b6a9bd
+		sourceLineageTag: 41b4dafa-0bb9-4f30-a73b-4e5b3f717ae6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size
+		dataType: string
+		isNullable: false
+		lineageTag: 98f487cb-bedb-4650-9c38-5a452fca2500
+		sourceLineageTag: b82b976c-6b80-4f94-b991-ebeac94cf987
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = User
+
+	column DisplayOrder
+		dataType: int64
+		isHidden
+		lineageTag: 5bd2cee6-4d0d-44eb-a4fc-0512d90d1e37
+		sourceLineageTag: c7d2d9b3-67f7-4fb4-9572-2a3505175997
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DisplayOrder
+
+		annotation SummarizationSetBy = User
+
+	partition Size = entity
+		mode: directQuery
+		source
+			entityName: Size
+			expressionSource: 'DirectQuery to AS - DMA Sourcing'
+

@@ -1,0 +1,188 @@
+table 'Forecast 3'
+	isHidden
+	lineageTag: 1fb09b24-7010-44e0-81d5-72e5412d371e
+	sourceLineageTag: 9dd40110-fc45-4b47-aee6-2574f4e92541
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 2527b476-8605-4919-9ecb-2936a212fbe9
+		sourceLineageTag: 8dd11bee-13db-49c5-a3c6-924704caf5bc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Forecast Version'
+		dataType: string
+		isHidden
+		lineageTag: 32ba81d8-9c06-437f-b822-c639310faf10
+		sourceLineageTag: 8eafb80d-4cad-4a2e-a46f-7ace78fb4c21
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Forecast Version
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoiced Units'
+		dataType: decimal
+		isHidden
+		lineageTag: f2958c7e-625d-4ee2-b27d-7389b6c57936
+		sourceLineageTag: 9ce12c78-194b-472d-a294-e2eaddf571d8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoiced Units
+
+		annotation SummarizationSetBy = User
+
+	column 'Returned Units'
+		dataType: decimal
+		isHidden
+		lineageTag: f815ccb6-f53a-481b-af7f-c49c7b2de64b
+		sourceLineageTag: e960f8c8-3549-46b8-bfb0-21f7edffc065
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Returned Units
+
+		annotation SummarizationSetBy = User
+
+	column 'Total Net Value'
+		dataType: double
+		isHidden
+		lineageTag: b2385858-38b5-48ed-9925-66e3ae522eb5
+		sourceLineageTag: 8578e283-630f-4493-8bff-75c447d3c034
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Total Net Value
+
+		annotation SummarizationSetBy = User
+
+	column 'Total Discounts'
+		dataType: decimal
+		isHidden
+		lineageTag: f3be2bdf-be40-4798-abe3-c7272a4e327e
+		sourceLineageTag: 212b4e10-bae8-4cf1-bddb-265d1a35cb2a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Total Discounts
+
+		annotation SummarizationSetBy = User
+
+	column 'Total Charges'
+		dataType: decimal
+		isHidden
+		lineageTag: 24a2765a-e812-438f-8af0-ce2d82da6ced
+		sourceLineageTag: 53ef1a54-90da-4ad0-b993-50eb185d7425
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Total Charges
+
+		annotation SummarizationSetBy = User
+
+	column 'Total COGS'
+		dataType: decimal
+		isHidden
+		lineageTag: 82be82f9-6675-456e-9c5f-a45772aa3021
+		sourceLineageTag: 915598be-04c0-498a-83f7-2f87fe34ac8d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Total COGS
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoiced Net Value'
+		dataType: decimal
+		isHidden
+		lineageTag: ffe697fe-16cf-44e1-be61-1494ccc7f3f7
+		sourceLineageTag: e54f4996-e421-44d5-96d3-09138c705d80
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoiced Net Value
+
+		annotation SummarizationSetBy = User
+
+	column 'Returned Net Value'
+		dataType: decimal
+		isHidden
+		lineageTag: db2904a7-5bd9-46ff-a119-f6c91a724cb0
+		sourceLineageTag: 82a842ea-4c9a-4bf5-9d83-5e5930883650
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Returned Net Value
+
+		annotation SummarizationSetBy = User
+
+	column 'Company ID'
+		dataType: int64
+		isHidden
+		lineageTag: aef34edc-1335-4262-bc0a-4be35f62666d
+		sourceLineageTag: 47e653a5-be45-46c5-ba4b-3868490e202e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		annotation SummarizationSetBy = User
+
+	column Channel
+		dataType: string
+		isHidden
+		lineageTag: 84d73087-9dbf-4244-a744-6c829e5021fc
+		sourceLineageTag: b8a1881d-ea1b-422c-9efb-d0a34214c1c9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel
+
+		annotation SummarizationSetBy = User
+
+	column RetailStore_Key
+		dataType: string
+		isHidden
+		lineageTag: 36927ab4-6c21-4303-8a85-2f281a6c9ec8
+		sourceLineageTag: 7500f816-3710-47d6-8fa5-b3e872faff67
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RetailStore_Key
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		lineageTag: c675ab70-9ae4-46d9-b3a1-b290d64e52d0
+		sourceLineageTag: 8965931e-4dcb-4b47-b40b-e5dcc9724380
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column FinancialChannel
+		dataType: string
+		isHidden
+		lineageTag: 30aa852d-7b08-4343-b90d-6c92834972d0
+		sourceLineageTag: ac9e3ee3-89f4-4289-ae9e-325314a3290d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FinancialChannel
+
+		annotation SummarizationSetBy = User
+
+	column FCRanker
+		dataType: decimal
+		isHidden
+		lineageTag: da5387b9-9382-488b-a8d3-ca3a10b78e05
+		sourceLineageTag: 3eb7adde-135c-468f-8d4c-db7b7a6cec43
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FCRanker
+
+		annotation SummarizationSetBy = User
+
+	partition 'Forecast 3' = entity
+		mode: directQuery
+		source
+			entityName: Forecast
+			expressionSource: 'DirectQuery to AS - DMA Total Business 3'
+

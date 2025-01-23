@@ -1,0 +1,65 @@
+table 'Product Class 2'
+	lineageTag: 3674f533-5f59-430b-994c-fc8beb6e927f
+	sourceLineageTag: b84ef533-8efb-4ced-b287-ae18c92539c1
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: 8eaf4689-1bcf-4bf2-b4ac-3a0d891b6f6f
+		sourceLineageTag: bdf163e5-4914-4f38-9d10-bf83e674b6fe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Class'
+		dataType: string
+		lineageTag: 6dc41d5e-6227-4cc2-8d61-120898340fbf
+		sourceLineageTag: d9ac7236-ec2a-4e6d-8d52-d6518874a9b9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Class
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Class Code'
+		dataType: string
+		lineageTag: 07595ce1-cf61-4729-af8b-81c9e1970a57
+		sourceLineageTag: 8fe1eeb3-e4b8-432c-b67d-997aafd8db96
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Class Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Class Group'
+		dataType: string
+		lineageTag: 7b3cd96b-fadb-40bc-ac6c-87b1faaafe47
+		sourceLineageTag: 02cb6c6c-5bac-408b-8f2c-45c288f74df1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Class Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Class Sort'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 220464cb-8797-47c6-a6d1-050c1c30a91e
+		sourceLineageTag: f6edf564-a625-44d6-8c33-4896dd42292c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Class Sort
+
+		annotation SummarizationSetBy = User
+
+	partition 'Product Class 2' = entity
+		mode: directQuery
+		source
+			entityName: Product Class
+			expressionSource: 'DirectQuery to AS - DMA B2B 2'
+

@@ -1,0 +1,68 @@
+table 'Seasonal Product Type 2'
+	lineageTag: f49dd4e7-8062-4c41-bb0b-5cce1e70fcf7
+	sourceLineageTag: 37a646d5-ceee-471a-9640-beab05d94235
+
+	column Product_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 195a69a0-2cc3-4649-9add-b028d1fbd567
+		sourceLineageTag: 51cfdded-4ce9-4a15-bc06-f73a202df1e1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Season_Key
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 9363919d-bca9-4fde-8131-ef64796a66a7
+		sourceLineageTag: 38bffc97-dbd6-4b65-8f35-38e3372d1dd4
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Season_Key
+
+		annotation SummarizationSetBy = User
+
+	column Territory_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: f12dde25-f25a-40ae-9a4d-f5b3f2787d42
+		sourceLineageTag: 304bee72-ce92-4a65-9b95-cca8577f4972
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Territory_Key
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 7a02bf5f-025d-4aab-ad88-74af0bbef692
+		sourceLineageTag: 0f4c6dbd-e906-48ca-8f7b-88d719ca42e2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column Type
+		dataType: string
+		lineageTag: 4249050f-b8a8-452c-8b25-77d101f5a72d
+		sourceLineageTag: 68876d37-55b3-4042-bf55-b38b989a42c5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = User
+
+	partition 'Seasonal Product Type 2' = entity
+		mode: directQuery
+		source
+			entityName: Seasonal Product Type
+			expressionSource: 'DirectQuery to AS - DMA Sourcing 2'
+

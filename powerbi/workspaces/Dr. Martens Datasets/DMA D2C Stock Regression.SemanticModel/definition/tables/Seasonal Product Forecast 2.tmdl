@@ -1,0 +1,67 @@
+table 'Seasonal Product Forecast 2'
+	isHidden
+	lineageTag: 0170a981-9d70-4332-9e8d-f96f5374faa2
+	sourceLineageTag: ce7b92df-8946-4b05-a6b0-3afa30435f58
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d33ba908-8f1f-4998-9cec-5e4b9b4dc954
+		sourceLineageTag: 44072b7b-faea-4f1c-8fd3-762973d8426d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Key'
+		dataType: string
+		isHidden
+		lineageTag: 25c7657b-f284-4e37-9164-2109e317bb79
+		sourceLineageTag: 789e7dfa-7cb7-4c28-aa2a-65ad22d96bb5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Key'
+		dataType: string
+		isHidden
+		lineageTag: f84f7744-0643-48ec-a06d-1bbfb7546404
+		sourceLineageTag: 711089ea-f8f8-4252-ba89-bfd4627c4903
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Forecast Quantity'
+		dataType: int64
+		isHidden
+		lineageTag: a40167f8-2447-4b11-bbed-7a572ccef901
+		sourceLineageTag: 7c167f1d-9bad-4500-9816-8d9d54e595bb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Forecast Quantity
+
+		annotation SummarizationSetBy = User
+
+	column ORDER_TYPE
+		dataType: string
+		isHidden
+		lineageTag: 0080d9a2-2076-4670-a827-7ec00e6d7e7e
+		sourceLineageTag: 8cc6348b-a7f3-4101-9d56-bcff488dbff1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ORDER_TYPE
+
+		annotation SummarizationSetBy = User
+
+	partition 'Seasonal Product Forecast 2' = entity
+		mode: directQuery
+		source
+			entityName: Seasonal Product Forecast
+			expressionSource: 'DirectQuery to AS - DMA D2C 2'
+

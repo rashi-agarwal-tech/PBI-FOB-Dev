@@ -1,0 +1,43 @@
+table Region
+	lineageTag: 12206c25-4faa-43a3-88e6-64ce241f3569
+	sourceLineageTag: 4fdc3e0c-3818-4048-b89d-6bae57dfb494
+
+	column Territory_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Misc
+		lineageTag: 706be0d2-46cf-4696-af95-09ab68de949f
+		sourceLineageTag: 3b1318fb-d26e-4b25-8c97-d173e5156c87
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Territory_Key
+
+		annotation SummarizationSetBy = User
+
+	column Territory
+		dataType: string
+		lineageTag: 7e7b69ca-c4f5-4fd9-92b5-6c8f8c3fe300
+		sourceLineageTag: 66620644-c8e3-49c8-aba3-5c485a13a322
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Territory
+
+		annotation SummarizationSetBy = User
+
+	column Region
+		dataType: string
+		lineageTag: 5925fabd-4b29-4c5f-ba7c-6724e8abadde
+		sourceLineageTag: 201417c9-18fb-44ed-b585-ba9f56faf502
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = User
+
+	partition Region = entity
+		mode: directQuery
+		source
+			entityName: Region
+			expressionSource: 'DirectQuery to AS - DMA Sourcing'
+

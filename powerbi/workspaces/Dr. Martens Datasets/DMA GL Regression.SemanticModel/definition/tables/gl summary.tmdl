@@ -1,0 +1,74 @@
+table 'gl summary'
+	lineageTag: 8ce2bf21-b0fb-4f85-a573-577c32d8fa3b
+
+	column 'RowCount of GeneralLedgerFact'
+		formatString: #,0
+		lineageTag: 3550881f-f69a-4ce6-940a-7c312e5998ee
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of GeneralLedgerFact]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of GeneralLedgerFact diff UAT'
+		formatString: #,0
+		lineageTag: 92321b29-93b6-4ce1-9718-9badaf780310
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of GeneralLedgerFact diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of GeneralLedgerFact diff DEV'
+		formatString: #,0
+		lineageTag: eb2bb893-42e8-43d2-954f-6bbfbed8b44b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of GeneralLedgerFact diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count of Date_Key'
+		formatString: #,0
+		lineageTag: 44094c1e-2b52-40d5-bf84-34aa72c2ede2
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count of Date_Key]
+
+		annotation SummarizationSetBy = User
+
+	column 'Count of Date_Key diff UAT'
+		formatString: #,0
+		lineageTag: 184a69b3-0cf6-4477-a0a5-7c00c5c14e59
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count of Date_Key diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count of Date_Key diff DEV'
+		formatString: #,0
+		lineageTag: 6d495939-6256-4f3c-9b7b-12d03b7ea09f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count of Date_Key diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'gl summary' = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE
+				(
+				    gl
+				    ,"RowCount of GeneralLedgerFact",COUNTROWS('General Ledger Fact')
+				    ,"RowCount of GeneralLedgerFact diff UAT",COUNTROWS('General Ledger Fact 2')-COUNTROWS('General Ledger Fact')
+				    ,"RowCount of GeneralLedgerFact diff DEV",COUNTROWS('General Ledger Fact 3')-COUNTROWS('General Ledger Fact')
+				    ,"Count of Date_Key",DISTINCTCOUNT('General Ledger Fact'[AccountingDate_Key])
+				    ,"Count of Date_Key diff UAT",DISTINCTCOUNT('General Ledger Fact 2'[AccountingDate_Key])-DISTINCTCOUNT('General Ledger Fact'[AccountingDate_Key])
+				    ,"Count of Date_Key diff DEV",DISTINCTCOUNT('General Ledger Fact 3'[AccountingDate_Key])-DISTINCTCOUNT('General Ledger Fact'[AccountingDate_Key])
+				)
+
+	annotation PBI_Id = 3aa7e7e2b8e1496fa2e55e15d7663873
+

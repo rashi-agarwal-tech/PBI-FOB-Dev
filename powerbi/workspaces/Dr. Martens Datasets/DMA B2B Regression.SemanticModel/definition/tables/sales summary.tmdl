@@ -1,0 +1,104 @@
+table 'sales summary'
+	lineageTag: d0f5edb4-d2bf-4bef-9a17-61efa487f00b
+
+	column 'RowCount of Orders'
+		formatString: #,0
+		lineageTag: 9bd9d86c-6b6a-4f08-888d-fd669e619c88
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Orders]
+
+		annotation SummarizationSetBy = User
+
+	column 'RowCount of Orders diff UAT'
+		formatString: #,0
+		lineageTag: 4ac16ee3-ecea-482b-af59-1b0454b63a0e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Orders diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Orders diff DEV'
+		formatString: #,0
+		lineageTag: 14f4e691-189d-4fa1-9c7c-88091432510c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Orders diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Deductions'
+		formatString: #,0
+		lineageTag: b1f70c0c-8916-4d20-b2d4-8b3e16ddd67e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Deductions]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Deductions diff UAT'
+		formatString: #,0
+		lineageTag: 8d7543c9-8471-45c5-b96a-732398f64439
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Deductions diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Deductions diff DEV'
+		formatString: #,0
+		lineageTag: 94835441-115a-41d6-bca1-9ed8260653df
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Deductions diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Customer Sell Out EMEA'
+		formatString: #,0
+		lineageTag: 5acf5ba7-1ba1-4f41-82c3-60b58c00d8cf
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Customer Sell Out EMEA]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Customer Sell Out EMEA diff UAT'
+		formatString: #,0
+		lineageTag: dc094115-665f-4059-b451-94f7f8c6e657
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Customer Sell Out EMEA diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Customer Sell Out EMEA diff DEV'
+		formatString: #,0
+		lineageTag: d2e3c1e8-5ea3-44c6-86a9-74c26acdd349
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Customer Sell Out EMEA diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'sales summary' = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE
+				(
+				    sales
+				    ,"RowCount of Orders",COUNTROWS('Orders')
+				    ,"RowCount of Orders diff UAT",COUNTROWS('Orders 2')-COUNTROWS('Orders')
+				    ,"RowCount of Orders diff DEV",COUNTROWS('Orders 3')-COUNTROWS('Orders')
+				    ,"RowCount of Deductions",COUNTROWS('Deductions')
+				    ,"RowCount of Deductions diff UAT",COUNTROWS('Deductions 2')-COUNTROWS('Deductions')
+				    ,"RowCount of Deductions diff DEV",COUNTROWS('Deductions 3')-COUNTROWS('Deductions')
+				    ,"RowCount of Customer Sell Out EMEA",COUNTROWS('Customer Sell Out EMEA')
+				    ,"RowCount of Customer Sell Out EMEA diff UAT",COUNTROWS('Customer Sell Out EMEA 2')-COUNTROWS('Customer Sell Out EMEA')
+				    ,"RowCount of Customer Sell Out EMEA diff DEV",COUNTROWS('Customer Sell Out EMEA 3')-COUNTROWS('Customer Sell Out EMEA')
+				)
+
+	annotation PBI_Id = cf6c8b0ae82344bea0dcb748c91de8d1
+

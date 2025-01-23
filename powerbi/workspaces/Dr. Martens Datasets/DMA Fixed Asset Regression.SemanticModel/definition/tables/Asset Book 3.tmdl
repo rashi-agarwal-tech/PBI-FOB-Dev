@@ -1,0 +1,207 @@
+table 'Asset Book 3'
+	lineageTag: 02dcad44-ae71-48dd-b7b0-29626912bc0c
+	sourceLineageTag: 4cf49d45-0412-415d-a598-215d9d084f1e
+
+	column AssetBook_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: 901f8946-fd8b-4614-a708-b79b111e3cc9
+		sourceLineageTag: 61ac3fc6-a4f9-41e7-90a6-432264f40294
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AssetBook_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'FA Book Name'
+		dataType: string
+		lineageTag: fa4332f9-27d8-474b-9537-b06bd08ed6dd
+		sourceLineageTag: 1f8562e7-1751-445f-bddb-b96c22d7d744
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FA Book Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Fin Dim On Book - Channel'
+		dataType: string
+		displayFolder: Financial Dimensions
+		lineageTag: 277400e2-ad8b-4393-9e15-64658ad3a83c
+		sourceLineageTag: 10a202b2-c83b-463d-9736-e9a74703c857
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Channel
+
+		annotation SummarizationSetBy = User
+
+	column Status
+		dataType: string
+		lineageTag: 4df2e76d-1580-4464-98a7-4a61961eb387
+		sourceLineageTag: 6830a572-055a-40b9-9eee-c871fb154b08
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Fin Dim On Book - Analysis Code'
+		dataType: string
+		displayFolder: Financial Dimensions
+		lineageTag: 7e9184e2-8235-4f2d-ad70-f3195662e009
+		sourceLineageTag: 1e1bf47f-4143-4d3a-86fd-64025a57aa57
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Analysis Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Fin Dim On Book - Country'
+		dataType: string
+		displayFolder: Financial Dimensions
+		lineageTag: d26d0cf7-31ed-4048-a95c-14da13557cb0
+		sourceLineageTag: 9b94cc9b-80c2-4da6-98ff-2aa911acbdc5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Fin Dim On Book - Cost Centre'
+		dataType: string
+		displayFolder: Financial Dimensions
+		lineageTag: cf28fdd1-ad67-4f2a-bde2-7a12b8d854a9
+		sourceLineageTag: 6fcb08b7-f71e-4fda-b331-5ee3590ac9df
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Cost Centre
+
+		annotation SummarizationSetBy = User
+
+	column 'Calculate Depreciation (Y/N)'
+		dataType: string
+		lineageTag: da6803c2-6ca3-46b0-8c81-4297ba495b34
+		sourceLineageTag: eac8d544-22d7-40d5-9f89-18447bb9ecf9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Calculate Depreciation (Y/N)
+
+		annotation SummarizationSetBy = User
+
+	column 'Acquisition Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 58b87d2d-5aaa-4cbb-a262-2d53b677d29a
+		sourceLineageTag: 1a757f17-9539-4176-893c-644ba1ee47d1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Acquisition Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Placed in Service Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 28950899-8b61-4f50-a2c4-90d2f03c89b6
+		sourceLineageTag: 1f6881f5-d17f-44e9-b398-b97d40524c7a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Placed in Service Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Total Depreciation Periods'
+		dataType: int64
+		formatString: #,0
+		lineageTag: f667f8b0-9f3f-4548-93ab-19dfbeab046b
+		sourceLineageTag: 6e15524f-f790-4553-8cb3-11a7e26f0b8b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Total Depreciation Periods
+
+		annotation SummarizationSetBy = User
+
+	column 'Depreciation Periods Remaining'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 80d046eb-4c06-444c-9497-e3620d0522fd
+		sourceLineageTag: 3654e851-bbf6-4dbb-a602-4f6fd03fbc1c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Depreciation Periods Remaining
+
+		annotation SummarizationSetBy = User
+
+	column 'Disposal Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 713be189-8f7b-48e5-b351-b60981f8da70
+		sourceLineageTag: 758dbcb5-cd25-4977-bd4e-d6e03351160d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Disposal Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Acquisition Value'
+		dataType: decimal
+		formatString: 0.00
+		lineageTag: 57f59d6b-84b5-42c3-86eb-4955fd34d464
+		sourceLineageTag: df10443c-9004-4ceb-879f-ac5200613322
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Acquisition Value
+
+		annotation SummarizationSetBy = User
+
+	column 'Fin Dim On Book - Analysis Code Description'
+		dataType: string
+		displayFolder: Financial Dimensions
+		lineageTag: 660f04d8-3006-4adb-bc37-d91a13807bbd
+		sourceLineageTag: 33f008b2-6207-4299-b8ec-4e93a3ca5a1b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Analysis Code Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Fin Dim On Book - Channel Description'
+		dataType: string
+		displayFolder: Financial Dimensions
+		lineageTag: f2a4cf67-723b-4f9f-8825-5072fcc22b79
+		sourceLineageTag: 09aa3f99-3af3-4e66-8f74-25a4f0af5135
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Channel Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Fin Dim On Book - Cost Centre Description'
+		dataType: string
+		displayFolder: Financial Dimensions
+		lineageTag: 65d375a4-1fc0-4ff3-bc5c-864be7494d10
+		sourceLineageTag: 08694549-79e5-4648-b4fa-cd2fb7580ba8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Cost Centre Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Fin Dim On Book - Country Description'
+		dataType: string
+		displayFolder: Financial Dimensions
+		lineageTag: 57a31747-45a5-439a-a69c-48e3f059379a
+		sourceLineageTag: 34c59c49-c804-4071-a455-b16f872ec4f7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fin Dim On Book - Country Description
+
+		annotation SummarizationSetBy = User
+
+	partition 'Asset Book 3' = entity
+		mode: directQuery
+		source
+			entityName: Asset Book
+			expressionSource: 'DirectQuery to AS - DMA Fixed Asset 3'
+

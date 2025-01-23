@@ -1,0 +1,91 @@
+table 'Exchange Rates 2'
+	isHidden
+	lineageTag: 27120a29-2ebe-4cd5-9ba0-60fc9654aa10
+	sourceLineageTag: fb3d8683-8825-4b7c-8017-0d50f7249299
+
+	column FROMCURRENCY
+		dataType: string
+		isHidden
+		lineageTag: e3fffae4-67fa-427d-b276-7a8d616b0b20
+		sourceLineageTag: b0b9f777-4cd0-4519-9777-7c6b3eb68bfd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FROMCURRENCY
+
+		annotation SummarizationSetBy = User
+
+	column TOCURRENCY
+		dataType: string
+		isHidden
+		lineageTag: 44a82dd8-b163-4e4a-91dd-4c93b1a024ba
+		sourceLineageTag: ad0bd068-fb6c-4db4-b491-574927942e6e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TOCURRENCY
+
+		annotation SummarizationSetBy = User
+
+	column RATETYPENAME
+		dataType: string
+		isHidden
+		lineageTag: c85a8977-29db-46be-bb22-5f3c460aabcc
+		sourceLineageTag: 79045e43-220a-4fe8-934f-3336e68eaa2d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RATETYPENAME
+
+		annotation SummarizationSetBy = User
+
+	column RATE
+		dataType: double
+		isHidden
+		lineageTag: 4409df0e-1b04-41f1-b1ae-90325fab3c9f
+		sourceLineageTag: 33751486-1b0a-41cf-a09e-4ac0111fdde3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: RATE
+
+		annotation SummarizationSetBy = User
+
+	column DATE
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 15cbab03-3591-4393-b218-831429e162a7
+		sourceLineageTag: 1cc845dc-64ff-49d2-8cc4-1ed612d17084
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DATE
+
+		annotation SummarizationSetBy = User
+
+	column START_DATE
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		lineageTag: ff14c8a6-907c-4495-9828-31422a576694
+		sourceLineageTag: 7574042f-fcc2-4069-afdd-a4bf83584ab3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: START_DATE
+
+		annotation SummarizationSetBy = User
+
+	column END_DATE
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		lineageTag: adb1c83b-7df0-4d06-9112-5fdfe8bb2237
+		sourceLineageTag: 6c0c5cb4-f817-41a5-a56d-f33c1fda7010
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: END_DATE
+
+		annotation SummarizationSetBy = User
+
+	partition 'Exchange Rates 2' = entity
+		mode: directQuery
+		source
+			entityName: Exchange Rates
+			expressionSource: 'DirectQuery to AS - DMA Sourcing 2'
+

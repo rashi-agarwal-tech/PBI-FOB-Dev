@@ -1,0 +1,34 @@
+table 'Size Classification 2'
+	isHidden
+	lineageTag: fafcc8f5-9397-4f08-b7ab-23a08a8c2bd2
+	sourceLineageTag: a0b74063-e81e-46b7-9b3b-e81487c32761
+
+	column CompanyProductSize_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 77a02023-c111-432b-8b11-a1622939dadb
+		sourceLineageTag: a5d22e94-e56c-42d1-9d3a-b02b41a7b812
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CompanyProductSize_Key
+
+		annotation SummarizationSetBy = User
+
+	column Core/Fringe
+		dataType: string
+		isHidden
+		lineageTag: 997150ee-edc2-44f2-b7de-88a3529b6764
+		sourceLineageTag: 52d22e37-18c7-4d2a-a5da-cd76bddaaad4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Core/Fringe
+
+		annotation SummarizationSetBy = User
+
+	partition 'Size Classification 2' = entity
+		mode: directQuery
+		source
+			entityName: Size Classification
+			expressionSource: 'DirectQuery to AS - DMA D2C 2'
+

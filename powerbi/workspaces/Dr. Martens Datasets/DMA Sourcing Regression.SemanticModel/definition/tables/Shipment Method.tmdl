@@ -1,0 +1,33 @@
+table 'Shipment Method'
+	lineageTag: 0afc2313-ba7f-4c7f-a2a1-09dc020743cb
+	sourceLineageTag: ee38af2f-9051-4278-aa48-e70e49e1a0fd
+
+	column Shipment_Method_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Misc
+		lineageTag: 9a5fc54a-db55-4f25-a534-dc79c23d7dd0
+		sourceLineageTag: 9306aa7e-0824-4808-a1d5-1202d4382171
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Shipment_Method_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Shipment Method'
+		dataType: string
+		lineageTag: 943e59b5-0dc4-4199-937d-a54ad2367ce1
+		sourceLineageTag: d8075e5f-59d5-4701-9690-7ea46abd2aa4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Shipment Method
+
+		annotation SummarizationSetBy = User
+
+	partition 'Shipment Method' = entity
+		mode: directQuery
+		source
+			entityName: Shipment Method
+			expressionSource: 'DirectQuery to AS - DMA Sourcing'
+

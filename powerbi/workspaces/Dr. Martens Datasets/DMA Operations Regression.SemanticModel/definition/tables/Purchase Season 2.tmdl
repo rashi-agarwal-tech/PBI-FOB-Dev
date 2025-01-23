@@ -1,0 +1,42 @@
+table 'Purchase Season 2'
+	lineageTag: 22fed46b-3ae5-4cc1-9832-59e3f507d077
+	sourceLineageTag: 5a40e605-0fcb-4ac3-b334-5f3998ea64b7
+
+	column Season_Key
+		dataType: double
+		isHidden
+		isNullable: false
+		lineageTag: 18bd8b51-a9cc-4e14-8f82-be3d046f67a0
+		sourceLineageTag: 123e11f6-40bb-47e3-af37-53236462d7eb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season_Key
+
+		annotation SummarizationSetBy = User
+
+	column Season
+		dataType: string
+		lineageTag: 4c7df669-7891-4e99-90dd-50ebcf5303d9
+		sourceLineageTag: 8d0710f7-1436-4810-b062-a7f06ea372bf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = User
+
+	column 'Season Long Name'
+		dataType: string
+		lineageTag: cc394511-c864-4159-ab59-bace76369d45
+		sourceLineageTag: 8cd573aa-bc71-4a8b-8460-48387d224688
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season Long Name
+
+		annotation SummarizationSetBy = User
+
+	partition 'Purchase Season 2' = entity
+		mode: directQuery
+		source
+			entityName: Purchase Season
+			expressionSource: 'DirectQuery to AS - DMA Operations 2'
+

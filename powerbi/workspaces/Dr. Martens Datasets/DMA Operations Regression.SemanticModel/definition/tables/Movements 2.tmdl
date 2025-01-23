@@ -1,0 +1,1757 @@
+table 'Movements 2'
+	lineageTag: ec068923-eab9-475f-8b5b-71a83a61b697
+	sourceLineageTag: 307f5ac3-6a6d-409f-9cec-692c905f6bae
+
+	column Product_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 9d08307a-06a5-446b-9c9d-e7a098715097
+		sourceLineageTag: 7bb043ce-1c5f-4572-a047-c6560b2e5a70
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 2dd3f4a4-72cb-478f-a669-0f796dbdbf3c
+		sourceLineageTag: 5bccc14e-5d2f-41ac-928a-d03f461c854d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 7ff8a6d1-2ba1-4e76-9cad-08deaf1968b9
+		sourceLineageTag: 24dfd431-3212-45ea-bd13-b49ff410d7ef
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		annotation SummarizationSetBy = User
+
+	column Warehouse_Key_Desp
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 958762a4-f909-44cb-b920-e8afb13023aa
+		sourceLineageTag: 7eda7fad-0419-4529-8026-fde45710510e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse_Key_Desp
+
+		annotation SummarizationSetBy = User
+
+	column Warehouse_Key_Rec
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 41324bd7-946f-48ff-9434-d6741ced6ce6
+		sourceLineageTag: 1290ce91-f692-4f6f-a2ea-075506f2e127
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse_Key_Rec
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: d21839b4-1b58-4e12-8071-c686edb78416
+		sourceLineageTag: 27bbf5ab-3120-444d-9580-a1eeda15723e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column Date_Key
+		dataType: int64
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 56fda7ed-a8d3-44cc-b35f-82ce2d8c7b33
+		sourceLineageTag: de94ed4e-b96a-419b-ab0c-4fcb62132a13
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		annotation SummarizationSetBy = User
+
+	column Vendor_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 51177895-1aea-4581-9397-f5cab1982a11
+		sourceLineageTag: ea575a30-bd0c-4e41-bd54-07e8e2f999c3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vendor_Key
+
+		annotation SummarizationSetBy = User
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 67d692d3-680d-4162-8380-a9c1155bbe40
+		sourceLineageTag: 91a2b389-0036-4830-9c1d-3fb1a97976f1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		annotation SummarizationSetBy = User
+
+	column SORequestedShipDate_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 387a5e7d-94f2-446a-93dd-6511f4b4789a
+		sourceLineageTag: c5d557ac-1b51-4c06-b0e2-05c511ca1117
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SORequestedShipDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column HDMIntETDDate_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: a3ad2d9e-0f5f-461f-854d-5cf8c2b1b0aa
+		sourceLineageTag: e75ed7da-2340-4c80-ba49-dbfcc6acc647
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: HDMIntETDDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column SalesOrderPool_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 36c3fe6f-78e5-463e-8261-da086b79a542
+		sourceLineageTag: 85af0c5f-f775-4020-a509-8582f26490a7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SalesOrderPool_Key
+
+		annotation SummarizationSetBy = User
+
+	column NewPurchasingSeason_Key
+		dataType: double
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: acd0a903-8a24-487e-8340-e2af40593713
+		sourceLineageTag: 36d5da5e-c269-4c95-afb2-d8552cdc3824
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NewPurchasingSeason_Key
+
+		annotation SummarizationSetBy = User
+
+	column MOVEMENT
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: b0819cf8-913a-4b47-b6c4-47fe9a153b6a
+		sourceLineageTag: 28f2b085-1f4b-4553-b1fe-97e5d08ef729
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MOVEMENT
+
+		annotation SummarizationSetBy = User
+
+	column PickReleaseUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 90a46ee1-9bce-425b-882e-f0b55a341d9b
+		sourceLineageTag: 32071f99-63b5-4409-9d54-4242ab410078
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: PickReleaseUnits
+
+		annotation SummarizationSetBy = User
+
+	column PickActiveUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: d67c1893-c5c1-4dc3-81d4-8cff85974527
+		sourceLineageTag: 61d36f68-d472-4f5c-bf13-5eb16bbe5da6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: PickActiveUnits
+
+		annotation SummarizationSetBy = User
+
+	column PickCompleteUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 86221279-cd0d-4d91-b8e8-4b36e1295b69
+		sourceLineageTag: e6b5658e-1efa-48c2-95f2-74fd1ebde183
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: PickCompleteUnits
+
+		annotation SummarizationSetBy = User
+
+	column OutstandingUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: f15d511d-1dc4-4a5c-8370-627fc5b91123
+		sourceLineageTag: d7e95f8b-ba7c-4bd3-8103-ab546fca6536
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OutstandingUnits
+
+		annotation SummarizationSetBy = User
+
+	column OpenUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: ec1f500d-4d18-4629-a518-d1bb4374b802
+		sourceLineageTag: cb2b45de-3a9e-4542-92f3-89d07efe9b22
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OpenUnits
+
+		annotation SummarizationSetBy = User
+
+	column CancelledUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 30a10084-0e0a-4e6f-b278-87967377cc75
+		sourceLineageTag: ae71d1c1-e690-463d-a084-269069c9d0ed
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CancelledUnits
+
+		annotation SummarizationSetBy = User
+
+	column OrderedUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 17f957da-4dad-424a-86c5-0ef839b9da51
+		sourceLineageTag: ef327027-9acc-41aa-9211-a8f98095049c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OrderedUnits
+
+		annotation SummarizationSetBy = User
+
+	column AllocatedArrivedUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: cc8d4cd8-c894-400c-b696-30b5caf3e14c
+		sourceLineageTag: b80cbb4f-bbaa-47ad-8fc8-cf74c24b037e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: AllocatedArrivedUnits
+
+		annotation SummarizationSetBy = User
+
+	column AllocatedOnTimeUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: d0b06cfe-41ef-4944-8c36-4e6040df2f5c
+		sourceLineageTag: 2a72087f-bc85-47c6-94fe-00d8f0979685
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: AllocatedOnTimeUnits
+
+		annotation SummarizationSetBy = User
+
+	column AllocatedLateUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 1ac5c1fc-2c0b-4c0f-82aa-d34619f23483
+		sourceLineageTag: 1ca1a773-d608-4f64-a649-dfcd593bee52
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: AllocatedLateUnits
+
+		annotation SummarizationSetBy = User
+
+	column ReservedUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 564a9418-d9ec-4398-a24c-9c30150f8ce3
+		sourceLineageTag: aef1827e-3e66-44f2-9fdf-df50d3ee6c50
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ReservedUnits
+
+		annotation SummarizationSetBy = User
+
+	column DespatchedUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: aa851f0a-be59-4f1b-b3b1-cfc6f5bb0a9d
+		sourceLineageTag: cad58446-8aa7-4f4c-acc3-914b94f8fdee
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DespatchedUnits
+
+		annotation SummarizationSetBy = User
+
+	column ReceivedUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 3c843735-42ab-497e-8fac-d2358ced667a
+		sourceLineageTag: 261783f3-22e2-4ad0-a4bc-35db71153ae3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ReceivedUnits
+
+		annotation SummarizationSetBy = User
+
+	column OpenIntakeUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: ab901789-866c-43a5-aab1-bf722e4eec3d
+		sourceLineageTag: 98ace593-6c8b-4845-ab63-84c4b6f116d9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OpenIntakeUnits
+
+		annotation SummarizationSetBy = User
+
+	column ReceivedIntakeUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: ae7480a8-914f-41f3-970d-8f66d0125292
+		sourceLineageTag: 152da976-6851-44a4-be74-c341dc1c6114
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ReceivedIntakeUnits
+
+		annotation SummarizationSetBy = User
+
+	column OpenReturnUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: fcefd784-df28-4cc2-b19b-df3399ce7448
+		sourceLineageTag: d54e5dbb-47db-4795-b7d0-9d5d43e6e35e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OpenReturnUnits
+
+		annotation SummarizationSetBy = User
+
+	column CompleteReturnUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 93f41244-3470-45a4-a5e3-00f26061a58f
+		sourceLineageTag: ceb388a2-44e5-41f6-9b44-f25ef80c8db5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CompleteReturnUnits
+
+		annotation SummarizationSetBy = User
+
+	column CancelledIntakeUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 25d50e7b-8a1f-4470-93d7-a941e9184900
+		sourceLineageTag: f9e8b1be-86c8-4754-ba39-1149a05ac5c9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CancelledIntakeUnits
+
+		annotation SummarizationSetBy = User
+
+	column SO_HDMORDERTYPEID
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: ab7e6388-7fef-42e7-86c1-697a41f066e9
+		sourceLineageTag: 8eb0d1c4-3f35-4443-bf8f-48d473d16d34
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO_HDMORDERTYPEID
+
+		annotation SummarizationSetBy = User
+
+	column POAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 952e11f5-4509-4841-89ba-f4f9b0a413ad
+		sourceLineageTag: 4cf8289b-4b41-4c5c-beb6-9c457507effe
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: POAmount
+
+		annotation SummarizationSetBy = User
+
+	column POCharges
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: a00cff20-6b1f-4fc5-83dd-30f78955418a
+		sourceLineageTag: d74af81f-0199-4ad6-8497-c0355cca741b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: POCharges
+
+		annotation SummarizationSetBy = User
+
+	column 'Selling Status - Invoice Entry'
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 167f686b-c06d-4d87-bda2-5a9e794cacc1
+		sourceLineageTag: a93a3349-9dbe-428b-b373-f215d53911d3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selling Status - Invoice Entry
+
+		annotation SummarizationSetBy = User
+
+	column OrderedAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 3b1cd350-c6a2-4db5-99c8-de6ee155373c
+		sourceLineageTag: ceff2ac7-eaa1-48be-9168-2d6d7b80d296
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OrderedAmount
+
+		annotation SummarizationSetBy = User
+
+	column OpenAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 359ae333-625b-4c33-a582-fc1eb000b440
+		sourceLineageTag: 000af802-5968-410f-ad8a-942071c1b96f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OpenAmount
+
+		annotation SummarizationSetBy = User
+
+	column AllocatedArrivedAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 18fe0dca-ffd5-4a75-9eae-05c99a8f7ff9
+		sourceLineageTag: 1a2446c3-1be1-440a-9885-28f17c91e8ef
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: AllocatedArrivedAmount
+
+		annotation SummarizationSetBy = User
+
+	column AllocatedOnTimeAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: fbcd3a36-7359-4bb2-adb8-948ba6497719
+		sourceLineageTag: 727c9499-8765-403d-b9e6-e9a82040b5a2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: AllocatedOnTimeAmount
+
+		annotation SummarizationSetBy = User
+
+	column AllocatedLateAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 931fd0aa-630e-4127-b24e-6d39f59b4e09
+		sourceLineageTag: 76337769-98e7-4448-8c15-2754122dcfc4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: AllocatedLateAmount
+
+		annotation SummarizationSetBy = User
+
+	column ReservedAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 6b220a5a-0f16-4a58-aa63-50cf41f30217
+		sourceLineageTag: eefab2af-9154-49bc-a370-c4268003384a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ReservedAmount
+
+		annotation SummarizationSetBy = User
+
+	column PickActiveAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 9ad80e71-80c7-4361-85d6-9914a2a80a0a
+		sourceLineageTag: ec94ca0b-7725-4555-8c6f-3d1c6eb395a8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: PickActiveAmount
+
+		annotation SummarizationSetBy = User
+
+	column PickReleaseAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: d4a85e50-c328-4437-9d41-ee597dd50980
+		sourceLineageTag: 12f83f23-7ee0-4748-bd32-dcf6eb9d3139
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: PickReleaseAmount
+
+		annotation SummarizationSetBy = User
+
+	column PickCompleteAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: d05460a8-3f97-4011-a4e8-fb49600ee9ff
+		sourceLineageTag: c9270ea5-39d1-4521-a055-b7850d4b884f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: PickCompleteAmount
+
+		annotation SummarizationSetBy = User
+
+	column DespatchedAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: e168a4a5-cbd6-4c20-9892-3dbd7e3f4ad1
+		sourceLineageTag: 99c900cd-c20b-4ca8-ba95-71c92cdc5e5a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DespatchedAmount
+
+		annotation SummarizationSetBy = User
+
+	column ReceivedAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 0473c49a-e56b-4226-b4dc-36ebe089c7cf
+		sourceLineageTag: f8c68126-aae2-4345-b495-1f65afba07b3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ReceivedAmount
+
+		annotation SummarizationSetBy = User
+
+	column CancelledAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 8e224e99-2c03-423d-855b-e346595b91f3
+		sourceLineageTag: fbc71825-8b48-4e1c-8519-7ea79640f1ba
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CancelledAmount
+
+		annotation SummarizationSetBy = User
+
+	column OpenIntakeAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 44da0050-d229-4ab7-9cee-3dfc8a51053b
+		sourceLineageTag: 7276fff0-34c5-4ede-b3d2-9aa907628c9e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OpenIntakeAmount
+
+		annotation SummarizationSetBy = User
+
+	column ReceivedIntakeAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 0396e77a-5ad9-461c-b2b4-943e8827e62d
+		sourceLineageTag: e503791c-0de7-4322-9307-361b05541ef0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ReceivedIntakeAmount
+
+		annotation SummarizationSetBy = User
+
+	column CancelledIntakeAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: a9bcdfa5-6077-49a7-a4f7-638cf33bb70b
+		sourceLineageTag: 8118d86b-79b8-4e49-9a1e-37abcf126266
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CancelledIntakeAmount
+
+		annotation SummarizationSetBy = User
+
+	column OpenReturnAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: e2636d0b-e39f-4eb8-a15f-e8fb16462d84
+		sourceLineageTag: 4536b5ca-ef90-427f-8993-9e6d8ec10004
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OpenReturnAmount
+
+		annotation SummarizationSetBy = User
+
+	column CompleteReturnAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 5c44773f-0a6f-461b-99a6-ea237bf4a961
+		sourceLineageTag: 68719e97-d2f9-4edb-8f41-8e95b246c01b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CompleteReturnAmount
+
+		annotation SummarizationSetBy = User
+
+	column ShortDeliveryUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: d5804c00-a6b6-488f-8a17-e950a6a00e65
+		sourceLineageTag: d3141179-7243-45cc-9007-21c6a1bab61e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ShortDeliveryUnits
+
+		annotation SummarizationSetBy = User
+
+	column ShortDeliveryAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 62b57e6a-21fa-4203-8f92-7113596ce2a3
+		sourceLineageTag: 1fd7bd4e-a1a7-4c83-96db-727d33405846
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ShortDeliveryAmount
+
+		annotation SummarizationSetBy = User
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: caf68bcd-3519-4ae6-8c93-cf1b35edbcf0
+		sourceLineageTag: dc96235a-936c-416a-8c34-74496a7cbfa1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		annotation SummarizationSetBy = User
+
+	column OrderedIntakeUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 3d4eeeef-62b4-4662-b0ac-78dee042db78
+		sourceLineageTag: 08a6cd85-dfd1-46ed-8949-7426b267ff1c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OrderedIntakeUnits
+
+		annotation SummarizationSetBy = User
+
+	column OrderedIntakeAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 57235084-adeb-44b6-9c1d-0a2afb842cef
+		sourceLineageTag: debd2f9b-e779-4799-975c-f6077cf9ccd2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OrderedIntakeAmount
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Credit Limit Hold?'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: z Sales Orders
+		lineageTag: 0c1f6972-29eb-4bca-9196-5d6b5ab578dc
+		sourceLineageTag: f6204c67-05f4-4379-91b7-92516db25b83
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO Credit Limit Hold?
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Delivery Description'
+		dataType: string
+		displayFolder: z Sales Orders
+		lineageTag: 15702482-0d76-4820-89b3-4f20a4abea13
+		sourceLineageTag: 251e30ba-c6d3-45e8-8900-24bbae8e8576
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO Delivery Description
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Label Received?'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: z Sales Orders
+		lineageTag: 07900fcd-2c3f-4dab-ba5c-321f19b05002
+		sourceLineageTag: 503ee3e7-5748-40a1-aeee-a2e4f6399a39
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO Label Received?
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Label Required?'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: z Sales Orders
+		lineageTag: a734bc67-abf8-48f6-b271-e41dbf9b9230
+		sourceLineageTag: d52ba1b1-a645-426d-97d1-f09967f8d68d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO Label Required?
+
+		annotation SummarizationSetBy = User
+
+	column 'SO MDA Mandantory?'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: z Sales Orders
+		lineageTag: 97343135-39b3-487d-a5c3-07e8efd09b83
+		sourceLineageTag: ea17a618-323a-4371-8175-2dc4b748d060
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO MDA Mandantory?
+
+		annotation SummarizationSetBy = User
+
+	column 'SO MDA Reference'
+		dataType: string
+		displayFolder: z Sales Orders
+		lineageTag: 555c0e8f-8897-4d5f-9a7a-0ea27826723a
+		sourceLineageTag: 598990fb-d303-4bf1-b4f6-a70bae030073
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO MDA Reference
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Entry Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: z Sales Orders
+		lineageTag: 47429964-145b-445f-a210-7e86a607d7d0
+		sourceLineageTag: c20f7cdb-b0b7-4df4-9ad8-0231bbb820f8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO Entry Date
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Currency Code'
+		dataType: string
+		displayFolder: z Sales Orders
+		lineageTag: 3ed0090c-cf2f-43dc-a83f-95e8f859bbce
+		sourceLineageTag: 0bc93d0d-6038-4e7b-a8e4-9823d2f9d753
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO Currency Code
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Delivery Mode'
+		dataType: string
+		displayFolder: z Sales Orders
+		lineageTag: 4c65c7d3-8350-40f1-8a5b-b0106970075a
+		sourceLineageTag: 632156d7-cc8e-443b-938c-9a7d61ccdab7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO Delivery Mode
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Line #'
+		dataType: double
+		displayFolder: z Sales Orders
+		lineageTag: bd2f184f-ffb9-425c-9665-cd2e05cf84c7
+		sourceLineageTag: ac99bb6d-33d7-4f48-93d1-5c75c87c0591
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: SO Line #
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancel Risk Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: z Sales Orders
+		lineageTag: e2189e1f-83e3-4f7f-b4ed-72862733f963
+		sourceLineageTag: 1c43460a-8dfd-4fb5-af1d-a90337e00743
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cancel Risk Date
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Confirmed Ship Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: z Sales Orders
+		lineageTag: 201f4573-933b-4a19-9207-2f040f404bc2
+		sourceLineageTag: 475fe158-02df-464d-8734-c96b844f93c8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO Confirmed Ship Date
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Requested Ship Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: z Sales Orders
+		lineageTag: ded30871-491c-49da-a9ba-83131597defa
+		sourceLineageTag: 2db041be-52f0-4115-8535-18017a45fd0e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO Requested Ship Date
+
+		annotation SummarizationSetBy = User
+
+	column Season
+		dataType: string
+		displayFolder: z Sales Orders
+		lineageTag: 4f0abef9-2f8d-4769-ad17-0832bb63493f
+		sourceLineageTag: d0234b18-44f8-4512-836e-96bd3ce0a172
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Requisition Number'
+		dataType: string
+		displayFolder: z Sales Orders
+		lineageTag: fdd8db04-f119-4b80-a211-559daf373644
+		sourceLineageTag: 0e4a0821-8f69-466c-b85e-0e57a92645df
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Requisition Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Note Number'
+		dataType: string
+		displayFolder: z Sales Orders
+		lineageTag: 1cf25b0e-8595-4f75-9eac-aaed10d69e02
+		sourceLineageTag: 8976c156-8035-4113-b15f-a5aa2af76fe9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Note Number
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Customer Order Ref'
+		dataType: string
+		displayFolder: z Return Orders
+		lineageTag: 8b2100a4-89b1-4a22-89a6-6924249c9b25
+		sourceLineageTag: e2b78e78-5af6-4e98-8f84-2c29993617ed
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO Customer Order Ref
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Return Deadline'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: z Return Orders
+		lineageTag: 9a3a223d-b812-4eca-a7a4-08494a87016a
+		sourceLineageTag: 29267220-1f50-4d83-a70f-2759dbddd72a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO Return Deadline
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Customer Requisition Number'
+		dataType: string
+		displayFolder: z Return Orders
+		lineageTag: b43226cf-159d-417e-a98f-70430e0ea582
+		sourceLineageTag: b8e41000-105a-44c0-8801-2033e7a11e0a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO Customer Requisition Number
+
+		annotation SummarizationSetBy = User
+
+	column 'TO Ship Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: z Transfer Orders
+		lineageTag: 091fc1d8-967d-4aa6-ade5-eb4fa44f258e
+		sourceLineageTag: cd390575-eed8-4b06-95bf-48ff96bf330c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TO Ship Date
+
+		annotation SummarizationSetBy = User
+
+	column 'TO Status'
+		dataType: string
+		displayFolder: z Transfer Orders
+		lineageTag: 37a62f85-df38-45be-a594-32e4a0074c2d
+		sourceLineageTag: b109a585-6063-4591-a9d2-999b483d7403
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TO Status
+
+		annotation SummarizationSetBy = User
+
+	column 'TO Delivery Mode'
+		dataType: string
+		displayFolder: z Transfer Orders
+		lineageTag: 22d0914b-0fe8-4c3f-866d-01f22bb2afa7
+		sourceLineageTag: cb166186-328c-4b73-a2a4-7ffc1c53f1cf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TO Delivery Mode
+
+		annotation SummarizationSetBy = User
+
+	column 'TO Line #'
+		dataType: int64
+		displayFolder: z Transfer Orders
+		lineageTag: 977b376f-ebbe-46d4-965b-cfc6c86ba89f
+		sourceLineageTag: a1bb8d11-2cd5-4172-b328-44d511834777
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: TO Line #
+
+		annotation SummarizationSetBy = User
+
+	column Initial/Reorder/Opening
+		dataType: string
+		displayFolder: z Transfer Orders
+		lineageTag: 725af450-4515-4a21-92d3-f52f00b47c56
+		sourceLineageTag: 6d953f7e-1417-4eff-bae4-4c8bb046e952
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Initial/Reorder/Opening
+
+		annotation SummarizationSetBy = User
+
+	column 'TO Created Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: z Transfer Orders
+		lineageTag: 65020c25-8f5b-400c-bc81-b54b95570db8
+		sourceLineageTag: 7625d749-1b1a-4fba-b9ed-d2e222298505
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TO Created Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Note Internal'
+		dataType: string
+		displayFolder: z Transfer Orders
+		lineageTag: 474dac05-29f1-484b-b2f8-6600fdace9b6
+		sourceLineageTag: 285d447c-eb83-4946-bc7c-74dacde8de42
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Note Internal
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Confirmed Delivery Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: z Purchase Orders
+		lineageTag: 1b8a0d4e-7bbd-49f7-932a-a340aaa96820
+		sourceLineageTag: 2c7f28d1-7c67-494e-9b34-71115590712f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Confirmed Delivery Date
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Confirmed Ship Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: z Purchase Orders
+		lineageTag: 075edd7a-9847-4f4a-8e74-3dd4fb99b334
+		sourceLineageTag: cc08dc9c-8451-4565-9cef-9f783a25ef19
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Confirmed Ship Date
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Requested Delivery Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: z Purchase Orders
+		lineageTag: 8aa20d32-c032-4675-af32-e72c47989562
+		sourceLineageTag: 03aa6d2c-a395-4c4d-b1f6-f676fb30cb8a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Requested Delivery Date
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Requested Ship Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: z Purchase Orders
+		lineageTag: 9d322ca0-6518-4d16-8ef4-2965080f5493
+		sourceLineageTag: 39b355bc-6641-4bb8-bca0-40008b983d73
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Requested Ship Date
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Currency'
+		dataType: string
+		displayFolder: z Purchase Orders
+		lineageTag: 940b4374-db07-44c3-8789-0c92b99dda86
+		sourceLineageTag: 78a0d2be-9e26-4476-bcfd-d19a88ae10e1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Currency
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Delivery Terms'
+		dataType: string
+		displayFolder: z Purchase Orders
+		lineageTag: da56b9ba-4b7f-4db8-9d4f-257e71394999
+		sourceLineageTag: 5e03a36f-918a-49d2-aedf-d9f66ccf5112
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Delivery Terms
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Line #'
+		dataType: double
+		displayFolder: z Purchase Orders
+		lineageTag: e5e334b0-ca47-43b3-9593-5ab7e2130c98
+		sourceLineageTag: 5e7dbf57-7e16-46e5-987f-761a1481e62e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Line #
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Entry Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: z Purchase Orders
+		lineageTag: 5fdcc5ee-274d-4599-ba52-38f46e06b19b
+		sourceLineageTag: fb33b6e4-d3de-412e-b915-3402fa6441fd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Entry Date
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Line Status'
+		dataType: string
+		displayFolder: z Purchase Orders
+		lineageTag: 1ccefa72-ab1d-40ea-be91-4f86e80dfb19
+		sourceLineageTag: b002ad97-45d3-4384-99f7-66596e1b9806
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Line Status
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Procurement Category'
+		dataType: string
+		displayFolder: z Purchase Orders
+		lineageTag: 32a6eea7-3411-4495-a9d2-cccfde6c7fd2
+		sourceLineageTag: 97e64467-00cf-407b-933c-724f2b07258c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Procurement Category
+
+		annotation SummarizationSetBy = User
+
+	column 'Receipt Note Number'
+		dataType: string
+		displayFolder: z Purchase Orders
+		lineageTag: 5c68bccd-3aed-4417-9f1b-24cb35225d57
+		sourceLineageTag: 81027e49-ff27-4d4e-8df5-1c01c01aee19
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Receipt Note Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Related PO#'
+		dataType: string
+		displayFolder: z Purchase Orders
+		lineageTag: 86a14b4c-733c-4d27-b01d-0ccbeaffc59b
+		sourceLineageTag: b7ee49ae-28b7-4fb3-b03f-09a874d82475
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Related PO#
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Ex-Factory Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: z Purchase Orders
+		lineageTag: bf7ba38b-d4e5-412b-ba79-f50c2de8c0e7
+		sourceLineageTag: 71975239-af0c-4d11-a348-e2b5f82c401c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Customer Reference'
+		dataType: string
+		displayFolder: z Purchase Orders
+		lineageTag: cc618feb-0167-4f90-9f68-a48ef4ff9976
+		sourceLineageTag: 7db4c524-9902-415c-9115-e57bf2b29599
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Customer Reference
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Customer Requisition Number'
+		dataType: string
+		displayFolder: z Purchase Orders
+		lineageTag: b2c3c39f-bb50-4191-a8c6-bf281e7ebc57
+		sourceLineageTag: 666f6873-fc5e-49b3-8874-916b70634a78
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Customer Requisition Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Intercompany PO#'
+		dataType: string
+		displayFolder: z Purchase Orders
+		lineageTag: 6da1320f-1626-4a8e-95fe-21acc5347bba
+		sourceLineageTag: 16324f73-9309-43f3-beb3-e264dcc35601
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Intercompany PO#
+
+		annotation SummarizationSetBy = User
+
+	column 'Location ID'
+		dataType: string
+		displayFolder: z Purchase Orders
+		lineageTag: 44641f36-1f99-4263-9f8a-670cebf78c99
+		sourceLineageTag: 262a1021-0c6b-41fb-826f-eee646084360
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Location ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Tag on Order'
+		dataType: string
+		displayFolder: z Purchase Orders
+		lineageTag: 506aedf9-0faa-43c4-b018-f318cd00c23f
+		sourceLineageTag: 735cfb0d-48b7-4922-8105-1dd32151bc23
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Tag on Order
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Available Ship Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: z Purchase Orders
+		lineageTag: c9c4723e-0f21-43c4-ae64-b72d9e36c433
+		sourceLineageTag: d139f110-8522-49be-a1bd-7e674344dc14
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Available Ship Date
+
+		annotation SummarizationSetBy = User
+
+	column SO#
+		dataType: string
+		lineageTag: 1aaf293d-ffa5-4a37-942f-12d6454e2991
+		sourceLineageTag: edf4dae5-19b4-47c9-bbe5-852820c86818
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO#
+
+		annotation SummarizationSetBy = User
+
+	column PO#
+		dataType: string
+		lineageTag: 843d8591-32d2-40a2-bef8-60a7281a2a5e
+		sourceLineageTag: d7496768-ffff-4db8-8f4a-a17f02b5a8b6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO#
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Country'
+		dataType: string
+		lineageTag: 11863a45-11e7-4f70-9329-af9c442c783f
+		sourceLineageTag: 67f82a2b-3c9b-4dd8-be79-d333834daf6d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Region'
+		dataType: string
+		lineageTag: d3505b20-8fdd-4391-8a9c-9b68471b285b
+		sourceLineageTag: 70dbebab-160a-4c90-87b1-e1eaebff9dff
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Region
+
+		annotation SummarizationSetBy = User
+
+	column 'Movement Status'
+		dataType: string
+		lineageTag: 379a1d6a-abdb-4619-bfd8-e272f881f1a4
+		sourceLineageTag: e63f32b7-f068-4e6a-8237-da43b24cbf79
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Movement Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Order Numbers'
+		dataType: string
+		lineageTag: 7bf4e56b-aaf3-4998-962b-346b96df002f
+		sourceLineageTag: 5777690c-35ec-4944-8a0f-9f4b1b281ca8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Order Numbers
+
+		annotation SummarizationSetBy = User
+
+	column TO#
+		dataType: string
+		lineageTag: a546de6f-c9f1-4bf8-8909-1806f6d4d1e8
+		sourceLineageTag: 607d875f-e380-4626-95cf-e794b5e318ea
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TO#
+
+		annotation SummarizationSetBy = User
+
+	column 'Movement Purpose'
+		dataType: string
+		lineageTag: b29a15ef-f2a6-4a83-823c-8239b6619b7c
+		sourceLineageTag: ed12b351-4a56-42bd-8d7e-ca28ec5ba5b7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Movement Purpose
+
+		annotation SummarizationSetBy = User
+
+	column 'Receipt Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 3b833be9-d27b-4c0f-a4be-e57e7e1a681d
+		sourceLineageTag: d7ac1534-ad01-4f6d-82d9-4a930654b7ef
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Receipt Date
+
+		annotation SummarizationSetBy = User
+
+	column Barcode
+		dataType: string
+		lineageTag: c5b5be09-b7da-4b78-bb7e-de47dd73a2e6
+		sourceLineageTag: ab7c60fb-72ee-4809-8aeb-0299a472569c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Barcode
+
+		annotation SummarizationSetBy = User
+
+	column RMA#
+		dataType: string
+		lineageTag: 9c2fb0eb-7adf-4cba-9de5-38652ccb1c53
+		sourceLineageTag: 54620584-81eb-4746-bd39-bc23ebdfeb11
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RMA#
+
+		annotation SummarizationSetBy = User
+
+	column 'Requested Month-Year'
+		dataType: string
+		lineageTag: 9adac0b7-ecd0-4f90-9290-bdbefc5d9d79
+		sourceLineageTag: a8a2d6e9-f570-46c1-a8b3-901f816ef4e8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Requested Month-Year
+
+		annotation SummarizationSetBy = User
+
+	column 'HTS Tariff Code US'
+		dataType: string
+		lineageTag: 2e33c9b7-a666-42a4-ad6f-66b2fee23262
+		sourceLineageTag: 9edc5493-3b50-4f2f-a68e-aafae7375a7c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: HTS Tariff Code US
+
+		annotation SummarizationSetBy = User
+
+	column 'HTS Tariff Code CAD'
+		dataType: string
+		lineageTag: b4dda1c5-371b-4d1a-a10a-03ffe6f0e8ce
+		sourceLineageTag: b81b7ff6-3306-4e42-8aba-c25143c27ef1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: HTS Tariff Code CAD
+
+		annotation SummarizationSetBy = User
+
+	column 'Fill Date - Line'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 9b76e17e-b4dc-4977-b415-1a4376255d01
+		sourceLineageTag: 027f71c3-12fb-4858-84b2-843312d62759
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fill Date - Line
+
+		annotation SummarizationSetBy = User
+
+	column 'Returns Disposition Code'
+		dataType: string
+		lineageTag: 06dcc171-724a-4ece-b7ba-8d40842e06b6
+		sourceLineageTag: 7f85d559-cac1-4a26-bc22-ed13e03c0eed
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Returns Disposition Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Earliest Confirmed Delivery Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 8a27e0fb-e251-47ad-a8dd-0fa4dcc9966b
+		sourceLineageTag: 33fd7a5c-ba2c-4f2d-9018-696d2433ae9c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Earliest Confirmed Delivery Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Sorting Key'
+		dataType: string
+		lineageTag: f0ee6729-e892-4f50-8d81-ddf0000b1746
+		sourceLineageTag: ca32866b-94d6-4816-869d-e52c23423c4e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sorting Key
+
+		annotation SummarizationSetBy = User
+
+	column Reference
+		dataType: string
+		lineageTag: 2b365da6-3ff6-40ce-9e20-31b4db95e2ac
+		sourceLineageTag: 2400f142-8567-4dbe-8ca2-9a28b6f21611
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Reference
+
+		annotation SummarizationSetBy = User
+
+	column Filter6Months
+		dataType: double
+		isHidden
+		lineageTag: b045b136-2f22-4622-9668-fba24d026a43
+		sourceLineageTag: d8aa46ef-95ec-4cd6-a897-3a057f81f260
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Filter6Months
+
+		annotation SummarizationSetBy = User
+
+	column 'Returns Disposition Code Description'
+		dataType: string
+		lineageTag: 44593ece-4a90-43eb-a06f-f360f751a40e
+		sourceLineageTag: b55331e6-3679-41de-93e3-c3b34b0ebe97
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Returns Disposition Code Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Requested Ship Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: c58c25fe-226e-45df-bf26-8ce9f84f10b8
+		sourceLineageTag: 6dfd0cba-a8fc-4ecc-9b26-bf0aaeccbbb5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Requested Ship Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Confirmed Ship Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: ac719795-1a67-4483-9ee3-34f3807992b0
+		sourceLineageTag: 15fec484-5e5c-4472-bd05-d2f8c6b226a8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Confirmed Ship Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Financial Channel Custom'
+		dataType: string
+		isHidden
+		lineageTag: edc3b42d-1bdd-4b2c-b49b-dd5b5212890f
+		sourceLineageTag: f880ee0e-2ca1-496d-815d-cad2dda6b0d0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Financial Channel Custom
+
+		annotation SummarizationSetBy = User
+
+	column 'To Warehouse ID'
+		dataType: string
+		displayFolder: z Warehouse To
+		lineageTag: 7d1f992c-a3a5-4166-b2c4-d049cbd9f820
+		sourceLineageTag: 28c9727e-a9cd-4dc7-a92b-c68894a84e90
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: To Warehouse ID
+
+		annotation SummarizationSetBy = User
+
+	column 'To Warehouse Name'
+		dataType: string
+		displayFolder: z Warehouse To
+		lineageTag: e14606cf-84cf-48cb-bd89-0468cf2a2807
+		sourceLineageTag: 671e1ca9-0626-44c0-8f44-f181c549dcf5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: To Warehouse Name
+
+		annotation SummarizationSetBy = User
+
+	column 'To Warehouse Region'
+		dataType: string
+		displayFolder: z Warehouse To
+		lineageTag: 24edae6f-a0fc-42eb-a669-6636cbcf1e17
+		sourceLineageTag: f1fcd243-f6e9-4d1b-9776-e46064925d72
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: To Warehouse Region
+
+		annotation SummarizationSetBy = User
+
+	column 'To Warehouse Sub Region'
+		dataType: string
+		displayFolder: z Warehouse To
+		lineageTag: df878100-80ad-4cf2-97a5-6319dd02c08a
+		sourceLineageTag: 2adccd29-43c1-4a5f-85bc-c7aea3e63365
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: To Warehouse Sub Region
+
+		annotation SummarizationSetBy = User
+
+	column 'To Warehouse Channel'
+		dataType: string
+		displayFolder: z Warehouse To
+		lineageTag: 54656aa2-8c83-408a-973b-94f344c5a44f
+		sourceLineageTag: 9a5f6c86-6ea8-4c20-9a76-68dcc739a793
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: To Warehouse Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'To Warehouse Group'
+		dataType: string
+		displayFolder: z Warehouse To
+		lineageTag: 27a939a7-fc97-48f4-aded-d52532c2352d
+		sourceLineageTag: 885c8bfc-fff9-4100-a871-aa3efe5fa5e7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: To Warehouse Group
+
+		annotation SummarizationSetBy = User
+
+	column 'To Warehouse Sub Group'
+		dataType: string
+		displayFolder: z Warehouse To
+		lineageTag: 3a8bb3a2-47cf-48ce-b640-8361872490e2
+		sourceLineageTag: 8069d816-4bcc-4b5d-94db-9352ef178bbc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: To Warehouse Sub Group
+
+		annotation SummarizationSetBy = User
+
+	column 'From Warehouse ID'
+		dataType: string
+		displayFolder: z Warehouse From
+		lineageTag: a122e0a9-069b-4d24-8bd2-f7c6a201c9ef
+		sourceLineageTag: 69a4f4cd-aa9d-40a5-aeb7-c677adc7f5ae
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: From Warehouse ID
+
+		annotation SummarizationSetBy = User
+
+	column 'From Warehouse Name'
+		dataType: string
+		displayFolder: z Warehouse From
+		lineageTag: 3a1d584c-6073-41bb-bcac-0dd888dbae27
+		sourceLineageTag: 5c68163d-da14-46fd-9ffe-8c249f5ba3d7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: From Warehouse Name
+
+		annotation SummarizationSetBy = User
+
+	column 'From Warehouse Region'
+		dataType: string
+		displayFolder: z Warehouse From
+		lineageTag: b0da21ca-cac6-453d-b0f2-c364c3cec8bf
+		sourceLineageTag: 9769eba4-5d65-4c74-9e96-8816b05f0fbe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: From Warehouse Region
+
+		annotation SummarizationSetBy = User
+
+	column 'From Warehouse Sub Region'
+		dataType: string
+		displayFolder: z Warehouse From
+		lineageTag: a79ab497-5114-4450-ac31-b8c1edb4048d
+		sourceLineageTag: b0cee084-7d05-48d4-9014-e9a88409f1ac
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: From Warehouse Sub Region
+
+		annotation SummarizationSetBy = User
+
+	column 'From Warehouse Sub Group'
+		dataType: string
+		displayFolder: z Warehouse From
+		lineageTag: 9329284f-2cef-4604-804d-033c2a6d7353
+		sourceLineageTag: 39d81c8c-47a8-4ffe-ae03-ae31991d04c2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: From Warehouse Sub Group
+
+		annotation SummarizationSetBy = User
+
+	column 'From Warehouse Group'
+		dataType: string
+		displayFolder: z Warehouse From
+		lineageTag: 341ee715-3a94-4447-afae-be2f0d7aed68
+		sourceLineageTag: e33b01ec-4d6a-4826-9a85-0230eb2767f2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: From Warehouse Group
+
+		annotation SummarizationSetBy = User
+
+	column 'From Warehouse Channel'
+		dataType: string
+		displayFolder: z Warehouse From
+		lineageTag: a231c7d8-f745-4513-a058-7b772fe2acf6
+		sourceLineageTag: f0a9a464-f91c-4cbf-9254-3611ca4e04bc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: From Warehouse Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Days to Despatch'
+		dataType: int64
+		formatString: 0
+		displayFolder: z Sales Orders
+		lineageTag: d8588884-11a1-4a61-88f0-3ae7fa7aee1a
+		sourceLineageTag: d6896e15-bf5d-403a-933c-1ab3d9fcef30
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: SO Days to Despatch
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Despatch Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: z Sales Orders
+		lineageTag: 2c0c1b48-7a8c-419c-9d24-308d77f9d8a8
+		sourceLineageTag: 0f25c771-67a8-47e4-81c0-e81e619522c5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO Despatch Date
+
+		annotation SummarizationSetBy = User
+
+	column 'eCom Despatch Time Band'
+		dataType: string
+		displayFolder: z Sales Orders
+		lineageTag: c74d6f5b-1637-4b09-99d3-68862106b06a
+		sourceLineageTag: 45ef984c-3977-4c81-80c3-f3051e4ac246
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: eCom Despatch Time Band
+		sortByColumn: 'eCom Despatch Time Band Sort'
+
+		annotation SummarizationSetBy = User
+
+	column 'eCom Despatch Time Band Sort'
+		dataType: string
+		isHidden
+		displayFolder: z Sales Orders
+		lineageTag: c7aa0f8e-fdf5-4518-a4ad-9d64b79a4dd2
+		sourceLineageTag: 4d6e6c94-18cf-46bf-9102-0a8026c2fa0a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: eCom Despatch Time Band Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Fill Date - Order'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: a4786b1a-f252-4b07-86e7-16066bcec53c
+		sourceLineageTag: 8873894f-08dc-4d41-85f3-600a21f0e8e5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fill Date - Order
+
+		annotation SummarizationSetBy = User
+
+	column AllocatedOutsideOfTimeFenceUnits
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: a629fcf8-0a3a-4d14-a2c3-3de8b026af36
+		sourceLineageTag: faf58587-0adc-4b73-ad3b-04841838ba75
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: AllocatedOutsideOfTimeFenceUnits
+
+		annotation SummarizationSetBy = User
+
+	column AllocatedOutsideOfTimeFenceAmount
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: f8466e2d-668b-4256-952c-2358ce751f3b
+		sourceLineageTag: fd8011b1-5d1b-4990-9b2d-de4f5e027803
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: AllocatedOutsideOfTimeFenceAmount
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Entry Calendar Week'
+		dataType: int64
+		formatString: " \#\,\#\#\0"
+		displayFolder: z Purchase Orders
+		lineageTag: 40fb59a2-88ba-4004-9d40-54817c1794d9
+		sourceLineageTag: e22c4f9e-726f-4796-86a1-11a2dcf18407
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: PO Entry Calendar Week
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Order Type'
+		dataType: string
+		lineageTag: b4cdd4d2-6bb5-4ba0-86d5-ff78a107aa5f
+		sourceLineageTag: ac11f468-201d-4a0a-8b9f-44d5ee68171f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Order Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Supplier Country'
+		dataType: string
+		lineageTag: 6a0b9da0-e445-4909-8525-800e4134301a
+		sourceLineageTag: eeea1b3a-fa79-47e8-9720-362fa9bcc9b9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Supplier Name'
+		dataType: string
+		lineageTag: 882a985e-a574-4c88-83bf-4aed5d59caec
+		sourceLineageTag: d2fd2c59-bbde-4f39-9dc4-2e382e4019ad
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Selling Status - Order Entry'
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 7969e5b9-5f90-4a5b-9c59-c95aae7cda26
+		sourceLineageTag: 63fc14ab-26df-46a1-b395-f49baf56f08d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selling Status - Order Entry
+
+		annotation SummarizationSetBy = User
+
+	partition 'Movements 2' = entity
+		mode: directQuery
+		source
+			entityName: Movements
+			expressionSource: 'DirectQuery to AS - DMA Operations 2'
+

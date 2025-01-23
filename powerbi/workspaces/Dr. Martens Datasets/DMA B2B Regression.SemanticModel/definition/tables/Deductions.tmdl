@@ -1,0 +1,135 @@
+table Deductions
+	lineageTag: 46457b60-4f5b-4e00-ae96-42a79e3cf655
+	sourceLineageTag: ce457c1c-89bf-481b-b247-72b33aff0aaa
+
+	column Company_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 2c6b89ed-8b3c-4e02-88d4-87a2d4251f91
+		sourceLineageTag: 1707277b-61b5-4bf9-8896-b1bce2e27338
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: cf5342c4-f7fe-401c-be92-98d481f934d5
+		sourceLineageTag: 0261aae2-9fa9-48f6-b105-a6e5f40c18be
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column Date_Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Keys
+		lineageTag: 4cf1f63c-58b1-4309-952f-60abdad6c74d
+		sourceLineageTag: 9a9a320d-1205-482c-b5c4-220ab448bf23
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Deduction Reason'
+		dataType: string
+		lineageTag: b4ab0999-958f-4362-95b9-1768605e2776
+		sourceLineageTag: 678c438a-813a-41b2-8a5f-30a0ee2905eb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Deduction Reason
+
+		annotation SummarizationSetBy = User
+
+	column 'Voucher Number'
+		dataType: string
+		lineageTag: 0a18a338-3deb-407d-898f-9e5fc7d08d72
+		sourceLineageTag: e55b9353-8430-4575-b84c-3964e4d5788b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Voucher Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: 75bdc8e8-8f04-40db-a6f9-08665f1e1d36
+		sourceLineageTag: bc55c03b-d65f-47cb-b5d6-c2297a19dd70
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Account Number'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: f440691e-f243-447c-9db9-8002c5a7b266
+		sourceLineageTag: bdc73421-4590-4e83-b4b3-3dc657b35a7e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Number
+
+		annotation SummarizationSetBy = User
+
+	column Amount_CONS_GBP
+		dataType: double
+		isHidden
+		formatString: #,##0.00
+		displayFolder: zz_Values
+		lineageTag: 6814549a-f024-4da1-841a-2a0bb51c913f
+		sourceLineageTag: bfbb9bcf-8f21-48ca-af1f-338e88e811aa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Amount_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column Source
+		dataType: string
+		lineageTag: 18fbd908-3aa4-425c-b393-16291e041f1c
+		sourceLineageTag: a68931bb-fc94-41a3-a512-5352f3a8e688
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Source
+
+		annotation SummarizationSetBy = User
+
+	column 'Deduction Code'
+		dataType: string
+		lineageTag: eee9d0cf-f554-47ff-8bc2-4ad69490d163
+		sourceLineageTag: b8e9608f-ee16-4c2f-857f-71d9d22882f6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Deduction Code
+
+		annotation SummarizationSetBy = User
+
+	column Description
+		dataType: string
+		lineageTag: eac4eb4e-a697-4594-89bc-bbc48ac072e0
+		sourceLineageTag: 7f2f79f9-9f7f-45ac-88e9-7839053d0a16
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = User
+
+	partition Deductions = entity
+		mode: directQuery
+		source
+			entityName: Deductions
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

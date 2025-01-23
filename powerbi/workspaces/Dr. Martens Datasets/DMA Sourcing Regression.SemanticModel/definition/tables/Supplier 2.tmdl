@@ -1,0 +1,106 @@
+table 'Supplier 2'
+	lineageTag: 54bb0043-c58c-46b8-a023-3a43150df9eb
+	sourceLineageTag: df93c2c4-01de-41cf-b076-cb097c6b9bc2
+
+	column Supplier_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 88c89974-0552-4378-97f2-4469c5df5295
+		sourceLineageTag: 635a3d60-f88e-4748-8744-ef53f6f94357
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Supplier Code'
+		dataType: string
+		lineageTag: 7cf51f9c-9ae0-43aa-a5ac-4975f6be1b47
+		sourceLineageTag: 0a0d6b14-0ce5-48c2-b28b-6c6770dc4561
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Supplier Name'
+		dataType: string
+		lineageTag: 70867dfb-ced4-438f-8cba-26a1a97066f5
+		sourceLineageTag: 2529d84d-25e1-46c0-8602-1ff58f079240
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Supplier Country'
+		dataType: string
+		lineageTag: 2cb26317-7313-413f-96c3-26d5b8efd8da
+		sourceLineageTag: 2403230e-0018-49f0-81ce-5eb713da35e8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Supplier Currency'
+		dataType: string
+		lineageTag: cc02e4b9-ef68-49fe-96ab-bdde5446bada
+		sourceLineageTag: 1402cc08-f399-4beb-9a0c-09a59011bf4a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier Currency
+
+		annotation SummarizationSetBy = User
+
+	column 'Supplier Short Name'
+		dataType: string
+		lineageTag: 10cce852-346d-4f62-9fa9-6ed5895caea7
+		sourceLineageTag: 084e5f0b-8190-433d-965f-d27013ca4e5d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier Short Name
+
+		annotation SummarizationSetBy = User
+
+	column SupplierGroup
+		dataType: string
+		isHidden
+		lineageTag: 8a473b14-0053-4270-8f85-a90954ee5a9f
+		sourceLineageTag: bf6073ce-c09c-47c1-9564-26c944b95a08
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SupplierGroup
+
+		annotation SummarizationSetBy = User
+
+	column IsActive
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0fac0be7-804b-4215-810f-4895104606bf
+		sourceLineageTag: 542b40b6-c1b9-40be-9de2-f791cb2bbef0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = User
+
+	column D365VendorID
+		dataType: string
+		isHidden
+		lineageTag: 2a4c6980-fd89-4189-9101-5df23eb15c9d
+		sourceLineageTag: 6534e444-1588-42ef-95aa-694c1045f503
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: D365VendorID
+
+		annotation SummarizationSetBy = User
+
+	partition 'Supplier 2' = entity
+		mode: directQuery
+		source
+			entityName: Supplier
+			expressionSource: 'DirectQuery to AS - DMA Sourcing 2'
+

@@ -1,0 +1,3191 @@
+table sourcing
+	lineageTag: fec56495-2160-46e3-bb47-8fda904142e0
+
+	measure 'source parameter' =
+			
+			"1 Footprint PROD"
+		lineageTag: 9a6c7993-bc00-4af0-bf1f-9ca96bfb7369
+
+	measure 'sourcing 01. Ordered Units' =
+			
+			IF
+			(
+			    SUM(sourcing[01. Ordered Units])=0
+			    ,BLANK()
+			    ,SUM(sourcing[01. Ordered Units])
+			)
+		formatString: #,0
+		lineageTag: d90eae41-9731-4b4a-b98c-77ff5f1d504b
+
+	measure 'sourcing 01. Ordered Units Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[01. Ordered Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[01. Ordered Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 627d9fc7-a9d7-4c9a-bb25-3d9e92059a66
+
+	measure 'sourcing 01. Ordered Value' =
+			
+			IF
+			(
+			    SUM(sourcing[01. Ordered Value])=0
+			    ,BLANK()
+			    ,SUM(sourcing[01. Ordered Value])
+			)
+		formatString: #,0.00
+		lineageTag: 705b45c0-41f5-40e0-b118-d8b9036ba814
+
+	measure 'sourcing 01. Ordered Value Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[01. Ordered Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[01. Ordered Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 3240dcc5-15ea-46a4-98b6-afd1a3091825
+
+	measure 'sourcing 02. Approved Units' =
+			
+			IF
+			(
+			    SUM(sourcing[02. Approved Units])=0
+			    ,BLANK()
+			    ,SUM(sourcing[02. Approved Units])
+			)
+		formatString: #,0
+		lineageTag: 87870f34-0e5f-414b-94c6-6fc7f6d9a928
+
+	measure 'sourcing 02. Approved Units Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[02. Approved Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[02. Approved Units Diff])
+			)
+		formatString: #,0
+		lineageTag: b91015b6-0df0-4c24-a1ad-551a3da547a8
+
+	measure 'sourcing 02. Approved Value' =
+			
+			IF
+			(
+			    SUM(sourcing[02. Approved Value])=0
+			    ,BLANK()
+			    ,SUM(sourcing[02. Approved Value])
+			)
+		formatString: #,0.00
+		lineageTag: d558193f-375f-4fad-817d-91efc165e396
+
+	measure 'sourcing 02. Approved Value Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[02. Approved Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[02. Approved Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 780e5f05-6aab-43b8-a654-fa9344e3d58d
+
+	measure 'sourcing 04. Unconfirmed Units' =
+			
+			IF
+			(
+			    SUM(sourcing[04. Unconfirmed Units])=0
+			    ,BLANK()
+			    ,SUM(sourcing[04. Unconfirmed Units])
+			)
+		formatString: #,0
+		lineageTag: 64f93c36-960c-45eb-ad98-7ee9c501ea86
+
+	measure 'sourcing 04. Unconfirmed Units Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[04. Unconfirmed Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[04. Unconfirmed Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 17fe367a-8daa-4691-b633-2f56135a4d68
+
+	measure 'sourcing 04. Unconfirmed Value' =
+			
+			IF
+			(
+			    SUM(sourcing[04. Unconfirmed Value])=0
+			    ,BLANK()
+			    ,SUM(sourcing[04. Unconfirmed Value])
+			)
+		formatString: #,0.00
+		lineageTag: b48ee9f1-d7d1-4f81-b636-bfd90aaed3cc
+
+	measure 'sourcing 04. Unconfirmed Value Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[04. Unconfirmed Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[04. Unconfirmed Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: ecd79465-0f03-4fa3-baa2-4028a14d0d97
+
+	measure 'sourcing 03. Confirmed Units' =
+			
+			IF
+			(
+			    SUM(sourcing[03. Confirmed Units])=0
+			    ,BLANK()
+			    ,SUM(sourcing[03. Confirmed Units])
+			)
+		formatString: #,0
+		lineageTag: f0d8bbfc-bc23-41bc-b818-2b60d5f6529b
+
+	measure 'sourcing 03. Confirmed Units Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[03. Confirmed Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[03. Confirmed Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 3e0d6de0-c462-405a-b547-da562e627c1b
+
+	measure 'sourcing 03. Confirmed Value' =
+			
+			IF
+			(
+			    SUM(sourcing[03. Confirmed Value])=0
+			    ,BLANK()
+			    ,SUM(sourcing[03. Confirmed Value])
+			)
+		formatString: #,0.00
+		lineageTag: 6009ed72-8cb9-4375-911d-268f482832a6
+
+	measure 'sourcing 03. Confirmed Value Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[03. Confirmed Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[03. Confirmed Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: d760fad5-f1b5-410c-9299-7071adf3b380
+
+	measure 'sourcing 05. Placed to Factory Units' =
+			
+			IF
+			(
+			    SUM(sourcing[05. Placed to Factory Units])=0
+			    ,BLANK()
+			    ,SUM(sourcing[05. Placed to Factory Units])
+			)
+		formatString: #,0
+		lineageTag: d23d03ba-ebfd-4afa-9ab4-34390d4838fc
+
+	measure 'sourcing 05. Placed to Factory Units Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[05. Placed to Factory Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[05. Placed to Factory Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 8ee7b72a-6507-4814-956d-e9ee1f89b4e1
+
+	measure 'sourcing 05. Placed to Factory Value' =
+			
+			IF
+			(
+			    SUM(sourcing[05. Placed to Factory Value])=0
+			    ,BLANK()
+			    ,SUM(sourcing[05. Placed to Factory Value])
+			)
+		formatString: #,0.00
+		lineageTag: bc049293-fc6d-457a-935b-4de13ef6e602
+
+	measure 'sourcing 05. Placed to Factory Value Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[05. Placed to Factory Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[05. Placed to Factory Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 4a2af655-6788-492c-a33e-cff8fc441b66
+
+	measure 'sourcing 06. Rejected Units' =
+			
+			IF
+			(
+			    SUM(sourcing[06. Rejected Units])=0
+			    ,BLANK()
+			    ,SUM(sourcing[06. Rejected Units])
+			)
+		formatString: #,0
+		lineageTag: 72924d5c-ab6d-4ba0-bba2-d132696fe3ea
+
+	measure 'sourcing 06. Rejected Units Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[06. Rejected Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[06. Rejected Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 55509aff-d6f1-464d-953a-f7beb51111f1
+
+	measure 'sourcing 06. Rejected Value' =
+			
+			IF
+			(
+			    SUM(sourcing[06. Rejected Value])=0
+			    ,BLANK()
+			    ,SUM(sourcing[06. Rejected Value])
+			)
+		formatString: #,0.00
+		lineageTag: f5bb7752-86ee-48c5-a9d7-7eabc5c01515
+
+	measure 'sourcing 06. Rejected Value Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[06. Rejected Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[06. Rejected Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 18c04033-4735-4c39-9251-72a29f8a3c4a
+
+	measure 'sourcing 07. To Be Shipped Units' =
+			
+			IF
+			(
+			    SUM(sourcing[07. To Be Shipped Units])=0
+			    ,BLANK()
+			    ,SUM(sourcing[07. To Be Shipped Units])
+			)
+		formatString: #,0
+		lineageTag: f08b1b0c-c055-47eb-b711-821ed1d3e580
+
+	measure 'sourcing 07. To Be Shipped Units Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[07. To Be Shipped Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[07. To Be Shipped Units Diff])
+			)
+		formatString: #,0
+		lineageTag: e69de8b3-ffc2-4dc0-af42-fcb1dbff861e
+
+	measure 'sourcing 07. To Be Shipped Value' =
+			
+			IF
+			(
+			    SUM(sourcing[07. To Be Shipped Value])=0
+			    ,BLANK()
+			    ,SUM(sourcing[07. To Be Shipped Value])
+			)
+		formatString: #,0.00
+		lineageTag: f7638e5c-2c36-46be-849e-32a24200c30b
+
+	measure 'sourcing 07. To Be Shipped Value Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[07. To Be Shipped Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[07. To Be Shipped Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 8007c853-a6ce-4008-8cc2-ca5c62178d41
+
+	measure 'sourcing 08. Shipped Units' =
+			
+			IF
+			(
+			    SUM(sourcing[08. Shipped Units])=0
+			    ,BLANK()
+			    ,SUM(sourcing[08. Shipped Units])
+			)
+		formatString: #,0
+		lineageTag: ee386ade-2ea1-4eee-b3df-3076c647e99c
+
+	measure 'sourcing 08. Shipped Units Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[08. Shipped Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[08. Shipped Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 350ce27b-df2f-4b48-8bd7-ec6a51ff9477
+
+	measure 'sourcing 08. Shipped Value' =
+			
+			IF
+			(
+			    SUM(sourcing[08. Shipped Value])=0
+			    ,BLANK()
+			    ,SUM(sourcing[08. Shipped Value])
+			)
+		formatString: #,0.00
+		lineageTag: fc2c97b2-51b1-4bbe-88f4-33f8d1f2ffec
+
+	measure 'sourcing 08. Shipped Value Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[08. Shipped Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[08. Shipped Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 277ddf42-8185-4476-a337-7bb6b3ecefb1
+
+	measure 'sourcing 09. Received Units' =
+			
+			IF
+			(
+			    SUM(sourcing[09. Received Units])=0
+			    ,BLANK()
+			    ,SUM(sourcing[09. Received Units])
+			)
+		formatString: #,0
+		lineageTag: b1be6643-a9e8-49ab-930a-c516cfe911c7
+
+	measure 'sourcing 09. Received Units Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[09. Received Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[09. Received Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 5f2a83ed-796e-4111-ac9a-f4d8d9c0cb1d
+
+	measure 'sourcing 09. Received Value' =
+			
+			IF
+			(
+			    SUM(sourcing[09. Received Value])=0
+			    ,BLANK()
+			    ,SUM(sourcing[09. Received Value])
+			)
+		formatString: #,0.00
+		lineageTag: 58a469e8-77a7-4955-bc0f-b0bf6aca956d
+
+	measure 'sourcing 09. Received Value Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[09. Received Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[09. Received Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 0d93dc95-3341-4c88-8870-871f5cdf0462
+
+	measure 'sourcing 10. Invoiced Units' =
+			
+			IF
+			(
+			    SUM(sourcing[10. Invoiced Units])=0
+			    ,BLANK()
+			    ,SUM(sourcing[10. Invoiced Units])
+			)
+		formatString: #,0
+		lineageTag: 02b0a3c4-c47d-43a0-84e5-398f1a38239a
+
+	measure 'sourcing 10. Invoiced Units Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[10. Invoiced Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[10. Invoiced Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 7a9082fb-bca5-49f8-9b57-d1f2cb8e8846
+
+	measure 'sourcing 10. Invoiced Value' =
+			
+			IF
+			(
+			    SUM(sourcing[10. Invoiced Value])=0
+			    ,BLANK()
+			    ,SUM(sourcing[10. Invoiced Value])
+			)
+		formatString: #,0.00
+		lineageTag: 4bd83088-f540-4b35-9000-4eee79ddb9da
+
+	measure 'sourcing 10. Invoiced Value Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[10. Invoiced Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[10. Invoiced Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: bfdcdc2c-35d9-4867-86c1-8747e4866bbb
+
+	measure 'sourcing 11. Duty' =
+			
+			IF
+			(
+			    SUM(sourcing[11. Duty])=0
+			    ,BLANK()
+			    ,SUM(sourcing[11. Duty])
+			)
+		formatString: #,0.00
+		lineageTag: fd63fef9-4627-4dbf-9f8b-4b534eda21cb
+
+	measure 'sourcing 11. Duty Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[11. Duty Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[11. Duty Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 8b0a9798-3273-4a2e-825a-df47d74cd303
+
+	measure 'sourcing Gross Weight' =
+			
+			IF
+			(
+			    SUM(sourcing[Gross Weight])=0
+			    ,BLANK()
+			    ,SUM(sourcing[Gross Weight])
+			)
+		formatString: #,0.00
+		lineageTag: c71b5505-16b3-4afd-b180-4ef2c8ca2d92
+
+	measure 'sourcing Gross Weight Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[Gross Weight Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[Gross Weight Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 27190c20-7426-4ca6-9134-943c0a05b77e
+
+	measure 'sourcing Max. Net Weight' =
+			
+			IF
+			(
+			    SUM(sourcing[Max. Net Weight])=0
+			    ,BLANK()
+			    ,SUM(sourcing[Max. Net Weight])
+			)
+		formatString: #,0.000
+		lineageTag: 02e5b989-6c1f-4c97-a521-d4cfbb3b7f73
+
+	measure 'sourcing Max. Net Weight Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[Max. Net Weight Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[Max. Net Weight Diff])
+			)
+		formatString: #,0.000
+		lineageTag: f2b17c02-3e69-4232-b44c-a021f46182c8
+
+	measure 'sourcing Max. Pack Weight' =
+			
+			IF
+			(
+			    SUM(sourcing[Max. Pack Weight])=0
+			    ,BLANK()
+			    ,SUM(sourcing[Max. Pack Weight])
+			)
+		formatString: #,0.000
+		lineageTag: f2501e1d-1cc6-4acb-a67a-83f935d117cf
+
+	measure 'sourcing Max. Pack Weight Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[Max. Pack Weight Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[Max. Pack Weight Diff])
+			)
+		formatString: #,0.000
+		lineageTag: c70d6b58-60c2-4549-a440-6f2b2a5dd378
+
+	measure 'sourcing Total Capacity' =
+			
+			IF
+			(
+			    SUM(sourcing[Total Capacity])=0
+			    ,BLANK()
+			    ,SUM(sourcing[Total Capacity])
+			)
+		formatString: #,0
+		lineageTag: e0295848-b9fd-4809-bf27-62d59daeac94
+
+	measure 'sourcing Total Capacity Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[Total Capacity Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[Total Capacity Diff])
+			)
+		formatString: #,0
+		lineageTag: 0e9f500b-f2ab-4265-8e96-ca3f0a49ca3e
+
+	measure 'sourcing Total Cube' =
+			
+			IF
+			(
+			    SUM(sourcing[Total Cube])=0
+			    ,BLANK()
+			    ,SUM(sourcing[Total Cube])
+			)
+		formatString: #,0.00
+		lineageTag: c445bf6f-bb7e-42e6-98d3-e72f6f6453f4
+
+	measure 'sourcing Total Cube Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[Total Cube Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[Total Cube Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 049b1868-74f5-44c5-82b8-4193d2fb155a
+
+	measure 'sourcing Welted Capacity' =
+			
+			IF
+			(
+			    SUM(sourcing[Welted Capacity])=0
+			    ,BLANK()
+			    ,SUM(sourcing[Welted Capacity])
+			)
+		formatString: #,0
+		lineageTag: e0fc55c3-841d-43be-ba5a-9c0c911a94bc
+
+	measure 'sourcing Welted Capacity Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[Welted Capacity Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[Welted Capacity Diff])
+			)
+		formatString: #,0
+		lineageTag: 4c62316a-5c44-45f2-8ef7-cfaad424ecf6
+
+	measure 'sourcing # Booked on time (%)' =
+			
+			IF
+			(
+			    SUM(sourcing[# Booked on time (%)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Booked on time (%)])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 99d579cb-78e2-4773-8185-274975396c30
+
+	measure 'sourcing # Booked on time (%) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# Booked on time (%) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Booked on time (%) Diff])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d559583c-d8e2-4733-9be3-25a65ed15b3f
+
+	measure 'sourcing # Booked on time (units)' =
+			
+			IF
+			(
+			    SUM(sourcing[# Booked on time (units)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Booked on time (units)])
+			)
+		formatString: #,0
+		lineageTag: ce5b415f-cf46-4c0c-8cda-b800636aaf14
+
+	measure 'sourcing # Booked on time (units) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# Booked on time (units) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Booked on time (units) Diff])
+			)
+		formatString: #,0
+		lineageTag: b29e2d8f-2d19-4c63-b4a4-f3e326c1e360
+
+	measure 'sourcing # Ordered Units (Available)' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Available)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Available)])
+			)
+		formatString: #,0
+		lineageTag: 32997a11-532d-4b19-bf38-5909af80d83b
+
+	measure 'sourcing # Ordered Units (Available) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Available) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Available) Diff])
+			)
+		formatString: #,0
+		lineageTag: b54806b8-6a06-4e58-b46b-c6355011a52e
+
+	measure 'sourcing # Ordered Units (Backlog Available)' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Backlog Available)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Backlog Available)])
+			)
+		formatString: #,0
+		lineageTag: 2e80ab0b-d44f-4ee0-acb8-e834036a9e27
+
+	measure 'sourcing # Ordered Units (Backlog Available) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Backlog Available) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Backlog Available) Diff])
+			)
+		formatString: #,0
+		lineageTag: 92b4721b-b5c1-4484-8079-ebbf5d581e15
+
+	measure 'sourcing # Ordered Units (Backlog)' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Backlog)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Backlog)])
+			)
+		formatString: #,0
+		lineageTag: b2cf458e-2651-43e1-833b-5c10a6ab2e4b
+
+	measure 'sourcing # Ordered Units (Backlog) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Backlog) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Backlog) Diff])
+			)
+		formatString: #,0
+		lineageTag: 56afc7e3-76c7-482b-a2cf-a2edd4fa68bb
+
+	measure 'sourcing # Ordered Units (Delayed)' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Delayed)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Delayed)])
+			)
+		formatString: #,0
+		lineageTag: 11073e74-fa47-47ac-90e6-6af512aa9755
+
+	measure 'sourcing # Ordered Units (Delayed) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Delayed) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Delayed) Diff])
+			)
+		formatString: #,0
+		lineageTag: 64fefd91-cce3-43b8-9902-f1b044f5633a
+
+	measure 'sourcing # Ordered Units (Non-Prebuy)' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Non-Prebuy)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Non-Prebuy)])
+			)
+		formatString: #,0
+		lineageTag: b2c68c68-90d9-4879-84f8-d7d224abd2fc
+
+	measure 'sourcing # Ordered Units (Non-Prebuy) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Non-Prebuy) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Non-Prebuy) Diff])
+			)
+		formatString: #,0
+		lineageTag: e6ff0248-b7b2-4eed-aa14-c6ec9a113fb2
+
+	measure 'sourcing # Ordered Units (Prebuy)' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Prebuy)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Prebuy)])
+			)
+		formatString: #,0
+		lineageTag: 0ee23b50-ae44-49c6-8a1b-7520401a4a1a
+
+	measure 'sourcing # Ordered Units (Prebuy) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Prebuy) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Prebuy) Diff])
+			)
+		formatString: #,0
+		lineageTag: e59ea1ae-d4d1-4f5e-b858-40c5070c9403
+
+	measure 'sourcing # Ordered Units (On Time)' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (On Time)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (On Time)])
+			)
+		formatString: #,0
+		lineageTag: 7c54ac59-f8f9-4b9c-b6c0-a265fbf6aa71
+
+	measure 'sourcing # Ordered Units (On Time) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (On Time) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (On Time) Diff])
+			)
+		formatString: #,0
+		lineageTag: 800e7ef2-5d4e-4601-90b8-548ae77ddcce
+
+	measure 'sourcing # Ordered Units (Past dues)' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Past dues)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Past dues)])
+			)
+		formatString: #,0
+		lineageTag: e10322c5-7e3b-470c-8fa2-c2a7d037c170
+
+	measure 'sourcing # Ordered Units (Past dues) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Past dues) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Past dues) Diff])
+			)
+		formatString: #,0
+		lineageTag: 3db3d7ee-fbbb-4804-989d-3cf5f2c77e7f
+
+	measure 'sourcing # Ordered Units (Shipped)' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Shipped)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Shipped)])
+			)
+		formatString: #,0
+		lineageTag: c472732c-aa78-4858-8f94-446521d8ef97
+
+	measure 'sourcing # Ordered Units (Shipped) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (Shipped) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (Shipped) Diff])
+			)
+		formatString: #,0
+		lineageTag: 2fbe7404-1bc5-4fd8-8e7b-cfd8bc32fb22
+
+	measure 'sourcing # Ordered Units (To be Shipped)' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (To be Shipped)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (To be Shipped)])
+			)
+		formatString: #,0
+		lineageTag: 2ff4aedb-4ef1-42b0-9bda-c19a4650302b
+
+	measure 'sourcing # Ordered Units (To be Shipped) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# Ordered Units (To be Shipped) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Ordered Units (To be Shipped) Diff])
+			)
+		formatString: #,0
+		lineageTag: 2822fe57-52df-4bca-b417-233f67860841
+
+	measure 'sourcing # OT Ackno (%)' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Ackno (%)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Ackno (%)])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 3e53d1f0-d195-4ece-b4b8-985c17ff2a29
+
+	measure 'sourcing # OT Ackno (%) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Ackno (%) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Ackno (%) Diff])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 34639de4-d2db-4692-ae68-f931d492def3
+
+	measure 'sourcing # OT Ackno (units)' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Ackno (units)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Ackno (units)])
+			)
+		formatString: #,0
+		lineageTag: e2f786f5-9198-4cc9-923d-669e6c2d8390
+
+	measure 'sourcing # OT Ackno (units) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Ackno (units) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Ackno (units) Diff])
+			)
+		formatString: #,0
+		lineageTag: aa5838db-bcaa-4c06-b2f9-8a92def09987
+
+	measure 'sourcing # OT Availability (%)' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Availability (%)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Availability (%)])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 5be1d750-586b-4096-adf1-fdf24b09737b
+
+	measure 'sourcing # OT Availability (%) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Availability (%) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Availability (%) Diff])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 830b2f6b-a14a-4168-b925-2098418efbb8
+
+	measure 'sourcing # OT Availability (units)' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Availability (units)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Availability (units)])
+			)
+		formatString: #,0
+		lineageTag: a9078d63-bf22-4212-98ae-ec8794b79c3d
+
+	measure 'sourcing # OT Availability (units) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Availability (units) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Availability (units) Diff])
+			)
+		formatString: #,0
+		lineageTag: 5d08dc38-c9b1-408d-ae0e-5712c45132f9
+
+	measure 'sourcing # OT Confirmed (%)' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Confirmed (%)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Confirmed (%)])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 9fe538e4-daa0-4e40-b5ed-72ea12af4c4f
+
+	measure 'sourcing # OT Confirmed (%) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Confirmed (%) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Confirmed (%) Diff])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 0b44abbd-feaf-431f-a32a-727cd308fab7
+
+	measure 'sourcing # OT Confirmed (units)' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Confirmed (units)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Confirmed (units)])
+			)
+		formatString: #,0
+		lineageTag: c2148f07-efcc-4cc5-ae71-06c8f7115c6d
+
+	measure 'sourcing # OT Confirmed (units) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Confirmed (units) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Confirmed (units) Diff])
+			)
+		formatString: #,0
+		lineageTag: 08252bc7-20ec-4733-a770-5a0ad0c53ada
+
+	measure 'sourcing # OT Placement: (Subm vs Approved) (%)' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Placement: (Subm vs Approved) (%)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Placement: (Subm vs Approved) (%)])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 1cf79cd3-b6ec-49d1-9c71-f5bb21c718ee
+
+	measure 'sourcing # OT Placement: (Subm vs Approved) (%) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Placement: (Subm vs Approved) (%) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Placement: (Subm vs Approved) (%) Diff])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 698365c3-ff54-4732-88ee-6c231af85725
+
+	measure 'sourcing # OT Placement: (Subm vs Approved) (units)' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Placement: (Subm vs Approved) (units)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Placement: (Subm vs Approved) (units)])
+			)
+		formatString: #,0
+		lineageTag: d308a21f-7067-4d7f-a11b-207b55fe71d0
+
+	measure 'sourcing # OT Placement: (Subm vs Approved) (units) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Placement: (Subm vs Approved) (units) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Placement: (Subm vs Approved) (units) Diff])
+			)
+		formatString: #,0
+		lineageTag: a8044b7e-d33d-4c20-baf4-2d814da3c384
+
+	measure 'sourcing # OT Supplier (%)' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Supplier (%)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Supplier (%)])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 1be39e40-6fc4-409d-b802-842d8b5edad3
+
+	measure 'sourcing # OT Supplier (%) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Supplier (%) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Supplier (%) Diff])
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 7ca869a7-d355-4d38-8fd0-4ae70e8a936c
+
+	measure 'sourcing # OT Supplier (units)' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Supplier (units)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Supplier (units)])
+			)
+		formatString: #,0
+		lineageTag: f35f026e-ac7e-42b1-8b26-dc0e7e267c02
+
+	measure 'sourcing # OT Supplier (units) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# OT Supplier (units) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# OT Supplier (units) Diff])
+			)
+		formatString: #,0
+		lineageTag: 22a558ba-e173-4a82-ab99-bea024be18ec
+
+	measure 'sourcing # Packed Quantity' =
+			
+			IF
+			(
+			    SUM(sourcing[# Packed Quantity])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Packed Quantity])
+			)
+		formatString: #,0
+		lineageTag: f2460770-6353-4d07-8932-0a08aa7e46ff
+
+	measure 'sourcing # Packed Quantity Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# Packed Quantity Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Packed Quantity Diff])
+			)
+		formatString: #,0
+		lineageTag: 158f3a18-58a7-4ddb-98a5-d2cb60df507b
+
+	measure 'sourcing # POs' =
+			
+			IF
+			(
+			    SUM(sourcing[# POs])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# POs])
+			)
+		formatString: #,0
+		lineageTag: 07250a33-96fa-4b27-b733-81bb042c3d05
+
+	measure 'sourcing # POs Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# POs Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# POs Diff])
+			)
+		formatString: #,0
+		lineageTag: 391bfa66-3687-4db2-a5e1-73d2bd01c847
+
+	measure 'sourcing # POs (Non-Prebuy)' =
+			
+			IF
+			(
+			    SUM(sourcing[# POs (Non-Prebuy)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# POs (Non-Prebuy)])
+			)
+		formatString: #,0
+		lineageTag: 912448db-02c6-464b-af06-8c8c00499192
+
+	measure 'sourcing # POs (Non-Prebuy) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# POs (Non-Prebuy) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# POs (Non-Prebuy) Diff])
+			)
+		formatString: #,0
+		lineageTag: 56b09461-78a1-4997-8234-3273c457d405
+
+	measure 'sourcing # POs (Prebuy)' =
+			
+			IF
+			(
+			    SUM(sourcing[# POs (Prebuy)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# POs (Prebuy)])
+			)
+		formatString: #,0
+		lineageTag: aabaa18f-3e46-4d82-b0e5-7a933fa76929
+
+	measure 'sourcing # POs (Prebuy) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# POs (Prebuy) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# POs (Prebuy) Diff])
+			)
+		formatString: #,0
+		lineageTag: 74c22666-d478-4e47-b3bf-92e9ac4a86ee
+
+	measure 'sourcing # Shipped Units (Non-Prebuy)' =
+			
+			IF
+			(
+			    SUM(sourcing[# Shipped Units (Non-Prebuy)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Shipped Units (Non-Prebuy)])
+			)
+		formatString: #,0
+		lineageTag: 591f5508-c055-462b-8d87-9f7a133519d9
+
+	measure 'sourcing # Shipped Units (Non-Prebuy) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# Shipped Units (Non-Prebuy) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Shipped Units (Non-Prebuy) Diff])
+			)
+		formatString: #,0
+		lineageTag: 392e6b62-2e7e-4535-87ba-b068b0d042b5
+
+	measure 'sourcing # Shipped Units (Prebuy)' =
+			
+			IF
+			(
+			    SUM(sourcing[# Shipped Units (Prebuy)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Shipped Units (Prebuy)])
+			)
+		formatString: #,0
+		lineageTag: 3a498470-2e0b-4fcd-b0ef-ba794ffbef39
+
+	measure 'sourcing # Shipped Units (Prebuy) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# Shipped Units (Prebuy) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# Shipped Units (Prebuy) Diff])
+			)
+		formatString: #,0
+		lineageTag: 66a7a3d7-1544-4770-8855-abadb82bb926
+
+	measure 'sourcing # To be Shipped Units (Non-Prebuy)' =
+			
+			IF
+			(
+			    SUM(sourcing[# To be Shipped Units (Non-Prebuy)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# To be Shipped Units (Non-Prebuy)])
+			)
+		formatString: #,0
+		lineageTag: 5bbf5308-97e9-43da-9710-dc11c7ca4394
+
+	measure 'sourcing # To be Shipped Units (Non-Prebuy) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# To be Shipped Units (Non-Prebuy) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# To be Shipped Units (Non-Prebuy) Diff])
+			)
+		formatString: #,0
+		lineageTag: 86f05f02-167a-4944-a49c-5b4ae9f896db
+
+	measure 'sourcing # To be Shipped Units (Prebuy)' =
+			
+			IF
+			(
+			    SUM(sourcing[# To be Shipped Units (Prebuy)])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# To be Shipped Units (Prebuy)])
+			)
+		formatString: #,0
+		lineageTag: cff2749a-4a17-4bbd-aece-17d62fba5f86
+
+	measure 'sourcing # To be Shipped Units (Prebuy) Diff' =
+			
+			IF
+			(
+			    SUM(sourcing[# To be Shipped Units (Prebuy) Diff])=0
+			    ,BLANK()
+			    ,SUM(sourcing[# To be Shipped Units (Prebuy) Diff])
+			)
+		formatString: #,0
+		lineageTag: 614b31c3-0ba9-409c-a161-a4fd860f62d2
+
+	measure 'sourcing Sum of AbsDiff' =
+			
+			[sourcing 01. Ordered Units Diff]
+			+[sourcing 01. Ordered Value Diff]
+			+[sourcing 02. Approved Units Diff]
+			+[sourcing 02. Approved Value Diff]
+			+[sourcing 03. Confirmed Units Diff]
+			+[sourcing 03. Confirmed Value Diff]
+			+[sourcing 04. Unconfirmed Units Diff]
+			+[sourcing 04. Unconfirmed Value Diff]
+			+[sourcing 05. Placed to Factory Units Diff]
+			+[sourcing 05. Placed to Factory Value Diff]
+			+[sourcing 06. Rejected Units Diff]
+			+[sourcing 06. Rejected Value Diff]
+			+[sourcing 07. To Be Shipped Units Diff]
+			+[sourcing 07. To Be Shipped Value Diff]
+			+[sourcing 08. Shipped Units Diff]
+			+[sourcing 08. Shipped Value Diff]
+			+[sourcing 09. Received Units Diff]
+			+[sourcing 09. Received Value Diff]
+			+[sourcing 10. Invoiced Units Diff]
+			+[sourcing 10. Invoiced Value Diff]
+			+[sourcing 11. Duty Diff]
+			+[sourcing Gross Weight Diff]
+			+[sourcing Max. Net Weight Diff]
+			+[sourcing Max. Pack Weight Diff]
+			+[sourcing Total Capacity Diff]
+			+[sourcing Total Cube Diff]
+			+[sourcing Welted Capacity Diff]
+			+[sourcing # Booked on time (%) Diff]
+			+[sourcing # Booked on time (units) Diff]
+			+[sourcing # Ordered Units (Available) Diff]
+			+[sourcing # Ordered Units (Backlog Available) Diff]
+			+[sourcing # Ordered Units (Backlog) Diff]
+			+[sourcing # Ordered Units (Delayed) Diff]
+			+[sourcing # Ordered Units (Non-Prebuy) Diff]
+			+[sourcing # Ordered Units (On Time) Diff]
+			+[sourcing # Ordered Units (Past dues) Diff]
+			+[sourcing # Ordered Units (Prebuy) Diff]
+			+[sourcing # Ordered Units (Shipped) Diff]
+			+[sourcing # Ordered Units (To be Shipped) Diff]
+			+[sourcing # OT Ackno (%) Diff]
+			+[sourcing # OT Ackno (units) Diff]
+			+[sourcing # OT Availability (%) Diff]
+			+[sourcing # OT Availability (units) Diff]
+			+[sourcing # OT Confirmed (%) Diff]
+			+[sourcing # OT Confirmed (units) Diff]
+			+[sourcing # OT Placement: (Subm vs Approved) (%) Diff]
+			+[sourcing # OT Placement: (Subm vs Approved) (units) Diff]
+			+[sourcing # OT Supplier (%) Diff]
+			+[sourcing # OT Supplier (units) Diff]
+			+[sourcing # Packed Quantity Diff]
+			+[sourcing # POs Diff]
+			+[sourcing # POs (Non-Prebuy) Diff]
+			+[sourcing # POs (Prebuy) Diff]
+			+[sourcing # Shipped Units (Non-Prebuy) Diff]
+			+[sourcing # Shipped Units (Prebuy) Diff]
+			+[sourcing # To be Shipped Units (Non-Prebuy) Diff]
+			+[sourcing # To be Shipped Units (Prebuy) Diff]
+		formatString: #,0.00
+		lineageTag: 41a155ee-61ed-46c3-a797-3865f9e9e2ee
+
+	column 'Fiscal Year'
+		lineageTag: 7c755c14-7569-4eb2-94fb-450997622456
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Invoice Date[Fiscal Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year-Period'
+		lineageTag: e79709ae-8f86-4112-8347-0ad72eab31e2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Invoice Date[Fiscal Year-Period]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Date'
+		formatString: dd-mmm-yyyy
+		lineageTag: 6a5856be-8f54-4834-aa90-0e45ab311280
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Invoice Date[Invoice Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Attribute
+		lineageTag: f9651f4f-5e01-437a-8f53-077e71360b76
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Attribute]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dimension
+		lineageTag: 50af946d-0e7a-4db9-ae39-bef2ebbc2a90
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Dimension]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source
+		lineageTag: 0da39d50-a27f-480e-9494-045c0aba1c2f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Source]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '01. Ordered Units Diff' =
+			
+			ABS
+			(
+			    'sourcing'[01. Ordered Units]
+			    -LOOKUPVALUE('sourcing'[01. Ordered Units],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: c2148a0c-6d8a-4e98-920c-4c736d252d13
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '01. Ordered Value Diff' =
+			
+			ABS
+			(
+			    'sourcing'[01. Ordered Value]
+			    -LOOKUPVALUE('sourcing'[01. Ordered Value],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 235f6c1e-1f5b-49f7-b0b1-7525b99cb1c5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '02. Approved Units Diff' =
+			
+			ABS
+			(
+			    'sourcing'[02. Approved Units]
+			    -LOOKUPVALUE('sourcing'[02. Approved Units],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: f94a20b0-72fb-43b3-93ce-6772b276fdb9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '02. Approved Value Diff' =
+			
+			ABS
+			(
+			    'sourcing'[02. Approved Value]
+			    -LOOKUPVALUE('sourcing'[02. Approved Value],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 90914c04-4ba7-449f-8c9e-f2d82bb35523
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '03. Confirmed Units Diff' =
+			
+			ABS
+			(
+			    'sourcing'[03. Confirmed Units]
+			    -LOOKUPVALUE('sourcing'[03. Confirmed Units],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 792eb59f-c905-44d6-a862-b0a577a016eb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '04. Unconfirmed Units Diff' =
+			
+			ABS
+			(
+			    'sourcing'[04. Unconfirmed Units]
+			    -LOOKUPVALUE('sourcing'[04. Unconfirmed Units],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 24887e1b-4efc-49d4-8db8-ed95bdac0ec8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '04. Unconfirmed Value Diff' =
+			
+			ABS
+			(
+			    'sourcing'[04. Unconfirmed Value]
+			    -LOOKUPVALUE('sourcing'[04. Unconfirmed Value],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: a4d2a42f-79cc-4ffd-911e-18ef17e5ee5b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '03. Confirmed Value Diff' =
+			
+			ABS
+			(
+			    'sourcing'[03. Confirmed Value]
+			    -LOOKUPVALUE('sourcing'[03. Confirmed Value],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 59d926b9-7769-4ae3-b560-057365100b1a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '05. Placed to Factory Units Diff' =
+			
+			ABS
+			(
+			    'sourcing'[05. Placed to Factory Units]
+			    -LOOKUPVALUE('sourcing'[05. Placed to Factory Units],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: c7ed7718-e81d-40aa-98b4-7a9ee4181558
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '05. Placed to Factory Value Diff' =
+			
+			ABS
+			(
+			    'sourcing'[05. Placed to Factory Value]
+			    -LOOKUPVALUE('sourcing'[05. Placed to Factory Value],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 796b4a0a-18bb-4d7d-9e04-396874f86814
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '06. Rejected Units Diff' =
+			
+			ABS
+			(
+			    'sourcing'[06. Rejected Units]
+			    -LOOKUPVALUE('sourcing'[06. Rejected Units],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: b8c2bb42-ad98-4655-870c-607e3a5782c8
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '06. Rejected Value Diff' =
+			
+			ABS
+			(
+			    'sourcing'[06. Rejected Value]
+			    -LOOKUPVALUE('sourcing'[06. Rejected Value],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 3ecde0a9-bd2b-4f00-9c51-7a68e2de4262
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '07. To Be Shipped Units Diff' =
+			
+			ABS
+			(
+			    'sourcing'[07. To Be Shipped Units]
+			    -LOOKUPVALUE('sourcing'[07. To Be Shipped Units],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 2037ae74-d3ae-4bf6-9fb7-fd9ddb92aee3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '07. To Be Shipped Value Diff' =
+			
+			ABS
+			(
+			    'sourcing'[07. To Be Shipped Value]
+			    -LOOKUPVALUE('sourcing'[07. To Be Shipped Value],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 70515043-f1d3-4492-b8c5-c09f35e8c292
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '08. Shipped Units Diff' =
+			
+			ABS
+			(
+			    'sourcing'[08. Shipped Units]
+			    -LOOKUPVALUE('sourcing'[08. Shipped Units],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: d41005e4-10bd-41c9-9a52-5509eb3a05f3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '08. Shipped Value Diff' =
+			
+			ABS
+			(
+			    'sourcing'[08. Shipped Value]
+			    -LOOKUPVALUE('sourcing'[08. Shipped Value],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 85d70c0b-c761-4b74-8b39-f20942a29690
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '09. Received Units Diff' =
+			
+			ABS
+			(
+			    'sourcing'[09. Received Units]
+			    -LOOKUPVALUE('sourcing'[09. Received Units],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 9fb96418-90ae-4e56-850e-6ad0eb055fb5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '09. Received Value Diff' =
+			
+			ABS
+			(
+			    'sourcing'[09. Received Value]
+			    -LOOKUPVALUE('sourcing'[09. Received Value],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 7376e38e-642f-4cc5-9957-7788f59ccaf7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '10. Invoiced Units Diff' =
+			
+			ABS
+			(
+			    'sourcing'[10. Invoiced Units]
+			    -LOOKUPVALUE('sourcing'[10. Invoiced Units],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: f1742bfe-2bc3-4670-b0ef-8c2de199c041
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '10. Invoiced Value Diff' =
+			
+			ABS
+			(
+			    'sourcing'[10. Invoiced Value]
+			    -LOOKUPVALUE('sourcing'[10. Invoiced Value],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 6d322ce5-e01c-4ffe-9689-2a765888af6f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '11. Duty Diff' =
+			
+			ABS
+			(
+			    'sourcing'[11. Duty]
+			    -LOOKUPVALUE('sourcing'[11. Duty],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 9be49ad6-b251-46bf-9a49-e5a56ec611b7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gross Weight Diff' =
+			
+			ABS
+			(
+			    'sourcing'[Gross Weight]
+			    -LOOKUPVALUE('sourcing'[Gross Weight],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 96f24443-92ab-4ac2-aca9-65e73101fc5f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Max. Net Weight Diff' =
+			
+			ABS
+			(
+			    'sourcing'[Max. Net Weight]
+			    -LOOKUPVALUE('sourcing'[Max. Net Weight],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: fb1904dd-f5f0-472b-8340-a2bfdf5068d5
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Max. Pack Weight Diff' =
+			
+			ABS
+			(
+			    'sourcing'[Max. Pack Weight]
+			    -LOOKUPVALUE('sourcing'[Max. Pack Weight],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: e12cf92b-c4f9-42a4-9e91-9deab3cb763e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Cube Diff' =
+			
+			ABS
+			(
+			    'sourcing'[Total Cube]
+			    -LOOKUPVALUE('sourcing'[Total Cube],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 82f42b5f-de25-4af1-a5b3-3429ea736219
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Welted Capacity Diff' =
+			
+			ABS
+			(
+			    'sourcing'[Welted Capacity]
+			    -LOOKUPVALUE('sourcing'[Welted Capacity],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 8432948c-ef7a-48e0-a638-c7d4fa09aa12
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Booked on time (%) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# Booked on time (%)]
+			    -LOOKUPVALUE('sourcing'[# Booked on time (%)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: afe608e7-155c-4fe0-976c-3b302c317e1e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Booked on time (units) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# Booked on time (units)]
+			    -LOOKUPVALUE('sourcing'[# Booked on time (units)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 0abb1b77-6ad6-4590-8182-e39370502fd9
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Backlog Available) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# Ordered Units (Backlog Available)]
+			    -LOOKUPVALUE('sourcing'[# Ordered Units (Backlog Available)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: a9582087-564a-4166-8366-8b2c81479cba
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Available) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# Ordered Units (Available)]
+			    -LOOKUPVALUE('sourcing'[# Ordered Units (Available)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 712a55eb-d159-4e9b-957c-f162b9c89563
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Backlog) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# Ordered Units (Backlog)]
+			    -LOOKUPVALUE('sourcing'[# Ordered Units (Backlog)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: f59561d4-e16b-4203-8a1d-a5eec9b9a8ff
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Delayed) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# Ordered Units (Delayed)]
+			    -LOOKUPVALUE('sourcing'[# Ordered Units (Delayed)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: c3d6535d-5f6c-4234-826e-6a1ed1b1dd30
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Non-Prebuy) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# Ordered Units (Non-Prebuy)]
+			    -LOOKUPVALUE('sourcing'[# Ordered Units (Non-Prebuy)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 7c536dd2-0942-461f-bc48-a1972b1e511c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Prebuy) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# Ordered Units (Prebuy)]
+			    -LOOKUPVALUE('sourcing'[# Ordered Units (Prebuy)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: c76f4151-752f-4d6f-b0b7-fccd9259a5fc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (On Time) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# Ordered Units (On Time)]
+			    -LOOKUPVALUE('sourcing'[# Ordered Units (On Time)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 13228dc8-deaa-4b0f-8dd7-e4e9cca39e51
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Past dues) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# Ordered Units (Past dues)]
+			    -LOOKUPVALUE('sourcing'[# Ordered Units (Past dues)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 98d71372-26b8-4a50-81b3-40695963a0fb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Shipped) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# Ordered Units (Shipped)]
+			    -LOOKUPVALUE('sourcing'[# Ordered Units (Shipped)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 2370dadf-e893-41bd-90d4-83c0d8273051
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Ackno (%) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# OT Ackno (%)]
+			    -LOOKUPVALUE('sourcing'[# OT Ackno (%)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: b4989f26-aca2-4d57-b536-951c2cc75c3c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Ackno (units) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# OT Ackno (units)]
+			    -LOOKUPVALUE('sourcing'[# OT Ackno (units)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 39b12d8c-bfee-42cd-a459-1a325abbe20d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Availability (%) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# OT Availability (%)]
+			    -LOOKUPVALUE('sourcing'[# OT Availability (%)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 229c8527-51de-4d20-9fab-33fe1f543be3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Availability (units) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# OT Availability (units)]
+			    -LOOKUPVALUE('sourcing'[# OT Availability (units)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 4e8a1362-617e-408c-b49a-b580d78587b2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Confirmed (%) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# OT Confirmed (%)]
+			    -LOOKUPVALUE('sourcing'[# OT Confirmed (%)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: fb795918-7f80-48bc-b842-709ae788f562
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Confirmed (units) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# OT Confirmed (units)]
+			    -LOOKUPVALUE('sourcing'[# OT Confirmed (units)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: fa8567e8-3c24-4678-8367-007e6fc228bb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Placement: (Subm vs Approved) (%) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# OT Placement: (Subm vs Approved) (%)]
+			    -LOOKUPVALUE('sourcing'[# OT Placement: (Subm vs Approved) (%)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 380fff2a-f053-491c-aee4-82c3e3207549
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Placement: (Subm vs Approved) (units) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# OT Placement: (Subm vs Approved) (units)]
+			    -LOOKUPVALUE('sourcing'[# OT Placement: (Subm vs Approved) (units)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: d3744da9-1ffa-410b-adc8-dd120b761eaf
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Supplier (%) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# OT Supplier (%)]
+			    -LOOKUPVALUE('sourcing'[# OT Supplier (%)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 8b6df676-6482-4bba-895a-3e5c0390bb55
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Packed Quantity Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# Packed Quantity]
+			    -LOOKUPVALUE('sourcing'[# Packed Quantity],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: d311e870-69f9-4f5c-9c5c-7b4769521d35
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# POs Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# POs]
+			    -LOOKUPVALUE('sourcing'[# POs],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 0114f876-755f-44c8-b41a-11c8bfb8818a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# POs (Non-Prebuy) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# POs (Non-Prebuy)]
+			    -LOOKUPVALUE('sourcing'[# POs (Non-Prebuy)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: de31e128-556c-4c6c-a50e-6b8c60707ad3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# POs (Prebuy) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# POs (Prebuy)]
+			    -LOOKUPVALUE('sourcing'[# POs (Prebuy)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: d9d34337-3f76-422f-adee-2f71bd8e9357
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Shipped Units (Non-Prebuy) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# Shipped Units (Non-Prebuy)]
+			    -LOOKUPVALUE('sourcing'[# Shipped Units (Non-Prebuy)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 1375d1df-084b-4ece-8214-6b29963dcd37
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Shipped Units (Prebuy) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# Shipped Units (Prebuy)]
+			    -LOOKUPVALUE('sourcing'[# Shipped Units (Prebuy)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: caa3b133-55a5-489e-8488-6e1cfaac4cdd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# To be Shipped Units (Non-Prebuy) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# To be Shipped Units (Non-Prebuy)]
+			    -LOOKUPVALUE('sourcing'[# To be Shipped Units (Non-Prebuy)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 14287292-274b-4b8f-952d-874b4cc7814f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# To be Shipped Units (Prebuy) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# To be Shipped Units (Prebuy)]
+			    -LOOKUPVALUE('sourcing'[# To be Shipped Units (Prebuy)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: e6246d84-234b-4683-b38b-510cd20d1a89
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (To be Shipped) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# Ordered Units (To be Shipped)]
+			    -LOOKUPVALUE('sourcing'[# Ordered Units (To be Shipped)],sourcing[Invoice Date],[Invoice Date],sourcing[Dimension],[Dimension],sourcing[Attribute],[Attribute],sourcing[Source],[source parameter])
+			)
+		lineageTag: 4060ecf7-c4d5-4a15-935c-7abb4bf712e3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Supplier (units) Diff' =
+			
+			ABS
+			(
+			    'sourcing'[# OT Supplier (units)]
+			    -LOOKUPVALUE('sourcing'[# OT Supplier (units)],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: 0a852e18-c9a9-405d-afb2-b51231024a84
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Capacity Diff' =
+			
+			ABS
+			(
+			    'sourcing'[Total Capacity]
+			    -LOOKUPVALUE('sourcing'[Total Capacity],'sourcing'[Invoice Date],[Invoice Date],'sourcing'[Dimension],[Dimension],'sourcing'[Attribute],[Attribute],'sourcing'[Source],[source parameter])
+			)
+		lineageTag: f9f86fa3-7c1f-430d-8ad6-a7ad29f252bc
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '01. Ordered Units'
+		formatString: 0
+		lineageTag: 111d8e76-2eb0-4754-8b06-62c3ec75ad31
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [01. Ordered Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '01. Ordered Value'
+		lineageTag: ab0fe21c-29fe-4f10-b54f-8e71ba3fef83
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [01. Ordered Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '02. Approved Units'
+		formatString: 0
+		lineageTag: 7f1db59f-f20f-48a5-a13c-f81e58b988e5
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [02. Approved Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '02. Approved Value'
+		lineageTag: 0efab4df-5adf-4eb6-8d23-5f547f642dd9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [02. Approved Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '03. Confirmed Units'
+		formatString: 0
+		lineageTag: 2f004bf5-f81f-4452-b9b5-f4c9546fe602
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [03. Confirmed Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '03. Confirmed Value'
+		lineageTag: 72760940-a925-41b6-98be-95687e289fd0
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [03. Confirmed Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '04. Unconfirmed Units'
+		formatString: 0
+		lineageTag: 99b3db41-ae9f-4919-a5c8-9d8dedb9a051
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [04. Unconfirmed Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '04. Unconfirmed Value'
+		lineageTag: d4a328aa-f135-42f3-bdc5-6f9567671bca
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [04. Unconfirmed Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '05. Placed to Factory Units'
+		formatString: 0
+		lineageTag: 31e0171b-29ed-4c27-917a-a24a16dd8fbc
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [05. Placed to Factory Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '05. Placed to Factory Value'
+		lineageTag: 9b2c0d60-696a-4e86-b3d7-881a4d009980
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [05. Placed to Factory Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '06. Rejected Units'
+		formatString: 0
+		lineageTag: 91322151-68d4-4ee2-b671-626d896f89d7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [06. Rejected Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '06. Rejected Value'
+		lineageTag: facf8086-40f5-4937-b6c6-25ecffe3e02b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [06. Rejected Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '07. To Be Shipped Units'
+		formatString: 0
+		lineageTag: 82346d37-1c29-47db-9613-dc6adaf2049e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [07. To Be Shipped Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '07. To Be Shipped Value'
+		lineageTag: 53e841cc-dcc6-4671-b970-f0f7ee172549
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [07. To Be Shipped Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '08. Shipped Units'
+		formatString: 0
+		lineageTag: 4e8407ef-3630-41e1-a547-e49022d5b013
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [08. Shipped Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '08. Shipped Value'
+		lineageTag: dd10f5c0-8941-41c8-877e-58d89a52149f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [08. Shipped Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '09. Received Units'
+		formatString: 0
+		lineageTag: 948e455e-3e99-45fd-b48d-e64695e2dcad
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [09. Received Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '09. Received Value'
+		lineageTag: c5b671d2-1f54-443a-85ff-dc853c54c2d6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [09. Received Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '10. Invoiced Units'
+		formatString: 0
+		lineageTag: b9227707-60ae-4803-b76a-35e500ef9a73
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [10. Invoiced Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '10. Invoiced Value'
+		lineageTag: c14c68e7-d5ab-4fb2-bdfc-8b73666c081f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [10. Invoiced Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '11. Duty'
+		lineageTag: 911348fa-b5a9-4b7c-9056-a4e91fd81c85
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [11. Duty]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Gross Weight'
+		lineageTag: 558d86be-5910-45a0-b7cf-0267c15773fc
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Gross Weight]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Capacity'
+		formatString: 0
+		lineageTag: 8367e0fe-30ff-4936-9e74-53ee1330c384
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Total Capacity]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Cube'
+		lineageTag: a76645a8-7e12-44a0-a158-7c5915afe3b6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Total Cube]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Welted Capacity'
+		formatString: 0
+		lineageTag: dc0026d7-2092-40cd-a3ec-a4546016af27
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Welted Capacity]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Booked on time (%)'
+		lineageTag: b7f928d2-4591-461d-8dd4-f29e73c92aa7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Booked on time (%)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '# Booked on time (units)'
+		formatString: 0
+		lineageTag: 27932eb3-ef59-4a57-8b23-48a56eafbcf4
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Booked on time (units)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Available)'
+		formatString: 0
+		lineageTag: 41ee5ef0-8ad7-4f2a-8f97-4876f2d5f445
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Available)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Backlog Available)'
+		formatString: 0
+		lineageTag: 1bfb6d6b-8ce0-4e2c-9058-8ea9e819de32
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Backlog Available)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Backlog)'
+		formatString: 0
+		lineageTag: a11d9573-98f7-4bba-9747-28ca620885bc
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Backlog)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Delayed)'
+		formatString: 0
+		lineageTag: 54c95d00-2d89-481c-afdb-246c3f2ecc1c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Delayed)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Non-Prebuy)'
+		formatString: 0
+		lineageTag: 0c7acc01-e7b1-4e15-9945-8d8ce9fcd3fb
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Non-Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (On Time)'
+		formatString: 0
+		lineageTag: 93aff876-8ada-403d-b819-05284305747e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (On Time)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Past dues)'
+		formatString: 0
+		lineageTag: d854b359-3292-432d-95be-515e0090e468
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Past dues)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Prebuy)'
+		formatString: 0
+		lineageTag: 4dfb1bfe-860e-42b2-9047-33f0c2fb8136
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Shipped)'
+		formatString: 0
+		lineageTag: 35f3ca80-a385-4ecb-b0b2-dd88cd14d337
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Shipped)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Ackno (%)'
+		lineageTag: e69fa49c-5f2f-4166-b491-e29acf6bc58e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Ackno (%)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '# OT Ackno (units)'
+		formatString: 0
+		lineageTag: 26b4a6ea-b107-4c14-9b8e-9a354b807178
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Ackno (units)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Availability (%)'
+		lineageTag: bf5f9dec-d4e2-4948-98d0-af8ad1e65748
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Availability (%)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '# OT Availability (units)'
+		formatString: 0
+		lineageTag: 814c63f5-eb27-4ea5-84eb-bf8d68150292
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Availability (units)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Confirmed (%)'
+		lineageTag: eafb3ce8-267f-440c-972a-7c9feba1a376
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Confirmed (%)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '# OT Confirmed (units)'
+		formatString: 0
+		lineageTag: 0df5a0ce-bb09-448f-bc83-343b230c1403
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Confirmed (units)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Placement: (Subm vs Approved) (%)'
+		lineageTag: cc992342-9d94-4402-b310-e56317807c38
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Placement: (Subm vs Approved) (%)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '# OT Placement: (Subm vs Approved) (units)'
+		formatString: 0
+		lineageTag: 9fd43db9-81a8-45e1-ad3b-e77f2304d7ae
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Placement: (Subm vs Approved) (units)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Supplier (%)'
+		lineageTag: aa4f596b-3379-4220-854c-7b2016c1f74e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Supplier (%)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '# OT Supplier (units)'
+		formatString: 0
+		lineageTag: af0ef9dd-306e-4846-977d-e3f2d523b634
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Supplier (units)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Packed Quantity'
+		lineageTag: 2f9add31-c5f2-49a3-8ead-26907bdca606
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Packed Quantity]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '# POs'
+		formatString: 0
+		lineageTag: 5407f913-7ef7-4751-b0f2-545a0e0cd31a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# POs]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# POs (Non-Prebuy)'
+		formatString: 0
+		lineageTag: 884ee6d1-0fa1-4116-9ff0-e43ca74867c3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# POs (Non-Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# POs (Prebuy)'
+		formatString: 0
+		lineageTag: d56de309-bc49-4845-83e7-6793ad11595d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# POs (Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Shipped Units (Non-Prebuy)'
+		formatString: 0
+		lineageTag: e03cbe40-5f63-49f3-8fb0-952e42a66152
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Shipped Units (Non-Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Shipped Units (Prebuy)'
+		formatString: 0
+		lineageTag: 2d9fa1ba-a7ad-4b7f-89fa-ea0e0d082aae
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Shipped Units (Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# To be Shipped Units (Non-Prebuy)'
+		formatString: 0
+		lineageTag: 34ff8d63-30c2-4c59-af7c-a912c861d7cd
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# To be Shipped Units (Non-Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# To be Shipped Units (Prebuy)'
+		formatString: 0
+		lineageTag: c2a831f5-cdf2-4fa6-9f3e-a2cfabab39d8
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# To be Shipped Units (Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (To be Shipped)'
+		formatString: 0
+		lineageTag: fe0ea6e6-f21e-407a-9281-a6e8a6ba9bb3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (To be Shipped)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Max. Net Weight' =
+			
+			IF(sourcing[Source]="1 Footprint PROD" && sourcing[Dimension]="Date" && sourcing[Invoice Date]=TODAY(),[Max. Net Weight]
+			,IF(sourcing[Source]="2 Footprint UAT" && sourcing[Dimension]="Date" && sourcing[Invoice Date]=TODAY(),[Max. Net Weight 2]
+			,IF(sourcing[Source]="3 Footprint DEV" && sourcing[Dimension]="Date" && sourcing[Invoice Date]=TODAY(),[Max. Net Weight 3])))
+		lineageTag: 2507df01-6987-4ffa-a2bd-98dc7764d54c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Max. Pack Weight' =
+			
+			IF(sourcing[Source]="1 Footprint PROD" && sourcing[Dimension]="Date" && sourcing[Invoice Date]=TODAY(),[Max. Pack Weight]
+			,IF(sourcing[Source]="2 Footprint UAT" && sourcing[Dimension]="Date" && sourcing[Invoice Date]=TODAY(),[Max. Pack Weight 2]
+			,IF(sourcing[Source]="3 Footprint DEV" && sourcing[Dimension]="Date" && sourcing[Invoice Date]=TODAY(),[Max. Pack Weight 3])))
+		lineageTag: dba817b2-0990-4c03-80b1-6cbaa098f389
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition sourcing = calculated
+		mode: import
+		source =
+				
+				UNION
+				(
+				    //date
+				    SUMMARIZECOLUMNS
+				    (
+				        'Invoice Date'[Fiscal Year]
+				        ,'Invoice Date'[Fiscal Year-Period]
+				        ,'Invoice Date'[Invoice Date]
+				        ,"Attribute",""
+				        ,"Dimension","Date"
+				        ,"Source","1 Footprint PROD"
+				        ,"01. Ordered Units",[01. Ordered Units]
+				        ,"01. Ordered Value",ROUND([01. Ordered Value],2)
+				        ,"02. Approved Units",[02. Approved Units]
+				        ,"02. Approved Value",ROUND([02. Approved Value],2)
+				        ,"03. Confirmed Units",[03. Confirmed Units]
+				        ,"03. Confirmed Value",ROUND([03. Confirmed Value],2)
+				        ,"04. Unconfirmed Units",[04. Unconfirmed Units]
+				        ,"04. Unconfirmed Value",ROUND([04. Unconfirmed Value],2)
+				        ,"05. Placed to Factory Units",[05. Placed to Factory Units]
+				        ,"05. Placed to Factory Value",ROUND([05. Placed to Factory Value],2)
+				        ,"06. Rejected Units",[06. Rejected Units]
+				        ,"06. Rejected Value",ROUND([06. Rejected Value],2)
+				        ,"07. To Be Shipped Units",[07. To Be Shipped Units]
+				        ,"07. To Be Shipped Value",ROUND([07. To Be Shipped Value],2)
+				        ,"08. Shipped Units",[08. Shipped Units]
+				        ,"08. Shipped Value",ROUND([08. Shipped Value],2)
+				        ,"09. Received Units",[09. Received Units]
+				        ,"09. Received Value",ROUND([09. Received Value],2)
+				        ,"10. Invoiced Units",[10. Invoiced Units]
+				        ,"10. Invoiced Value",ROUND([10. Invoiced Value],2)
+				        ,"11. Duty",ROUND([11. Duty],2)
+				        ,"Gross Weight",ROUND([Gross Weight],2)
+				        ,"Total Capacity",[Total Capacity]
+				        ,"Total Cube",ROUND([Total Cube],2)
+				        ,"Welted Capacity",[Welted Capacity]
+				        ,"# Booked on time (%)",ROUND([# Booked on time (%)],4)
+				        ,"# Booked on time (units)",[# Booked on time (units)]
+				        ,"# Ordered Units (Available)",[# Ordered Units (Available)]
+				        ,"# Ordered Units (Backlog Available)",[# Ordered Units (Backlog Available)]
+				        ,"# Ordered Units (Backlog)",[# Ordered Units (Backlog)]
+				        ,"# Ordered Units (Delayed)",[# Ordered Units (Delayed)]
+				        ,"# Ordered Units (Non-Prebuy)",[# Ordered Units (Non-Prebuy)]
+				        ,"# Ordered Units (On Time)",[# Ordered Units (On Time)]
+				        ,"# Ordered Units (Past dues)",[# Ordered Units (Past dues)]
+				        ,"# Ordered Units (Prebuy)",[# Ordered Units (Prebuy)]
+				        ,"# Ordered Units (Shipped)",[# Ordered Units (Shipped)]
+				        ,"# Ordered Units (To be Shipped)",[# Ordered Units (To be Shipped) ]
+				        ,"# OT Ackno (%)",ROUND([# OT Ackno (%)],4)
+				        ,"# OT Ackno (units)",[# OT Ackno (units)]
+				        ,"# OT Availability (%)",ROUND([# OT Availability (%)],4)
+				        ,"# OT Availability (units)",[# OT Availability (units)]
+				        ,"# OT Confirmed (%)",ROUND([# OT Confirmed (%)],4)
+				        ,"# OT Confirmed (units)",[# OT Confirmed (units)]
+				        ,"# OT Placement: (Subm vs Approved) (%)",ROUND([# OT Placement: (Subm vs Approved) (%)],4)
+				        ,"# OT Placement: (Subm vs Approved) (units)",[# OT Placement: (Subm vs Approved) (units)]
+				        ,"# OT Supplier (%)",ROUND([# OT Supplier (%)],4)
+				        ,"# OT Supplier (units)",[# OT Supplier (units)]
+				        ,"# Packed Quantity",[# Packed Quantity]
+				        ,"# POs",[# POs]
+				        ,"# POs (Non-Prebuy)",[# POs (Non-Prebuy)]
+				        ,"# POs (Prebuy)",[# POs (Prebuy)]
+				        ,"# Shipped Units (Non-Prebuy)",[# Shipped Units (Non-Prebuy)]
+				        ,"# Shipped Units (Prebuy)",[# Shipped Units (Prebuy)]
+				        ,"# To be Shipped Units (Non-Prebuy)",[# To be Shipped Units (Non-Prebuy)]
+				        ,"# To be Shipped Units (Prebuy)",[# To be Shipped Units (Prebuy)]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Invoice Date 2'[Fiscal Year]
+				        ,'Invoice Date 2'[Fiscal Year-Period]
+				        ,'Invoice Date 2'[Invoice Date]
+				        ,"Attribute",""
+				        ,"Dimension","Date"
+				        ,"Source","2 Footprint UAT"
+				        ,"01. Ordered Units",[01. Ordered Units 2]
+				        ,"01. Ordered Value",ROUND([01. Ordered Value 2],2)
+				        ,"02. Approved Units",[02. Approved Units 2]
+				        ,"02. Approved Value",ROUND([02. Approved Value 2],2)
+				        ,"03. Confirmed Units",[03. Confirmed Units 2]
+				        ,"03. Confirmed Value",ROUND([03. Confirmed Value 2],2)
+				        ,"04. Unconfirmed Units",[04. Unconfirmed Units 2]
+				        ,"04. Unconfirmed Value",ROUND([04. Unconfirmed Value 2],2)
+				        ,"05. Placed to Factory Units",[05. Placed to Factory Units 2]
+				        ,"05. Placed to Factory Value",ROUND([05. Placed to Factory Value 2],2)
+				        ,"06. Rejected Units",[06. Rejected Units 2]
+				        ,"06. Rejected Value",ROUND([06. Rejected Value 2],2)
+				        ,"07. To Be Shipped Units",[07. To Be Shipped Units 2]
+				        ,"07. To Be Shipped Value",ROUND([07. To Be Shipped Value 2],2)
+				        ,"08. Shipped Units",[08. Shipped Units 2]
+				        ,"08. Shipped Value",ROUND([08. Shipped Value 2],2)
+				        ,"09. Received Units",[09. Received Units 2]
+				        ,"09. Received Value",ROUND([09. Received Value 2],2)
+				        ,"10. Invoiced Units",[10. Invoiced Units 2]
+				        ,"10. Invoiced Value",ROUND([10. Invoiced Value 2],2)
+				        ,"11. Duty",ROUND([11. Duty 2],2)
+				        ,"Gross Weight",ROUND([Gross Weight 2],2)
+				        ,"Total Capacity",[Total Capacity 2]
+				        ,"Total Cube",ROUND([Total Cube 2],2)
+				        ,"Welted Capacity",[Welted Capacity 2]
+				        ,"# Booked on time (%)",ROUND([# Booked on time (%) 2],4)
+				        ,"# Booked on time (units)",[# Booked on time (units) 2]
+				        ,"# Ordered Units (Available)",[# Ordered Units (Available) 2]
+				        ,"# Ordered Units (Backlog Available)",[# Ordered Units (Backlog Available) 2]
+				        ,"# Ordered Units (Backlog)",[# Ordered Units (Backlog) 2]
+				        ,"# Ordered Units (Delayed)",[# Ordered Units (Delayed) 2]
+				        ,"# Ordered Units (Non-Prebuy)",[# Ordered Units (Non-Prebuy) 2]
+				        ,"# Ordered Units (On Time)",[# Ordered Units (On Time) 2]
+				        ,"# Ordered Units (Past dues)",[# Ordered Units (Past dues) 2]
+				        ,"# Ordered Units (Prebuy)",[# Ordered Units (Prebuy) 2]
+				        ,"# Ordered Units (Shipped)",[# Ordered Units (Shipped) 2]
+				        ,"# Ordered Units (To be Shipped)",[# Ordered Units (To be Shipped)  2]
+				        ,"# OT Ackno (%)",ROUND([# OT Ackno (%) 2],4)
+				        ,"# OT Ackno (units)",[# OT Ackno (units) 2]
+				        ,"# OT Availability (%)",ROUND([# OT Availability (%) 2],4)
+				        ,"# OT Availability (units)",[# OT Availability (units) 2]
+				        ,"# OT Confirmed (%)",ROUND([# OT Confirmed (%) 2],4)
+				        ,"# OT Confirmed (units)",[# OT Confirmed (units) 2]
+				        ,"# OT Placement: (Subm vs Approved) (%)",ROUND([# OT Placement: (Subm vs Approved) (%) 2],4)
+				        ,"# OT Placement: (Subm vs Approved) (units)",[# OT Placement: (Subm vs Approved) (units) 2]
+				        ,"# OT Supplier (%)",ROUND([# OT Supplier (%) 2],4)
+				        ,"# OT Supplier (units)",[# OT Supplier (units) 2]
+				        ,"# Packed Quantity",[# Packed Quantity 2]
+				        ,"# POs",[# POs 2]
+				        ,"# POs (Non-Prebuy)",[# POs (Non-Prebuy) 2]
+				        ,"# POs (Prebuy)",[# POs (Prebuy) 2]
+				        ,"# Shipped Units (Non-Prebuy)",[# Shipped Units (Non-Prebuy) 2]
+				        ,"# Shipped Units (Prebuy)",[# Shipped Units (Prebuy) 2]
+				        ,"# To be Shipped Units (Non-Prebuy)",[# To be Shipped Units (Non-Prebuy) 2]
+				        ,"# To be Shipped Units (Prebuy)",[# To be Shipped Units (Prebuy) 2]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Invoice Date 3'[Fiscal Year]
+				        ,'Invoice Date 3'[Fiscal Year-Period]
+				        ,'Invoice Date 3'[Invoice Date]
+				        ,"Attribute",""
+				        ,"Dimension","Date"
+				        ,"Source","3 Footprint DEV"
+				        ,"01. Ordered Units",[01. Ordered Units 3]
+				        ,"01. Ordered Value",ROUND([01. Ordered Value 3],2)
+				        ,"02. Approved Units",[02. Approved Units 3]
+				        ,"02. Approved Value",ROUND([02. Approved Value 3],2)
+				        ,"03. Confirmed Units",[03. Confirmed Units 3]
+				        ,"03. Confirmed Value",ROUND([03. Confirmed Value 3],2)
+				        ,"04. Unconfirmed Units",[04. Unconfirmed Units 3]
+				        ,"04. Unconfirmed Value",ROUND([04. Unconfirmed Value 3],2)
+				        ,"05. Placed to Factory Units",[05. Placed to Factory Units 3]
+				        ,"05. Placed to Factory Value",ROUND([05. Placed to Factory Value 3],2)
+				        ,"06. Rejected Units",[06. Rejected Units 3]
+				        ,"06. Rejected Value",ROUND([06. Rejected Value 3],2)
+				        ,"07. To Be Shipped Units",[07. To Be Shipped Units 3]
+				        ,"07. To Be Shipped Value",ROUND([07. To Be Shipped Value 3],2)
+				        ,"08. Shipped Units",[08. Shipped Units 3]
+				        ,"08. Shipped Value",ROUND([08. Shipped Value 3],2)
+				        ,"09. Received Units",[09. Received Units 3]
+				        ,"09. Received Value",ROUND([09. Received Value 3],2)
+				        ,"10. Invoiced Units",[10. Invoiced Units 3]
+				        ,"10. Invoiced Value",ROUND([10. Invoiced Value 3],2)
+				        ,"11. Duty",ROUND([11. Duty 3],2)
+				        ,"Gross Weight",ROUND([Gross Weight 3],2)
+				        ,"Total Capacity",[Total Capacity 3]
+				        ,"Total Cube",ROUND([Total Cube 3],2)
+				        ,"Welted Capacity",[Welted Capacity 3]
+				        ,"# Booked on time (%)",ROUND([# Booked on time (%) 3],4)
+				        ,"# Booked on time (units)",[# Booked on time (units) 3]
+				        ,"# Ordered Units (Available)",[# Ordered Units (Available) 3]
+				        ,"# Ordered Units (Backlog Available)",[# Ordered Units (Backlog Available) 3]
+				        ,"# Ordered Units (Backlog)",[# Ordered Units (Backlog) 3]
+				        ,"# Ordered Units (Delayed)",[# Ordered Units (Delayed) 3]
+				        ,"# Ordered Units (Non-Prebuy)",[# Ordered Units (Non-Prebuy) 3]
+				        ,"# Ordered Units (On Time)",[# Ordered Units (On Time) 3]
+				        ,"# Ordered Units (Past dues)",[# Ordered Units (Past dues) 3]
+				        ,"# Ordered Units (Prebuy)",[# Ordered Units (Prebuy) 3]
+				        ,"# Ordered Units (Shipped)",[# Ordered Units (Shipped) 3]
+				        ,"# Ordered Units (To be Shipped)",[# Ordered Units (To be Shipped)  3]
+				        ,"# OT Ackno (%)",ROUND([# OT Ackno (%) 3],4)
+				        ,"# OT Ackno (units)",[# OT Ackno (units) 3]
+				        ,"# OT Availability (%)",ROUND([# OT Availability (%) 3],4)
+				        ,"# OT Availability (units)",[# OT Availability (units) 3]
+				        ,"# OT Confirmed (%)",ROUND([# OT Confirmed (%) 3],4)
+				        ,"# OT Confirmed (units)",[# OT Confirmed (units) 3]
+				        ,"# OT Placement: (Subm vs Approved) (%)",ROUND([# OT Placement: (Subm vs Approved) (%) 3],4)
+				        ,"# OT Placement: (Subm vs Approved) (units)",[# OT Placement: (Subm vs Approved) (units) 3]
+				        ,"# OT Supplier (%)",ROUND([# OT Supplier (%) 3],4)
+				        ,"# OT Supplier (units)",[# OT Supplier (units) 3]
+				        ,"# Packed Quantity",[# Packed Quantity 3]
+				        ,"# POs",[# POs 3]
+				        ,"# POs (Non-Prebuy)",[# POs (Non-Prebuy) 3]
+				        ,"# POs (Prebuy)",[# POs (Prebuy) 3]
+				        ,"# Shipped Units (Non-Prebuy)",[# Shipped Units (Non-Prebuy) 3]
+				        ,"# Shipped Units (Prebuy)",[# Shipped Units (Prebuy) 3]
+				        ,"# To be Shipped Units (Non-Prebuy)",[# To be Shipped Units (Non-Prebuy) 3]
+				        ,"# To be Shipped Units (Prebuy)",[# To be Shipped Units (Prebuy) 3]
+				    )
+				
+				    //02b. OT XF Grouping
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Invoice Date'[Fiscal Year]
+				        ,'Invoice Date'[Fiscal Year-Period]
+				        ,'Invoice Date'[Invoice Date]
+				        ,'PO Daybook'[02b. OT XF Grouping]
+				        ,"Dimension","02b. OT XF Grouping"
+				        ,"Source","1 Footprint PROD"
+				        ,"01. Ordered Units",[01. Ordered Units]
+				        ,"01. Ordered Value",ROUND([01. Ordered Value],2)
+				        ,"02. Approved Units",[02. Approved Units]
+				        ,"02. Approved Value",ROUND([02. Approved Value],2)
+				        ,"03. Confirmed Units",[03. Confirmed Units]
+				        ,"03. Confirmed Value",ROUND([03. Confirmed Value],2)
+				        ,"04. Unconfirmed Units",[04. Unconfirmed Units]
+				        ,"04. Unconfirmed Value",ROUND([04. Unconfirmed Value],2)
+				        ,"05. Placed to Factory Units",[05. Placed to Factory Units]
+				        ,"05. Placed to Factory Value",ROUND([05. Placed to Factory Value],2)
+				        ,"06. Rejected Units",[06. Rejected Units]
+				        ,"06. Rejected Value",ROUND([06. Rejected Value],2)
+				        ,"07. To Be Shipped Units",[07. To Be Shipped Units]
+				        ,"07. To Be Shipped Value",ROUND([07. To Be Shipped Value],2)
+				        ,"08. Shipped Units",[08. Shipped Units]
+				        ,"08. Shipped Value",ROUND([08. Shipped Value],2)
+				        ,"09. Received Units",[09. Received Units]
+				        ,"09. Received Value",ROUND([09. Received Value],2)
+				        ,"10. Invoiced Units",[10. Invoiced Units]
+				        ,"10. Invoiced Value",ROUND([10. Invoiced Value],2)
+				        ,"11. Duty",ROUND([11. Duty],2)
+				        ,"Gross Weight",ROUND([Gross Weight],2)
+				        ,"Total Capacity",[Total Capacity]
+				        ,"Total Cube",ROUND([Total Cube],2)
+				        ,"Welted Capacity",[Welted Capacity]
+				        ,"# Booked on time (%)",ROUND([# Booked on time (%)],4)
+				        ,"# Booked on time (units)",[# Booked on time (units)]
+				        ,"# Ordered Units (Available)",[# Ordered Units (Available)]
+				        ,"# Ordered Units (Backlog Available)",[# Ordered Units (Backlog Available)]
+				        ,"# Ordered Units (Backlog)",[# Ordered Units (Backlog)]
+				        ,"# Ordered Units (Delayed)",[# Ordered Units (Delayed)]
+				        ,"# Ordered Units (Non-Prebuy)",[# Ordered Units (Non-Prebuy)]
+				        ,"# Ordered Units (On Time)",[# Ordered Units (On Time)]
+				        ,"# Ordered Units (Past dues)",[# Ordered Units (Past dues)]
+				        ,"# Ordered Units (Prebuy)",[# Ordered Units (Prebuy)]
+				        ,"# Ordered Units (Shipped)",[# Ordered Units (Shipped)]
+				        ,"# Ordered Units (To be Shipped)",[# Ordered Units (To be Shipped) ]
+				        ,"# OT Ackno (%)",ROUND([# OT Ackno (%)],4)
+				        ,"# OT Ackno (units)",[# OT Ackno (units)]
+				        ,"# OT Availability (%)",ROUND([# OT Availability (%)],4)
+				        ,"# OT Availability (units)",[# OT Availability (units)]
+				        ,"# OT Confirmed (%)",ROUND([# OT Confirmed (%)],4)
+				        ,"# OT Confirmed (units)",[# OT Confirmed (units)]
+				        ,"# OT Placement: (Subm vs Approved) (%)",ROUND([# OT Placement: (Subm vs Approved) (%)],4)
+				        ,"# OT Placement: (Subm vs Approved) (units)",[# OT Placement: (Subm vs Approved) (units)]
+				        ,"# OT Supplier (%)",ROUND([# OT Supplier (%)],4)
+				        ,"# OT Supplier (units)",[# OT Supplier (units)]
+				        ,"# Packed Quantity",[# Packed Quantity]
+				        ,"# POs",[# POs]
+				        ,"# POs (Non-Prebuy)",[# POs (Non-Prebuy)]
+				        ,"# POs (Prebuy)",[# POs (Prebuy)]
+				        ,"# Shipped Units (Non-Prebuy)",[# Shipped Units (Non-Prebuy)]
+				        ,"# Shipped Units (Prebuy)",[# Shipped Units (Prebuy)]
+				        ,"# To be Shipped Units (Non-Prebuy)",[# To be Shipped Units (Non-Prebuy)]
+				        ,"# To be Shipped Units (Prebuy)",[# To be Shipped Units (Prebuy)]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Invoice Date 2'[Fiscal Year]
+				        ,'Invoice Date 2'[Fiscal Year-Period]
+				        ,'Invoice Date 2'[Invoice Date]
+				        ,'PO Daybook 2'[02b. OT XF Grouping]
+				        ,"Dimension","02b. OT XF Grouping"
+				        ,"Source","2 Footprint UAT"
+				        ,"01. Ordered Units",[01. Ordered Units 2]
+				        ,"01. Ordered Value",ROUND([01. Ordered Value 2],2)
+				        ,"02. Approved Units",[02. Approved Units 2]
+				        ,"02. Approved Value",ROUND([02. Approved Value 2],2)
+				        ,"03. Confirmed Units",[03. Confirmed Units 2]
+				        ,"03. Confirmed Value",ROUND([03. Confirmed Value 2],2)
+				        ,"04. Unconfirmed Units",[04. Unconfirmed Units 2]
+				        ,"04. Unconfirmed Value",ROUND([04. Unconfirmed Value 2],2)
+				        ,"05. Placed to Factory Units",[05. Placed to Factory Units 2]
+				        ,"05. Placed to Factory Value",ROUND([05. Placed to Factory Value 2],2)
+				        ,"06. Rejected Units",[06. Rejected Units 2]
+				        ,"06. Rejected Value",ROUND([06. Rejected Value 2],2)
+				        ,"07. To Be Shipped Units",[07. To Be Shipped Units 2]
+				        ,"07. To Be Shipped Value",ROUND([07. To Be Shipped Value 2],2)
+				        ,"08. Shipped Units",[08. Shipped Units 2]
+				        ,"08. Shipped Value",ROUND([08. Shipped Value 2],2)
+				        ,"09. Received Units",[09. Received Units 2]
+				        ,"09. Received Value",ROUND([09. Received Value 2],2)
+				        ,"10. Invoiced Units",[10. Invoiced Units 2]
+				        ,"10. Invoiced Value",ROUND([10. Invoiced Value 2],2)
+				        ,"11. Duty",ROUND([11. Duty 2],2)
+				        ,"Gross Weight",ROUND([Gross Weight 2],2)
+				        ,"Total Capacity",[Total Capacity 2]
+				        ,"Total Cube",ROUND([Total Cube 2],2)
+				        ,"Welted Capacity",[Welted Capacity 2]
+				        ,"# Booked on time (%)",ROUND([# Booked on time (%) 2],4)
+				        ,"# Booked on time (units)",[# Booked on time (units) 2]
+				        ,"# Ordered Units (Available)",[# Ordered Units (Available) 2]
+				        ,"# Ordered Units (Backlog Available)",[# Ordered Units (Backlog Available) 2]
+				        ,"# Ordered Units (Backlog)",[# Ordered Units (Backlog) 2]
+				        ,"# Ordered Units (Delayed)",[# Ordered Units (Delayed) 2]
+				        ,"# Ordered Units (Non-Prebuy)",[# Ordered Units (Non-Prebuy) 2]
+				        ,"# Ordered Units (On Time)",[# Ordered Units (On Time) 2]
+				        ,"# Ordered Units (Past dues)",[# Ordered Units (Past dues) 2]
+				        ,"# Ordered Units (Prebuy)",[# Ordered Units (Prebuy) 2]
+				        ,"# Ordered Units (Shipped)",[# Ordered Units (Shipped) 2]
+				        ,"# Ordered Units (To be Shipped)",[# Ordered Units (To be Shipped)  2]
+				        ,"# OT Ackno (%)",ROUND([# OT Ackno (%) 2],4)
+				        ,"# OT Ackno (units)",[# OT Ackno (units) 2]
+				        ,"# OT Availability (%)",ROUND([# OT Availability (%) 2],4)
+				        ,"# OT Availability (units)",[# OT Availability (units) 2]
+				        ,"# OT Confirmed (%)",ROUND([# OT Confirmed (%) 2],4)
+				        ,"# OT Confirmed (units)",[# OT Confirmed (units) 2]
+				        ,"# OT Placement: (Subm vs Approved) (%)",ROUND([# OT Placement: (Subm vs Approved) (%) 2],4)
+				        ,"# OT Placement: (Subm vs Approved) (units)",[# OT Placement: (Subm vs Approved) (units) 2]
+				        ,"# OT Supplier (%)",ROUND([# OT Supplier (%) 2],4)
+				        ,"# OT Supplier (units)",[# OT Supplier (units) 2]
+				        ,"# Packed Quantity",[# Packed Quantity 2]
+				        ,"# POs",[# POs 2]
+				        ,"# POs (Non-Prebuy)",[# POs (Non-Prebuy) 2]
+				        ,"# POs (Prebuy)",[# POs (Prebuy) 2]
+				        ,"# Shipped Units (Non-Prebuy)",[# Shipped Units (Non-Prebuy) 2]
+				        ,"# Shipped Units (Prebuy)",[# Shipped Units (Prebuy) 2]
+				        ,"# To be Shipped Units (Non-Prebuy)",[# To be Shipped Units (Non-Prebuy) 2]
+				        ,"# To be Shipped Units (Prebuy)",[# To be Shipped Units (Prebuy) 2]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Invoice Date 3'[Fiscal Year]
+				        ,'Invoice Date 3'[Fiscal Year-Period]
+				        ,'Invoice Date 3'[Invoice Date]
+				        ,'PO Daybook 3'[02b. OT XF Grouping]
+				        ,"Dimension","02b. OT XF Grouping"
+				        ,"Source","3 Footprint DEV"
+				        ,"01. Ordered Units",[01. Ordered Units 3]
+				        ,"01. Ordered Value",ROUND([01. Ordered Value 3],2)
+				        ,"02. Approved Units",[02. Approved Units 3]
+				        ,"02. Approved Value",ROUND([02. Approved Value 3],2)
+				        ,"03. Confirmed Units",[03. Confirmed Units 3]
+				        ,"03. Confirmed Value",ROUND([03. Confirmed Value 3],2)
+				        ,"04. Unconfirmed Units",[04. Unconfirmed Units 3]
+				        ,"04. Unconfirmed Value",ROUND([04. Unconfirmed Value 3],2)
+				        ,"05. Placed to Factory Units",[05. Placed to Factory Units 3]
+				        ,"05. Placed to Factory Value",ROUND([05. Placed to Factory Value 3],2)
+				        ,"06. Rejected Units",[06. Rejected Units 3]
+				        ,"06. Rejected Value",ROUND([06. Rejected Value 3],2)
+				        ,"07. To Be Shipped Units",[07. To Be Shipped Units 3]
+				        ,"07. To Be Shipped Value",ROUND([07. To Be Shipped Value 3],2)
+				        ,"08. Shipped Units",[08. Shipped Units 3]
+				        ,"08. Shipped Value",ROUND([08. Shipped Value 3],2)
+				        ,"09. Received Units",[09. Received Units 3]
+				        ,"09. Received Value",ROUND([09. Received Value 3],2)
+				        ,"10. Invoiced Units",[10. Invoiced Units 3]
+				        ,"10. Invoiced Value",ROUND([10. Invoiced Value 3],2)
+				        ,"11. Duty",ROUND([11. Duty 3],2)
+				        ,"Gross Weight",ROUND([Gross Weight 3],2)
+				        ,"Total Capacity",[Total Capacity 3]
+				        ,"Total Cube",ROUND([Total Cube 3],2)
+				        ,"Welted Capacity",[Welted Capacity 3]
+				        ,"# Booked on time (%)",ROUND([# Booked on time (%) 3],4)
+				        ,"# Booked on time (units)",[# Booked on time (units) 3]
+				        ,"# Ordered Units (Available)",[# Ordered Units (Available) 3]
+				        ,"# Ordered Units (Backlog Available)",[# Ordered Units (Backlog Available) 3]
+				        ,"# Ordered Units (Backlog)",[# Ordered Units (Backlog) 3]
+				        ,"# Ordered Units (Delayed)",[# Ordered Units (Delayed) 3]
+				        ,"# Ordered Units (Non-Prebuy)",[# Ordered Units (Non-Prebuy) 3]
+				        ,"# Ordered Units (On Time)",[# Ordered Units (On Time) 3]
+				        ,"# Ordered Units (Past dues)",[# Ordered Units (Past dues) 3]
+				        ,"# Ordered Units (Prebuy)",[# Ordered Units (Prebuy) 3]
+				        ,"# Ordered Units (Shipped)",[# Ordered Units (Shipped) 3]
+				        ,"# Ordered Units (To be Shipped)",[# Ordered Units (To be Shipped)  3]
+				        ,"# OT Ackno (%)",ROUND([# OT Ackno (%) 3],4)
+				        ,"# OT Ackno (units)",[# OT Ackno (units) 3]
+				        ,"# OT Availability (%)",ROUND([# OT Availability (%) 3],4)
+				        ,"# OT Availability (units)",[# OT Availability (units) 3]
+				        ,"# OT Confirmed (%)",ROUND([# OT Confirmed (%) 3],4)
+				        ,"# OT Confirmed (units)",[# OT Confirmed (units) 3]
+				        ,"# OT Placement: (Subm vs Approved) (%)",ROUND([# OT Placement: (Subm vs Approved) (%) 3],4)
+				        ,"# OT Placement: (Subm vs Approved) (units)",[# OT Placement: (Subm vs Approved) (units) 3]
+				        ,"# OT Supplier (%)",ROUND([# OT Supplier (%) 3],4)
+				        ,"# OT Supplier (units)",[# OT Supplier (units) 3]
+				        ,"# Packed Quantity",[# Packed Quantity 3]
+				        ,"# POs",[# POs 3]
+				        ,"# POs (Non-Prebuy)",[# POs (Non-Prebuy) 3]
+				        ,"# POs (Prebuy)",[# POs (Prebuy) 3]
+				        ,"# Shipped Units (Non-Prebuy)",[# Shipped Units (Non-Prebuy) 3]
+				        ,"# Shipped Units (Prebuy)",[# Shipped Units (Prebuy) 3]
+				        ,"# To be Shipped Units (Non-Prebuy)",[# To be Shipped Units (Non-Prebuy) 3]
+				        ,"# To be Shipped Units (Prebuy)",[# To be Shipped Units (Prebuy) 3]
+				    )
+				
+				    //04b. OT Receipt Grouping
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Invoice Date'[Fiscal Year]
+				        ,'Invoice Date'[Fiscal Year-Period]
+				        ,'Invoice Date'[Invoice Date]
+				        ,'PO Daybook'[04b. OT Receipt Grouping]
+				        ,"Dimension","04b. OT Receipt Grouping"
+				        ,"Source","1 Footprint PROD"
+				        ,"01. Ordered Units",[01. Ordered Units]
+				        ,"01. Ordered Value",ROUND([01. Ordered Value],2)
+				        ,"02. Approved Units",[02. Approved Units]
+				        ,"02. Approved Value",ROUND([02. Approved Value],2)
+				        ,"03. Confirmed Units",[03. Confirmed Units]
+				        ,"03. Confirmed Value",ROUND([03. Confirmed Value],2)
+				        ,"04. Unconfirmed Units",[04. Unconfirmed Units]
+				        ,"04. Unconfirmed Value",ROUND([04. Unconfirmed Value],2)
+				        ,"05. Placed to Factory Units",[05. Placed to Factory Units]
+				        ,"05. Placed to Factory Value",ROUND([05. Placed to Factory Value],2)
+				        ,"06. Rejected Units",[06. Rejected Units]
+				        ,"06. Rejected Value",ROUND([06. Rejected Value],2)
+				        ,"07. To Be Shipped Units",[07. To Be Shipped Units]
+				        ,"07. To Be Shipped Value",ROUND([07. To Be Shipped Value],2)
+				        ,"08. Shipped Units",[08. Shipped Units]
+				        ,"08. Shipped Value",ROUND([08. Shipped Value],2)
+				        ,"09. Received Units",[09. Received Units]
+				        ,"09. Received Value",ROUND([09. Received Value],2)
+				        ,"10. Invoiced Units",[10. Invoiced Units]
+				        ,"10. Invoiced Value",ROUND([10. Invoiced Value],2)
+				        ,"11. Duty",ROUND([11. Duty],2)
+				        ,"Gross Weight",ROUND([Gross Weight],2)
+				        ,"Total Capacity",[Total Capacity]
+				        ,"Total Cube",ROUND([Total Cube],2)
+				        ,"Welted Capacity",[Welted Capacity]
+				        ,"# Booked on time (%)",ROUND([# Booked on time (%)],4)
+				        ,"# Booked on time (units)",[# Booked on time (units)]
+				        ,"# Ordered Units (Available)",[# Ordered Units (Available)]
+				        ,"# Ordered Units (Backlog Available)",[# Ordered Units (Backlog Available)]
+				        ,"# Ordered Units (Backlog)",[# Ordered Units (Backlog)]
+				        ,"# Ordered Units (Delayed)",[# Ordered Units (Delayed)]
+				        ,"# Ordered Units (Non-Prebuy)",[# Ordered Units (Non-Prebuy)]
+				        ,"# Ordered Units (On Time)",[# Ordered Units (On Time)]
+				        ,"# Ordered Units (Past dues)",[# Ordered Units (Past dues)]
+				        ,"# Ordered Units (Prebuy)",[# Ordered Units (Prebuy)]
+				        ,"# Ordered Units (Shipped)",[# Ordered Units (Shipped)]
+				        ,"# Ordered Units (To be Shipped)",[# Ordered Units (To be Shipped) ]
+				        ,"# OT Ackno (%)",ROUND([# OT Ackno (%)],4)
+				        ,"# OT Ackno (units)",[# OT Ackno (units)]
+				        ,"# OT Availability (%)",ROUND([# OT Availability (%)],4)
+				        ,"# OT Availability (units)",[# OT Availability (units)]
+				        ,"# OT Confirmed (%)",ROUND([# OT Confirmed (%)],4)
+				        ,"# OT Confirmed (units)",[# OT Confirmed (units)]
+				        ,"# OT Placement: (Subm vs Approved) (%)",ROUND([# OT Placement: (Subm vs Approved) (%)],4)
+				        ,"# OT Placement: (Subm vs Approved) (units)",[# OT Placement: (Subm vs Approved) (units)]
+				        ,"# OT Supplier (%)",ROUND([# OT Supplier (%)],4)
+				        ,"# OT Supplier (units)",[# OT Supplier (units)]
+				        ,"# Packed Quantity",[# Packed Quantity]
+				        ,"# POs",[# POs]
+				        ,"# POs (Non-Prebuy)",[# POs (Non-Prebuy)]
+				        ,"# POs (Prebuy)",[# POs (Prebuy)]
+				        ,"# Shipped Units (Non-Prebuy)",[# Shipped Units (Non-Prebuy)]
+				        ,"# Shipped Units (Prebuy)",[# Shipped Units (Prebuy)]
+				        ,"# To be Shipped Units (Non-Prebuy)",[# To be Shipped Units (Non-Prebuy)]
+				        ,"# To be Shipped Units (Prebuy)",[# To be Shipped Units (Prebuy)]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Invoice Date 2'[Fiscal Year]
+				        ,'Invoice Date 2'[Fiscal Year-Period]
+				        ,'Invoice Date 2'[Invoice Date]
+				        ,'PO Daybook 2'[04b. OT Receipt Grouping]
+				        ,"Dimension","04b. OT Receipt Grouping"
+				        ,"Source","2 Footprint UAT"
+				        ,"01. Ordered Units",[01. Ordered Units 2]
+				        ,"01. Ordered Value",ROUND([01. Ordered Value 2],2)
+				        ,"02. Approved Units",[02. Approved Units 2]
+				        ,"02. Approved Value",ROUND([02. Approved Value 2],2)
+				        ,"03. Confirmed Units",[03. Confirmed Units 2]
+				        ,"03. Confirmed Value",ROUND([03. Confirmed Value 2],2)
+				        ,"04. Unconfirmed Units",[04. Unconfirmed Units 2]
+				        ,"04. Unconfirmed Value",ROUND([04. Unconfirmed Value 2],2)
+				        ,"05. Placed to Factory Units",[05. Placed to Factory Units 2]
+				        ,"05. Placed to Factory Value",ROUND([05. Placed to Factory Value 2],2)
+				        ,"06. Rejected Units",[06. Rejected Units 2]
+				        ,"06. Rejected Value",ROUND([06. Rejected Value 2],2)
+				        ,"07. To Be Shipped Units",[07. To Be Shipped Units 2]
+				        ,"07. To Be Shipped Value",ROUND([07. To Be Shipped Value 2],2)
+				        ,"08. Shipped Units",[08. Shipped Units 2]
+				        ,"08. Shipped Value",ROUND([08. Shipped Value 2],2)
+				        ,"09. Received Units",[09. Received Units 2]
+				        ,"09. Received Value",ROUND([09. Received Value 2],2)
+				        ,"10. Invoiced Units",[10. Invoiced Units 2]
+				        ,"10. Invoiced Value",ROUND([10. Invoiced Value 2],2)
+				        ,"11. Duty",ROUND([11. Duty 2],2)
+				        ,"Gross Weight",ROUND([Gross Weight 2],2)
+				        ,"Total Capacity",[Total Capacity 2]
+				        ,"Total Cube",ROUND([Total Cube 2],2)
+				        ,"Welted Capacity",[Welted Capacity 2]
+				        ,"# Booked on time (%)",ROUND([# Booked on time (%) 2],4)
+				        ,"# Booked on time (units)",[# Booked on time (units) 2]
+				        ,"# Ordered Units (Available)",[# Ordered Units (Available) 2]
+				        ,"# Ordered Units (Backlog Available)",[# Ordered Units (Backlog Available) 2]
+				        ,"# Ordered Units (Backlog)",[# Ordered Units (Backlog) 2]
+				        ,"# Ordered Units (Delayed)",[# Ordered Units (Delayed) 2]
+				        ,"# Ordered Units (Non-Prebuy)",[# Ordered Units (Non-Prebuy) 2]
+				        ,"# Ordered Units (On Time)",[# Ordered Units (On Time) 2]
+				        ,"# Ordered Units (Past dues)",[# Ordered Units (Past dues) 2]
+				        ,"# Ordered Units (Prebuy)",[# Ordered Units (Prebuy) 2]
+				        ,"# Ordered Units (Shipped)",[# Ordered Units (Shipped) 2]
+				        ,"# Ordered Units (To be Shipped)",[# Ordered Units (To be Shipped)  2]
+				        ,"# OT Ackno (%)",ROUND([# OT Ackno (%) 2],4)
+				        ,"# OT Ackno (units)",[# OT Ackno (units) 2]
+				        ,"# OT Availability (%)",ROUND([# OT Availability (%) 2],4)
+				        ,"# OT Availability (units)",[# OT Availability (units) 2]
+				        ,"# OT Confirmed (%)",ROUND([# OT Confirmed (%) 2],4)
+				        ,"# OT Confirmed (units)",[# OT Confirmed (units) 2]
+				        ,"# OT Placement: (Subm vs Approved) (%)",ROUND([# OT Placement: (Subm vs Approved) (%) 2],4)
+				        ,"# OT Placement: (Subm vs Approved) (units)",[# OT Placement: (Subm vs Approved) (units) 2]
+				        ,"# OT Supplier (%)",ROUND([# OT Supplier (%) 2],4)
+				        ,"# OT Supplier (units)",[# OT Supplier (units) 2]
+				        ,"# Packed Quantity",[# Packed Quantity 2]
+				        ,"# POs",[# POs 2]
+				        ,"# POs (Non-Prebuy)",[# POs (Non-Prebuy) 2]
+				        ,"# POs (Prebuy)",[# POs (Prebuy) 2]
+				        ,"# Shipped Units (Non-Prebuy)",[# Shipped Units (Non-Prebuy) 2]
+				        ,"# Shipped Units (Prebuy)",[# Shipped Units (Prebuy) 2]
+				        ,"# To be Shipped Units (Non-Prebuy)",[# To be Shipped Units (Non-Prebuy) 2]
+				        ,"# To be Shipped Units (Prebuy)",[# To be Shipped Units (Prebuy) 2]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Invoice Date 3'[Fiscal Year]
+				        ,'Invoice Date 3'[Fiscal Year-Period]
+				        ,'Invoice Date 3'[Invoice Date]
+				        ,'PO Daybook 3'[04b. OT Receipt Grouping]
+				        ,"Dimension","04b. OT Receipt Grouping"
+				        ,"Source","3 Footprint DEV"
+				        ,"01. Ordered Units",[01. Ordered Units 3]
+				        ,"01. Ordered Value",ROUND([01. Ordered Value 3],2)
+				        ,"02. Approved Units",[02. Approved Units 3]
+				        ,"02. Approved Value",ROUND([02. Approved Value 3],2)
+				        ,"03. Confirmed Units",[03. Confirmed Units 3]
+				        ,"03. Confirmed Value",ROUND([03. Confirmed Value 3],2)
+				        ,"04. Unconfirmed Units",[04. Unconfirmed Units 3]
+				        ,"04. Unconfirmed Value",ROUND([04. Unconfirmed Value 3],2)
+				        ,"05. Placed to Factory Units",[05. Placed to Factory Units 3]
+				        ,"05. Placed to Factory Value",ROUND([05. Placed to Factory Value 3],2)
+				        ,"06. Rejected Units",[06. Rejected Units 3]
+				        ,"06. Rejected Value",ROUND([06. Rejected Value 3],2)
+				        ,"07. To Be Shipped Units",[07. To Be Shipped Units 3]
+				        ,"07. To Be Shipped Value",ROUND([07. To Be Shipped Value 3],2)
+				        ,"08. Shipped Units",[08. Shipped Units 3]
+				        ,"08. Shipped Value",ROUND([08. Shipped Value 3],2)
+				        ,"09. Received Units",[09. Received Units 3]
+				        ,"09. Received Value",ROUND([09. Received Value 3],2)
+				        ,"10. Invoiced Units",[10. Invoiced Units 3]
+				        ,"10. Invoiced Value",ROUND([10. Invoiced Value 3],2)
+				        ,"11. Duty",ROUND([11. Duty 3],2)
+				        ,"Gross Weight",ROUND([Gross Weight 3],2)
+				        ,"Total Capacity",[Total Capacity 3]
+				        ,"Total Cube",ROUND([Total Cube 3],2)
+				        ,"Welted Capacity",[Welted Capacity 3]
+				        ,"# Booked on time (%)",ROUND([# Booked on time (%) 3],4)
+				        ,"# Booked on time (units)",[# Booked on time (units) 3]
+				        ,"# Ordered Units (Available)",[# Ordered Units (Available) 3]
+				        ,"# Ordered Units (Backlog Available)",[# Ordered Units (Backlog Available) 3]
+				        ,"# Ordered Units (Backlog)",[# Ordered Units (Backlog) 3]
+				        ,"# Ordered Units (Delayed)",[# Ordered Units (Delayed) 3]
+				        ,"# Ordered Units (Non-Prebuy)",[# Ordered Units (Non-Prebuy) 3]
+				        ,"# Ordered Units (On Time)",[# Ordered Units (On Time) 3]
+				        ,"# Ordered Units (Past dues)",[# Ordered Units (Past dues) 3]
+				        ,"# Ordered Units (Prebuy)",[# Ordered Units (Prebuy) 3]
+				        ,"# Ordered Units (Shipped)",[# Ordered Units (Shipped) 3]
+				        ,"# Ordered Units (To be Shipped)",[# Ordered Units (To be Shipped)  3]
+				        ,"# OT Ackno (%)",ROUND([# OT Ackno (%) 3],4)
+				        ,"# OT Ackno (units)",[# OT Ackno (units) 3]
+				        ,"# OT Availability (%)",ROUND([# OT Availability (%) 3],4)
+				        ,"# OT Availability (units)",[# OT Availability (units) 3]
+				        ,"# OT Confirmed (%)",ROUND([# OT Confirmed (%) 3],4)
+				        ,"# OT Confirmed (units)",[# OT Confirmed (units) 3]
+				        ,"# OT Placement: (Subm vs Approved) (%)",ROUND([# OT Placement: (Subm vs Approved) (%) 3],4)
+				        ,"# OT Placement: (Subm vs Approved) (units)",[# OT Placement: (Subm vs Approved) (units) 3]
+				        ,"# OT Supplier (%)",ROUND([# OT Supplier (%) 3],4)
+				        ,"# OT Supplier (units)",[# OT Supplier (units) 3]
+				        ,"# Packed Quantity",[# Packed Quantity 3]
+				        ,"# POs",[# POs 3]
+				        ,"# POs (Non-Prebuy)",[# POs (Non-Prebuy) 3]
+				        ,"# POs (Prebuy)",[# POs (Prebuy) 3]
+				        ,"# Shipped Units (Non-Prebuy)",[# Shipped Units (Non-Prebuy) 3]
+				        ,"# Shipped Units (Prebuy)",[# Shipped Units (Prebuy) 3]
+				        ,"# To be Shipped Units (Non-Prebuy)",[# To be Shipped Units (Non-Prebuy) 3]
+				        ,"# To be Shipped Units (Prebuy)",[# To be Shipped Units (Prebuy) 3]
+				    )
+				)
+
+	annotation PBI_Id = f7e28284f4f94f3db513ea90f3aee0c6
+

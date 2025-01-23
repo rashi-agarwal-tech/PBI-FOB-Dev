@@ -1,0 +1,120 @@
+table 'Pack One'
+	lineageTag: efb4c8a5-29b5-4211-9cb3-3a6eba27b68d
+	sourceLineageTag: e6b722f4-af23-4a58-aad1-3f0681625cb5
+
+	column 'Packed Order Number'
+		dataType: string
+		lineageTag: f3625ec5-9dfe-4f51-b680-1d8537176edd
+		sourceLineageTag: c998f92b-3696-4003-9159-1db43972bafb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Packed Order Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Packed Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 82a3c012-5e14-49c7-8221-df2c07768074
+		sourceLineageTag: 411e6ed3-4bb9-495e-beb6-d41f903c27b6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Packed Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Packed Qty'
+		dataType: double
+		isHidden
+		lineageTag: 20e51c4d-42a8-4ed9-8a8b-4a94906e1bce
+		sourceLineageTag: 1ae445d9-3c8b-4d4c-a77d-3a92b4de7d0c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Packed Qty
+
+		annotation SummarizationSetBy = User
+
+	column 'Approved Ex-Factory Date'
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		lineageTag: c87258b2-48be-4f68-925f-836113097537
+		sourceLineageTag: de7757e5-a6eb-4ddf-ab55-5df3740aad07
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Approved Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Contractual Ex-Factory Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: e8d32b6c-4807-4dab-bae6-234e2738c569
+		sourceLineageTag: cd9ead51-80cc-469d-8ff3-63b71a4119bd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Contractual Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column '_Is Previous Fiscal Week'
+		dataType: int64
+		formatString: 0
+		lineageTag: e322a8ca-0415-437d-b020-81afae664241
+		sourceLineageTag: 17bb5fb1-b6e6-48fc-93e5-dcdbe0dcb27d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _Is Previous Fiscal Week
+
+		annotation SummarizationSetBy = User
+
+	column 'OTD Grouping'
+		dataType: string
+		lineageTag: cf3f050c-84f3-45ae-8e22-8cf724a83338
+		sourceLineageTag: e0d9598e-955c-43bf-8cf3-26be4c189de2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OTD Grouping
+
+		annotation SummarizationSetBy = User
+
+	column 'Packed Date vs Contractual'
+		dataType: int64
+		formatString: 0
+		lineageTag: c927fa51-2d85-4ff5-a2d3-efe854ed0406
+		sourceLineageTag: d2f7fbf4-a4d3-4d2a-9a8a-6fcf0d07fd4c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Packed Date vs Contractual
+
+		annotation SummarizationSetBy = User
+
+	column PONumberLine_Key
+		dataType: string
+		isHidden
+		lineageTag: 69f7afc8-0d6d-48c1-a60e-9753e159887d
+		sourceLineageTag: 04802967-a9e0-4158-ae1b-2b0330455bd4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PONumberLine_Key
+
+		annotation SummarizationSetBy = User
+
+	column PackedDateKey
+		dataType: int64
+		isHidden
+		lineageTag: 8feb2de8-07e6-45ec-9ff3-26d77c6b3f63
+		sourceLineageTag: 2f1dc7a1-cf0f-4f3b-ab55-f3d83925ed2f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PackedDateKey
+
+		annotation SummarizationSetBy = User
+
+	partition 'Pack One' = entity
+		mode: directQuery
+		source
+			entityName: Pack One
+			expressionSource: 'DirectQuery to AS - DMA Sourcing'
+

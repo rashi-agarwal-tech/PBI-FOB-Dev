@@ -1,0 +1,124 @@
+table 'Parameter - Metrics'
+	lineageTag: 35e77544-2544-4074-a099-8fdaaa1f4f95
+
+	column 'Parameter - Metrics'
+		lineageTag: 94113e41-da17-4494-90f2-1d4b2db74b74
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter - Metrics Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter - Metrics Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Metrics Fields'
+		isHidden
+		lineageTag: 9265534a-368e-42a7-91b9-314c840b9510
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter - Metrics Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Metrics Order'
+		isHidden
+		formatString: 0.0
+		lineageTag: f99c51a5-ec8a-4779-853d-90508c0c00ca
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type =
+			
+			IF
+			(
+			    RIGHT(FORMAT([Parameter - Metrics Order],"@"),1)="1"
+			    ,"Actual"
+			    ,"Abs Diff"
+			)
+		lineageTag: ad4b0134-41bf-4be9-84ce-8d3ebab207e4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Group =
+			
+			IF(LEFT([Parameter - Metrics],6)="GA Ads","Ads"
+			,IF(LEFT([Parameter - Metrics],7)="GA Goal","Goal"
+			,"Other"))
+		lineageTag: 569f794f-e159-4b09-b350-ba5675842f43
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter - Metrics' = calculated
+		mode: import
+		source =
+				
+				{
+				    ("Web Sessions Actuals", NAMEOF([ga Web Sessions]), 1.1),
+				    ("Web Sessions AbsDiff", NAMEOF([ga Web Sessions Diff]), 1.2),
+				    ("Web Transactions Actuals", NAMEOF([ga Web Transactions]), 2.1),
+				    ("Web Transactions AbsDiff", NAMEOF([ga Web Transactions Diff]), 2.2),
+				    ("GA Units Actuals", NAMEOF([ga GA Units]), 3.1),
+				    ("GA Units AbsDiff", NAMEOF([ga GA Units Diff]), 3.2),
+				    ("Users Actuals", NAMEOF([ga Users]), 4.1),
+				    ("Users AbsDiff", NAMEOF([ga Users Diff]), 4.2),
+				    ("New Users Actuals", NAMEOF([ga New Users]), 5.1),
+				    ("New Users AbsDiff", NAMEOF([ga New Users Diff]), 5.2),
+				    ("Web Value Actuals", NAMEOF([ga Web Value]), 6.1),
+				    ("Web Value AbsDiff", NAMEOF([ga Web Value Diff]), 6.2),
+				    ("GA Ads Impressions Actuals", NAMEOF([ga GA Ads Impressions]), 7.1),
+				    ("GA Ads Impressions AbsDiff", NAMEOF([ga GA Ads Impressions Diff]), 7.2),
+				    ("GA Ads Cost Actuals", NAMEOF([ga GA Ads Cost]), 8.1),
+				    ("GA Ads Cost AbsDiff", NAMEOF([ga GA Ads Cost Diff]), 8.2),
+				    ("GA Goal 01 Completion Actuals", NAMEOF([ga GA Goal 01 Completion]), 9.1),
+				    ("GA Goal 01 Completion AbsDiff", NAMEOF([ga GA Goal 01 Completion Diff]), 9.2),
+				    ("GA Goal 02 Completion Actuals", NAMEOF([ga GA Goal 02 Completion]), 10.1),
+				    ("GA Goal 02 Completion AbsDiff", NAMEOF([ga GA Goal 02 Completion Diff]), 10.2),
+				    ("GA Goal 03 Completion Actuals", NAMEOF([ga GA Goal 03 Completion]), 11.1),
+				    ("GA Goal 03 Completion AbsDiff", NAMEOF([ga GA Goal 03 Completion Diff]), 11.2),
+				    ("GA Goal 04 Completion Actuals", NAMEOF([ga GA Goal 04 Completion]), 12.1),
+				    ("GA Goal 04 Completion AbsDiff", NAMEOF([ga GA Goal 04 Completion Diff]), 12.2),
+				    ("GA Goal 05 Completion Actuals", NAMEOF([ga GA Goal 05 Completion]), 13.1),
+				    ("GA Goal 05 Completion AbsDiff", NAMEOF([ga GA Goal 05 Completion Diff]), 13.2),
+				    ("GA Goal 06 Completion Actuals", NAMEOF([ga GA Goal 06 Completion]), 14.1),
+				    ("GA Goal 06 Completion AbsDiff", NAMEOF([ga GA Goal 06 Completion Diff]), 14.2),
+				    ("GA Goal 07 Completion Actuals", NAMEOF([ga GA Goal 07 Completion]), 15.1),
+				    ("GA Goal 07 Completion AbsDiff", NAMEOF([ga GA Goal 07 Completion Diff]), 15.2),
+				    ("GA Goal 08 Completion Actuals", NAMEOF([ga GA Goal 08 Completion]), 16.1),
+				    ("GA Goal 08 Completion AbsDiff", NAMEOF([ga GA Goal 08 Completion Diff]), 16.2),
+				    ("GA Goal 09 Completion Actuals", NAMEOF([ga GA Goal 09 Completion]), 17.1),
+				    ("GA Goal 09 Completion AbsDiff", NAMEOF([ga GA Goal 09 Completion Diff]), 17.2),
+				    ("GA Goal 10 Completion Actuals", NAMEOF([ga GA Goal 10 Completion]), 18.1),
+				    ("GA Goal 10 Completion AbsDiff", NAMEOF([ga GA Goal 10 Completion Diff]), 18.2),
+				    ("GA Goal 11 Completion Actuals", NAMEOF([ga GA Goal 11 Completion]), 19.1),
+				    ("GA Goal 11 Completion AbsDiff", NAMEOF([ga GA Goal 11 Completion Diff]), 19.2),
+				    ("GA Goal 12 Completion Actuals", NAMEOF([ga GA Goal 12 Completion]), 20.1),
+				    ("GA Goal 12 Completion AbsDiff", NAMEOF([ga GA Goal 12 Completion Diff]), 20.2),
+				    ("GA Goal 13 Completion Actuals", NAMEOF([ga GA Goal 13 Completion]), 21.1),
+				    ("GA Goal 13 Completion AbsDiff", NAMEOF([ga GA Goal 13 Completion Diff]), 21.2),
+				    ("GA Goal 14 Completion Actuals", NAMEOF([ga GA Goal 14 Completion]), 22.1),
+				    ("GA Goal 14 Completion AbsDiff", NAMEOF([ga GA Goal 14 Completion Diff]), 22.2),
+				    ("GA Goal 15 Completion Actuals", NAMEOF([ga GA Goal 15 Completion]), 23.1),
+				    ("GA Goal 15 Completion AbsDiff", NAMEOF([ga GA Goal 15 Completion Diff]), 23.2),
+				    ("GA Goal 16 Completion Actuals", NAMEOF([ga GA Goal 16 Completion]), 24.1),
+				    ("GA Goal 16 Completion AbsDiff", NAMEOF([ga GA Goal 16 Completion Diff]), 24.2),
+				    ("GA Goal 17 Completion Actuals", NAMEOF([ga GA Goal 17 Completion]), 25.1),
+				    ("GA Goal 17 Completion AbsDiff", NAMEOF([ga GA Goal 17 Completion Diff]), 25.2),
+				    ("GA Goal 18 Completion Actuals", NAMEOF([ga GA Goal 18 Completion]), 26.1),
+				    ("GA Goal 18 Completion AbsDiff", NAMEOF([ga GA Goal 18 Completion Diff]), 26.2),
+				    ("GA Goal 19 Completion Actuals", NAMEOF([ga GA Goal 19 Completion]), 27.1),
+				    ("GA Goal 19 Completion AbsDiff", NAMEOF([ga GA Goal 19 Completion Diff]), 27.2)
+				}
+
+	annotation PBI_Id = ca6d7977ee0048349af11303548f9228
+

@@ -1,0 +1,32 @@
+table 'Bridge InventTransID 2'
+	lineageTag: bcf89520-e687-4cbc-9507-d3bc69f03918
+	sourceLineageTag: 3d09d85b-63cb-4a16-8b65-57985e8d35bb
+
+	column INVENTTRANSID
+		dataType: string
+		isNullable: false
+		lineageTag: 50129e24-8e93-49ad-9f44-1304dd443813
+		sourceLineageTag: bc982082-7a7c-4b93-8836-c4456e5b36e4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		annotation SummarizationSetBy = User
+
+	column SRMaxDateTmp
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 021a8937-bca4-4696-a94a-cf90bc078820
+		sourceLineageTag: f776ada6-0648-4b39-85df-3f147d1d50b5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SRMaxDateTmp
+
+		annotation SummarizationSetBy = User
+
+	partition 'Bridge InventTransID 2' = entity
+		mode: directQuery
+		source
+			entityName: Bridge InventTransID
+			expressionSource: 'DirectQuery to AS - DMA B2B 2'
+

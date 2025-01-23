@@ -1,0 +1,43 @@
+table 'Model Refresh Time 2'
+	lineageTag: 2e7e69ce-cd96-4a13-8782-f4d238f6e768
+	sourceLineageTag: 67fa758c-bf95-432c-8c0f-7b1ad2462758
+
+	column Order_Type_Key
+		dataType: string
+		isHidden
+		lineageTag: e45981be-5313-4c7b-8ad2-407a0c92f90c
+		sourceLineageTag: bb50d3e9-01fb-4466-a618-109484f51099
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order_Type_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Type'
+		dataType: string
+		isHidden
+		lineageTag: 22472000-42cd-4a49-a682-821555356fb1
+		sourceLineageTag: 8881ea0f-5f9b-4475-beaa-adadf7a236ee
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Refresh Time'
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: a1151b35-3301-4997-bc46-b6b6f4b0b1e5
+		sourceLineageTag: 2a95685a-e644-423e-9aec-5896ee046da9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Refresh Time
+
+		annotation SummarizationSetBy = User
+
+	partition 'Model Refresh Time 2' = entity
+		mode: directQuery
+		source
+			entityName: Model Refresh Time
+			expressionSource: 'DirectQuery to AS - DMA Sourcing 2'
+

@@ -1,0 +1,42 @@
+table 'Selling Status 2'
+	lineageTag: b1412f0a-4971-4a19-9db4-4a89b4412cad
+	sourceLineageTag: 4beb414a-15ae-490a-89be-24a423d05417
+
+	column SellingStatus_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: cee68c00-4a75-4a79-b6d9-ed8ee380f11d
+		sourceLineageTag: da049b9b-dce4-4462-8ce5-c8c71cbaa395
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SellingStatus_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Selling Status'
+		dataType: string
+		lineageTag: 536859d1-2035-489b-a296-33cb5c6dc94b
+		sourceLineageTag: 89b896fd-402e-4938-96bf-510bf084e43d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selling Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Selling Status Description'
+		dataType: string
+		lineageTag: 0372fcc9-49a3-4e5c-ae6e-2f53ef50ed41
+		sourceLineageTag: 6b96de5c-afb0-4567-93c5-5ff5577b67ab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selling Status Description
+
+		annotation SummarizationSetBy = User
+
+	partition 'Selling Status 2' = entity
+		mode: directQuery
+		source
+			entityName: Selling Status
+			expressionSource: 'DirectQuery to AS - DMA GL 2'
+

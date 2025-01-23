@@ -1,0 +1,173 @@
+table 'Latest Ex-Factory Date 2'
+	lineageTag: aefb495f-1592-421b-828f-3f1e5c1f2da8
+	sourceLineageTag: a719d46f-5896-426b-be75-a02cad47deac
+
+	column ExFactoryDate_Key
+		dataType: int64
+		isHidden
+		isNullable: false
+		lineageTag: 1ded39e4-f198-44d2-9a47-f352ca92626c
+		sourceLineageTag: aea8db64-7018-4184-8af5-fb4f0afc0c56
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ExFactoryDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column ' Latest Ex-Factory Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: b9925030-244e-4769-8632-57147fb3f15f
+		sourceLineageTag: e0165fc5-b72b-4916-97ad-bbf7461e3e8c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: " Latest Ex-Factory Date"
+
+		annotation SummarizationSetBy = User
+
+	column 'Week Number (544)'
+		dataType: int64
+		displayFolder: 544 Dates
+		lineageTag: ba06b6a2-fd54-423b-ae55-8a8c8fddd532
+		sourceLineageTag: a6fe3605-98cf-4c68-9ce7-b76c5a2da8e0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Week Number (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Period Number (544)'
+		dataType: int64
+		displayFolder: 544 Dates
+		lineageTag: b8da5a69-77d2-4ad8-bf3a-67659f96f06a
+		sourceLineageTag: 1141b2a9-3dcb-4d0c-8e5e-1b85945e5206
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Period Number (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Quarter (544)'
+		dataType: int64
+		displayFolder: 544 Dates
+		lineageTag: d8f390e9-3a2b-42d9-9b54-9fd15e1f11ce
+		sourceLineageTag: 49368909-02d7-4fbd-85ac-d6296827e9af
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Half (544)'
+		dataType: int64
+		displayFolder: 544 Dates
+		lineageTag: 868f3805-c84f-441c-b9cd-72de7e366345
+		sourceLineageTag: 83afa5ee-42f1-49bd-a12d-7e151a10af50
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Half (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: fb76631e-1d09-44e8-9ca8-c78aa269bea9
+		sourceLineageTag: 5708062d-4130-4fd5-9f5f-36a72c3b2a1c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Year (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year Number (544)'
+		dataType: int64
+		displayFolder: 544 Dates
+		lineageTag: 5f0c512f-35ca-4108-8995-efa7a0064878
+		sourceLineageTag: 7279e617-9ef8-4b46-8544-73738bff1553
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Year Number (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year-Week (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: c822b1c5-5375-4289-9f24-05beaf7647c8
+		sourceLineageTag: 88626b2e-3394-4e51-b11d-841511d5ca13
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Week (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Relative Fiscal Period (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: 7759be30-da83-43f7-9c0f-6f5113ca23b6
+		sourceLineageTag: bf2239c3-cdc3-4f00-af6d-367b8df4634a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Period (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Relative Fiscal Year (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: 3af979ef-4e83-44cb-b084-21df088bf721
+		sourceLineageTag: 62353e60-36bd-4b98-8825-61c6cb42d571
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Relative Fiscal Year (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Calendar Month Number Short'
+		dataType: string
+		lineageTag: 31f7136d-3887-46a6-9890-564a21f8047e
+		sourceLineageTag: f681b80c-e448-45f1-adf7-329cf72b0bd3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Calendar Month Number Short
+
+		annotation SummarizationSetBy = User
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: b059ee92-389e-4b87-a69b-c37dc9728ecd
+		sourceLineageTag: 7c2178e4-3a32-41dd-9720-9287bc24e17f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Calendar Month Short Name'
+		dataType: string
+		lineageTag: c4fa3975-db16-4f26-817b-8135642fe20a
+		sourceLineageTag: 1b729699-3b5e-4f2a-ab8a-75e006a79452
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Calendar Month Short Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Calendar Day Number'
+		dataType: string
+		lineageTag: 9094294c-da50-433f-b912-a42985f04e98
+		sourceLineageTag: b7b760f1-5b5f-4dd5-9645-fabc19d4c529
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Calendar Day Number
+
+		annotation SummarizationSetBy = User
+
+	partition 'Latest Ex-Factory Date 2' = entity
+		mode: directQuery
+		source
+			entityName: Latest Ex-Factory Date
+			expressionSource: 'DirectQuery to AS - DMA Sourcing 2'
+

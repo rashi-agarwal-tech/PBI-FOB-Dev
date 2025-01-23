@@ -1,0 +1,194 @@
+table 'ops summary'
+	lineageTag: e86548d5-beff-488f-b90e-d5dad353ba8b
+
+	column 'RowCount of Availability Today'
+		formatString: #,0
+		lineageTag: 69a49438-2681-4f4c-9a51-dbcfc0f77524
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Availability Today]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Availability Today diff UAT'
+		formatString: #,0
+		lineageTag: 4f9dd843-cbe8-4d32-8ef9-5aaf2363f8ad
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Availability Today diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Availability Today diff DEV'
+		formatString: #,0
+		lineageTag: b97d075f-b98b-4bac-971a-6c743fd40326
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Availability Today diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Movements'
+		formatString: #,0
+		lineageTag: d8526183-8681-4c5f-9be8-5f3cc95b534e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Movements]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Movements diff UAT'
+		formatString: #,0
+		lineageTag: fa0978cf-6a20-4862-87d3-e62c6d235096
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Movements diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Movements diff DEV'
+		formatString: #,0
+		lineageTag: 067fda41-9f3e-4232-bbeb-69868285453f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Movements diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Allocation Details'
+		formatString: #,0
+		lineageTag: 0028b67f-b603-411b-adf4-2e1c330ca306
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Allocation Details]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Allocation Details diff UAT'
+		formatString: #,0
+		lineageTag: facc9ee8-d6f6-4ca3-a64a-b5888bebbe25
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Allocation Details diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Allocation Details diff DEV'
+		formatString: #,0
+		lineageTag: 8e0dbed2-e51c-4dbe-a2fe-e243d3f9fc32
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Allocation Details diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count of Availability Date (exc. weekends)'
+		formatString: #,0
+		lineageTag: 45fdebcb-5fda-4c41-8846-993e7a2c21dd
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count of Availability Date (exc. weekends)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count of Availability Date (exc. weekends) diff UAT'
+		formatString: #,0
+		lineageTag: 9544e984-c40b-4ae2-92db-1ae3c2417525
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count of Availability Date (exc. weekends) diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count of Availability Date (exc. weekends) diff DEV'
+		formatString: #,0
+		lineageTag: 96d6eadf-ce7a-4349-b6d2-f811ec638866
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count of Availability Date (exc. weekends) diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count of Intake Date_Key (exc. weekends)'
+		formatString: #,0
+		lineageTag: 2a0ef13e-d2d4-45d1-91e2-9786688a81b1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count of Intake Date_Key (exc. weekends)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count of Intake Date_Key (exc. weekends) diff UAT'
+		formatString: #,0
+		lineageTag: 4a26f6b4-472f-4055-87b6-0a3d25ac6354
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count of Intake Date_Key (exc. weekends) diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count of Intake Date_Key (exc. weekends) diff DEV'
+		formatString: #,0
+		lineageTag: 501df79e-34e1-4cf6-9c25-dc06240fd6b3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count of Intake Date_Key (exc. weekends) diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Intake Today'
+		formatString: #,0
+		lineageTag: 2b2c1121-2800-4765-a0a9-b81822bfd1cb
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Intake Today]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Intake Today diff UAT'
+		formatString: #,0
+		lineageTag: f4547d40-6931-4295-9ea5-7c2f527caf83
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Intake Today diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Intake Today diff DEV'
+		formatString: #,0
+		lineageTag: 58787ed9-209e-4406-bcd2-43ee54135b32
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Intake Today diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'ops summary' = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE
+				(
+				    ops
+				    ,"RowCount of Movements",COUNTROWS('Movements')
+				    ,"RowCount of Movements diff UAT",COUNTROWS('Movements 2')-COUNTROWS('Movements')
+				    ,"RowCount of Movements diff DEV",COUNTROWS('Movements 3')-COUNTROWS('Movements')
+				    ,"RowCount of Availability Today",CALCULATE(COUNTROWS('Availability'),'Date'[- Is Today?]="Yes")
+				    ,"RowCount of Availability Today diff UAT",CALCULATE(COUNTROWS('Availability 2'),'Date 2'[- Is Today?]="Yes")-CALCULATE(COUNTROWS('Availability'),'Date'[- Is Today?]="Yes")
+				    ,"RowCount of Availability Today diff DEV",CALCULATE(COUNTROWS('Availability 3'),'Date 3'[- Is Today?]="Yes")-CALCULATE(COUNTROWS('Availability'),'Date'[- Is Today?]="Yes")
+				    ,"Count of Availability Date (exc. weekends)",CALCULATE(DISTINCTCOUNT('Availability'[DATE]),'Date'[- Is Weekend?]="Weekday")
+				    ,"Count of Availability Date (exc. weekends) diff UAT",CALCULATE(DISTINCTCOUNT('Availability 2'[DATE]),'Date 2'[- Is Weekend?]="Weekday")-CALCULATE(DISTINCTCOUNT('Availability'[DATE]),'Date'[- Is Weekend?]="Weekday")
+				    ,"Count of Availability Date (exc. weekends) diff DEV",CALCULATE(DISTINCTCOUNT('Availability 3'[DATE]),'Date 3'[- Is Weekend?]="Weekday")-CALCULATE(DISTINCTCOUNT('Availability'[DATE]),'Date'[- Is Weekend?]="Weekday")
+				    ,"RowCount of Allocation Details",COUNTROWS('Allocation Details')
+				    ,"RowCount of Allocation Details diff UAT",COUNTROWS('Allocation Details 2')-COUNTROWS('Allocation Details')
+				    ,"RowCount of Allocation Details diff DEV",COUNTROWS('Allocation Details 3')-COUNTROWS('Allocation Details')
+				    ,"RowCount of Intake Today",CALCULATE(COUNTROWS('Intake'),'Date'[- Is Today?]="Yes")
+				    ,"RowCount of Intake Today diff UAT",CALCULATE(COUNTROWS('Intake 2'),'Date 2'[- Is Today?]="Yes")-CALCULATE(COUNTROWS('Intake'),'Date'[- Is Today?]="Yes")
+				    ,"RowCount of Intake Today diff DEV",CALCULATE(COUNTROWS('Intake 3'),'Date 3'[- Is Today?]="Yes")-CALCULATE(COUNTROWS('Intake'),'Date'[- Is Today?]="Yes")
+				    ,"Count of Intake Date_Key (exc. weekends)",CALCULATE(DISTINCTCOUNT('Intake'[Date_Key]),'Date'[- Is Weekend?]="Weekday")
+				    ,"Count of Intake Date_Key (exc. weekends) diff UAT",CALCULATE(DISTINCTCOUNT('Intake 2'[Date_Key]),'Date 2'[- Is Weekend?]="Weekday")-CALCULATE(DISTINCTCOUNT('Intake'[Date_Key]),'Date'[- Is Weekend?]="Weekday")
+				    ,"Count of Intake Date_Key (exc. weekends) diff DEV",CALCULATE(DISTINCTCOUNT('Intake 3'[Date_Key]),'Date 3'[- Is Weekend?]="Weekday")-CALCULATE(DISTINCTCOUNT('Intake'[Date_Key]),'Date'[- Is Weekend?]="Weekday")
+				)
+
+	annotation PBI_Id = 00745480cc0b42ab921be4d425457988
+

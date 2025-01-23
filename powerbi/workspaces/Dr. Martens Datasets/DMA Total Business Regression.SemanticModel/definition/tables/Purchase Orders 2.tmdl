@@ -1,0 +1,34 @@
+table 'Purchase Orders 2'
+	isHidden
+	lineageTag: c9be9c33-38e9-457c-9312-213a40bcfeca
+	sourceLineageTag: 7bd32425-1d0f-4d97-8c89-787b735be9e3
+
+	column CONFIRMEDDELIVERYDATE
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: b970c549-2d55-4178-b75b-9587fe1ffb20
+		sourceLineageTag: 7327967a-4d14-4fe7-bca8-4883d4c1e445
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CONFIRMEDDELIVERYDATE
+
+		annotation SummarizationSetBy = User
+
+	column SO_PO_ID
+		dataType: string
+		isHidden
+		lineageTag: cda04e84-367d-4791-a5be-1623c3750607
+		sourceLineageTag: 3054c4cb-5915-4ddf-9620-70f16daf1978
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO_PO_ID
+
+		annotation SummarizationSetBy = User
+
+	partition 'Purchase Orders 2' = entity
+		mode: directQuery
+		source
+			entityName: Purchase Orders
+			expressionSource: 'DirectQuery to AS - DMA Total Business 2'
+

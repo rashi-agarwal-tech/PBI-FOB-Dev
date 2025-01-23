@@ -1,0 +1,133 @@
+table 'Forecast Additional Ecom 3'
+	isHidden
+	lineageTag: 94f8120d-4f56-434d-ba8f-88ed8abcaeef
+	sourceLineageTag: 8c6b0187-28ff-4feb-bd94-d3d193657ada
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: e5a80665-ce9f-4c5a-a3dd-d47bf2ab1ae5
+		sourceLineageTag: e5a463a8-1c7c-4938-b66f-34e8531085c8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Forecast Version'
+		dataType: string
+		isHidden
+		lineageTag: d5a50474-4428-425b-b9fc-028b0778e743
+		sourceLineageTag: 4af85c62-1af1-4eb5-8d3b-8fbf2eb91d2b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Forecast Version
+
+		annotation SummarizationSetBy = User
+
+	column Company
+		dataType: int64
+		isHidden
+		lineageTag: f9699f58-2014-46e1-ac56-2d17df24aeb0
+		sourceLineageTag: 7b21548a-5db1-407a-8cc8-9ac99f4125d5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = User
+
+	column Website
+		dataType: string
+		isHidden
+		lineageTag: 153f4c57-09a0-4547-877b-89e13b26b4fb
+		sourceLineageTag: be597979-7a81-43e8-9ea1-cae9dadf6903
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Website
+
+		annotation SummarizationSetBy = User
+
+	column 'GA Demand ex VAT'
+		dataType: int64
+		isHidden
+		lineageTag: 6ff561a5-3975-4470-9c3a-189e4916a5ae
+		sourceLineageTag: 2b913426-5121-4fa1-a5aa-7c7bdc4cb94d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: GA Demand ex VAT
+
+		annotation SummarizationSetBy = User
+
+	column 'DDS Demand'
+		dataType: int64
+		isHidden
+		lineageTag: f7cd9cf9-8261-43e1-aa55-f0760f93cdc1
+		sourceLineageTag: cb62144b-6107-4701-ac67-93a5339ec7a9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DDS Demand
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancelled Demand'
+		dataType: int64
+		isHidden
+		lineageTag: 70de240b-e6ee-4d83-86d4-b10b914f6005
+		sourceLineageTag: d0a4d443-217d-4bb6-b391-900c6f715b23
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cancelled Demand
+
+		annotation SummarizationSetBy = User
+
+	column 'Net Invoiced from LW'
+		dataType: double
+		isHidden
+		lineageTag: be522647-47bd-4cbf-aaf0-039d2420cc29
+		sourceLineageTag: 345f7fa8-295e-4157-aba2-c3ceb4ea0940
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Net Invoiced from LW
+
+		annotation SummarizationSetBy = User
+
+	column 'Net Invoiced from TW'
+		dataType: double
+		isHidden
+		lineageTag: 70b7f47a-1901-4f48-a670-d6547d38b61f
+		sourceLineageTag: 668cb3c7-bfa7-4729-b8c1-53b9bdb1486e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Net Invoiced from TW
+
+		annotation SummarizationSetBy = User
+
+	column 'Open Net Sales'
+		dataType: double
+		isHidden
+		lineageTag: 56d8ff4f-eac7-4168-8bd6-1d7b975270e5
+		sourceLineageTag: 86ebbcd0-e85d-473d-b6b2-8ce7512bedb4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Open Net Sales
+
+		annotation SummarizationSetBy = User
+
+	column 'Net Returns by Order week'
+		dataType: double
+		isHidden
+		lineageTag: 9afc0dbe-a989-4547-97d3-77a78e628db8
+		sourceLineageTag: c8cdf0a0-ce8a-4380-beef-62852aca3290
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Net Returns by Order week
+
+		annotation SummarizationSetBy = User
+
+	partition 'Forecast Additional Ecom 3' = entity
+		mode: directQuery
+		source
+			entityName: Forecast Additional Ecom
+			expressionSource: 'DirectQuery to AS - DMA D2C 3'
+

@@ -1,0 +1,121 @@
+table Summary
+	lineageTag: 8aa827ab-ad37-4d6a-a3ca-5a95f0e908b4
+
+	column TABLE_NAME
+		lineageTag: 285c88a5-e531-4a79-b363-928f52bb4e90
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: PROD[TABLE_NAME]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'UAT AbsDiff'
+		lineageTag: 1fb4334a-5092-4720-becc-9f01c1ed5da0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [UAT AbsDiff]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'DEV AbsDiff'
+		lineageTag: 927ce3d2-7000-4c65-8c16-7a61fe3a7299
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DEV AbsDiff]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '# UAT DWH Views mismatched (TOTAL)' =
+			
+			IF
+			(
+			    [UAT AbsDiff]>=1
+			    ,1
+			    ,0
+			)
+		formatString: 0
+		lineageTag: 4a2e6709-d943-4ea4-97dc-ae4452e36993
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = User
+
+	column '# DEV DWH Views mismatched (TOTAL)' =
+			
+			IF
+			(
+			    [DEV AbsDiff]>=1
+			    ,1
+			    ,0
+			)
+		formatString: 0
+		lineageTag: a49a4226-dfd3-4490-8545-a8b1970bc878
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = User
+
+	column 'UAT DATA_TYPE diff'
+		formatString: 0
+		lineageTag: 82728d8d-464e-4a8b-9627-07b6b9f99ead
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [UAT DATA_TYPE diff]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DEV DATA_TYPE diff'
+		formatString: 0
+		lineageTag: 68d75a51-a801-4f2f-97bf-fcd9e53087bc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DEV DATA_TYPE diff]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# UAT DWH Views mismatched (DATA_TYPE)' =
+			
+			IF
+			(
+			    [UAT DATA_TYPE diff]>=1
+			    ,1
+			    ,0
+			)
+		formatString: 0
+		lineageTag: 8fc6829c-a514-49b2-b9b6-3d5a2366f84a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = User
+
+	column '# DEV DWH Views mismatched (DATA_TYPE)' =
+			
+			IF
+			(
+			    [DEV DATA_TYPE diff]>=1
+			    ,1
+			    ,0
+			)
+		formatString: 0
+		lineageTag: 23c251f9-4966-46b8-8e9a-61eef08a3575
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = User
+
+	partition Summary = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE
+				(
+				    PROD
+				    ,[TABLE_NAME]
+				    ,"UAT AbsDiff",SUM(PROD[UAT AbsDiff])
+				    ,"DEV AbsDiff",SUM(PROD[DEV AbsDiff])
+				    ,"UAT DATA_TYPE diff",SUM(PROD[UAT DATA_TYPE diff])
+				    ,"DEV DATA_TYPE diff",SUM(PROD[DEV DATA_TYPE diff])
+				)
+
+	annotation PBI_Id = 70c7d543a51e440cb545a703d5f99b44
+

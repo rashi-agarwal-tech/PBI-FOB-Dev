@@ -1,0 +1,220 @@
+table 'Pick 3'
+	lineageTag: 8c2b4be8-7efa-470e-83c2-bea59ed2326e
+	sourceLineageTag: 7ffc1545-650e-4aa6-bc8c-efbfe7ea5379
+
+	column Product_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: c1c9faeb-60f9-46af-810a-297881499254
+		sourceLineageTag: 27d2fe1d-50f7-4561-afa1-c1b67083271b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 51243750-48f7-4d78-bbaf-755c5ff89a9e
+		sourceLineageTag: 58d3acd4-9813-4465-83f9-5611575eeeec
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 912b3686-2754-40fd-a388-31f0d7393823
+		sourceLineageTag: e2756c33-68ce-4bba-a35e-aa5323bd4e87
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: feaac7ab-62aa-4226-b6fc-3883c41d07b4
+		sourceLineageTag: 90349599-cd3d-42c9-a100-310889a2c677
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column Date_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 5e932ad6-7d2e-4bd1-bc83-0fcf27588842
+		sourceLineageTag: 4a34307e-7492-44c9-8ae0-381998d96e28
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		annotation SummarizationSetBy = User
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 61240f97-f3f0-450a-a89e-fabaae6d887b
+		sourceLineageTag: 05051002-185f-457d-a7b4-38f09ca86e82
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'D365 Order #'
+		dataType: string
+		lineageTag: 3289dc10-5713-47d8-939c-c7e2929f9a75
+		sourceLineageTag: be90955e-fb64-4a16-b908-17c64d476c75
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: D365 Order #
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick QTY'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 1e933d53-17be-4bf2-bd4a-998784a8d11e
+		sourceLineageTag: f9e697d6-4741-48d6-ae8b-00a09f0e8d5b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Pick QTY
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick Status'
+		dataType: string
+		lineageTag: 3b17f1e7-65db-4bea-b81d-5d706ba8d2ee
+		sourceLineageTag: 3d85cc3a-fe24-4fe0-9d1c-0a744e43a8ab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pick Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick Route ID'
+		dataType: string
+		lineageTag: 9f936445-2f12-40bf-9c32-3a85987d5366
+		sourceLineageTag: e350f0e9-ac71-41b3-9efa-9b0b4fb638be
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pick Route ID
+
+		annotation SummarizationSetBy = User
+
+	column SELLINGSTATUS
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 95af35dc-0555-450d-a7aa-b034e5af1e1e
+		sourceLineageTag: 9cebeef5-02ef-4b80-89a3-4ddad108286f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		annotation SummarizationSetBy = User
+
+	column 'JBA Order #'
+		dataType: string
+		lineageTag: 798ea2cf-266b-4b18-be78-8ae69bac4286
+		sourceLineageTag: 3460fabc-9ff2-4645-990f-c8309cb4c5c8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: JBA Order #
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick Time'
+		dataType: dateTime
+		formatString: Long Time
+		lineageTag: 035bf509-42b1-49e2-bc00-4611acac5a36
+		sourceLineageTag: 64f5ce4a-6d3e-4af5-afde-31d825504697
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pick Time
+
+		annotation SummarizationSetBy = User
+
+	column 'Web Order #'
+		dataType: string
+		lineageTag: e431f9b1-e9a2-4e53-b3a5-2a61445fa4b8
+		sourceLineageTag: 3146b5c5-70aa-4f11-bdc3-fd4a303d445d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Web Order #
+
+		annotation SummarizationSetBy = User
+
+	column 'Despatch Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 0d470048-4b0e-4694-ae6c-e747596bb205
+		sourceLineageTag: 3b7f01c1-52ba-4f2a-9033-c5c4ead2fe30
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Despatch Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick Creation Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 6aab7af2-fa24-4e68-b139-217b4c1cfbff
+		sourceLineageTag: 97509a4d-64a6-42f9-8c15-62cebe2e525c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pick Creation Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick Completion Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 8f5632e8-3a06-44ac-b428-8c73f942d5eb
+		sourceLineageTag: 29611d66-bff8-4e29-b63d-83643b83edb1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pick Completion Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick Order Category'
+		dataType: string
+		lineageTag: f792e26b-3e58-436c-bd20-f9ccf98994f3
+		sourceLineageTag: 60e9abdf-f0d1-4791-adb6-f9f45b2fb02e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pick Order Category
+
+		annotation SummarizationSetBy = User
+
+	column 'Destination Warehouse'
+		dataType: string
+		lineageTag: 9c3bc868-01ca-4a0a-ad11-997647f42833
+		sourceLineageTag: 85408e37-cc03-4a0f-b8c7-3cf771cb7b65
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Destination Warehouse
+
+		annotation SummarizationSetBy = User
+
+	partition 'Pick 3' = entity
+		mode: directQuery
+		source
+			entityName: Pick
+			expressionSource: 'DirectQuery to AS - DMA Operations 3'
+

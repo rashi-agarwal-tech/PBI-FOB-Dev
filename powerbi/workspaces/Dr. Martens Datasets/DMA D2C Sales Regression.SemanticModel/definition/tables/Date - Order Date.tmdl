@@ -1,0 +1,768 @@
+table 'Date - Order Date'
+	lineageTag: ee3c0f7a-a703-48e3-9a84-9443d067b5c5
+	sourceLineageTag: ad3753fe-658b-4353-8b6c-9b706e06e205
+
+	column 'Order Day Of Week'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 22acc2a8-05c4-4c22-92cf-f91eb023d783
+		sourceLineageTag: 413b5c31-1bd2-493f-932b-7fb6014328b1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Day Of Week
+		sortByColumn: 'Order Day # of Week'
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Day # of Week'
+		dataType: int64
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: d8bdcde5-be35-454f-909a-bb588c5fe9b6
+		sourceLineageTag: 8ab2947d-ca2c-4ff6-b3b6-f11ef09ca954
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Day # of Week
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Day # of Month'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: Calendar Dates
+		lineageTag: 7cbc1fa9-28f0-4c5e-b5ef-de897154942f
+		sourceLineageTag: d798c9fc-2737-4321-ab3c-c3e01ec2428d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Day # of Month
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Day # of Year'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: Calendar Dates
+		lineageTag: e620567f-1d58-4396-8a79-a722220588e5
+		sourceLineageTag: 716a1a64-1feb-4009-b5b9-706696403611
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Day # of Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Year'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 5f881806-d90c-485c-8f7d-1f65145ac60e
+		sourceLineageTag: 851929e6-1d4d-41de-bbba-5d032cddeb0e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Quarter'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: a7c9be9f-e766-475f-992b-452dd235edc8
+		sourceLineageTag: 765d8498-b83c-4b20-8488-01a85faf327f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Quarter
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Period Long Name'
+		dataType: string
+		isHidden
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: e8e1b92b-2cdc-4330-af77-efe768654bf9
+		sourceLineageTag: 3034125f-c8a2-49b3-977e-c8eef8641a7a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Period Long Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Period Number'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: db103de6-4fce-48c0-8666-611e67b25fe0
+		sourceLineageTag: 4cde7fd3-ddf7-4485-8e11-07bddde415c9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Period Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Week #'
+		dataType: int64
+		formatString: 0
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: e4ec16ad-b936-4963-b4b5-668c2225f120
+		sourceLineageTag: fd06aec9-1017-45c7-a713-ac9a0fe0014a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Week #
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Day #'
+		dataType: int64
+		formatString: " \0"
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 0ed849dc-cbeb-482c-b29d-dd56ee77969d
+		sourceLineageTag: e83b3001-522c-46d7-86cf-99ac6469dd06
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Day #
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Order UK Bank Holiday?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: a7b053ac-0810-4967-8172-1590353fca8a
+		sourceLineageTag: 05bd2a00-2133-41af-9dc1-110c326b5162
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Order UK Bank Holiday?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Order Black Friday?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: ae95bc6b-a4c2-4776-a76f-8403768dd039
+		sourceLineageTag: c19d6617-4b43-4d44-80d8-79a30987411d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Order Black Friday?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Order Leap Year'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 4a2783af-e3e9-4676-a311-7fe5cec74195
+		sourceLineageTag: 2a87aa39-a3e7-4419-a219-7b37f25cfb9d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Order Leap Year
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Order End of Month'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: efeb808d-5938-413c-9b79-52ab60851497
+		sourceLineageTag: 1b506602-264c-490b-b4c0-5d72c9aa2373
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Order End of Month
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Order End of Period'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: c119bd7b-bdbc-4f55-945b-58885d7d781c
+		sourceLineageTag: 21ad7003-e029-4fd3-a25b-0de9a17b6072
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Order End of Period
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Order End of Quarter'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: 652a3d10-8262-425e-bdac-40301bef4f25
+		sourceLineageTag: 2e2838f9-e913-46e1-ba4b-1e50cb910ebc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Order End of Quarter
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Order Fiscal Point In Time?'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: c5a2b95f-0f69-400f-8732-eff34ea756c1
+		sourceLineageTag: 68127d74-5f25-4877-9698-9e86af1c8374
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Order Fiscal Point In Time?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Order Yesterday'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: cace1e58-5b33-4f39-b2e8-6b8ce251642b
+		sourceLineageTag: 65123f92-5f98-471c-841c-7d6abefd50a4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Order Yesterday
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Order Today'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 7a582d29-a77d-413c-af4a-53e695825df5
+		sourceLineageTag: 23b0d38f-5921-44dd-967d-81f64fd8df68
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Order Today
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Order Week'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 9a30797f-1a0d-4dde-ae36-6919d4ffdecd
+		sourceLineageTag: 0d9f27aa-9e7b-4e8f-96df-b91aeb1db58e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Order Week
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Order Month'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: dd3f5849-1212-4a8d-af8a-5ba61f13b7e0
+		sourceLineageTag: f702719f-432f-4431-aebe-8ce52683f5dc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Order Month
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Week Number (544)'
+		dataType: int64
+		formatString: " \#\,\#\#\0"
+		displayFolder: 544 Dates
+		lineageTag: 95210930-d45e-46c5-a726-452fe12cf978
+		sourceLineageTag: 083a55fd-09f2-4adc-9abc-d4061a06ab8a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Week Number (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Period Number (544)'
+		dataType: int64
+		formatString: " \#\,\#\#\0"
+		displayFolder: 544 Dates
+		lineageTag: 8881c3ac-a24b-402d-b2e6-dd5ff3bfcc8c
+		sourceLineageTag: b69d0df6-ae48-4e8f-9676-0bc75dc61276
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Period Number (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Quarter (544)'
+		dataType: int64
+		formatString: " \#\,\#\#\0"
+		displayFolder: 544 Dates
+		lineageTag: 174b17e2-51a6-4493-b248-57d5aec7d04c
+		sourceLineageTag: 257b9043-4407-4196-afa1-d543f5afda9e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Quarter (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Half (544)'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: 544 Dates
+		lineageTag: 73641b9a-5c43-4393-a7c5-b5860614cad4
+		sourceLineageTag: 175a52bb-788b-430f-8e40-c0cdfe58645d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Half (544)
+
+		annotation SummarizationSetBy = User
+
+	column ' Order Date'
+		dataType: dateTime
+		isNullable: false
+		formatString: Short Date
+		lineageTag: 07af79a6-706f-4f33-a9c6-e5e49cb2461f
+		sourceLineageTag: 167f0d36-715c-4e78-8023-595f03ce32ea
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: " Order Date"
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Order End of US Period?'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: a602b667-99ac-4aaf-a8bd-cf89a4c049ce
+		sourceLineageTag: d8b8e8b7-8201-4dee-860e-e209dee8e49f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Order End of US Period?
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Order End of US Quarter?'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: 92970bd4-997d-4102-a432-0d3324ca2143
+		sourceLineageTag: a35e09da-3b7b-4518-ab62-ee07b19c8a24
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Order End of US Quarter?
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal US Period'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: 3a489704-4467-4d07-9af8-97260ea9fbc2
+		sourceLineageTag: 02b8b96c-71a1-43a0-8a31-5dfd7c038bea
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal US Quarter'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: f36d47ab-06c0-4fc0-b924-6f2374d696be
+		sourceLineageTag: 97f33637-a95c-4ce4-afa4-418923c00a02
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Quarter
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal US Day #'
+		dataType: int64
+		formatString: " \0"
+		displayFolder: US Fiscal Dates
+		lineageTag: fc1eaeba-8e04-47a9-b328-48bf20322803
+		sourceLineageTag: 2c7e4f19-27f0-410e-a04e-cac9d444433c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Day #
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal US Period Number'
+		dataType: int64
+		formatString: 0
+		displayFolder: US Fiscal Dates
+		lineageTag: 84282d73-5c24-42a7-a349-2287186559e9
+		sourceLineageTag: e1be127e-8539-4b60-8226-084cb576dcfd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Period Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal US Week #'
+		dataType: int64
+		formatString: 0
+		displayFolder: US Fiscal Dates
+		lineageTag: 05c8a151-a40e-4ca4-8922-2fe426ea5ad2
+		sourceLineageTag: 4f4a0074-d2de-4770-b7cc-17bbdb8eca68
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Week #
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal US Year'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: 2aba1bfe-67f4-44e1-8178-a6fe32fa3d6d
+		sourceLineageTag: 55325df9-efc8-4347-92b0-9d0555cd4f50
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal US Year Number'
+		dataType: int64
+		formatString: 0
+		displayFolder: US Fiscal Dates
+		lineageTag: ae347289-8a07-4809-83bd-ae924a0e8a24
+		sourceLineageTag: 97d4c1da-7a4c-450c-8796-49d845e09642
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Year Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal US Year Period'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: bd91e3b7-5c11-4af9-97cf-6fe687f8202c
+		sourceLineageTag: 83786dda-b448-4a65-819d-b08016703f88
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Year Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal US Year-Week'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: e48b61cf-6512-46e9-89ff-bde6005284c0
+		sourceLineageTag: f8756f24-d53a-43d2-a877-9001c3c94454
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal US Year-Week
+
+		annotation SummarizationSetBy = User
+
+	column '- Is Order US Fiscal Point in Time?'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: fe2e3dbc-8e80-4ae5-8c69-033f7a137b1c
+		sourceLineageTag: 93da345a-0a7d-41df-9967-18e49cdbf8f6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: - Is Order US Fiscal Point in Time?
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Week Name'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: b5f34fa6-75a3-47ab-b58f-800ba5dcaf34
+		sourceLineageTag: fe0a61fa-254c-4bb6-b608-db2d91fad4a0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Week Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Mon'
+		dataType: string
+		isHidden
+		displayFolder: Calendar Dates
+		lineageTag: 9321f032-5b7f-4b13-a0bc-2bf90d8492f2
+		sourceLineageTag: fd66a072-be7d-4e54-aa7c-35d79b78f09b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Mon
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Year'
+		dataType: int64
+		formatString: 0
+		displayFolder: Calendar Dates
+		lineageTag: 0490abec-7b27-4745-a1f0-30965d27f298
+		sourceLineageTag: b632d929-6f07-451e-951f-b6c0ca9d2153
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Year-Week'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 16b61a21-1082-44a6-8272-296d6dde33fd
+		sourceLineageTag: 7e1f87b9-dc1b-4c7b-8ef5-66ea8e1a8f8c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Year-Week
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Year Month'
+		dataType: int64
+		formatString: #,##0
+		displayFolder: Calendar Dates
+		lineageTag: 9fe476e3-6915-4c73-844d-a9b8c4b5b4ee
+		sourceLineageTag: 51737dec-f0f1-460e-889d-010842cc320f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Year Month
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Half'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: a698b9bd-df64-463b-8b23-8885f6103b90
+		sourceLineageTag: 879084ad-7207-4a5b-830d-268da4a90814
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Half
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Year Half'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: ead99773-42c1-45b3-b1bd-283865632a2b
+		sourceLineageTag: e5ffebbb-88c4-4047-a1e9-376afbce4f58
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Year Half
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Year Quarter'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 73dc1eb8-4be4-48f9-b434-267ec6c0564d
+		sourceLineageTag: 87f43d97-8e05-43b3-b01f-3782ae794c8b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Year Quarter
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Quarter'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 34f56e80-bed2-4fd7-98c9-ee574b240ffb
+		sourceLineageTag: 2e77c911-befc-4a79-9e2f-ada125164ec5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Quarter
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Year-Period'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: d1453991-90b1-4da8-8c76-41af3ace4424
+		sourceLineageTag: f4db506b-a400-4943-b5f7-96d457af31b7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Year-Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Year-Week'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: e1d815f1-4cc7-4010-a862-e7ee8b6bc920
+		sourceLineageTag: 3b980e75-38f5-48cd-ae9b-f4f7763a1a0d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Year-Week
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Weekday or Weekend?'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 01702147-5488-4261-b0a1-3334f1b039f1
+		sourceLineageTag: 2b3931ba-2e3a-47fb-88f3-842f5bfe8298
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Weekday or Weekend?
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Year Number'
+		dataType: int64
+		formatString: " \0"
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: f62a313c-3a51-4940-a0b4-7aa9a6ad044c
+		sourceLineageTag: 2a302efb-bb86-4302-8db2-2caec6600d0a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Year Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Relative Week'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: f9a1ff0e-b9ee-460a-910c-7991c87edae5
+		sourceLineageTag: 155c9340-9e8f-4873-a44b-85db9bd72d65
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Relative Week
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Relative Month'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: d50d628c-cdef-4fce-aad9-bde41706acf3
+		sourceLineageTag: b9ff8065-a78d-4ff4-a4b8-ab0959cac3c2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Relative Month
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Relative Year'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: f7e3f281-84a6-4417-b056-5def16f81739
+		sourceLineageTag: 3675653e-4041-4d6a-b11b-72c08ae3a3c2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Relative Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Relative Fiscal Week'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: c8583738-2443-4106-8136-72abcc3bb935
+		sourceLineageTag: 6566ae09-3cc2-4d7c-bc83-2cea4c1e1fda
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal Week
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Relative Fiscal Period'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: f591e7ce-45fc-4398-a241-c5be127c0d89
+		sourceLineageTag: 12e66372-781d-41fa-aec0-4ee12b80e4d2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Relative Fiscal Year'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: ca8c4280-5aa6-4be9-a5c3-7be0ada24c92
+		sourceLineageTag: 40f529b7-432e-4842-9b5c-57c1c7f7d1ce
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Year (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: f21f7745-46e3-4436-ab0c-732e07f9d689
+		sourceLineageTag: c8944e99-9070-46af-be79-f929eb88976f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Year (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Year-Week (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: f471f94d-30d1-4ff5-af6e-9b794670e229
+		sourceLineageTag: 953358ec-fb8a-473d-bea2-9691948daf1d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Year-Week (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Relative Fiscal Period (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: 0e2b7ac6-d32e-402f-bba4-bb1849b8edf6
+		sourceLineageTag: bfcf4734-8385-4769-8802-4afb5080e24e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal Period (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Relative Fiscal Year (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: f6e68cbf-6b2f-45e9-9b66-53017e6a695d
+		sourceLineageTag: 61014c0d-b31f-400a-8452-ab4f87ba2de0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal Year (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Relative Fiscal US Period'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: 1fbefeaa-7650-408f-ba11-f3ce176a38f8
+		sourceLineageTag: 1e48493a-a119-4f07-94f0-ff6fc4c90cfa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal US Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Relative Fiscal US Week'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: d8141377-5b17-4213-9c73-363fa3f4e375
+		sourceLineageTag: dec76ee9-544d-4731-934e-4cb1c83a1886
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal US Week
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Relative Fiscal US Year'
+		dataType: string
+		displayFolder: US Fiscal Dates
+		lineageTag: 2d0025d2-4a22-456b-93e9-05df77eab9c7
+		sourceLineageTag: b42b7e3b-229a-4569-ae56-975d2e3c7141
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Relative Fiscal US Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Year-Period (544)'
+		dataType: string
+		displayFolder: 544 Dates
+		lineageTag: d3bdd9bc-ad6e-47af-b2a9-7643112ff63a
+		sourceLineageTag: 82962308-fec2-4eb0-869f-68e298476781
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Year-Period (544)
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Month-Year'
+		dataType: string
+		displayFolder: Calendar Dates
+		lineageTag: 4c867ffd-346c-4bcb-aafa-77f3ef564815
+		sourceLineageTag: 9ea19fad-2e88-4e8f-82cb-6a3ee22ec01c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Month-Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Fiscal Period'
+		dataType: string
+		displayFolder: EMEA Fiscal Dates
+		lineageTag: cec2d592-fb77-4b2b-812d-14a51672693c
+		sourceLineageTag: ec982f34-1006-4bfe-8899-875d94fbc81f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Fiscal Period
+
+		annotation SummarizationSetBy = User
+
+	partition 'Date - Order Date' = entity
+		mode: directQuery
+		source
+			entityName: Date - Order Date
+			expressionSource: 'DirectQuery to AS - DMA D2C'
+

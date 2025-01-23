@@ -1,0 +1,2837 @@
+table Orders
+	lineageTag: 04e735aa-117a-48a6-97ff-172d28b6f678
+	sourceLineageTag: cb32607d-fb85-4dcf-b0ce-7474c78df187
+
+	column Product_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: cea95558-db47-4e9e-93bd-e9f530dc5d27
+		sourceLineageTag: a117471a-cd14-460c-a4e9-adc7280d3f22
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 8a4cbe5e-8990-4a41-bd8f-bb2b66988ac1
+		sourceLineageTag: 69e86fce-e6f7-41b8-8d68-943a9df51a53
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 4b1b9a22-f125-4d3f-adbb-ee57f7357010
+		sourceLineageTag: 1eee9936-7327-4d34-bac8-5e52b1f9a3dd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column SalesOrderPool_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: b2138ef3-47c6-4088-995a-d75b99c65c52
+		sourceLineageTag: fc3a37bf-5cdb-48cf-a011-7eb5364c95df
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SalesOrderPool_Key
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 95aa4b40-7d44-4ab1-b5ed-6cd865b53cc1
+		sourceLineageTag: dd80b199-e18f-4715-b536-66c0130558ca
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Order Number'
+		dataType: string
+		lineageTag: 9adff791-19c2-436a-a271-c997b86aee6a
+		sourceLineageTag: 4c7a44d2-c886-4ebb-a4df-42c5c561dfc1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Order Number
+
+		annotation SummarizationSetBy = User
+
+	column SALESORDERPOOLID_SOH
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: af5952ff-e2f7-4a9d-8d76-11368d5a3470
+		sourceLineageTag: a478b53c-3c89-470d-be25-03ac91063c88
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SALESORDERPOOLID_SOH
+
+		annotation SummarizationSetBy = User
+
+	column 'Actual Shipping Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 2e026405-b24f-4ddd-bc71-bf5eeec06c75
+		sourceLineageTag: a4ea8ed9-cb63-4a3e-bf95-cc98349ed513
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Actual Shipping Date
+
+		annotation SummarizationSetBy = User
+
+	column ORDEREDSALESQUANTITY_SOL
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 4da5cb14-33cb-42d9-b374-1e7079c3d8ca
+		sourceLineageTag: 3905e6b2-c3f0-404f-bc0f-10b87a74a78d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ORDEREDSALESQUANTITY_SOL
+
+		annotation SummarizationSetBy = User
+
+	column 'Requested Shipping Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: ada8a3ba-e115-4fc4-9583-e7ec19c49bf2
+		sourceLineageTag: a910e2d7-1daa-41c1-92b0-9f90fdbed6c8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Requested Shipping Date
+
+		annotation SummarizationSetBy = User
+
+	column INVOICEDQUANTITY_SIL
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 9aba6b6c-243d-4cce-911b-667732e6cbf4
+		sourceLineageTag: de48a8ad-2bdb-4ce8-89a4-4ad4f02f7d17
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVOICEDQUANTITY_SIL
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: c771bdf4-2bca-452e-9464-6dd4dc4f04c2
+		sourceLineageTag: 22cf786c-383f-4fa5-9e6d-271422d31c26
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Date
+
+		annotation SummarizationSetBy = User
+
+	column Discount
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 8e06fbae-14d0-4e30-98e3-e4cbde360064
+		sourceLineageTag: a7a08e40-8a83-4575-9908-902f291e8c29
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Discount
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Address Country'
+		dataType: string
+		displayFolder: 4. Delivery Address
+		lineageTag: 0066af71-ff7a-4fc4-9228-4b42df3a4cd1
+		sourceLineageTag: f89508d6-fb4c-4360-86b0-b3d94aa78403
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Address Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Address Zip Code'
+		dataType: string
+		displayFolder: 4. Delivery Address
+		lineageTag: 08b547b9-fd2d-43b4-b414-310be51a40c8
+		sourceLineageTag: 4d528de6-d7ab-4664-8aad-50943a70c7e2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Address Zip Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Credit Limit Hold'
+		dataType: string
+		isHidden
+		lineageTag: 59dd1367-79a5-4f2c-a9f0-aefc47a7b8ca
+		sourceLineageTag: bfd53006-2290-440f-8a52-07177ee0fee3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Credit Limit Hold
+
+		annotation SummarizationSetBy = User
+
+	column 'MDA Mandatory'
+		dataType: string
+		lineageTag: c4877b36-31a4-4ebc-913a-3885035b3326
+		sourceLineageTag: 19044708-9aef-4d8e-b8d2-74deb737dbd2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MDA Mandatory
+
+		annotation SummarizationSetBy = User
+
+	column 'MDA Reference'
+		dataType: string
+		lineageTag: fa694319-0f63-4a9e-937e-d4518e0c46bf
+		sourceLineageTag: 842648c0-e7ba-46d0-9d98-a6325af4fe4e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MDA Reference
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancel Risk Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 10633f5b-339a-4ab7-9b42-fbda3bffb2d6
+		sourceLineageTag: 86e3b85d-5d07-44b8-891a-2a60e4d42786
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cancel Risk Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Label Received?'
+		dataType: string
+		lineageTag: 8543daa5-6267-48a1-a089-f648255b0e7f
+		sourceLineageTag: d08f2542-5d01-4ef3-a394-9c79ef580d77
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Label Received?
+
+		annotation SummarizationSetBy = User
+
+	column 'Label Requested?'
+		dataType: string
+		lineageTag: 7d02c4d1-dab2-4498-8105-ad4e4da9c9ab
+		sourceLineageTag: 7ae32b41-6c15-4bc5-949c-1e3dd04b1b7c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Label Requested?
+
+		annotation SummarizationSetBy = User
+
+	column 'VAS Number'
+		dataType: string
+		lineageTag: 095fcecd-d46a-4736-a00b-4ebc52a3aa05
+		sourceLineageTag: 5b308a03-cc22-425e-9559-fe38015b8f95
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: VAS Number
+
+		annotation SummarizationSetBy = User
+
+	column RETURNORDERNUMBER_ROH
+		dataType: string
+		displayFolder: zz_Misc
+		lineageTag: fbebd4ca-b264-4f6d-b111-d69351308454
+		sourceLineageTag: 97735461-d98f-453a-9b07-350f55374bb4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RETURNORDERNUMBER_ROH
+
+		annotation SummarizationSetBy = User
+
+	column 'RMA Number'
+		dataType: string
+		lineageTag: b164c3b2-59dc-4b7c-9a98-e609b89bc52a
+		sourceLineageTag: 4b71121b-e6b8-423e-b832-8c497244a182
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RMA Number
+
+		annotation SummarizationSetBy = User
+
+	column RETURNSALESQUANTITY_ROL
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 2147cdbf-6134-432b-a84c-58e64bc9aea8
+		sourceLineageTag: 075f31db-41c1-472a-b697-ee7a4e2805c3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RETURNSALESQUANTITY_ROL
+
+		annotation SummarizationSetBy = User
+
+	column RETURNEDSALESQUANTITY_ROL
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 68dfe19d-6050-41a5-b18f-f8f90d4dcf95
+		sourceLineageTag: 885c9732-fe74-43b9-a785-63ef07d7f152
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RETURNEDSALESQUANTITY_ROL
+
+		annotation SummarizationSetBy = User
+
+	column AREPRICESINCLUDINGSALESTAX_SOH
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: zz_Misc
+		lineageTag: af682807-7367-4de9-9c18-472dd070039d
+		sourceLineageTag: c6847102-79a1-4229-b42f-070f8988fb1d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AREPRICESINCLUDINGSALESTAX_SOH
+
+		annotation SummarizationSetBy = User
+
+	column Barcode
+		dataType: string
+		lineageTag: 745830eb-2fc6-4de4-b5aa-6a9df48937d1
+		sourceLineageTag: da026429-9c01-4ccc-965b-a54b3e3202d5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Barcode
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancellation Date'
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 6794d62f-2a80-4147-a486-62944320deff
+		sourceLineageTag: e9106605-66da-4c97-a0cb-0a4e1b7be096
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cancellation Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Entry Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 2f79d6c0-80ad-4c72-9ed5-4b17a5eecae3
+		sourceLineageTag: 2b22313b-f89e-4ee3-be08-baae3bba5a0d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Entry Date
+
+		annotation SummarizationSetBy = User
+
+	column SALESLINECREATEDDATETIME_SOL
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: 308f300a-aeb6-4dcc-b8f5-852d9b1e0b32
+		sourceLineageTag: 6edf1da0-ce67-4f06-aa00-282749bd07b8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SALESLINECREATEDDATETIME_SOL
+
+		annotation SummarizationSetBy = User
+
+	column INVENTORYLOTID_SOL_ROL
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 8b3e354e-f41c-48b2-8b10-65da3ae5734a
+		sourceLineageTag: 56219006-e186-41aa-aa70-6fbdedd3e2bd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTORYLOTID_SOL_ROL
+
+		annotation SummarizationSetBy = User
+
+	column 'Selling Status'
+		dataType: int64
+		isHidden
+		displayFolder: zz_ToBeRemoved
+		lineageTag: 319e4981-5c61-4ea9-9fd2-0b0d0fea2632
+		sourceLineageTag: 36207cf3-ead7-4eaf-b04f-5e9d54937145
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selling Status
+
+		annotation SummarizationSetBy = User
+
+	column Source
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 012425d9-0846-467f-bcb7-09b589f1a95b
+		sourceLineageTag: 0f334893-1a16-483a-aa64-651bd7e49aac
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Source
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Address Description'
+		dataType: string
+		displayFolder: 4. Delivery Address
+		lineageTag: b0bad21a-a1bb-4f1a-8cbc-13d1e4f5c03b
+		sourceLineageTag: e265affb-8d15-4327-9f48-1963c5b19375
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Address Description
+
+		annotation SummarizationSetBy = User
+
+	column CONFIRMEDSHIPPINGDATE_SOL
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: fead15ee-26ad-4c9e-9603-6f8d4b74283d
+		sourceLineageTag: 3e01d2f5-cdeb-4345-a709-e03bcb716a48
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CONFIRMEDSHIPPINGDATE_SOL
+
+		annotation SummarizationSetBy = User
+
+	column 'Seasonal Product Status'
+		dataType: string
+		lineageTag: 37531d37-90d4-47ab-b152-e939a39132ec
+		sourceLineageTag: 211044ce-21a9-4c50-8929-114d7bd7844c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Seasonal Product Status
+
+		annotation SummarizationSetBy = User
+
+	column SO_PO_ID
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 06986379-a813-48be-bacb-011d0755c265
+		sourceLineageTag: 5ba86f61-5099-409b-ab81-7202a8e07ff3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO_PO_ID
+
+		annotation SummarizationSetBy = User
+
+	column ORDEREDSALESQUANTITY_SOL_ZEROS
+		dataType: int64
+		isHidden
+		formatString: " \#\,\#\#\0"
+		displayFolder: zz_Units
+		lineageTag: 329fb93b-9a7e-4d11-9654-c5fd0bbdffd9
+		sourceLineageTag: b66738bb-a4c3-4cfd-a232-8b81dc295802
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ORDEREDSALESQUANTITY_SOL_ZEROS
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Dimension - Analysis'
+		dataType: string
+		displayFolder: 1. Finance Dimensions
+		lineageTag: fb078de9-6d7b-483c-aa8e-a9bc3058db28
+		sourceLineageTag: 377a64dc-a88b-4299-8190-45ec25fed805
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Analysis
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Dimension - Channel'
+		dataType: string
+		displayFolder: 1. Finance Dimensions
+		lineageTag: 4b0bc355-1f02-431c-a0df-e534d87706ef
+		sourceLineageTag: e43a3542-e494-414d-9f2c-ad9abf3443c7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Dimension - Cost Centre'
+		dataType: string
+		displayFolder: 1. Finance Dimensions
+		lineageTag: 193d7663-3948-4d61-8977-da45161e2989
+		sourceLineageTag: 07c101d0-d52e-46f7-aff5-2e5cdbed0892
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Cost Centre
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Dimension - Country'
+		dataType: string
+		displayFolder: 1. Finance Dimensions
+		lineageTag: cb317116-e1e8-4634-af67-4ee408e6492a
+		sourceLineageTag: 2f7c8fae-dd58-4aec-bf4b-4322f1a26cdf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Dimension - Selling Status'
+		dataType: string
+		displayFolder: 1. Finance Dimensions
+		lineageTag: a59286ac-4339-4bfd-9076-0a2b84b39ea9
+		sourceLineageTag: d7e65d69-6139-4d07-8956-0d2aa6330180
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Selling Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Free Text Invoice Reference'
+		dataType: string
+		displayFolder: 2. Free Text Invoice Details
+		lineageTag: aa4d9f97-4f20-4cd4-9768-37ad057beada
+		sourceLineageTag: f57d1bff-6c34-4116-b512-891c785c7bbd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Free Text Invoice Reference
+
+		annotation SummarizationSetBy = User
+
+	column 'Free Text Invoice Reason Code'
+		dataType: string
+		displayFolder: 2. Free Text Invoice Details
+		lineageTag: be7f45c3-5d4c-4ffd-ad77-be3b2314f645
+		sourceLineageTag: bce9c5e0-2237-4d90-a4d0-5e6beb938ad6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Free Text Invoice Reason Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Free Text Invoice Reason Description'
+		dataType: string
+		displayFolder: 2. Free Text Invoice Details
+		lineageTag: 5ba0d9da-faab-474c-9309-808018ef97d1
+		sourceLineageTag: c998c524-09ff-4c4e-9ac7-4d54ad2709c6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Free Text Invoice Reason Description
+
+		annotation SummarizationSetBy = User
+
+	column RETURNSALESQUANTITY_ROL_ZEROS
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 9b74c022-fdb0-4844-b009-314e82f5c0b1
+		sourceLineageTag: db5f8c1a-014e-45e9-bbb0-0697e935af87
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RETURNSALESQUANTITY_ROL_ZEROS
+
+		annotation SummarizationSetBy = User
+
+	column COSTAMOUNTPOSTED_SILCS
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 14e78827-d047-4448-a5b6-37a9403389ea
+		sourceLineageTag: 887f6ada-515a-4a14-981d-1606a3fce89e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: COSTAMOUNTPOSTED_SILCS
+
+		annotation SummarizationSetBy = User
+
+	column INVOICEDQUANTITY_SIH
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 04bab98c-2d32-4cf5-9ace-80486647e8d9
+		sourceLineageTag: 1179b069-25a6-43a8-8ca6-fb6486a95acf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVOICEDQUANTITY_SIH
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Number'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 16b73227-b77b-4620-b359-c7e53632169d
+		sourceLineageTag: 43984035-29e1-486b-ae6a-1c14ef0db1ac
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Number
+
+		annotation SummarizationSetBy = User
+
+	column SALESINVOICELINERECID_SIL
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 7647cac6-3f99-49b3-bed5-312487c53b48
+		sourceLineageTag: 16f3bdc7-02ab-4388-8ba7-553e5bdf54b7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SALESINVOICELINERECID_SIL
+
+		annotation SummarizationSetBy = User
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: c91dbb72-deb3-432d-b567-2682c5700cdf
+		sourceLineageTag: 44ec4850-ccb7-4da0-8075-b4dc90e556d7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		annotation SummarizationSetBy = User
+
+	column HDMORDERTYPEID
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 6ff47aa8-b439-44de-bc19-1f55a2bcb5fe
+		sourceLineageTag: 0dad03b7-2106-4391-bfe9-2900fd4621de
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: HDMORDERTYPEID
+
+		annotation SummarizationSetBy = User
+
+	column CALLEDOFFQUANTITY
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 16916932-556c-48d2-80e9-95dd0964820d
+		sourceLineageTag: 1213ea29-70a4-4a41-b22a-34dd54496825
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CALLEDOFFQUANTITY
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Order Reference'
+		dataType: string
+		lineageTag: 03d0d57d-4b5d-41fd-947b-55b4c1239ad2
+		sourceLineageTag: a5581527-b13c-40c3-a365-e04992669fc3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Order Reference
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Requisition Number'
+		dataType: string
+		lineageTag: 34a0f566-f6c3-4d66-abb4-18a3e28dd246
+		sourceLineageTag: 1de7d603-141d-4cf6-b73f-5555a90e8b16
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Requisition Number
+
+		annotation SummarizationSetBy = User
+
+	column SalesOrderNumber_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 3c6a9231-f5dd-4b79-a944-15f98901fb64
+		sourceLineageTag: b60cd80c-3e46-4fad-8ecf-43ba2f35302f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SalesOrderNumber_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Shipping Warehouse'
+		dataType: string
+		lineageTag: 4162e9e3-b7a5-41c8-9fbe-2855d564f08b
+		sourceLineageTag: 2ee4c424-a17b-41d9-a922-15d065a5fc0a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Shipping Warehouse
+
+		annotation SummarizationSetBy = User
+
+	column 'EDI Order Number'
+		dataType: string
+		displayFolder: 3. EDI
+		lineageTag: 58d03837-d305-4dde-80ef-795e777cc687
+		sourceLineageTag: 23bb6d77-629c-4098-8b36-f6d511209bcb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: EDI Order Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Drop Ship Order?'
+		dataType: string
+		displayFolder: 3. EDI
+		lineageTag: d1ea3d6b-abd1-45d4-9e75-6c0628285f44
+		sourceLineageTag: 38a40fe3-cdb1-4ac3-9052-7bd77a10e401
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Drop Ship Order?
+
+		annotation SummarizationSetBy = User
+
+	column 'EDI Order?'
+		dataType: string
+		displayFolder: 3. EDI
+		lineageTag: 53fdc5dc-41ef-43f2-bd3b-61d425604e28
+		sourceLineageTag: e8dbd219-a5bf-4356-adfe-a2f17140a7db
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: EDI Order?
+
+		annotation SummarizationSetBy = User
+
+	column 'Pre-Pack Code'
+		dataType: string
+		displayFolder: 3. EDI
+		lineageTag: 1cae337f-e833-4af7-8ce2-8fe47d8f7233
+		sourceLineageTag: cc9e6240-bc4f-493f-b475-ce015b539437
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pre-Pack Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer PO Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 3. EDI
+		lineageTag: 45894b2f-1725-4b7b-a261-14724fadcbc4
+		sourceLineageTag: 04525358-4f7b-4899-9168-44193237dbdd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer PO Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer''s Department'
+		dataType: string
+		displayFolder: 3. EDI
+		lineageTag: 67a3cbbe-3909-4679-9595-e05fdfacda79
+		sourceLineageTag: c1dc9339-29db-4cc9-82d4-253c824424f5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer's Department
+
+		annotation SummarizationSetBy = User
+
+	column 'VR Link Order?'
+		dataType: string
+		displayFolder: 3. EDI
+		lineageTag: 0bf8acf7-b58f-46ab-853a-30bf69e6efdb
+		sourceLineageTag: 0809ab70-3582-4603-9aea-b298690720ec
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: VR Link Order?
+
+		annotation SummarizationSetBy = User
+
+	column 'Original Requested Shipping Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: c603bfb6-b04a-4d93-8121-083b32573674
+		sourceLineageTag: dc7ef111-d42a-4000-bea8-54700e4c3611
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Original Requested Shipping Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Original Requested Shipping Month Year'
+		dataType: string
+		lineageTag: 4e30cddd-c392-4733-8813-f4155126e20f
+		sourceLineageTag: a2a0556b-f507-4e09-86ca-e124e359b941
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Original Requested Shipping Month Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Payment Method'
+		dataType: string
+		lineageTag: 9992cf3d-3b8b-4c8d-8e89-d9637bc86e0e
+		sourceLineageTag: ff0207a2-3839-4829-81bc-91fa6908d0b5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Payment Method
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Address State'
+		dataType: string
+		displayFolder: 4. Delivery Address
+		lineageTag: 6ccc7c99-d651-42ea-b409-2113eb9837e9
+		sourceLineageTag: 95d35295-d0a1-4f8d-9c23-f298fbe2c54d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Address State
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Address City'
+		dataType: string
+		displayFolder: 4. Delivery Address
+		lineageTag: dd1f07cc-931a-4ccd-8a45-545fd16a7448
+		sourceLineageTag: 50584bf8-c890-4ce7-9652-a491866e841b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Address City
+
+		annotation SummarizationSetBy = User
+
+	column 'Start Ship Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 8c7e21d3-0aee-4d99-9561-acf6c71edb58
+		sourceLineageTag: 25088648-6674-4679-a560-2e774fb79573
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Start Ship Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Sales Representative'
+		dataType: string
+		lineageTag: a7e7a7eb-9675-410d-ad2e-6b0f9ea47f4c
+		sourceLineageTag: 79422a50-8eae-449a-a303-902116203993
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Sales Representative
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Currency'
+		dataType: string
+		lineageTag: 41718a58-ae5d-44a7-b0af-a22ccb3f66ed
+		sourceLineageTag: 2a7c11ab-720c-4719-9849-9f8204df2248
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Currency
+
+		annotation SummarizationSetBy = User
+
+	column 'Credit Override'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 506b7841-664c-44cf-a3d7-ff6a3bdd9017
+		sourceLineageTag: 5ec8c311-37cc-4094-88e0-7e7fcb8e89a1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Credit Override
+
+		annotation SummarizationSetBy = User
+
+	column 'Mark For Location ID'
+		dataType: string
+		displayFolder: 4. Delivery Address
+		lineageTag: db8ecff5-ba1c-4e51-b280-8df73479cca7
+		sourceLineageTag: e60751c5-0d13-4819-b1c3-e3f4ae875806
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Mark For Location ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Program'
+		dataType: string
+		lineageTag: 42a2f85f-11de-43f2-a124-53c54f99feb1
+		sourceLineageTag: 5bff92c4-6215-45fb-afd0-9b0679096929
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Program
+
+		annotation SummarizationSetBy = User
+
+	column 'Selling Status - Order Entry'
+		dataType: int64
+		isHidden
+		displayFolder: zz_ToBeRemoved
+		lineageTag: 168ae60f-86f9-462d-89c3-3ce6643a5c48
+		sourceLineageTag: 54bc0fb6-b137-4c5e-97c6-4c16e262dd50
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selling Status - Order Entry
+
+		annotation SummarizationSetBy = User
+
+	column 'Consolidated Invoice Number'
+		dataType: string
+		displayFolder: 5. US
+		lineageTag: f0e901a1-af4e-44e8-88d8-59e4774dda27
+		sourceLineageTag: c6474578-3fa3-4fa7-9fe5-f8d90bb94af2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Consolidated Invoice Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Consolidated Invoice Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 5. US
+		lineageTag: 11b3fc55-b3c6-41c6-81c4-2c947efa7442
+		sourceLineageTag: 3d5f7d41-ddc9-4afd-9dfe-db3051eb5548
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Consolidated Invoice Date
+
+		annotation SummarizationSetBy = User
+
+	column LINEAMOUNT_SIL_CONS_GBP
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 7e1825cf-5059-4045-93a7-338841a111b2
+		sourceLineageTag: 18d9863c-c92b-48e3-80bb-00dcf628115c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LINEAMOUNT_SIL_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column ChargeTotalExcTax_CONS_GBP
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: bfa56182-60d1-4e63-90b2-dbba85fa6ece
+		sourceLineageTag: a17d468f-f74a-4674-81ef-ee6d0c14e96c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ChargeTotalExcTax_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column LINEAMOUNT_SOL_CONS_GBP
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 02e16edb-1138-4d3b-9fa3-38c4f0213cd1
+		sourceLineageTag: 4ed7e249-2d86-4e51-983c-b26b73e5ffe2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LINEAMOUNT_SOL_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column LINEAMOUNT_ROL_CONS_GBP
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: e2156038-33a1-40a8-bbdb-15c8299ecebc
+		sourceLineageTag: 4a11609d-2ef3-482d-b84d-d3225f47b87f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LINEAMOUNT_ROL_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'EDI Sales Price'
+		dataType: double
+		formatString: " \0.\0\0"
+		displayFolder: 3. EDI
+		lineageTag: 77db2dc1-39cb-46fb-8cf7-dd1f296f5685
+		sourceLineageTag: 8d69e2d6-f36d-49f9-93af-50ca74d51a04
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: EDI Sales Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Season'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 87a83de0-71fa-4cf1-a446-1e1b5706473f
+		sourceLineageTag: 31405ec3-6e69-4437-bec3-ba505f4d1545
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Season
+
+		annotation SummarizationSetBy = User
+
+	column HeaderDiscount_CONS_GBP
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: cc66afbc-dda2-42d4-a480-63256c999b87
+		sourceLineageTag: 82d27c2d-4ec7-4dd9-85b2-e39aedf6583a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: HeaderDiscount_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column LineDiscount_CONS_GBP
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 115cbf72-e3b5-421c-8ce4-417fe2bd9802
+		sourceLineageTag: 4fac1177-e547-43a4-9ca2-6f8306f60e21
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LineDiscount_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Payment Terms (Order)'
+		dataType: string
+		lineageTag: aa881518-a40b-4526-91c2-fc39a1dbc28a
+		sourceLineageTag: 54486c56-0d24-4a8c-8c4f-a28ea0523110
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Payment Terms (Order)
+
+		annotation SummarizationSetBy = User
+
+	column 'Approval Status'
+		dataType: string
+		lineageTag: 7151aa1f-3dfb-401a-9575-66651365db96
+		sourceLineageTag: 6c00eb98-717e-4b24-a5f1-f59588f54acf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Approval Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Line Discount %'
+		dataType: decimal
+		formatString: 0;-0;0
+		lineageTag: 8f984e84-b9cb-4f08-96f8-9d82c5aee6c8
+		sourceLineageTag: 97576abb-4468-4f09-be6f-b139de375dc2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Line Discount %
+
+		annotation SummarizationSetBy = User
+
+	column 'Unit Price'
+		dataType: double
+		formatString: " \#\,\#\#\0.\0\0"
+		lineageTag: 70d8c8b1-e264-482d-b3ec-751959ce2471
+		sourceLineageTag: 1aa9a2f7-43d8-42e2-ac5d-d0e2340b8659
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Unit Price
+
+		annotation SummarizationSetBy = User
+
+	column 'EDI Prices for Approval'
+		dataType: string
+		displayFolder: 3. EDI
+		lineageTag: bb16e7f5-79ac-406f-ac09-01ac9f867b91
+		sourceLineageTag: cd60fbf1-f35a-4749-9c7b-85a0e900e623
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: EDI Prices for Approval
+
+		annotation SummarizationSetBy = User
+
+	column 'Manual Prices for Approval'
+		dataType: string
+		isHidden
+		displayFolder: 5. US
+		lineageTag: c31f0732-e734-495c-a558-7aa606b6d8bd
+		sourceLineageTag: 4b45364f-2e9f-465e-8f8a-63d4ecb1ce28
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Manual Prices for Approval
+
+		annotation SummarizationSetBy = User
+
+	column Date_Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Keys
+		lineageTag: 2c0e6c44-d0c9-4feb-94b9-b19426f94cfc
+		sourceLineageTag: 9c7f48ca-c8ed-4e50-b880-19342be818b1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Deadline'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 7801d4e0-f4ca-4ac3-90cd-50f508ef96bd
+		sourceLineageTag: a91649b9-333c-48d9-8b49-774f3cbd0c44
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Return Deadline
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Return Requisition Number'
+		dataType: string
+		lineageTag: cef7b850-e34c-46f6-b9f8-d20b54a1cf36
+		sourceLineageTag: d79d4b26-4a49-4b98-96b2-c5939b4131c1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Return Requisition Number
+
+		annotation SummarizationSetBy = User
+
+	column Status
+		dataType: string
+		lineageTag: 9f93f611-5085-4ad0-9235-e92d5d50a3cb
+		sourceLineageTag: f101aed0-b544-45a2-b291-bb3797c8936c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Status'
+		dataType: string
+		lineageTag: 018486a9-cbff-43aa-9229-3249399212d9
+		sourceLineageTag: 4093560d-4eb2-40d9-a3b3-942b5325fa4e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Return Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Entry Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: f666f3a3-29db-4f71-9840-803e495c4e0d
+		sourceLineageTag: 6f9c3d68-3bf1-48db-adfb-240e1df00976
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Return Entry Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Created By'
+		dataType: string
+		lineageTag: d4b3bf43-4579-41bf-afda-9789ad19c1f7
+		sourceLineageTag: d4f1d52c-de44-4f70-9d15-c3b1fe142f88
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Return Created By
+
+		annotation SummarizationSetBy = User
+
+	column 'Settlement Discount Col Cons GBP'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: d71d28c3-c86d-495c-aeb0-03c9e5b762a8
+		sourceLineageTag: e14f150d-8722-41ee-9f65-493e82f23be4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Settlement Discount Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Type'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 896ebaeb-bf10-44ea-b080-bba33f572acf
+		sourceLineageTag: 23f6d1cf-7af5-4cad-b94c-1e7650a416b7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Line'
+		dataType: int64
+		formatString: " \0"
+		lineageTag: fc2fbf93-6264-4297-845f-6495a0024c03
+		sourceLineageTag: 0bdb1fa5-60ef-4c03-b150-be642be42cd6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Line
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Order Department'
+		dataType: string
+		lineageTag: 02375ebf-eb09-47cf-9094-0ec19a9bb1a2
+		sourceLineageTag: c336239b-dafa-418c-929a-fd095e8be1da
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Order Department
+
+		annotation SummarizationSetBy = User
+
+	column 'Is Revenue Affecting?'
+		dataType: string
+		lineageTag: 3003c01c-dfdf-4842-8a61-8c09245525c8
+		sourceLineageTag: 856e253f-c378-47c3-8248-647891fb6544
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Is Revenue Affecting?
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Status'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 1cfecd9e-c3d2-4106-a8d5-eabd636ae91d
+		sourceLineageTag: 1d1f3511-b7f0-459a-b032-6fd53269c075
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancellation Reason Code'
+		dataType: string
+		lineageTag: 16552087-310b-4aa0-90af-9a33e7d5a821
+		sourceLineageTag: 6dc4a266-1af9-4b8f-a0d5-81fe05668591
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cancellation Reason Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancellation User'
+		dataType: string
+		lineageTag: f6844b1e-6889-40db-b484-4caaa7aaae85
+		sourceLineageTag: 82908851-567e-42f8-8de9-1f7f58b2ef46
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cancellation User
+
+		annotation SummarizationSetBy = User
+
+	column UnitCOGS_CONS_GBP
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 88ae2b55-be23-4e7e-badf-0e30c28df3b9
+		sourceLineageTag: e0e5ddbe-a322-4a30-b025-1ece49f87734
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: UnitCOGS_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Pre-Pack Description'
+		dataType: string
+		displayFolder: 3. EDI
+		lineageTag: b9ad132c-b9d1-4108-bd6a-ca5c08907979
+		sourceLineageTag: daf1644a-864a-41fc-9684-5ee5abdb391c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pre-Pack Description
+
+		annotation SummarizationSetBy = User
+
+	column Tax_CONS_GBP
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: bb868a1d-7f55-4b26-b9af-78d2f7530f03
+		sourceLineageTag: 051166a7-ef84-4ab9-88b2-664b16ce0606
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Tax_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column REMAININVENTPHYSICAL_SOL
+		dataType: int64
+		isHidden
+		formatString: " \#\,\#\#\0"
+		displayFolder: zz_Units
+		lineageTag: 05b441a3-1c08-4f5f-996f-513b9322cd1e
+		sourceLineageTag: 51095c12-753d-4b49-9b3a-ec69d9701e86
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: REMAININVENTPHYSICAL_SOL
+
+		annotation SummarizationSetBy = User
+
+	column DMRCANCELQTY_SOL
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: c5734bca-a527-41ed-8577-0970920f6d26
+		sourceLineageTag: e0cea6dc-a229-4c87-bb8c-10c14d2544a9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DMRCANCELQTY_SOL
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Note Number'
+		dataType: string
+		lineageTag: 25905749-aef7-42db-893e-f2c2dc5f3e46
+		sourceLineageTag: a6f58784-198f-4b84-8307-6e5336ddceb6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Note Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Unit Price (Transaction Currency)'
+		dataType: double
+		formatString: " \#\,\#\#\0.\0\0"
+		lineageTag: e7f2cd0c-ace5-44bb-b5df-23046f2d1297
+		sourceLineageTag: a523884d-d79c-4895-aeca-1fd501b52188
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Unit Price (Transaction Currency)
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Reason'
+		dataType: string
+		lineageTag: 02432be5-df8a-402e-bdfa-c58512b97c66
+		sourceLineageTag: df4ffc0e-4560-4be3-83bb-8264e0445d49
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Return Reason
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Arrival Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: fc9952e9-7196-4f36-8973-f761e71e53c9
+		sourceLineageTag: 56a06ce4-db9a-47f5-a23a-c18a2c1856ab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Return Arrival Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancellation Reason'
+		dataType: string
+		lineageTag: d086b773-97a8-45fc-a19e-dbe041ae9b1a
+		sourceLineageTag: 4c03c3e2-ff27-4f43-a164-bebfc68eb683
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cancellation Reason
+
+		annotation SummarizationSetBy = User
+
+	column RETURNEDSALESQUANTITY_ROL_ZEROS
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 1e530b39-f022-4cc2-9828-0cff3f82e3cf
+		sourceLineageTag: 8bfb0d55-6d73-44ea-a7ef-9990e44b977e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: RETURNEDSALESQUANTITY_ROL_ZEROS
+
+		annotation SummarizationSetBy = User
+
+	column 'Last Fill Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: 5ec465ca-b17c-4d51-b9ad-de1322d69b65
+		sourceLineageTag: f72423ed-3c91-4414-90be-d3183db01636
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Last Fill Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Address Location ID'
+		dataType: string
+		displayFolder: 4. Delivery Address
+		lineageTag: f483548d-3a95-460e-a27a-9931876c769b
+		sourceLineageTag: 1e91e9ca-e384-4997-92f2-c38339cedf4b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Address Location ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Order Origin Code'
+		dataType: string
+		displayFolder: 3. EDI
+		lineageTag: dfeb430a-7166-41d6-95f4-faef8cec40f8
+		sourceLineageTag: d343e458-579e-4de6-90be-8b47c4344906
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Order Origin Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Linked Sales Order Number'
+		dataType: string
+		lineageTag: 1d0bb458-1cf5-4166-8fb1-b2276cbc1e80
+		sourceLineageTag: 8302e246-339e-4441-b2ee-33ff88e22bd6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Linked Sales Order Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Replacement Reference'
+		dataType: string
+		lineageTag: ad6f4943-9851-4f38-a5b3-153cb032cab0
+		sourceLineageTag: 530a9052-b5cc-411d-8930-426bdd0ed552
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Replacement Reference
+
+		annotation SummarizationSetBy = User
+
+	column 'Region Sub Channel'
+		dataType: string
+		lineageTag: fe1d2298-5295-4155-8438-518447655523
+		sourceLineageTag: 66873640-915c-4483-9465-2e68fd2ea461
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Region Sub Channel
+
+		annotation SummarizationSetBy = User
+
+	column isHistorical
+		dataType: double
+		isHidden
+		lineageTag: 1cc26a40-38a6-45e3-994c-191a5a216f82
+		sourceLineageTag: 4f3afe18-40d2-4c6e-bb86-032c754f20ac
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: isHistorical
+
+		annotation SummarizationSetBy = User
+
+	column isCarrierBag
+		dataType: boolean
+		isHidden
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: b08cc1c5-a0e6-4432-87ed-f7dcfd6454d2
+		sourceLineageTag: 99fd7924-cda7-4f23-a8f9-af7fec47b1b4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: isCarrierBag
+
+		annotation SummarizationSetBy = User
+
+	column FinancialChannel
+		dataType: string
+		isHidden
+		lineageTag: ba2fbd66-f124-4fa4-8e0a-6cfb443402f2
+		sourceLineageTag: 408ad855-ef61-46af-98ba-d93a63b43880
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FinancialChannel
+
+		annotation SummarizationSetBy = User
+
+	column '% Fulfilment Buckets'
+		dataType: string
+		lineageTag: 722a5bd7-5920-47be-90e1-4f9395afbd09
+		sourceLineageTag: 1c583006-c7b1-4576-b1d6-83d2eda185ee
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: % Fulfilment Buckets
+
+		annotation SummarizationSetBy = User
+
+	column 'Alloc Arrived Value Col'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: f5b760af-71cb-498f-b232-9492909d204b
+		sourceLineageTag: 6bef041e-248a-4bb4-abad-4a01dad52ad6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Alloc Arrived Value Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Alloc Late Value Col'
+		dataType: double
+		isHidden
+		formatString: " \0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: cdd1e5f6-5bc5-44b0-b047-b3f59aefdb6c
+		sourceLineageTag: a7db5aa2-3cde-4344-a63b-b2d4d42c78e0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Alloc Late Value Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Alloc OntimeValue Col'
+		dataType: double
+		isHidden
+		formatString: " \0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 6054c83e-dee4-4ba9-8d6d-6fc27da4ab0c
+		sourceLineageTag: 37db7109-661c-4109-9df0-cd0ee6e53350
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Alloc OntimeValue Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Alloc Outside Of Time Fence Value Col'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 7c069b65-504f-465b-ac59-518a597836f8
+		sourceLineageTag: 166b193e-bc4e-4617-b1c1-688a2eadbb9b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Alloc Outside Of Time Fence Value Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Alloc Units Arrived Col'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: a9779c58-1a39-4929-951f-983539daf3c9
+		sourceLineageTag: e812848f-6f30-4915-8791-83d798019cec
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Alloc Units Arrived Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Alloc Units Late Col'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Units
+		lineageTag: fe633ee6-d679-4410-873d-62af029827b8
+		sourceLineageTag: 64bda7c3-4426-49d0-b9ec-0350ef8a0731
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Alloc Units Late Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Alloc Units Ontime Col'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Units
+		lineageTag: bce9d1cf-4265-437d-9e3d-9fe408c9551b
+		sourceLineageTag: a97744b1-f9a7-48bb-a37f-00c5dc9fcf3d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Alloc Units Ontime Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Alloc Units Outside Of Time Fence Col'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 1a58fd10-beec-4233-9186-6789bbc5cc04
+		sourceLineageTag: 7a678a96-5079-49e7-b44f-7ab429025cf0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Alloc Units Outside Of Time Fence Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocated Product Units'
+		dataType: int64
+		isHidden
+		displayFolder: 5. US\zz_Values
+		lineageTag: f237871a-c6f8-40a3-8d75-b840e4c89ff7
+		sourceLineageTag: 155ed1c2-db94-4f19-bacc-45d7333da73f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Allocated Product Units
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocated Product Units Late'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: 5. US\zz_Values
+		lineageTag: 59a2ddf8-3c08-4069-9fa2-bbfcb92ae7e3
+		sourceLineageTag: b5b95c55-e610-4de5-b79c-34e0e50ecfcb
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Allocated Product Units Late
+
+		annotation SummarizationSetBy = User
+
+	column 'Available w/c'
+		dataType: string
+		displayFolder: 5. US
+		lineageTag: 6d6ac7df-e44e-4d2e-8bb4-8089dd2063f5
+		sourceLineageTag: 020ac9c3-ba39-456e-8053-0163911cd687
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Available w/c
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancel Fill %'
+		dataType: string
+		displayFolder: 5. US
+		lineageTag: 07242a2f-e7a4-4daf-a982-f1fe0cb7d753
+		sourceLineageTag: ee1af84a-39a0-463f-b8ca-34de0d3b844c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cancel Fill %
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancel Risk Days Late'
+		dataType: string
+		displayFolder: 5. US
+		lineageTag: 9b6f2172-4457-4b2b-beaf-0d11cb374e99
+		sourceLineageTag: 08d13771-e0c7-4ba8-a4a6-712bf3e798b4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cancel Risk Days Late
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancel Risk Line Status'
+		dataType: string
+		displayFolder: 5. US
+		lineageTag: dc318e54-3d9d-4a06-aae5-83928d00bfd3
+		sourceLineageTag: 5c269412-067f-426d-8414-c5b62c6a9240
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cancel Risk Line Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancel Risk Line Status Sort'
+		dataType: string
+		isHidden
+		displayFolder: 5. US\zz_Misc
+		lineageTag: 5fb0ec5c-8013-4d96-9670-b2b4779c3e5c
+		sourceLineageTag: ff2477b3-d5dc-4cd8-afde-f14fea8f45df
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cancel Risk Line Status Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancel Risk Order Status'
+		dataType: string
+		displayFolder: 5. US
+		lineageTag: d8ebb529-490f-4d37-8580-d8af64db4e2d
+		sourceLineageTag: 577b6a9e-6445-41ee-ba01-f9fc3f557698
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cancel Risk Order Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancel Risk Order Status Sort'
+		dataType: string
+		isHidden
+		displayFolder: 5. US\zz_Misc
+		lineageTag: 05318195-3a64-447b-9b64-6c569cbfd1fd
+		sourceLineageTag: 740b07d7-a288-45cd-874e-c5dbc1c8da30
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cancel Risk Order Status Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancelled Net Value Col Cons GBP'
+		dataType: double
+		isHidden
+		formatString: " ""£""\#\,\0.\0\0\;-""£""\#\,\0.\0\0\;""£""\#\,\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 474427ec-7481-4cf1-839c-799148dd1a9f
+		sourceLineageTag: 876ecdde-3bfb-4356-bd6a-7acfee56e412
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Cancelled Net Value Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Hold User ID'
+		dataType: string
+		lineageTag: dbd4611d-11eb-4644-ac35-aecac6298ed9
+		sourceLineageTag: 515b428b-a07b-4765-afaf-ed8472b9c19b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Hold User ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Cancelled Units Col'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 653b2292-1cb3-41c3-977c-de924c87a514
+		sourceLineageTag: eacf7e50-3883-4249-8fed-3bf1e297c2e2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Cancelled Units Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Confirmed Shipping Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 0a49e044-5ed7-427a-806b-13e58ba4c1ed
+		sourceLineageTag: 0dbeba71-5e6f-4acd-ad3d-91d94022fa04
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Confirmed Shipping Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Contractual Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 6. Linked PO
+		lineageTag: f783de82-f397-4e3a-bec9-516e18845adc
+		sourceLineageTag: bf1c5c4a-bac0-46fc-b537-5bb628dc647a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Contractual Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Invoice Acct No'
+		dataType: string
+		isHidden
+		lineageTag: 62361d26-baaa-40ab-8d26-5e6202a092e4
+		sourceLineageTag: 6344ac05-8e29-41b3-b09d-59f226ca2baa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Invoice Acct No
+
+		annotation SummarizationSetBy = User
+
+	column 'Date into Pick'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: d45605d2-39f4-4f25-8d20-fc8e446989fe
+		sourceLineageTag: fe477e71-4f1e-4e94-a9d3-ff567a2c697a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date into Pick
+
+		annotation SummarizationSetBy = User
+
+	column DateMaster
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: dfcd616a-0e66-4d64-b5c9-031184e9f0f4
+		sourceLineageTag: 7cc89c28-eb04-47bc-91d0-9f57429dfb15
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DateMaster
+
+		annotation SummarizationSetBy = User
+
+	column 'DD Pre-Post? '
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 0ae838f2-8a7a-4471-a2aa-c409ebbac852
+		sourceLineageTag: 67d9b0bc-203f-4706-8f1c-0ace6bb09a35
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: "DD Pre-Post? "
+
+		annotation SummarizationSetBy = User
+
+	column 'Discount Bucket'
+		dataType: string
+		lineageTag: 8ca54c92-d7c1-4e0b-ba5c-eff82160f277
+		sourceLineageTag: 620d7390-8077-4dcd-aae3-f1dfb736506f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Discount Bucket
+
+		annotation SummarizationSetBy = User
+
+	column 'Factory Account #'
+		dataType: string
+		displayFolder: 6. Linked PO
+		lineageTag: 2a3cbc23-a502-4f66-a517-c092de351699
+		sourceLineageTag: abe73c15-9ead-41b5-9c16-ae5cba2f1d4a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Factory Account #
+
+		annotation SummarizationSetBy = User
+
+	column 'Factory Country'
+		dataType: string
+		displayFolder: 6. Linked PO
+		lineageTag: 5b2c2cdd-47cd-4b3d-b432-b6de9838a23b
+		sourceLineageTag: 9ad8fc0f-f17c-4c70-aa5d-d030671c7993
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Factory Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Factory Name'
+		dataType: string
+		displayFolder: 6. Linked PO
+		lineageTag: acffe30c-fb7e-4bc5-aff1-b406b835f4b9
+		sourceLineageTag: 5ecc0754-b6d4-4df4-93c9-bdc00008d7c2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Factory Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Fill Date - Cust Req #'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 8a0a5e4f-3f4b-4708-8481-4d6db1d07ac9
+		sourceLineageTag: f203c3d0-b512-479e-85e4-7b9d70644109
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fill Date - Cust Req #
+
+		annotation SummarizationSetBy = User
+
+	column 'Fill Date - Line'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 8ebcc8b4-42f6-4006-a94c-b4dff07d1656
+		sourceLineageTag: 3e7bc55a-3af9-4d38-a91c-f54a22fda1ee
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fill Date - Line
+
+		annotation SummarizationSetBy = User
+
+	column 'Fill Date - Order'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 36c13f39-00e9-49ba-b477-9351f0ad598d
+		sourceLineageTag: 79b84ec3-5263-43b5-874a-90e93481239c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fill Date - Order
+
+		annotation SummarizationSetBy = User
+
+	column 'Fill Date - US Account'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 887f404f-a03c-4b20-8475-895874b32d07
+		sourceLineageTag: 2d6a5505-0189-437d-ad5c-263b92eb3fc5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fill Date - US Account
+
+		annotation SummarizationSetBy = User
+
+	column 'Hold Code'
+		dataType: string
+		lineageTag: ea67efdc-2c64-4615-8d72-f74450725c5c
+		sourceLineageTag: 3dafb280-d158-4c3b-ba81-4c8ad0ec5029
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Hold Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Hold Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: bc0b4f2e-d71a-4775-be75-7ad2ec02230a
+		sourceLineageTag: b1504e82-7e89-4efa-af6b-fbbfe5d5082f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Hold Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Year-Period'
+		dataType: string
+		lineageTag: 7669ee52-3557-47b3-ab82-6bfd896e7d95
+		sourceLineageTag: 6aca9525-d0d1-4b0f-be25-6faef3b7984c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Year-Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoiced Charges Col Cons GBP'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: cb21ce47-1175-4b75-844c-d941f3232c89
+		sourceLineageTag: 4230fd83-6efa-4c83-b515-6b356406019b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Invoiced Charges Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoiced COGs Col'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 3172f7c4-07e4-465b-8716-6a16ea22fbe1
+		sourceLineageTag: 46403cf5-7b15-44ea-9111-9aea50227c7a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Invoiced COGs Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoiced Discounts Col Cons GBP'
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: bbbcca91-fa90-4bee-9cbc-77107d377cb3
+		sourceLineageTag: 849908ab-7ff6-4553-821f-9ac0152886d9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Invoiced Discounts Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoiced Full Value Col Cons GBP'
+		dataType: double
+		isHidden
+		formatString: " \0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 7aa9123f-d165-4291-a326-623f02148fe4
+		sourceLineageTag: 22b6eef9-4cd8-40c4-87b7-c9ea836713a1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Invoiced Full Value Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoiced Net Value Col Cons GBP'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 4e850365-5769-47e0-a1f2-d9e1ecca759f
+		sourceLineageTag: 72eaef29-8910-46ef-83c7-f556ac535f81
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Invoiced Net Value Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoiced Units Col'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 6513695c-e511-43a5-bc68-dcc5b6530cdf
+		sourceLineageTag: 14bc1e87-98ce-486d-bc07-4c7e01fd29dc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Invoiced Units Col
+
+		annotation SummarizationSetBy = User
+
+	column Late?
+		dataType: string
+		lineageTag: e24b8453-5aa1-480a-83c8-c7dc40256615
+		sourceLineageTag: 9a6f6da5-90a3-4888-9e0b-274897490204
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Late?
+
+		annotation SummarizationSetBy = User
+
+	column 'Net Units Col'
+		dataType: int64
+		isHidden
+		formatString: " \#\,\#\#\0"
+		displayFolder: zz_Units
+		lineageTag: e6c7e2f9-ce00-4ad1-9b61-2dfb8b71ceeb
+		sourceLineageTag: c9f232fb-8969-4b49-8417-734224e272ed
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Net Units Col
+
+		annotation SummarizationSetBy = User
+
+	column NetUnitPrice
+		dataType: double
+		isHidden
+		formatString: " \0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 3e6fab63-11c5-41e6-9617-7efd22045198
+		sourceLineageTag: 00fcaddc-4e8f-4c2d-a659-48fc2f6b17d2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: NetUnitPrice
+
+		annotation SummarizationSetBy = User
+
+	column 'O/S Units Col'
+		dataType: int64
+		isHidden
+		formatString: " \#\,\#\#\0"
+		displayFolder: zz_Units
+		lineageTag: 58f4a5b9-f640-4e3e-9e37-ca8a5e120101
+		sourceLineageTag: 840e2c92-6801-4463-971e-32650ecc48c3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: O/S Units Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Open Charges Col Cons GBP'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: bab7f835-22a7-4e41-a81f-0ed2b58430e9
+		sourceLineageTag: 43be35fe-8f09-499a-80dc-6f3631462cf6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Open Charges Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Open CoGS Col'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: ceca1138-97a8-4774-b3a6-3cf6ca7f1832
+		sourceLineageTag: bf9322cc-e1e7-46bf-b75c-ff0463248fe3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Open CoGS Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Open Discounts Col Cons GBP'
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 09e6cf60-c41c-4c0a-a533-bb7ff2bc3cbc
+		sourceLineageTag: 30b4f6f5-ea06-4f67-bd1b-59231b90a7cf
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Open Discounts Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Open Full Value Col Cons GBP'
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 80f7ed21-53c4-48c4-a487-48bb7425126a
+		sourceLineageTag: ee3faced-7d28-4c98-921e-e26b2eae70d3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Open Full Value Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Open Net Value Col Cons GBP'
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 98efd628-dd85-4bf0-91e7-0e6f8587f49d
+		sourceLineageTag: d5ffd5f0-e027-4f6f-a2e3-ae967dfb869e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Open Net Value Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Open Order Payment Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 4519251b-2882-43de-9b8c-3cf7b5d69f72
+		sourceLineageTag: ad36b0c4-51ff-4421-8d43-ccb74caaf869
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Open Order Payment Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Open PO Units'
+		dataType: int64
+		isHidden
+		displayFolder: 6. Linked PO
+		lineageTag: 58b0c150-1400-4bbc-b3ce-59797338e7c8
+		sourceLineageTag: d5ee31aa-0761-42f9-a8f3-0cfa20c31455
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Open PO Units
+
+		annotation SummarizationSetBy = User
+
+	column 'Open Product Units'
+		dataType: int64
+		isHidden
+		displayFolder: 5. US\zz_Misc
+		lineageTag: 61f0c14c-4a44-4d36-96a2-b7ca5274a22f
+		sourceLineageTag: 7865a5b8-b86c-4288-9499-2104d065b3ad
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Open Product Units
+
+		annotation SummarizationSetBy = User
+
+	column 'Open Return CoGS Col'
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 5a592779-8176-414e-85bd-5bc63d5af4d7
+		sourceLineageTag: 5bf14c7e-b116-465b-8dff-db72d587928d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Open Return CoGS Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Open Return Discounts Col Cons GBP'
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 116fe9c5-c1bb-4bd9-92be-602eb997cc39
+		sourceLineageTag: d0563f9e-984a-4d70-ba14-256bcb857889
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Open Return Discounts Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Open Return Full Value Col Cons GBP'
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 4e071f5c-339b-48ed-8d39-c1d5a5b1cb48
+		sourceLineageTag: ade4e871-d4e3-4616-8638-0476091bbace
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Open Return Full Value Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Open Return Net Value Col Cons GBP'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 70c9477e-9f2a-4de1-8357-df2dd218b677
+		sourceLineageTag: a09a46c8-c4c1-404b-bba9-cf3a3920b77c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Open Return Net Value Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Open Return Units Col'
+		dataType: int64
+		isHidden
+		formatString: " \#\,\#\#\0"
+		displayFolder: zz_Units
+		lineageTag: 89dbf9c9-f0c6-4351-a502-cabe9ee0a72a
+		sourceLineageTag: 5a3a3442-5266-448d-ba6b-961db0b8ee27
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Open Return Units Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Open Return Units Pct'
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Units
+		lineageTag: edccae6e-ae51-4833-a773-71ce8e8a62df
+		sourceLineageTag: a15ffac7-d985-4262-ada3-3e5d217a5459
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Open Return Units Pct
+
+		annotation SummarizationSetBy = User
+
+	column 'Open Units Col'
+		dataType: int64
+		formatString: " \#\,\#\#\0"
+		displayFolder: zz_Units
+		lineageTag: f1f2410b-ade0-40f1-8d0d-4c95a3688bbf
+		sourceLineageTag: 354af302-3d7f-4ae3-8020-39677fd9ccfa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Open Units Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Open Units Pct'
+		dataType: double
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Units
+		lineageTag: bd1b2c7c-153c-475d-a578-f6dcb7735597
+		sourceLineageTag: f90287cd-88d6-44f7-ae9f-a352dba77f6a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Open Units Pct
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Duration'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Misc
+		lineageTag: 0ea09519-a9ab-4902-824b-941d36272266
+		sourceLineageTag: 1e440bfa-746e-4571-aba5-092aff11a921
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Order Duration
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Duration Bucket'
+		dataType: string
+		lineageTag: a72d535c-b46d-40f9-9a51-07096442dc8b
+		sourceLineageTag: d743d115-c48e-4410-887e-290bce365f97
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Duration Bucket
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Type ID'
+		dataType: string
+		displayFolder: zz_Misc
+		lineageTag: 154051bb-510b-4183-a90d-9fbb080926d3
+		sourceLineageTag: a6aa62ad-9641-46c8-b6a0-6fc4ea87cd77
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Ordered Net Value Col Cons GBP'
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 59489342-635d-46c5-b6f4-28e0732799a0
+		sourceLineageTag: 5609ffe7-3dfd-4ae8-ac6f-baeb17811d4d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Ordered Net Value Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Ordered Units Col'
+		dataType: int64
+		isHidden
+		formatString: " \#\,\#\#\0"
+		displayFolder: zz_Units
+		lineageTag: 6dc2a1ca-27b1-4565-8694-4e2199f31712
+		sourceLineageTag: b0ee5402-c6d2-4dd9-ba8c-284e8d4bf06a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Ordered Units Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Period Orderbook Status'
+		dataType: string
+		displayFolder: 5. US
+		lineageTag: e8132c92-93d2-462e-bfe2-4b2ae43f177c
+		sourceLineageTag: 0bcd8945-4fba-4852-80e9-407dcc803532
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Period Orderbook Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Period Orderbook Status Sort'
+		dataType: string
+		isHidden
+		displayFolder: 5. US\zz_Misc
+		lineageTag: f9bca044-1242-4104-abad-d0ab8e161492
+		sourceLineageTag: 0a140cd4-6e0c-4d25-919b-c71dedd99847
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Period Orderbook Status Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick Act Units Col'
+		dataType: int64
+		displayFolder: zz_Units
+		lineageTag: 3ee355be-08ef-4f16-8e65-a5f855a13a6a
+		sourceLineageTag: 1d74a522-64e9-417f-bbac-fe7e09a75935
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Pick Act Units Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick Act Value Col'
+		dataType: double
+		isHidden
+		formatString: " \0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 7759e083-2445-42ec-a940-59a0c5bfbec3
+		sourceLineageTag: 04a52bae-95a8-47d9-ac3e-cc41ec3205f7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Pick Act Value Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick Activated Product Units'
+		dataType: int64
+		isHidden
+		displayFolder: 5. US\zz_Misc
+		lineageTag: 05c9a4ab-0c04-4fbb-90cb-17fa2885c71a
+		sourceLineageTag: c25013ae-cf10-4baf-a3cd-99ad84cd8bfc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Pick Activated Product Units
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick Comp Units Col'
+		dataType: int64
+		formatString: " \#\,\#\#\0"
+		displayFolder: zz_Units
+		lineageTag: dfa9ea5b-4ec0-4385-90e6-729950e6dc65
+		sourceLineageTag: 33289a8c-4e56-4e24-bb64-c574d85dc7a0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Pick Comp Units Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick Comp Value Col'
+		dataType: double
+		isHidden
+		formatString: " \0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: fd8b5727-73d9-4ee7-8440-6e874e373f64
+		sourceLineageTag: b422d97d-f53d-4982-92b3-f8f335955c8b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Pick Comp Value Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick Complete Product Units'
+		dataType: int64
+		isHidden
+		displayFolder: 5. US\zz_Misc
+		lineageTag: 269414c8-0383-41f7-8d51-5d7e215f2692
+		sourceLineageTag: 9b7b5d38-c4df-4c50-9015-749118d83a74
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Pick Complete Product Units
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Available Ship Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 6. Linked PO
+		lineageTag: a2483f8e-54b8-4611-9eff-22902513b741
+		sourceLineageTag: 569e3fcc-032e-41a3-91cb-fdfe216a0dee
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Available Ship Date
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Confirmed Delivery Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 6. Linked PO
+		lineageTag: fc656f80-41f8-4b4d-9d7f-cfa35437fbbd
+		sourceLineageTag: 482bb0ed-4b32-4639-9708-dd1299d6731f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Confirmed Delivery Date
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Contractual Ex-Factory Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 6. Linked PO
+		lineageTag: 40af64c1-bc06-497e-bb7b-624f50dca856
+		sourceLineageTag: fc29b4d8-2e8e-4ad9-ab76-43f94aeaf1ac
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Contractual Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Ex-Factory Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 6. Linked PO
+		lineageTag: 26148f65-fbe1-41f6-a8b4-73d558a3b1cd
+		sourceLineageTag: 8a5443aa-2e84-47c8-985f-1cecaf05e73f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column PO#
+		dataType: string
+		displayFolder: 6. Linked PO
+		lineageTag: 1295be7e-9c44-41b7-88c0-8f17c6ab210f
+		sourceLineageTag: ff44f75e-cdf8-4eb8-9395-8ce8c573407a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO#
+
+		annotation SummarizationSetBy = User
+
+	column 'Req. vs Inv Days'
+		dataType: int64
+		formatString: 0
+		lineageTag: a38c2478-2787-412f-95a4-d8c67dfc656b
+		sourceLineageTag: b684e087-2db8-44b2-aeaf-bfde7490eb28
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Req. vs Inv Days
+
+		annotation SummarizationSetBy = User
+
+	column 'Req. vs Inv Days Bucket'
+		dataType: string
+		lineageTag: f0b12068-fc60-4731-bfcc-3073bfd367c8
+		sourceLineageTag: 15a7f453-5d7d-45b4-a45f-50fb063fa3eb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Req. vs Inv Days Bucket
+
+		annotation SummarizationSetBy = User
+
+	column 'Requested Order Duration Bucket'
+		dataType: string
+		lineageTag: da463095-2676-4f9f-b911-fd995ba18b04
+		sourceLineageTag: d92278e3-0c6e-4afe-925f-9b33a18888f2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Requested Order Duration Bucket
+
+		annotation SummarizationSetBy = User
+
+	column 'Requested Order Duration Col'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Misc
+		lineageTag: f1f349d3-4b23-43af-80bc-1adb660a0dac
+		sourceLineageTag: 9b42ceec-20d9-4171-ac2c-69d1b02337c3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Requested Order Duration Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Res Units Col'
+		dataType: int64
+		displayFolder: zz_Units
+		lineageTag: 1248c693-2deb-4a4d-810e-4d1c8676c74e
+		sourceLineageTag: 9606f6df-40ec-412e-9e17-ce0c7dbfce89
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Res Units Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Res Value Col'
+		dataType: double
+		isHidden
+		formatString: " \0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: e4f2c17a-88e9-43d2-917b-13528327775d
+		sourceLineageTag: 1b66270b-dc28-40a0-b626-394e7125071e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Res Value Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Reserved Product Units'
+		dataType: int64
+		isHidden
+		displayFolder: 5. US\zz_Misc
+		lineageTag: a447948e-1fa0-4c22-a2d0-8b472ac59bac
+		sourceLineageTag: b50f2bd4-151d-4996-a20a-2338e3645161
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Reserved Product Units
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Discounts Col'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 856ce736-525d-49f1-bfcd-a8e957c824cb
+		sourceLineageTag: ca229a53-8f5f-4f97-b45f-06127ed18c10
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Return Discounts Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Discounts Col (inc tax)'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: b61c217b-1444-49dd-92d8-76a7be5e7265
+		sourceLineageTag: a21b4ead-5dd0-40cf-90a0-6d5314c1f4d9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Return Discounts Col (inc tax)
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Discounts Col Cons GBP'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 40c000c7-6a37-4ea6-ba5a-596ac68cd99e
+		sourceLineageTag: f9e53c91-20e0-42d8-ac2e-ac08be588945
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Return Discounts Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Full Price'
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: e75c5e8c-2dc1-4348-9a61-18166e90b456
+		sourceLineageTag: 68584971-283d-456f-a209-cc79a5ed7c52
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Return Full Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Full Value Col (inc tax)'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: f927574d-a734-4be8-8717-624a70bcacad
+		sourceLineageTag: aa16ca17-c988-42a9-ac7c-b33e0c7a3eb2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Return Full Value Col (inc tax)
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Net Value Col'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 89a86a5a-9ac7-4c8c-8c56-612c6d41b83d
+		sourceLineageTag: c35a34fe-c64c-4111-b6ea-6bb9b9153f04
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Return Net Value Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Net Value Col Cons GBP'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: b398688c-52da-4fee-8687-0c7c6e799653
+		sourceLineageTag: 8187fcff-81f3-47a4-af4f-77f01883fcbc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Return Net Value Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Units Col'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: f9f4da25-5836-46fe-8c4a-e3b36566c4a1
+		sourceLineageTag: a53004d1-719e-44e3-ab36-c8b40ba357ec
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Return Units Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Return Units Pct'
+		dataType: int64
+		isHidden
+		formatString: " \#\,\#\#\0"
+		displayFolder: zz_Units
+		lineageTag: 9daf673d-decd-46b3-b907-fdf752aeb496
+		sourceLineageTag: b12a60c9-fcab-43e3-85fe-75c333b6834f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Return Units Pct
+
+		annotation SummarizationSetBy = User
+
+	column 'Returned COGs Col'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 4b13dd25-53f2-4470-ba22-2e300d84a0ab
+		sourceLineageTag: db4e373d-4cf2-4511-a861-8bed1a2063ed
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Returned COGs Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Returned Discounts Col Cons GBP'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: f10c0834-2f54-4d0d-949c-e64b1475f0b6
+		sourceLineageTag: 44ac6bbf-ca5e-4144-80a7-1ea6a9699fd4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Returned Discounts Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Returned Full Price'
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: a4c2f67a-c4d5-43eb-8f1d-032f2308d560
+		sourceLineageTag: 128ebfad-ef40-4f2f-941e-da5304ac3942
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Returned Full Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Returned Net Value Col Cons GBP'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 8014a9cc-1ef1-4367-bde2-da475dbc656a
+		sourceLineageTag: 54b19464-20ae-41c7-b1f5-a4f5e28d7565
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Returned Net Value Col Cons GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Returned Tax Col'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: e9491a7c-c056-4e3c-a74f-791e744d6cc2
+		sourceLineageTag: 52e0ace1-2dc1-40ed-94ce-b7b2a0425f78
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Returned Tax Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Order Type'
+		dataType: string
+		lineageTag: 39c0237e-43ca-4d13-9951-787cbae470d1
+		sourceLineageTag: 199d428e-efa6-4aaf-bbc2-e3328b6544c7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Order Type
+
+		annotation SummarizationSetBy = User
+
+	column Season
+		dataType: string
+		lineageTag: e5333f40-5f5d-4b2d-a40e-ba20da63a279
+		sourceLineageTag: 10ffdb42-f530-4430-ae48-3ad3cb8836a0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = User
+
+	column 'Settlement Discount_SIL'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 57100514-945f-49e8-8a8a-b2017697e450
+		sourceLineageTag: 43404fb0-658d-46fd-93d2-81b6efab293a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Settlement Discount_SIL
+
+		annotation SummarizationSetBy = User
+
+	column 'Shipped Net Value Col'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 95a1aa0a-880d-4115-9295-4dff7086826a
+		sourceLineageTag: 790a1b39-5904-456b-9577-8cd488d6994c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Shipped Net Value Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Shipped Units Col'
+		dataType: int64
+		formatString: " \#\,\#\#\0"
+		displayFolder: zz_Units
+		lineageTag: a865117a-c53f-4c73-8178-79f41ce0de3e
+		sourceLineageTag: f4e493b3-4d89-4bb0-9a93-e968ca727d3d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Shipped Units Col
+
+		annotation SummarizationSetBy = User
+
+	column 'SmartRes Outstanding Units Col'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Units
+		lineageTag: 481e3af3-7779-42a3-9d81-e11725fbf29c
+		sourceLineageTag: 6f056ae8-6216-47be-b5fa-0ca3672348d2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: SmartRes Outstanding Units Col
+
+		annotation SummarizationSetBy = User
+
+	column 'SmartRes Outstanding Value Col'
+		dataType: double
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 3194ec4e-824e-4397-bcc8-08ea447c1a5c
+		sourceLineageTag: 470a3e3c-4646-49d4-8efc-2e580890241b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: SmartRes Outstanding Value Col
+
+		annotation SummarizationSetBy = User
+
+	column SO_Line#
+		dataType: string
+		lineageTag: 71ac8499-8093-4fb5-a2ff-1b6936ee19d2
+		sourceLineageTag: 96355a0c-17d5-46bd-8ba0-af5826d58af5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO_Line#
+
+		annotation SummarizationSetBy = User
+
+	column SRMaxDateLU
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: 520e1e4d-bf2d-420d-a6d8-0f5e695fdd60
+		sourceLineageTag: ea3ec29c-0c3c-4960-bba0-25ee580c3e0a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SRMaxDateLU
+
+		annotation SummarizationSetBy = User
+
+	column 'Start Ship Year-Period'
+		dataType: string
+		lineageTag: 1e241576-1acf-4066-8ef2-8019f709d68e
+		sourceLineageTag: 178840ea-748d-41b5-bfb6-0da1e2dae12e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Start Ship Year-Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Total Discount % Col'
+		dataType: double
+		isHidden
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 9d64b0a9-ed8e-4f48-bddb-0502def0ed28
+		sourceLineageTag: 2c145da3-d2d1-4950-b3d0-19b49aa4726b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Total Discount % Col
+
+		annotation SummarizationSetBy = User
+
+	column 'VAS Required?'
+		dataType: string
+		lineageTag: f3c3da52-b4b2-41ac-bbb5-50dce8e94b38
+		sourceLineageTag: e2c7bfbe-9977-4b93-ab80-4fa3426c9d54
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: VAS Required?
+
+		annotation SummarizationSetBy = User
+
+	column 'Returned Units Col'
+		dataType: int64
+		formatString: " \#\,\#\#\0"
+		displayFolder: zz_Units
+		lineageTag: b41fe19f-28bb-48da-a8b7-f0b427739120
+		sourceLineageTag: 006c04bb-5a0d-443f-9708-4231ee0785a6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Returned Units Col
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Address Street'
+		dataType: string
+		displayFolder: 4. Delivery Address
+		lineageTag: ed11c033-7750-414e-9658-003bb75766e9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Address Street
+
+		annotation SummarizationSetBy = User
+
+	partition Orders = entity
+		mode: directQuery
+		source
+			entityName: Orders
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

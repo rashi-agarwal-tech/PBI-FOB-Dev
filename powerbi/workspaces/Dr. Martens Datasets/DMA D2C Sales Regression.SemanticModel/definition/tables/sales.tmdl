@@ -1,0 +1,2936 @@
+table sales
+	lineageTag: 10d9ef44-79f6-4df3-af4c-4cebe0c55b56
+
+	measure 'sales ecom demand cancelled units' =
+			
+			IF
+			(
+			    SUM(sales[eCom Demand Cancelled Units])=0
+			    ,BLANK()
+			    ,SUM(sales[eCom Demand Cancelled Units])
+			)
+		formatString: #,0
+		lineageTag: 3743355e-abf2-4686-a3c3-2d0d9d3851cf
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales ecom demand transactions' =
+			
+			IF
+			(
+			    SUM(sales[eCom Demand Transactions])=0
+			    ,BLANK()
+			    ,SUM(sales[eCom Demand Transactions])
+			)
+		formatString: #,0
+		lineageTag: 46eaa005-b0f2-4084-9e6b-fb643d9bd3d3
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales ecom demand units' =
+			
+			IF
+			(
+			    SUM(sales[eCom Demand Units])=0
+			    ,BLANK()
+			    ,SUM(sales[eCom Demand Units])
+			)
+		formatString: #,0
+		lineageTag: 1db44f18-2936-437f-858d-d6cc4231109f
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales footfall' =
+			
+			IF
+			(
+			    SUM(sales[Footfall])=0
+			    ,BLANK()
+			    ,SUM(sales[Footfall])
+			)
+		formatString: #,0
+		lineageTag: cda54037-87b2-4774-b0ba-410ba69a6a86
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales invoiced units' =
+			
+			IF
+			(
+			    SUM(sales[Invoiced Units])=0
+			    ,BLANK()
+			    ,SUM(sales[Invoiced Units])
+			)
+		formatString: #,0
+		lineageTag: 512295a2-737f-42bc-9d87-2fbe138a0f0c
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales net units' =
+			
+			IF
+			(
+			    SUM(sales[Net Units])=0
+			    ,BLANK()
+			    ,SUM(sales[Net Units])
+			)
+		formatString: #,0
+		lineageTag: 21f8b5a8-15aa-41b6-97a9-f73c212fde07
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales open units' =
+			
+			IF
+			(
+			    SUM(sales[Open Units])=0
+			    ,BLANK()
+			    ,SUM(sales[Open Units])
+			)
+		formatString: #,0
+		lineageTag: 91238688-0bb8-4e90-bf80-4e1b61d2cd63
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales returned units' =
+			
+			IF
+			(
+			    SUM(sales[Returned Units])=0
+			    ,BLANK()
+			    ,SUM(sales[Returned Units])
+			)
+		formatString: #,0
+		lineageTag: 66f7a299-54f2-410f-9d22-aa1a731e977c
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales total units' =
+			
+			IF
+			(
+			    SUM(sales[Total Units])=0
+			    ,BLANK()
+			    ,SUM(sales[Total Units])
+			)
+		formatString: #,0
+		lineageTag: 5c8ac23b-df61-4b8b-845f-b76c1c219596
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales total units ecom' =
+			
+			IF
+			(
+			    SUM(sales[Total Units (eCom)])=0
+			    ,BLANK()
+			    ,SUM(sales[Total Units (eCom)])
+			)
+		formatString: #,0
+		lineageTag: 6c1a26ae-8b1c-46ed-bcae-0c2f205ab011
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales ecom demand gross value' =
+			
+			IF
+			(
+			    SUM(sales[eCom Demand Gross Value])=0
+			    ,BLANK()
+			    ,SUM(sales[eCom Demand Gross Value])
+			)
+		formatString: #,0.00
+		lineageTag: cbabe61a-6364-447b-9e2c-6795c40bbb16
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales ecom demand cancelled gross value' =
+			
+			IF
+			(
+			    SUM(sales[eCom Demand Cancelled Gross Value])=0
+			    ,BLANK()
+			    ,SUM(sales[eCom Demand Cancelled Gross Value])
+			)
+		formatString: #,0.00
+		lineageTag: 7747e09f-e27a-40e4-8541-7bf1db0004fc
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales ecom demand discount' =
+			
+			IF
+			(
+			    SUM(sales[eCom Demand Discount])=0
+			    ,BLANK()
+			    ,SUM(sales[eCom Demand Discount])
+			)
+		formatString: #,0.00
+		lineageTag: 145dfdfe-b1ac-43bf-b3b3-dc9797e84e55
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales invoiced net value' =
+			
+			IF
+			(
+			    SUM(sales[Invoiced Net Value])=0
+			    ,BLANK()
+			    ,SUM(sales[Invoiced Net Value])
+			)
+		formatString: #,0.00
+		lineageTag: 4002f497-0ea1-4903-a0ea-0b6adf674f53
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales net value' =
+			
+			IF
+			(
+			    SUM(sales[Net Value])=0
+			    ,BLANK()
+			    ,SUM(sales[Net Value])
+			)
+		formatString: #,0.00
+		lineageTag: b76792cf-2430-4484-bf72-1d296120bf50
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales returned net value' =
+			
+			IF
+			(
+			    SUM(sales[Returned Net Value])=0
+			    ,BLANK()
+			    ,SUM(sales[Returned Net Value])
+			)
+		formatString: #,0.00
+		lineageTag: 380a0a22-95b5-415a-a222-ab8eb306f490
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales total net value ecom' =
+			
+			IF
+			(
+			    SUM(sales[Total Net Value (eCom)])=0
+			    ,BLANK()
+			    ,SUM(sales[Total Net Value (eCom)])
+			)
+		formatString: #,0.00
+		lineageTag: 37641d7d-e852-45eb-86b3-57b68488124c
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales total net value' =
+			
+			IF
+			(
+			    SUM(sales[Total Net Value])=0
+			    ,BLANK()
+			    ,SUM(sales[Total Net Value])
+			)
+		formatString: #,0.00
+		lineageTag: 0c3a1ca8-141c-47ab-94c2-0f3682c28020
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'sales ecom demand cancelled gross value Diff' =
+			
+			IF
+			(
+			    SUM(sales[eCom Demand Cancelled Gross Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[eCom Demand Cancelled Gross Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 3e22896d-4125-4d5c-9328-f8622007aef5
+
+	measure 'sales ecom demand cancelled units Diff' =
+			
+			IF
+			(
+			    SUM(sales[eCom Demand Cancelled Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[eCom Demand Cancelled Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 6967b422-8ae1-4437-8aa3-7075cf81641c
+
+	measure 'sales ecom demand discount Diff' =
+			
+			IF
+			(
+			    SUM(sales[eCom Demand Discount Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[eCom Demand Discount Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 5c133bfb-df0b-4c99-9184-083670855001
+
+	measure 'sales ecom demand gross value Diff' =
+			
+			IF
+			(
+			    SUM(sales[eCom Demand Gross Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[eCom Demand Gross Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 950e6509-816d-4d0e-8a25-d9d8f9fc5ecb
+
+	measure 'sales ecom demand units Diff' =
+			
+			IF
+			(
+			    SUM(sales[eCom Demand Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[eCom Demand Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 04536b84-785c-4d5f-86f5-ca0d6ee7ee2e
+
+	measure 'sales footfall Diff' =
+			
+			IF
+			(
+			    SUM(sales[Footfall Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[Footfall Diff])
+			)
+		formatString: #,0
+		lineageTag: e60caf96-b720-4b8f-ab61-6bc4cb28d6fd
+
+	measure 'sales invoiced net value Diff' =
+			
+			IF
+			(
+			    SUM(sales[Invoiced Net Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[Invoiced Net Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: a2992f2d-a95e-4818-a302-8696ce9275ff
+
+	measure 'sales invoiced units Diff' =
+			
+			IF
+			(
+			    SUM(sales[Invoiced Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[Invoiced Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 90008c86-de5e-4605-886f-9174c4cb6b0e
+
+	measure 'sales ecom demand transactions Diff' =
+			
+			IF
+			(
+			    SUM(sales[eCom Demand Transactions Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[eCom Demand Transactions Diff])
+			)
+		formatString: #,0
+		lineageTag: e5d82bb4-7d4d-4533-b12f-b43167c19015
+
+	measure 'sales net value Diff' =
+			
+			IF
+			(
+			    SUM(sales[Net Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[Net Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 0601968b-9000-4822-95ef-bfdccd828869
+
+	measure 'sales net units Diff' =
+			
+			IF
+			(
+			    SUM(sales[Net Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[Net Units Diff])
+			)
+		formatString: #,0
+		lineageTag: cf5fbcbf-1594-4871-b9f0-28b41beff897
+
+	measure 'sales open units Diff' =
+			
+			IF
+			(
+			    SUM(sales[Open Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[Open Units Diff])
+			)
+		formatString: #,0
+		lineageTag: fa2502e5-f484-46d6-b16b-e4a0be556cc1
+
+	measure 'sales returned units Diff' =
+			
+			IF
+			(
+			    SUM(sales[Returned Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[Returned Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 1a531c0d-f668-4fd5-98d7-d4a6f82164a3
+
+	measure 'sales total units Diff' =
+			
+			IF
+			(
+			    SUM(sales[Total Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[Total Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 187b0453-f7a5-44d6-94e8-6615aa5a11c6
+
+	measure 'sales total units ecom Diff' =
+			
+			IF
+			(
+			    SUM(sales[Total Units (eCom) Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[Total Units (eCom) Diff])
+			)
+		formatString: #,0
+		lineageTag: 3cd5d233-cb48-43a2-bbf7-7425f5281529
+
+	measure 'sales total net value ecom Diff' =
+			
+			IF
+			(
+			    SUM(sales[Total Net Value (eCom) Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[Total Net Value (eCom) Diff])
+			)
+		formatString: #,0.00
+		lineageTag: faf4f9bc-ac15-43d7-b052-03b6dcb56a01
+
+	measure 'sales total net value Diff' =
+			
+			IF
+			(
+			    SUM(sales[Total Net Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[Total Net Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 3c026ed6-a944-469f-8417-01b6feaae994
+
+	measure 'sales returned net value Diff' =
+			
+			IF
+			(
+			    SUM(sales[Returned Net Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[Returned Net Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 2e46d351-35cc-44ef-a2b6-0a8f45ec3436
+
+	measure 'sales Sum of AbsDiff' =
+			
+			[sales open units Diff]
+			+[sales open net value Diff]
+			+[sales invoiced units Diff]
+			+[sales invoiced net value Diff]
+			+[sales returned units Diff]
+			+[sales returned net value Diff]
+			+[sales total units Diff]
+			+[sales total net value Diff]
+			+[sales net units Diff]
+			+[sales net value Diff]
+			+[sales ecom demand units Diff]
+			+[sales ecom demand gross value Diff]
+			+[sales ecom demand cancelled units Diff]
+			+[sales ecom demand cancelled gross value Diff]
+			+[sales total units ecom Diff]
+			+[sales total net value ecom Diff]
+			+[sales ecom demand transactions Diff]
+			+[sales ecom demand discount Diff]
+			+[sales ordered units Diff]
+			+[sales footfall Diff]
+		formatString: #,0.00
+		lineageTag: 8b855803-9206-471f-96c9-2f3272fc252e
+
+	measure 'sales open net value' =
+			
+			IF
+			(
+			    SUM(sales[Open Net Value])=0
+			    ,BLANK()
+			    ,SUM(sales[Open Net Value])
+			)
+		formatString: #,0.00
+		lineageTag: 240b6c8d-0b30-4054-b8df-b1aa9c615bb4
+
+	measure 'sales open net value Diff' =
+			
+			IF
+			(
+			    SUM(sales[Open Net Value Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[Open Net Value Diff])
+			)
+		formatString: #,0.00
+		lineageTag: 4d8b54c6-6b83-484b-858a-1e00ee096348
+
+	measure 'source parameter' =
+			
+			"1 Footprint PROD"
+		lineageTag: b6d9b11a-4f76-4fe0-b85f-bd3875d51b73
+
+	measure 'sales ordered units' =
+			
+			IF
+			(
+			    SUM(sales[Ordered Units])=0
+			    ,BLANK()
+			    ,SUM(sales[Ordered Units])
+			)
+		formatString: #,0
+		lineageTag: f0bd5e99-dd06-4d20-ac7e-d8a7c0d88c55
+
+	measure 'sales ordered units Diff' =
+			
+			IF
+			(
+			    SUM(sales[Ordered Units Diff])=0
+			    ,BLANK()
+			    ,SUM(sales[Ordered Units Diff])
+			)
+		formatString: #,0
+		lineageTag: e3a0c169-a3c7-4ac5-ab39-6001f978f202
+
+	column 'Open Units'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 4a501528-7f24-4ee7-b31f-fc97bb14c4cc
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Open Units]
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoiced Units'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 3f8aefe7-a02e-4cda-a45a-1840f7159c53
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Invoiced Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Returned Units'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 802fda0c-441a-4eb4-b113-b419f4ce6a2b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Returned Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Units'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 51b6d155-0789-411d-b0b0-323aa1930c61
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Total Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net Units'
+		formatString: #,0
+		lineageTag: 1cbff886-c689-4c20-9bd7-c8fa43d2843b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Net Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom Demand Units'
+		dataType: int64
+		formatString: #,0
+		lineageTag: e39f58b6-78b1-4277-9995-6062cdb720ec
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [eCom Demand Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom Demand Cancelled Units'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 4bacbe0d-282a-4f8e-b0d7-be1defd142b6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [eCom Demand Cancelled Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Units (eCom)'
+		dataType: int64
+		formatString: #,0
+		lineageTag: 394f70f0-c663-41ab-a21b-b32d31aba41c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Total Units (eCom)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom Demand Transactions'
+		formatString: #,0
+		lineageTag: 282ee5eb-1198-420d-8a70-1a31c05848a9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [eCom Demand Transactions]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom Demand Discount'
+		formatString: #,0.00
+		lineageTag: a0b13431-9eb3-4693-83e9-d4bff9ed1621
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [eCom Demand Discount]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoiced Net Value'
+		formatString: #,0.00
+		lineageTag: 7fed89f7-5b32-4ca4-9657-2aadbc0ab2c9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Invoiced Net Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Returned Net Value'
+		formatString: #,0.00
+		lineageTag: 5802d0f9-2934-4df6-b027-5219e5c805ff
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Returned Net Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Net Value'
+		formatString: #,0.00
+		lineageTag: 444a333c-dd50-4896-865c-88167cfb6974
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Total Net Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net Value'
+		formatString: #,0.00
+		lineageTag: b44770b9-1feb-4238-b378-b7fdbbb755ca
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Net Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom Demand Gross Value'
+		formatString: #,0.00
+		lineageTag: 231e20ab-6c68-4e8d-a5ea-5e89e76091b7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [eCom Demand Gross Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom Demand Cancelled Gross Value'
+		formatString: #,0.00
+		lineageTag: ae0f6661-93b5-4ad0-aaa1-422ff6e7e151
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [eCom Demand Cancelled Gross Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Net Value (eCom)'
+		formatString: #,0.00
+		lineageTag: 19763a00-f8ae-4f50-bdf0-c013daa11660
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Total Net Value (eCom)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source
+		lineageTag: 9120e77a-9f5b-440a-9c65-73dd621799d9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Source]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Footfall
+		lineageTag: 15cdae08-0041-4087-8adb-eeb56b3cf96c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Footfall]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Dimension
+		lineageTag: 58e2b3b4-580e-4a0d-aeec-92bc13efc8c4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Dimension]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year (544)'
+		lineageTag: b7302122-d612-48c7-ade1-95c0e00f1a9c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Date[Fiscal Year (544)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year-Period (544)'
+		lineageTag: 00a1d43d-3fcc-4ff3-a2dd-9c8814b206a6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Date[Fiscal Year-Period (544)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Date'
+		formatString: dd-mmm-yyyy
+		lineageTag: 634305d1-77e7-478d-9a58-e97ebe7a2a86
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Date[ Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column Attribute
+		lineageTag: 66b9538b-2307-4087-8c2a-6211fc90c4fd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Attribute]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Open Net Value'
+		lineageTag: 03b44d27-eaf7-41df-afc6-6e0215945e3c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Open Net Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Open Units Diff' =
+			
+			ABS
+			(
+			    sales[Open Units]
+			    -LOOKUPVALUE(sales[Open Units],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		formatString: 0
+		lineageTag: 77fc57fd-e7cb-4114-8be7-5a7a0523861f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoiced Units Diff' =
+			
+			ABS
+			(
+			    sales[Invoiced Units]
+			    -LOOKUPVALUE(sales[Invoiced Units],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		formatString: 0
+		lineageTag: ff044e3f-826e-47dc-9323-fc6c62b623b6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Returned Units Diff' =
+			
+			ABS
+			(
+			    sales[Returned Units]
+			    -LOOKUPVALUE(sales[Returned Units],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		formatString: 0
+		lineageTag: 1e347dd6-c150-4d7d-b196-f703d2a9f98f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Units Diff' =
+			
+			ABS
+			(
+			    sales[Total Units]
+			    -LOOKUPVALUE(sales[Total Units],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		formatString: 0
+		lineageTag: 5f1c692c-b75e-48ac-82a5-5f9a35eb637b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net Units Diff' =
+			
+			ABS
+			(
+			    sales[Net Units]
+			    -LOOKUPVALUE(sales[Net Units],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		formatString: 0
+		lineageTag: 7b56d4bb-24b1-4e96-8944-7cb64e8d96b2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom Demand Units Diff' =
+			
+			ABS
+			(
+			    sales[eCom Demand Units]
+			    -LOOKUPVALUE(sales[eCom Demand Units],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		formatString: 0
+		lineageTag: 825dd17d-ec87-4f84-9c6c-144c4fdd9c21
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom Demand Cancelled Units Diff' =
+			
+			ABS
+			(
+			    sales[eCom Demand Cancelled Units]
+			    -LOOKUPVALUE(sales[eCom Demand Cancelled Units],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		formatString: 0
+		lineageTag: 12fc2da3-81d8-4f7c-91e4-8b53c61e15b8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Units (eCom) Diff' =
+			
+			ABS
+			(
+			    sales[Total Units (eCom)]
+			    -LOOKUPVALUE(sales[Total Units (eCom)],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		formatString: 0
+		lineageTag: 3c7b5dc9-695f-4df7-9d71-c31905abd75c
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom Demand Transactions Diff' =
+			
+			ABS
+			(
+			    sales[eCom Demand Transactions]
+			    -LOOKUPVALUE(sales[eCom Demand Transactions],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		formatString: 0
+		lineageTag: 8542e019-ca2f-4e6c-9ab5-44e06b69bd25
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'eCom Demand Discount Diff' =
+			
+			ABS
+			(
+			    sales[eCom Demand Discount]
+			    -LOOKUPVALUE(sales[eCom Demand Discount],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		lineageTag: 47b5288d-2456-4df5-adde-1e182a95d225
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Open Net Value Diff' =
+			
+			ABS
+			(
+			    sales[Open Net Value]
+			    -LOOKUPVALUE(sales[Open Net Value],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		lineageTag: 56889e83-9301-4c2c-8b41-110ff37086e4
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Invoiced Net Value Diff' =
+			
+			ABS
+			(
+			    sales[Invoiced Net Value]
+			    -LOOKUPVALUE(sales[Invoiced Net Value],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		lineageTag: f41f1b5c-1c03-4305-b0a0-8d4301b11a4a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Returned Net Value Diff' =
+			
+			ABS
+			(
+			    sales[Returned Net Value]
+			    -LOOKUPVALUE(sales[Returned Net Value],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		lineageTag: 5e8b38b1-c4ae-4a38-b233-f8974e581334
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Net Value Diff' =
+			
+			ABS
+			(
+			    sales[Total Net Value]
+			    -LOOKUPVALUE(sales[Total Net Value],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		lineageTag: 99cb9f7c-f7ff-4233-9038-4f3a9fe4c474
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net Value Diff' =
+			
+			ABS
+			(
+			    sales[Net Value]
+			    -LOOKUPVALUE(sales[Net Value],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		lineageTag: 61315a82-aef7-4e36-8170-7d7df8facc14
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'eCom Demand Gross Value Diff' =
+			
+			ABS
+			(
+			    sales[eCom Demand Gross Value]
+			    -LOOKUPVALUE(sales[eCom Demand Gross Value],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		lineageTag: c80c9194-4a2b-4809-b216-3074f5c203a8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'eCom Demand Cancelled Gross Value Diff' =
+			
+			ABS
+			(
+			    sales[eCom Demand Cancelled Gross Value]
+			    -LOOKUPVALUE(sales[eCom Demand Cancelled Gross Value],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		formatString: 0
+		lineageTag: c50b8156-f0a4-433d-b671-e8306616345b
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Net Value (eCom) Diff' =
+			
+			ABS
+			(
+			    sales[Total Net Value (eCom)]
+			    -LOOKUPVALUE(sales[Total Net Value (eCom)],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		lineageTag: ec5869a7-e5c8-48b6-a5f9-183f2056d256
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Footfall Diff' =
+			
+			ABS
+			(
+			    sales[Footfall]
+			    -LOOKUPVALUE(sales[Footfall],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		lineageTag: 7d347a1c-eca0-47d1-ab4b-50e79998f8c4
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ordered Units'
+		lineageTag: 1b288da8-df82-4187-ba5e-77bd471d1677
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Ordered Units]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ordered Units Diff' =
+			
+			ABS
+			(
+			    sales[Ordered Units]
+			    -LOOKUPVALUE(sales[Ordered Units],sales[ Date],[ Date],sales[Dimension],[Dimension],sales[Attribute],[Attribute],sales[Source],[source parameter])
+			)
+		lineageTag: 2446582d-43d1-4c81-b353-916c9c5f0289
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition sales = calculated
+		mode: import
+		source =
+				
+				UNION
+				(
+				    //date
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,"Attribute",""
+				        ,"Dimension","Date"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",[Footfall]
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,"Attribute",""
+				        ,"Dimension","Date"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",[Footfall 2]
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,"Attribute",""
+				        ,"Dimension","Date"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",[Footfall 3]
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //company id
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Region'[Company ID]
+				        ,"Dimension","Company ID"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",[Footfall]
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Region 2'[Company ID]
+				        ,"Dimension","Company ID"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",[Footfall 2]
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Region 3'[Company ID]
+				        ,"Dimension","Company ID"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",[Footfall 3]
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //region
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Region'[Region]
+				        ,"Dimension","Region"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",[Footfall]
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Region 2'[Region]
+				        ,"Dimension","Region"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",[Footfall 2]
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Region 3'[Region]
+				        ,"Dimension","Region"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",[Footfall 3]
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //Store Number
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Account Details'[Store Number]
+				        ,"Dimension","Store Number"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",[Footfall]
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Account Details 2'[Store Number]
+				        ,"Dimension","Store Number"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",[Footfall 2]
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Account Details 3'[Store Number]
+				        ,"Dimension","Store Number"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",[Footfall 3]
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //Cost Centre
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Account Details'[Cost Centre]
+				        ,"Dimension","Cost Centre"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",[Footfall]
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Account Details 2'[Cost Centre]
+				        ,"Dimension","Cost Centre"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",[Footfall 2]
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Account Details 3'[Cost Centre]
+				        ,"Dimension","Cost Centre"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",[Footfall 3]
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //Financial Channel
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Financial Channel'[Financial Channel]
+				        ,"Dimension","Financial Channel"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Financial Channel 2'[Financial Channel]
+				        ,"Dimension","Financial Channel"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Financial Channel 3'[Financial Channel]
+				        ,"Dimension","Financial Channel"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //Website
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Website'[Website]
+				        ,"Dimension","Website"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Website 2'[Website]
+				        ,"Dimension","Website"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Website 3'[Website]
+				        ,"Dimension","Website"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //Product Category
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Products'[Product Category]
+				        ,"Dimension","Product Category"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Products 2'[Product Category]
+				        ,"Dimension","Product Category"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Products 3'[Product Category]
+				        ,"Dimension","Product Category"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //Product Type
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Products'[Product Type]
+				        ,"Dimension","Product Type"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Products 2'[Product Type]
+				        ,"Dimension","Product Type"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Products 3'[Product Type]
+				        ,"Dimension","Product Type"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //Product Major
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Products'[Product Major]
+				        ,"Dimension","Product Major"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Products 2'[Product Major]
+				        ,"Dimension","Product Major"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Products 3'[Product Major]
+				        ,"Dimension","Product Major"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //eCom Product Category
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Products'[eCom Product Category]
+				        ,"Dimension","eCom Product Category"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Products 2'[eCom Product Category]
+				        ,"Dimension","eCom Product Category"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Products 3'[eCom Product Category]
+				        ,"Dimension","eCom Product Category"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //is revenue affecting
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Orders'[Is Revenue Affecting?]
+				        ,"Dimension","Is Revenue Affecting?"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Orders 2'[Is Revenue Affecting?]
+				        ,"Dimension","Is Revenue Affecting?"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Orders 3'[Is Revenue Affecting?]
+				        ,"Dimension","Is Revenue Affecting?"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //Country
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Orders'[Country]
+				        ,"Dimension","Country"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Orders 2'[Country]
+				        ,"Dimension","Country"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Orders 3'[Country]
+				        ,"Dimension","Country"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //Delivery Address Country
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Orders'[Delivery Address Country]
+				        ,"Dimension","Delivery Address Country"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Orders 2'[Delivery Address Country]
+				        ,"Dimension","Delivery Address Country"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Orders 3'[Delivery Address Country]
+				        ,"Dimension","Delivery Address Country"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //Delivery Mode
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Orders'[Delivery Mode]
+				        ,"Dimension","Delivery Mode"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Orders 2'[Delivery Mode]
+				        ,"Dimension","Delivery Mode"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Orders 3'[Delivery Mode]
+				        ,"Dimension","Delivery Mode"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //Promo Code?
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Orders'[Promo Code?]
+				        ,"Dimension","Promo Code?"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Orders 2'[Promo Code?]
+				        ,"Dimension","Promo Code?"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Orders 3'[Promo Code?]
+				        ,"Dimension","Promo Code?"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //eCom Promotion Type
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Orders'[eCom Promotion Type]
+				        ,"Dimension","eCom Promotion Type"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Orders 2'[eCom Promotion Type]
+				        ,"Dimension","eCom Promotion Type"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Orders 3'[eCom Promotion Type]
+				        ,"Dimension","eCom Promotion Type"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //Payment Method
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Orders'[Payment Method]
+				        ,"Dimension","Payment Method"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Orders 2'[Payment Method]
+				        ,"Dimension","Payment Method"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Orders 3'[Payment Method]
+				        ,"Dimension","Payment Method"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //Discount Bucket
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Orders'[Discount Bucket]
+				        ,"Dimension","Discount Bucket"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Orders 2'[Discount Bucket]
+				        ,"Dimension","Discount Bucket"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Orders 3'[Discount Bucket]
+				        ,"Dimension","Discount Bucket"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //Shipping Warehouse
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Orders'[Shipping Warehouse]
+				        ,"Dimension","Shipping Warehouse"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Orders 2'[Shipping Warehouse]
+				        ,"Dimension","Shipping Warehouse"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Orders 3'[Shipping Warehouse]
+				        ,"Dimension","Shipping Warehouse"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				
+				    //Full Price/Promo/Clearance
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Orders'[Full Price/Promo/Clearance]
+				        ,"Dimension","Full Price/Promo/Clearance"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"eCom Demand Units",[eCom Demand Units]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units]
+				        ,"Total Units (eCom)",[Total Units (eCom)]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount],2)
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom)],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Orders 2'[Full Price/Promo/Clearance]
+				        ,"Dimension","Full Price/Promo/Clearance"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"eCom Demand Units",[eCom Demand Units 2]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 2]
+				        ,"Total Units (eCom)",[Total Units (eCom) 2]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 2]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 2],2)
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 2],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 2],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 2],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 2]
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Orders 3'[Full Price/Promo/Clearance]
+				        ,"Dimension","Full Price/Promo/Clearance"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"eCom Demand Units",[eCom Demand Units 3]
+				        ,"eCom Demand Cancelled Units",[eCom Demand Cancelled Units 3]
+				        ,"Total Units (eCom)",[Total Units (eCom) 3]
+				        ,"eCom Demand Transactions",[eCom Demand Transactions 3]
+				        ,"eCom Demand Discount",ROUND([eCom Demand Discount 3],2)
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"eCom Demand Gross Value",ROUND([eCom Demand Gross Value 3],2)
+				        ,"eCom Demand Cancelled Gross Value",ROUND([eCom Demand Cancelled Gross Value 3],2)
+				        ,"Total Net Value (eCom)",ROUND([Total Net Value (eCom) 3],2)
+				        ,"Footfall",0
+				        ,"Ordered Units",[Ordered Units 3]
+				    )
+				)
+
+	annotation PBI_Id = bfbb319266c0402989b6f5b1de1f669f
+

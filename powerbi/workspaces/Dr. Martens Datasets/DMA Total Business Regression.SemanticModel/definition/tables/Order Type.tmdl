@@ -1,0 +1,56 @@
+table 'Order Type'
+	isHidden
+	lineageTag: 8956ace5-1b61-4f5c-ab54-48fa81a9b1b6
+	sourceLineageTag: 1619d3d5-2d3d-48be-b347-3323dc23ce21
+
+	column SalesOrderPool_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 16abb716-3a63-4b5c-b983-9e8c95806ed1
+		sourceLineageTag: 4d0eb532-ed0d-441a-835a-86cc9ecc05bb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SalesOrderPool_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Type'
+		dataType: string
+		isHidden
+		lineageTag: dac4bcfa-3d37-41d4-a5a4-75ab5c09e272
+		sourceLineageTag: a44dff4f-e45a-48fa-ab3e-f37cea9858f0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Type ID'
+		dataType: string
+		isHidden
+		lineageTag: 968e9fea-6d3c-434f-a0ba-9b37cff9cef5
+		sourceLineageTag: c7940f74-a819-410f-9650-6097d36608ef
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel ID'
+		dataType: string
+		isHidden
+		lineageTag: bb8933b4-3c51-49a3-a3fb-598fa7af4cdf
+		sourceLineageTag: 01eadd44-76c2-4103-ba7c-88883fb96832
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel ID
+
+		annotation SummarizationSetBy = User
+
+	partition 'Order Type' = entity
+		mode: directQuery
+		source
+			entityName: Order Type
+			expressionSource: 'DirectQuery to AS - DMA Total Business'
+

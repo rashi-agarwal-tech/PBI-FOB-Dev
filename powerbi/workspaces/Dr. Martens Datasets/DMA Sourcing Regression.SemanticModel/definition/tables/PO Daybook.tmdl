@@ -1,0 +1,2597 @@
+table 'PO Daybook'
+	lineageTag: cd522686-225d-4c52-863d-3b4b9938044b
+	sourceLineageTag: 5971da37-2b1b-4ffa-a5c0-7b05761e8f02
+
+	column Product_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 1d1f2e57-f04d-4481-b957-75d360a10d0b
+		sourceLineageTag: 44c05ff6-d9d5-4408-8229-41724253369d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Territory_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 31ba3305-9af3-47b8-ab32-d697bac266f5
+		sourceLineageTag: 520c7b20-21eb-4bb3-b3b8-7d9b4ef31950
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Territory_Key
+
+		annotation SummarizationSetBy = User
+
+	column PONumberLine_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 7a8eea5a-c400-40d6-9248-e93e95e01b2b
+		sourceLineageTag: c2910ec5-917d-40b0-a867-787be654ebcf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PONumberLine_Key
+
+		annotation SummarizationSetBy = User
+
+	column OrderType_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 884a73f2-e19e-4996-8ea0-6c77b814accc
+		sourceLineageTag: b619a666-126e-4eb0-b723-7321d8f2731d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OrderType_Key
+
+		annotation SummarizationSetBy = User
+
+	column Supplier_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 2bf49c83-1672-4c70-a576-780127f65ba4
+		sourceLineageTag: dc4f472e-c606-4754-9fd1-015b2708a9eb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier_Key
+
+		annotation SummarizationSetBy = User
+
+	column Scheduled_Ex_Factory_Key
+		dataType: int64
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 1a8e346a-0e9b-49fd-be38-b167081d2b00
+		sourceLineageTag: b26a78f1-c07c-4320-b549-d3374a5ed982
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Scheduled_Ex_Factory_Key
+
+		annotation SummarizationSetBy = User
+
+	column Confirmed_Ex_Factory_Key
+		dataType: int64
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 091ea76c-2213-4396-846e-8c05b3da9575
+		sourceLineageTag: aa3cc15e-c79d-4563-bbe0-f33bd8ad5ebf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Confirmed_Ex_Factory_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Supplier Invoice Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: d718c497-8d7a-4ca6-ad05-2d410b12978e
+		sourceLineageTag: 732b1d7d-4c8c-431b-8330-5fc535d5b4c7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier Invoice Date
+
+		annotation SummarizationSetBy = User
+
+	column 'OrderID PO'
+		dataType: int64
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 8a3d1436-db26-46e4-a82f-8f7053437bae
+		sourceLineageTag: c7bd9f93-e6f7-4bc3-8f68-54ba54d6530d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: OrderID PO
+
+		annotation SummarizationSetBy = User
+
+	column 'Ex-Factory Reason Code'
+		dataType: string
+		lineageTag: fd34cd48-f498-4021-87ec-c6810863c304
+		sourceLineageTag: 7af4b657-49d5-4a54-9e28-838fec52aee1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Ex-Factory Reason Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Booking Number'
+		dataType: string
+		lineageTag: becfc644-d932-4835-9acf-119e0490ca23
+		sourceLineageTag: 95ba2e84-40aa-420b-be05-5c557cd55bd0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Booking Number
+
+		annotation SummarizationSetBy = User
+
+	column 'On Hand Number'
+		dataType: string
+		lineageTag: 6f5b2c99-6a50-426e-b020-028ac3fad5d1
+		sourceLineageTag: 688358e1-48e9-475f-a271-9990b3e03988
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: On Hand Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Variance Group'
+		dataType: string
+		isHidden
+		lineageTag: ea945c03-c3cd-4c38-a1c4-04659284c3c6
+		sourceLineageTag: a479202f-f672-4ed0-a96c-68c85469d0c2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Variance Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Variance Confirmed vs Approved'
+		dataType: int64
+		isHidden
+		lineageTag: 5ca32e0f-742d-4eb2-93a0-8652df1902b4
+		sourceLineageTag: 4ea54286-f9df-441f-b006-91bf716deaba
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Variance Confirmed vs Approved
+
+		annotation SummarizationSetBy = User
+
+	column 'Variance First To Last Xmit Date'
+		dataType: int64
+		isHidden
+		lineageTag: c6c2cfdd-8891-4524-a22e-79907e70f97f
+		sourceLineageTag: f0a3e199-801c-4733-8f7c-faa5db8146e4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Variance First To Last Xmit Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Location ID'
+		dataType: string
+		lineageTag: 4eeafe57-b977-438a-a9ad-76b72132299e
+		sourceLineageTag: ab6f22e6-09d3-4a93-9880-fd07368d3231
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Location ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Transmit Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: b6c5253f-2ac0-4435-b552-4660b4abec26
+		sourceLineageTag: 9ff96b50-8a54-4371-bba8-8b90687e19b4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transmit Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Last Xmit Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: e6a88985-4067-4e29-bdb8-97f471022242
+		sourceLineageTag: 0209a4ea-f053-4c29-b840-4b697951b654
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Last Xmit Date
+
+		annotation SummarizationSetBy = User
+
+	column Scheduled_Ex_Factory
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 5863434b-2cd1-4292-a3f6-ae9b8c0b14de
+		sourceLineageTag: 5e6a711e-0cc7-47de-b741-cd0f7c9a971d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Scheduled_Ex_Factory
+
+		annotation SummarizationSetBy = User
+
+	column 'Submitted Ex-Factory Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: f7b7446e-511a-4e6b-bbec-2c65bcb36388
+		sourceLineageTag: 4bc288c6-7045-41e4-add0-8a2a39699246
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Submitted Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Approved Ex-Factory Date'
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 23fb80c2-0e88-42fc-b1d0-95c1aa4b18b4
+		sourceLineageTag: 807bd18b-78ec-4a31-8388-f78843f0a77d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Approved Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column Confirmed_Ex_Factory
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 98cae06c-0585-4988-8049-6e68542f8d45
+		sourceLineageTag: 8e68ba82-9dc3-4400-9fa9-b3fddcfb0470
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Confirmed_Ex_Factory
+
+		annotation SummarizationSetBy = User
+
+	column 'Contractual Ex-Factory Date'
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 6361d9ce-44c4-4525-aea6-0fa261ce1d3c
+		sourceLineageTag: 4dcb6a8a-830a-47fe-b24b-96e41404d86a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Contractual Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Loaded - Original'
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 179b0bf5-f12f-4a07-bb1b-6399f8b5b09b
+		sourceLineageTag: 1061095a-e3c0-4ce1-95cc-7ec00882117e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Loaded - Original
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Loaded - Revised'
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 435e13dc-cab6-4402-bc96-861f3288f2ba
+		sourceLineageTag: ecc3f803-9227-4d44-98c3-7a179a9ee30e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Loaded - Revised
+
+		annotation SummarizationSetBy = User
+
+	column 'Acknowledgement Date'
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 5a877b5f-ee4e-4472-86f3-bde2fc9a2fb1
+		sourceLineageTag: 10a3b472-29fc-4e01-b352-b60d83f4ebdd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Acknowledgement Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Code'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: 55e855fb-1ced-4143-9316-7c2b28a5497e
+		sourceLineageTag: 1b32c840-0eb5-4c60-9144-8c3b86240506
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Days Air'
+		dataType: int64
+		lineageTag: 0ed21862-0ce3-473c-8d4c-b4ff43635ced
+		sourceLineageTag: a5bfd63d-aac3-4866-8ae3-cbb39431186d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Days Air
+
+		annotation SummarizationSetBy = User
+
+	column 'Days Sea'
+		dataType: int64
+		lineageTag: a4835fc7-733e-401f-ba06-81e91ef7d495
+		sourceLineageTag: b75bcad9-afe3-4b3a-ad3b-f9f7bd1664b8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Days Sea
+
+		annotation SummarizationSetBy = User
+
+	column XmitBy
+		dataType: string
+		lineageTag: b9596672-4d57-40bb-8c46-d3d6087ab5e8
+		sourceLineageTag: ff5d023e-905c-419f-b1ae-ce7c86b1ed59
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: XmitBy
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Method'
+		dataType: string
+		lineageTag: db31a676-da1c-407c-9056-2ef1b1328a2d
+		sourceLineageTag: 392ef69a-cc0f-48ec-a36c-d074185dc753
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Method
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Emailed'
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		displayFolder: ToBeRemovedGFF
+		lineageTag: da481aba-79cf-4bef-a211-6e18f436905d
+		sourceLineageTag: 80abc31e-1fad-4c52-b690-87dc517444a6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Emailed
+
+		annotation SummarizationSetBy = User
+
+	column 'Available Ship Date'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 74b992bc-8d23-4622-8783-07f7021b3b88
+		sourceLineageTag: d8c43ec5-68ce-4754-ab4a-508871d7b1bb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Available Ship Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Vessel Details'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: 28ea4e64-a637-4abe-9718-e6a4f7561b6a
+		sourceLineageTag: 18049fe9-6e18-41f4-bee9-b263676a8d5f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vessel Details
+
+		annotation SummarizationSetBy = User
+
+	column ETD
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 455453a2-a67c-44da-a511-0c2326b1832f
+		sourceLineageTag: bb90e470-9b61-4e1a-93c6-fecca866ef2e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ETD
+
+		annotation SummarizationSetBy = User
+
+	column ETA
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: fb4e922f-8f05-465d-bcaa-aa1dad90aa62
+		sourceLineageTag: 46d7c2ca-e317-4ef3-a135-3e3eec416e28
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ETA
+
+		annotation SummarizationSetBy = User
+
+	column 'Air Freight Liability'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: 01737c04-de75-4c3c-a305-305948004c12
+		sourceLineageTag: d0bfd88b-8156-4d00-92a0-eafd607819a4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Air Freight Liability
+
+		annotation SummarizationSetBy = User
+
+	column 'Shipping Comments'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: 6dee0290-345a-4033-b939-458f98a466c0
+		sourceLineageTag: d88a7bc6-2b87-4e66-a914-cabc26660415
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Shipping Comments
+
+		annotation SummarizationSetBy = User
+
+	column Liability
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: b6c82e74-1588-4817-b598-a2f93244fd9b
+		sourceLineageTag: 16fe87fd-5524-49fb-b8f6-5ab9d8bbeb29
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Liability
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Booking Made'
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 9a0f2da8-4d06-47b1-a847-50a08b2b69c0
+		sourceLineageTag: dcfbab04-2e6c-46c9-af45-69ac870f3bc1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Booking Made
+
+		annotation SummarizationSetBy = User
+
+	column 'Previous Ex-Factory Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: b8df1c4c-605f-4700-b4f4-3d7a7b1b64ef
+		sourceLineageTag: f020fd61-71ed-4cba-b8b3-a08edb2fb6b8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Previous Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Latest Ex-Factory Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 15f608af-74b9-4772-941b-c394098d6ce9
+		sourceLineageTag: 014af1c3-6ca6-4f4e-8c77-bac37fce23e7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Latest Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Currency'
+		dataType: string
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 085874a9-bb1d-4389-9f3d-08ae513ab5a6
+		sourceLineageTag: d2aec1ec-169b-40a4-bbec-8401bf68b02b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Currency
+
+		annotation SummarizationSetBy = User
+
+	column LINEAMOUNT_CONS_GBP
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: e9bdda57-dc81-47e7-8344-35d6353a4bf2
+		sourceLineageTag: 76a19e94-808a-40df-9be5-d36777da9943
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: LINEAMOUNT_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Daybook Item ID'
+		dataType: int64
+		displayFolder: 2. Shipment Details
+		lineageTag: 29f4e934-8528-41c4-98b8-66d5f86333b1
+		sourceLineageTag: 90b28517-6e1b-44dd-84b1-db5d1c1b1546
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Daybook Item ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Freight Method'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: 09c0c3b3-16cd-4f85-80ae-f75749518c55
+		sourceLineageTag: 46da8781-c719-43b4-b156-ea2bc407f0b8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Freight Method
+
+		annotation SummarizationSetBy = User
+
+	column 'Seal Number'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: 059011c4-c0a3-4c0f-86dc-14557e57570e
+		sourceLineageTag: 44052586-5107-43d9-9551-ee8cd31d0b5c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Seal Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Total Cube Source'
+		dataType: double
+		isHidden
+		displayFolder: 2. Shipment Details
+		lineageTag: 409a6866-bd8a-4e5f-9f48-1d507799203c
+		sourceLineageTag: ed3022c4-0fab-4a84-9d89-8b897f650074
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Total Cube Source
+
+		annotation SummarizationSetBy = User
+
+	column 'Gross Weight Source'
+		dataType: double
+		isHidden
+		displayFolder: 2. Shipment Details
+		lineageTag: 6d794368-d4f3-4937-94d5-bcee0d66a5d5
+		sourceLineageTag: 0a329e32-fe62-47e7-b38c-006a38be87d1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Gross Weight Source
+
+		annotation SummarizationSetBy = User
+
+	column 'Actual Arrival At Port'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 33a94a28-5e05-483e-98e0-1f9c45604dc0
+		sourceLineageTag: 432778e0-8e9c-4adc-baa8-a2caadb7dddd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Actual Arrival At Port
+
+		annotation SummarizationSetBy = User
+
+	column 'Actual Arrival At Warehouse'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: fc66c2a7-b844-42f5-82de-46a52be8316d
+		sourceLineageTag: f90c75dc-50e3-40cb-974b-f6639c4c7fcf
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Actual Arrival At Warehouse
+
+		annotation SummarizationSetBy = User
+
+	column 'Actual Departure'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 970fe511-e5d5-4ac5-a9d8-6eddae56bdc7
+		sourceLineageTag: d73d850b-ecef-4d4d-9c1e-a948c0328e7d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Actual Departure
+
+		annotation SummarizationSetBy = User
+
+	column 'Commercial Invoice Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 9ffa4fb9-3b64-4211-aea6-9fce1c5a0657
+		sourceLineageTag: 27a34efb-1673-4fbe-9e39-3493b6b3bea1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Commercial Invoice Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Estimated Arrival At Port'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 233a76cc-6937-4db9-afee-ceabae3938c1
+		sourceLineageTag: fd9aece4-7abe-442f-9567-d2f121a2e968
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Estimated Arrival At Port
+
+		annotation SummarizationSetBy = User
+
+	column 'Freight Received'
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 4c8c646a-5b42-4bed-b46a-1c6d1d70b53e
+		sourceLineageTag: 67eb18f6-f0c3-4d48-b18f-a4095725f505
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Freight Received
+
+		annotation SummarizationSetBy = User
+
+	column 'Picked Up At Origin'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: a056ab6c-a343-4d4a-9ba2-251c573b68ef
+		sourceLineageTag: e4726de9-7ffc-4238-bfd3-8cc22f8f1c4e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Picked Up At Origin
+
+		annotation SummarizationSetBy = User
+
+	column 'Vendor Placed OMB Booking'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 45a6125f-2432-45ff-b7c3-29579660f959
+		sourceLineageTag: e93de416-304c-41b9-89e7-93f48c22da18
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vendor Placed OMB Booking
+
+		annotation SummarizationSetBy = User
+
+	column 'Destination (Port)'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: 94b96f51-e522-42b0-b245-80dbb09fe1ac
+		sourceLineageTag: 9a090315-2c63-4f0a-9646-7a71f726d820
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Destination (Port)
+
+		annotation SummarizationSetBy = User
+
+	column 'Origin (Port)'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: 808daaff-0964-4d3e-be94-7e157afb58a3
+		sourceLineageTag: 5b95134f-bd56-4b32-9215-7617ed0726a3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Origin (Port)
+
+		annotation SummarizationSetBy = User
+
+	column 'Vessel Name'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: a362f584-af96-4e8a-9c2f-5ab4712737b1
+		sourceLineageTag: e340670e-1137-4e1a-8d76-1d6cde0adb8d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vessel Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Voyage Number'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: ab4b8b4e-5e82-46fa-8501-5fbae438009c
+		sourceLineageTag: 4f73b953-4231-464a-8f90-a00a4872a690
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Voyage Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Created Date (PO)'
+		dataType: dateTime
+		isHidden
+		formatString: General Number
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 56010baf-c09a-4990-b8f9-b1e777f9056d
+		sourceLineageTag: 4516dd05-a713-4197-bb77-3b29c6bd4cf5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Created Date (PO)
+
+		annotation SummarizationSetBy = User
+
+	column 'Packing Slip ID'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: 20526a49-5756-43ee-bfc6-1d17b3623674
+		sourceLineageTag: 218dbe3b-80bf-41d5-9322-a898831c4b41
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Packing Slip ID
+
+		annotation SummarizationSetBy = User
+
+	column QuantityReceived
+		dataType: double
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 6955d5ff-3430-405c-be6f-4fc2f6797d90
+		sourceLineageTag: 127c2fb5-3326-4bcb-bfea-7dee8b64858b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: QuantityReceived
+
+		annotation SummarizationSetBy = User
+
+	column 'Shipment Number'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: dac74f9b-f895-4d35-951c-2e1eaf7afe0d
+		sourceLineageTag: 32094996-aa31-44ed-b094-de1d293d97d9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Shipment Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Container Number'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: 6b9fa75f-26ba-4ad3-97fa-fc7feeacb298
+		sourceLineageTag: 1d99382d-5a0d-473b-b4a3-0b926c59483b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Container Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Container Seal'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: 22f23beb-c939-46de-9fe5-a9299eb043d0
+		sourceLineageTag: 332af3cc-c242-4ae0-8ce6-d37e0b034718
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Container Seal
+
+		annotation SummarizationSetBy = User
+
+	column 'Container Size'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: 22a03091-4c48-493b-be5a-63885485c8ef
+		sourceLineageTag: 44b73d7e-8da0-410d-9bb7-f5e96ace5d28
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Container Size
+
+		annotation SummarizationSetBy = User
+
+	column 'Move Type'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: b1de033f-3b30-4198-b718-bb425486ab49
+		sourceLineageTag: 66b17938-efe2-4d37-b60a-badd59045d65
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Move Type
+
+		annotation SummarizationSetBy = User
+
+	column Weight
+		dataType: double
+		displayFolder: 2. Shipment Details
+		lineageTag: 7f05ed7e-bb19-4433-9946-4447ec92f587
+		sourceLineageTag: 1fe21587-0de0-4dd6-8531-baaae3e88c62
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Weight
+
+		annotation SummarizationSetBy = User
+
+	column 'Weight UOM'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: fc2cfeb9-7288-4921-ae31-2a6e06fc302b
+		sourceLineageTag: 3944adfa-6e98-4d83-828e-a711918778a7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Weight UOM
+
+		annotation SummarizationSetBy = User
+
+	column Volume
+		dataType: double
+		displayFolder: 2. Shipment Details
+		lineageTag: ab3e05f9-a91e-4711-83ca-721ee3516fef
+		sourceLineageTag: 4804ec56-2d81-4212-a408-7d0d5f74a4ed
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Volume
+
+		annotation SummarizationSetBy = User
+
+	column 'Volume UOM'
+		dataType: string
+		displayFolder: 2. Shipment Details
+		lineageTag: 56ea6e34-632c-4494-ba66-dd11fe0e6d3c
+		sourceLineageTag: 24e90b7f-5866-4220-bd64-8ff291f4e986
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Volume UOM
+
+		annotation SummarizationSetBy = User
+
+	column 'Unit Price'
+		dataType: double
+		displayFolder: 2. Shipment Details
+		lineageTag: abfd8340-ec2b-4486-bde3-e783b974c800
+		sourceLineageTag: 7bfdf0a0-9702-4c02-9f8e-2c6fca6f593f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Unit Price
+
+		annotation SummarizationSetBy = User
+
+	column 'DC Name'
+		dataType: string
+		lineageTag: 175c5167-d0ba-4a97-87d1-27f19ba99ed1
+		sourceLineageTag: 180a4554-346f-4fb3-b997-d9f1697b5c14
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DC Name
+
+		annotation SummarizationSetBy = User
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: b8ff7b73-4968-4359-aeec-b79fbe00613b
+		sourceLineageTag: c376d889-b45a-49a2-bb93-2c571ee7efe7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		annotation SummarizationSetBy = User
+
+	column Method_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 800a6bd5-02a6-4524-80a2-4d262b06ab05
+		sourceLineageTag: 13c3456e-6bba-4f6f-9063-8be4dcaaebc2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Method_Key
+
+		annotation SummarizationSetBy = User
+
+	column OrderStatus_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 386198e1-82a1-44f5-930d-7dd8ab9bc9af
+		sourceLineageTag: 249df24e-f103-49eb-a601-c35950286660
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OrderStatus_Key
+
+		annotation SummarizationSetBy = User
+
+	column InvoiceDate_Key
+		dataType: int64
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 0a0b8535-42ec-416c-8b84-d6deae3d3340
+		sourceLineageTag: 95ad76bb-0bdf-4c4b-a3a9-4809b5b75aa8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: InvoiceDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column ActualExFactoryDate_Key
+		dataType: int64
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 35b706c6-e3f5-4452-944c-65d52dac1d6f
+		sourceLineageTag: d26e5c10-5c89-4cac-95f7-37d087303cdb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ActualExFactoryDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column NewPurchasingSeason_Key
+		dataType: int64
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 5b2b361b-488b-47b6-bc36-ceacf60be993
+		sourceLineageTag: fe3d0710-3e74-4104-bc39-89347cf5afca
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NewPurchasingSeason_Key
+
+		annotation SummarizationSetBy = User
+
+	column ExFactoryDate_Key
+		dataType: int64
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 65452d48-31de-4ba2-b335-12d9165edf52
+		sourceLineageTag: fa13dc68-3b52-41a3-a007-8f053ac8fbff
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ExFactoryDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column Qty_Invoiced
+		dataType: int64
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 06d790d9-7489-47b3-9a66-524d9cc7a4aa
+		sourceLineageTag: 8bdf6ef5-48a4-451f-b038-3159af3c8221
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Qty_Invoiced
+
+		annotation SummarizationSetBy = User
+
+	column Qty_Ordered
+		dataType: int64
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 6206f2e1-4395-4022-b6d7-149b081c499f
+		sourceLineageTag: b814c5fc-f479-40de-a4e1-6ab82eb524da
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Qty_Ordered
+
+		annotation SummarizationSetBy = User
+
+	column Qty_Approved
+		dataType: int64
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: d11179b0-7cba-4ed7-9377-b83aba822a70
+		sourceLineageTag: b45962bb-86a1-4e7f-bdfe-b083bc6b53d7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Qty_Approved
+
+		annotation SummarizationSetBy = User
+
+	column Qty_PlacedToFcty
+		dataType: int64
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: d76f5b8a-0f2f-46d0-b46a-ef4a3f2722c9
+		sourceLineageTag: ad0d1564-194f-4057-8ca9-381a1f80b0f4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Qty_PlacedToFcty
+
+		annotation SummarizationSetBy = User
+
+	column Qty_Rejected
+		dataType: int64
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 663e87b6-85e8-430e-a7e8-7b4e6d058b64
+		sourceLineageTag: b5b3fc06-100a-4107-8cfe-1b1334451055
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Qty_Rejected
+
+		annotation SummarizationSetBy = User
+
+	column QtyToBeShipped
+		dataType: int64
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 6eaa09ac-8b49-45cd-ad7a-b28cd0818e92
+		sourceLineageTag: 5143d6e0-fbdc-4cf5-bccc-fd6847469dfd
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: QtyToBeShipped
+
+		annotation SummarizationSetBy = User
+
+	column 'Production Status'
+		dataType: double
+		isHidden
+		lineageTag: fac4ccc2-62b5-47fc-9155-716089738cc1
+		sourceLineageTag: 0adeaa4d-aa67-4ce2-9592-a99aa952fa86
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Production Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Shipped Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: 853c750a-8790-4274-8dbc-aa66747e558b
+		sourceLineageTag: acedabec-1aad-4ffb-9b93-3910ee6eea4f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Shipped Date
+
+		annotation SummarizationSetBy = User
+
+	column '06. First Xmit Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: b0cea593-c043-42d9-a941-e8de847aa2b3
+		sourceLineageTag: 52239bc2-b779-47a5-8f11-fe50d7f6a97e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 06. First Xmit Date
+
+		annotation SummarizationSetBy = User
+
+	column '02. Date Loaded - Original'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: ff729712-85f4-4d4d-b4aa-e8461a1eaca4
+		sourceLineageTag: edfdb42f-8a7f-4530-869e-0efa0f85cc8d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 02. Date Loaded - Original
+
+		annotation SummarizationSetBy = User
+
+	column '03. Date Loaded - Revised'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 75423258-5115-4d62-ae79-c85329fc7476
+		sourceLineageTag: 2af83ca9-a9f2-4044-b6ae-ab35a069bc3c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 03. Date Loaded - Revised
+
+		annotation SummarizationSetBy = User
+
+	column '04. Submitted Ex-Factory Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 3ce1098c-27cb-4843-9c5a-af2a915a611a
+		sourceLineageTag: 50d5cb7b-e687-4525-a7ef-82c0f2adb389
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 04. Submitted Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column '05. Approved Ex-Factory Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 2ded077f-ac5f-4055-bee7-856d09f0c0a3
+		sourceLineageTag: ae3478b3-ee9f-4c98-b865-73b378d0c6af
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 05. Approved Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column '07. Last Xmit Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 18149963-a140-4045-8aae-3c23ff72ab55
+		sourceLineageTag: 39de1351-7e76-4498-ae6c-e5009132b3ad
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 07. Last Xmit Date
+
+		annotation SummarizationSetBy = User
+
+	column '08. Acknowledgement Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 5b2a5cb8-de9f-4060-92ee-39928d88f256
+		sourceLineageTag: 0134fc53-5c3b-49ba-88bf-b92ec113d70c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 08. Acknowledgement Date
+
+		annotation SummarizationSetBy = User
+
+	column '09. Contractual Ex-Factory Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 4e741f81-dd20-4249-ac95-8bb5e52934b4
+		sourceLineageTag: e27d6bb7-de4f-4538-b664-9e57f4c7d9bb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 09. Contractual Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column '10. Previous Ex-Factory Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: f5ad9709-dcd6-4ea7-9400-dcf92d4655d3
+		sourceLineageTag: 1306f42c-13a1-444f-8c9a-3379ea83105f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 10. Previous Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column '11. Latest Ex-Factory Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 9a19f6bf-0d3e-4d8b-b2e3-30a6536286a6
+		sourceLineageTag: 0b154e5c-9f4e-41b9-a06d-339e1c038c89
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 11. Latest Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column '12. Available Ship Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 4c53a954-41e0-413f-b0a7-a10c788691a4
+		sourceLineageTag: feec1f2e-9b4f-43e7-93bf-2e90ad9ac910
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 12. Available Ship Date
+
+		annotation SummarizationSetBy = User
+
+	column '13. Date Emailed'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 26392990-705c-41d4-8470-1c9b2d493635
+		sourceLineageTag: 0d4df452-d57c-476c-ba2d-01774fa29e56
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 13. Date Emailed
+
+		annotation SummarizationSetBy = User
+
+	column '14. Date Booking Made'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 9897e75e-3a81-449d-b4de-20bb7ba5ef1d
+		sourceLineageTag: e88158ff-df49-4ad6-a13c-d7cf627be733
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 14. Date Booking Made
+
+		annotation SummarizationSetBy = User
+
+	column '15. Vendor Placed OMB Booking'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 25506b80-b62b-4ff6-9086-946af23621f9
+		sourceLineageTag: b6983a44-747e-41c0-9dff-faab72390a6b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 15. Vendor Placed OMB Booking
+
+		annotation SummarizationSetBy = User
+
+	column '15b. Planned Ex-Factory date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 87e33443-6f2e-43f6-9ce4-afdb6941835b
+		sourceLineageTag: 684b6e18-a9c4-4b89-aefe-97b5a137f0c0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 15b. Planned Ex-Factory date
+
+		annotation SummarizationSetBy = User
+
+	column '16. Picked Up At Origin'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 63585968-b138-4a43-88b9-8cf25ed14850
+		sourceLineageTag: 74d219a4-61e8-46f8-a688-8e05b802be8a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 16. Picked Up At Origin
+
+		annotation SummarizationSetBy = User
+
+	column '17. Freight Received Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 39d56b07-40ac-4665-afd9-86f9152b1d75
+		sourceLineageTag: 08802e24-f7b1-4431-9d77-ffe3841dd4d4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 17. Freight Received Date
+
+		annotation SummarizationSetBy = User
+
+	column '18. Supplier Invoice Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: b92b96da-3921-447f-8e73-cfd055afe179
+		sourceLineageTag: c878c9bd-4668-400d-95b3-39ccc699f74e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 18. Supplier Invoice Date
+
+		annotation SummarizationSetBy = User
+
+	column '20. ETD'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 594bff1e-41c1-48db-bce4-c486236c98d3
+		sourceLineageTag: defca844-9a8f-42c5-95dd-1abcc106112b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 20. ETD
+
+		annotation SummarizationSetBy = User
+
+	column '21. Actual Departure Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 0e4e4a9a-739f-4e7e-922b-016266fd2f20
+		sourceLineageTag: 61980274-dbf8-4a7c-b9dc-e9369dc687d3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 21. Actual Departure Date
+
+		annotation SummarizationSetBy = User
+
+	column '22. ETA'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 08f0ec97-e9a3-4b8d-9aff-85199cd8a045
+		sourceLineageTag: eba21849-dba0-4608-ae48-6d9134173de0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 22. ETA
+
+		annotation SummarizationSetBy = User
+
+	column '23. Estimated Arrival At Port'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 133cd56c-6baf-4bbf-b73a-9f9001cbef71
+		sourceLineageTag: 7a2374f5-706a-4670-9fbf-934ac183bcce
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 23. Estimated Arrival At Port
+
+		annotation SummarizationSetBy = User
+
+	column '24. Actual Arrival At Port'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 2871c310-2b96-4a12-aa2d-406fa08d9061
+		sourceLineageTag: bb35d50e-a87b-408c-ad41-bdb782913990
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 24. Actual Arrival At Port
+
+		annotation SummarizationSetBy = User
+
+	column '27b. Estimated Arrival At Warehouse'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 439bf2ba-d3d1-47a7-86e3-4514ac69244a
+		sourceLineageTag: 0555b8f7-1f21-4276-99e7-d7e567b38ecc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 27b. Estimated Arrival At Warehouse
+
+		annotation SummarizationSetBy = User
+
+	column '26. Earliest Confirmed Delivery'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 83e4442d-a3af-4058-bc1e-4b08eaae2b4e
+		sourceLineageTag: a987af5c-ec29-4170-a6f8-6877b05647f9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 26. Earliest Confirmed Delivery
+
+		annotation SummarizationSetBy = User
+
+	column '29. PO Receipt Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: b94b7125-f245-4bdd-99dd-a14646dd2934
+		sourceLineageTag: 3acd6cbe-977d-495f-8c4a-dc7a26ae95d6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 29. PO Receipt Date
+
+		annotation SummarizationSetBy = User
+
+	column '28. Actual Arrival At Warehouse'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 05ad2e80-d485-4402-96ea-4726d2718ef7
+		sourceLineageTag: ac4503c6-cb2e-437c-89ad-83ffcffa4f44
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 28. Actual Arrival At Warehouse
+
+		annotation SummarizationSetBy = User
+
+	column '01. Created Date (PO)'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: c1ba6a97-c162-4a00-993f-0848f6809311
+		sourceLineageTag: 66f66e03-464f-44f0-9f17-f5ce33402864
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 01. Created Date (PO)
+
+		annotation SummarizationSetBy = User
+
+	column '25. Requested Delivery Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 70557c1d-1ff8-4bff-93fc-f39843cf2910
+		sourceLineageTag: a5b04bf5-3ee4-4921-b1c3-2f0ab84bef97
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 25. Requested Delivery Date
+
+		annotation SummarizationSetBy = User
+
+	column '30. PO Invoice Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 22f02dad-6ca7-41ee-a3fc-976993ce4d5f
+		sourceLineageTag: ad77171f-cca4-4392-a163-9b0e7ce97764
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 30. PO Invoice Date
+
+		annotation SummarizationSetBy = User
+
+	column '15a. Actual Ex-Factory Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 191de9d5-03cf-424a-a883-6678839af6bf
+		sourceLineageTag: bc211a62-2fd4-47e5-8d79-74ad2e2e7afa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 15a. Actual Ex-Factory Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: a143f1e8-d2b0-48e9-99a5-fbe5eb6f6bcf
+		sourceLineageTag: c4e63293-c5db-4824-aa57-b749b8a35e71
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Date Of Update'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 7450ded4-7148-4268-939b-080f5090313d
+		sourceLineageTag: 0104a180-fc02-4b97-8e28-d29f658a3e95
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Of Update
+
+		annotation SummarizationSetBy = User
+
+	column '27a. Booked Into Warehouse'
+		dataType: string
+		displayFolder: 1. Dates
+		lineageTag: ec00bcca-2e60-426a-9762-37e1a4e54236
+		sourceLineageTag: 3116d332-e980-40a4-ba90-cd39a2f29c72
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 27a. Booked Into Warehouse
+
+		annotation SummarizationSetBy = User
+
+	column '29a. Actual Receipt Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 6dfde578-321f-43fd-9010-599e57c1e307
+		sourceLineageTag: 21782cac-516d-4227-8807-79f132fe15e1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 29a. Actual Receipt Date
+
+		annotation SummarizationSetBy = User
+
+	column '01. Target PO Drop'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 3. Target Dates
+		lineageTag: 4ccab8a8-b6a4-4007-b3dc-40c6146e1f28
+		sourceLineageTag: 67c25123-e06b-4ee0-91ed-d65a291d6e3d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 01. Target PO Drop
+
+		annotation SummarizationSetBy = User
+
+	column '02. Target XF'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 3. Target Dates
+		lineageTag: 1e96035f-c845-40b5-a583-ff839e9391bb
+		sourceLineageTag: 13ca4920-0ed6-4018-81e4-31a68852f3f9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 02. Target XF
+
+		annotation SummarizationSetBy = User
+
+	column '03. Target In DC'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 3. Target Dates
+		lineageTag: 31bd43f9-2843-4d96-afeb-49e876f8fbb8
+		sourceLineageTag: b2221243-2f87-4668-9b76-ea7adfbca225
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 03. Target In DC
+
+		annotation SummarizationSetBy = User
+
+	column '01a. PO Drop no. of days'
+		dataType: int64
+		displayFolder: 3. Target Dates
+		lineageTag: bd17a95e-50f4-4572-8817-8cd6e9463779
+		sourceLineageTag: 4bef73a5-5bb7-4ac7-ba91-4cf89e26b3a2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: 01a. PO Drop no. of days
+
+		annotation SummarizationSetBy = User
+
+	column '01b. OT PO Drop Grouping'
+		dataType: string
+		displayFolder: 3. Target Dates
+		lineageTag: d521b6f7-ce27-4dcf-8b76-0ad7ccc010bd
+		sourceLineageTag: 8f795ede-14f3-469f-b2bc-56a08d51fb0d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 01b. OT PO Drop Grouping
+
+		annotation SummarizationSetBy = User
+
+	column '02a. OT XF n. of days'
+		dataType: int64
+		displayFolder: 3. Target Dates
+		lineageTag: 39f7a52c-92a3-4b54-8c78-2616d3573e33
+		sourceLineageTag: 5040776d-c3d9-4884-9d7a-ac0d788c2728
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: 02a. OT XF n. of days
+
+		annotation SummarizationSetBy = User
+
+	column '02b. OT XF Grouping'
+		dataType: string
+		displayFolder: 3. Target Dates
+		lineageTag: 2cdb7c87-9607-4742-b363-0d52e9ec1672
+		sourceLineageTag: 7bab3c7a-9fea-451d-a05c-32ba29ff2c35
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 02b. OT XF Grouping
+
+		annotation SummarizationSetBy = User
+
+	column '04a. OT Receipt n. of days'
+		dataType: int64
+		displayFolder: 3. Target Dates
+		lineageTag: fa0d7e61-4bf6-4fa3-b575-219559d2ead5
+		sourceLineageTag: 79581e74-105f-4be9-9622-6e159f4e8ba4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: 04a. OT Receipt n. of days
+
+		annotation SummarizationSetBy = User
+
+	column '04b. OT Receipt Grouping'
+		dataType: string
+		displayFolder: 3. Target Dates
+		lineageTag: 9bf0e3f3-602d-479d-97b8-f1f997460e4d
+		sourceLineageTag: 092ae6b0-85ce-4a70-bb84-8956b5beb26a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 04b. OT Receipt Grouping
+
+		annotation SummarizationSetBy = User
+
+	column 'OT Avail Grouping (split)'
+		dataType: string
+		lineageTag: 1f479b21-5a94-4275-bb3e-b5c1176fffb9
+		sourceLineageTag: da22194e-96c8-46f6-af7c-1581ca911422
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OT Avail Grouping (split)
+
+		annotation SummarizationSetBy = User
+
+	column 'OT Supplier Grouping (split)'
+		dataType: string
+		lineageTag: 55a3c712-a396-43be-8de1-50a7e3da3a9c
+		sourceLineageTag: 6c965f8f-43dd-4e28-a69e-dd9ecf425aff
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OT Supplier Grouping (split)
+
+		annotation SummarizationSetBy = User
+
+	column 'Ship To'
+		dataType: string
+		lineageTag: 2a869eae-4a35-45c6-9564-e570ee58e5da
+		sourceLineageTag: 7ede4c80-1e8d-45f7-ab59-1b0403fa4bc1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Ship To
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Number'
+		dataType: string
+		lineageTag: f59e4b5c-2627-4fed-860a-6950ebddc536
+		sourceLineageTag: 42d2cf31-6561-436c-9597-77c12a008d73
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Number
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Line'
+		dataType: int64
+		lineageTag: 43178f51-c456-4e45-8c62-ebc7f98b5139
+		sourceLineageTag: 3ccb273f-3c62-45df-90c1-1a44cafacf22
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: PO Line
+
+		annotation SummarizationSetBy = User
+
+	column Status
+		dataType: string
+		lineageTag: 05aaabb1-aec5-4b38-b6e7-67b0aaf90a9d
+		sourceLineageTag: b130ef0f-7347-43b0-9857-66e30158bfed
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Unit Cost'
+		dataType: double
+		lineageTag: 466f741b-140a-4e56-8176-a15bb35a8e7b
+		sourceLineageTag: a08cbf85-06ad-4114-8b17-cd4e960c8c6d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Unit Cost
+
+		annotation SummarizationSetBy = User
+
+	column 'Shipment Line ID'
+		dataType: int64
+		lineageTag: e04d0887-4dc9-4d6b-afef-e2d5bfe0d636
+		sourceLineageTag: 33841556-5c37-4ba3-9539-db613d3c75b8
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Shipment Line ID
+
+		annotation SummarizationSetBy = User
+
+	column Priority
+		dataType: string
+		lineageTag: 035a31d1-2b39-4c7e-9bb2-efa7df5fac8f
+		sourceLineageTag: 336662a8-5adf-46ef-943c-bea08652e2f6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Priority
+
+		annotation SummarizationSetBy = User
+
+	column 'Is Priority'
+		dataType: string
+		lineageTag: 96a234d0-ddb5-4613-95bd-5118cdee35e4
+		sourceLineageTag: 6afba0bc-9669-4c68-ae37-779a5e17bc17
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Is Priority
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Reference Number'
+		dataType: string
+		lineageTag: 9cca89c7-7338-459b-92e9-d2a3a6ec5588
+		sourceLineageTag: 6801d0e9-4c0b-4f0d-bc49-9143a4512fe4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Reference Number
+
+		annotation SummarizationSetBy = User
+
+	column 'General Comments'
+		dataType: string
+		lineageTag: b637c8c9-992f-4838-a204-aeddb491e2cc
+		sourceLineageTag: 94d3898a-905b-4c7f-b3f3-1e9752ea8aa1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: General Comments
+
+		annotation SummarizationSetBy = User
+
+	column 'Supplier Invoice Number (Shipment)'
+		dataType: string
+		lineageTag: 71ca3e9c-fbd6-49e7-8586-b161877b3573
+		sourceLineageTag: a0cbc574-c1a2-4a48-8ef9-6abd67f03bb4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier Invoice Number (Shipment)
+
+		annotation SummarizationSetBy = User
+
+	column 'Credit Note Number'
+		dataType: string
+		lineageTag: e2e34826-ca3b-445a-bc31-17f1590cd46e
+		sourceLineageTag: a5eb69cd-7290-470b-987a-2b6e44f4c742
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Credit Note Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Number'
+		dataType: string
+		lineageTag: 80ad1025-eff1-4eaf-a935-6fc98736a6f6
+		sourceLineageTag: 3fb7a55e-4142-42d8-a00b-184c8a8ca804
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Delivery Address Name'
+		dataType: string
+		lineageTag: a57a17a2-d8ea-4a7f-8671-ed8dc0b24f63
+		sourceLineageTag: 8b2cfa7b-ed8d-4744-8750-e6a9bc5f1e12
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delivery Address Name
+
+		annotation SummarizationSetBy = User
+
+	column Region
+		dataType: string
+		lineageTag: b1f44c0c-0587-4616-b0ce-3b65ddcaa924
+		sourceLineageTag: 10cd80e6-c0c3-4a4e-a620-abcd8e18a65d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = User
+
+	column 'Country (Ordering)'
+		dataType: string
+		lineageTag: 13cb2adc-3996-4185-bba6-08d6e002c990
+		sourceLineageTag: 53cdb8b3-c3f4-4ac1-85d5-57198dba5bcc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country (Ordering)
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: d3da0be6-0fb9-4b4f-9fa5-24a8ae1f1aa3
+		sourceLineageTag: 9ec557cf-c1c0-41da-bda0-373816c721ea
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Name
+
+		annotation SummarizationSetBy = User
+
+	column '11b. Estimated Cargo Ready date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: c076b065-d999-41d1-bffb-02991087577e
+		sourceLineageTag: ea063f2e-9873-4564-9277-5e0ea598c0d4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 11b. Estimated Cargo Ready date
+
+		annotation SummarizationSetBy = User
+
+	column '29b. Actual/Estimated Receipt Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Dates
+		lineageTag: 4a39e76d-5df3-48ac-97c3-3ab2cc608456
+		sourceLineageTag: d93b4364-345b-4846-af54-8a0f1904407e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 29b. Actual/Estimated Receipt Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Contractual Ex-Factory Reason'
+		dataType: string
+		lineageTag: 1faa82aa-097b-4328-b5e7-a19153bcc511
+		sourceLineageTag: bc658120-cdca-45df-a256-c738b6aecc0b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Contractual Ex-Factory Reason
+
+		annotation SummarizationSetBy = User
+
+	column Ownership
+		dataType: string
+		lineageTag: 571f77a7-0b83-4e8e-9332-ac485516295b
+		sourceLineageTag: 6b57d8d9-8045-497d-9e67-c602ba29f46f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Ownership
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Header PO'
+		dataType: string
+		lineageTag: 383a3664-9f2e-4dd1-ac41-f5de0103de8e
+		sourceLineageTag: e4790eb4-3584-45ec-81c6-221c27da10c5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Header PO
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer PO'
+		dataType: string
+		lineageTag: dea28203-bb41-4d9d-8cef-baef79d2cf65
+		sourceLineageTag: ef0e5bcf-f73c-4782-be6d-6a6e3aff0aea
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer PO
+
+		annotation SummarizationSetBy = User
+
+	column 'Sales Order Number'
+		dataType: string
+		lineageTag: d1555711-b670-4afb-8488-c13ce4b3c259
+		sourceLineageTag: f515fed0-cdaf-4ceb-a95c-53b651fdcf74
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Order Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Highest Selling Status'
+		dataType: string
+		lineageTag: 47617889-da17-4a32-852b-4cc64667aac0
+		sourceLineageTag: fb71ec1d-df31-4b19-a3de-6d9d513e1ca7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Highest Selling Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Selling Status At PO Creation'
+		dataType: string
+		lineageTag: 98b47436-f938-4c20-b14d-f40dbffd890e
+		sourceLineageTag: 21291dd9-1467-4e11-b077-a0fcf9312ffb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selling Status At PO Creation
+
+		annotation SummarizationSetBy = User
+
+	column 'Selling Status Group'
+		dataType: string
+		lineageTag: eb421e96-e559-43d4-b38b-754eb4738927
+		sourceLineageTag: 04b2d73f-1d6e-4b51-ae47-e8f888df8fb3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selling Status Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Earliest Confirmed Delivery Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 9904c1c5-2f5d-43d9-a8da-e84368fc3316
+		sourceLineageTag: 9577b93e-c743-417a-918d-d7dab5947fcd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Earliest Confirmed Delivery Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Pipeline Stage'
+		dataType: string
+		lineageTag: bca7bf4b-5421-448b-bd75-82594d15cbf2
+		sourceLineageTag: 421b1efe-4c29-469d-8c49-50e89f8f7b1a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pipeline Stage
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Status'
+		dataType: string
+		isHidden
+		lineageTag: 991224ae-b4c0-4340-8e97-db32a3b20588
+		sourceLineageTag: 3e4ac1d5-91c6-47e6-a895-9a427cd860ad
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Tariff Description'
+		dataType: string
+		lineageTag: 16dd4b39-f33b-40d9-9762-64c28e2b67a3
+		sourceLineageTag: e237c3fc-c09b-4eb2-934b-577771ab9417
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Tariff Description
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Currency'
+		dataType: string
+		isHidden
+		lineageTag: 47d4caad-35f0-4d55-94d8-d743cbd46f68
+		sourceLineageTag: 8248d2e6-7b07-41de-b031-246cc60f5a0b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SO Currency
+
+		annotation SummarizationSetBy = User
+
+	column 'SO UnitPrice'
+		dataType: double
+		isHidden
+		lineageTag: e190af0e-00e4-4cf4-9dc6-46b1f0c57be3
+		sourceLineageTag: ef307541-6cb4-48c0-a79d-0cab6c57ed3f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: SO UnitPrice
+
+		annotation SummarizationSetBy = User
+
+	column 'Supplier Country'
+		dataType: string
+		lineageTag: d3fa51d0-b947-4b10-816d-bba2c2357c38
+		sourceLineageTag: 31776281-9f26-4027-a6f0-488fbfcffc4b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Is Late Shipment'
+		dataType: string
+		lineageTag: ef09455e-48a2-4699-be51-6ada93d4249d
+		sourceLineageTag: 40438c33-62c9-413e-abb3-fce33e8e5ada
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Is Late Shipment
+
+		annotation SummarizationSetBy = User
+
+	column 'Is Dispatched'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c32a4db4-fae9-4efc-a3a5-5eedef56ccb6
+		sourceLineageTag: 5c2a4597-db7b-4078-9918-0bebf6934611
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Is Dispatched
+
+		annotation SummarizationSetBy = User
+
+	column 'Booking Status'
+		dataType: string
+		lineageTag: b4d94d5b-2428-4499-808c-7d28ccbdcae3
+		sourceLineageTag: 2f01d0f6-d1d7-43e9-8fd4-35c0919d5a79
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Booking Status
+
+		annotation SummarizationSetBy = User
+
+	column 'DM Ownership'
+		dataType: string
+		lineageTag: 2efcc7d2-d253-4898-a0cd-1832ed241f67
+		sourceLineageTag: a9e6a916-a550-4a9e-ba00-2f3968c9c7a0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DM Ownership
+
+		annotation SummarizationSetBy = User
+
+	column '_Is Prebuy?'
+		dataType: int64
+		formatString: 0
+		lineageTag: 250dd291-109b-4108-8334-1a4ef6987c0c
+		sourceLineageTag: 72e54ebb-a588-4134-84c7-d3fbb7e6c519
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _Is Prebuy?
+
+		annotation SummarizationSetBy = User
+
+	column '_Order Status Group'
+		dataType: string
+		lineageTag: 5f3d6a3d-a12b-45a3-ae42-ec7686215f82
+		sourceLineageTag: edc58a13-74ab-42b5-868a-955a6268567f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _Order Status Group
+
+		annotation SummarizationSetBy = User
+
+	column '_Is Backlog?'
+		dataType: int64
+		lineageTag: 16394cf8-d290-4f29-b66a-0f3b356a7c35
+		sourceLineageTag: 320ac2bf-80d0-4e3a-8bb6-8c4671fc6cde
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _Is Backlog?
+
+		annotation SummarizationSetBy = User
+
+	column '_Is Backlog(Available)?'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0732326a-36a0-4d4a-98b9-120640acb19c
+		sourceLineageTag: 4fbc4d16-fbb9-4d1a-8de2-9de6e2b47246
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _Is Backlog(Available)?
+
+		annotation SummarizationSetBy = User
+
+	column '_OT Ackno n.of days'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c9224b2-7cb2-4d40-a68f-6c446257d938
+		sourceLineageTag: 7a5607f3-a1d5-43b2-8a7f-7b832895c27b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _OT Ackno n.of days
+
+		annotation SummarizationSetBy = User
+
+	column '_OT Ackno Grouping'
+		dataType: string
+		lineageTag: d3a99b64-a523-465c-b690-12a968b3efb9
+		sourceLineageTag: 8e1cfd1e-d291-4747-8ceb-6621a865198f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _OT Ackno Grouping
+
+		annotation SummarizationSetBy = User
+
+	column '_OT Placement_1 n.of days'
+		dataType: int64
+		formatString: 0
+		lineageTag: db6c9d25-12e0-4c63-8673-e63af074b4c9
+		sourceLineageTag: 2e0dd493-e41e-4818-b126-aa0863eb5f40
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _OT Placement_1 n.of days
+
+		annotation SummarizationSetBy = User
+
+	column '_OT Placement_1 Grouping'
+		dataType: string
+		lineageTag: d115c911-aa9c-4c79-aafd-d4ed51cad276
+		sourceLineageTag: 7f98e48a-f1a5-4044-857b-e4c37135333f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _OT Placement_1 Grouping
+
+		annotation SummarizationSetBy = User
+
+	column '_OT Confirmed n.of days'
+		dataType: int64
+		formatString: 0
+		lineageTag: 80a386c4-daaf-4ff2-81b1-666d3d2fddf9
+		sourceLineageTag: 9b2fdd41-f253-4f5f-ab4d-e1985668be3d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _OT Confirmed n.of days
+
+		annotation SummarizationSetBy = User
+
+	column '_OT Confirmed Grouping'
+		dataType: string
+		lineageTag: be395f53-c774-4be7-8df4-7d1ad5a65e6d
+		sourceLineageTag: 82c31fa4-0726-4a14-a704-76491f051e7d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _OT Confirmed Grouping
+
+		annotation SummarizationSetBy = User
+
+	column '_OT Availability n.of days'
+		dataType: int64
+		formatString: 0
+		lineageTag: 116d6ec4-ccb9-47ac-905b-507358e075ac
+		sourceLineageTag: 55e6e2bd-fb43-4166-955c-ca83f952e6c5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _OT Availability n.of days
+
+		annotation SummarizationSetBy = User
+
+	column '_OT Availability Grouping'
+		dataType: string
+		lineageTag: 34ce3d8a-84f5-4dc1-aefb-a560bc2be80d
+		sourceLineageTag: f6b9e6ea-3925-4e35-a4c9-4e2630b8da6b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _OT Availability Grouping
+
+		annotation SummarizationSetBy = User
+
+	column '_Expected Booking Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 2d9aa4ff-eade-49dc-a131-266fbca90266
+		sourceLineageTag: 8a7d731a-c5be-48df-9371-8d03fe7565c3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _Expected Booking Date
+
+		annotation SummarizationSetBy = User
+
+	column '_Booked on time n.of days'
+		dataType: int64
+		formatString: 0
+		lineageTag: f2086022-83ec-4668-9614-f5743e7ff0de
+		sourceLineageTag: c1415343-646a-428c-84b2-a9edddb8e927
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _Booked on time n.of days
+
+		annotation SummarizationSetBy = User
+
+	column '_Booked on time Grouping'
+		dataType: string
+		lineageTag: 8625ab95-6a26-4574-9542-b8c99a98e726
+		sourceLineageTag: eeeafac0-e835-4396-bfd9-4797b9c9647a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _Booked on time Grouping
+
+		annotation SummarizationSetBy = User
+
+	column '_OT Supplier n.of days'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3a4958ed-74ee-44d1-918e-1951c906c026
+		sourceLineageTag: e83cc194-6962-4303-bff2-5116d852df83
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _OT Supplier n.of days
+
+		annotation SummarizationSetBy = User
+
+	column '_OT Supplier Grouping'
+		dataType: string
+		lineageTag: 4b3abaa4-12ed-4c3f-abcf-57eedfe8bd0d
+		sourceLineageTag: d31f32c1-c75a-4709-a6d4-a0e87790480d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _OT Supplier Grouping
+
+		annotation SummarizationSetBy = User
+
+	column '_Is Current Month?'
+		dataType: int64
+		formatString: 0
+		lineageTag: 64a37327-4854-4f10-acd8-ab3d32cee5a7
+		sourceLineageTag: 7d36272b-6683-49ff-8bce-e27b2c8fff5c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _Is Current Month?
+
+		annotation SummarizationSetBy = User
+
+	column '_Is Current Week?'
+		dataType: int64
+		formatString: 0
+		lineageTag: 88fd93fd-d6f1-4dba-8645-4d7f534d0554
+		sourceLineageTag: 50d7eb98-ac5c-4ae5-b5f4-4e477e8d081e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _Is Current Week?
+
+		annotation SummarizationSetBy = User
+
+	column '_Is Past dues?'
+		dataType: int64
+		formatString: 0
+		lineageTag: d07535de-2b32-448e-99de-601c01f8a6e2
+		sourceLineageTag: 25d1ccce-550a-4a6a-a5f4-7eddc717200d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _Is Past dues?
+
+		annotation SummarizationSetBy = User
+
+	column '_Is Available?'
+		dataType: int64
+		formatString: 0
+		lineageTag: c367eb4f-9c82-4392-9fde-33ef239e02e5
+		sourceLineageTag: 8747e61c-d6d6-4224-9d11-12e57132bcfe
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _Is Available?
+
+		annotation SummarizationSetBy = User
+
+	column '_Is Delayed?'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5393c095-781b-4836-aade-8696132e73c8
+		sourceLineageTag: 99d20930-b363-4204-a965-ddce1d036472
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _Is Delayed?
+
+		annotation SummarizationSetBy = User
+
+	column '_Is On Time?'
+		dataType: int64
+		formatString: 0
+		lineageTag: 91d377dc-99b2-4dbd-a867-6bbeeb2bdccb
+		sourceLineageTag: 9f0f7e29-487b-4f6c-8c09-6e2c478a5ce5
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _Is On Time?
+
+		annotation SummarizationSetBy = User
+
+	column '_Past dues Grouping'
+		dataType: string
+		lineageTag: 82bff351-f89f-4f7f-b26f-451b74284e46
+		sourceLineageTag: b614e6d3-ec38-48bb-8ac9-e44ba8632926
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: _Past dues Grouping
+
+		annotation SummarizationSetBy = User
+
+	column '_Is Previous Week?'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d9bcbca-6b11-403b-ba5e-da870728d055
+		sourceLineageTag: b6be6f5f-ef3a-42bc-a053-4d7dbba341d6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: _Is Previous Week?
+
+		annotation SummarizationSetBy = User
+
+	column 'Acknowledgement Day Number'
+		dataType: string
+		lineageTag: 2ed8947d-d7e2-415c-a79e-bb1014391ae9
+		sourceLineageTag: b1ed9c59-342c-4ecc-bdb2-f9f744fa44c8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Acknowledgement Day Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Acknowledgement Month Number'
+		dataType: string
+		lineageTag: 09c5bf67-15a2-4bbd-8b4d-a11b16ad2a3e
+		sourceLineageTag: 599f9376-38a2-44fc-a8b5-cc5463346ddd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Acknowledgement Month Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Aknowledgement Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e8c9729-34d6-4a80-abab-1a6e24574d41
+		sourceLineageTag: e51c51b5-6356-49c8-ac1d-c5a1567c2c20
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Aknowledgement Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Aknowledgement Month Name'
+		dataType: string
+		lineageTag: 201dbcb1-eeb8-4cbb-b226-80717c93a98a
+		sourceLineageTag: 80cc6d46-c353-4bd9-907d-78f67b660d77
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Aknowledgement Month Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Contractual Ex-Factory Day Number'
+		dataType: string
+		lineageTag: d276942f-b1d6-413b-a01c-0e726b627214
+		sourceLineageTag: bb67729b-d0c4-4002-9ccc-9213d6d56edb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Contractual Ex-Factory Day Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Contractual Ex-Factory Month Number'
+		dataType: string
+		lineageTag: c6d0bef2-0058-4477-886a-e16c4ed5d8e4
+		sourceLineageTag: e7a63cf7-f41c-4742-8b8d-5e08363ae3ed
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Contractual Ex-Factory Month Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Contractual Ex-Factory Month Name'
+		dataType: string
+		lineageTag: 49d842db-cfc1-4ffa-a78a-20bfabf63a29
+		sourceLineageTag: 85970f79-2972-4df8-8286-e675f848e52a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Contractual Ex-Factory Month Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Contractual Ex-Factory Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: d179b935-4c77-4c7a-aa0f-cf80e7d38480
+		sourceLineageTag: b8201d7b-8103-4c9f-afff-b7e5e981c066
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Contractual Ex-Factory Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Available Ship Day Number'
+		dataType: string
+		lineageTag: 2dc5f89a-42c3-49b1-9d1b-18cf5916eb36
+		sourceLineageTag: 70b7db95-efd4-4626-9aba-26200a411624
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Available Ship Day Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Available Ship Month Number'
+		dataType: string
+		lineageTag: dd93156a-285b-421f-bef0-8c28bb6d4d8a
+		sourceLineageTag: 3e7ba738-5681-489d-9f33-584b4723ae5d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Available Ship Month Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Available Ship Month Name'
+		dataType: string
+		lineageTag: 73e71244-9f21-4b58-9f30-308d40cf430a
+		sourceLineageTag: 1430cbbb-699f-4db7-b27b-7fe5814e6ae8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Available Ship Month Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Available Ship Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: 32f98c28-2764-46b2-a6a4-7101afe2ae75
+		sourceLineageTag: 3001dd73-89a6-416b-8b66-d9352e03cc58
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Available Ship Year
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Invoice Day Number'
+		dataType: string
+		lineageTag: ebe55d66-e6ee-4b55-bdf7-8bca07f84998
+		sourceLineageTag: 59856da7-51e3-412b-bcd9-7754f9e41b83
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Invoice Day Number
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Invoice Month Number'
+		dataType: string
+		lineageTag: 66a51b16-ca23-4570-98ee-c392738d9729
+		sourceLineageTag: 36c1786a-e29a-49b3-b55a-e683c1753753
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Invoice Month Number
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Invoice Month Name'
+		dataType: string
+		lineageTag: d62c4e12-8f21-48c5-b023-acb1730b9752
+		sourceLineageTag: f2e7be2b-df4b-42e8-b9f4-afd9d989e646
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Invoice Month Name
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Invoice Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: 99f7d0ea-e1e1-4b8c-adda-ea9236a4b501
+		sourceLineageTag: f063ecf5-5e63-4b57-b076-d9aaa2d76ece
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: PO Invoice Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Approved_Ex_Factory (MM-YYYY)'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 35766148-2ae9-4d88-827d-98ee1cc8b5e7
+		sourceLineageTag: 59c2c8c8-88d1-441d-9dd8-bca8026b107e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Approved_Ex_Factory (MM-YYYY)
+
+		annotation SummarizationSetBy = User
+
+	column 'SO Unit Price W/O (Markup)'
+		dataType: double
+		lineageTag: c6291f6f-1579-46d7-a97b-b3bb8d033a7b
+		sourceLineageTag: 4c5e9364-77f5-445e-a505-cd1ce43b5ad7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: SO Unit Price W/O (Markup)
+
+		annotation SummarizationSetBy = User
+
+	column 'PO Currency'
+		dataType: string
+		lineageTag: b80f3b9a-b2d8-4a0e-917a-d0f865b99bfd
+		sourceLineageTag: 2cc16a8e-afa8-464a-8102-707ad01bb2e0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Currency
+
+		annotation SummarizationSetBy = User
+
+	column 'Days Late'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 9fc49e62-aca6-424a-8b0b-495dfcbcc0b5
+		sourceLineageTag: 70a1be49-b1b3-4ffa-941f-ec9e0d31d6f0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Days Late
+
+		annotation SummarizationSetBy = User
+
+	column 'Days Late Bin'
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: ToBeRemovedGFF
+		lineageTag: fe27e6b4-77b7-4fc7-b482-bcd687f5a906
+		sourceLineageTag: 9b8d5ec4-7984-4a79-bda4-84cdf016ac8b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Days Late Bin
+
+		annotation SummarizationSetBy = User
+
+	column 'Shipped Date Old'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 95d8c50a-5861-415b-a8cb-255864cc122a
+		sourceLineageTag: f4e5ee51-3300-4b72-a3be-aa6aad4efa93
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Shipped Date Old
+
+		annotation SummarizationSetBy = User
+
+	column 'Production Status Old'
+		dataType: string
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 90a133ab-52cc-4c88-b28a-405881d26687
+		sourceLineageTag: fe325940-f47e-4025-8215-6b8e67dec21a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Production Status Old
+
+		annotation SummarizationSetBy = User
+
+	column 'Approved Value'
+		dataType: double
+		lineageTag: b6662151-e46a-4c51-80b4-b673731e399f
+		sourceLineageTag: 8aa20604-6b1e-474d-bae2-2a7796b9f0b3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Approved Value
+
+		annotation SummarizationSetBy = User
+
+	column 'PlacedToFcty Value'
+		dataType: double
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: bea16e85-b85d-4726-9aba-06ec18a0f26a
+		sourceLineageTag: f3527970-4123-4e91-873f-2a8b6444e6e4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: PlacedToFcty Value
+
+		annotation SummarizationSetBy = User
+
+	column 'Rejected Value'
+		dataType: double
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 74d03534-3423-437c-96cf-c37a97e3a3c6
+		sourceLineageTag: f9facc10-9ac0-4bdb-818e-8bfbb444ba97
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Rejected Value
+
+		annotation SummarizationSetBy = User
+
+	column 'QtyToBeShipped Value'
+		dataType: double
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 3bf7f10e-94b2-46a2-bd70-f28befc468d5
+		sourceLineageTag: d66754ff-3cab-4a21-b789-fe846c397c4e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: QtyToBeShipped Value
+
+		annotation SummarizationSetBy = User
+
+	column 'Received Value'
+		dataType: double
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 2b20f6a1-f98e-40a4-804f-d9e52a9f300f
+		sourceLineageTag: f1ac1ccc-04b7-4f59-9e12-f32c16816312
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Received Value
+
+		annotation SummarizationSetBy = User
+
+	column 'QtyShipped Value'
+		dataType: double
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 1205a17e-4556-4c15-98ab-938d324b56bb
+		sourceLineageTag: 977ef1a3-1ea5-4678-8056-96e0b3277e59
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: QtyShipped Value
+
+		annotation SummarizationSetBy = User
+
+	column 'Ordered Value'
+		dataType: double
+		isHidden
+		displayFolder: ToBeRemovedGFF
+		lineageTag: 307d6f9d-ac2f-422a-93a5-5ba0c8693bb9
+		sourceLineageTag: 6748d366-90be-4542-b7ae-0d3568f8a422
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Ordered Value
+
+		annotation SummarizationSetBy = User
+
+	partition 'PO Daybook' = entity
+		mode: directQuery
+		source
+			entityName: PO Daybook
+			expressionSource: 'DirectQuery to AS - DMA Sourcing'
+

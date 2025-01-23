@@ -1,0 +1,164 @@
+table 'sourcing summary'
+	lineageTag: e86548d5-beff-488f-b90e-d5dad353ba8b
+
+	column 'RowCount of PO Daybook'
+		formatString: #,0
+		lineageTag: 42b4bba8-4af8-4271-b1aa-e3d239027f03
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of PO Daybook]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of PO Daybook diff UAT'
+		formatString: #,0
+		lineageTag: a2fd4130-370c-4659-b85a-c89dc89c7dc9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of PO Daybook diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of PO Daybook diff DEV'
+		formatString: #,0
+		lineageTag: 816823c3-8161-47a6-96e5-7ec7ed214322
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of PO Daybook diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of PO Details'
+		formatString: #,0
+		lineageTag: 438774e4-ba3f-47de-a2d0-4e6c31ed1135
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of PO Details]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of PO Details diff UAT'
+		formatString: #,0
+		lineageTag: 94927eb6-4014-4a24-ae18-2011656c89e1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of PO Details diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of PO Details diff DEV'
+		formatString: #,0
+		lineageTag: 353b84dc-f688-425b-aa73-a09fa3516cc3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of PO Details diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Construction Capacity'
+		formatString: #,0
+		lineageTag: 825af780-4d50-42a7-bf2c-fc7fbe7c4a14
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Construction Capacity]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Construction Capacity diff UAT'
+		formatString: #,0
+		lineageTag: 7be5c987-7f88-4b32-af63-e16283fbd1a3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Construction Capacity diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Construction Capacity diff DEV'
+		formatString: #,0
+		lineageTag: eff7a23b-831f-47af-9bae-367e2fccec9e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Construction Capacity diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Pack One'
+		formatString: #,0
+		lineageTag: 3856185e-3bc0-496d-919e-af8f9146b618
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Pack One]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Pack One diff UAT'
+		formatString: #,0
+		lineageTag: 8bbff50b-5130-4a94-84a9-6a5cc3753d0d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Pack One diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Pack One diff DEV'
+		formatString: #,0
+		lineageTag: 06b5a2cd-0cd8-4f9f-bf56-23b76ab344d8
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Pack One diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Product Weights'
+		formatString: #,0
+		lineageTag: 12dfdc49-a432-4987-b6aa-1600c869c651
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Product Weights]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Product Weights diff UAT'
+		formatString: #,0
+		lineageTag: 2a4e2f59-a545-48de-9e5d-31a54b49e1bc
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Product Weights diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Product Weights diff DEV'
+		formatString: #,0
+		lineageTag: 2ab39cef-0f47-428d-91e6-ad9616344448
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Product Weights diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'sourcing summary' = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE
+				(
+				    'sourcing'
+				    ,"RowCount of PO Daybook",COUNTROWS('PO Daybook')
+				    ,"RowCount of PO Daybook diff UAT",COUNTROWS('PO Daybook 2')-COUNTROWS('PO Daybook')
+				    ,"RowCount of PO Daybook diff DEV",COUNTROWS('PO Daybook 3')-COUNTROWS('PO Daybook')
+				    ,"RowCount of PO Details",COUNTROWS('PO Details')
+				    ,"RowCount of PO Details diff UAT",COUNTROWS('PO Details 2')-COUNTROWS('PO Details')
+				    ,"RowCount of PO Details diff DEV",COUNTROWS('PO Details 3')-COUNTROWS('PO Details')
+				    ,"RowCount of Construction Capacity",COUNTROWS('Construction Capacity')
+				    ,"RowCount of Construction Capacity diff UAT",COUNTROWS('Construction Capacity 2')-COUNTROWS('Construction Capacity')
+				    ,"RowCount of Construction Capacity diff DEV",COUNTROWS('Construction Capacity 3')-COUNTROWS('Construction Capacity')
+				    ,"RowCount of Pack One",COUNTROWS('Pack One')
+				    ,"RowCount of Pack One diff UAT",COUNTROWS('Pack One 2')-COUNTROWS('Pack One')
+				    ,"RowCount of Pack One diff DEV",COUNTROWS('Pack One 3')-COUNTROWS('Pack One')
+				    ,"RowCount of Product Weights",COUNTROWS('Product Weights')
+				    ,"RowCount of Product Weights diff UAT",COUNTROWS('Product Weights 2')-COUNTROWS('Product Weights')
+				    ,"RowCount of Product Weights diff DEV",COUNTROWS('Product Weights 3')-COUNTROWS('Product Weights')
+				)
+
+	annotation PBI_Id = 00745480cc0b42ab921be4d425457988
+

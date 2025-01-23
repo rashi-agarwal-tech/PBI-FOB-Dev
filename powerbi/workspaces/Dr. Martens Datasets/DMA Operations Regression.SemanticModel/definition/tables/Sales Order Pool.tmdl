@@ -1,0 +1,42 @@
+table 'Sales Order Pool'
+	lineageTag: 904e57f2-5672-4cd0-85b2-2f420e732f5e
+	sourceLineageTag: ce2d776a-eece-4a68-b862-a3a0987768bf
+
+	column SalesOrderPool_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 1b06982e-ca25-408f-8a3a-dea30f0f452e
+		sourceLineageTag: ed3b2c8e-b47f-4a75-916e-833d28c65b71
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SalesOrderPool_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Type'
+		dataType: string
+		lineageTag: 58b5b917-d7d3-466f-9074-8323e25a1d42
+		sourceLineageTag: 073d2d70-37c0-405e-895f-35aa885b9088
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Type ID'
+		dataType: string
+		lineageTag: b78a3154-ac8a-45d1-a9b3-7171485ba87e
+		sourceLineageTag: b9da5452-c02c-4bf4-964e-f0038f2832e5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type ID
+
+		annotation SummarizationSetBy = User
+
+	partition 'Sales Order Pool' = entity
+		mode: directQuery
+		source
+			entityName: Sales Order Pool
+			expressionSource: 'DirectQuery to AS - DMA Operations'
+

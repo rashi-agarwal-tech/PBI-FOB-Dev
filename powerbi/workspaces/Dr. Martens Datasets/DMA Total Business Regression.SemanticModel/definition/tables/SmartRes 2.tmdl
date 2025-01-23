@@ -1,0 +1,179 @@
+table 'SmartRes 2'
+	isHidden
+	lineageTag: 73e9c3aa-feff-4904-ba83-8ad37cd47531
+	sourceLineageTag: c866145a-c102-4eac-ab5b-85cba54927af
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: b1ea8fe8-9417-45f6-9ed0-2dc980cf1890
+		sourceLineageTag: 7318d155-5542-4b1d-a6cf-7a01ed5b0697
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		annotation SummarizationSetBy = User
+
+	column 'Company ID'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 20629084-136c-49df-a055-0c6f82d4dfcd
+		sourceLineageTag: af487b30-326f-42e6-9979-1e265c77b75b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		annotation SummarizationSetBy = User
+
+	column Status
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: a515aabd-80b1-464e-9d23-c5aa0eef5e2e
+		sourceLineageTag: f00fa903-5f5e-4bed-88d5-45f29da3746b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = User
+
+	column QtyAllocated
+		dataType: int64
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: c289349e-d90b-45db-854c-5523c295b5c6
+		sourceLineageTag: 66740ae1-d3ad-424b-9c7f-c29873cd64e1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: QtyAllocated
+
+		annotation SummarizationSetBy = User
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: 91e9d0f0-5db9-4aa1-9bed-a6b4f6056524
+		sourceLineageTag: 33ad0114-8f45-43ef-862b-a05373d924ca
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column QtyReserved
+		dataType: int64
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 86f10614-d2fa-421c-b372-c54f1b5fce91
+		sourceLineageTag: 8296c7fd-dae1-44e2-ac7a-3be9d38cba90
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: QtyReserved
+
+		annotation SummarizationSetBy = User
+
+	column Product_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: f59d3de0-3e2c-4ec1-b910-259871e2c68f
+		sourceLineageTag: a1922ace-794a-439d-8f03-da60b430eeda
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: c0c470c7-ba50-43d0-9611-5e56cde55b8c
+		sourceLineageTag: 6eb5e3bc-8899-42d8-bd83-9ca1ea0509ee
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: c29bd894-0082-44ad-b3ba-7d680f4f6628
+		sourceLineageTag: e5c74dea-1d1e-4cda-9610-dd6f55d23fe7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Selling Status'
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: eac70090-3b12-4417-8ba2-68598c904687
+		sourceLineageTag: 6d9ff0f9-64b4-4d18-9fbe-97dad8f1c510
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selling Status
+
+		annotation SummarizationSetBy = User
+
+	column QtyOutstanding
+		dataType: int64
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 682a64a9-6ddf-4744-9878-7908baa8abfd
+		sourceLineageTag: a68efefb-5811-4554-ae0d-31ee80c5402b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: QtyOutstanding
+
+		annotation SummarizationSetBy = User
+
+	column INVENTLOCATIONID
+		dataType: string
+		isHidden
+		lineageTag: 0b966f15-cc1b-448f-859d-f22e618aa393
+		sourceLineageTag: a51ebdca-d373-47c6-b924-95fc99fa57ea
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTLOCATIONID
+
+		annotation SummarizationSetBy = User
+
+	column 'Channel ID'
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: d0e9aa30-009d-493e-add9-7f34e9d65f06
+		sourceLineageTag: c66e24ad-57f5-4cb5-b9a7-a85312ff2dc4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Channel ID
+
+		annotation SummarizationSetBy = User
+
+	column FinancialChannel
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 1e929fee-4603-44b8-96b3-f8821ba868ad
+		sourceLineageTag: 91352bab-432b-4e06-9033-fffbc3d94bd7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FinancialChannel
+
+		annotation SummarizationSetBy = User
+
+	partition 'SmartRes 2' = entity
+		mode: directQuery
+		source
+			entityName: SmartRes
+			expressionSource: 'DirectQuery to AS - DMA Total Business 2'
+

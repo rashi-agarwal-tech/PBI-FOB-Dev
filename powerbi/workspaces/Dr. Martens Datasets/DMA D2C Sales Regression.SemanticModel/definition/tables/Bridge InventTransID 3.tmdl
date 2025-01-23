@@ -1,0 +1,23 @@
+table 'Bridge InventTransID 3'
+	isHidden
+	lineageTag: 8dfe1f7d-8bdc-48b0-bacd-1e1488b52172
+	sourceLineageTag: 92930dfb-36dd-4d45-b823-2e46bd66f18c
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 45f5a3b8-2af6-49f4-8746-42f6935f4195
+		sourceLineageTag: fc8deebb-3b8a-45c1-b3d0-3d97d29c0c49
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		annotation SummarizationSetBy = User
+
+	partition 'Bridge InventTransID 3' = entity
+		mode: directQuery
+		source
+			entityName: Bridge InventTransID
+			expressionSource: 'DirectQuery to AS - DMA D2C 3'
+

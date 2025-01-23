@@ -1,0 +1,161 @@
+table 'Customer Sell Out EMEA 3'
+	isHidden
+	lineageTag: e47016c2-fd5f-4e58-bf8b-0d8be2211cf6
+	sourceLineageTag: 3af036ce-069a-4ee0-b73b-62b35b8aa342
+
+	column 'Customer Gender'
+		dataType: string
+		isHidden
+		lineageTag: 38d337ec-7f99-454d-ac01-57f02d1599dd
+		sourceLineageTag: 24f1227e-8838-4dee-a195-d9386358ea4f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Gender
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Name'
+		dataType: string
+		isHidden
+		lineageTag: fd23d351-e9eb-40b1-a0f9-b60392b279d8
+		sourceLineageTag: 7a238f16-837f-4979-8714-592ac1d14d19
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Name
+
+		annotation SummarizationSetBy = User
+
+	column Stock
+		dataType: int64
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 270262fa-2eac-4ce3-a1d5-312801198c2e
+		sourceLineageTag: 266f2311-52c0-469c-8b20-60dd9f890dba
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Stock
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Department'
+		dataType: string
+		isHidden
+		lineageTag: 73d3c370-4667-4612-99f8-6b7a763051d6
+		sourceLineageTag: a28714c7-ca94-407a-b0bf-4e04ef452896
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Department
+
+		annotation SummarizationSetBy = User
+
+	column NetSalesUnits
+		dataType: int64
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: edc8ff51-034e-4371-94a6-4875ad270506
+		sourceLineageTag: 573c20e0-376b-46cc-a78b-b808fc5a1bbb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NetSalesUnits
+
+		annotation SummarizationSetBy = User
+
+	column Date_Key
+		dataType: int64
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: cfb9f85f-cab2-40f1-ac3a-9e1f80797067
+		sourceLineageTag: 6220e5c8-6dbd-4b71-a248-b368161ef0e3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		annotation SummarizationSetBy = User
+
+	column Product_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 765ecfe1-4c67-4b51-8228-a4f9c50556fc
+		sourceLineageTag: 6a0a7eca-b765-4733-bf4b-1b5f0f452a30
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: a8541ea2-e3e3-4918-9f3f-0b3fb46cdad7
+		sourceLineageTag: c5ff3890-f6c4-4afb-bab1-a5e8136714d4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Demand Net Sales Units'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 0da9663a-1304-4e46-a0ef-a22c51167dd8
+		sourceLineageTag: 633cdbf3-0b32-42ad-a8cb-06ace094585c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Demand Net Sales Units
+
+		annotation SummarizationSetBy = User
+
+	column 'Demand Actual Sales Units'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 15c7ffb7-ee6e-4f27-92b8-e3cb24c6627a
+		sourceLineageTag: aebfa1df-df1c-435a-befe-f0be7b518567
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Demand Actual Sales Units
+
+		annotation SummarizationSetBy = User
+
+	column 'YoY Align'
+		dataType: string
+		isHidden
+		lineageTag: 41779e0b-95ae-4925-a0a9-ad2cc8a819fb
+		sourceLineageTag: bc319c88-6a26-4727-aa03-552ca0d5a48b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: YoY Align
+
+		annotation SummarizationSetBy = User
+
+	column SellingStatus
+		dataType: string
+		isHidden
+		lineageTag: b6e63d63-6cd2-42c9-88c3-f2fdb94f956e
+		sourceLineageTag: 276d3586-9c8c-4130-8c71-33d4813e790b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SellingStatus
+
+		annotation SummarizationSetBy = User
+
+	column Website
+		dataType: string
+		isHidden
+		lineageTag: d1fd2164-224b-49e0-a67b-0b989244e87c
+		sourceLineageTag: 3f2d9284-179f-4c61-a443-862c5f8da3a8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Website
+
+		annotation SummarizationSetBy = User
+
+	partition 'Customer Sell Out EMEA 3' = entity
+		mode: directQuery
+		source
+			entityName: Customer Sell Out EMEA
+			expressionSource: 'DirectQuery to AS - DMA B2B 3'
+

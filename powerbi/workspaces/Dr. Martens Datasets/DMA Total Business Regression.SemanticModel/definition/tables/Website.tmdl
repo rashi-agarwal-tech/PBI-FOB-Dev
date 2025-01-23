@@ -1,0 +1,33 @@
+table Website
+	lineageTag: d45e92c8-5a75-482f-b1ef-b5c6a0a2d8e8
+	sourceLineageTag: 8ba0d072-287a-49c3-a708-4545b170f3f2
+
+	column Website
+		dataType: string
+		lineageTag: 5088499d-5e44-4fe2-ba9c-c4ed56ea59e2
+		sourceLineageTag: b8577e84-28ba-4ec5-90f2-422c1b02aa6e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Website
+
+		annotation SummarizationSetBy = User
+
+	column WebSiteCode
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Misc
+		lineageTag: f9ec66b5-736a-4128-9e78-1c3125339ae7
+		sourceLineageTag: 2773450f-7ad7-489e-a5ca-fb6c1d2e00dd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WebSiteCode
+
+		annotation SummarizationSetBy = User
+
+	partition Website = entity
+		mode: directQuery
+		source
+			entityName: Website
+			expressionSource: 'DirectQuery to AS - DMA Total Business'
+

@@ -1,0 +1,100 @@
+table 'Products - Last PO SKU 3'
+	isHidden
+	lineageTag: 85107dd1-61eb-4cf9-aa13-9d5f297062a7
+	sourceLineageTag: 9678aba2-15cd-4de3-ac49-e3d6f87955fb
+
+	column Product_Key
+		dataType: string
+		isHidden
+		lineageTag: 340f5ef6-5ea7-4d0e-93b2-7377fd54ed38
+		sourceLineageTag: 27d7e243-250a-46d1-a795-0f78c2c2387d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size_Key
+		dataType: string
+		isHidden
+		lineageTag: 649c5eb8-23ba-4c56-8319-7501a8cc0d20
+		sourceLineageTag: 78e9c2f0-67e7-43a4-a8a5-6e7020e8886b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Last PO Number'
+		dataType: string
+		isHidden
+		lineageTag: 383dcec8-7017-4a0d-8c48-59d6b392f0c2
+		sourceLineageTag: 9ed6bb64-a1b2-4e88-8451-6d03e8053779
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Last PO Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Last PO Receipt Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 4e7ad726-e217-4c10-af1e-7cb91d4c5b34
+		sourceLineageTag: 17dd22a8-005a-435e-b6df-9923b1028617
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Last PO Receipt Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Last PO Price'
+		dataType: double
+		isHidden
+		lineageTag: 2c922033-e893-4bde-9dcc-a841fc9ae5a2
+		sourceLineageTag: 1ab132aa-6c04-4bd3-9386-928adda90a60
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Last PO Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Last PO Price Clos GBP'
+		dataType: double
+		isHidden
+		lineageTag: 7fc8eb42-519a-49de-b7f4-ec0ce62331fd
+		sourceLineageTag: b2d9c7af-93dc-4555-9166-62bc7c5642d8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Last PO Price Clos GBP
+
+		annotation SummarizationSetBy = User
+
+	column 'Last PO Charges'
+		dataType: double
+		isHidden
+		lineageTag: aaee95d3-f279-4776-877d-e77b6f212d12
+		sourceLineageTag: e932fa16-48d0-4c9c-b563-40b1f03210c3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Last PO Charges
+
+		annotation SummarizationSetBy = User
+
+	column 'Last PO Charges Clos GBP'
+		dataType: double
+		isHidden
+		lineageTag: 24ce268a-8a2d-44f4-ae0c-ab2c0322958c
+		sourceLineageTag: 8bb1967e-8b8a-492b-ac68-3d88a87d1c5b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Last PO Charges Clos GBP
+
+		annotation SummarizationSetBy = User
+
+	partition 'Products - Last PO SKU 3' = entity
+		mode: directQuery
+		source
+			entityName: Products - Last PO SKU
+			expressionSource: 'DirectQuery to AS - DMA Operations 3'
+

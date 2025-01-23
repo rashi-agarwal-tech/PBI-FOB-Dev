@@ -1,0 +1,160 @@
+table Forecast
+	isHidden
+	lineageTag: 7d3c2e5e-2ea4-45c8-9bc4-562e48cd21f5
+	sourceLineageTag: e002d790-35b5-4fcb-871a-057293942d6d
+
+	column Company
+		dataType: int64
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 3f67e7be-9f69-43fe-8756-cfab613753bb
+		sourceLineageTag: 1e651616-f0b9-4a6e-b507-1c8138e92f82
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = User
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Keys
+		lineageTag: 3a7417a1-2da4-4014-a4e7-0e7901c27f80
+		sourceLineageTag: af3feb55-906f-41c0-9502-0f0db19bd947
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Forecast Version'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: b270268e-5e5f-4b1b-8a19-b02ebb138c60
+		sourceLineageTag: d3e4a1ef-dd82-4d12-9e51-64cdd9d7e14f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Forecast Version
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Code'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 07f2fdd8-c74c-42c3-b5af-fd31ab22de19
+		sourceLineageTag: 8898feef-98a9-403b-b572-aae9a80e9701
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoiced Units'
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: ce700622-dd92-431f-86bb-a2835a400342
+		sourceLineageTag: 2ce3a877-a0d3-426e-9a07-248ea44da026
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoiced Units
+
+		annotation SummarizationSetBy = User
+
+	column 'Returned Units'
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 70bb4d50-c42e-40b3-9acf-b375a5a583c2
+		sourceLineageTag: 40c4cbf2-bf17-46b7-a0c5-230017afb647
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Returned Units
+
+		annotation SummarizationSetBy = User
+
+	column 'Total Net Value'
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 41038f78-0170-43ff-b8c3-1e481caabd69
+		sourceLineageTag: d380986a-1d73-45af-8b91-ba17cd154eb5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Total Net Value
+
+		annotation SummarizationSetBy = User
+
+	column 'Total COGS'
+		dataType: double
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: d138885b-886a-4b5d-9068-fd943a4c01de
+		sourceLineageTag: 60910075-46e6-4a40-aaff-bcd7a6bab3d1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Total COGS
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: db19add5-5333-41af-b8ed-ef97617ef202
+		sourceLineageTag: 63330e5e-8776-49c6-bf49-d455c7882bc8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column FinancialChannel
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 2abe5581-669f-4e8f-921e-9506f789a5e5
+		sourceLineageTag: b298d619-be5a-4bd5-863e-8ff7a6680a29
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FinancialChannel
+
+		annotation SummarizationSetBy = User
+
+	column Company_ProductCode
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 75a9e2b8-82da-4974-9e65-baaed558dd07
+		sourceLineageTag: 1a3866fe-b4e8-4cbb-82ce-6326981e82a0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_ProductCode
+
+		annotation SummarizationSetBy = User
+
+	column FCRanker
+		dataType: double
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Misc
+		lineageTag: ed9e225a-d4d2-423e-8bbb-e552deaa0613
+		sourceLineageTag: 69b9bdf5-99d7-4e54-b33f-f184520a646b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FCRanker
+
+		annotation SummarizationSetBy = User
+
+	partition Forecast = entity
+		mode: directQuery
+		source
+			entityName: Forecast
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

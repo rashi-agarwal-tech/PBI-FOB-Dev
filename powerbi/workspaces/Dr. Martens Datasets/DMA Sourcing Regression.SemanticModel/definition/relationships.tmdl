@@ -1,0 +1,327 @@
+relationship 3a5dae21-9816-492a-8874-d16d7f1d8917
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Pack One'.PONumberLine_Key
+	toColumn: 'Purchase Orders'.PONumberLine_Key
+
+relationship b427dcda-1fbd-42f7-8c2a-27ead8c61cc5
+	fromColumn: 'Pack One'.PackedDateKey
+	toColumn: 'Pack One Date'.'Date Key'
+
+relationship 04a29c88-e2d2-4913-b010-f9ac4dee9efa
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Seasonal Product Type'.Product_Key
+	toColumn: Product.PPMProduct_Key
+
+relationship 8ccadd5d-46f5-4a2c-a4dc-37b309f56de6
+	fromColumn: 'Product Weights'.Product_Key
+	toColumn: Product.Product_Key
+
+relationship bd8cf849-9873-4ab4-b317-7d9fccff9a48
+	fromColumn: 'Product Weights'.Size_Key
+	toColumn: Size.Size_Key
+
+relationship 365516df-99e1-4e91-9854-2e40943a59a8
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'PO Details'.PONumberLine_Key
+	toColumn: 'Purchase Orders'.PONumberLine_Key
+
+relationship c5111b96-1661-48de-bc9c-ad42375d433f
+	fromColumn: 'PO Details'.SizeCode
+	toColumn: Size.Size
+
+relationship f0198298-9633-4eac-8ec2-c450d7ff7bd3
+	fromColumn: 'Construction Capacity'.Supplier_Key
+	toColumn: Supplier.Supplier_Key
+
+relationship f5d213cf-0c89-4743-889b-b5d0aef8ef2e
+	fromColumn: 'Construction Capacity'.Amended_StartDate_Key
+	toColumn: 'Scheduled Ex-Factory Date'.'Date Key'
+
+relationship dd411836-a248-479f-be04-c7e239cb0450
+	fromColumn: 'PO Daybook'.OrderStatus_Key
+	toColumn: 'Order Status'.Order_Status_Key
+
+relationship 0252e379-2fc5-46a5-92cc-680cc23dbb59
+	fromColumn: 'PO Daybook'.Product_Key
+	toColumn: Product.PPMProduct_Key
+
+relationship 4239aa4d-8a95-48de-93c9-2cc54d75eca8
+	fromColumn: 'PO Daybook'.OrderType_Key
+	toColumn: 'Order Type'.Order_Type_Key
+
+relationship c3a0eb48-457c-4144-aba3-1239ffb61a51
+	fromColumn: 'PO Daybook'.Scheduled_Ex_Factory_Key
+	toColumn: 'Scheduled Ex-Factory Date'.'Date Key'
+
+relationship 15b94816-caea-4dbd-9d07-67f6ee1f8f4a
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'PO Daybook'.PONumberLine_Key
+	toColumn: 'Purchase Orders'.PONumberLine_Key
+
+relationship b588aa9d-27d5-4304-b984-3b9617f652f7
+	fromColumn: 'PO Daybook'.Method_Key
+	toColumn: 'Shipment Method'.Shipment_Method_Key
+
+relationship 8c9e7471-1e9d-430d-a8cd-22dc09ed979b
+	fromColumn: 'PO Daybook'.Territory_Key
+	toColumn: Region.Territory_Key
+
+relationship 50d1bac7-432a-4f21-8591-77b37d5180c4
+	fromColumn: 'PO Daybook'.Warehouse_Key
+	toColumn: Warehouse.Warehouse_Key
+
+relationship 13197b5e-7f12-471b-b5ca-9b03351f145e
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'PO Daybook'.Supplier_Key
+	toColumn: Supplier.Supplier_Key
+
+relationship 34701f3e-a7b3-441c-829e-a045eaed9d73
+	fromColumn: 'PO Daybook'.ActualExFactoryDate_Key
+	toColumn: 'Actual Ex-Factory Date'.'Date Key'
+
+relationship 6b0e9ba7-b0ac-4e5b-b2d1-a6f9b8c29fd6
+	fromColumn: 'PO Daybook'.ExFactoryDate_Key
+	toColumn: 'Latest Ex-Factory Date'.ExFactoryDate_Key
+
+relationship eff55776-c5a0-4dff-a542-674a95414f81
+	fromColumn: 'PO Daybook'.Confirmed_Ex_Factory_Key
+	toColumn: 'Confirmed Ex-Factory Date'.'Date Key'
+
+relationship cc355682-c815-471f-8b11-7e5334e4e247
+	fromColumn: 'PO Daybook'.InvoiceDate_Key
+	toColumn: 'Invoice Date'.'Date Key'
+
+relationship fff71c39-389c-4eb8-8d96-5003c31df2b6
+	fromColumn: 'PO Daybook'.NewPurchasingSeason_Key
+	toColumn: 'Purchase Season'.'Season Key'
+
+relationship 73fa0d6e-5d54-4d88-a99f-2d08ec7f8a0b
+	fromColumn: 'PO Daybook'.'Days Late Bin'
+	toColumn: 'Days Late Groupings'.'DL Bin'
+
+relationship faca8d2d-87ef-4ec1-afa5-b4c6ca990f88
+	fromColumn: 'Pack One Carton Dimensions'.Size_Key
+	toColumn: Size.Size_Key
+
+relationship 58eecc88-4011-4a84-bfc1-b712531ba34e
+	fromColumn: 'Pack One Carton Dimensions'.PPMProduct_Key
+	toColumn: Product.PPMProduct_Key
+
+relationship 469cf55c-93ff-43e3-becd-51fc9f65ea87
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Pack One 2'.PONumberLine_Key
+	toColumn: 'Purchase Orders 2'.PONumberLine_Key
+
+relationship 20433d3b-60d7-4c22-839f-fc0bc317de38
+	fromColumn: 'Pack One 2'.PackedDateKey
+	toColumn: 'Pack One Date 2'.'Date Key'
+
+relationship 5d49ad4d-a07a-4192-a558-83508e06aaee
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Seasonal Product Type 2'.Product_Key
+	toColumn: 'Product 2'.PPMProduct_Key
+
+relationship 4636d8e0-305f-4866-b101-bdda69546f69
+	fromColumn: 'Product Weights 2'.Product_Key
+	toColumn: 'Product 2'.Product_Key
+
+relationship 69cb71be-b878-477b-a33c-49905cb25fa4
+	fromColumn: 'Product Weights 2'.Size_Key
+	toColumn: 'Size 2'.Size_Key
+
+relationship 2be4068c-2672-400b-9ce6-283a06660c74
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'PO Details 2'.PONumberLine_Key
+	toColumn: 'Purchase Orders 2'.PONumberLine_Key
+
+relationship 087a29e5-4856-47d9-ae25-a6bd6df6556b
+	fromColumn: 'PO Details 2'.SizeCode
+	toColumn: 'Size 2'.Size
+
+relationship 2868d136-657b-4265-b3cf-191706d7760c
+	fromColumn: 'Construction Capacity 2'.Supplier_Key
+	toColumn: 'Supplier 2'.Supplier_Key
+
+relationship 15bdddd7-1373-4588-b290-7e6d80219266
+	fromColumn: 'Construction Capacity 2'.Amended_StartDate_Key
+	toColumn: 'Scheduled Ex-Factory Date 2'.'Date Key'
+
+relationship 23f8f2e7-baa8-440e-b1cb-b6acae2f11df
+	fromColumn: 'PO Daybook 2'.OrderStatus_Key
+	toColumn: 'Order Status 2'.Order_Status_Key
+
+relationship eebac4a1-d859-4c24-87de-c7a66acfb79f
+	fromColumn: 'PO Daybook 2'.Product_Key
+	toColumn: 'Product 2'.PPMProduct_Key
+
+relationship 8efe7787-fe7d-4790-a231-6e4134f31e57
+	fromColumn: 'PO Daybook 2'.OrderType_Key
+	toColumn: 'Order Type 2'.Order_Type_Key
+
+relationship b2f399ef-a762-4e0a-9921-2b9b00a72610
+	fromColumn: 'PO Daybook 2'.Scheduled_Ex_Factory_Key
+	toColumn: 'Scheduled Ex-Factory Date 2'.'Date Key'
+
+relationship 10c6ac52-ea8a-4181-88ba-c02e37eed3f9
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'PO Daybook 2'.PONumberLine_Key
+	toColumn: 'Purchase Orders 2'.PONumberLine_Key
+
+relationship 0fb5bd10-a7d2-4f18-987b-bc43d65ed456
+	fromColumn: 'PO Daybook 2'.Method_Key
+	toColumn: 'Shipment Method 2'.Shipment_Method_Key
+
+relationship 8b87088e-f0ee-4c4e-a66e-586a40447445
+	fromColumn: 'PO Daybook 2'.Territory_Key
+	toColumn: 'Region 2'.Territory_Key
+
+relationship 799f7f32-9db4-4021-acdc-51c1c91644a3
+	fromColumn: 'PO Daybook 2'.Warehouse_Key
+	toColumn: 'Warehouse 2'.Warehouse_Key
+
+relationship f452522c-beb9-4844-857c-fee953c49ec5
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'PO Daybook 2'.Supplier_Key
+	toColumn: 'Supplier 2'.Supplier_Key
+
+relationship 8525c799-1e3d-4b23-b34d-accf456474b5
+	fromColumn: 'PO Daybook 2'.ActualExFactoryDate_Key
+	toColumn: 'Actual Ex-Factory Date 2'.'Date Key'
+
+relationship b4e6e4c8-794e-4abe-a997-786dfe6acb68
+	fromColumn: 'PO Daybook 2'.ExFactoryDate_Key
+	toColumn: 'Latest Ex-Factory Date 2'.ExFactoryDate_Key
+
+relationship 8a39c46c-f4ad-483e-bb17-e9c1213d06e2
+	fromColumn: 'PO Daybook 2'.Confirmed_Ex_Factory_Key
+	toColumn: 'Confirmed Ex-Factory Date 2'.'Date Key'
+
+relationship 28cd78e2-304b-4ed5-b883-2eced30713dc
+	fromColumn: 'PO Daybook 2'.InvoiceDate_Key
+	toColumn: 'Invoice Date 2'.'Date Key'
+
+relationship 0d4dd094-f550-4045-a7be-7e83793940f6
+	fromColumn: 'PO Daybook 2'.NewPurchasingSeason_Key
+	toColumn: 'Purchase Season 2'.'Season Key'
+
+relationship 8726fb1e-9939-4388-bf55-6e30634841e3
+	fromColumn: 'PO Daybook 2'.'Days Late Bin'
+	toColumn: 'Days Late Groupings 2'.'DL Bin'
+
+relationship a44ac7bf-0806-42cf-aeaf-159740206b73
+	fromColumn: 'Pack One Carton Dimensions 2'.Size_Key
+	toColumn: 'Size 2'.Size_Key
+
+relationship a69c5626-8264-4cda-9c1f-f53d8b75d62c
+	fromColumn: 'Pack One Carton Dimensions 2'.PPMProduct_Key
+	toColumn: 'Product 2'.PPMProduct_Key
+
+relationship 6ea06e0e-e92d-4f37-b19a-cffc31a88ce7
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Pack One 3'.PONumberLine_Key
+	toColumn: 'Purchase Orders 3'.PONumberLine_Key
+
+relationship 40beb1d6-7822-46e3-ae82-e9dff4287933
+	fromColumn: 'Pack One 3'.PackedDateKey
+	toColumn: 'Pack One Date 3'.'Date Key'
+
+relationship afa525b0-4d2c-4f94-9bd9-1f927e38eca0
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Seasonal Product Type 3'.Product_Key
+	toColumn: 'Product 3'.PPMProduct_Key
+
+relationship 89f6f067-3249-4e8f-8a1b-f817de5f4df9
+	fromColumn: 'Product Weights 3'.Product_Key
+	toColumn: 'Product 3'.Product_Key
+
+relationship dc603e11-3b97-48ed-945a-101dfcef74eb
+	fromColumn: 'Product Weights 3'.Size_Key
+	toColumn: 'Size 3'.Size_Key
+
+relationship 753a64df-a9e7-4e34-9be0-c3a4d73c28aa
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'PO Details 3'.PONumberLine_Key
+	toColumn: 'Purchase Orders 3'.PONumberLine_Key
+
+relationship 5aa0d8fa-fad3-499b-b269-0679144340ef
+	fromColumn: 'PO Details 3'.SizeCode
+	toColumn: 'Size 3'.Size
+
+relationship 60635406-aac6-4501-abb3-95f52eeff9b5
+	fromColumn: 'Construction Capacity 3'.Supplier_Key
+	toColumn: 'Supplier 3'.Supplier_Key
+
+relationship 253f6c3a-438b-48b4-88de-84dc191276ab
+	fromColumn: 'Construction Capacity 3'.Amended_StartDate_Key
+	toColumn: 'Scheduled Ex-Factory Date 3'.'Date Key'
+
+relationship c8264e8f-29c3-4b60-aefb-5c22d4aa0d63
+	fromColumn: 'PO Daybook 3'.OrderStatus_Key
+	toColumn: 'Order Status 3'.Order_Status_Key
+
+relationship 7b36ba49-ff06-4a14-8669-f8219ffb5917
+	fromColumn: 'PO Daybook 3'.Product_Key
+	toColumn: 'Product 3'.PPMProduct_Key
+
+relationship c80e4947-a558-476d-9f1c-801e9ceef4cf
+	fromColumn: 'PO Daybook 3'.OrderType_Key
+	toColumn: 'Order Type 3'.Order_Type_Key
+
+relationship b528855d-6891-4ab9-becd-0e6efde98e92
+	fromColumn: 'PO Daybook 3'.Scheduled_Ex_Factory_Key
+	toColumn: 'Scheduled Ex-Factory Date 3'.'Date Key'
+
+relationship 965ae5e8-145a-432d-95cf-146cc9769ab5
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'PO Daybook 3'.PONumberLine_Key
+	toColumn: 'Purchase Orders 3'.PONumberLine_Key
+
+relationship 1358f474-2694-46ae-8b06-da5511e735af
+	fromColumn: 'PO Daybook 3'.Method_Key
+	toColumn: 'Shipment Method 3'.Shipment_Method_Key
+
+relationship a8ba5b5f-4525-4277-96d6-991dfe6b32a2
+	fromColumn: 'PO Daybook 3'.Territory_Key
+	toColumn: 'Region 3'.Territory_Key
+
+relationship 79210498-1612-4b81-8f41-3043a89eab49
+	fromColumn: 'PO Daybook 3'.Warehouse_Key
+	toColumn: 'Warehouse 3'.Warehouse_Key
+
+relationship 507bf179-f592-42fa-8073-e0b46a280ee7
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'PO Daybook 3'.Supplier_Key
+	toColumn: 'Supplier 3'.Supplier_Key
+
+relationship a3881532-bdd7-4910-b464-2a611ff38213
+	fromColumn: 'PO Daybook 3'.ActualExFactoryDate_Key
+	toColumn: 'Actual Ex-Factory Date 3'.'Date Key'
+
+relationship 7676ecb8-8b27-4af4-be3f-a48e86f996d4
+	fromColumn: 'PO Daybook 3'.ExFactoryDate_Key
+	toColumn: 'Latest Ex-Factory Date 3'.ExFactoryDate_Key
+
+relationship f21af071-31ab-4a70-9cc9-ca0e20333a9c
+	fromColumn: 'PO Daybook 3'.Confirmed_Ex_Factory_Key
+	toColumn: 'Confirmed Ex-Factory Date 3'.'Date Key'
+
+relationship 4540bd22-9d56-47f5-9b36-698a96b4453b
+	fromColumn: 'PO Daybook 3'.InvoiceDate_Key
+	toColumn: 'Invoice Date 3'.'Date Key'
+
+relationship 511d9940-2999-46e6-bff9-f175e58c2a4b
+	fromColumn: 'PO Daybook 3'.NewPurchasingSeason_Key
+	toColumn: 'Purchase Season 3'.'Season Key'
+
+relationship c3a9720b-5eae-4e6b-b22c-ab2045065594
+	fromColumn: 'PO Daybook 3'.'Days Late Bin'
+	toColumn: 'Days Late Groupings 3'.'DL Bin'
+
+relationship cf63f11b-a637-40e3-995f-0e11aacc9650
+	fromColumn: 'Pack One Carton Dimensions 3'.Size_Key
+	toColumn: 'Size 3'.Size_Key
+
+relationship e93218be-a206-4c48-b0b7-8b48258161db
+	fromColumn: 'Pack One Carton Dimensions 3'.PPMProduct_Key
+	toColumn: 'Product 3'.PPMProduct_Key
+

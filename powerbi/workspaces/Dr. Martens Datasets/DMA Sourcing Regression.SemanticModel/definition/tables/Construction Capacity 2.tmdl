@@ -1,0 +1,92 @@
+table 'Construction Capacity 2'
+	lineageTag: ba1ddf2e-0c37-4e0d-97df-da4eb551d505
+	sourceLineageTag: d67283b3-9629-477d-ae0c-3aad6b5c27db
+
+	column PPM_Constuction_Capacity_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: ca60339d-e9c0-431e-b7c5-b8d8c8ce475b
+		sourceLineageTag: c8432c9e-598b-4063-a8c1-1298f437097c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PPM_Constuction_Capacity_Key
+
+		annotation SummarizationSetBy = User
+
+	column Supplier_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 35e5bcbf-1586-4032-9261-3086e8ab2594
+		sourceLineageTag: 1d7b04b1-cc49-4b01-8c47-1337299f6e75
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Current Capacity'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 7297a8af-f81f-4ae8-8d8a-1f685b278a4f
+		sourceLineageTag: f752f619-f7f0-4ea1-a1de-11894c4063f0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Current Capacity
+
+		annotation SummarizationSetBy = User
+
+	column StartDate_Key
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 0b0a1c58-650d-4347-8aa3-d5d5c394b74e
+		sourceLineageTag: f2884c3b-20d6-4209-9ade-b01eee944e50
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: StartDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Capacity Lead Time'
+		dataType: int64
+		lineageTag: 03fe7e31-a3f3-4d31-9224-2c289fe93f97
+		sourceLineageTag: 804bd283-292b-4f94-ac84-dbcac1fa5a31
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Capacity Lead Time
+
+		annotation SummarizationSetBy = User
+
+	column Amended_StartDate_Key
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 61c9b5ff-883e-46c5-9127-1bf03344c037
+		sourceLineageTag: 8f31c4ae-989c-45a9-a4c2-74823c419138
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Amended_StartDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column ConstructionCode
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 6741f1f0-0b37-41bf-87de-05e5b25e6ff3
+		sourceLineageTag: 4db53c28-fb9f-4713-af04-feec8f363b74
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ConstructionCode
+
+		annotation SummarizationSetBy = User
+
+	partition 'Construction Capacity 2' = entity
+		mode: directQuery
+		source
+			entityName: Construction Capacity
+			expressionSource: 'DirectQuery to AS - DMA Sourcing 2'
+

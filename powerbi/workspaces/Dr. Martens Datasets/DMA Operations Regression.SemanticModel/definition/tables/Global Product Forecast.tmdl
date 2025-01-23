@@ -1,0 +1,66 @@
+table 'Global Product Forecast'
+	isHidden
+	lineageTag: 33fb5843-3008-4b71-9874-187dae7a1ebe
+	sourceLineageTag: 6b8915c0-4f3b-48af-b715-2198e9c9a7d6
+
+	column Global_Product_Forecast_Key
+		dataType: string
+		isHidden
+		lineageTag: 7e0c1956-54d0-4495-b053-423c6a022616
+		sourceLineageTag: f6cd282d-944d-4b96-bf1b-976d1a74f96e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Global_Product_Forecast_Key
+
+		annotation SummarizationSetBy = User
+
+	column Product_Key
+		dataType: string
+		isHidden
+		lineageTag: 269132bf-1714-4153-aa1e-9b5ee0847c5a
+		sourceLineageTag: a9615441-0558-40ec-9997-6496d786f911
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Intro Month'
+		dataType: string
+		isHidden
+		lineageTag: 1b820bdb-9786-4588-9381-63282c186c7b
+		sourceLineageTag: 0ccd5a1d-f15f-4383-94f3-4383c133bd13
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Intro Month
+
+		annotation SummarizationSetBy = User
+
+	column 'SRP (GBP)'
+		dataType: double
+		isHidden
+		lineageTag: 07201485-455f-4634-97d4-c949c5683b70
+		sourceLineageTag: e9766150-8e40-416b-a8dd-38177c7da121
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: SRP (GBP)
+
+		annotation SummarizationSetBy = User
+
+	column 'Forecast Value'
+		dataType: double
+		isHidden
+		lineageTag: 622adb6b-f887-42f3-97bb-3125a41f01c8
+		sourceLineageTag: 135582ef-bd24-40c6-bf83-6eb34ba5d923
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Forecast Value
+
+		annotation SummarizationSetBy = User
+
+	partition 'Global Product Forecast' = entity
+		mode: directQuery
+		source
+			entityName: Global Product Forecast
+			expressionSource: 'DirectQuery to AS - DMA Operations'
+

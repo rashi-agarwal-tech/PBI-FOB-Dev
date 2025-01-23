@@ -1,0 +1,63 @@
+table 'Display Currency 2'
+	lineageTag: c7d2d384-86f5-4d2d-a2bf-d09c1c7f3534
+	sourceLineageTag: 72005c83-5846-4dc1-b1bf-c8616e15eb34
+
+	column 'Currency Code'
+		dataType: string
+		lineageTag: 364d828f-3c32-43c9-af51-8b54eff292cd
+		sourceLineageTag: 321f5c60-5312-45b9-8691-4c35596e9d66
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Name'
+		dataType: string
+		lineageTag: a9f2b4c7-5896-4bf3-bda9-08b65c9c873e
+		sourceLineageTag: 51ea5a52-f671-4384-bf03-44ef62375d93
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Symbol'
+		dataType: string
+		isHidden
+		lineageTag: 7063797b-6633-4a93-8c68-758a0e3d173f
+		sourceLineageTag: e01ae424-9711-4a08-a35b-b3f3a7532d89
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Symbol
+
+		annotation SummarizationSetBy = User
+
+	column XRMultiplier
+		dataType: double
+		isHidden
+		lineageTag: 9a2f457b-0843-4f10-915c-93ebcc0a2617
+		sourceLineageTag: 680a2015-a16d-4c2d-a380-3891affebad9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: XRMultiplier
+
+		annotation SummarizationSetBy = User
+
+	column NAME
+		dataType: string
+		isHidden
+		lineageTag: 3026be4a-6dc8-490c-8087-c723eefc6554
+		sourceLineageTag: 645674da-fa5e-42c5-b007-cb95cc353f30
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NAME
+
+		annotation SummarizationSetBy = User
+
+	partition 'Display Currency 2' = entity
+		mode: directQuery
+		source
+			entityName: Display Currency
+			expressionSource: 'DirectQuery to AS - DMA Sourcing 2'
+

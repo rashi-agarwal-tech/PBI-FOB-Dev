@@ -1,0 +1,22 @@
+table 'Product Forecast'
+	isHidden
+	lineageTag: d77c72d4-7ad9-47f5-964c-e8f84f5cadb4
+	sourceLineageTag: bbaf7ef3-e775-4286-9ceb-eb8d0bbe013f
+
+	column 'Product Code'
+		dataType: string
+		isHidden
+		lineageTag: adc7aa55-fa46-4294-bc6c-6f0068c65e82
+		sourceLineageTag: d1b00ae1-09d5-4a9f-9a94-399427752407
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Code
+
+		annotation SummarizationSetBy = User
+
+	partition 'Product Forecast' = entity
+		mode: directQuery
+		source
+			entityName: Product Forecast
+			expressionSource: 'DirectQuery to AS - DMA Total Business'
+

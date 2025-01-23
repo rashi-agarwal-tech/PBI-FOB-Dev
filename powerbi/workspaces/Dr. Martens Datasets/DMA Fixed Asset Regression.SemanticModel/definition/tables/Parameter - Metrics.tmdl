@@ -1,0 +1,68 @@
+table 'Parameter - Metrics'
+	lineageTag: 35e77544-2544-4074-a099-8fdaaa1f4f95
+
+	column 'Parameter - Metrics'
+		lineageTag: 94113e41-da17-4494-90f2-1d4b2db74b74
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter - Metrics Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter - Metrics Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Metrics Fields'
+		isHidden
+		lineageTag: 9265534a-368e-42a7-91b9-314c840b9510
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter - Metrics Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Metrics Order'
+		isHidden
+		formatString: 0.0
+		lineageTag: f99c51a5-ec8a-4779-853d-90508c0c00ca
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type =
+			
+			IF
+			(
+			    RIGHT(FORMAT([Parameter - Metrics Order],"@"),1)="1"
+			    ,"Actual"
+			    ,"Abs Diff"
+			)
+		lineageTag: ad4b0134-41bf-4be9-84ce-8d3ebab207e4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter - Metrics' = calculated
+		mode: import
+		source =
+				
+				{
+				    ("Amount Average Actuals", NAMEOF([fa Amount Average]), 1.1),
+				    ("Amount Average AbsDiff", NAMEOF([fa Amount Average Diff]), 1.2),
+				    ("Amount Constant Actuals", NAMEOF([fa Amount Constant]), 2.1),
+				    ("Amount Constant AbsDiff", NAMEOF([fa Amount Constant Diff]), 2.2),
+				    ("Amount Constant To Date Actuals", NAMEOF([fa Amount Constant To Date]), 3.1),
+				    ("Amount Constant To Date AbsDiff", NAMEOF([fa Amount Constant To Date Diff]), 3.2),
+				    ("Amount Local Actuals", NAMEOF([fa Amount Local]), 4.1),
+				    ("Amount Local AbsDiff", NAMEOF([fa Amount Local Diff]), 4.2)
+				}
+
+	annotation PBI_Id = ca6d7977ee0048349af11303548f9228
+

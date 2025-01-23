@@ -1,0 +1,100 @@
+table 'Pick 2'
+	isHidden
+	lineageTag: 6cae6002-1d70-448b-a3b7-5b0cf5812ec5
+	sourceLineageTag: e1270baf-d144-4128-af9f-a622eaf8d42e
+
+	column HandlingStatusDesc
+		dataType: string
+		isHidden
+		lineageTag: fe911960-af1b-44b3-9748-49b15ea4795b
+		sourceLineageTag: 289fa63d-fd6d-45ba-909d-a8434b9935dd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: HandlingStatusDesc
+
+		annotation SummarizationSetBy = User
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		lineageTag: 6f432845-cdde-41ad-8e78-11097927e3f5
+		sourceLineageTag: 34b75510-1040-4fef-8639-944af2403097
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick Qty'
+		dataType: int64
+		isHidden
+		formatString: #,##0
+		lineageTag: 2e4fb70f-8051-4d4b-bc1a-e55dbc922f43
+		sourceLineageTag: c1bf7fdc-e69c-463b-977d-76eb426fcec8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pick Qty
+
+		annotation SummarizationSetBy = User
+
+	column Product_Key
+		dataType: string
+		isHidden
+		lineageTag: e0f4d696-fbbd-436d-88be-78a8d4971744
+		sourceLineageTag: 12371845-2ffc-429f-b3c1-76ea05491b9b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size_Key
+		dataType: string
+		isHidden
+		lineageTag: 186e81cb-a0c1-46fd-bd3a-e8c313730883
+		sourceLineageTag: a3ce2181-59a2-446f-bbc5-d62d9dd862f5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		lineageTag: e479c981-4932-4d24-84ea-2d10708e95bf
+		sourceLineageTag: 148a67a0-405c-4078-ae82-302639f1ac87
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column SELLINGSTATUS
+		dataType: int64
+		isHidden
+		lineageTag: fcfb8e76-def6-4fd5-9cad-e75dec6ac459
+		sourceLineageTag: 082329cb-7780-4257-a713-378453521fd3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		annotation SummarizationSetBy = User
+
+	column INVENT_LOCATION_ID_WMS
+		dataType: string
+		isHidden
+		lineageTag: f6b0c396-bb54-4adc-b4e0-bef4bf619504
+		sourceLineageTag: d56a1b10-6cf8-4b6b-a437-d4037e827355
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENT_LOCATION_ID_WMS
+
+		annotation SummarizationSetBy = User
+
+	partition 'Pick 2' = entity
+		mode: directQuery
+		source
+			entityName: Pick
+			expressionSource: 'DirectQuery to AS - DMA D2C 2'
+

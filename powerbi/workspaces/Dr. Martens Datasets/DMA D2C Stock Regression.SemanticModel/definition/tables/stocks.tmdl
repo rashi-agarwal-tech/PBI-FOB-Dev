@@ -1,0 +1,2124 @@
+table stocks
+	lineageTag: 10d9ef44-79f6-4df3-af4c-4cebe0c55b56
+
+	measure 'stocks 1. All On Hand Stock Units' =
+			
+			IF
+			(
+			    SUM(stocks[1. All On Hand Stock Units])=0
+			    ,BLANK()
+			    ,SUM(stocks[1. All On Hand Stock Units])
+			)
+		formatString: #,0
+		lineageTag: 5c8ac23b-df61-4b8b-845f-b76c1c219596
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'stocks 2. WH Stock Units' =
+			
+			IF
+			(
+			    SUM(stocks[2. WH Stock Units])=0
+			    ,BLANK()
+			    ,SUM(stocks[2. WH Stock Units])
+			)
+		formatString: #,0
+		lineageTag: 6c1a26ae-8b1c-46ed-bcae-0c2f205ab011
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'stocks 1. All On Hand Stock Units Diff' =
+			
+			IF
+			(
+			    SUM(stocks[1. All On Hand Stock Units Diff])=0
+			    ,BLANK()
+			    ,SUM(stocks[1. All On Hand Stock Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 187b0453-f7a5-44d6-94e8-6615aa5a11c6
+
+	measure 'stocks 2. WH Stock Units Diff' =
+			
+			IF
+			(
+			    SUM(stocks[2. WH Stock Units Diff])=0
+			    ,BLANK()
+			    ,SUM(stocks[2. WH Stock Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 3cd5d233-cb48-43a2-bbf7-7425f5281529
+
+	measure 'stocks Sum of AbsDiff %' =
+			
+			DIVIDE
+			(
+			    [stocks 1. All On Hand Stock Units Diff %]
+			    +[stocks 2. WH Stock Units Diff %]
+			    +[stocks 4. Store In-Transit Units Diff %]
+			    +[stocks 5. Store Stock Units Diff %]
+			    +[stocks Item Coverage Diff %]
+			    +[stocks On Hand Spot Cover Diff %]
+			    +[stocks Stock Outs % Diff %]
+			    +[stocks Store Spot Cover Diff %]
+			    +[stocks WH Spot Cover Diff %]
+			    +[stocks 2.2 Available WH Stock Units Diff %]
+			    +[stocks 3.1 Allocated Units Arrived Diff %]
+			    +[stocks 4. Reserved Intake Units Diff %]
+			    +[stocks Ranged Stores Diff %]
+			    ,13
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8b855803-9206-471f-96c9-2f3272fc252e
+
+	measure 'stocks 4. Store In-Transit Units' =
+			
+			IF
+			(
+			    SUM(stocks[4. Store In-Transit Units])=0
+			    ,BLANK()
+			    ,SUM(stocks[4. Store In-Transit Units])
+			)
+		formatString: #,0
+		lineageTag: 738660bd-f882-4fa5-bb9e-5ec631d8b5cd
+
+	measure 'stocks 5. Store Stock Units' =
+			
+			IF
+			(
+			    SUM(stocks[5. Store Stock Units])=0
+			    ,BLANK()
+			    ,SUM(stocks[5. Store Stock Units])
+			)
+		formatString: #,0
+		lineageTag: d356d0e2-5b23-4383-8b2e-b30424fd68cf
+
+	measure 'stocks Item Coverage' =
+			
+			IF
+			(
+			    SUM(stocks[Item Coverage])=0
+			    ,BLANK()
+			    ,SUM(stocks[Item Coverage])
+			)
+		formatString: #,0
+		lineageTag: 7db4c723-fe7d-4cfb-928d-2d8f98f5910c
+
+	measure 'stocks On Hand Spot Cover' =
+			
+			IF
+			(
+			    SUM(stocks[On Hand Spot Cover])=0
+			    ,BLANK()
+			    ,SUM(stocks[On Hand Spot Cover])
+			)
+		formatString: #,0.0
+		lineageTag: 9b5cc46d-02ab-46b7-8064-1998357c6afc
+
+	measure 'stocks Stock Outs %' =
+			
+			IF
+			(
+			    SUM(stocks[Stock Outs %])=0
+			    ,BLANK()
+			    ,SUM(stocks[Stock Outs %])
+			)
+		formatString: #,0.0%;-#,0.0%;#,0.0%
+		lineageTag: c8ff1cc4-aaab-4368-9d63-7185a7594e51
+
+	measure 'stocks Store Spot Cover' =
+			
+			IF
+			(
+			    SUM(stocks[Store Spot Cover])=0
+			    ,BLANK()
+			    ,SUM(stocks[Store Spot Cover])
+			)
+		formatString: #,0.0
+		lineageTag: ab1bd50b-2977-4e56-b0fb-29c5f1993d4c
+
+	measure 'stocks WH Spot Cover' =
+			
+			IF
+			(
+			    SUM(stocks[WH Spot Cover])=0
+			    ,BLANK()
+			    ,SUM(stocks[WH Spot Cover])
+			)
+		formatString: #,0.0
+		lineageTag: 77160fa4-2ecf-43bc-848b-b884f8627d9c
+
+	measure 'stocks 2.2 Available WH Stock Units' =
+			
+			IF
+			(
+			    SUM(stocks[2.2 Available WH Stock Units])=0
+			    ,BLANK()
+			    ,SUM(stocks[2.2 Available WH Stock Units])
+			)
+		formatString: #,0
+		lineageTag: b42301a0-a891-4227-bf67-ca5aa74e6ba3
+
+	measure 'stocks 3.1 Allocated Units Arrived' =
+			
+			IF
+			(
+			    SUM(stocks[3.1 Allocated Units Arrived])=0
+			    ,BLANK()
+			    ,SUM(stocks[3.1 Allocated Units Arrived])
+			)
+		formatString: #,0
+		lineageTag: d15aca5c-e5b9-4491-beb8-d08912b5a1a3
+
+	measure 'stocks 4. Reserved Intake Units' =
+			
+			IF
+			(
+			    SUM(stocks[4. Reserved Intake Units])=0
+			    ,BLANK()
+			    ,SUM(stocks[4. Reserved Intake Units])
+			)
+		formatString: #,0
+		lineageTag: 53fb2883-ac1c-4b07-abbe-9ebbacd14a9d
+
+	measure 'stocks Ranged Stores' =
+			
+			IF
+			(
+			    SUM(stocks[Ranged Stores])=0
+			    ,BLANK()
+			    ,SUM(stocks[Ranged Stores])
+			)
+		formatString: #,0
+		lineageTag: faed7ebf-fdd6-4085-9ea6-c0a1646edd73
+
+	measure 'stocks 4. Store In-Transit Units Diff' =
+			
+			IF
+			(
+			    SUM(stocks[4. Store In-Transit Units Diff])=0
+			    ,BLANK()
+			    ,SUM(stocks[4. Store In-Transit Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 3b743228-02c2-4bc8-a0c9-8fcbec9e436d
+
+	measure 'stocks 5. Store Stock Units Diff' =
+			
+			IF
+			(
+			    SUM(stocks[5. Store Stock Units Diff])=0
+			    ,BLANK()
+			    ,SUM(stocks[5. Store Stock Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 60f5f0e3-d02a-436e-ab3c-75b0a54a4214
+
+	measure 'stocks Item Coverage Diff' =
+			
+			IF
+			(
+			    SUM(stocks[Item Coverage Diff])=0
+			    ,BLANK()
+			    ,SUM(stocks[Item Coverage Diff])
+			)
+		formatString: #,0
+		lineageTag: 5a9bd270-43ae-4e5d-ab79-9f4d523e00c9
+
+	measure 'stocks On Hand Spot Cover Diff' =
+			
+			IF
+			(
+			    SUM(stocks[On Hand Spot Cover Diff])=0
+			    ,BLANK()
+			    ,SUM(stocks[On Hand Spot Cover Diff])
+			)
+		formatString: #,0.0
+		lineageTag: 557be608-2561-4b9a-8751-b8b44b592a8f
+
+	measure 'stocks Stock Outs % Diff' =
+			
+			IF
+			(
+			    SUM(stocks[Stock Outs % Diff])=0
+			    ,BLANK()
+			    ,SUM(stocks[Stock Outs % Diff])
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8cc872bb-8ca3-42dc-bb3a-203d3d39deaf
+
+	measure 'stocks Store Spot Cover Diff' =
+			
+			IF
+			(
+			    SUM(stocks[Store Spot Cover Diff])=0
+			    ,BLANK()
+			    ,SUM(stocks[Store Spot Cover Diff])
+			)
+		formatString: #,0.0
+		lineageTag: 76906cc8-51eb-4fc0-b557-34c2b56ed10d
+
+	measure 'stocks WH Spot Cover Diff' =
+			
+			IF
+			(
+			    SUM(stocks[WH Spot Cover Diff])=0
+			    ,BLANK()
+			    ,SUM(stocks[WH Spot Cover Diff])
+			)
+		formatString: #,0.0
+		lineageTag: 4279c16f-cf05-41d4-b2aa-3a631023732c
+
+	measure 'stocks 2.2 Available WH Stock Units Diff' =
+			
+			IF
+			(
+			    SUM(stocks[2.2 Available WH Stock Units Diff])=0
+			    ,BLANK()
+			    ,SUM(stocks[2.2 Available WH Stock Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 3d4feb6b-e7b3-4fb1-8402-85da1f8452ad
+
+	measure 'stocks 3.1 Allocated Units Arrived Diff' =
+			
+			IF
+			(
+			    SUM(stocks[3.1 Allocated Units Arrived Diff])=0
+			    ,BLANK()
+			    ,SUM(stocks[3.1 Allocated Units Arrived Diff])
+			)
+		formatString: #,0
+		lineageTag: 51705957-f003-41c5-a383-67987d1abb39
+
+	measure 'stocks 4. Reserved Intake Units Diff' =
+			
+			IF
+			(
+			    SUM(stocks[4. Reserved Intake Units Diff])=0
+			    ,BLANK()
+			    ,SUM(stocks[4. Reserved Intake Units Diff])
+			)
+		formatString: #,0
+		lineageTag: 7ab00c08-f28a-4bcb-939d-7a3049965339
+
+	measure 'stocks Ranged Stores Diff' =
+			
+			IF
+			(
+			    SUM(stocks[Ranged Stores Diff])=0
+			    ,BLANK()
+			    ,SUM(stocks[Ranged Stores Diff])
+			)
+		formatString: #,0
+		lineageTag: 40b98151-18a2-48cc-8e8c-25a64356d6af
+
+	measure 'source parameter' =
+			
+			"1 Footprint PROD"
+		lineageTag: 43f41ffa-eb98-435a-b0fc-b9ed45262e14
+
+	measure 'stocks 1. All On Hand Stock Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [stocks 1. All On Hand Stock Units Diff]
+			    ,CALCULATE
+			    (
+			        [stocks 1. All On Hand Stock Units]
+			        ,stocks[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 0dfbddc7-7d32-404b-84ee-997e6cf18367
+
+	measure 'stocks 2. WH Stock Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [stocks 2. WH Stock Units Diff]
+			    ,CALCULATE
+			    (
+			        [stocks 2. WH Stock Units]
+			        ,stocks[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ca4fa677-81df-487b-8bfb-9a7adb7a000d
+
+	measure 'stocks 2.2 Available WH Stock Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [stocks 2.2 Available WH Stock Units Diff]
+			    ,CALCULATE
+			    (
+			        [stocks 2.2 Available WH Stock Units]
+			        ,stocks[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 1b5d16a6-2daa-4237-9a10-6e720f26f05b
+
+	measure 'stocks 3.1 Allocated Units Arrived Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [stocks 3.1 Allocated Units Arrived Diff]
+			    ,CALCULATE
+			    (
+			        [stocks 3.1 Allocated Units Arrived]
+			        ,stocks[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 26f3fd23-1e9d-40e4-b33a-bc5c083b0ddd
+
+	measure 'stocks 4. Reserved Intake Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [stocks 4. Reserved Intake Units Diff]
+			    ,CALCULATE
+			    (
+			        [stocks 4. Reserved Intake Units]
+			        ,stocks[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8d25b29e-d0a3-41b7-9520-02b5ddbc77e5
+
+	measure 'stocks 4. Store In-Transit Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [stocks 4. Store In-Transit Units Diff]
+			    ,CALCULATE
+			    (
+			        [stocks 4. Store In-Transit Units]
+			        ,stocks[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 1ece23c1-fab7-4bb6-8693-548215dc329d
+
+	measure 'stocks 5. Store Stock Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [stocks 5. Store Stock Units Diff]
+			    ,CALCULATE
+			    (
+			        [stocks 5. Store Stock Units]
+			        ,stocks[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 40577c64-6055-4fe4-9476-e3ddfac6174c
+
+	measure 'stocks Item Coverage Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [stocks Item Coverage Diff]
+			    ,CALCULATE
+			    (
+			        [stocks Item Coverage]
+			        ,stocks[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: f74e05cb-580a-4aa7-b066-d7913d299cba
+
+	measure 'stocks On Hand Spot Cover Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [stocks On Hand Spot Cover Diff]
+			    ,CALCULATE
+			    (
+			        [stocks On Hand Spot Cover]
+			        ,stocks[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d4971efb-d81d-4c9a-bc70-e36070abf746
+
+	measure 'stocks Ranged Stores Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [stocks Ranged Stores Diff]
+			    ,CALCULATE
+			    (
+			        [stocks Ranged Stores]
+			        ,stocks[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8a2d6d26-a9e4-4ca9-81f0-3d14c835f413
+
+	measure 'stocks Stock Outs % Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [stocks Stock Outs % Diff]
+			    ,CALCULATE
+			    (
+			        [stocks Stock Outs %]
+			        ,stocks[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: a1797141-bc20-465a-b96c-54e2f2f845d1
+
+	measure 'stocks Store Spot Cover Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [stocks Store Spot Cover Diff]
+			    ,CALCULATE
+			    (
+			        [stocks Store Spot Cover]
+			        ,stocks[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 550d3e91-c78c-4443-b08c-140bef9f2897
+
+	measure 'stocks WH Spot Cover Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [stocks WH Spot Cover Diff]
+			    ,CALCULATE
+			    (
+			        [stocks WH Spot Cover]
+			        ,stocks[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 9387a9d5-2058-4467-9964-4c59d27c8f9e
+
+	column 'Fiscal Year (544)'
+		lineageTag: a127a073-47a3-4d11-aa40-426397b7ea2a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Date[Fiscal Year (544)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year-Period (544)'
+		lineageTag: 9347d561-8f4d-42f0-acee-f8c0704e240c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Date[Fiscal Year-Period (544)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attribute
+		lineageTag: 97c524b7-53ef-47fe-bfee-6a665ad5ede0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Attribute]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dimension
+		lineageTag: 9a2a063f-14c1-4234-84d5-051e74ca592f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Dimension]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source
+		lineageTag: 63a20d40-e633-4089-bfef-5a117cf9bd46
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Source]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '1. All On Hand Stock Units'
+		lineageTag: 1b3750ea-3627-44cc-9503-38c293756d02
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [1. All On Hand Stock Units]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '2. WH Stock Units'
+		lineageTag: 7b6bd80d-1d9c-475b-a4fc-e0b84e2709c7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [2. WH Stock Units]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '4. Store In-Transit Units'
+		lineageTag: 32039c91-fc2f-467d-bd8a-fa524950cd63
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [4. Store In-Transit Units]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '5. Store Stock Units'
+		lineageTag: 33b3f593-137d-4868-a672-3bf2e1619e29
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [5. Store Stock Units]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Item Coverage'
+		lineageTag: f1df0640-97c4-45f2-83c3-5580b946e3d1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Item Coverage]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'On Hand Spot Cover'
+		lineageTag: a66066fc-2430-4a98-bf50-db029bce9958
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [On Hand Spot Cover]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Stock Outs %'
+		lineageTag: 39a2e56f-12a9-46e4-9c91-c292143e7d76
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Stock Outs %]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Store Spot Cover'
+		lineageTag: 5dd84e8a-00c2-4a1e-aaa7-78b8a2934d80
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Store Spot Cover]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WH Spot Cover'
+		lineageTag: 0580391f-a433-4b84-bcdb-b7eb4927ce3c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [WH Spot Cover]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '2.2 Available WH Stock Units'
+		lineageTag: dc34e1b1-a931-4abf-9a01-47de506cc682
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [2.2 Available WH Stock Units]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '3.1 Allocated Units Arrived'
+		formatString: 0
+		lineageTag: c975368f-4513-4009-8422-bcb91db8d626
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [3.1 Allocated Units Arrived]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '4. Reserved Intake Units'
+		formatString: 0
+		lineageTag: 06f13cff-dec5-41ec-b437-45a1c1340efb
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [4. Reserved Intake Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ranged Stores'
+		formatString: 0
+		lineageTag: 49ea8bdd-faab-49d0-9c5c-41bf92fad7c1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Ranged Stores]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Date'
+		formatString: dd-mmm-yyyy
+		lineageTag: 4cbbede3-e153-43e7-ad1e-7b51f679c0be
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Date[ Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column '1. All On Hand Stock Units Diff' =
+			
+			ABS
+			(
+			    stocks[1. All On Hand Stock Units]
+			    -LOOKUPVALUE(stocks[1. All On Hand Stock Units],stocks[ Date],[ Date],stocks[Dimension],[Dimension],stocks[Attribute],[Attribute],stocks[Source],[source parameter])
+			)
+		lineageTag: 38fdc38f-1e94-4d31-a624-cc2c39b1cef8
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '2. WH Stock Units Diff' =
+			
+			ABS
+			(
+			    stocks[2. WH Stock Units]
+			    -LOOKUPVALUE(stocks[2. WH Stock Units],stocks[ Date],[ Date],stocks[Dimension],[Dimension],stocks[Attribute],[Attribute],stocks[Source],[source parameter])
+			)
+		lineageTag: 0dda99d6-613a-4bc4-8bed-c41936c72b62
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '4. Store In-Transit Units Diff' =
+			
+			ABS
+			(
+			    stocks[4. Store In-Transit Units]
+			    -LOOKUPVALUE(stocks[4. Store In-Transit Units],stocks[ Date],[ Date],stocks[Dimension],[Dimension],stocks[Attribute],[Attribute],stocks[Source],[source parameter])
+			)
+		lineageTag: 2dbaefbd-09e4-4902-9deb-ef0402ecccc9
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '5. Store Stock Units Diff' =
+			
+			ABS
+			(
+			    stocks[5. Store Stock Units]
+			    -LOOKUPVALUE(stocks[5. Store Stock Units],stocks[ Date],[ Date],stocks[Dimension],[Dimension],stocks[Attribute],[Attribute],stocks[Source],[source parameter])
+			)
+		lineageTag: 1142c301-f09f-4fca-b32b-173ddca191e2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Item Coverage Diff' =
+			
+			ABS
+			(
+			    stocks[Item Coverage]
+			    -LOOKUPVALUE(stocks[Item Coverage],stocks[ Date],[ Date],stocks[Dimension],[Dimension],stocks[Attribute],[Attribute],stocks[Source],[source parameter])
+			)
+		lineageTag: 217e1bff-8b18-4a3a-96eb-9546d5197eea
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'On Hand Spot Cover Diff' =
+			
+			ABS
+			(
+			    stocks[On Hand Spot Cover]
+			    -LOOKUPVALUE(stocks[On Hand Spot Cover],stocks[ Date],[ Date],stocks[Dimension],[Dimension],stocks[Attribute],[Attribute],stocks[Source],[source parameter])
+			)
+		lineageTag: 293844d0-4dec-4dbd-bf05-7495eea70284
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Stock Outs % Diff' =
+			
+			ABS
+			(
+			    stocks[Stock Outs %]
+			    -LOOKUPVALUE(stocks[Stock Outs %],stocks[ Date],[ Date],stocks[Dimension],[Dimension],stocks[Attribute],[Attribute],stocks[Source],[source parameter])
+			)
+		lineageTag: c5c80ec8-b72f-44fd-a93e-11269abee80a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Store Spot Cover Diff' =
+			
+			ABS
+			(
+			    stocks[Store Spot Cover]
+			    -LOOKUPVALUE(stocks[Store Spot Cover],stocks[ Date],[ Date],stocks[Dimension],[Dimension],stocks[Attribute],[Attribute],stocks[Source],[source parameter])
+			)
+		lineageTag: 179753a1-8239-4e41-ada6-23a2dcfbfdf7
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'WH Spot Cover Diff' =
+			
+			ABS
+			(
+			    stocks[WH Spot Cover]
+			    -LOOKUPVALUE(stocks[WH Spot Cover],stocks[ Date],[ Date],stocks[Dimension],[Dimension],stocks[Attribute],[Attribute],stocks[Source],[source parameter])
+			)
+		lineageTag: 4c1f1d29-9c73-4c53-9500-48a72f9e572a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '2.2 Available WH Stock Units Diff' =
+			
+			ABS
+			(
+			    stocks[2.2 Available WH Stock Units]
+			    -LOOKUPVALUE(stocks[2.2 Available WH Stock Units],stocks[ Date],[ Date],stocks[Dimension],[Dimension],stocks[Attribute],[Attribute],stocks[Source],[source parameter])
+			)
+		lineageTag: 65d5fd13-1482-4aac-b5f7-dfeda6f3e756
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '3.1 Allocated Units Arrived Diff' =
+			
+			ABS
+			(
+			    stocks[3.1 Allocated Units Arrived]
+			    -LOOKUPVALUE(stocks[3.1 Allocated Units Arrived],stocks[ Date],[ Date],stocks[Dimension],[Dimension],stocks[Attribute],[Attribute],stocks[Source],[source parameter])
+			)
+		formatString: 0
+		lineageTag: d42eb9e0-d4e8-4d9c-acff-dd9e03a3fb93
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column '4. Reserved Intake Units Diff' =
+			
+			ABS
+			(
+			    stocks[4. Reserved Intake Units]
+			    -LOOKUPVALUE(stocks[4. Reserved Intake Units],stocks[ Date],[ Date],stocks[Dimension],[Dimension],stocks[Attribute],[Attribute],stocks[Source],[source parameter])
+			)
+		formatString: 0
+		lineageTag: 7c45ad73-39cc-43d2-9fde-e4147bffebae
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ranged Stores Diff' =
+			
+			ABS
+			(
+			    stocks[Ranged Stores]
+			    -LOOKUPVALUE(stocks[Ranged Stores],stocks[ Date],[ Date],stocks[Dimension],[Dimension],stocks[Attribute],[Attribute],stocks[Source],[source parameter])
+			)
+		formatString: 0
+		lineageTag: 72b308ad-e633-4d7f-b412-628c514140ab
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	partition stocks = calculated
+		mode: import
+		source =
+				
+				UNION
+				(
+				    //date
+				    CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,"Attribute",""
+				        ,"Dimension","Date"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,"Attribute",""
+				        ,"Dimension","Date"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,"Attribute",""
+				        ,"Dimension","Date"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Financial Channel
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Financial Channel'[Financial Channel]
+				        ,"Dimension","Financial Channel"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Financial Channel 2'[Financial Channel]
+				        ,"Dimension","Financial Channel"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Financial Channel 3'[Financial Channel]
+				        ,"Dimension","Financial Channel"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Size
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Size'[Size]
+				        ,"Dimension","Size"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Size 2'[Size]
+				        ,"Dimension","Size"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Size 3'[Size]
+				        ,"Dimension","Size"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Region
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Region'[Region]
+				        ,"Dimension","Region"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Region 2'[Region]
+				        ,"Dimension","Region"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Region 3'[Region]
+				        ,"Dimension","Region"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Sub-Region
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Region'[Sub-Region]
+				        ,"Dimension","Sub-Region"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Region 2'[Sub-Region]
+				        ,"Dimension","Sub-Region"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Region 3'[Sub-Region]
+				        ,"Dimension","Sub-Region"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Price Profile
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Account Details'[Price Profile]
+				        ,"Dimension","Price Profile"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Account Details 2'[Price Profile]
+				        ,"Dimension","Price Profile"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Account Details 3'[Price Profile]
+				        ,"Dimension","Price Profile"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Store Number
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Account Details'[Store Number]
+				        ,"Dimension","Store Number"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Account Details 2'[Store Number]
+				        ,"Dimension","Store Number"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Account Details 3'[Store Number]
+				        ,"Dimension","Store Number"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Store Name
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Account Details'[Store Name]
+				        ,"Dimension","Store Name"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Account Details 2'[Store Name]
+				        ,"Dimension","Store Name"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Account Details 3'[Store Name]
+				        ,"Dimension","Store Name"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Warehouse Group
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Warehouse'[Warehouse Group]
+				        ,"Dimension","Warehouse Group"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Warehouse 2'[Warehouse Group]
+				        ,"Dimension","Warehouse Group"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Warehouse 3'[Warehouse Group]
+				        ,"Dimension","Warehouse Group"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Warehouse Region
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Warehouse'[Warehouse Region]
+				        ,"Dimension","Warehouse Region"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Warehouse 2'[Warehouse Region]
+				        ,"Dimension","Warehouse Region"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Warehouse 3'[Warehouse Region]
+				        ,"Dimension","Warehouse Region"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Warehouse Sub-Region
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Warehouse'[Warehouse Sub-Region]
+				        ,"Dimension","Warehouse Sub-Region"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Warehouse 2'[Warehouse Sub-Region]
+				        ,"Dimension","Warehouse Sub-Region"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Warehouse 3'[Warehouse Sub-Region]
+				        ,"Dimension","Warehouse Sub-Region"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Warehouse Channel
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Warehouse'[Warehouse Channel]
+				        ,"Dimension","Warehouse Channel"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Warehouse 2'[Warehouse Channel]
+				        ,"Dimension","Warehouse Channel"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Warehouse 3'[Warehouse Channel]
+				        ,"Dimension","Warehouse Channel"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Current Selling Price Currency
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Products'[Current Selling Price Currency]
+				        ,"Dimension","Current Selling Price Currency"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Products 2'[Current Selling Price Currency]
+				        ,"Dimension","Current Selling Price Currency"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Products 3'[Current Selling Price Currency]
+				        ,"Dimension","Current Selling Price Currency"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Current Selling Status
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Products'[Current Selling Status]
+				        ,"Dimension","Current Selling Status"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Products 2'[Current Selling Status]
+				        ,"Dimension","Current Selling Status"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Products 3'[Current Selling Status]
+				        ,"Dimension","Current Selling Status"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //D2C Product Definition
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Products'[D2C Product Definition]
+				        ,"Dimension","D2C Product Definition"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Products 2'[D2C Product Definition]
+				        ,"Dimension","D2C Product Definition"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Products 3'[D2C Product Definition]
+				        ,"Dimension","D2C Product Definition"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Product General
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Products'[Product General]
+				        ,"Dimension","Product General"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Products 2'[Product General]
+				        ,"Dimension","Product General"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Products 3'[Product General]
+				        ,"Dimension","Product General"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Product Type
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Products'[Product Type]
+				        ,"Dimension","Product Type"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Products 2'[Product Type]
+				        ,"Dimension","Product Type"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Products 3'[Product Type]
+				        ,"Dimension","Product Type"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				
+				    //Product Code
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date'[Fiscal Year (544)]
+				        ,'Date'[Fiscal Year-Period (544)]
+				        ,'Date'[ Date]
+				        ,'Products'[Product Code]
+				        ,"Dimension","Product Code"
+				        ,"Source","1 Footprint PROD"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units]
+				        ,"2. WH Stock Units",[2. WH Stock Units]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units]
+				        ,"5. Store Stock Units",[5. Store Stock Units]
+				        ,"Item Coverage",[Item Coverage]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover],1)
+				        ,"Stock Outs %",ROUND([Stock Outs %],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units]
+				        ,"Ranged Stores",[Ranged Stores]
+				    ), 'Date'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 2'[Fiscal Year (544)]
+				        ,'Date 2'[Fiscal Year-Period (544)]
+				        ,'Date 2'[ Date]
+				        ,'Products 2'[Product Code]
+				        ,"Dimension","Product Code"
+				        ,"Source","2 Footprint UAT"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 2]
+				        ,"2. WH Stock Units",[2. WH Stock Units 2]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 2]
+				        ,"5. Store Stock Units",[5. Store Stock Units 2]
+				        ,"Item Coverage",[Item Coverage 2]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 2],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 2],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 2],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 2],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 2]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 2]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 2]
+				        ,"Ranged Stores",[Ranged Stores 2]
+				    ), 'Date 2'[- Is Today?]="Yes")
+				    ,CALCULATETABLE(SUMMARIZECOLUMNS
+				    (
+				        'Date 3'[Fiscal Year (544)]
+				        ,'Date 3'[Fiscal Year-Period (544)]
+				        ,'Date 3'[ Date]
+				        ,'Products 3'[Product Code]
+				        ,"Dimension","Product Code"
+				        ,"Source","3 Footprint DEV"
+				        ,"1. All On Hand Stock Units",[1. All On Hand Stock Units 3]
+				        ,"2. WH Stock Units",[2. WH Stock Units 3]
+				        ,"4. Store In-Transit Units",[4. Store In-Transit Units 3]
+				        ,"5. Store Stock Units",[5. Store Stock Units 3]
+				        ,"Item Coverage",[Item Coverage 3]
+				        ,"On Hand Spot Cover",ROUND([On Hand Spot Cover 3],1)
+				        ,"Stock Outs %",ROUND([Stock Outs % 3],3)
+				        ,"Store Spot Cover",ROUND([Store Spot Cover 3],1)
+				        ,"WH Spot Cover",ROUND([WH Spot Cover 3],1)
+				        ,"2.2 Available WH Stock Units",[2.2 Available WH Stock Units 3]
+				        ,"3.1 Allocated Units Arrived",[3.1 Allocated Units Arrived 3]
+				        ,"4. Reserved Intake Units",[4. Reserved Intake Units 3]
+				        ,"Ranged Stores",[Ranged Stores 3]
+				    ), 'Date 3'[- Is Today?]="Yes")
+				)
+
+	annotation PBI_Id = bfbb319266c0402989b6f5b1de1f669f
+

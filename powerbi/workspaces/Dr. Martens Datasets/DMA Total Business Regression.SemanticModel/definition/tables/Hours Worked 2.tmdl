@@ -1,0 +1,45 @@
+table 'Hours Worked 2'
+	isHidden
+	lineageTag: 411c8273-36c8-4541-8d80-84fe53154ce2
+	sourceLineageTag: abf962f6-1e86-4474-b671-19e7d49b5ac6
+
+	column 'DM Agent'
+		dataType: string
+		isHidden
+		lineageTag: 29958dd1-69c2-4dcb-a75e-d6eeb50561ce
+		sourceLineageTag: aa794160-7a5e-4c76-a65f-7d40b76caee0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DM Agent
+
+		annotation SummarizationSetBy = User
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: de9829c0-8931-4e71-b32a-8eac735c05f4
+		sourceLineageTag: 4e6f964d-9de2-4e17-b8b5-78bfb7d3d265
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse ID'
+		dataType: string
+		isHidden
+		lineageTag: 97b9d822-26d3-4303-ba8d-d371b6f50c03
+		sourceLineageTag: b3be3d65-c90d-480b-b68a-4ca30b7fe15b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse ID
+
+		annotation SummarizationSetBy = User
+
+	partition 'Hours Worked 2' = entity
+		mode: directQuery
+		source
+			entityName: Hours Worked
+			expressionSource: 'DirectQuery to AS - DMA Total Business 2'
+

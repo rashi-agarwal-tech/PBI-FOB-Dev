@@ -1,0 +1,357 @@
+table Customer
+	lineageTag: f1c0720e-e433-450b-89a3-d91c75f48d66
+	sourceLineageTag: 4f6d636e-ef10-444d-853e-c2087117119d
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: Misc
+		lineageTag: 1f0f0437-db79-4a33-8e49-703b27a2317a
+		sourceLineageTag: b62f1ffa-794d-4f7d-9c4e-f733fe6a0e0a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column HDM_EDI_CUSTOMER
+		dataType: double
+		isHidden
+		displayFolder: Misc
+		lineageTag: b50e0416-5110-4253-a56b-7d92e1cee72f
+		sourceLineageTag: d52c9276-b8ea-4df0-ac4d-fe9e78460ed0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: HDM_EDI_CUSTOMER
+
+		annotation SummarizationSetBy = User
+
+	column HDM_DIR_CUSTOMER
+		dataType: double
+		isHidden
+		displayFolder: Misc
+		lineageTag: 8441fbc3-d012-4fce-9359-7e397533bb56
+		sourceLineageTag: 78d54e47-9a5b-4c6b-8eee-3165cea7c91d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: HDM_DIR_CUSTOMER
+
+		annotation SummarizationSetBy = User
+
+	column HDM_RETAIL_CUSTOMER
+		dataType: double
+		isHidden
+		displayFolder: Misc
+		lineageTag: 6f25082c-3258-4523-9d1e-a214f5718e13
+		sourceLineageTag: 9b6aaeb3-2c5b-46af-9f63-69b62da2f1d0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: HDM_RETAIL_CUSTOMER
+
+		annotation SummarizationSetBy = User
+
+	column HDM_VR_LINK_CUSTOMER
+		dataType: double
+		isHidden
+		displayFolder: Misc
+		lineageTag: 0f33ec39-4a00-4fdb-be7e-6fe8072fda9c
+		sourceLineageTag: f758214d-4b7a-4097-8414-a28fb10423a0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: HDM_VR_LINK_CUSTOMER
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Dimension - Channel'
+		dataType: string
+		displayFolder: 1. Finance Dimensions
+		lineageTag: f0f71bbe-bdf4-4c49-b46b-90e9e11dbec2
+		sourceLineageTag: a3b374cd-5169-4a88-9ebf-e8a3d1c3fdf1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Dimension - Cost Centre'
+		dataType: string
+		displayFolder: 1. Finance Dimensions
+		lineageTag: 3b64f175-a5c3-4ff7-9db2-30ba88fe3d85
+		sourceLineageTag: dcb633f3-3a3e-4fa3-a275-aef9fbcfcab7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Cost Centre
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Dimension - Country'
+		dataType: string
+		displayFolder: 1. Finance Dimensions
+		lineageTag: bfe9dedb-7726-47c0-848d-72290ff02082
+		sourceLineageTag: c5d92c96-e90b-4ed6-b8cf-e80394a85c62
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Dimension - Selling Status'
+		dataType: string
+		displayFolder: 1. Finance Dimensions
+		lineageTag: 03b69e0e-2dc1-4a5a-b156-0ceff27960a9
+		sourceLineageTag: 90be401b-c4a4-42ab-a894-e464ff47d30f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Dimension - Selling Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Account Number'
+		dataType: string
+		lineageTag: e80f96bd-db92-42e8-9839-fc0f7a5964e1
+		sourceLineageTag: 3f726c25-cc75-4c2a-a329-c42130338045
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Account Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: 99f0612a-6b48-4dfe-9c35-31b6f1c2b6a2
+		sourceLineageTag: 181e7f61-5754-44ef-b5f0-4247099102ee
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Group'
+		dataType: string
+		lineageTag: beab7434-7a73-4f83-ac78-bd4481e96629
+		sourceLineageTag: 972e45df-7d77-4351-85c3-ac60a8ff3e0a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Line Of Business'
+		dataType: string
+		lineageTag: 5e790803-d65e-4fc8-af93-2b1bed9f764f
+		sourceLineageTag: f0471ed4-3cb8-40f5-bba3-15f6d93fb39c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Line Of Business
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Segment'
+		dataType: string
+		lineageTag: 88498624-ede9-49a4-97cd-a07fb3e0ddac
+		sourceLineageTag: 592c2ccf-0635-4613-9e2b-a0cd8c7d35db
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Sub Segment'
+		dataType: string
+		lineageTag: fca9bf0e-7753-4ea6-a20f-000093127d2f
+		sourceLineageTag: 4a65b91c-c782-464e-a556-7e7cf9684870
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Sub Segment
+
+		annotation SummarizationSetBy = User
+
+	column 'Credit Rating'
+		dataType: string
+		lineageTag: 3c2b47f5-5899-42a8-a00f-845b9e23c058
+		sourceLineageTag: e75700d3-c051-4b59-8e1e-916c14b9c693
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Credit Rating
+
+		annotation SummarizationSetBy = User
+
+	column 'Credit Limit'
+		dataType: double
+		formatString: " \#\,\#\#\0.\0\0"
+		lineageTag: 308891ba-545c-4444-9bc9-4ab3538489df
+		sourceLineageTag: 06277216-13d0-485d-9ded-11c53d9e4f3a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Credit Limit
+
+		annotation SummarizationSetBy = User
+
+	column 'Payment Terms'
+		dataType: string
+		lineageTag: 7a539a01-7e34-47d7-bb23-deca6a6b9533
+		sourceLineageTag: e8b4f328-8123-46ab-a597-3e47c995d2ff
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Payment Terms
+
+		annotation SummarizationSetBy = User
+
+	column 'Payment Method'
+		dataType: string
+		lineageTag: d616ae06-d083-40f6-add3-3ca83128b476
+		sourceLineageTag: a42a7bd6-617e-4f27-ab22-92be916f15f3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Payment Method
+
+		annotation SummarizationSetBy = User
+
+	column 'Account Manager'
+		dataType: string
+		lineageTag: 877ae3c5-5e7a-48e7-a58c-720d46565a1e
+		sourceLineageTag: df3911ca-0f0a-420e-83b3-c26f9c913860
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Account Manager
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Channel'
+		dataType: string
+		lineageTag: b73fcbff-5cc2-4587-8f65-c737027a0bc1
+		sourceLineageTag: f194553e-484d-4343-889f-e439f97042fa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Region Channel'
+		dataType: string
+		lineageTag: ad613022-ae12-47c3-873c-6430cf949814
+		sourceLineageTag: efb13bb9-49bc-4c72-958a-8f1f36b1eb33
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Region Channel
+
+		annotation SummarizationSetBy = User
+
+	column 'Customer Known-As'
+		dataType: string
+		lineageTag: 49b04199-ff6c-44f6-904d-47ec55833895
+		sourceLineageTag: 8abc856b-81c1-4025-ab66-120275f788a4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer Known-As
+
+		annotation SummarizationSetBy = User
+
+	column 'Linked Customer Account'
+		dataType: string
+		lineageTag: 8027b192-80ad-4259-8805-70eb3a35ebc5
+		sourceLineageTag: 78fa9b8d-a822-4e73-8e5a-f017c1ef1207
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Linked Customer Account
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Account Name'
+		dataType: string
+		lineageTag: 6ecafe89-0da0-485c-a9b0-0c0df9b51b82
+		sourceLineageTag: f1b5701f-bd09-48d5-a3fa-393470679663
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Account Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Account Number'
+		dataType: string
+		lineageTag: 9c0e4b55-140a-465e-b8c3-8b39f90b091b
+		sourceLineageTag: c31f6c27-5626-4351-9d3a-9deb9f9eb8a7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Account Number
+
+		annotation SummarizationSetBy = User
+
+	column 'VAS Required?'
+		dataType: string
+		lineageTag: 5d083391-3ace-4269-8856-e5e4fad38355
+		sourceLineageTag: a4b7fd5b-9e8d-46bb-b6a2-defd73bf06df
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: VAS Required?
+
+		annotation SummarizationSetBy = User
+
+	column 'EDI Customer?'
+		dataType: string
+		lineageTag: 0de9137c-7a84-49e9-91e4-edb27c5e4e15
+		sourceLineageTag: 53ecc34b-23f4-45dd-97c3-7394014c07fc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: EDI Customer?
+
+		annotation SummarizationSetBy = User
+
+	column 'Direct Ship Customer?'
+		dataType: string
+		lineageTag: bac1c329-be3f-407b-bbc3-25e2d59b8eb1
+		sourceLineageTag: 71d1acf0-00c8-46df-8ff4-e54e5279c776
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Direct Ship Customer?
+
+		annotation SummarizationSetBy = User
+
+	column 'DM Retail Customer?'
+		dataType: string
+		lineageTag: 01bab10f-d369-4025-a384-24dcaf23e449
+		sourceLineageTag: 64283091-40a3-4076-9c2a-dbd910fe8da3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DM Retail Customer?
+
+		annotation SummarizationSetBy = User
+
+	column 'VR Link Customer?'
+		dataType: string
+		lineageTag: 3eb4d17e-017a-44d6-9e67-fc04a43e9db6
+		sourceLineageTag: 5ee62fff-348e-4565-9655-4012d3c8c229
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: VR Link Customer?
+
+		annotation SummarizationSetBy = User
+
+	column ' Last External Sell Thru Upload (US)'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: fbe32f6c-66ed-447b-8887-c35fb7ee1761
+		sourceLineageTag: bdc8c1ce-3020-47b0-8556-12b90d8243b4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: " Last External Sell Thru Upload (US)"
+
+		annotation SummarizationSetBy = User
+
+	column 'VAS Number'
+		dataType: string
+		lineageTag: dd4aeb09-48aa-4a17-b3e5-a3a50fc4aed2
+		sourceLineageTag: 1be35ea2-0c6e-4d86-b897-91629d5588e3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: VAS Number
+
+		annotation SummarizationSetBy = User
+
+	partition Customer = entity
+		mode: directQuery
+		source
+			entityName: Customer
+			expressionSource: 'DirectQuery to AS - DMA Operations'
+

@@ -1,0 +1,45 @@
+table 'Sales Order Type 2'
+	isHidden
+	lineageTag: 252d8706-4d05-4eef-abc9-319a4e98e95e
+	sourceLineageTag: 75cc9c7e-c195-4778-9540-d510c1d9dd6e
+
+	column DESCRIPTION
+		dataType: string
+		isHidden
+		lineageTag: 9ca8f2fc-7a5f-4105-87fc-0562820fd9e0
+		sourceLineageTag: f1ad007c-619d-4036-b143-0217934da929
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DESCRIPTION
+
+		annotation SummarizationSetBy = User
+
+	column HDMORDERTYPEID
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 8e29f56e-f637-4b9c-9929-3d5b3a403f6d
+		sourceLineageTag: e7cea391-4fea-4799-adee-e33f74e1bcfe
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: HDMORDERTYPEID
+
+		annotation SummarizationSetBy = User
+
+	column ORDERTYPEID
+		dataType: string
+		isHidden
+		lineageTag: f3a381ad-56da-4732-ab4c-a0075e378f54
+		sourceLineageTag: d4c75887-9a5b-4035-bf2b-69473cd43658
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ORDERTYPEID
+
+		annotation SummarizationSetBy = User
+
+	partition 'Sales Order Type 2' = entity
+		mode: directQuery
+		source
+			entityName: Sales Order Type
+			expressionSource: 'DirectQuery to AS - DMA Total Business 2'
+

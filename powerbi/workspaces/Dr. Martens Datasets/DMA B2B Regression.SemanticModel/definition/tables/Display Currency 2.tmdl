@@ -1,0 +1,55 @@
+table 'Display Currency 2'
+	lineageTag: 77c48985-d725-4f41-9055-75d993e5cd34
+	sourceLineageTag: e24ed233-7068-42bd-964f-92c5f03ee3f5
+
+	column 'Currency Code'
+		dataType: string
+		lineageTag: 4e9b30d2-5478-4488-91ca-82bb64ee1513
+		sourceLineageTag: b1356826-b60b-4c3c-bba9-eb587b292f6e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Name'
+		dataType: string
+		lineageTag: 7849189b-6959-4bf2-b2cd-043cb8db23c5
+		sourceLineageTag: 4bf6fca6-11ae-41ac-b05e-f373240673c8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Currency Symbol'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 3093e435-494f-41e4-9126-e4cd1dbcc246
+		sourceLineageTag: 8fb256c6-c227-4ecf-b503-e7b75e9e3b0d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency Symbol
+
+		annotation SummarizationSetBy = User
+
+	column XRMultiplier
+		dataType: double
+		isHidden
+		formatString: "£"#,0.###############;-"£"#,0.###############;"£"#,0.###############
+		displayFolder: zz_Misc
+		lineageTag: 2e732b55-417c-4478-9048-800877ec6f68
+		sourceLineageTag: 08a355e3-492d-4b01-8ef0-c1ecdba1b6dc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: XRMultiplier
+
+		annotation SummarizationSetBy = User
+
+	partition 'Display Currency 2' = entity
+		mode: directQuery
+		source
+			entityName: Display Currency
+			expressionSource: 'DirectQuery to AS - DMA B2B 2'
+

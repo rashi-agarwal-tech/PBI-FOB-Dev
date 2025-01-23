@@ -1,0 +1,371 @@
+cultureInfo en-GB
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "parameter__date.parameter__date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Parameter - Date",
+			          "ConceptualProperty": "Parameter - Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Date Dimensions": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "parameter__metrics.parameter__metrics": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Parameter - Metrics",
+			          "ConceptualProperty": "Parameter - Metrics"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Metrics": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.dimension": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "Dimension"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SELECT Dimension": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.fiscal_year_544": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "Fiscal Year (544)"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "sales.fiscal_yearperiod_544": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "Fiscal Year-Period (544)"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "sales.sales_invoiced_net_value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "gl Amount (GBC Constant)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Amount (GBC Constant) Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.sales_invoiced_net_value_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "gl Amount (GBC Constant) Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Amount (GBC Constant) AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.sales_net_value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "gl Amount (Transaction)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Amount (Transaction) Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.sales_net_value_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "gl Amount (Transaction) Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Amount (Transaction) AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.sales_open_net_value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "gl Amount (Actual)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Amount (Actual) Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.sales_open_net_value_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "gl Amount (Actual) Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Amount (Actual) AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.sales_returned_net_value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "gl Amount (Local)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Amount (Local) Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.sales_returned_net_value_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "gl Amount (Local) Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Amount (Local) AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.sales_sum_of_absdiff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "sales Sum of AbsDiff"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "sales.source": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "Source"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "sales.split": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "Split"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "gl.gl_budget_gbc_constant_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "gl Budget (GBC Constant) Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Budget (GBC Constant) AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "gl.gl_budget_local_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "gl Budget (Local) Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Budget (Local) AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "gl.gl_budget_gbc_constant": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "gl Budget (GBC Constant)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Budget (GBC Constant) Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "gl.gl_budget_local": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "gl",
+			          "ConceptualProperty": "gl Budget (Local)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Budget (Local) Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

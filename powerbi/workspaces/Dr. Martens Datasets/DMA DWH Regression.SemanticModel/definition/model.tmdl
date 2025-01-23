@@ -1,0 +1,31 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DEV","UAT","PROD","RefreshDateTime"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.139.1678.0 (24.12)+2a034ab280bddf891eb7bb9ebfe6996f9c3a3196
+
+ref table PROD
+ref table RefreshDateTime
+ref table Summary
+ref table DEV
+ref table UAT
+
+ref role 'Global Users'
+ref role 'NA Users'
+ref role 'EMEA Users'
+ref role 'HK Users'
+ref role 'HK Users - Global'
+ref role 'JP Users'
+ref role 'JP Users - Global'
+ref role 'AsiaPac Users'
+
+ref cultureInfo en-US
+

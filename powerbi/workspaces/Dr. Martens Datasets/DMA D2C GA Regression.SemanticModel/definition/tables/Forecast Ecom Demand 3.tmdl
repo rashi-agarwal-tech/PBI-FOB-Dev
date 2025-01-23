@@ -1,0 +1,100 @@
+table 'Forecast Ecom Demand 3'
+	isHidden
+	lineageTag: 3b9fde6d-e8f7-49ab-a996-1ef1e0666666
+	sourceLineageTag: 2b66d65b-9175-4ff3-a40e-292b836d7d79
+
+	column Company
+		dataType: int64
+		isHidden
+		lineageTag: 3f8a9b1e-1471-482e-acd0-ddfa74540963
+		sourceLineageTag: 9210b8fe-ccbf-4e96-a136-a590a67775fd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = User
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 968a4210-7e72-4024-8aeb-d57f7a043dca
+		sourceLineageTag: b65bc9f9-1d90-4423-9ae2-de2ef041864d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Forecast Version'
+		dataType: string
+		isHidden
+		lineageTag: b8486984-ed4a-42e2-866c-1a3a6d55f248
+		sourceLineageTag: 69a1b05b-18af-4e26-8b36-78c6681c4bd1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Forecast Version
+
+		annotation SummarizationSetBy = User
+
+	column Website
+		dataType: string
+		isHidden
+		lineageTag: bed9c9ce-5899-455f-9060-9878e43920cb
+		sourceLineageTag: 8193b8fc-61b4-460d-9904-b62a3fc94fb9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Website
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Code'
+		dataType: string
+		isHidden
+		lineageTag: afd30909-e787-49db-92eb-535062a8ae64
+		sourceLineageTag: 015c016b-2ef3-4ddf-940a-407c359f9244
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Demand Value'
+		dataType: int64
+		isHidden
+		lineageTag: b471b3e4-8986-4007-8619-749db39af073
+		sourceLineageTag: a31a1320-40ad-4cc1-92ee-73e61ba1f082
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Demand Value
+
+		annotation SummarizationSetBy = User
+
+	column 'Demand Units'
+		dataType: int64
+		isHidden
+		lineageTag: 8c9a66f2-4459-44ee-b1df-fd201a7d1897
+		sourceLineageTag: 97d61102-23bb-4064-b88c-0e5a6f66816c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Demand Units
+
+		annotation SummarizationSetBy = User
+
+	column Company_ProductCode
+		dataType: string
+		isHidden
+		lineageTag: 78c1decb-1f7c-47d9-96f7-a1d0100d29a6
+		sourceLineageTag: 5bc3b72c-6171-4156-bce3-5fdf63989303
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_ProductCode
+
+		annotation SummarizationSetBy = User
+
+	partition 'Forecast Ecom Demand 3' = entity
+		mode: directQuery
+		source
+			entityName: Forecast Ecom Demand
+			expressionSource: 'DirectQuery to AS - DMA D2C 3'
+

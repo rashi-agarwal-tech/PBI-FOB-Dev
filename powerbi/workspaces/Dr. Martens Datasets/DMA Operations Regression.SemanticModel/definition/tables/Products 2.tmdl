@@ -1,0 +1,640 @@
+table 'Products 2'
+	lineageTag: acca45e0-7079-4131-8666-fe61f44bd5dc
+	sourceLineageTag: 881320d1-8b10-458e-8da9-bfffaac311f9
+
+	column Product_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Misc
+		lineageTag: 25191710-e399-4221-a004-68ca61b43e89
+		sourceLineageTag: 981d5d4a-ba33-4846-ae11-33d9e4cae0b8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Current Product Class Sort'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: ac9a8279-24d7-4fb6-9347-353f54d00de2
+		sourceLineageTag: ff8b0b6f-7172-4fb7-8dae-7609a5f0a23a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Current Product Class Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Current Selling Status Sort'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 2505418a-104e-4f38-989a-5f83117c915c
+		sourceLineageTag: 2f00b82c-cf61-4eb2-9de3-ee88a1ab1660
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Current Selling Status Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Segment'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 79ddce30-c4ad-4b84-94fa-576f2f4bba33
+		sourceLineageTag: f1b14a6e-b7f1-4bb3-aaf7-8ffd98e12673
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Segment
+
+		annotation SummarizationSetBy = User
+
+	column 'Current Selling Price'
+		dataType: double
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 1. Prices
+		lineageTag: ac84283a-dd82-4c99-be0a-7970bd0f9dd5
+		sourceLineageTag: a9227dde-3b03-46ec-aa60-35ec65402b95
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Current Selling Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Current Selling Price Currency'
+		dataType: string
+		displayFolder: 1. Prices
+		lineageTag: f2cc309b-e883-40ff-bc14-403749fc2fd5
+		sourceLineageTag: 4a9ebb71-32e4-43f1-9fc8-f05e51de4875
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Current Selling Price Currency
+
+		annotation SummarizationSetBy = User
+
+	column 'Full Selling Price'
+		dataType: double
+		formatString: #,##0.00
+		displayFolder: 1. Prices
+		lineageTag: 1a843c02-ff47-477f-81ec-3a8fbf74b72a
+		sourceLineageTag: d4fca1a3-b4ac-4994-8056-2723acecd47d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Full Selling Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Full Selling Price Currency'
+		dataType: string
+		displayFolder: 1. Prices
+		lineageTag: 495fde2f-0a03-47f6-8590-d7d7d1418583
+		sourceLineageTag: 2c229d0e-bb82-41bc-8340-8686bc9ff37f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Full Selling Price Currency
+
+		annotation SummarizationSetBy = User
+
+	column 'Discounted Price Product?'
+		dataType: string
+		displayFolder: 1. Prices
+		lineageTag: ffb3d3df-67e3-45ea-ad76-8b771e637b11
+		sourceLineageTag: a105ce82-c8d2-4a15-8fa5-2b5f12feb07e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Discounted Price Product?
+
+		annotation SummarizationSetBy = User
+
+	column 'IPS D2C Class'
+		dataType: string
+		displayFolder: Merchandising
+		lineageTag: 0478f2d5-c242-4e4f-8d85-63d25a3ed704
+		sourceLineageTag: 7c2824d1-f8b5-4f3a-b4af-5680c0115d6a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: IPS D2C Class
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Code'
+		dataType: string
+		lineageTag: 3322a402-a974-4777-b098-8fb1a8736079
+		sourceLineageTag: 30239442-af3f-4e87-a85e-83c2730b75ff
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Code
+
+		annotation SummarizationSetBy = User
+
+	column Gender
+		dataType: string
+		lineageTag: 06f60cf4-9b24-4881-ad66-e2b159f997a3
+		sourceLineageTag: 60b4ca87-d2af-4d50-8c19-e6e10f050552
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = User
+
+	column Last
+		dataType: string
+		lineageTag: 85dbc0de-fbda-45ac-b291-4833968b1935
+		sourceLineageTag: 09a1e48d-f549-4193-823e-16055fe5e820
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Last
+
+		annotation SummarizationSetBy = User
+
+	column Sole
+		dataType: string
+		lineageTag: 1966af13-afad-47f1-9852-cd65101857a7
+		sourceLineageTag: 9ba864b3-40d4-4ff9-a9f5-9a4a3706e1d5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sole
+
+		annotation SummarizationSetBy = User
+
+	column 'Sourcing Category'
+		dataType: string
+		lineageTag: 979d42f3-10cc-4e54-b00d-daafc14a4e1f
+		sourceLineageTag: 00ff8ec2-2e1b-4c71-9797-a2af2b0332ba
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sourcing Category
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Type'
+		dataType: string
+		lineageTag: f26442e5-7610-41af-bcab-042799551729
+		sourceLineageTag: c7663aaf-b983-4db8-a0d7-27eb42773104
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Style Colour Material'
+		dataType: string
+		lineageTag: 9e7ff880-75bf-48a9-94ba-e6876e9b47a9
+		sourceLineageTag: d023e22b-29b2-4d9e-a258-81bfa62770b3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Style Colour Material
+
+		annotation SummarizationSetBy = User
+
+	column 'Product General'
+		dataType: string
+		lineageTag: 0f346a30-e11f-47be-9a60-867cf4e4d2a3
+		sourceLineageTag: dd660177-8533-4f43-8f42-3ab98bb1e2ae
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product General
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Collection'
+		dataType: string
+		lineageTag: b38b9b24-e57b-415b-8a74-6838ededf2c5
+		sourceLineageTag: 4f260c55-42e2-4b8b-820e-e1b39e9f1d14
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Collection
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Sub-Type'
+		dataType: string
+		lineageTag: b4094e51-2566-421e-a77f-1b46256868ea
+		sourceLineageTag: eabf3b10-4f92-4012-8057-6a8683955357
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Sub-Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Category'
+		dataType: string
+		lineageTag: 448bbeb8-c4ab-4010-99a9-61c6d5c9d94d
+		sourceLineageTag: 193b8c06-60bf-4eda-ac33-c646e1041c1f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Category
+
+		annotation SummarizationSetBy = User
+
+	column Colour
+		dataType: string
+		lineageTag: 71065e8c-8d0a-45f7-abb3-b1854840f48f
+		sourceLineageTag: 1b96243a-c137-44ac-be6b-94d58f80d572
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Colour
+
+		annotation SummarizationSetBy = User
+
+	column Material
+		dataType: string
+		lineageTag: 0416f356-0afd-4565-9c20-8d8103f3de15
+		sourceLineageTag: 0f9ebd24-3019-4714-9897-f2ea7046c42d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Material
+
+		annotation SummarizationSetBy = User
+
+	column 'Short Code'
+		dataType: string
+		lineageTag: 1d974d46-54d4-4a52-b30c-f91679427d3a
+		sourceLineageTag: 0fbbec59-c630-4ada-9bbc-3e4fbd9e0335
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Short Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Launch To Retail'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 0ef1130f-7276-444e-86e2-6ba0872fa758
+		sourceLineageTag: 4eea5945-0100-4423-81a4-06feb79ddc21
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Launch To Retail
+
+		annotation SummarizationSetBy = User
+
+	column 'Launch Season'
+		dataType: string
+		lineageTag: 00b3efa9-f03e-47ab-a581-4cea3303cf63
+		sourceLineageTag: 78f48b00-a3ec-4012-9c7c-08db49f04c8c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Launch Season
+
+		annotation SummarizationSetBy = User
+
+	column 'Product URL Icon'
+		dataType: string
+		lineageTag: 0fe199ce-ee67-4853-a1aa-e25b6e91b0a5
+		sourceLineageTag: d6396059-f8c0-4422-941a-cbeb36f4b39e
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Product URL Icon
+
+		annotation SummarizationSetBy = User
+
+	column 'Product URL Image'
+		dataType: string
+		lineageTag: f1c2042b-f040-4ee6-81d3-a2dc50c91017
+		sourceLineageTag: f69c6be3-730d-4eb1-a2aa-ff130c38714f
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Product URL Image
+
+		annotation SummarizationSetBy = User
+
+	column 'Style Name'
+		dataType: string
+		lineageTag: 5e26c494-9070-4653-989e-8d4fa0f196c1
+		sourceLineageTag: a9000be3-0fb1-4370-b56d-c8d24aded36e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Style Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Current Selling Status'
+		dataType: string
+		lineageTag: 40cab45c-1f76-4112-96c8-5ad2325169c2
+		sourceLineageTag: ac47b498-21af-4744-9d52-a8cceb2d49c2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Current Selling Status
+		sortByColumn: 'Current Selling Status Sort'
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Major'
+		dataType: string
+		lineageTag: 69755e76-25a9-4803-ba19-2e266a147148
+		sourceLineageTag: 93bd7197-cb27-4aed-b68c-09348b1d5c04
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Major
+
+		annotation SummarizationSetBy = User
+
+	column Collaboration
+		dataType: int64
+		lineageTag: b19de01f-474d-4c7a-ad76-989ad0842976
+		sourceLineageTag: c882640a-dc2a-4be7-9291-b1f5167ef903
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Collaboration
+
+		annotation SummarizationSetBy = User
+
+	column 'D2C Product Definition'
+		dataType: string
+		lineageTag: 7a89ffca-a309-4a20-b807-a557dd317a0a
+		sourceLineageTag: 9dfbac0c-f538-41fd-854d-47bf7af84e90
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: D2C Product Definition
+
+		annotation SummarizationSetBy = User
+
+	column 'Current Product Class'
+		dataType: string
+		lineageTag: 88751307-16e2-42d7-adc9-303d0ade43e0
+		sourceLineageTag: 88367852-515a-42e0-bccf-ae75996a08a1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Current Product Class
+
+		annotation SummarizationSetBy = User
+
+	column 'Default Vendor Name'
+		dataType: string
+		lineageTag: 79bf5b3d-7cf1-4b74-a5e4-21ddfee34a9f
+		sourceLineageTag: 79af5e1c-28b2-441d-b900-9debe8dd2d49
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Default Vendor Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Default Vendor Country'
+		dataType: string
+		lineageTag: 89aff880-7888-41ca-87dd-cecaad40f366
+		sourceLineageTag: 050079e6-9eb1-4195-87cb-2b2051ab9539
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Default Vendor Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Tariff Code'
+		dataType: string
+		lineageTag: d82d6f01-eb79-412a-bcea-0cb173318a76
+		sourceLineageTag: 1fffc8fc-cda2-4602-b69a-410c4c26490e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Tariff Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Age Group'
+		dataType: string
+		lineageTag: e8825d7e-a932-4870-876e-950f701f4b1d
+		sourceLineageTag: bff6260f-38b6-44dd-93fe-c538c06e52bc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Age Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Last PO Purchase Price'
+		dataType: double
+		lineageTag: aa369e0f-cf40-4063-815d-cfe36f11aaa3
+		sourceLineageTag: 36e78300-dc80-41ea-8b62-1dffbbc15a50
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Last PO Purchase Price
+
+		annotation SummarizationSetBy = User
+
+	column 'Last PO Purchase Price (GBP)'
+		dataType: double
+		lineageTag: 2f10869a-2a4e-436b-8b11-b7c858ed8618
+		sourceLineageTag: 3d0ee3ac-781b-4a4c-a593-7228638d5c14
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Last PO Purchase Price (GBP)
+
+		annotation SummarizationSetBy = User
+
+	column 'Last PO Purchase Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 118b2d80-ecaf-41bd-b762-c39e4c346000
+		sourceLineageTag: 1a988d3f-ae86-4e0d-9bdd-33fed7d00f99
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Last PO Purchase Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Last PO Currency'
+		dataType: string
+		lineageTag: 25c9e699-392a-48ee-b4d4-9c3499032461
+		sourceLineageTag: 1960385e-3f71-4a82-94fe-64a8a447b2af
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Last PO Currency
+
+		annotation SummarizationSetBy = User
+
+	column 'Company ID'
+		dataType: string
+		lineageTag: ffb15b3a-6632-4b70-a284-adbf6abd60d7
+		sourceLineageTag: ffac333e-48cd-4d10-81b9-fd27905ba550
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Segment Category'
+		dataType: string
+		lineageTag: 457517f1-4e13-47bf-9805-1ffe478fec97
+		sourceLineageTag: 545c447b-61ad-47a5-a586-1cdd2a3b8a5b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Segment Category
+
+		annotation SummarizationSetBy = User
+
+	column 'Leather Code'
+		dataType: string
+		lineageTag: 463b8da3-f2aa-420d-ba28-799b19e8fc03
+		sourceLineageTag: 1bdba15e-0f6f-44c7-9e8c-34df153ca791
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Leather Code
+
+		annotation SummarizationSetBy = User
+
+	column 'Latest Season'
+		dataType: string
+		lineageTag: ee5385fc-4f11-47e6-89f7-c0b09ebc1b38
+		sourceLineageTag: caf8c834-1723-4053-85c2-73424fce674b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Latest Season
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 45641b8f-55ab-4c58-8403-0f65fce7c975
+		sourceLineageTag: 428e88c3-271f-40e0-8bd6-2bd5bb0040f1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Name
+
+		annotation SummarizationSetBy = User
+
+	column Welted?
+		dataType: string
+		lineageTag: 9e2aec9d-5df6-4971-a05f-0c767b14c6c4
+		sourceLineageTag: 47ce19ac-9f13-4344-a6c4-9e430e0b56fa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Welted?
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Category'
+		dataType: string
+		lineageTag: 51712cbb-f41c-4b44-b6f9-6617674e347b
+		sourceLineageTag: 6c636eec-7ec4-4869-8a6a-00792cd4895f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Category
+
+		annotation SummarizationSetBy = User
+
+	column 'Finance Sub Category'
+		dataType: string
+		lineageTag: 5475ca21-204c-41a5-b125-37cdb7edbdcb
+		sourceLineageTag: 07d44633-7f1c-4726-9813-0d1c0e6df8f3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Finance Sub Category
+
+		annotation SummarizationSetBy = User
+
+	column 'Item Model Group'
+		dataType: string
+		lineageTag: aab3eb6d-d291-4c2f-a7ac-44dcc4d8e2db
+		sourceLineageTag: f742a107-f4ef-4893-8a37-7c84ef0d7d66
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Item Model Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Current Product Class Code'
+		dataType: string
+		lineageTag: 944ce4a6-e2a9-4c05-a987-561d2fd71de2
+		sourceLineageTag: 72f45f77-b1cc-4c74-b831-252a04bfde16
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Current Product Class Code
+
+		annotation SummarizationSetBy = User
+
+	column 'VAT Application'
+		dataType: string
+		lineageTag: 4df88485-d250-43ce-a049-4abf49e1d623
+		sourceLineageTag: 97c45574-533d-483d-8cab-c8b5984f6e27
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: VAT Application
+
+		annotation SummarizationSetBy = User
+
+	column 'D2C Product Story'
+		dataType: string
+		lineageTag: 1c93f6dd-581b-417b-ae72-09e3736e5b1a
+		sourceLineageTag: bff0132c-4321-451c-b0f5-8ee646ef3a7e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: D2C Product Story
+
+		annotation SummarizationSetBy = User
+
+	column 'eCom Product Category'
+		dataType: string
+		lineageTag: d92c6a69-9a33-4a6c-8182-8d11ab791a54
+		sourceLineageTag: db8f9f08-7866-496d-a2ae-8971a900423b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: eCom Product Category
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Search'
+		dataType: string
+		lineageTag: 683af5d8-61c4-4df8-a307-048889f119e4
+		sourceLineageTag: ca144a4f-941b-4cf6-b8fd-6858d9cc1c94
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Search
+
+		annotation SummarizationSetBy = User
+
+	column 'Product Business Units'
+		dataType: string
+		lineageTag: b9d1ed1f-c068-4b9a-8ec0-ad048893db0f
+		sourceLineageTag: 82433431-e503-4016-bed6-e3b66aaa2068
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product Business Units
+
+		annotation SummarizationSetBy = User
+
+	column 'TBD vs Continuity/Carry Over'
+		dataType: string
+		lineageTag: 7ce05cb5-b6aa-4c46-8f90-2e2a228df5fb
+		sourceLineageTag: 55758893-62b3-4e58-96d5-0b5d712d9b01
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TBD vs Continuity/Carry Over
+
+		annotation SummarizationSetBy = User
+
+	column Active/Obsolete
+		dataType: string
+		lineageTag: 90df1c9c-a765-42d4-88dd-cdb1639c2c35
+		sourceLineageTag: 63f456e2-20a5-4b88-9591-2123d5348108
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Active/Obsolete
+
+		annotation SummarizationSetBy = User
+
+	column 'Launch Month'
+		dataType: string
+		lineageTag: 52c91cb5-b82b-401d-ab21-d80858179f97
+		sourceLineageTag: ef4b6f1c-6b61-4945-a61d-e0fba309bb26
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Launch Month
+
+		annotation SummarizationSetBy = User
+
+	column 'Construction Desc'
+		dataType: string
+		lineageTag: dabd3fff-9637-4feb-b202-f67ad5cc17b0
+		sourceLineageTag: cbf354a3-b7b7-440f-bea4-dd7d529a6b20
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Construction Desc
+
+		annotation SummarizationSetBy = User
+
+	partition 'Products 2' = entity
+		mode: directQuery
+		source
+			entityName: Products
+			expressionSource: 'DirectQuery to AS - DMA Operations 2'
+

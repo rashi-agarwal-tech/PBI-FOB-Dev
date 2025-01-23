@@ -1,0 +1,156 @@
+table 'From Warehouse'
+	isHidden
+	lineageTag: 9f27250c-736d-4336-9d63-b393b0fcba17
+	sourceLineageTag: cdbadefd-f0ea-4718-8fbd-a17e8725cad5
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: f3295c6c-1b27-4fe7-9152-2cad14a78709
+		sourceLineageTag: bc936d38-0290-4308-90a4-452d2c137f73
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		annotation SummarizationSetBy = User
+
+	column FinancialChannel
+		dataType: string
+		isHidden
+		lineageTag: 555409a3-5e1f-4313-8637-148c908095c2
+		sourceLineageTag: c846f724-5d8f-430c-ba3e-03c288d24666
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FinancialChannel
+
+		annotation SummarizationSetBy = User
+
+	column WAREHOUSEID
+		dataType: string
+		isHidden
+		lineageTag: 254db6d8-1612-42c3-ae6a-b260b944ee49
+		sourceLineageTag: 55214395-dcd8-4ba0-a304-4b4a8e1fa086
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WAREHOUSEID
+
+		annotation SummarizationSetBy = User
+
+	column WH_Group
+		dataType: string
+		isHidden
+		lineageTag: f307a9b2-0e64-4e65-8909-a6521f1ce36c
+		sourceLineageTag: b23dd719-162d-42e4-9a6c-52caddd28ff9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WH_Group
+
+		annotation SummarizationSetBy = User
+
+	column WAREHOUSENAME
+		dataType: string
+		lineageTag: 478ce361-34d8-4164-92f4-aa6964d2a520
+		sourceLineageTag: 89d79106-62f9-42a1-80b8-93a18afea3d5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WAREHOUSENAME
+
+		annotation SummarizationSetBy = User
+
+	column 'Site ID'
+		dataType: string
+		lineageTag: fced61c9-f9d8-4aef-99ac-22b72cf7bc3c
+		sourceLineageTag: e88e9b3e-c794-4edb-8fef-83ee3140e424
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Site ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Parent Store ID'
+		dataType: string
+		lineageTag: 2148d6d5-4c0b-446c-ad5a-0cb4908b7c58
+		sourceLineageTag: 3bb72243-1ef2-463f-aeb1-805deeb06f3c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Parent Store ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Is Retail Warehouse?'
+		dataType: double
+		lineageTag: 2e0fde17-f486-4868-81fe-8d2b6e1f4493
+		sourceLineageTag: d7af5f46-94ce-47b9-8083-f0d17f81d173
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Is Retail Warehouse?
+
+		annotation SummarizationSetBy = User
+
+	column WH_Sub-Group
+		dataType: string
+		lineageTag: 5aa03f97-ad22-4422-a120-98423cfdcaae
+		sourceLineageTag: be8316c9-cb57-4964-9853-24f893e377c2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WH_Sub-Group
+
+		annotation SummarizationSetBy = User
+
+	column WH_Channel
+		dataType: string
+		lineageTag: 674a0a3e-2439-4306-85f3-03204df606c3
+		sourceLineageTag: a7a5ec3b-9844-4b3d-84da-74d212701512
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WH_Channel
+
+		annotation SummarizationSetBy = User
+
+	column CompanyRegion
+		dataType: string
+		lineageTag: cd7fd4c3-cf44-48b2-9249-056755c59bc5
+		sourceLineageTag: afcfbfbb-b244-4c72-9700-3edcad03b7d7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CompanyRegion
+
+		annotation SummarizationSetBy = User
+
+	column WarehouseSubRegion
+		dataType: string
+		lineageTag: 6eb6f29d-9789-415b-8fb9-4be2dab4fc87
+		sourceLineageTag: 89aaf2b9-a63d-4c0c-843a-d0d0c142f974
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WarehouseSubRegion
+
+		annotation SummarizationSetBy = User
+
+	column 'Warehouse Address Region ID'
+		dataType: string
+		lineageTag: ec78c6ed-2da2-4e5e-8258-7606690d9c55
+		sourceLineageTag: 86962324-f85f-425b-be7e-043d6af1d176
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse Address Region ID
+
+		annotation SummarizationSetBy = User
+
+	column Company
+		dataType: string
+		lineageTag: 40b60cff-8a50-489d-b0ea-365087f7559a
+		sourceLineageTag: 7a85636d-1381-455e-9f57-1373911b065a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = User
+
+	partition 'From Warehouse' = entity
+		mode: directQuery
+		source
+			entityName: From Warehouse
+			expressionSource: 'DirectQuery to AS - DMA Operations'
+

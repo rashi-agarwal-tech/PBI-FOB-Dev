@@ -1,0 +1,959 @@
+cultureInfo en-GB
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "parameter__date.parameter__date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Parameter - Date",
+			          "ConceptualProperty": "Parameter - Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Date Dimensions": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "parameter__metrics.parameter__metrics": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Parameter - Metrics",
+			          "ConceptualProperty": "Parameter - Metrics"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Metrics": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.dimension": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "Dimension"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SELECT Dimension": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.fiscal_year_544": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "Fiscal Year (544)"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "sales.fiscal_yearperiod_544": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "Fiscal Year-Period (544)"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "sales.sales_sum_of_absdiff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks Sum of AbsDiff %"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "sales.sales_total_units": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 1. All On Hand Stock Units"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "1. All On Hand Stock Units Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.sales_total_units_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 1. All On Hand Stock Units Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "1. All On Hand Stock Units AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.sales_total_units_ecom": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 2. WH Stock Units"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "2. WH Stock Units Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.sales_total_units_ecom_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 2. WH Stock Units Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "2. WH Stock Units AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sales.source": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "Source"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "sales.split": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "Split"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "stocks.stocks_4__store_intransit_units_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 4. Store In-Transit Units Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "4. Store In-Transit Units AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_5__store_stock_units_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 5. Store Stock Units Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "5. Store Stock Units AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_item_coverage_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks Item Coverage Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Item Coverage AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_on_hand_spot_cover_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks On Hand Spot Cover Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "On Hand Spot Cover AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_stock_outs__diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks Stock Outs % Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Stock Outs % AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_store_spot_cover_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks Store Spot Cover Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Store Spot Cover AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_wh_spot_cover_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks WH Spot Cover Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "WH Spot Cover AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_2_2_available_wh_stock_units_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 2.2 Available WH Stock Units Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "2.2 Available WH Stock Unit AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_3_1_allocated_units_arrived_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 3.1 Allocated Units Arrived Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "3.1 Allocated Units Arrived AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_4__reserved_intake_units_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 4. Reserved Intake Units Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "4. Reserved Intake Units AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_ranged_stores_diff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks Ranged Stores Diff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ranged Stores AbsDiff": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.date": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": " Date"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Date": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_4__store_intransit_units": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 4. Store In-Transit Units"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "4. Store In-Transit Units Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_5__store_stock_units": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 5. Store Stock Units"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "5. Store Stock Units Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_item_coverage": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks Item Coverage"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Item Coverage Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_on_hand_spot_cover": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks On Hand Spot Cover"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "On Hand Spot Cover Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_stock_outs_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks Stock Outs %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Stock Outs % Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_store_spot_cover": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks Store Spot Cover"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Store Spot Cover Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_wh_spot_cover": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks WH Spot Cover"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "WH Spot Cover Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_2_2_available_wh_stock_units": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 2.2 Available WH Stock Units"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "2.2 Available WH Stock Unit Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_3_1_allocated_units_arrived": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 3.1 Allocated Units Arrived"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "3.1 Allocated Units Arrived Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_4__reserved_intake_units": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 4. Reserved Intake Units"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "4. Reserved Intake Units Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_ranged_stores": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks Ranged Stores"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ranged Stores Actuals": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_1__all_on_hand_stock_units_diff_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 1. All On Hand Stock Units Diff %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "1. All On Hand Stock Units AbsDiff%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_2__wh_stock_units_diff_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 2. WH Stock Units Diff %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "2. WH Stock Units AbsDiff%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_4__store_intransit_units_diff_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 4. Store In-Transit Units Diff %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "4. Store In-Transit Units AbsDiff%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_5__store_stock_units_diff_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 5. Store Stock Units Diff %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "5. Store Stock Units AbsDiff%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_item_coverage_diff_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks Item Coverage Diff %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Item Coverage AbsDiff%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_on_hand_spot_cover_diff_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks On Hand Spot Cover Diff %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "On Hand Spot Cover AbsDiff%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_stock_outs__diff_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks Stock Outs % Diff %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Stock Outs % AbsDiff%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_store_spot_cover_diff_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks Store Spot Cover Diff %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Store Spot Cover AbsDiff%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_wh_spot_cover_diff_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks WH Spot Cover Diff %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "WH Spot Cover AbsDiff%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_2_2_available_wh_stock_units_diff_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 2.2 Available WH Stock Units Diff %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "2.2 Available WH Stock Unit AbsDiff%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_3_1_allocated_units_arrived_diff_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 3.1 Allocated Units Arrived Diff %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "3.1 Allocated Units Arrived AbsDiff%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_4__reserved_intake_units_diff_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks 4. Reserved Intake Units Diff %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "4. Reserved Intake Units AbsDiff%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_ranged_stores_diff_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks Ranged Stores Diff %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Ranged Stores AbsDiff%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

@@ -1,0 +1,108 @@
+table 'Intake 3'
+	isHidden
+	lineageTag: 84bf832d-7633-4354-b368-83fb464758cb
+	sourceLineageTag: ba07e47a-14d9-4d5c-bf2d-1acfb7a01888
+
+	column Product_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 27ececfb-a1dd-43b2-b5a6-1639b17abb60
+		sourceLineageTag: bb149c6a-6c9e-453a-82a1-b465fd7a3d3f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: d01871c6-330e-4090-8122-6c4c80e529a6
+		sourceLineageTag: 5096c14e-368a-46bc-b647-e431eabc2d11
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: c2eb65c7-6089-4791-8ffc-d40017b9f5d6
+		sourceLineageTag: 7461ef7e-0d5c-438d-868f-b876118d2822
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column DATE
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: 1c9fea2c-1108-4205-94d4-37300b811ff3
+		sourceLineageTag: ba25e44f-3c13-4f27-8420-b78e2c2f0eaa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DATE
+
+		annotation SummarizationSetBy = User
+
+	column AVAILDATE
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: 18150655-e7ab-451d-9c54-da209e344d2b
+		sourceLineageTag: e952ce32-e5bb-4615-a87e-ad2711f04873
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AVAILDATE
+
+		annotation SummarizationSetBy = User
+
+	column QTYFREE
+		dataType: int64
+		isHidden
+		displayFolder: zz_Values
+		lineageTag: 4d0e6d7d-bc59-4034-a0f8-e47e8400a1d1
+		sourceLineageTag: aae6008e-80c0-433c-a58c-90554f45269b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: QTYFREE
+
+		annotation SummarizationSetBy = User
+
+	column INVENTLOCATIONID
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: ba9e18e0-9e56-4f38-a3f4-b4aa3820dd47
+		sourceLineageTag: f598ce68-b155-4c49-9d9a-6f40fb310f59
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTLOCATIONID
+
+		annotation SummarizationSetBy = User
+
+	column RECEIPTTYPE
+		dataType: double
+		isHidden
+		lineageTag: 3c20e3a6-707d-499a-b8a4-1704b9a154b8
+		sourceLineageTag: dadab409-cb38-4acb-bfc1-9520c9f25c75
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: RECEIPTTYPE
+
+		annotation SummarizationSetBy = User
+
+	partition 'Intake 3' = entity
+		mode: directQuery
+		source
+			entityName: Intake
+			expressionSource: 'DirectQuery to AS - DMA B2B 3'
+

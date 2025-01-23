@@ -1,0 +1,78 @@
+table 'Customer Sell Out US'
+	isHidden
+	lineageTag: 962e8f9d-28c0-449c-9653-0bbb0b101d13
+	sourceLineageTag: 6e79ec86-893e-4d8e-9e5b-3e6f7dfcaeef
+
+	column To_Date_Key
+		dataType: string
+		isHidden
+		lineageTag: 7bb682e5-87db-4d01-97bb-33120e16d8c2
+		sourceLineageTag: 467c8fd6-34d6-4067-84c0-72ee9b7299c8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: To_Date_Key
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		lineageTag: ce158688-f3bd-4607-b562-6540c4e7a5bf
+		sourceLineageTag: 838af59a-a6ff-49c8-8c83-426959c50c4a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'To Date'
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: c7b66f1b-6761-4b83-8cfa-73964335e161
+		sourceLineageTag: 51338a4a-5d81-46a7-beb8-78b0c5066ab0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: To Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Qty Sold'
+		dataType: int64
+		isHidden
+		lineageTag: f3d2c012-3acc-4036-bd71-7d885992d2c2
+		sourceLineageTag: 246160f4-5d0b-4813-95f1-07399380cee3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Qty Sold
+
+		annotation SummarizationSetBy = User
+
+	column 'Qty On Hand'
+		dataType: int64
+		isHidden
+		lineageTag: c6abd784-394c-4106-895f-f75641306565
+		sourceLineageTag: f05df1dd-51c2-45db-af3e-d79d8dbc2132
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Qty On Hand
+
+		annotation SummarizationSetBy = User
+
+	column Product_Key
+		dataType: string
+		isHidden
+		lineageTag: c83fd707-2576-4a64-b04d-e1c3ee3b0f7d
+		sourceLineageTag: 57452e0c-e3e3-47d5-9ff0-e135e3799f1e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	partition 'Customer Sell Out US' = entity
+		mode: directQuery
+		source
+			entityName: Customer Sell Out US
+			expressionSource: 'DirectQuery to AS - DMA Operations'
+

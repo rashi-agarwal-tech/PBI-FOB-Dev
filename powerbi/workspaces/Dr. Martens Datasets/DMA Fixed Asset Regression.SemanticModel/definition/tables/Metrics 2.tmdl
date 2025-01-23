@@ -1,0 +1,42 @@
+table 'Metrics 2'
+	lineageTag: 7c621883-c06f-45de-9cf5-e2e39ba9dc63
+	sourceLineageTag: a5d32ac4-2984-4b0e-bc7e-37e70518f26f
+
+	measure 'Amount Local 2' = EXTERNALMEASURE("Amount Local", CURRENCY, "DirectQuery to AS - DMA Fixed Asset 2")
+		lineageTag: a117e79c-9687-49cb-b3aa-ffd6702f8bc3
+		sourceLineageTag: 79a09a03-a99e-4fdd-a6f2-8a2b0d65eb65
+		dataCategory: Uncategorized
+
+	measure 'Amount Constant 2' = EXTERNALMEASURE("Amount Constant", CURRENCY, "DirectQuery to AS - DMA Fixed Asset 2")
+		lineageTag: d9b39c0a-00ce-4bec-89ad-14abb5978dd6
+		sourceLineageTag: 994825fe-b910-444c-bcc5-85d9ac331506
+		dataCategory: Uncategorized
+
+	measure 'Amount Average 2' = EXTERNALMEASURE("Amount Average", CURRENCY, "DirectQuery to AS - DMA Fixed Asset 2")
+		lineageTag: 26975e99-511c-41bb-98b5-0e1eb83d1cdb
+		sourceLineageTag: a1b5f1d6-515d-459a-8544-aababc459422
+		dataCategory: Uncategorized
+
+	measure 'Amount Constant To Date 2' = EXTERNALMEASURE("Amount Constant To Date", CURRENCY, "DirectQuery to AS - DMA Fixed Asset 2")
+		lineageTag: 1360f6b5-ca13-4fba-aac6-d15f690c20ba
+		sourceLineageTag: a2fd4f94-775f-4f9f-8614-71fd8e98a404
+		dataCategory: Uncategorized
+
+	column Column
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 866bc13e-27b5-46f8-b8af-534c7c1daf0e
+		sourceLineageTag: 7011c6a6-4371-466d-8429-632c7a9a0e24
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Column
+
+		annotation SummarizationSetBy = User
+
+	partition 'Metrics 2' = entity
+		mode: directQuery
+		source
+			entityName: Metrics
+			expressionSource: 'DirectQuery to AS - DMA Fixed Asset 2'
+

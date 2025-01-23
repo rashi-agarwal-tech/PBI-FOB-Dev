@@ -1,0 +1,104 @@
+table 'ga summary'
+	lineageTag: b3b6d3c4-f8e5-45c8-a530-3923cbe68319
+
+	column 'RowCount of GA'
+		formatString: #,0
+		lineageTag: 639c44f5-d0b1-4e1e-91b3-2393746c79c8
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of GA]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of GA diff UAT'
+		formatString: #,0
+		lineageTag: cef637e7-2e95-460b-9f94-488394d2b23a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of GA diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of GA diff DEV'
+		formatString: #,0
+		lineageTag: ea095d6b-1709-4d26-89c8-9d8a5f21eb10
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of GA diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of GA Ads'
+		formatString: #,0
+		lineageTag: e02444ea-869d-489b-8a4e-e0add9f9db78
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of GA Ads]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of GA Ads diff UAT'
+		formatString: #,0
+		lineageTag: 2d78f626-e1a9-4592-9cb7-d856efaf3e0c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of GA Ads diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of GA Ads diff DEV'
+		formatString: #,0
+		lineageTag: 4c8f099f-e77c-49fb-a1ce-a7ee2f5d33da
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of GA Ads diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of GA Goals'
+		formatString: #,0
+		lineageTag: 1847cf97-4bb4-4444-9cf3-1ddf84774375
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of GA Goals]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of GA Goals diff UAT'
+		formatString: #,0
+		lineageTag: 8b426653-b4c8-4726-a36a-47ebb0162942
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of GA Goals diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of GA Goals diff DEV'
+		formatString: #,0
+		lineageTag: e4bbb9cc-7bba-4780-8c4a-d4378cdf557c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of GA Goals diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'ga summary' = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE
+				(
+				    ga
+				    ,"RowCount of GA",COUNTROWS('Google Analytics')
+				    ,"RowCount of GA diff UAT",COUNTROWS('Google Analytics 2')-COUNTROWS('Google Analytics')
+				    ,"RowCount of GA diff DEV",COUNTROWS('Google Analytics 3')-COUNTROWS('Google Analytics')
+				    ,"RowCount of GA Ads",COUNTROWS('Google Analytics Ads')
+				    ,"RowCount of GA Ads diff UAT",COUNTROWS('Google Analytics Ads 2')-COUNTROWS('Google Analytics Ads')
+				    ,"RowCount of GA Ads diff DEV",COUNTROWS('Google Analytics Ads 3')-COUNTROWS('Google Analytics Ads')
+				    ,"RowCount of GA Goals",COUNTROWS('Google Analytics Goals')
+				    ,"RowCount of GA Goals diff UAT",COUNTROWS('Google Analytics Goals 2')-COUNTROWS('Google Analytics Goals')
+				    ,"RowCount of GA Goals diff DEV",COUNTROWS('Google Analytics Goals 3')-COUNTROWS('Google Analytics Goals')
+				)
+
+	annotation PBI_Id = c0c984e8d25a4ab398b92d75dbc9c878
+

@@ -1,0 +1,66 @@
+table 'Pack One Date'
+	lineageTag: 201bd553-68bc-4963-b5c5-cb499ae91a86
+	sourceLineageTag: 2f73a9f4-2363-4fe6-90f5-f02e1b2eee59
+
+	column 'Date Key'
+		dataType: int64
+		isHidden
+		isNullable: false
+		lineageTag: 75503844-a6bb-41ab-9f69-f74a7022ff7d
+		sourceLineageTag: be562d26-9afc-467d-857c-cd43b9c6846e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year'
+		dataType: string
+		displayFolder: Fiscal Dates
+		lineageTag: c0a25e99-c780-420f-a0d6-d088ce9b03e3
+		sourceLineageTag: ce22220e-4d24-43f8-bed3-11ab4605ddf5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Period Number'
+		dataType: int64
+		displayFolder: Fiscal Dates
+		lineageTag: 7ee8296c-c17f-40b7-a4fa-8ae3ae3fa805
+		sourceLineageTag: 00671514-f2eb-4401-ab66-2c79ae566db6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Period Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Year-Period'
+		dataType: string
+		displayFolder: Fiscal Dates
+		lineageTag: 2510e184-39a7-492f-a3b2-2c97323acd26
+		sourceLineageTag: 34d49e75-8199-40cb-8b5f-8821850eec8d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Year-Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Fiscal Week Number'
+		dataType: int64
+		displayFolder: Fiscal Dates
+		lineageTag: a9110eb0-122a-4599-81ac-9348e99209d2
+		sourceLineageTag: ca51d26a-b951-4325-96cf-89794fa67f92
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fiscal Week Number
+
+		annotation SummarizationSetBy = User
+
+	partition 'Pack One Date' = entity
+		mode: directQuery
+		source
+			entityName: Pack One Date
+			expressionSource: 'DirectQuery to AS - DMA Sourcing'
+

@@ -1,0 +1,57 @@
+table 'Selling Status - Invoice 2'
+	lineageTag: 6c410d5b-f8dc-406d-a0b0-a75c26c13507
+	sourceLineageTag: 3027adad-163f-4eae-9bdf-12635e9a0011
+
+	column SELLINGSTATUS
+		dataType: int64
+		isHidden
+		isNullable: false
+		formatString: 0
+		displayFolder: zz_Misc
+		lineageTag: b83f6ef9-0d1c-4cad-8668-aaf0189e18a6
+		sourceLineageTag: 2bcde509-44c5-439c-8f60-924f8801e2ab
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		annotation SummarizationSetBy = User
+
+	column 'Selling Status - Invoice'
+		dataType: string
+		lineageTag: 344f1056-237b-40a7-8681-fce9b4a81809
+		sourceLineageTag: fed52897-cd13-4dd9-bd35-8abbfeaff352
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selling Status - Invoice
+		sortByColumn: 'Selling Status Sort'
+
+		annotation SummarizationSetBy = User
+
+	column 'Selling Status Sort'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 0ce864ec-ef8d-4fc8-9738-a03bf47bd0dc
+		sourceLineageTag: 65c3e66e-c67d-402b-a8cb-c465bcd5ec00
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Selling Status Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'TBD vs Continuity/Carry Over - Invoice'
+		dataType: string
+		lineageTag: 57bfb08a-d051-46c9-9e30-65afd35ab4a6
+		sourceLineageTag: c6b3a14c-a3a9-4e93-8473-6a30be508dec
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TBD vs Continuity/Carry Over - Invoice
+
+		annotation SummarizationSetBy = User
+
+	partition 'Selling Status - Invoice 2' = entity
+		mode: directQuery
+		source
+			entityName: Selling Status - Invoice
+			expressionSource: 'DirectQuery to AS - DMA Operations 2'
+

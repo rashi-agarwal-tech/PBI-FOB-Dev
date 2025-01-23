@@ -1,0 +1,56 @@
+table 'Bridge PPM Supplier PO'
+	isHidden
+	lineageTag: d18c9cdf-adc7-4cf2-a142-2803d5b69484
+	sourceLineageTag: 9620f4ad-de3c-452b-9236-02679f7d8825
+
+	column 'PO Number'
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 677b35ce-fe2c-4f03-8b8a-42b07446c70b
+		sourceLineageTag: 8aaf4dd4-a936-47c1-af27-27cda0a62b6d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PO Number
+
+		annotation SummarizationSetBy = User
+
+	column Supplier_Key
+		dataType: string
+		isHidden
+		lineageTag: 1086cb22-1d75-4db6-a5e7-886006576c48
+		sourceLineageTag: b4dbce2a-ea95-40c4-a6af-260b1a7222b7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Supplier Name'
+		dataType: string
+		isHidden
+		lineageTag: 741b64a8-6655-4927-ad13-a9ed3a7dfe86
+		sourceLineageTag: dc7d9a7e-f20a-4a0a-8c63-42645080aee9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Supplier Country'
+		dataType: string
+		isHidden
+		lineageTag: a4eb5f3d-c274-4fa8-9ab9-a22c317fdf61
+		sourceLineageTag: b9dd22b9-200d-4854-bf1d-439c93673891
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Supplier Country
+
+		annotation SummarizationSetBy = User
+
+	partition 'Bridge PPM Supplier PO' = entity
+		mode: directQuery
+		source
+			entityName: Bridge PPM Supplier PO
+			expressionSource: 'DirectQuery to AS - DMA Operations'
+

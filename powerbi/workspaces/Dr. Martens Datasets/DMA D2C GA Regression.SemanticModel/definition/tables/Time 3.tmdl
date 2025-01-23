@@ -1,0 +1,130 @@
+table 'Time 3'
+	lineageTag: 7b23720b-47f2-43b4-83aa-3cfea445aa16
+	sourceLineageTag: 1d8c867a-6225-4917-9ed6-4fd675a29928
+
+	column Time_Key
+		dataType: int64
+		isHidden
+		isNullable: false
+		displayFolder: zz_Misc
+		lineageTag: ab679597-cb55-4a30-8d95-84f281ae490a
+		sourceLineageTag: ab4aa790-6ecc-4466-a203-bb1d071a7322
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Time_Key
+
+		annotation SummarizationSetBy = User
+
+	column Time
+		dataType: dateTime
+		formatString: Short Time
+		lineageTag: 1f0a563a-7d6c-4b43-9fea-9244c3636701
+		sourceLineageTag: 2feb14bf-69d6-404e-8d8e-a0461fbb2ca4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = User
+
+	column Hour
+		dataType: double
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 21e9a21f-ee77-40c3-be3f-fb2d457c5e39
+		sourceLineageTag: 4580db5c-2d18-435e-9989-3a0211585528
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Hour
+
+		annotation SummarizationSetBy = User
+
+	column AM/PM
+		dataType: string
+		lineageTag: fc6ba114-a94b-4b6b-81db-f6a92a69bade
+		sourceLineageTag: 7a59031e-46d4-4701-b676-950350e9b0ae
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AM/PM
+
+		annotation SummarizationSetBy = User
+
+	column 'US Time'
+		dataType: dateTime
+		isNullable: false
+		formatString: Short Time
+		lineageTag: a4d48516-f331-4e7a-ae02-b35a0f1871ce
+		sourceLineageTag: 43796540-1c6e-487c-91dd-fb0298374b39
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: US Time
+
+		annotation SummarizationSetBy = User
+
+	column 'US Time Period'
+		dataType: string
+		lineageTag: 8d25f6b6-3d46-4f2f-a2cc-10bf34e59cb5
+		sourceLineageTag: add3326f-4b52-4b1c-b848-0c95116a522f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: US Time Period
+
+		annotation SummarizationSetBy = User
+
+	column 'US Hour'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 5ddad266-696a-4ebf-90c0-ab1b20f0b23b
+		sourceLineageTag: 4a989aaa-ecfd-4e8e-84cb-714ffc677c7c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: US Hour
+
+		annotation SummarizationSetBy = User
+
+	column 'Hour Period'
+		dataType: string
+		lineageTag: fc5d520d-4beb-44de-bef9-f338d84e6eff
+		sourceLineageTag: 46aa8ea6-65c3-4707-a10f-4cfb6df48b9b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Hour Period
+
+		annotation SummarizationSetBy = User
+
+	column 'Time of Day'
+		dataType: string
+		lineageTag: 13e39063-35f6-4692-9808-5f7d96edb665
+		sourceLineageTag: 1a59744c-53ac-418a-836c-7647ea0ed849
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Time of Day
+
+		annotation SummarizationSetBy = User
+
+	column 'US Hour Period'
+		dataType: string
+		lineageTag: 37c72a87-5144-445f-84b0-387edd4c6129
+		sourceLineageTag: ddc81706-8fba-4c1d-ba45-c2ffa7f90155
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: US Hour Period
+
+		annotation SummarizationSetBy = User
+
+	column 'US Time of Day'
+		dataType: string
+		lineageTag: 5c6fcd99-ad68-42c2-9afd-2975c821ead4
+		sourceLineageTag: 5a4c24b0-d5da-4825-9ed6-e64b29c4cda6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: US Time of Day
+
+		annotation SummarizationSetBy = User
+
+	partition 'Time 3' = entity
+		mode: directQuery
+		source
+			entityName: Time
+			expressionSource: 'DirectQuery to AS - DMA D2C 3'
+

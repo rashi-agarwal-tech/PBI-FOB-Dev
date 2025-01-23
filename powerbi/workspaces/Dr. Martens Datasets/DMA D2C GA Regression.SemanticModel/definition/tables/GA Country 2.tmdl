@@ -1,0 +1,32 @@
+table 'GA Country 2'
+	lineageTag: 9ab7c8cd-a1a2-4517-b77a-2539c0ddef66
+	sourceLineageTag: 098a09ed-d104-45c8-8e86-e924b07980e2
+
+	column Country_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 68c92ff6-763a-464f-9d27-f16659c6943a
+		sourceLineageTag: 198c58c0-1825-47ad-a007-aa6bcfedef21
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Country_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'GA Country'
+		dataType: string
+		lineageTag: fb88e240-0bfd-485b-b4d3-9289df336f6e
+		sourceLineageTag: aa11575b-c3a5-47e7-8be4-72eb8d46dae6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: GA Country
+
+		annotation SummarizationSetBy = User
+
+	partition 'GA Country 2' = entity
+		mode: directQuery
+		source
+			entityName: GA Country
+			expressionSource: 'DirectQuery to AS - DMA D2C 2'
+

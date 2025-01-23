@@ -1,0 +1,561 @@
+table 'Metrics 2'
+	lineageTag: ac0f1f06-0863-4f82-a918-9e65d7af14a2
+	sourceLineageTag: ec9fc16d-be5f-45b9-91c9-8b9ff852b499
+
+	measure '2. Intake Available Units 2' = EXTERNALMEASURE("2. Intake Available Units", INTEGER, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Inventory Levels\z Availability
+		lineageTag: aa73cc12-f91f-400b-8660-b714be7dd1f7
+		sourceLineageTag: 4ed204df-88f2-4366-87a4-9b1ae25eb691
+		dataCategory: Uncategorized
+
+	measure '3. Intake Ordered Available Units 2' = EXTERNALMEASURE("3. Intake Ordered Available Units", INTEGER, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Inventory Levels\z Availability
+		lineageTag: 4249c509-e485-4320-b1f4-3b4304dd17dc
+		sourceLineageTag: 7310a397-9312-442e-80ec-75eea5435e6c
+		dataCategory: Uncategorized
+
+	measure '4. Cumulative Available Units 2' = EXTERNALMEASURE("4. Cumulative Available Units", INTEGER, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Inventory Levels\z Availability
+		lineageTag: aa2af569-ded0-495e-a697-a472feda51d6
+		sourceLineageTag: 218ff9db-1375-4870-a50b-4bb465c6222c
+		dataCategory: Uncategorized
+
+	measure '1. On Hand Available Units 2' = EXTERNALMEASURE("1. On Hand Available Units", INTEGER, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Inventory Levels\z Availability
+		lineageTag: 96fb2f10-aa5e-421d-9580-99d5150734a2
+		sourceLineageTag: 50b66a52-931e-4ca6-bb41-7d0f4b17564a
+		dataCategory: Uncategorized
+
+	measure 'Unit Cost 2' = EXTERNALMEASURE("Unit Cost", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Inventory Levels
+		lineageTag: 2a374675-a93a-47e9-a831-990b050cba95
+		sourceLineageTag: f37d9649-8307-4863-b765-ff8503861829
+		dataCategory: Uncategorized
+
+	measure 'Item Coverage (Maximum) 2' = EXTERNALMEASURE("Item Coverage (Maximum)", INTEGER, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Inventory Levels
+		lineageTag: 261d888a-2d29-4257-ab78-534b3c05ea7a
+		sourceLineageTag: c21eec01-af50-442c-adc4-04e874f17523
+		dataCategory: Uncategorized
+
+	measure 'Item Coverage 2' = EXTERNALMEASURE("Item Coverage", INTEGER, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Inventory Levels
+		lineageTag: b1ed50b2-aa79-4260-bf8a-1a45461c16cb
+		sourceLineageTag: 3bf632bd-694f-4364-85f0-164b66608aa4
+		dataCategory: Uncategorized
+
+	measure '0. On Hand Stock Units 2' = EXTERNALMEASURE("0. On Hand Stock Units", INTEGER, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Inventory Levels
+		lineageTag: a59a2858-638a-4dbf-9c45-5088aa100a40
+		sourceLineageTag: f91786e4-70f3-4901-aada-774ffb7f4669
+		dataCategory: Uncategorized
+
+	measure '0. On Hand Stock Value 2' = EXTERNALMEASURE("0. On Hand Stock Value", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Inventory Levels
+		lineageTag: e3dbc4c8-8795-4549-9a0b-a8582ced66bb
+		sourceLineageTag: de2078b2-6a42-4fc4-92a8-8e1cc7569ac0
+		dataCategory: Uncategorized
+
+	measure 'Opening Stock 2' = EXTERNALMEASURE("Opening Stock", INTEGER, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: Inventory Levels
+		lineageTag: 18d6998a-d41c-4be9-bd54-550060893074
+		sourceLineageTag: 52a03ff9-9932-4b0b-9353-6833e3bf93b1
+		dataCategory: Uncategorized
+
+	measure 'Pick Units 2' = EXTERNALMEASURE("Pick Units", INTEGER, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Pick Detail
+		lineageTag: 726d6d06-df31-438b-86b6-6301699bd1a8
+		sourceLineageTag: 54a54c49-c3fd-4b45-ad26-8a001b25efa1
+		dataCategory: Uncategorized
+
+	measure 'Count of Pick Orders 2' = EXTERNALMEASURE("Count of Pick Orders", INTEGER, "DirectQuery to AS - DMA Operations 2")
+		formatString: #,0
+		displayFolder: Pick Detail
+		lineageTag: efaacf73-e9cd-4cee-ba8e-9dce2ae17e0e
+		sourceLineageTag: b2f48005-0a03-45b0-909e-eb21843ba735
+		dataCategory: Uncategorized
+
+	measure 'Pick Units/Order 2' = EXTERNALMEASURE("Pick Units/Order", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \0.\0"
+		displayFolder: Pick Detail
+		lineageTag: 63e637f8-0190-4ffe-a073-c616afba4938
+		sourceLineageTag: 71c11bc8-3945-4f89-bde1-77bbe8a240b9
+		dataCategory: Uncategorized
+
+	measure 'XR 2' = EXTERNALMEASURE("XR", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		isHidden
+		displayFolder: Internal
+		lineageTag: 6c13361b-504d-4d90-b24c-d515dc88b4e8
+		sourceLineageTag: 43fd59a8-fff1-4b60-a733-7049082bc8ae
+		dataCategory: Uncategorized
+
+	measure 'Adjustment Inventory Units 2' = EXTERNALMEASURE("Adjustment Inventory Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Adjustments
+		lineageTag: fba082c3-5ce1-4ced-9c35-db466de3364a
+		sourceLineageTag: 5e8a4324-fc75-4aa2-a1a2-e0d3177171c8
+		dataCategory: Uncategorized
+
+	measure 'Adjustment Value 2' = EXTERNALMEASURE("Adjustment Value", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Adjustments
+		lineageTag: f1583fd1-abd3-4fbc-80ad-bf8b4f872819
+		sourceLineageTag: 77951c18-9925-4934-bf7b-822c9b50d0da
+		dataCategory: Uncategorized
+
+	measure 'Adjustments Counted Units 2' = EXTERNALMEASURE("Adjustments Counted Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Adjustments
+		lineageTag: da013137-d7d5-4cec-b538-f502f24ffe1b
+		sourceLineageTag: 5f90905a-7d59-4f55-a216-44daf268ff86
+		dataCategory: Uncategorized
+
+	measure 'Adjustment On Hand Units 2' = EXTERNALMEASURE("Adjustment On Hand Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Adjustments
+		lineageTag: 926e1ea1-a27d-4237-8dad-1b28b5966c90
+		sourceLineageTag: caa679cb-c629-4546-b16a-aad111783bbb
+		dataCategory: Uncategorized
+
+	measure 'Adjustment Adjusted Units 2' = EXTERNALMEASURE("Adjustment Adjusted Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Adjustments
+		lineageTag: 96ede077-05a9-4619-afda-433cdd99f109
+		sourceLineageTag: 0a2007fa-01ca-4d07-89a5-543d2d8a2c14
+		dataCategory: Uncategorized
+
+	measure '0. Open Return Units 2' = EXTERNALMEASURE("0. Open Return Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements\Returns
+		lineageTag: 368615e6-d4a3-4825-9abf-38e2d6bf5ca3
+		sourceLineageTag: e59a73f0-2a06-4b17-9da9-765e9cddbdc4
+		dataCategory: Uncategorized
+
+	measure '1. Complete Return Units 2' = EXTERNALMEASURE("1. Complete Return Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements\Returns
+		lineageTag: 388e7ed8-f0ef-4a02-8a63-aec3c97d39cc
+		sourceLineageTag: 20b6e4f2-1cad-4fd5-9d9f-ec5b1918a5ff
+		dataCategory: Uncategorized
+
+	measure '0. Open Return Amount 2' = EXTERNALMEASURE("0. Open Return Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements\Returns
+		lineageTag: 7acc5d99-f140-4394-afd8-88ede4cf21d9
+		sourceLineageTag: c8cbb299-e34f-470b-bf1c-38e192b7538a
+		dataCategory: Uncategorized
+
+	measure '1. Complete Return Amount 2' = EXTERNALMEASURE("1. Complete Return Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements\Returns
+		lineageTag: f631fb18-12a9-4f54-b24a-d5b7e9e9b0a3
+		sourceLineageTag: a42a027c-9fcc-4a08-a8c9-d5a594306f5a
+		dataCategory: Uncategorized
+
+	measure 'PO Amount 2' = EXTERNALMEASURE("PO Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements\Intake\PO Values
+		lineageTag: dd0c4bf1-1890-4974-b0ac-b87b611318d2
+		sourceLineageTag: ef8b9a97-9ef9-47ca-b6a5-afd9c0ab8a0b
+		dataCategory: Uncategorized
+
+	measure 'PO Charges 2' = EXTERNALMEASURE("PO Charges", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		displayFolder: Movements\Intake\PO Values
+		lineageTag: 9cb5701f-6b54-40c7-b7bc-70edae72c4d9
+		sourceLineageTag: dee704de-6526-4b6a-ac5b-aa41f8d3fde2
+		dataCategory: Uncategorized
+
+	measure 'Total PO Value inc Charges 2' = EXTERNALMEASURE("Total PO Value inc Charges", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		displayFolder: Movements\Intake\PO Values
+		lineageTag: 88b1f10c-492c-4b5b-98d1-4cdfa69da18d
+		sourceLineageTag: 1f39567e-2786-4226-a6f1-d559f14e2b0e
+		dataCategory: Uncategorized
+
+	measure '0. Open Intake Units 2' = EXTERNALMEASURE("0. Open Intake Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements\Intake
+		lineageTag: 51684d69-20bf-42ad-be70-d1fc4270ac91
+		sourceLineageTag: 8e51725a-2d32-43ea-989d-03b9c4ab4c6c
+		dataCategory: Uncategorized
+
+	measure '1. Received Intake Units 2' = EXTERNALMEASURE("1. Received Intake Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements\Intake
+		lineageTag: d3ca57ca-269d-4eec-93c5-a1e768a847fa
+		sourceLineageTag: 9538eeb6-c5c7-40a6-85f0-d7767b16b11c
+		dataCategory: Uncategorized
+
+	measure '2. Cancelled Intake Units 2' = EXTERNALMEASURE("2. Cancelled Intake Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements\Intake
+		lineageTag: 328dfa6b-fba1-49f2-98f9-8746095e02a2
+		sourceLineageTag: abff1748-ba7e-46ad-976c-b999a2e130aa
+		dataCategory: Uncategorized
+
+	measure '0. Open Intake Amount 2' = EXTERNALMEASURE("0. Open Intake Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements\Intake
+		lineageTag: 42ae4ef6-fe59-4978-92b6-0ebc84599c13
+		sourceLineageTag: 1ddae412-f3dd-4536-82a7-96087ceaebfe
+		dataCategory: Uncategorized
+
+	measure '1. Received Intake Amount 2' = EXTERNALMEASURE("1. Received Intake Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements\Intake
+		lineageTag: 6902258a-daf4-4fcc-a8af-0b835932dfc5
+		sourceLineageTag: 812e9794-991e-4d2d-b168-f3395fe0a0a1
+		dataCategory: Uncategorized
+
+	measure '2. Cancelled Intake Amount 2' = EXTERNALMEASURE("2. Cancelled Intake Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements\Intake
+		lineageTag: 83375fd0-1ed0-4b9d-acfc-928cad2ee637
+		sourceLineageTag: e069f716-8bd0-48cb-b4e1-bcfdc25f5a5b
+		dataCategory: Uncategorized
+
+	measure '3. Ordered Intake Amount 2' = EXTERNALMEASURE("3. Ordered Intake Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements\Intake
+		lineageTag: 2e51ecde-bea8-4e9a-bf5f-2a8787552973
+		sourceLineageTag: ac8d1d43-652e-4983-bb48-b4563015edf7
+		dataCategory: Uncategorized
+
+	measure '3. Ordered Intake Units 2' = EXTERNALMEASURE("3. Ordered Intake Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements\Intake
+		lineageTag: 5b59621d-9a26-4e1a-bdab-cac92c821573
+		sourceLineageTag: adc430c8-e89b-4356-83bb-13eb80cc3e07
+		dataCategory: Uncategorized
+
+	measure '2. Outstanding Units 2' = EXTERNALMEASURE("2. Outstanding Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: 38b2b103-3ca1-4868-8017-a872dfdabff3
+		sourceLineageTag: 5861d2c8-6436-4681-94ec-08befbd27587
+		dataCategory: Uncategorized
+
+	measure '3.3 Allocated Late Units 2' = EXTERNALMEASURE("3.3 Allocated Late Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: d161100a-bd49-423d-9868-dbed6996a630
+		sourceLineageTag: 0a0a0a2d-8720-4161-9ef7-a259f5558425
+		dataCategory: Uncategorized
+
+	measure '3.2 Allocated On Time Units 2' = EXTERNALMEASURE("3.2 Allocated On Time Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: f8801f78-1208-41f2-addf-fde5b8455058
+		sourceLineageTag: 17fc25fe-ec9d-4ccd-b47a-8a4ebcc43622
+		dataCategory: Uncategorized
+
+	measure '3. Allocated Units 2' = EXTERNALMEASURE("3. Allocated Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: 381e799c-389c-46f7-be4a-42987d3cd6d1
+		sourceLineageTag: c2557129-ebff-4780-97b6-a0c58d6977f0
+		dataCategory: Uncategorized
+
+	measure '3.1 Allocated Arrived Units 2' = EXTERNALMEASURE("3.1 Allocated Arrived Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: 9b5dd4c8-b489-4236-95dc-60cf87f4749c
+		sourceLineageTag: f33f0ea0-1bb7-4e1c-ad60-6b0dd3d02910
+		dataCategory: Uncategorized
+
+	measure '4. Reserved Units 2' = EXTERNALMEASURE("4. Reserved Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: 0cc230b4-b6e4-4ea8-b8c6-e0c626fbf6bc
+		sourceLineageTag: bb97dc44-0602-4890-b025-ec57ba211682
+		dataCategory: Uncategorized
+
+	measure '5.2 Pick Release Units 2' = EXTERNALMEASURE("5.2 Pick Release Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: d03ab5e1-e6fc-404a-a9c2-b4fb3933c6fa
+		sourceLineageTag: dd05c95a-873e-4564-ab4f-a1ca95264263
+		dataCategory: Uncategorized
+
+	measure '5.1 Pick Active Units 2' = EXTERNALMEASURE("5.1 Pick Active Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: 9f7eaaaf-8bec-42c5-ab09-f6aa66028b8a
+		sourceLineageTag: a873f0c4-1d39-4e91-90c9-474e6db1e174
+		dataCategory: Uncategorized
+
+	measure '5.3 Pick Complete Units 2' = EXTERNALMEASURE("5.3 Pick Complete Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: c42d9107-4886-41ec-83a3-42c54702b7d7
+		sourceLineageTag: 70be069b-7c74-429c-8bba-dd062366d218
+		dataCategory: Uncategorized
+
+	measure '5. In Pick Units 2' = EXTERNALMEASURE("5. In Pick Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: 0ee246c9-79c6-4c9b-91dc-7827377fa093
+		sourceLineageTag: 1c24c6b5-043f-419b-9b85-bd375016db58
+		dataCategory: Uncategorized
+
+	measure '1. Open Units 2' = EXTERNALMEASURE("1. Open Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: fa374c0d-f68c-48e1-80c0-b4b0b9327324
+		sourceLineageTag: 55c34623-98a9-4378-8798-5e70514b465c
+		dataCategory: Uncategorized
+
+	measure '6. Despatched Units 2' = EXTERNALMEASURE("6. Despatched Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: ac25bb4a-fe74-4eaa-b1e6-803d8ca92b21
+		sourceLineageTag: 5f376eba-77d3-4876-b3d8-0ab888b9d245
+		dataCategory: Uncategorized
+
+	measure '7. Despatched not Received Units 2' = EXTERNALMEASURE("7. Despatched not Received Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: 55ee59ec-a372-4914-b804-50200c87af71
+		sourceLineageTag: e79942e3-bdea-4589-a733-d591cc3bf24a
+		dataCategory: Uncategorized
+
+	measure '8. Received Units 2' = EXTERNALMEASURE("8. Received Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: 191ae38e-5dfc-4a22-a66d-6520d64f3e23
+		sourceLineageTag: 23f3b0d7-06f1-42cd-a2c6-bc6a6c018ff4
+		dataCategory: Uncategorized
+
+	measure '0. Ordered Units 2' = EXTERNALMEASURE("0. Ordered Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: 72acb4d3-9807-451b-8f8d-1fc6bd17f27d
+		sourceLineageTag: dabb4da7-8242-426d-b9e9-a456ee9ec923
+		dataCategory: Uncategorized
+
+	measure '9. Cancelled Units 2' = EXTERNALMEASURE("9. Cancelled Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: 250eb84e-9308-4135-937a-561549680737
+		sourceLineageTag: 000a4c04-6b77-4e0d-937e-629824df265a
+		dataCategory: Uncategorized
+
+	measure '0. Ordered Amount 2' = EXTERNALMEASURE("0. Ordered Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: 3de1480c-3fca-4b43-9db2-3a88f3ecaeac
+		sourceLineageTag: 7529fb6d-10ff-4f76-b48b-8be289440b08
+		dataCategory: Uncategorized
+
+	measure '1. Open Amount 2' = EXTERNALMEASURE("1. Open Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: 175ea5c4-7d75-49d1-88fd-039977276e26
+		sourceLineageTag: c9399ba4-1e53-4730-ab6a-e9bdc06f525e
+		dataCategory: Uncategorized
+
+	measure '2. Outstanding Amount 2' = EXTERNALMEASURE("2. Outstanding Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: 9c79b7a3-c19d-4108-b7e2-c2953a92cadb
+		sourceLineageTag: 4a02cf05-6017-4bdc-b534-bae9d1b6feb4
+		dataCategory: Uncategorized
+
+	measure '3.1 Allocated Arrived Amount 2' = EXTERNALMEASURE("3.1 Allocated Arrived Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: e550c8bc-fe97-4cb7-96a6-3e0340a167a8
+		sourceLineageTag: d1331d27-3cae-4ab2-b3b2-7959e1439cb0
+		dataCategory: Uncategorized
+
+	measure '3.2 Allocated On Time Amount 2' = EXTERNALMEASURE("3.2 Allocated On Time Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: 956444f7-6762-48a0-b991-847d98fb85ce
+		sourceLineageTag: 31c066f9-34c1-420f-bce6-c741a97c76e1
+		dataCategory: Uncategorized
+
+	measure '3.3 Allocated Late Amount 2' = EXTERNALMEASURE("3.3 Allocated Late Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: 31bd5207-c096-438b-abde-4170d1203974
+		sourceLineageTag: 8f764af0-07eb-4a5d-b2fa-21f96b25b970
+		dataCategory: Uncategorized
+
+	measure '4. Reserved Amount 2' = EXTERNALMEASURE("4. Reserved Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: 5a08bcb2-46eb-4944-8477-5b41e1e38c04
+		sourceLineageTag: aa3d6027-d16d-48c0-81d7-358bbb4cd29c
+		dataCategory: Uncategorized
+
+	measure '5.1 Pick Active Amount 2' = EXTERNALMEASURE("5.1 Pick Active Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: 29ba5476-5a52-4203-938d-fe31b6dc49e9
+		sourceLineageTag: 9ed5cb9a-12a5-4e1e-8d46-f6bec88a354e
+		dataCategory: Uncategorized
+
+	measure '5.2 Pick Release Amount 2' = EXTERNALMEASURE("5.2 Pick Release Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: 70b2b4f4-b78e-45fa-9d00-6492129dfc62
+		sourceLineageTag: 30eec39c-5b1e-45e8-9de6-26a95f63bcc8
+		dataCategory: Uncategorized
+
+	measure '5.3 Pick Complete Amount 2' = EXTERNALMEASURE("5.3 Pick Complete Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: ec4c5e74-3df7-4e9d-8107-c2b5f3e25583
+		sourceLineageTag: 002e3aea-4aa0-4bd3-bf96-7dd1f91651f7
+		dataCategory: Uncategorized
+
+	measure '6. Despatched Amount 2' = EXTERNALMEASURE("6. Despatched Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: 8ed3c8fa-5727-4ef1-b57f-1807cabf01a1
+		sourceLineageTag: b191b809-09c8-431d-b98e-ddd30cd23c9c
+		dataCategory: Uncategorized
+
+	measure '8. Received Amount 2' = EXTERNALMEASURE("8. Received Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: ef2f7763-120d-44ca-936f-99b5d0eaabb3
+		sourceLineageTag: f8b25a3b-f68f-4390-9354-14cb10ff1b1c
+		dataCategory: Uncategorized
+
+	measure '9. Cancelled Amount 2' = EXTERNALMEASURE("9. Cancelled Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: f15bf3b2-2b03-4607-98fa-fd781e5fc215
+		sourceLineageTag: 7c395670-b4e6-41f0-8ad7-131e2278cdcb
+		dataCategory: Uncategorized
+
+	measure '3. Allocated Amount 2' = EXTERNALMEASURE("3. Allocated Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: 6253e972-a4a7-4623-8833-9d2dd1bbf354
+		sourceLineageTag: 46be9afe-cd43-42e7-b8fe-9794c263e88b
+		dataCategory: Uncategorized
+
+	measure '5. In Pick Amount 2' = EXTERNALMEASURE("5. In Pick Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: e119695e-1e11-474c-8f2d-6fff7a46f454
+		sourceLineageTag: b8a82c3d-b431-4681-9c6b-ca64770954e5
+		dataCategory: Uncategorized
+
+	measure '7. Despatched not Received Amount 2' = EXTERNALMEASURE("7. Despatched not Received Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: f624d042-f19b-4080-b51c-5a33078f334c
+		sourceLineageTag: 2a3d1aff-bc12-4616-994d-36bec77812c7
+		dataCategory: Uncategorized
+
+	measure '6.1 % Despatched Units 2' = EXTERNALMEASURE("6.1 % Despatched Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: 1e7fd406-7a3a-461c-a937-f0a17f7104d9
+		sourceLineageTag: 73d20173-6472-4565-bdf1-967ee3a8c470
+		dataCategory: Uncategorized
+
+	measure '3.5 Allocated Detail Units 2' = EXTERNALMEASURE("3.5 Allocated Detail Units", INTEGER, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\#\#\0"
+		displayFolder: Movements
+		lineageTag: 468787e7-586c-42ab-bb80-0ef00ec80c8e
+		sourceLineageTag: f500c4ef-bae1-4a98-819d-07e91c7905e1
+		dataCategory: Uncategorized
+
+	measure '8.1 Short Delivery Units 2' = EXTERNALMEASURE("8.1 Short Delivery Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: b95b72e5-867e-4894-9a16-3b1eca76c2f6
+		sourceLineageTag: 9ab86abc-e27a-4047-a75f-673f004b1f72
+		dataCategory: Uncategorized
+
+	measure '8.1. Short Delivery Amount 2' = EXTERNALMEASURE("8.1. Short Delivery Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Movements
+		lineageTag: bdeecbe0-9619-4291-9c43-93fe2593c567
+		sourceLineageTag: f1be8594-ed90-48ef-86ef-fdf702da3630
+		dataCategory: Uncategorized
+
+	measure '3.4 Allocated Outside Of Time Fence Units 2' = EXTERNALMEASURE("3.4 Allocated Outside Of Time Fence Units", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: 84280013-3cb0-47fb-858b-5a38821bae11
+		sourceLineageTag: e56ab517-edbe-44a7-bc3f-ede014819631
+		dataCategory: Uncategorized
+
+	measure '3.4 Allocated Outside Of Time Fence Amount 2' = EXTERNALMEASURE("3.4 Allocated Outside Of Time Fence Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Movements
+		lineageTag: 0a6f63f5-0f59-4b5d-8a8e-95f8ea875e8a
+		sourceLineageTag: 60facbcd-0597-43ea-9a35-f08af36aa9fc
+		dataCategory: Uncategorized
+
+	measure 'Forecast Amount 2' = EXTERNALMEASURE("Forecast Amount", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Product Forecast
+		lineageTag: cc26a19c-84d1-416e-9c14-33df6d8bf361
+		sourceLineageTag: b76c06d5-a290-4b2a-aefc-f42b9f689ea7
+		dataCategory: Uncategorized
+
+	measure 'Forecast RRP 2' = EXTERNALMEASURE("Forecast RRP", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: Product Forecast
+		lineageTag: 696a0c69-32e7-4d6b-add0-a82f8f3cfcda
+		sourceLineageTag: add8b089-a3a1-4dbe-b735-de76fbfaca6d
+		dataCategory: Uncategorized
+
+	measure 'Qty Sold US 2' = EXTERNALMEASURE("Qty Sold US", INTEGER, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Sell Out\US
+		lineageTag: fbb9dc0c-9a69-4a52-b463-9aea062bada1
+		sourceLineageTag: ce67039c-ea6b-49bb-be23-858267cf7eb6
+		dataCategory: Uncategorized
+
+	measure 'Qty On Hand US 2' = EXTERNALMEASURE("Qty On Hand US", INTEGER, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Sell Out\US
+		lineageTag: c084e98f-f32e-4361-8dfb-7e40335a0431
+		sourceLineageTag: 9e3da93c-8f5d-46f2-af29-95ccac09b8cb
+		dataCategory: Uncategorized
+
+	measure 'Qty On-Hand US 2' = EXTERNALMEASURE("Qty On-Hand US", INTEGER, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\0"
+		displayFolder: Sell Out\US
+		lineageTag: 7a975301-7314-489b-a005-79fcdc379339
+		sourceLineageTag: 7b84bc29-0598-4f22-851c-01d3d7b0e0c8
+		dataCategory: Uncategorized
+
+	measure 'Max. Net Weight 2' = EXTERNALMEASURE("Max. Net Weight", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\#\#\0.\0\0\0"
+		displayFolder: Other
+		lineageTag: 6f1ad446-fb03-4085-9756-5707b58cd10d
+		sourceLineageTag: fc99d621-6642-42ba-a03e-915c2fca570f
+		dataCategory: Uncategorized
+
+	measure 'Max. Pack Weight 2' = EXTERNALMEASURE("Max. Pack Weight", DOUBLE, "DirectQuery to AS - DMA Operations 2")
+		formatString: " \#\,\#\#\0.\0\0\0"
+		displayFolder: Other
+		lineageTag: 518952e0-6077-41fe-b4a1-e57b549e5867
+		sourceLineageTag: eec1d05e-bcb9-4d90-8f0f-c02687f60793
+		dataCategory: Uncategorized
+
+	partition 'Metrics 2' = entity
+		mode: directQuery
+		source
+			entityName: Metrics
+			expressionSource: 'DirectQuery to AS - DMA Operations 2'
+

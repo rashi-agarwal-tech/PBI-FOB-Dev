@@ -1,0 +1,102 @@
+table 'TMALL 2'
+	isHidden
+	lineageTag: fbb719d2-b560-48a6-bb35-eb96a6ea7c2d
+	sourceLineageTag: a96ceae5-2fcf-42c8-b421-a425daab2890
+
+	column DeviceId
+		dataType: string
+		isHidden
+		lineageTag: ef08ede4-0eec-4b97-8cdc-2bd6909158e0
+		sourceLineageTag: 7e2f8a4b-fac7-4f63-90ed-a161a40ead23
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DeviceId
+
+		annotation SummarizationSetBy = User
+
+	column ChannelId
+		dataType: string
+		isHidden
+		lineageTag: 711fe09a-5fc6-4ce9-a592-cee28f79549c
+		sourceLineageTag: e7ae64f4-be64-46aa-8f37-5d12913d28b4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ChannelId
+
+		annotation SummarizationSetBy = User
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: eb301781-2534-49b5-826b-d412544ad39f
+		sourceLineageTag: 033037a0-3674-466a-8b11-5a526f948246
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column Sessions
+		dataType: int64
+		isHidden
+		lineageTag: dbdf7046-05e4-4a65-a34f-b28e3fff6224
+		sourceLineageTag: 316251b8-0b3c-4543-ab16-203f349c3ee9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sessions
+
+		annotation SummarizationSetBy = User
+
+	column Transactions
+		dataType: int64
+		isHidden
+		lineageTag: 1c05dbbb-f962-4195-8254-e068b89aa221
+		sourceLineageTag: 26d36330-60d1-4c20-a986-b0f995e8980f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transactions
+
+		annotation SummarizationSetBy = User
+
+	column 'Revenue (GBP)'
+		dataType: double
+		isHidden
+		lineageTag: e91ae21e-0550-46fe-a0ac-b9596577845d
+		sourceLineageTag: 4edcc8f7-6c68-4e05-bccd-1bef52004242
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Revenue (GBP)
+
+		annotation SummarizationSetBy = User
+
+	column WebsiteName
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 9ed03e79-d25d-482f-b75a-20ab5623443b
+		sourceLineageTag: 6f0cdfe7-ceb5-4321-bb86-9b1c1fd81d98
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WebsiteName
+
+		annotation SummarizationSetBy = User
+
+	column CompanyRegion
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: ad00dde7-dc95-4683-9ce0-88554359958f
+		sourceLineageTag: d79b2754-b8c0-4e11-a2e8-f0e60dd93c40
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CompanyRegion
+
+		annotation SummarizationSetBy = User
+
+	partition 'TMALL 2' = entity
+		mode: directQuery
+		source
+			entityName: TMALL
+			expressionSource: 'DirectQuery to AS - DMA D2C 2'
+

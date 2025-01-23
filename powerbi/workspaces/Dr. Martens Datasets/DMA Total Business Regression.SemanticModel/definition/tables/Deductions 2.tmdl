@@ -1,0 +1,95 @@
+table 'Deductions 2'
+	lineageTag: 148b5077-ac53-4939-b75d-b997e59930b7
+	sourceLineageTag: 15504bce-6e47-47fc-9d0b-4712717ad2df
+
+	column Company_Key
+		dataType: string
+		isHidden
+		lineageTag: 39e9e886-f86b-4afd-b543-e91bb2b3185c
+		sourceLineageTag: 93ac98a7-5dab-41a3-8627-1af5771699f7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		lineageTag: 754a9f3f-fd59-46f9-bd6a-ccbf68ba6d47
+		sourceLineageTag: 6d90ac67-755c-4eda-a101-f7b90ac13873
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column Date_Key
+		dataType: string
+		isHidden
+		lineageTag: 900ef369-8104-487e-8251-e5962caf6807
+		sourceLineageTag: de8beee1-5b46-4b95-b875-c57717bfd652
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Write Off Reason'
+		dataType: string
+		lineageTag: bcb90fae-2665-467f-aef5-d99a13629167
+		sourceLineageTag: 51bfe5b9-5948-4dd8-8bac-48900e9ceb16
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Write Off Reason
+
+		annotation SummarizationSetBy = User
+
+	column Description
+		dataType: string
+		lineageTag: f4e2854c-0b53-42d1-8b09-1f5d6d89fc4f
+		sourceLineageTag: 884db04a-597d-45b5-ae1a-41c3efbc5f3d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Voucher Number'
+		dataType: string
+		lineageTag: d5a4e454-6e04-40d3-a732-dc3cf8704ceb
+		sourceLineageTag: fc72e9fd-521a-4d6c-8127-802dfde2bc44
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Voucher Number
+
+		annotation SummarizationSetBy = User
+
+	column Amount_CONS_GBP
+		dataType: decimal
+		isHidden
+		formatString: #,##0.00
+		lineageTag: 39fb9767-f5aa-4cc7-8fd2-90756c21b2db
+		sourceLineageTag: 113e7588-6d8e-4630-815d-71d45e45a8da
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Amount_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column Source
+		dataType: string
+		lineageTag: 1cbbb184-b7cd-4671-a212-90c2c7ade291
+		sourceLineageTag: a2865d7f-d430-49ce-9723-942f6cd6448c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Source
+
+		annotation SummarizationSetBy = User
+
+	partition 'Deductions 2' = entity
+		mode: directQuery
+		source
+			entityName: Deductions
+			expressionSource: 'DirectQuery to AS - DMA Total Business 2'
+

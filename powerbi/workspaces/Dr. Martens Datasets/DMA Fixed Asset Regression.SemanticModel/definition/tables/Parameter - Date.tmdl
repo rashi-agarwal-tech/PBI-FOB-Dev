@@ -1,0 +1,50 @@
+table 'Parameter - Date'
+	lineageTag: cb83e903-3aec-4875-a8b1-2393f66d58b8
+
+	column 'Parameter - Date'
+		lineageTag: 46028722-47bc-4134-a06a-cab977c98e79
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Parameter - Date Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Parameter - Date Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Date Fields'
+		isHidden
+		lineageTag: 8ef74b89-5674-4a86-b0b2-8716636f0f7c
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Parameter - Date Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Parameter - Date Order'
+		isHidden
+		formatString: 0
+		lineageTag: d6977ab8-e71f-4046-8481-8119b93a0ba9
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Parameter - Date' = calculated
+		mode: import
+		source =
+				
+				{
+				    ("Fiscal Year (544)", NAMEOF('fa'[Fiscal Year (544)]), 0),
+				    ("Fiscal Year-Period (544)", NAMEOF('fa'[Fiscal Year-Period (544)]), 1),
+				    (" Date", NAMEOF('fa'[ Date]), 2)
+				}
+
+	annotation PBI_Id = 0987580e1c0541f2807399f1417b5a3e
+

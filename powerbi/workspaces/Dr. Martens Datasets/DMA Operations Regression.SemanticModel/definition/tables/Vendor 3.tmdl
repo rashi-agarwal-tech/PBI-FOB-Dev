@@ -1,0 +1,62 @@
+table 'Vendor 3'
+	lineageTag: f5b35d30-1111-432d-a411-3d023c4e3b52
+	sourceLineageTag: 7df71d00-08f3-4dfa-868b-98310a6380e2
+
+	column Vendor_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: e2f46612-3cdf-47da-93f1-e561bb86dfa3
+		sourceLineageTag: 4ae045c9-25cd-440c-87c2-74f493bdbefc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vendor_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Vendor #'
+		dataType: string
+		lineageTag: b63fff6e-238b-4e9a-b54b-6c857a612cdd
+		sourceLineageTag: 01a26712-8a3a-4c57-adc3-97f1a83773b6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vendor #
+
+		annotation SummarizationSetBy = User
+
+	column 'Vendor On Hold Status'
+		dataType: int64
+		lineageTag: d837557a-2e61-43ec-a99f-17320ce6a39e
+		sourceLineageTag: de2dce97-3644-4c7a-ab5a-a040eedc7653
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vendor On Hold Status
+
+		annotation SummarizationSetBy = User
+
+	column 'Vendor Country'
+		dataType: string
+		lineageTag: e24ef371-2507-4478-bff7-f394a0928189
+		sourceLineageTag: 56a82a0c-7a83-4ccc-aad8-b8879a663804
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vendor Country
+
+		annotation SummarizationSetBy = User
+
+	column 'Vendor Name'
+		dataType: string
+		lineageTag: d0886ae3-78e4-4f4a-8bb5-c01706c765f9
+		sourceLineageTag: 50cd8f40-e147-49ee-a8f4-7f5e65104893
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Vendor Name
+
+		annotation SummarizationSetBy = User
+
+	partition 'Vendor 3' = entity
+		mode: directQuery
+		source
+			entityName: Vendor
+			expressionSource: 'DirectQuery to AS - DMA Operations 3'
+

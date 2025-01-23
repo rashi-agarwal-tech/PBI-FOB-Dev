@@ -1,0 +1,144 @@
+table 'SmartRes 3'
+	lineageTag: 68e64997-4104-42cb-807d-1a3738b4f776
+	sourceLineageTag: 432d71e7-a6eb-44c8-8569-ee7d2edfdb73
+
+	column INVENTTRANSID
+		dataType: string
+		displayFolder: zz_Misc
+		lineageTag: 056ff08e-76ec-4e1f-8355-3dfb1fa70241
+		sourceLineageTag: 53e6a66a-38ee-45f2-99ee-ae1080a1b9f6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		annotation SummarizationSetBy = User
+
+	column TRANSDATE
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: 43a78e30-ac21-402e-90c6-b83a511bf31c
+		sourceLineageTag: 933bbb48-6ba1-4f92-b48c-3e3716610830
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TRANSDATE
+
+		annotation SummarizationSetBy = User
+
+	column StatusOLD
+		dataType: string
+		displayFolder: zz_Misc
+		lineageTag: 4b0f710d-2fc8-4f76-93b2-f26d3cafb4bf
+		sourceLineageTag: b5a92ed8-85c5-4e21-8ca3-3540edce1b4a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: StatusOLD
+
+		annotation SummarizationSetBy = User
+
+	column QtyAllocated
+		dataType: int64
+		displayFolder: zz_Values
+		lineageTag: 75a163ed-7fa7-419e-87d7-ff86431b4f08
+		sourceLineageTag: a8837936-30f6-40f9-af6f-44acac85d951
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: QtyAllocated
+
+		annotation SummarizationSetBy = User
+
+	column QtyReserved
+		dataType: int64
+		displayFolder: zz_Values
+		lineageTag: cce2a897-19d9-4cd1-900a-75cb887be99b
+		sourceLineageTag: f15bb515-97ae-437c-89d9-5c5149d03b1a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: QtyReserved
+
+		annotation SummarizationSetBy = User
+
+	column Date_Key
+		dataType: int64
+		displayFolder: zz_Keys
+		lineageTag: 7141247c-3ce2-446d-a18b-23d71cac7fa5
+		sourceLineageTag: 49b81282-7006-4d48-8417-4d14eb7a2af3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		annotation SummarizationSetBy = User
+
+	column Product_Key
+		dataType: string
+		displayFolder: zz_Keys
+		lineageTag: 994d7237-2020-4f49-82e5-39ce2872c490
+		sourceLineageTag: 6459aad2-47a8-4815-958d-039b645a0f7b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		displayFolder: zz_Keys
+		lineageTag: 124cf05c-c43a-4b42-9b5f-f4c66ec82d29
+		sourceLineageTag: 54e5300d-7e9d-463c-9a2e-56371e136145
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column QtyOutstanding
+		dataType: int64
+		displayFolder: zz_Values
+		lineageTag: 45fcab40-8d71-4f34-950e-3482ff8b8206
+		sourceLineageTag: 6e770949-5f46-4c6f-9105-14b3e4bd2b79
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: QtyOutstanding
+
+		annotation SummarizationSetBy = User
+
+	column 'Available Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: zz_Values
+		lineageTag: fef64822-7501-47ad-b209-3d9051daf269
+		sourceLineageTag: 2f6d9264-a338-472a-8f33-5d75e67de25a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Available Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Delay Buckets Sort'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: f405dbd6-632d-40ef-ad40-d1037e849fee
+		sourceLineageTag: 1400cdc5-9920-412b-a80d-291e81c49293
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delay Buckets Sort
+
+		annotation SummarizationSetBy = User
+
+	column 'Delay Buckets'
+		dataType: string
+		lineageTag: eed00e2e-5ad2-4c7e-97f7-bcbd4834465b
+		sourceLineageTag: f565f443-e694-4480-9ce9-49aff22c369e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Delay Buckets
+
+		annotation SummarizationSetBy = User
+
+	partition 'SmartRes 3' = entity
+		mode: directQuery
+		source
+			entityName: SmartRes
+			expressionSource: 'DirectQuery to AS - DMA B2B 3'
+

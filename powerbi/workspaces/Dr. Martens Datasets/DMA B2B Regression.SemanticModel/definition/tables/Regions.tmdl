@@ -1,0 +1,36 @@
+table Regions
+	isHidden
+	lineageTag: 2deb33ef-74c8-49e1-8834-70f5958bebf9
+	sourceLineageTag: 46f73cab-2f7e-4ff7-87db-2350233b2d91
+
+	column ADDRESSCOUNTRYREGIONID
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Misc
+		lineageTag: 1581fa28-75ca-454c-bfd8-343f7040fdf3
+		sourceLineageTag: 952efc83-5fb4-4c2a-8d28-e509c9d6d3ea
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ADDRESSCOUNTRYREGIONID
+
+		annotation SummarizationSetBy = User
+
+	column Region
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: ce6aca5a-de40-413e-9f74-d36245ccbd0c
+		sourceLineageTag: e8677e1c-b5cc-4ee6-a1db-acf3ab19add2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = User
+
+	partition Regions = entity
+		mode: directQuery
+		source
+			entityName: Regions
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

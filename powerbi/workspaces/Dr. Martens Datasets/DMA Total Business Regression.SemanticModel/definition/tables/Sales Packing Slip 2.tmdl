@@ -1,0 +1,44 @@
+table 'Sales Packing Slip 2'
+	isHidden
+	lineageTag: a0e04db4-59cd-4e3a-990e-ea90cfbeb8d1
+	sourceLineageTag: 82e12ccd-ceda-4013-a461-08a815f234d3
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		lineageTag: d37f6ba0-bc59-4c4b-86c8-9a8eba91b563
+		sourceLineageTag: b9b179d4-1e31-4603-a2e0-fdf73640d4b9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		annotation SummarizationSetBy = User
+
+	column 'Shipped Qty'
+		dataType: int64
+		isHidden
+		lineageTag: d19df6b0-40fd-4cbd-8f6d-bb0da6de9a5f
+		sourceLineageTag: 62e09325-95c6-4808-a01f-bb51fc482d89
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Shipped Qty
+
+		annotation SummarizationSetBy = User
+
+	column Date_Key
+		dataType: string
+		isHidden
+		lineageTag: 06db3ee3-5212-41ca-b7b8-386c5dcecbd4
+		sourceLineageTag: b09d0404-eda2-45f6-bd79-ae438a450c38
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		annotation SummarizationSetBy = User
+
+	partition 'Sales Packing Slip 2' = entity
+		mode: directQuery
+		source
+			entityName: Sales Packing Slip
+			expressionSource: 'DirectQuery to AS - DMA Total Business 2'
+

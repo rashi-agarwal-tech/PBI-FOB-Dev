@@ -1,0 +1,29 @@
+table RefreshDateTime
+	lineageTag: 5a0bc7f0-7efa-45e4-b957-c14a15f25d06
+
+	column 'Refresh DateTime'
+		dataType: dateTime
+		formatString: dd-mmm-yyyy hh:nn:ss
+		lineageTag: 37b7f7ba-19ec-4186-8bbd-12d6f96c45ec
+		summarizeBy: none
+		sourceColumn: Refresh DateTime
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	partition RefreshDateTime = m
+		mode: import
+		source =
+				let
+				    Source = DateTime.LocalNow(),
+				    #"Converted to Table" = #table(1, {{Source}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "Refresh DateTime"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Refresh DateTime", type datetime}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

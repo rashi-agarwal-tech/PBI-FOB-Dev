@@ -1,0 +1,54 @@
+table 'Model Refresh Time'
+	lineageTag: 7a5213ac-ae84-405e-8c6c-4d6c5e4b185c
+	sourceLineageTag: cb73c261-9c2a-40e5-a775-e8fa79956316
+
+	column Season_Key
+		dataType: double
+		isHidden
+		lineageTag: 32d878d8-36b0-41a3-b279-bf6df27f37e0
+		sourceLineageTag: e155b2b6-85b6-4c3d-98fe-35dc21f8ef62
+		dataCategory: Uncategorized
+		summarizeBy: count
+		sourceColumn: Season_Key
+
+		annotation SummarizationSetBy = User
+
+	column Season
+		dataType: string
+		isHidden
+		lineageTag: 74ffac81-2a8a-4ea6-8684-87a2cfc23f8a
+		sourceLineageTag: 8f0e15bd-a376-4460-b55d-899852604792
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = User
+
+	column 'Season Long Name'
+		dataType: string
+		isHidden
+		lineageTag: e85153e3-3ae6-496a-be29-ebe42985765a
+		sourceLineageTag: 34979a4e-98c1-4cb2-8972-9aba804c6169
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Season Long Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Refresh Time'
+		dataType: dateTime
+		formatString: dd mmmm yyyy hh:nn AM/PM
+		lineageTag: 22408252-3d15-46fb-8038-1e40630a69e5
+		sourceLineageTag: 40a356ad-8fc9-4ef1-9c9c-1e7af81660bd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Refresh Time
+
+		annotation SummarizationSetBy = User
+
+	partition 'Model Refresh Time' = entity
+		mode: directQuery
+		source
+			entityName: Model Refresh Time
+			expressionSource: 'DirectQuery to AS - DMA Operations'
+

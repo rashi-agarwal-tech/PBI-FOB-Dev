@@ -1,0 +1,104 @@
+table 'stocks summary'
+	lineageTag: e86548d5-beff-488f-b90e-d5dad353ba8b
+
+	column 'RowCount of Availability Today'
+		formatString: #,0
+		lineageTag: 69a49438-2681-4f4c-9a51-dbcfc0f77524
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Availability Today]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Availability Today diff UAT'
+		formatString: #,0
+		lineageTag: 4f9dd843-cbe8-4d32-8ef9-5aaf2363f8ad
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Availability Today diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of Availability Today diff DEV'
+		formatString: #,0
+		lineageTag: b97d075f-b98b-4bac-971a-6c743fd40326
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of Availability Today diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of SmartRes'
+		formatString: #,0
+		lineageTag: 9e4abc00-7cf4-464b-a3d3-f1562ae034f4
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of SmartRes]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of SmartRes diff UAT'
+		formatString: #,0
+		lineageTag: 7f590655-78f5-426c-82b1-3bb733dfbcfe
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of SmartRes diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of SmartRes diff DEV'
+		formatString: #,0
+		lineageTag: 81911b97-93a7-43ae-bf08-a5dfc5e2023a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of SmartRes diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count of Availability Date (exc. weekends)'
+		formatString: #,0
+		lineageTag: d6f6dc7f-1505-40a3-85e5-810668c720d8
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count of Availability Date (exc. weekends)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count of Availability Date (exc. weekends) diff UAT'
+		formatString: #,0
+		lineageTag: c29af4fd-3407-4668-b60d-e1d45b52e250
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count of Availability Date (exc. weekends) diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count of Availability Date (exc. weekends) diff DEV'
+		formatString: #,0
+		lineageTag: 384bc57f-aed5-42cc-9452-50fc85e64364
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count of Availability Date (exc. weekends) diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'stocks summary' = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE
+				(
+				    stocks
+				    ,"RowCount of Availability Today",CALCULATE(COUNTROWS('Availability'),'Date'[- Is Today?]="Yes")
+				    ,"RowCount of Availability Today diff UAT",CALCULATE(COUNTROWS('Availability 2'),'Date 2'[- Is Today?]="Yes")-CALCULATE(COUNTROWS('Availability'),'Date'[- Is Today?]="Yes")
+				    ,"RowCount of Availability Today diff DEV",CALCULATE(COUNTROWS('Availability 3'),'Date 3'[- Is Today?]="Yes")-CALCULATE(COUNTROWS('Availability'),'Date'[- Is Today?]="Yes")
+				    ,"Count of Availability Date (exc. weekends)",CALCULATE(DISTINCTCOUNT('Availability'[DATE]),'Date'[- Is Weekend?]="Weekday")
+				    ,"Count of Availability Date (exc. weekends) diff UAT",CALCULATE(DISTINCTCOUNT('Availability 2'[DATE]),'Date 2'[- Is Weekend?]="Weekday")-CALCULATE(DISTINCTCOUNT('Availability'[DATE]),'Date'[- Is Weekend?]="Weekday")
+				    ,"Count of Availability Date (exc. weekends) diff DEV",CALCULATE(DISTINCTCOUNT('Availability 3'[DATE]),'Date 3'[- Is Weekend?]="Weekday")-CALCULATE(DISTINCTCOUNT('Availability'[DATE]),'Date'[- Is Weekend?]="Weekday")
+				    ,"RowCount of SmartRes",COUNTROWS('SmartRes')
+				    ,"RowCount of SmartRes diff UAT",COUNTROWS('SmartRes 2')-COUNTROWS('SmartRes')
+				    ,"RowCount of SmartRes diff DEV",COUNTROWS('SmartRes 3')-COUNTROWS('SmartRes')
+				)
+
+	annotation PBI_Id = 00745480cc0b42ab921be4d425457988
+

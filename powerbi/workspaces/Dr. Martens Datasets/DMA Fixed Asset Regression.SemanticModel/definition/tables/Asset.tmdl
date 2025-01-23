@@ -1,0 +1,113 @@
+table Asset
+	lineageTag: 1b1d8b95-26c1-478f-ab8d-38fb6c273bc1
+	sourceLineageTag: a6ddf59e-1f50-4037-8364-33a76ea7ea05
+
+	column Asset_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: df1c8373-3738-46ea-bbbe-e54a00dc3250
+		sourceLineageTag: 00adaf9b-e399-4978-9a9e-6af2de33fd2d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Asset_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Fixed Asset Description'
+		dataType: string
+		lineageTag: 1d431a63-ca2c-498d-b34c-d4859e0b5144
+		sourceLineageTag: 00a011be-b04e-4c7d-aa98-2d9ff5dba691
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fixed Asset Description
+
+		annotation SummarizationSetBy = User
+
+	column 'Fixed Asset Number'
+		dataType: string
+		lineageTag: 3a6c776c-710d-4a23-91cd-d2242bdbe7a4
+		sourceLineageTag: 29060727-ae81-4ed4-b68b-6e30904d0ab4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fixed Asset Number
+
+		annotation SummarizationSetBy = User
+
+	column 'Fixed Asset Group'
+		dataType: string
+		lineageTag: ef5a68f0-cb1b-4fe1-923a-bac952e44d56
+		sourceLineageTag: 32f420f2-33da-4c16-9658-a5cf370e804e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fixed Asset Group
+
+		annotation SummarizationSetBy = User
+
+	column 'Fixed Asset Location ID'
+		dataType: string
+		lineageTag: 8ceec058-5f9f-47ee-8af6-c67221553e5a
+		sourceLineageTag: a9104bef-77ce-484b-871a-332ba309131b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fixed Asset Location ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Fixed Asset Location Name'
+		dataType: string
+		lineageTag: ec7f10eb-0246-4895-8c74-b185a482b300
+		sourceLineageTag: aa80771c-6034-40d8-91cb-873c4b7d2855
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fixed Asset Location Name
+
+		annotation SummarizationSetBy = User
+
+	column 'Fixed Asset Type'
+		dataType: string
+		lineageTag: 7cc81ffd-7c8c-4822-b7c6-05a10dd40e20
+		sourceLineageTag: 45e7abd9-b589-4b6f-aff9-b24622434d60
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fixed Asset Type
+
+		annotation SummarizationSetBy = User
+
+	column 'Fixed Asset Comments'
+		dataType: string
+		lineageTag: 4ade8962-c9f0-4855-8988-265c3ad023c7
+		sourceLineageTag: a6dd1a62-ef7b-43bb-93c8-89e7f1113317
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fixed Asset Comments
+
+		annotation SummarizationSetBy = User
+
+	column 'Fixed Asset Reference'
+		dataType: string
+		lineageTag: 1795ae08-4235-4b8a-9a7f-c76dd55a04c7
+		sourceLineageTag: fec8482a-0a72-475a-8c5a-f4193ebfe384
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fixed Asset Reference
+
+		annotation SummarizationSetBy = User
+
+	column 'Fixed Asset Search Name'
+		dataType: string
+		lineageTag: 52bd7813-72ba-4b71-b607-7f5dbd33fa22
+		sourceLineageTag: 7449bb04-7221-4786-a404-409736ff3e93
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Fixed Asset Search Name
+
+		annotation SummarizationSetBy = User
+
+	partition Asset = entity
+		mode: directQuery
+		source
+			entityName: Asset
+			expressionSource: 'DirectQuery to AS - DMA Fixed Asset'
+

@@ -1,0 +1,32 @@
+table 'Order Type 3'
+	lineageTag: 5c7214e8-b4a0-4b22-af8f-becbd5e963ad
+	sourceLineageTag: c7f85c28-f53c-401d-b246-dfa66e2eb6b6
+
+	column Order_Type_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 49c0c037-6f0e-4296-859d-af002c0df128
+		sourceLineageTag: 231da8b6-4278-4293-874d-c6e1f7e7cc47
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order_Type_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Order Type'
+		dataType: string
+		lineageTag: 92d1a7bc-92e6-4a6a-a14a-fcb4fe1d193c
+		sourceLineageTag: 241ebc35-f945-446b-91ea-cdc6b9c16b86
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order Type
+
+		annotation SummarizationSetBy = User
+
+	partition 'Order Type 3' = entity
+		mode: directQuery
+		source
+			entityName: Order Type
+			expressionSource: 'DirectQuery to AS - DMA Sourcing 3'
+

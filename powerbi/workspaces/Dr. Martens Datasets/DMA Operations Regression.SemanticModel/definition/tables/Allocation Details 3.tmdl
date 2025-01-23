@@ -1,0 +1,65 @@
+table 'Allocation Details 3'
+	lineageTag: e0a04809-390b-48fd-925a-c3b8ce3b5036
+	sourceLineageTag: 21846bb7-a96c-4bf8-8761-cb1594819092
+
+	column ALLOCATIONQTY
+		dataType: int64
+		isHidden
+		lineageTag: 30c16fd3-9515-41bb-9a37-090ffe47ed7b
+		sourceLineageTag: f1bdf359-bdc3-44c2-8cd9-ea17e3d05919
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ALLOCATIONQTY
+
+		annotation SummarizationSetBy = User
+
+	column INVENTTRANSID
+		dataType: string
+		isHidden
+		lineageTag: 218570e8-f84f-4b17-b8d0-bdeab3edd64e
+		sourceLineageTag: a987085e-f028-4700-ac93-8dab77ca48bd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		annotation SummarizationSetBy = User
+
+	column Date_Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f1bacd8b-15c6-4ff9-8d1a-58ef60c1e046
+		sourceLineageTag: d2ed8dff-e8f9-4726-84a4-93d70bcd0a7b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocation Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 93b276d3-84ae-403c-bf65-403d136ce73c
+		sourceLineageTag: b21c88a3-05fc-44af-a5f2-3e44eda7474b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Allocation Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Allocation Type'
+		dataType: string
+		lineageTag: 64f9043f-bf6a-4e98-b72c-77a45bd26f0e
+		sourceLineageTag: d65699ba-4edc-43df-90a8-763a6286a3f0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Allocation Type
+
+		annotation SummarizationSetBy = User
+
+	partition 'Allocation Details 3' = entity
+		mode: directQuery
+		source
+			entityName: Allocation Details
+			expressionSource: 'DirectQuery to AS - DMA Operations 3'
+

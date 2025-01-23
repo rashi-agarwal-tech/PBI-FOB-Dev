@@ -1,0 +1,74 @@
+table 'fa summary'
+	lineageTag: 1efe03f8-eed7-4f75-ace3-29dc86de7e87
+
+	column 'RowCount of FixedAssetTransactions'
+		formatString: #,0
+		lineageTag: 3add6494-d3da-4e7d-990e-74bd9fcf6bd1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of FixedAssetTransactions]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of FixedAssetTransactions diff UAT'
+		formatString: #,0
+		lineageTag: 402ce4ef-3213-46cb-8522-b6619e5e1ae1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of FixedAssetTransactions diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RowCount of FixedAssetTransactions diff DEV'
+		formatString: #,0
+		lineageTag: 35897ebf-ab0d-4288-a504-97dbe1c7cc8a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RowCount of FixedAssetTransactions diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count of Date_Key'
+		formatString: #,0
+		lineageTag: 4aca4554-fd5a-4c78-ad99-ca7f7f957365
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count of Date_Key]
+
+		annotation SummarizationSetBy = User
+
+	column 'Count of Date_Key diff UAT'
+		formatString: #,0
+		lineageTag: 92b81878-4b80-4e62-b6b5-4f11d3a0714c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count of Date_Key diff UAT]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Count of Date_Key diff DEV'
+		formatString: #,0
+		lineageTag: 1b34ff78-201b-4039-9c00-fc75898dcd59
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Count of Date_Key diff DEV]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'fa summary' = calculated
+		mode: import
+		source =
+				
+				SUMMARIZE
+				(
+				    fa
+				    ,"RowCount of FixedAssetTransactions",COUNTROWS('Fixed Asset Transactions')
+				    ,"RowCount of FixedAssetTransactions diff UAT",COUNTROWS('Fixed Asset Transactions 2')-COUNTROWS('Fixed Asset Transactions')
+				    ,"RowCount of FixedAssetTransactions diff DEV",COUNTROWS('Fixed Asset Transactions 3')-COUNTROWS('Fixed Asset Transactions')
+				    ,"Count of Date_Key",DISTINCTCOUNT('Fixed Asset Transactions'[Date_Key])
+				    ,"Count of Date_Key diff UAT",DISTINCTCOUNT('Fixed Asset Transactions 2'[Date_Key])-DISTINCTCOUNT('Fixed Asset Transactions'[Date_Key])
+				    ,"Count of Date_Key diff DEV",DISTINCTCOUNT('Fixed Asset Transactions 3'[Date_Key])-DISTINCTCOUNT('Fixed Asset Transactions'[Date_Key])
+				)
+
+	annotation PBI_Id = 3ba86927e4e44d5ca3ee6c9d9c8b4e01
+

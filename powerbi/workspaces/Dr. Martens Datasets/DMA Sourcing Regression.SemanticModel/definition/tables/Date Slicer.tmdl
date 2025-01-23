@@ -1,0 +1,45 @@
+table 'Date Slicer'
+	isHidden
+	lineageTag: e679084e-6bd7-46c9-9445-d61643d81a6c
+	sourceLineageTag: 857ae42e-a443-42ff-8667-0b2aeeef02c8
+
+	column 'Date Slicer'
+		dataType: string
+		isHidden
+		lineageTag: 1d615a76-4f9f-4121-86f6-59534182123e
+		sourceLineageTag: 33835692-b5be-4c11-af68-12615fb0684d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date Slicer
+
+		annotation SummarizationSetBy = User
+
+	column Date
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: a357f991-58e3-49dd-99cf-dc7afb1258f7
+		sourceLineageTag: 5a3225f4-949f-4ea5-9a97-5eef41e21033
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = User
+
+	column SortOrder
+		dataType: string
+		isHidden
+		lineageTag: b5272ca1-4085-40ef-b8ef-9f1673971b00
+		sourceLineageTag: b9600126-899b-4fce-ac46-bccc95ed7248
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SortOrder
+
+		annotation SummarizationSetBy = User
+
+	partition 'Date Slicer' = entity
+		mode: directQuery
+		source
+			entityName: Date Slicer
+			expressionSource: 'DirectQuery to AS - DMA Sourcing'
+

@@ -1,0 +1,154 @@
+table Availability
+	isHidden
+	lineageTag: 0ce2c299-e9dd-4669-b7ef-a7cf7a29dc3f
+	sourceLineageTag: ea8ea58e-bf4b-488e-8dc9-d3dcf9cd4c8c
+
+	column Product_Key
+		dataType: string
+		isHidden
+		lineageTag: 2663fd5d-0514-4225-b701-035f6f07528b
+		sourceLineageTag: d5b261cb-9762-41a1-86e0-29a274fc8a85
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		lineageTag: e8762d5b-3d05-48a3-bba0-da89c45c25c6
+		sourceLineageTag: 56a3ab72-6c31-408b-895d-ed5584620aec
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size_Key
+		dataType: string
+		isHidden
+		lineageTag: c3023981-7f20-4b99-a67e-d5d6c4637853
+		sourceLineageTag: 6704d1e8-eb9a-4516-8bab-00e0b6eec883
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		lineageTag: 0b57b65b-5b99-4061-8633-f0fea9616547
+		sourceLineageTag: b1e8a3e0-e700-4055-8319-a2d113013992
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		annotation SummarizationSetBy = User
+
+	column QTY
+		dataType: int64
+		isHidden
+		lineageTag: e6ef9cd0-bce7-4bee-bf4e-ac200ef805a5
+		sourceLineageTag: f0069b3b-25dd-4ce5-999b-1c3139def69c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: QTY
+
+		annotation SummarizationSetBy = User
+
+	column DATE
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: 879f905f-a999-467f-98a1-db35000de7a2
+		sourceLineageTag: b5ae22f3-fa5d-41a2-9962-bf2f99952c6d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DATE
+
+		annotation SummarizationSetBy = User
+
+	column ItemCoverage
+		dataType: int64
+		lineageTag: db6aeb08-5717-4b9f-84a2-af862ae0e1c5
+		sourceLineageTag: 4a57e541-ef7a-4f2e-a086-cc44ac5c6d63
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: ItemCoverage
+
+		annotation SummarizationSetBy = User
+
+	column SELLINGSTATUS
+		dataType: double
+		isHidden
+		lineageTag: 6c5e6279-316d-40f3-8a05-7297077f0332
+		sourceLineageTag: a110688a-d763-49a7-82dd-b05c72f85035
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		annotation SummarizationSetBy = User
+
+	column AvailableOnHandUnits
+		dataType: int64
+		isHidden
+		lineageTag: 44a6575d-2ce7-44be-9161-0c46e58c524f
+		sourceLineageTag: 7dcc3904-e308-4692-b3bc-16a9402e7fa8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: AvailableOnHandUnits
+
+		annotation SummarizationSetBy = User
+
+	column MAXIMUMONHANDINVENTORYQUANTITY
+		dataType: int64
+		isHidden
+		lineageTag: 89a04646-684a-40d4-bb1c-91ec117c1588
+		sourceLineageTag: ee2f6ea0-a46b-49db-9648-45ad8b451000
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: MAXIMUMONHANDINVENTORYQUANTITY
+
+		annotation SummarizationSetBy = User
+
+	column AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: a8239436-d3df-4c73-be22-42faaa63e756
+		sourceLineageTag: 5988feb9-9731-40e3-91ce-85744abfb7c2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: AMOUNT
+
+		annotation SummarizationSetBy = User
+
+	column NextDate
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: cec7d6a9-7099-4de0-ae2f-fec9566652ab
+		sourceLineageTag: 44101abd-b622-4abd-ade9-15d6387a42de
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: NextDate
+
+		annotation SummarizationSetBy = User
+
+	column WH_Channel_Custom
+		dataType: string
+		lineageTag: 1fafe27b-522b-4283-bcdb-dda7d123baaf
+		sourceLineageTag: ed2ff9e8-31bf-4e12-8f87-4258fd706bf9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: WH_Channel_Custom
+
+		annotation SummarizationSetBy = User
+
+	partition Availability = entity
+		mode: directQuery
+		source
+			entityName: Availability
+			expressionSource: 'DirectQuery to AS - DMA Operations'
+

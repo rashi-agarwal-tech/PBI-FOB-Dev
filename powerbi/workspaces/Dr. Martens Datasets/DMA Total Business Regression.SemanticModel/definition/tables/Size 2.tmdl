@@ -1,0 +1,47 @@
+table 'Size 2'
+	lineageTag: 0adede4f-01ba-4ee2-b26c-0dd2f8ea6a65
+	sourceLineageTag: 09969684-d387-4eb5-b534-9b15ca583f75
+
+	column Size_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Misc
+		lineageTag: e3b47d4c-8b63-47f0-9dd6-2c87299105b3
+		sourceLineageTag: 41b899a9-e5c3-4952-a854-6c4aedd7311d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size
+		dataType: string
+		isNullable: false
+		lineageTag: 4b2d97f1-3b34-4c7a-8aa2-a94b32545c16
+		sourceLineageTag: 0518e800-4898-49a6-baeb-1cd0d97d41d8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size
+		sortByColumn: DisplayOrder
+
+		annotation SummarizationSetBy = User
+
+	column DisplayOrder
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: dc8196d2-949d-4bb7-9d0b-6d768f8281a4
+		sourceLineageTag: 8f1044ac-cd52-48cd-81ad-ac0d1c8a2bdb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DisplayOrder
+
+		annotation SummarizationSetBy = User
+
+	partition 'Size 2' = entity
+		mode: directQuery
+		source
+			entityName: Size
+			expressionSource: 'DirectQuery to AS - DMA Total Business 2'
+

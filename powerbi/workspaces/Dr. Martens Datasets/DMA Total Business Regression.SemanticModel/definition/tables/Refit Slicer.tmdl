@@ -1,0 +1,43 @@
+table 'Refit Slicer'
+	lineageTag: 467325f9-9838-485e-acf2-fcdc55569191
+	sourceLineageTag: dc608292-e326-4629-8b52-739e2874002b
+
+	column 'Refit Exclusion'
+		dataType: string
+		isHidden
+		lineageTag: 9b760a9b-75ad-4525-a1e9-a63353eff349
+		sourceLineageTag: 990df1e4-5087-4ba7-a91b-f4184a70269c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Refit Exclusion
+
+		annotation SummarizationSetBy = User
+
+	column 'Refit Exclusion?'
+		dataType: string
+		lineageTag: 8c3c6040-8985-47cc-a8d1-f175d60a71d8
+		sourceLineageTag: e0f92e65-e98f-44b2-b731-415354e43fcc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Refit Exclusion?
+
+		annotation SummarizationSetBy = User
+
+	column 'Refit Slicer'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 08962b4b-0108-41cf-8d47-be0fdf1128ac
+		sourceLineageTag: d46857e4-0627-4cf2-a768-2a16f7c2aed4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Refit Slicer
+
+		annotation SummarizationSetBy = User
+
+	partition 'Refit Slicer' = entity
+		mode: directQuery
+		source
+			entityName: Refit Slicer
+			expressionSource: 'DirectQuery to AS - DMA Total Business'
+

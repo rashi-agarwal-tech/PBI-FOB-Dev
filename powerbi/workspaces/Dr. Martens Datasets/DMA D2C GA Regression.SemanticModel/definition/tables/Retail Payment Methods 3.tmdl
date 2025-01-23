@@ -1,0 +1,35 @@
+table 'Retail Payment Methods 3'
+	isHidden
+	lineageTag: 66a4eff2-f074-435c-b11e-dbb99f426adf
+	sourceLineageTag: eca5344b-e94d-48af-92b1-68d00dbb3a07
+
+	column 'Sales Order ID'
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 612cad30-8d5e-47ac-9bc1-ed5654a4e1d8
+		sourceLineageTag: 546487a6-a675-4f06-8ffe-879c25fd2e6e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Sales Order ID
+
+		annotation SummarizationSetBy = User
+
+	column 'Payment Methods'
+		dataType: string
+		isHidden
+		isNullable: false
+		lineageTag: 19574c47-06eb-4d79-b25b-c6469f7130f5
+		sourceLineageTag: 07f5015b-6703-48d3-bad0-675b33a07839
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Payment Methods
+
+		annotation SummarizationSetBy = User
+
+	partition 'Retail Payment Methods 3' = entity
+		mode: directQuery
+		source
+			entityName: Retail Payment Methods
+			expressionSource: 'DirectQuery to AS - DMA D2C 3'
+
