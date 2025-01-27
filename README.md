@@ -18,6 +18,7 @@ This repository is synced to the [D&A Dev - Dr. Martens Datasets](#https://app.p
     - [Report Unique Identifier](#report-unique-identifier)
     - [Current deficiencies:](#current-deficiencies)
   - [Power BI Reports:](#power-bi-reports)
+    - [Power BI Data Types:](#power-bi-data-types)
     - [Power BI Report Format](#power-bi-report-format)
     - [Time Intelligence](#time-intelligence)
     - [Report Level Access](#report-level-access)
@@ -39,16 +40,6 @@ This repository is synced to the [D&A Dev - Dr. Martens Datasets](#https://app.p
     - [Exporting a Report in the API:](#exporting-a-report-in-the-api)
     - [Using Fabric to sync Power BI From Repo:](#using-fabric-to-sync-power-bi-from-repo)
     - [CI/ CD Notes:](#ci-cd-notes)
-- [Contribute:](#contribute)
->>>>>>> e0d289d (docs: update readme file)
-- [Utilities Installation](#utilities-installation)
-      - [Installing with pip](#installing-with-pip)
-      - [Installation with Poetry:](#installation-with-poetry)
-    - [Service Account:](#service-account)
-      - [Azure Application Principle:](#azure-application-principle)
-    - [Premium Workspace:](#premium-workspace)
-    - [Report Settings:](#report-settings)
-    - [Notes and Issues:](#notes-and-issues)
 - [Contribute:](#contribute)
 
 # Repository Structure:
@@ -146,6 +137,14 @@ This could be resolved by linking each workspace to it's own git branch and usin
 
 ## Power BI Reports:
 Reports are located in the following directory, `powerbi/reports`.
+
+### Power BI Data Types:
+Power BI will infer data types based on source metadata and column sampling. This has resulted in some unexpected changes to column types. In one case datatypes have changed from integer to double when opened with Power BI desktop. I do not believe this was the case previously and assume the inference engine has changed.
+
+"Power BI's Whole Number type corresponds to a 64-bit integer (Int64), which can store values between -9,223,372,036,854,775,808 and 9,223,372,036,854,775,807. If the column contains or could theoretically contain values outside this range, Power BI might default to using Double."
+
+Suffice to say that if we don't want the Power BI data types to change when modifying the models in Power BI desktop we need to cast these in the view or further upstream in a table.  In this case we could cast the column as an integer and Power BI should pick the column up as an integer.
+
 
 ### Power BI Report Format
 All reports are stored in Power BI Project format using the new `TMDL` format. This needs to be set in the Options, `File -> Options and settings -> Options` and ensure that the below highlighted check boxes are selected, `Store semantic model using TMDL format`.
