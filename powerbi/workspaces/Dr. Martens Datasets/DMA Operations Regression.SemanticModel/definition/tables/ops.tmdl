@@ -1172,89 +1172,6 @@ table ops
 		formatString: #,0.00
 		lineageTag: 140e9390-dbb3-4458-9ca7-f6a099b87a4a
 
-	measure 'ops Sum of AbsDiff' =
-			
-			[ops Adjustment Adjusted Units Diff]
-			+[ops Adjustment Inventory Units Diff]
-			+[ops Adjustment On Hand Units Diff]
-			+[ops Adjustment Value Diff]
-			+[ops Adjustments Counted Units Diff]
-			+[ops 0. On Hand Stock Units Diff]
-			+[ops 0. On Hand Stock Value Diff]
-			+[ops Item Coverage Diff]
-			+[ops Item Coverage (Maximum) Diff]
-			+[ops Opening Stock Diff]
-			+[ops Unit Cost Diff]
-			+[ops 1. On Hand Available Units Diff]
-			+[ops 2. Intake Available Units Diff]
-			+[ops 3. Intake Ordered Available Units Diff]
-			+[ops 4. Cumulative Available Units Diff]
-			+[ops 0. Ordered Amount Diff]
-			+[ops 0. Ordered Units Diff]
-			+[ops 1. Open Amount Diff]
-			+[ops 1. Open Units Diff]
-			+[ops 2. Outstanding Amount Diff]
-			+[ops 2. Outstanding Units Diff]
-			+[ops 3. Allocated Amount Diff]
-			+[ops 3. Allocated Units Diff]
-			+[ops 3.1 Allocated Arrived Amount Diff]
-			+[ops 3.1 Allocated Arrived Units Diff]
-			+[ops 3.2 Allocated On Time Amount Diff]
-			+[ops 3.2 Allocated On Time Units Diff]
-			+[ops 3.3 Allocated Late Amount Diff]
-			+[ops 3.3 Allocated Late Units Diff]
-			+[ops 3.4 Allocated Outside Of Time Fence Amount Diff]
-			+[ops 3.4 Allocated Outside Of Time Fence Units Diff]
-			+[ops 3.5 Allocated Detail Units Diff]
-			+[ops 4. Reserved Amount Diff]
-			+[ops 4. Reserved Units Diff]
-			+[ops 5. In Pick Amount Diff]
-			+[ops 5. In Pick Units Diff]
-			+[ops 5.1 Pick Active Amount Diff]
-			+[ops 5.1 Pick Active Units Diff]
-			+[ops 5.2 Pick Release Amount Diff]
-			+[ops 5.2 Pick Release Units Diff]
-			+[ops 5.3 Pick Complete Amount Diff]
-			+[ops 5.3 Pick Complete Units Diff]
-			+[ops 6. Despatched Amount Diff]
-			+[ops 6. Despatched Units Diff]
-			+[ops 6.1 % Despatched Units Diff]
-			+[ops 7. Despatched not Received Amount Diff]
-			+[ops 7. Despatched not Received Units Diff]
-			+[ops 8. Received Amount Diff]
-			+[ops 8. Received Units Diff]
-			+[ops 8.1 Short Delivery Units Diff]
-			+[ops 8.1. Short Delivery Amount Diff]
-			+[ops 9. Cancelled Amount Diff]
-			+[ops 9. Cancelled Units Diff]
-			+[ops 0. Open Intake Amount Diff]
-			+[ops 0. Open Intake Units Diff]
-			+[ops 1. Received Intake Amount Diff]
-			+[ops 1. Received Intake Units Diff]
-			+[ops 2. Cancelled Intake Amount Diff]
-			+[ops 2. Cancelled Intake Units Diff]
-			+[ops 3. Ordered Intake Amount Diff]
-			+[ops 3. Ordered Intake Units Diff]
-			+[ops PO Amount Diff]
-			+[ops PO Charges Diff]
-			+[ops Total PO Value inc Charges Diff]
-			+[ops 0. Open Return Amount Diff]
-			+[ops 0. Open Return Units Diff]
-			+[ops 1. Complete Return Amount Diff]
-			+[ops 1. Complete Return Units Diff]
-			+[ops Max. Net Weight Diff]
-			+[ops Max. Pack Weight Diff]
-			+[ops Count of Pick Orders Diff]
-			+[ops Pick Units Diff]
-			+[ops Pick Units/Order Diff]
-			+[ops Forecast Amount Diff]
-			+[ops Forecast RRP Diff]
-			+[ops Qty On Hand US Diff]
-			+[ops Qty On-Hand US Diff]
-			+[ops Qty Sold US Diff]
-		formatString: #,0.00
-		lineageTag: 8f2e4b0e-1145-486f-9501-14f1929d48aa
-
 	measure 'ops 4. Cumulative Available Units' =
 			
 			IF
@@ -1804,6 +1721,612 @@ table ops
 			)
 		formatString: #,0.00
 		lineageTag: a24037a4-8b45-4c51-832e-396802227a23
+
+	measure 'ops Sum of AbsDiff' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			DIVIDE
+			(
+			    ROUND(DIVIDE([ops Adjustment Adjusted Units Diff],CALCULATE([ops Adjustment Adjusted Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Adjustment Inventory Units Diff],CALCULATE([ops Adjustment Inventory Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Adjustment On Hand Units Diff],CALCULATE([ops Adjustment On Hand Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Adjustment Value Diff],CALCULATE([ops Adjustment Value],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Adjustments Counted Units Diff],CALCULATE([ops Adjustments Counted Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 0. On Hand Stock Units Diff],CALCULATE([ops 0. On Hand Stock Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 0. On Hand Stock Value Diff],CALCULATE([ops 0. On Hand Stock Value],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Item Coverage Diff],CALCULATE([ops Item Coverage],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Item Coverage (Maximum) Diff],CALCULATE([ops Item Coverage (Maximum)],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Opening Stock Diff],CALCULATE([ops Opening Stock],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Unit Cost Diff],CALCULATE([ops Unit Cost],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 1. On Hand Available Units Diff],CALCULATE([ops 1. On Hand Available Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 2. Intake Available Units Diff],CALCULATE([ops 2. Intake Available Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 3. Intake Ordered Available Units Diff],CALCULATE([ops 3. Intake Ordered Available Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 4. Cumulative Available Units Diff],CALCULATE([ops 4. Cumulative Available Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 0. Ordered Amount Diff],CALCULATE([ops 0. Ordered Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 0. Ordered Units Diff],CALCULATE([ops 0. Ordered Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 1. Open Amount Diff],CALCULATE([ops 1. Open Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 1. Open Units Diff],CALCULATE([ops 1. Open Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 2. Outstanding Amount Diff],CALCULATE([ops 2. Outstanding Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 2. Outstanding Units Diff],CALCULATE([ops 2. Outstanding Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 3. Allocated Amount Diff],CALCULATE([ops 3. Allocated Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 3. Allocated Units Diff],CALCULATE([ops 3. Allocated Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 3.1 Allocated Arrived Amount Diff],CALCULATE([ops 3.1 Allocated Arrived Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 3.1 Allocated Arrived Units Diff],CALCULATE([ops 3.1 Allocated Arrived Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 3.2 Allocated On Time Amount Diff],CALCULATE([ops 3.2 Allocated On Time Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 3.2 Allocated On Time Units Diff],CALCULATE([ops 3.2 Allocated On Time Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 3.3 Allocated Late Amount Diff],CALCULATE([ops 3.3 Allocated Late Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 3.3 Allocated Late Units Diff],CALCULATE([ops 3.3 Allocated Late Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 3.4 Allocated Outside Of Time Fence Amount Diff],CALCULATE([ops 3.4 Allocated Outside Of Time Fence Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 3.4 Allocated Outside Of Time Fence Units Diff],CALCULATE([ops 3.4 Allocated Outside Of Time Fence Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 3.5 Allocated Detail Units Diff],CALCULATE([ops 3.5 Allocated Detail Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 4. Reserved Amount Diff],CALCULATE([ops 4. Reserved Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 4. Reserved Units Diff],CALCULATE([ops 4. Reserved Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 5. In Pick Amount Diff],CALCULATE([ops 5. In Pick Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 5. In Pick Units Diff],CALCULATE([ops 5. In Pick Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 5.1 Pick Active Amount Diff],CALCULATE([ops 5.1 Pick Active Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 5.1 Pick Active Units Diff],CALCULATE([ops 5.1 Pick Active Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 5.2 Pick Release Amount Diff],CALCULATE([ops 5.2 Pick Release Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 5.2 Pick Release Units Diff],CALCULATE([ops 5.2 Pick Release Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 5.3 Pick Complete Amount Diff],CALCULATE([ops 5.3 Pick Complete Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 5.3 Pick Complete Units Diff],CALCULATE([ops 5.3 Pick Complete Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 6. Despatched Amount Diff],CALCULATE([ops 6. Despatched Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 6. Despatched Units Diff],CALCULATE([ops 6. Despatched Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 6.1 % Despatched Units Diff],CALCULATE([ops 6.1 % Despatched Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 7. Despatched not Received Amount Diff],CALCULATE([ops 7. Despatched not Received Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 7. Despatched not Received Units Diff],CALCULATE([ops 7. Despatched not Received Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 8. Received Amount Diff],CALCULATE([ops 8. Received Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 8. Received Units Diff],CALCULATE([ops 8. Received Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 8.1 Short Delivery Units Diff],CALCULATE([ops 8.1 Short Delivery Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 8.1. Short Delivery Amount Diff],CALCULATE([ops 8.1. Short Delivery Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 9. Cancelled Amount Diff],CALCULATE([ops 9. Cancelled Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 9. Cancelled Units Diff],CALCULATE([ops 9. Cancelled Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 0. Open Intake Amount Diff],CALCULATE([ops 0. Open Intake Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 0. Open Intake Units Diff],CALCULATE([ops 0. Open Intake Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 1. Received Intake Amount Diff],CALCULATE([ops 1. Received Intake Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 1. Received Intake Units Diff],CALCULATE([ops 1. Received Intake Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 2. Cancelled Intake Amount Diff],CALCULATE([ops 2. Cancelled Intake Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 2. Cancelled Intake Units Diff],CALCULATE([ops 2. Cancelled Intake Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 3. Ordered Intake Amount Diff],CALCULATE([ops 3. Ordered Intake Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 3. Ordered Intake Units Diff],CALCULATE([ops 3. Ordered Intake Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops PO Amount Diff],CALCULATE([ops PO Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops PO Charges Diff],CALCULATE([ops PO Charges],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Total PO Value inc Charges Diff],CALCULATE([ops Total PO Value inc Charges],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 0. Open Return Amount Diff],CALCULATE([ops 0. Open Return Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 0. Open Return Units Diff],CALCULATE([ops 0. Open Return Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 1. Complete Return Amount Diff],CALCULATE([ops 1. Complete Return Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops 1. Complete Return Units Diff],CALCULATE([ops 1. Complete Return Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Max. Net Weight Diff],CALCULATE([ops Max. Net Weight],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Max. Pack Weight Diff],CALCULATE([ops Max. Pack Weight],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Count of Pick Orders Diff],CALCULATE([ops Count of Pick Orders],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Pick Units Diff],CALCULATE([ops Pick Units],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Pick Units/Order Diff],CALCULATE([ops Pick Units/Order],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Forecast Amount Diff],CALCULATE([ops Forecast Amount],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Forecast RRP Diff],CALCULATE([ops Forecast RRP],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Qty On Hand US Diff],CALCULATE([ops Qty On Hand US],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Qty On-Hand US Diff],CALCULATE([ops Qty On-Hand US],ops[Source]=sourceparameter)),3)
+			    +ROUND(DIVIDE([ops Qty Sold US Diff],CALCULATE([ops Qty Sold US],ops[Source]=sourceparameter)),3)
+			    ,78
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 14d2d805-4af5-4d81-a5a3-d39a659bc764
+
+	measure 'ops 0. On Hand Stock Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 0. On Hand Stock Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops 0. On Hand Stock Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ba7736ce-033b-4455-bbad-745b88a50d77
+
+	measure 'ops 0. On Hand Stock Value Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 0. On Hand Stock Value Diff]
+			    ,CALCULATE
+			    (
+			        [ops 0. On Hand Stock Value]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 1ed782df-2565-4544-bc54-3731d64e24ec
+
+	measure 'ops Item Coverage Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops Item Coverage Diff]
+			    ,CALCULATE
+			    (
+			        [ops Item Coverage]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: e6ac2948-9498-4d6a-8127-4c2a78aa9640
+
+	measure 'ops Item Coverage (Maximum) Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops Item Coverage (Maximum) Diff]
+			    ,CALCULATE
+			    (
+			        [ops Item Coverage (Maximum)]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8146b1ce-af4d-48f9-b5ed-35fbc88463af
+
+	measure 'ops Opening Stock Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops Opening Stock Diff]
+			    ,CALCULATE
+			    (
+			        [ops Opening Stock]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b1233e53-c5a0-4e84-9136-e8bfb8d83362
+
+	measure 'ops Unit Cost Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops Unit Cost Diff]
+			    ,CALCULATE
+			    (
+			        [ops Unit Cost]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 9cd20014-d808-4537-94ba-06f8afdfddea
+
+	measure 'ops 1. On Hand Available Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 1. On Hand Available Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops 1. On Hand Available Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 5bed7770-0c4e-4a0b-bc80-a230b5719e8b
+
+	measure 'ops 2. Intake Available Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 2. Intake Available Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops 2. Intake Available Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 1ea85521-4b40-4727-9e2d-fcd46474a52f
+
+	measure 'ops 3. Intake Ordered Available Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 3. Intake Ordered Available Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops 3. Intake Ordered Available Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 146be56b-7f3f-4e4e-92d5-ea5b8e65eeef
+
+	measure 'ops 4. Cumulative Available Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 4. Cumulative Available Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops 4. Cumulative Available Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: be62ee01-252c-4a5e-a0fa-ff9dd7e0cf10
+
+	measure Measure
+		lineageTag: 4b098c08-0ea2-4de7-b404-6fe0158570b8
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	measure 'ops 0. Ordered Amount Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 0. Ordered Amount Diff]
+			    ,CALCULATE
+			    (
+			        [ops 0. Ordered Amount]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 95e127d4-0c63-4513-82f5-9fa2f3c026b8
+
+	measure 'ops 0. Ordered Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 0. Ordered Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops 0. Ordered Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b43c5465-ba18-4eb0-8266-09e4d323825e
+
+	measure 'ops 1. Open Amount Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 1. Open Amount Diff]
+			    ,CALCULATE
+			    (
+			        [ops 1. Open Amount]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: abd0aba8-aab0-4192-892e-a8b9ad623d96
+
+	measure 'ops 1. Open Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 1. Open Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops 1. Open Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d95457db-89e0-4fa8-afa9-478282546c68
+
+	measure 'ops 2. Outstanding Amount Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 2. Outstanding Amount Diff]
+			    ,CALCULATE
+			    (
+			        [ops 2. Outstanding Amount]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: fd2fc12d-f77c-4cd4-9127-46da1f5a52d0
+
+	measure 'ops 2. Outstanding Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 2. Outstanding Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops 2. Outstanding Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ed6602b7-3da9-4fc0-9622-ad30cae49f87
+
+	measure 'ops Adjustment Adjusted Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops Adjustment Adjusted Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops Adjustment Adjusted Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 7f19c8ce-9d0c-476d-886f-92c1d6ea43d8
+
+	measure 'ops Adjustment Inventory Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops Adjustment Inventory Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops Adjustment Inventory Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 3a0eece5-e07e-4938-b2e1-af522949c40e
+
+	measure 'ops Adjustment On Hand Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops Adjustment On Hand Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops Adjustment On Hand Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: b6204b93-c667-4f71-b4cd-392c6ad171d0
+
+	measure 'ops Adjustments Counted Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops Adjustments Counted Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops Adjustments Counted Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 23488c8d-a6df-4bc0-8e41-4a8041fd6820
+
+	measure 'ops Adjustment Value Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops Adjustment Value Diff]
+			    ,CALCULATE
+			    (
+			        [ops Adjustment Value]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 0a9101d2-c167-4e80-b2dd-e4fb848038d2
+
+	measure 'ops 3. Allocated Amount Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 3. Allocated Amount Diff]
+			    ,CALCULATE
+			    (
+			        [ops 3. Allocated Amount]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 593609c4-7223-4b98-aa42-e2c659b71867
+
+	measure 'ops 3. Allocated Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 3. Allocated Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops 3. Allocated Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 54dbb0aa-1aa5-4f02-afa4-83999c77fc6f
+
+	measure 'ops 3.1 Allocated Arrived Amount Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 3.1 Allocated Arrived Amount Diff]
+			    ,CALCULATE
+			    (
+			        [ops 3.1 Allocated Arrived Amount]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 3dfc93e9-cc3c-4e14-8279-ffb19d3a2547
+
+	measure 'ops 3.1 Allocated Arrived Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 3.1 Allocated Arrived Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops 3.1 Allocated Arrived Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: fa29751d-f51a-43cd-a798-1de4bb473425
+
+	measure 'ops 3.2 Allocated On Time Amount Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 3.2 Allocated On Time Amount Diff]
+			    ,CALCULATE
+			    (
+			        [ops 3.2 Allocated On Time Amount]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ff591b12-2686-4a6a-aad9-189f566a7072
+
+	measure 'ops 3.2 Allocated On Time Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 3.2 Allocated On Time Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops 3.2 Allocated On Time Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 413119ee-feff-474c-87ab-58ddc55f7082
+
+	measure 'ops 3.3 Allocated Late Amount Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 3.3 Allocated Late Amount Diff]
+			    ,CALCULATE
+			    (
+			        [ops 3.3 Allocated Late Amount]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 85c62392-0475-4766-a4ad-2e967981bcbe
+
+	measure 'ops 3.3 Allocated Late Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 3.3 Allocated Late Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops 3.3 Allocated Late Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: c8353bef-0f46-429d-8c44-3360cf1f9d37
+
+	measure 'ops 3.4 Allocated Outside Of Time Fence Amount Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 3.4 Allocated Outside Of Time Fence Amount Diff]
+			    ,CALCULATE
+			    (
+			        [ops 3.4 Allocated Outside Of Time Fence Amount]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 52eb66bf-ecf9-43b2-9605-f83cfa56aa2e
+
+	measure 'ops 3.4 Allocated Outside Of Time Fence Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 3.4 Allocated Outside Of Time Fence Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops 3.4 Allocated Outside Of Time Fence Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 35514af0-13c2-4184-b280-9eaff0dcf457
+
+	measure 'ops 3.5 Allocated Detail Units Diff %' =
+			
+			VAR sourceparameter = [source parameter]
+			RETURN
+			ROUND(DIVIDE
+			(
+			    [ops 3.5 Allocated Detail Units Diff]
+			    ,CALCULATE
+			    (
+			        [ops 3.5 Allocated Detail Units]
+			        ,ops[Source]=sourceparameter
+			    )
+			),3)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 07ba3001-98f0-44b8-814b-9b9d0bb7a89d
 
 	column '0. Open Intake Units Diff' =
 			
