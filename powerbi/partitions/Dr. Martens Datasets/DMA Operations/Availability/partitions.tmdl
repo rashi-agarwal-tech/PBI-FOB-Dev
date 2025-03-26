@@ -340,3 +340,266 @@
 				in
 				    PartitionFilter
 
+	partition 'CY2026 12' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2026, 12, 1) and [DATE] < #date(2027, 1, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 11' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2026, 11, 1) and [DATE] < #date(2026, 12, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 10' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2026, 10, 1) and [DATE] < #date(2026, 11, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 09' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2026, 9, 1) and [DATE] < #date(2026, 10, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 08' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2026, 8, 1) and [DATE] < #date(2026, 9, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 07' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2026, 7, 1) and [DATE] < #date(2026, 8, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 06' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2026, 6, 1) and [DATE] < #date(2026, 7, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 05' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2026, 5, 1) and [DATE] < #date(2026, 6, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 04' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2026, 4, 1) and [DATE] < #date(2026, 5, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 03' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2026, 3, 1) and [DATE] < #date(2026, 4, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 02' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2026, 2, 1) and [DATE] < #date(2026, 3, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2026 01' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2026, 1, 1) and [DATE] < #date(2026, 2, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 12' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2027, 12, 1) and [DATE] < #date(2028, 1, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 11' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2027, 11, 1) and [DATE] < #date(2027, 12, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 10' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2027, 10, 1) and [DATE] < #date(2027, 11, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 09' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2027, 9, 1) and [DATE] < #date(2027, 10, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 08' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2027, 8, 1) and [DATE] < #date(2027, 9, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 07' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2027, 7, 1) and [DATE] < #date(2027, 8, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 06' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2027, 6, 1) and [DATE] < #date(2027, 7, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 05' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2027, 5, 1) and [DATE] < #date(2027, 6, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 04' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2027, 4, 1) and [DATE] < #date(2027, 5, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 03' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2027, 3, 1) and [DATE] < #date(2027, 4, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 02' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2027, 2, 1) and [DATE] < #date(2027, 3, 1))
+				in
+					PartitionFilter
+
+	partition 'CY2027 01' = m
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					OPS_BFN_VW_D365_FACT_AVAILABILITY_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365_FACT_AVAILABILITY_QUARTERS",Kind="View"]}[Data],
+					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2027, 1, 1) and [DATE] < #date(2027, 2, 1))
+				in
+					PartitionFilter

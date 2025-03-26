@@ -131,3 +131,99 @@
 				in
 					#"Filtered Rows"
 
+	partition 'CY2026 Q4' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2026, 10, 1) and [SnapShot Date] < #date(2027, 1, 1)) )
+				in
+					#"Filtered Rows"
+
+	partition 'CY2026 Q3' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2026, 7, 1) and [SnapShot Date] < #date(2026, 10, 1)) )
+				in
+					#"Filtered Rows"
+
+	partition 'CY2026 Q2' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2026, 4, 1) and [SnapShot Date] < #date(2026, 7, 1)) )
+				in
+					#"Filtered Rows"
+
+	partition 'CY2026 Q1' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2026, 1, 1) and [SnapShot Date] < #date(2026, 4, 1)) )
+				in
+					#"Filtered Rows"
+
+	partition 'CY2027 Q4' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2027, 10, 1) and [SnapShot Date] < #date(2028, 1, 1)) )
+				in
+					#"Filtered Rows"
+
+	partition 'CY2027 Q3' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2027, 7, 1) and [SnapShot Date] < #date(2027, 10, 1)) )
+				in
+					#"Filtered Rows"
+
+	partition 'CY2027 Q2' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2027, 4, 1) and [SnapShot Date] < #date(2027, 7, 1)) )
+				in
+					#"Filtered Rows"
+
+	partition 'CY2027 Q1' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTFSBIMRESVRECEIPTPROFILE",Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each ([RECEIPTTYPE] = 1 or [RECEIPTTYPE] = 3) and ([SnapShot Date] >= #date(2027, 1, 1) and [SnapShot Date] < #date(2027, 4, 1)) )
+				in
+					#"Filtered Rows"
+

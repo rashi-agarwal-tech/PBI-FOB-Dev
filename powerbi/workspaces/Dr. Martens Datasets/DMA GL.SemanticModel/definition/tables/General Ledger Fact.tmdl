@@ -513,6 +513,45 @@ table 'General Ledger Fact'
 		summarizeBy: none
 		sourceColumn: Party Number 2
 
+	partition FY2028 = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+				    PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+				    VW_BFN_D365FACTASE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365FACTASE",Kind="View"]}[Data],
+				    #"Uppercased Text" = Table.TransformColumns(VW_BFN_D365FACTASE_View,{{"Currency", Text.Upper, type text}}),
+					Date_Filter = Table.SelectRows(#"Uppercased Text", each [AccountingDate_Key] >= "20270329" and [AccountingDate_Key] < "20280326")
+				in
+					Date_Filter
+
+	partition FY2027 = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					VW_BFN_D365FACTASE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365FACTASE",Kind="View"]}[Data],
+					#"Uppercased Text" = Table.TransformColumns(VW_BFN_D365FACTASE_View,{{"Currency", Text.Upper, type text}}),
+					Date_Filter = Table.SelectRows(#"Uppercased Text", each [AccountingDate_Key] >= "20260330" and [AccountingDate_Key] < "20270329")
+				in
+					Date_Filter
+
+	partition FY2026 = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server,Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					VW_BFN_D365FACTASE_View = BFN_PRESENTATION_Schema{[Name="VW_BFN_D365FACTASE",Kind="View"]}[Data],
+					#"Uppercased Text" = Table.TransformColumns(VW_BFN_D365FACTASE_View,{{"Currency", Text.Upper, type text}}),
+					Date_Filter = Table.SelectRows(#"Uppercased Text", each [AccountingDate_Key] >= "20250331" and [AccountingDate_Key] < "20260330")
+				in
+					Date_Filter
+
 	partition FY2025 = m
 		mode: import
 		source =
