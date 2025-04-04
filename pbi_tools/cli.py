@@ -8,9 +8,10 @@ from pbi_tools.partitions import partition_utils
 from pbi_tools.utils.constants import (
     PBI_STATUS_MAP,
     REPORT_DIR,
-    PARTITIONS_DIR,
     PBI_META_FILE,
     PBI_AS_ENGINE_ID,
+    PARTITIONS_DIR,
+    SF_ENVS,
 )
 from typing import List
 from pbi_tools import tmdl
@@ -190,15 +191,6 @@ def refresh_d2c(env: str = "dev"):
     refresh_d2c_availability_partition(env)
     refresh_d2c_orders_partition(env)
     refresh_d2c_tables(env)
-
-
-@app.command()
-def get_params(env: str = "dev"):
-    refresh_api = MSApiDataset(
-        token=get_token(),
-        dataset="DMA D2C",
-    )
-    print(refresh_api.get_parameters())
 
 
 @app.command()
@@ -529,8 +521,18 @@ def d2c_status(env: str = "dev", num_results: int = 10, collapse_batches: bool =
 @app.command()
 def get_parameters(dataset: str, env: str = "dev"):
     refresh_api = MSApiDataset(token=get_token(), dataset=dataset, workspace_env=env)
-    print(refresh_api.get_parameters())
+    return refresh_api.get_parameters()
 
+@app.command()
+def validate_parameters(dataset: str, env: str = "dev") -> str:
+    refresh_api = MSApiDataset(token=get_token(), dataset=dataset, workspace_env=env)
+    params = refresh_api.get_parameters()
+    vars = { var["name"]:var["currentValue"] for var in params }
+    if (num_rows := vars.get("NumberOfRows", "0")) != "0":
+        raise ValueError(f"NumberOfRow is not set to zero: {num_rows}")
+    if (sn_server := vars.get("Datasource_Server", "")) != SF_ENVS[env]:
+        raise ValueError(f"Datasource_Server is not set correctly for {env}: {sn_server}")
+    return f"Parameters correctly set for the {env}:\n{params}"
 
 @app.command()
 def set_parameter(dataset: str, param: str, value: str, env: str = "dev"):

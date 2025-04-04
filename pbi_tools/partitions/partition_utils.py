@@ -47,10 +47,14 @@ def get_current_fin_year_int() -> int:
     return fiscalyear.FiscalYear.current()._fiscal_year
 
 
-def get_fin_years(years: int = 3, append_str="FY", future_years: int = 0) -> list:
+def get_fin_years(years:int=3, append_str="FY", future_years:int=0) -> list:
+    buffer = {}
     curr_fin_year = get_current_fin_year_int()
+    today = datetime.today()
+    if today.month in [3, 4]:
+        buffer = {f"{append_str}{today.year}", f"{append_str}{today.year+1}"}
     future_years *= -1
-    return [f"{append_str}{str(curr_fin_year-i)}" for i in range(future_years, years)]
+    return list({f"{append_str}{str(curr_fin_year-i)}" for i in range(future_years, years)}.union(buffer))
 
 
 def get_cy_mm(months: int = 3, append_str="CY", future_months: int = 0) -> list:
