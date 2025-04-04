@@ -84,6 +84,17 @@ def get_tables(dataset: str, partitioned: bool | None = None) -> list:
         if v["partitioned"] == partitioned or partitioned is None
     ]
 
+def get_latest_cy_qq_partition():
+    month = datetime.now().month
+    if month in [1,2,3]:
+        quarter = 'Q1'
+    elif month in [4,5,6]:
+        quarter = 'Q2'
+    elif month in [7,8,9]:
+        quarter = 'Q3'
+    else:
+        quarter = 'Q4'
+    return f"CY{get_current_year()} {quarter}"
 
 if __name__ == "__main__":
     print(get_tables("DMA D2C", False))
