@@ -1,3 +1,10 @@
+## v0.5.0 (2025-04-04)
+
+### Feat
+
+- **[FP-2403](https://drmartens.atlassian.net//browse/FP-2403)**: add future partitions for power bi [9fc7c](https://github.com//https://projectreboot.visualstudio.com/Windermere%20Discovery/_git//commit/9fc7c7099e6b61011f21a517e92be80096a97754)
+- **[regression](https://drmartens.atlassian.net//browse/regression)**: update regression from dev [faf07](https://github.com//https://projectreboot.visualstudio.com/Windermere%20Discovery/_git//commit/faf07849ea410354dd082fcbfc38f6b1a1728041)
+
 ## v0.4.0 (2025-02-05)
 
 ### Feat
