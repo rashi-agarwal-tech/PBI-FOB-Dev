@@ -373,12 +373,12 @@ table gl
 				        ,"Attribute",""
 				        ,"Dimension","Date"
 				        ,"Source","1 Footprint PROD"
-				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
-				        ,"Amount (Local)",ROUND([Amount (Local)],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
-				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				        ,"Amount (Actual)",[Amount (Actual)]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant)]
+				        ,"Amount (Local)",[Amount (Local)]
+				        ,"Amount (Transaction)",[Amount (Transaction)]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant)]
+				        ,"Budget (Local)",[Budget (Local)]
 				    )
 				    ,SUMMARIZECOLUMNS
 				    (
@@ -388,12 +388,12 @@ table gl
 				        ,"Attribute",""
 				        ,"Dimension","Date"
 				        ,"Source","2 Footprint UAT"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				        ,"Amount (Actual)",[Amount (Actual) 2]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 2]
+				        ,"Amount (Local)",[Amount (Local) 2]
+				        ,"Amount (Transaction)",[Amount (Transaction) 2]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 2]
+				        ,"Budget (Local)",[Budget (Local) 2]
 				    ),
 				    SUMMARIZECOLUMNS
 				    (
@@ -403,12 +403,12 @@ table gl
 				        ,"Attribute",""
 				        ,"Dimension","Date"
 				        ,"Source","3 Footprint DEV"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				        ,"Amount (Actual)",[Amount (Actual) 3]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 3]
+				        ,"Amount (Local)",[Amount (Local) 3]
+				        ,"Amount (Transaction)",[Amount (Transaction) 3]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 3]
+				        ,"Budget (Local)",[Budget (Local) 3]
 				    )
 				
 				    //company id
@@ -420,12 +420,12 @@ table gl
 				        ,'Region'[Company ID]
 				        ,"Dimension","Company ID"
 				        ,"Source","1 Footprint PROD"
-				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
-				        ,"Amount (Local)",ROUND([Amount (Local)],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
-				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				        ,"Amount (Actual)",[Amount (Actual)]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant)]
+				        ,"Amount (Local)",[Amount (Local)]
+				        ,"Amount (Transaction)",[Amount (Transaction)]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant)]
+				        ,"Budget (Local)",[Budget (Local)]
 				    )
 				    ,SUMMARIZECOLUMNS
 				    (
@@ -435,12 +435,12 @@ table gl
 				        ,'Region 2'[Company ID]
 				        ,"Dimension","Company ID"
 				        ,"Source","2 Footprint UAT"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				        ,"Amount (Actual)",[Amount (Actual) 2]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 2]
+				        ,"Amount (Local)",[Amount (Local) 2]
+				        ,"Amount (Transaction)",[Amount (Transaction) 2]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 2]
+				        ,"Budget (Local)",[Budget (Local) 2]
 				    ),
 				    SUMMARIZECOLUMNS
 				    (
@@ -450,12 +450,12 @@ table gl
 				        ,'Region 3'[Company ID]
 				        ,"Dimension","Company ID"
 				        ,"Source","3 Footprint DEV"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				        ,"Amount (Actual)",[Amount (Actual) 3]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 3]
+				        ,"Amount (Local)",[Amount (Local) 3]
+				        ,"Amount (Transaction)",[Amount (Transaction) 3]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 3]
+				        ,"Budget (Local)",[Budget (Local) 3]
 				    )
 				
 				    //region
@@ -467,12 +467,12 @@ table gl
 				        ,'Region'[Region]
 				        ,"Dimension","Region"
 				        ,"Source","1 Footprint PROD"
-				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
-				        ,"Amount (Local)",ROUND([Amount (Local)],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
-				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				        ,"Amount (Actual)",[Amount (Actual)]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant)]
+				        ,"Amount (Local)",[Amount (Local)]
+				        ,"Amount (Transaction)",[Amount (Transaction)]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant)]
+				        ,"Budget (Local)",[Budget (Local)]
 				    )
 				    ,SUMMARIZECOLUMNS
 				    (
@@ -482,12 +482,12 @@ table gl
 				        ,'Region 2'[Region]
 				        ,"Dimension","Region"
 				        ,"Source","2 Footprint UAT"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				        ,"Amount (Actual)",[Amount (Actual) 2]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 2]
+				        ,"Amount (Local)",[Amount (Local) 2]
+				        ,"Amount (Transaction)",[Amount (Transaction) 2]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 2]
+				        ,"Budget (Local)",[Budget (Local) 2]
 				    ),
 				    SUMMARIZECOLUMNS
 				    (
@@ -497,12 +497,12 @@ table gl
 				        ,'Region 3'[Region]
 				        ,"Dimension","Region"
 				        ,"Source","3 Footprint DEV"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				        ,"Amount (Actual)",[Amount (Actual) 3]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 3]
+				        ,"Amount (Local)",[Amount (Local) 3]
+				        ,"Amount (Transaction)",[Amount (Transaction) 3]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 3]
+				        ,"Budget (Local)",[Budget (Local) 3]
 				    )
 				
 				    //Channel ID
@@ -514,12 +514,12 @@ table gl
 				        ,'Channel'[Channel ID]
 				        ,"Dimension","Channel ID"
 				        ,"Source","1 Footprint PROD"
-				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
-				        ,"Amount (Local)",ROUND([Amount (Local)],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
-				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				        ,"Amount (Actual)",[Amount (Actual)]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant)]
+				        ,"Amount (Local)",[Amount (Local)]
+				        ,"Amount (Transaction)",[Amount (Transaction)]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant)]
+				        ,"Budget (Local)",[Budget (Local)]
 				    )
 				    ,SUMMARIZECOLUMNS
 				    (
@@ -529,12 +529,12 @@ table gl
 				        ,'Channel 2'[Channel ID]
 				        ,"Dimension","Channel ID"
 				        ,"Source","2 Footprint UAT"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				        ,"Amount (Actual)",[Amount (Actual) 2]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 2]
+				        ,"Amount (Local)",[Amount (Local) 2]
+				        ,"Amount (Transaction)",[Amount (Transaction) 2]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 2]
+				        ,"Budget (Local)",[Budget (Local) 2]
 				    ),
 				    SUMMARIZECOLUMNS
 				    (
@@ -544,12 +544,12 @@ table gl
 				        ,'Channel 3'[Channel ID]
 				        ,"Dimension","Channel ID"
 				        ,"Source","3 Footprint DEV"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				        ,"Amount (Actual)",[Amount (Actual) 3]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 3]
+				        ,"Amount (Local)",[Amount (Local) 3]
+				        ,"Amount (Transaction)",[Amount (Transaction) 3]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 3]
+				        ,"Budget (Local)",[Budget (Local) 3]
 				    )
 				
 				    //Analysis
@@ -561,12 +561,12 @@ table gl
 				        ,'Analysis'[Analysis]
 				        ,"Dimension","Analysis"
 				        ,"Source","1 Footprint PROD"
-				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
-				        ,"Amount (Local)",ROUND([Amount (Local)],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
-				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				        ,"Amount (Actual)",[Amount (Actual)]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant)]
+				        ,"Amount (Local)",[Amount (Local)]
+				        ,"Amount (Transaction)",[Amount (Transaction)]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant)]
+				        ,"Budget (Local)",[Budget (Local)]
 				    )
 				    ,SUMMARIZECOLUMNS
 				    (
@@ -576,12 +576,12 @@ table gl
 				        ,'Analysis 2'[Analysis]
 				        ,"Dimension","Analysis"
 				        ,"Source","2 Footprint UAT"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				        ,"Amount (Actual)",[Amount (Actual) 2]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 2]
+				        ,"Amount (Local)",[Amount (Local) 2]
+				        ,"Amount (Transaction)",[Amount (Transaction) 2]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 2]
+				        ,"Budget (Local)",[Budget (Local) 2]
 				    ),
 				    SUMMARIZECOLUMNS
 				    (
@@ -591,12 +591,12 @@ table gl
 				        ,'Analysis 3'[Analysis]
 				        ,"Dimension","Analysis"
 				        ,"Source","3 Footprint DEV"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				        ,"Amount (Actual)",[Amount (Actual) 3]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 3]
+				        ,"Amount (Local)",[Amount (Local) 3]
+				        ,"Amount (Transaction)",[Amount (Transaction) 3]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 3]
+				        ,"Budget (Local)",[Budget (Local) 3]
 				    )
 				
 				    //Cost Centre
@@ -608,12 +608,12 @@ table gl
 				        ,'Cost Centre'[Cost Centre]
 				        ,"Dimension","Cost Centre"
 				        ,"Source","1 Footprint PROD"
-				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
-				        ,"Amount (Local)",ROUND([Amount (Local)],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
-				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				        ,"Amount (Actual)",[Amount (Actual)]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant)]
+				        ,"Amount (Local)",[Amount (Local)]
+				        ,"Amount (Transaction)",[Amount (Transaction)]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant)]
+				        ,"Budget (Local)",[Budget (Local)]
 				    )
 				    ,SUMMARIZECOLUMNS
 				    (
@@ -623,12 +623,12 @@ table gl
 				        ,'Cost Centre 2'[Cost Centre]
 				        ,"Dimension","Cost Centre"
 				        ,"Source","2 Footprint UAT"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				        ,"Amount (Actual)",[Amount (Actual) 2]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 2]
+				        ,"Amount (Local)",[Amount (Local) 2]
+				        ,"Amount (Transaction)",[Amount (Transaction) 2]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 2]
+				        ,"Budget (Local)",[Budget (Local) 2]
 				    ),
 				    SUMMARIZECOLUMNS
 				    (
@@ -638,12 +638,12 @@ table gl
 				        ,'Cost Centre 3'[Cost Centre]
 				        ,"Dimension","Cost Centre"
 				        ,"Source","3 Footprint DEV"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				        ,"Amount (Actual)",[Amount (Actual) 3]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 3]
+				        ,"Amount (Local)",[Amount (Local) 3]
+				        ,"Amount (Transaction)",[Amount (Transaction) 3]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 3]
+				        ,"Budget (Local)",[Budget (Local) 3]
 				    )
 				
 				    //Main Account
@@ -655,12 +655,12 @@ table gl
 				        ,'Main Account'[Main Account]
 				        ,"Dimension","Main Account"
 				        ,"Source","1 Footprint PROD"
-				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
-				        ,"Amount (Local)",ROUND([Amount (Local)],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
-				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				        ,"Amount (Actual)",[Amount (Actual)]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant)]
+				        ,"Amount (Local)",[Amount (Local)]
+				        ,"Amount (Transaction)",[Amount (Transaction)]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant)]
+				        ,"Budget (Local)",[Budget (Local)]
 				    )
 				    ,SUMMARIZECOLUMNS
 				    (
@@ -670,12 +670,12 @@ table gl
 				        ,'Main Account 2'[Main Account]
 				        ,"Dimension","Main Account"
 				        ,"Source","2 Footprint UAT"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				        ,"Amount (Actual)",[Amount (Actual) 2]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 2]
+				        ,"Amount (Local)",[Amount (Local) 2]
+				        ,"Amount (Transaction)",[Amount (Transaction) 2]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 2]
+				        ,"Budget (Local)",[Budget (Local) 2]
 				    ),
 				    SUMMARIZECOLUMNS
 				    (
@@ -685,12 +685,12 @@ table gl
 				        ,'Main Account 3'[Main Account]
 				        ,"Dimension","Main Account"
 				        ,"Source","3 Footprint DEV"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				        ,"Amount (Actual)",[Amount (Actual) 3]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 3]
+				        ,"Amount (Local)",[Amount (Local) 3]
+				        ,"Amount (Transaction)",[Amount (Transaction) 3]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 3]
+				        ,"Budget (Local)",[Budget (Local) 3]
 				    )
 				
 				    //Country
@@ -702,12 +702,12 @@ table gl
 				        ,'Country'[Country]
 				        ,"Dimension","Country"
 				        ,"Source","1 Footprint PROD"
-				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
-				        ,"Amount (Local)",ROUND([Amount (Local)],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
-				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				        ,"Amount (Actual)",[Amount (Actual)]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant)]
+				        ,"Amount (Local)",[Amount (Local)]
+				        ,"Amount (Transaction)",[Amount (Transaction)]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant)]
+				        ,"Budget (Local)",[Budget (Local)]
 				    )
 				    ,SUMMARIZECOLUMNS
 				    (
@@ -717,12 +717,12 @@ table gl
 				        ,'Country 2'[Country]
 				        ,"Dimension","Country"
 				        ,"Source","2 Footprint UAT"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				        ,"Amount (Actual)",[Amount (Actual) 2]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 2]
+				        ,"Amount (Local)",[Amount (Local) 2]
+				        ,"Amount (Transaction)",[Amount (Transaction) 2]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 2]
+				        ,"Budget (Local)",[Budget (Local) 2]
 				    ),
 				    SUMMARIZECOLUMNS
 				    (
@@ -732,12 +732,12 @@ table gl
 				        ,'Country 3'[Country]
 				        ,"Dimension","Country"
 				        ,"Source","3 Footprint DEV"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				        ,"Amount (Actual)",[Amount (Actual) 3]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 3]
+				        ,"Amount (Local)",[Amount (Local) 3]
+				        ,"Amount (Transaction)",[Amount (Transaction) 3]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 3]
+				        ,"Budget (Local)",[Budget (Local) 3]
 				    )
 				
 				    //Financial Reporting Exchange Rate Type
@@ -749,12 +749,12 @@ table gl
 				        ,'Main Account'[Financial Reporting Exchange Rate Type ]
 				        ,"Dimension","Financial Reporting Exchange Rate Type"
 				        ,"Source","1 Footprint PROD"
-				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
-				        ,"Amount (Local)",ROUND([Amount (Local)],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
-				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				        ,"Amount (Actual)",[Amount (Actual)]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant)]
+				        ,"Amount (Local)",[Amount (Local)]
+				        ,"Amount (Transaction)",[Amount (Transaction)]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant)]
+				        ,"Budget (Local)",[Budget (Local)]
 				    )
 				    ,SUMMARIZECOLUMNS
 				    (
@@ -764,12 +764,12 @@ table gl
 				        ,'Main Account 2'[Financial Reporting Exchange Rate Type ]
 				        ,"Dimension","Financial Reporting Exchange Rate Type"
 				        ,"Source","2 Footprint UAT"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				        ,"Amount (Actual)",[Amount (Actual) 2]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 2]
+				        ,"Amount (Local)",[Amount (Local) 2]
+				        ,"Amount (Transaction)",[Amount (Transaction) 2]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 2]
+				        ,"Budget (Local)",[Budget (Local) 2]
 				    ),
 				    SUMMARIZECOLUMNS
 				    (
@@ -779,12 +779,12 @@ table gl
 				        ,'Main Account 3'[Financial Reporting Exchange Rate Type ]
 				        ,"Dimension","Financial Reporting Exchange Rate Type"
 				        ,"Source","3 Footprint DEV"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				        ,"Amount (Actual)",[Amount (Actual) 3]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 3]
+				        ,"Amount (Local)",[Amount (Local) 3]
+				        ,"Amount (Transaction)",[Amount (Transaction) 3]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 3]
+				        ,"Budget (Local)",[Budget (Local) 3]
 				    )
 				
 				    //Balance Sheet / P&L
@@ -796,12 +796,12 @@ table gl
 				        ,'Main Account'[Balance Sheet / P&L]
 				        ,"Dimension","Balance Sheet / P&L"
 				        ,"Source","1 Footprint PROD"
-				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
-				        ,"Amount (Local)",ROUND([Amount (Local)],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
-				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				        ,"Amount (Actual)",[Amount (Actual)]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant)]
+				        ,"Amount (Local)",[Amount (Local)]
+				        ,"Amount (Transaction)",[Amount (Transaction)]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant)]
+				        ,"Budget (Local)",[Budget (Local)]
 				    )
 				    ,SUMMARIZECOLUMNS
 				    (
@@ -811,12 +811,12 @@ table gl
 				        ,'Main Account 2'[Balance Sheet / P&L]
 				        ,"Dimension","Balance Sheet / P&L"
 				        ,"Source","2 Footprint UAT"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				        ,"Amount (Actual)",[Amount (Actual) 2]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 2]
+				        ,"Amount (Local)",[Amount (Local) 2]
+				        ,"Amount (Transaction)",[Amount (Transaction) 2]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 2]
+				        ,"Budget (Local)",[Budget (Local) 2]
 				    ),
 				    SUMMARIZECOLUMNS
 				    (
@@ -826,12 +826,12 @@ table gl
 				        ,'Main Account 3'[Balance Sheet / P&L]
 				        ,"Dimension","Balance Sheet / P&L"
 				        ,"Source","3 Footprint DEV"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				        ,"Amount (Actual)",[Amount (Actual) 3]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 3]
+				        ,"Amount (Local)",[Amount (Local) 3]
+				        ,"Amount (Transaction)",[Amount (Transaction) 3]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 3]
+				        ,"Budget (Local)",[Budget (Local) 3]
 				    )
 				
 				    //Main Account Category
@@ -843,12 +843,12 @@ table gl
 				        ,'Main Account'[Main Account Category]
 				        ,"Dimension","Main Account Category"
 				        ,"Source","1 Footprint PROD"
-				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
-				        ,"Amount (Local)",ROUND([Amount (Local)],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
-				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				        ,"Amount (Actual)",[Amount (Actual)]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant)]
+				        ,"Amount (Local)",[Amount (Local)]
+				        ,"Amount (Transaction)",[Amount (Transaction)]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant)]
+				        ,"Budget (Local)",[Budget (Local)]
 				    )
 				    ,SUMMARIZECOLUMNS
 				    (
@@ -858,12 +858,12 @@ table gl
 				        ,'Main Account 2'[Main Account Category]
 				        ,"Dimension","Main Account Category"
 				        ,"Source","2 Footprint UAT"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				        ,"Amount (Actual)",[Amount (Actual) 2]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 2]
+				        ,"Amount (Local)",[Amount (Local) 2]
+				        ,"Amount (Transaction)",[Amount (Transaction) 2]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 2]
+				        ,"Budget (Local)",[Budget (Local) 2]
 				    ),
 				    SUMMARIZECOLUMNS
 				    (
@@ -873,12 +873,12 @@ table gl
 				        ,'Main Account 3'[Main Account Category]
 				        ,"Dimension","Main Account Category"
 				        ,"Source","3 Footprint DEV"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				        ,"Amount (Actual)",[Amount (Actual) 3]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 3]
+				        ,"Amount (Local)",[Amount (Local) 3]
+				        ,"Amount (Transaction)",[Amount (Transaction) 3]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 3]
+				        ,"Budget (Local)",[Budget (Local) 3]
 				    )
 				
 				    //Cost Type 1
@@ -890,12 +890,12 @@ table gl
 				        ,'Main Account'[Cost Type 1]
 				        ,"Dimension","Cost Type 1"
 				        ,"Source","1 Footprint PROD"
-				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
-				        ,"Amount (Local)",ROUND([Amount (Local)],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
-				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				        ,"Amount (Actual)",[Amount (Actual)]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant)]
+				        ,"Amount (Local)",[Amount (Local)]
+				        ,"Amount (Transaction)",[Amount (Transaction)]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant)]
+				        ,"Budget (Local)",[Budget (Local)]
 				    )
 				    ,SUMMARIZECOLUMNS
 				    (
@@ -905,12 +905,12 @@ table gl
 				        ,'Main Account 2'[Cost Type 1]
 				        ,"Dimension","Cost Type 1"
 				        ,"Source","2 Footprint UAT"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				        ,"Amount (Actual)",[Amount (Actual) 2]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 2]
+				        ,"Amount (Local)",[Amount (Local) 2]
+				        ,"Amount (Transaction)",[Amount (Transaction) 2]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 2]
+				        ,"Budget (Local)",[Budget (Local) 2]
 				    ),
 				    SUMMARIZECOLUMNS
 				    (
@@ -920,12 +920,12 @@ table gl
 				        ,'Main Account 3'[Cost Type 1]
 				        ,"Dimension","Cost Type 1"
 				        ,"Source","3 Footprint DEV"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				        ,"Amount (Actual)",[Amount (Actual) 3]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 3]
+				        ,"Amount (Local)",[Amount (Local) 3]
+				        ,"Amount (Transaction)",[Amount (Transaction) 3]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 3]
+				        ,"Budget (Local)",[Budget (Local) 3]
 				    )
 				
 				    //Cost Type 2
@@ -937,12 +937,12 @@ table gl
 				        ,'Main Account'[Cost Type 2]
 				        ,"Dimension","Cost Type 2"
 				        ,"Source","1 Footprint PROD"
-				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
-				        ,"Amount (Local)",ROUND([Amount (Local)],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
-				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				        ,"Amount (Actual)",[Amount (Actual)]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant)]
+				        ,"Amount (Local)",[Amount (Local)]
+				        ,"Amount (Transaction)",[Amount (Transaction)]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant)]
+				        ,"Budget (Local)",[Budget (Local)]
 				    )
 				    ,SUMMARIZECOLUMNS
 				    (
@@ -952,12 +952,12 @@ table gl
 				        ,'Main Account 2'[Cost Type 2]
 				        ,"Dimension","Cost Type 2"
 				        ,"Source","2 Footprint UAT"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				        ,"Amount (Actual)",[Amount (Actual) 2]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 2]
+				        ,"Amount (Local)",[Amount (Local) 2]
+				        ,"Amount (Transaction)",[Amount (Transaction) 2]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 2]
+				        ,"Budget (Local)",[Budget (Local) 2]
 				    ),
 				    SUMMARIZECOLUMNS
 				    (
@@ -967,12 +967,12 @@ table gl
 				        ,'Main Account 3'[Cost Type 2]
 				        ,"Dimension","Cost Type 2"
 				        ,"Source","3 Footprint DEV"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				        ,"Amount (Actual)",[Amount (Actual) 3]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 3]
+				        ,"Amount (Local)",[Amount (Local) 3]
+				        ,"Amount (Transaction)",[Amount (Transaction) 3]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 3]
+				        ,"Budget (Local)",[Budget (Local) 3]
 				    )
 				
 				    //Posting Layer
@@ -984,12 +984,12 @@ table gl
 				        ,'General Ledger Fact'[Posting Layer]
 				        ,"Dimension","Posting Layer"
 				        ,"Source","1 Footprint PROD"
-				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
-				        ,"Amount (Local)",ROUND([Amount (Local)],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
-				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				        ,"Amount (Actual)",[Amount (Actual)]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant)]
+				        ,"Amount (Local)",[Amount (Local)]
+				        ,"Amount (Transaction)",[Amount (Transaction)]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant)]
+				        ,"Budget (Local)",[Budget (Local)]
 				    )
 				    ,SUMMARIZECOLUMNS
 				    (
@@ -999,12 +999,12 @@ table gl
 				        ,'General Ledger Fact 2'[Posting Layer]
 				        ,"Dimension","Posting Layer"
 				        ,"Source","2 Footprint UAT"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				        ,"Amount (Actual)",[Amount (Actual) 2]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 2]
+				        ,"Amount (Local)",[Amount (Local) 2]
+				        ,"Amount (Transaction)",[Amount (Transaction) 2]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 2]
+				        ,"Budget (Local)",[Budget (Local) 2]
 				    ),
 				    SUMMARIZECOLUMNS
 				    (
@@ -1014,12 +1014,12 @@ table gl
 				        ,'General Ledger Fact 3'[Posting Layer]
 				        ,"Dimension","Posting Layer"
 				        ,"Source","3 Footprint DEV"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				        ,"Amount (Actual)",[Amount (Actual) 3]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 3]
+				        ,"Amount (Local)",[Amount (Local) 3]
+				        ,"Amount (Transaction)",[Amount (Transaction) 3]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 3]
+				        ,"Budget (Local)",[Budget (Local) 3]
 				    )
 				
 				    //Currency
@@ -1031,12 +1031,12 @@ table gl
 				        ,'General Ledger Fact'[Currency]
 				        ,"Dimension","Currency"
 				        ,"Source","1 Footprint PROD"
-				        ,"Amount (Actual)",ROUND([Amount (Actual)],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant)],2)
-				        ,"Amount (Local)",ROUND([Amount (Local)],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction)],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant)],2)
-				        ,"Budget (Local)",ROUND([Budget (Local)],2)
+				        ,"Amount (Actual)",[Amount (Actual)]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant)]
+				        ,"Amount (Local)",[Amount (Local)]
+				        ,"Amount (Transaction)",[Amount (Transaction)]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant)]
+				        ,"Budget (Local)",[Budget (Local)]
 				    )
 				    ,SUMMARIZECOLUMNS
 				    (
@@ -1046,12 +1046,12 @@ table gl
 				        ,'General Ledger Fact 2'[Currency]
 				        ,"Dimension","Currency"
 				        ,"Source","2 Footprint UAT"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 2],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 2],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 2],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 2],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 2],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 2],2)
+				        ,"Amount (Actual)",[Amount (Actual) 2]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 2]
+				        ,"Amount (Local)",[Amount (Local) 2]
+				        ,"Amount (Transaction)",[Amount (Transaction) 2]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 2]
+				        ,"Budget (Local)",[Budget (Local) 2]
 				    ),
 				    SUMMARIZECOLUMNS
 				    (
@@ -1061,12 +1061,12 @@ table gl
 				        ,'General Ledger Fact 3'[Currency]
 				        ,"Dimension","Currency"
 				        ,"Source","3 Footprint DEV"
-				        ,"Amount (Actual)",ROUND([Amount (Actual) 3],2)
-				        ,"Amount (GBC Constant)",ROUND([Amount (GBC Constant) 3],2)
-				        ,"Amount (Local)",ROUND([Amount (Local) 3],2)
-				        ,"Amount (Transaction)",ROUND([Amount (Transaction) 3],2)
-				        ,"Budget (GBC Constant)",ROUND([Budget (GBC Constant) 3],2)
-				        ,"Budget (Local)",ROUND([Budget (Local) 3],2)
+				        ,"Amount (Actual)",[Amount (Actual) 3]
+				        ,"Amount (GBC Constant)",[Amount (GBC Constant) 3]
+				        ,"Amount (Local)",[Amount (Local) 3]
+				        ,"Amount (Transaction)",[Amount (Transaction) 3]
+				        ,"Budget (GBC Constant)",[Budget (GBC Constant) 3]
+				        ,"Budget (Local)",[Budget (Local) 3]
 				    )
 				)
 
