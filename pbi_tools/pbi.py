@@ -1,5 +1,6 @@
 from pbi_tools.api.auth import get_token
 from pbi_tools.api.dataset import MSApiDataset
+from pbi_tools.utils.constants import SF_ENVS
 
 def validate_parameters(dataset: str, env: str = "dev") -> str:
     refresh_api = MSApiDataset(token=get_token(), dataset=dataset, workspace_env=env)
