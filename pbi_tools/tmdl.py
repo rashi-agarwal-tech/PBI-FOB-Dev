@@ -4,6 +4,26 @@ import re
 import networkx as nx
 
 
+def validate_parameters(dataset: str, env: str = "dev") -> str:
+    from pbi_tools.api.auth import get_token
+    from pbi_tools.api.dataset import MSApiDataset
+    refresh_api = MSApiDataset(token=get_token(), dataset=dataset, workspace_env=env)
+    params = refresh_api.get_parameters()
+    vars = { var["name"]:var["currentValue"] for var in params }
+    if (num_rows := vars.get("NumberOfRows", "0")) != "0":
+        raise ValueError(f"NumberOfRow is not set to zero: {num_rows}")
+    if (sn_server := vars.get("Datasource_Server", "")) != SF_ENVS[env]:
+        raise ValueError(f"Datasource_Server is not set correctly for {env}: {sn_server}")
+    return f"Parameters correctly set for the {env}:\n{params}"
+
+def get_relation_between(model, table_a, table_b, graph: bool = False):
+    G = create_relationship_graph(model)
+    nodes = nx.shortest_path(G, table_a, table_b, 5)
+    if graph:
+        plot_relationships(G.subgraph(nodes), f"{model}: {table_a} to {table_b}")
+    else:
+        print_relationship_between(G, nodes)
+
 def add_partitions(tmdl_text: str, partitions_text: str, line_no: int):
     tmdl_lines = tmdl_text.split("\n")
     partitions_lines = partitions_text.split("\n")

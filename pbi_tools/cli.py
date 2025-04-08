@@ -21,7 +21,6 @@ from rich.console import Console
 from rich.table import Table, box
 from rich.text import Text
 import json
-import networkx as nx
 from collections import defaultdict
 from pbi_tools.dax.query import get_event_query
 
@@ -169,12 +168,7 @@ def print_params():
 
 @app.command()
 def get_relation_between(model, table_a, table_b, graph: bool = False):
-    G = tmdl.create_relationship_graph(model)
-    nodes = nx.shortest_path(G, table_a, table_b, 5)
-    if graph:
-        tmdl.plot_relationships(G.subgraph(nodes), f"{model}: {table_a} to {table_b}")
-    else:
-        tmdl.print_relationship_between(G, nodes)
+    tmdl.get_relation_between(model, table_a, table_b, graph)
 
 
 @app.command()
@@ -525,14 +519,7 @@ def get_parameters(dataset: str, env: str = "dev"):
 
 @app.command()
 def validate_parameters(dataset: str, env: str = "dev") -> str:
-    refresh_api = MSApiDataset(token=get_token(), dataset=dataset, workspace_env=env)
-    params = refresh_api.get_parameters()
-    vars = { var["name"]:var["currentValue"] for var in params }
-    if (num_rows := vars.get("NumberOfRows", "0")) != "0":
-        raise ValueError(f"NumberOfRow is not set to zero: {num_rows}")
-    if (sn_server := vars.get("Datasource_Server", "")) != SF_ENVS[env]:
-        raise ValueError(f"Datasource_Server is not set correctly for {env}: {sn_server}")
-    return f"Parameters correctly set for the {env}:\n{params}"
+    tmdl.validate_parameters(dataset, env)
 
 @app.command()
 def set_parameter(dataset: str, param: str, value: str, env: str = "dev"):
