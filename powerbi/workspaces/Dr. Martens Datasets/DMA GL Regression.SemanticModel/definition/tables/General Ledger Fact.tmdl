@@ -182,13 +182,15 @@ table 'General Ledger Fact'
 	column 'Amount GL'
 		dataType: double
 		isHidden
-		formatString: #,0.00
+		formatString: #,0.0000000000
 		displayFolder: Values
 		lineageTag: 57430b5a-a7d5-4ebc-99b8-6455e03c8d57
 		sourceLineageTag: ebba832a-e418-49a6-8c64-e77cc4caa1ba
 		dataCategory: Uncategorized
 		summarizeBy: none
 		sourceColumn: Amount GL
+
+		changedProperty = FormatString
 
 		annotation SummarizationSetBy = User
 

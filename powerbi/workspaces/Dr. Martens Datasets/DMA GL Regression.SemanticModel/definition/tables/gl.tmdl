@@ -98,7 +98,7 @@ table gl
 			    ,BLANK()
 			    ,SUM(gl[Amount (Actual)])
 			)
-		formatString: #,0.00
+		formatString: 0.00
 		lineageTag: 240b6c8d-0b30-4054-b8df-b1aa9c615bb4
 
 	measure 'gl Amount (Actual) Diff' =
@@ -109,7 +109,7 @@ table gl
 			    ,BLANK()
 			    ,SUM(gl[Amount (Actual) Diff])
 			)
-		formatString: #,0.00
+		formatString: 0.00
 		lineageTag: 4d8b54c6-6b83-484b-858a-1e00ee096348
 
 	measure 'source parameter' =
@@ -276,10 +276,19 @@ table gl
 
 	column 'Amount (Actual) Diff' =
 			
-			ABS
+			IF
 			(
-			    gl[Amount (Actual)]
-			    -LOOKUPVALUE(gl[Amount (Actual)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter])
+			    ABS
+			    (
+			        ROUND(gl[Amount (Actual)],4)
+			        -ROUND(LOOKUPVALUE(gl[Amount (Actual)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter]),4)
+			    )<0.01
+			    ,0
+			    ,ABS
+			    (
+			        ROUND(gl[Amount (Actual)],4)
+			        -ROUND(LOOKUPVALUE(gl[Amount (Actual)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter]),4)
+			    )
 			)
 		lineageTag: 084ba3f1-ceb7-4db7-a0d7-07d75284ea48
 		summarizeBy: sum
@@ -290,10 +299,19 @@ table gl
 
 	column 'Amount (GBC Constant) Diff' =
 			
-			ABS
+			IF
 			(
-			    gl[Amount (GBC Constant)]
-			    -LOOKUPVALUE(gl[Amount (GBC Constant)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter])
+			    ABS
+			    (
+			        ROUND(gl[Amount (GBC Constant)],4)
+			        -ROUND(LOOKUPVALUE(gl[Amount (GBC Constant)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter]),4)
+			    )<0.01
+			    ,0
+			    ,ABS
+			    (
+			        ROUND(gl[Amount (GBC Constant)],4)
+			        -ROUND(LOOKUPVALUE(gl[Amount (GBC Constant)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter]),4)
+			    )
 			)
 		lineageTag: 1d1fd42a-ea8d-415f-bc27-e3277baeac30
 		summarizeBy: sum
@@ -304,10 +322,19 @@ table gl
 
 	column 'Amount (Local) Diff' =
 			
-			ABS
+			IF
 			(
-			    gl[Amount (Local)]
-			    -LOOKUPVALUE(gl[Amount (Local)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter])
+			    ABS
+			    (
+			        ROUND(gl[Amount (Local)],4)
+			        -ROUND(LOOKUPVALUE(gl[Amount (Local)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter]),4)
+			    )<0.01
+			    ,0
+			    ,ABS
+			    (
+			        ROUND(gl[Amount (Local)],4)
+			        -ROUND(LOOKUPVALUE(gl[Amount (Local)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter]),4)
+			    )
 			)
 		lineageTag: 1e5ccf2a-6cb6-46cc-9616-ac2b7afadad0
 		summarizeBy: sum
@@ -318,10 +345,19 @@ table gl
 
 	column 'Amount (Transaction) Diff' =
 			
-			ABS
+			IF
 			(
-			    gl[Amount (Transaction)]
-			    -LOOKUPVALUE(gl[Amount (Transaction)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter])
+			    ABS
+			    (
+			        ROUND(gl[Amount (Transaction)],4)
+			        -ROUND(LOOKUPVALUE(gl[Amount (Transaction)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter]),4)
+			    )<0.01
+			    ,0
+			    ,ABS
+			    (
+			        ROUND(gl[Amount (Transaction)],4)
+			        -ROUND(LOOKUPVALUE(gl[Amount (Transaction)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter]),4)
+			    )
 			)
 		lineageTag: e67c5f0b-0626-405a-ab41-e58acca9a741
 		summarizeBy: sum
@@ -332,10 +368,19 @@ table gl
 
 	column 'Budget (GBC Constant) Diff' =
 			
-			ABS
+			IF
 			(
-			    gl[Budget (GBC Constant)]
-			    -LOOKUPVALUE(gl[Budget (GBC Constant)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter])
+			    ABS
+			    (
+			        ROUND(gl[Budget (GBC Constant)],4)
+			        -ROUND(LOOKUPVALUE(gl[Budget (GBC Constant)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter]),4)
+			    )<0.01
+			    ,0
+			    ,ABS
+			    (
+			        ROUND(gl[Budget (GBC Constant)],4)
+			        -ROUND(LOOKUPVALUE(gl[Budget (GBC Constant)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter]),4)
+			    )
 			)
 		lineageTag: ce115c15-6f0a-4e45-ab9c-7f6b18045b4b
 		summarizeBy: sum
@@ -346,10 +391,19 @@ table gl
 
 	column 'Budget (Local) Diff' =
 			
-			ABS
+			IF
 			(
-			    gl[Budget (Local)]
-			    -LOOKUPVALUE(gl[Budget (Local)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter])
+			    ABS
+			    (
+			        ROUND(gl[Budget (Local)],4)
+			        -ROUND(LOOKUPVALUE(gl[Budget (Local)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter]),4)
+			    )<0.01
+			    ,0
+			    ,ABS
+			    (
+			        ROUND(gl[Budget (Local)],4)
+			        -ROUND(LOOKUPVALUE(gl[Budget (Local)],gl[Date],[Date],gl[Dimension],[Dimension],gl[Attribute],[Attribute],gl[Source],[source parameter]),4)
+			    )
 			)
 		lineageTag: 995e6149-7da5-4055-9fef-06e21b5db33c
 		summarizeBy: sum
