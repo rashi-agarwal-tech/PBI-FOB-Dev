@@ -1,0 +1,6 @@
+role 'Windermere'
+	modelPermission: read
+
+	tablePermission Orders
+
+		columnPermission 'Email' = none
