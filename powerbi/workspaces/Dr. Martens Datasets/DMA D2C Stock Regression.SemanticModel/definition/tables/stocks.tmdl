@@ -530,6 +530,24 @@ table stocks
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 9387a9d5-2058-4467-9964-4c59d27c8f9e
 
+	measure 'stocks Sum of AbsDiff' =
+			
+			[stocks 1. All On Hand Stock Units Diff]
+			+[stocks 2. WH Stock Units Diff]
+			+[stocks 4. Store In-Transit Units Diff]
+			+[stocks 5. Store Stock Units Diff]
+			+[stocks Item Coverage Diff]
+			+[stocks On Hand Spot Cover Diff]
+			+[stocks Stock Outs % Diff]
+			+[stocks Store Spot Cover Diff]
+			+[stocks WH Spot Cover Diff]
+			+[stocks 2.2 Available WH Stock Units Diff]
+			+[stocks 3.1 Allocated Units Arrived Diff]
+			+[stocks 4. Reserved Intake Units Diff]
+			+[stocks Ranged Stores Diff]
+		formatString: #,0.0
+		lineageTag: b6259d1d-f317-4c0a-9121-a2e8d51457c4
+
 	column 'Fiscal Year (544)'
 		lineageTag: a127a073-47a3-4d11-aa40-426397b7ea2a
 		summarizeBy: none

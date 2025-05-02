@@ -93,7 +93,19 @@ cultureInfo en-GB
 			          "ConceptualProperty": "stocks Sum of AbsDiff %"
 			        }
 			      },
-			      "State": "Generated"
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "AbsDiff %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    },
 			    "sales.sales_total_units": {
 			      "Definition": {
@@ -943,6 +955,27 @@ cultureInfo en-GB
 			      "Terms": [
 			        {
 			          "Ranged Stores AbsDiff%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "stocks.stocks_sum_of_absdiff": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "stocks",
+			          "ConceptualProperty": "stocks Sum of AbsDiff"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "AbsDiff": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
