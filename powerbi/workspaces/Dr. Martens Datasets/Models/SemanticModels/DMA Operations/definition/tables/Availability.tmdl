@@ -1,3 +1,171 @@
+table Availability
+	isHidden
+	lineageTag: ea8ea58e-bf4b-488e-8dc9-d3dcf9cd4c8c
+
+	column Product_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: d5b261cb-9762-41a1-86e0-29a274fc8a85
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_Class_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 56a3ab72-6c31-408b-895d-ed5584620aec
+		summarizeBy: none
+		sourceColumn: Product_Class_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: 6704d1e8-eb9a-4516-8bab-00e0b6eec883
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Warehouse_Key
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(32)
+		lineageTag: b1e8a3e0-e700-4055-8319-a2d113013992
+		summarizeBy: none
+		sourceColumn: Warehouse_Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column QTY
+		dataType: int64
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: f0069b3b-25dd-4ce5-999b-1c3139def69c
+		summarizeBy: sum
+		sourceColumn: QTY
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DATE
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		lineageTag: b5ae22f3-fa5d-41a2-9962-bf2f99952c6d
+		summarizeBy: none
+		sourceColumn: DATE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ItemCoverage
+		dataType: int64
+		lineageTag: 4a57e541-ef7a-4f2e-a086-cc44ac5c6d63
+		summarizeBy: sum
+		sourceColumn: ItemCoverage
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SELLINGSTATUS
+		dataType: double
+		isHidden
+		sourceProviderType: decimal(38, 0)
+		lineageTag: a110688a-d763-49a7-82dd-b05c72f85035
+		summarizeBy: none
+		sourceColumn: SELLINGSTATUS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AvailableOnHandUnits
+		dataType: int64
+		isHidden
+		lineageTag: 7dcc3904-e308-4692-b3bc-16a9402e7fa8
+		summarizeBy: sum
+		sourceColumn: AvailableOnHandUnits
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MAXIMUMONHANDINVENTORYQUANTITY
+		dataType: int64
+		isHidden
+		lineageTag: ee2f6ea0-a46b-49db-9648-45ad8b451000
+		summarizeBy: sum
+		sourceColumn: MAXIMUMONHANDINVENTORYQUANTITY
+
+		changedProperty = IsHidden
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: 5988feb9-9731-40e3-91ce-85744abfb7c2
+		summarizeBy: sum
+		sourceColumn: AMOUNT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NextDate = DATEADD ( Availability[DATE], 1, DAY )
+		isHidden
+		formatString: Short Date
+		lineageTag: 44101abd-b622-4abd-ade9-15d6387a42de
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column WH_Channel_Custom
+		dataType: string
+		lineageTag: ed2ff9e8-31bf-4e12-8f87-4258fd706bf9
+		summarizeBy: none
+		sourceColumn: WH_Channel_Custom
+
+		annotation SummarizationSetBy = Automatic
 
 	partition 'CY2024 08' = m
 		source =
@@ -603,4 +771,9 @@
 					PartitionFilter = Table.SelectRows(OPS_BFN_VW_D365_FACT_AVAILABILITY_View, each [DATE] >= #date(2027, 1, 1) and [DATE] < #date(2027, 2, 1))
 				in
 					PartitionFilter
+
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
 
