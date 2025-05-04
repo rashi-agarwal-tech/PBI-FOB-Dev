@@ -1,4 +1,5 @@
 import json
+from typing import Optional, Dict, Any
 import time
 from dataclasses import dataclass
 from pbi_tools.utils.constants import (
@@ -33,26 +34,26 @@ class MSAuthToken:
     """
 
     def __post_init__(self):
-        self.auth_tenant_url = f"{self.authority_base_url}{self.tenant_id}"
-        self.token_details = None
+        self.auth_tenant_url: str = f"{self.authority_base_url}{self.tenant_id}"
+        self.token_details: Optional[Dict[Any, Any]] = None
         self.user_auth = True if self.username and self.password else False
         self._fetch_access_token(refresh_auth=self.get_token_method)
 
     def _fetch_access_token(
         self, refresh_auth: REFRESH_TYPE = "oauth", force_refresh: bool = False
-    ) -> str:
+    ) -> None:
         if self.token_details is not None and force_refresh is False:
             if self._token_expired() is False:
-                return self.token_details
+                return None 
         if refresh_auth == "oauth":
             self.token_details = self._get_oauth_token()
         else:
             self.token_details = self._get_msal_token()
-        if not self.token_details.get("access_token"):
+        if self.token_details is not None and not self.token_details.get("access_token"):
             raise ValueError(
                 f"Failed to retrieve PowerBI access token: {self.token_details}"
             )
-        if not self.token_details.get("expires_on"):
+        if self.token_details is not None and not self.token_details.get("expires_on"):
             self.token_details["expires_on"] = int(time.time()) + int(
                 self.token_details["expires_in"]
             )
