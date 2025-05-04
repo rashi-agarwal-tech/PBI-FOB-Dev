@@ -70,7 +70,8 @@ def check_partitions() -> str:
     else:
         print("Success: All tables partitioned.")
 
-
+def get_symantic_model_dir():
+    pass
 @app.command()
 def swap_partitions(original: bool = True):
     tmdl.set_variable("NumberOfRows", "1000" if original else "0")
@@ -83,7 +84,8 @@ def swap_partitions(original: bool = True):
                 tmdl_file = (
                     REPORT_DIR
                     / workspace.name
-                    / f"{partition_dir.name}.SemanticModel"
+                    / "Models" / "SemanticModels"
+                    / f"{partition_dir.name}"
                     / "definition"
                     / "tables"
                     / f"{table_dir.name}.tmdl"
