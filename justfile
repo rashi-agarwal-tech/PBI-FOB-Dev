@@ -21,6 +21,7 @@ bump-dry:
 bump-version:
     echo "Bump version, create release notes and tag version"
     poetry run cz bump --yes
+    just fix-changelog
 
 bump-skip-ci:
     just bump-version
@@ -92,6 +93,5 @@ local-deploy:
     poetry build
     cp dist/pbi_tools-0.1.0-py3-none-any.whl ../windermere_airflow/dist/
 
-
-
-
+fix-changelog:
+    poetry run fix-changelog
