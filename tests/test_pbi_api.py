@@ -72,3 +72,12 @@ def test_dataset_api():
 def test_swap_partitions():
     result = runner.invoke(app, ["swap-partitions"])
     assert result.exit_code == 0
+
+pytest.mark.api
+# @pytest.mark.depends(on=['test_auth'])
+def test_dataset_param_api():
+    dataset = MSApiDataset(
+        token=get_user_token(), workspace_env="dev", dataset="DMA D2C"
+    )
+    params = dataset.get_parameters()
+    assert params is not None
