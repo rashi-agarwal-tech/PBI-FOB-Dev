@@ -1,7 +1,6 @@
 steps:
-
   - script: |
       echo "Running commitizen to bump version and update release log."
-      just bump-skip-ci 
-    displayName: 'Bump and push.'
-    condition: eq(variables['getChangedFiles.pbi_changes'], 'true')
+      just bump-skip-ci
+    displayName: "Bump and push."
+    condition: eq(variables['getChangedFiles.app_changes'], 'true')

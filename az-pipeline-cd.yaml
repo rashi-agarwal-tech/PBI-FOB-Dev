@@ -8,11 +8,11 @@ trigger:
       - main
 
 variables:
-- template: cicd/vars.yaml
+  - template: cicd/vars.yaml
 
 jobs:
   - job:
-    displayName: 'DEV_PB_CD'
+    displayName: "DEV_PB_CD"
     condition: eq(variables['Build.SourceBranchName'], 'development')
     steps:
       - checkout: self
@@ -20,31 +20,15 @@ jobs:
         clean: true
         fetchDepth: 0
 
-      - script: |
-          echo "Running DEV cd pipeline....."
-          git config --global user.email "azuredevops@drmartens.com"
-          git config --global user.name "Azure Devops PBI"
-          git diff --name-only HEAD~1 HEAD> changed_files.txt
-          CHANGED_FILES=$(paste -sd " " changed_files.txt)
-          echo $CHANGED_FILES
-          echo "##vso[task.setvariable variable=changes;isOutput=true]$CHANGED_FILES"
-          if [[ "$CHANGED_FILES" == *"pbi_tools/"* ]]; then
-            PBI_CHANGES=true
-          else
-            PBI_CHANGES=false
-          fi
-          echo "##vso[task.setvariable variable=pbi_changes;isOutput=true]$PBI_CHANGES"
-        displayName: 'Get Changed Files'
-        name: getChangedFiles
-
       - template: cicd/az-pipeline-env.yaml
         parameters:
           cicd: cd
-      
+
       - bash: |
           echo "Changed files: $(getChangedFiles.changes)"
           echo "PBI Changes: $(getChangedFiles.pbi_changes)"
-        displayName: 'Changes Printed..'
+          echo "APP Changes: $(getChangedFiles.app_changes)"
+        displayName: "Changes Printed.."
 
       - template: cicd/az-pipeline-tag.yaml
 
@@ -54,9 +38,8 @@ jobs:
         parameters:
           env: dev
 
-
   - job:
-    displayName: 'UAT_PB_CD'
+    displayName: "UAT_PB_CD"
     condition: eq(variables['Build.SourceBranchName'], 'uat')
     steps:
       - script: |
@@ -69,7 +52,7 @@ jobs:
           env: uat
 
   - job:
-    displayName: 'PROD_PB_CD'
+    displayName: "PROD_PB_CD"
     condition: in(variables['Build.SourceBranchName'], 'master', 'prod', 'main')
     steps:
       - script: |
@@ -80,4 +63,3 @@ jobs:
       - template: cicd/az-pipeline-reports-cd.yaml
         parameters:
           env: prod
-

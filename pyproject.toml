@@ -66,6 +66,7 @@ github_repo = "https://projectreboot.visualstudio.com/Windermere%20Discovery/_gi
 
 
 [tool.pytest.ini_options]
+testpaths = ["tests"]
 markers = [
   "api: marks tests using api calls (deselect with '-m \"not api\"')",
   "cli",

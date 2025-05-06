@@ -1,14 +1,15 @@
 steps:
-  - ${{ if eq(parameters.shouldRun, true) }}:
-    - script: |
-        just check-ruff
-      displayName: 'Run Ruff checks'
+  - script: |
+      just check-ruff
+    displayName: "Run Ruff checks"
+    condition: eq(variables['getChangedFiles.app_changes'], 'true')
 
-    - script: |
-        just test-all
-      env:
-        API_PASSWORD: $(api_password)
-        API_USERNAME: $(api_username)
-        CLIENT_ID: $(client_id)
-        CLIENT_SECRET: $(client_secret)
-      displayName: 'Run Pyest Tests'
+  - script: |
+      just test-all
+    env:
+      API_PASSWORD: $(api_password)
+      API_USERNAME: $(api_username)
+      CLIENT_ID: $(client_id)
+      CLIENT_SECRET: $(client_secret)
+    displayName: "Run Pyest Tests"
+    condition: eq(variables['getChangedFiles.app_changes'], 'true')
