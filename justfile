@@ -21,13 +21,21 @@ bump-dry:
 bump-version:
     echo "Bump version, create release notes and tag version"
     poetry run cz bump --yes
+    just fix-changelog
 
 bump-skip-ci:
     just bump-version
     just push-tags
     just add-skip-ci
 
-
+git-config branch:
+  echo "Fetching Target Branch: {{branch}}"
+  git fetch origin {{branch}}
+  git pull origin {{branch}}:{{branch}}
+  echo "Set git user name and email to azuredevops"
+  git config --global user.email "azuredevops@drmartens.com"
+  git config --global user.name "Azure Devops PBI"
+  
 add-skip-ci:
     #!/usr/bin/env bash
     current_message=$(git log -1 --pretty=%B)
@@ -40,6 +48,12 @@ bump:
     just bump-dry
     just bump-version
 
+last-commit origin:
+  @git rev-list --reverse {{origin}}..HEAD | head -n 1
+
+cz-check origin:
+  @poetry run cz check --rev-range $(just last-commit {{origin}})..
+  
 push-tag branch:
     #!/usr/bin/env bash
     GIT_TAG=$(git describe --abbrev=0)
@@ -92,6 +106,5 @@ local-deploy:
     poetry build
     cp dist/pbi_tools-0.1.0-py3-none-any.whl ../windermere_airflow/dist/
 
-
-
-
+fix-changelog:
+    poetry run fix-changelog

@@ -1,46 +1,35 @@
-trigger:
-  branches:
-    exclude:
-      - development
-      - uat
-      - prod
-
 pr:
   branches:
     include:
       - development
       - uat
       - prod
+      - main
+      - master
 
 variables:
-- template: cicd/vars.yaml
-  
+  - template: cicd/vars.yaml
+
 jobs:
-- job: PowerBIAppCI
-  displayName: 'PBI App integration.'
-  steps:
-    - script: |
-        echo "Running PBI Application pipeline...."
-        echo variables['Build.ChangedFiles']
-        echo $(System.PullRequest.TargetBranch)
-        echo $(System.PullRequest.targetBranchName)
-        echo $(Build.SourceBranch)
-        echo "Build.SourceBranchName:    $(Build.SourceBranchName)" 
-        echo "Build.Reason:    $(Build.Reason)" 
-      displayName: debug
+  - job: PowerBIAppCI
+    displayName: "PBI App integration."
+    steps:
+      - template: cicd/az-pipeline-env.yaml
 
-    - template: cicd/az-pipeline-env.yaml
+      - script: |
+          echo "Running PBI Application pipeline...."
+          echo variables['Build.ChangedFiles']
+          echo $(System.PullRequest.TargetBranch)
+          echo $(System.PullRequest.targetBranchName)
+          echo $(Build.SourceBranch)
+          echo "Build.SourceBranchName:    $(Build.SourceBranchName)" 
+          echo "Build.Reason:    $(Build.Reason)"
+          echo "Changed Files in application variable:"
+          echo variables['getChangedFiles.app_changes']
+          echo "Changed Files in Power BI Reports variable:"
+          echo variables['getChangedFiles.pbi_changes']
+        displayName: debug
 
-    - template: cicd/az-pipeline-app-ci.yaml
-      parameters:
-        shouldRun: contains(variables['Build.ChangedFiles'], 'pbi_tools/')
+      - template: cicd/az-pipeline-app-ci.yaml
 
-    - template: cicd/az-pipeline-reports-ci.yaml
-      parameters:
-        shouldRun: contains(variables['Build.ChangedFiles'], 'powerbi/')
-
-    - script: |
-        echo "All Parsed Stages: $(AllStages)"
-        echo "Current Stage: $SYSTEM_STAGE_NAME"
-      condition: always()
-      displayName: 'Log all stages'
+      - template: cicd/az-pipeline-reports-ci.yaml

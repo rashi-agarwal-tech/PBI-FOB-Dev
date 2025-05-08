@@ -11,7 +11,6 @@ from pbi_tools.utils.constants import (
     PBI_META_FILE,
     PBI_AS_ENGINE_ID,
     PARTITIONS_DIR,
-    SF_ENVS,
 )
 from typing import List
 from pbi_tools import tmdl
@@ -71,6 +70,24 @@ def check_partitions() -> str:
         print("Success: All tables partitioned.")
 
 
+def get_symantic_model_dir():
+    pass
+
+
+@app.command()
+def set_pipeline_variables(env: str) -> None:
+    tmdl.set_variable("NumberOfRows", "0")
+    sn_env = "dev"
+    if "uat" in env.lower():
+        sn_env = "uat"
+    elif any(branch in env.lower() for branch in ("main", "master", "prod")):
+        sn_env = "prod"
+    tmdl.set_variable(
+        "Datasource_Server",
+        f'"drmartens{sn_env}.west-europe.azure.snowflakecomputing.com"',
+    )
+
+
 @app.command()
 def swap_partitions(original: bool = True):
     tmdl.set_variable("NumberOfRows", "1000" if original else "0")
@@ -83,7 +100,9 @@ def swap_partitions(original: bool = True):
                 tmdl_file = (
                     REPORT_DIR
                     / workspace.name
-                    / f"{partition_dir.name}.SemanticModel"
+                    / "Models"
+                    / "SemanticModels"
+                    / f"{partition_dir.name}"
                     / "definition"
                     / "tables"
                     / f"{table_dir.name}.tmdl"
@@ -517,9 +536,11 @@ def get_parameters(dataset: str, env: str = "dev"):
     refresh_api = MSApiDataset(token=get_token(), dataset=dataset, workspace_env=env)
     return refresh_api.get_parameters()
 
+
 @app.command()
 def validate_parameters(dataset: str, env: str = "dev") -> str:
     tmdl.validate_parameters(dataset, env)
+
 
 @app.command()
 def set_parameter(dataset: str, param: str, value: str, env: str = "dev"):

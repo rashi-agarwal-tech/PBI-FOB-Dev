@@ -13,9 +13,9 @@ runner = CliRunner()
 @pytest.mark.api
 @pytest.mark.cli
 def test_cli():
-    result = runner.invoke(app, ["status", "--dataset", "DMA D2C"])
+    result = runner.invoke(app, ["status", "--dataset", "DMA D2C", "--no-print-as-table"])
     assert result.exit_code == 0
-    # assert "????" in result.stdout
+    assert "DMA D2C" in result.stdout 
 
 
 def test_pad_integer():
@@ -66,3 +66,18 @@ def test_dataset_api():
         token=get_user_token(), workspace_env="dev", dataset="DMA D2C"
     )
     assert dataset.get_refresh_status() is not None
+
+
+@pytest.mark.cli
+def test_swap_partitions():
+    result = runner.invoke(app, ["swap-partitions"])
+    assert result.exit_code == 0
+
+pytest.mark.api
+# @pytest.mark.depends(on=['test_auth'])
+def test_dataset_param_api():
+    dataset = MSApiDataset(
+        token=get_user_token(), workspace_env="dev", dataset="DMA D2C"
+    )
+    params = dataset.get_parameters()
+    assert params is not None

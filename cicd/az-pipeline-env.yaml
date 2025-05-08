@@ -1,35 +1,54 @@
 steps:
   - task: UsePythonVersion@0
     inputs:
-      versionSpec: '$(PYTHON_VERSION)'
+      versionSpec: "$(PYTHON_VERSION)"
+
+  - checkout: self
+    persistCredentials: true
+    clean: true
+    fetchDepth: 0
 
   - script: |
       pwd
       pip install rust-just
       just install-poetry
-    displayName: 'Install Python requirements with Poetry'
+    displayName: "Install Python requirements with Poetry"
 
   - script: |
-      echo "Running commitizen"
-      echo $(System.PullRequest.TargetBranch)
-      branchName=$(basename $(System.PullRequest.TargetBranch))
-      echo "Checking branch: $branchName"
-      git fetch origin
-      echo $(git branch -r)
-      git fetch origin development --depth=100
-      git log
-      echo "git merge-base origin/$branchName  HEAD"
-      echo $(git merge-base origin/$branchName  HEAD)
-      echo $(git log $(git merge-base origin/$branchName  HEAD)..HEAD --pretty=format:%s)
-      COMMITS=$(git log $(git merge-base origin/$branchName  HEAD)..HEAD --pretty=format:%s)
-      echo "These are the commits....."
-      echo $COMMITS
-      echo "$COMMITS" | poetry run cz check
-    displayName: 'Check new commits follow conventional commits.'
-    condition: contains(variables['Build.cicd'], 'cd')
+      echo "Target branch is:$(System.PullRequest.TargetBranch)"
+      echo "Source Branch is: $(System.PullRequest.SourceBranch)"
+      targetBranch=$(basename $(System.PullRequest.TargetBranch))
+      just git-config $targetBranch
+      git diff --name-only $targetBranch HEAD > changed_files.txt
+      CHANGED_FILES=$(paste -sd " " changed_files.txt)
+      echo "Detected file changes:"
+      echo $CHANGED_FILES
+      echo "##vso[task.setvariable variable=changes;isOutput=true]$CHANGED_FILES"
+      if [[ "$CHANGED_FILES" == *"powerbi/"* ]]; then
+      PBI_CHANGES=true
+      else
+      PBI_CHANGES=false
+      fi
+      if [[ "$CHANGED_FILES" == *"pbi_tools/"* ]]; then
+      APP_CHANGES=true
+      else
+      APP_CHANGES=false
+      fi
+      echo "Changes in Power BI Reports: $PBI_CHANGES"
+      echo "Changes in Application: $APP_CHANGES"
+      echo "##vso[task.setvariable variable=app_changes;isOutput=true]$APP_CHANGES"
+      echo "##vso[task.setvariable variable=pbi_changes;isOutput=true]$PBI_CHANGES"
+    displayName: "Configure Git"
+    name: getChangedFiles
+
+  - script: |
+      echo "Target branch is:$(System.PullRequest.TargetBranch)"
+      targetBranch=$(basename $(System.PullRequest.TargetBranch))
+      just cz-check $targetBranch
+    displayName: "Check new commits follow conventional commits."
 
   - script: |
       echo "Test bumping the version."
       just bump-dry
-    displayName: 'Test bump version'
+    displayName: "Test bump version"
     condition: contains(variables['Build.cicd'], 'cd')
