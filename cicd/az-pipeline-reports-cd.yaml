@@ -1,5 +1,11 @@
 steps:
   - script: |
+      poetry run pbi set-pipeline-variables ${{ parameters.env }}
+      git commit -v -a --no-edit --amend
+      displayname: "Set Pipeline variables to env default"
+      condition: eq(variables['getChangedFiles.pbi_changes], 'true')
+
+  - script: |
       poetry run pbi sync-workspace-git --env ${{ parameters.env }}
     displayName: "Sync with Power BI workspace"
     env:

@@ -1,0 +1,79 @@
+trigger:
+  branches:
+    include:
+      - development
+      - uat
+      - master
+      - prod
+      - main
+pr:
+  branches:
+    include:
+      - development
+      - uat
+      - master
+      - prod
+      - main
+stages:
+  # --- CI Stage: Runs only on PRs ---
+  - stage: Checks
+    condition: eq(variables['Build.Reason'], 'PullRequest')
+    displayName: "CI - Run Checks on PR"
+    jobs:
+      - job: DetectChanges
+        displayName: "Detect Folder Changes"
+        steps:
+          - script: |
+              echo "Checking for PR changes..."
+              git fetch origin $(System.PullRequest.TargetBranch)
+              git diff --name-only origin/$(System.PullRequest.TargetBranch) > changed_files.txt
+              cat changed_files.txt
+              grep '^pbi_tools/' changed_files.txt && echo "##vso[task.setvariable variable=pbi_tools_changed]true"
+              grep '^powerbi/' changed_files.txt && echo "##vso[task.setvariable variable=powerbi_changed]true"
+            name: detect_changes
+
+      - job: PythonChecks
+        dependsOn: DetectChanges
+        condition: eq(variables['pbi_tools_changed'], 'true')
+        displayName: "Run Python Checks"
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: "3.10"
+
+          - script: |
+              pip install ruff commitizen
+              ruff check pbi_tools/
+              cz check
+
+      - job: PowerBIChecks
+        dependsOn: DetectChanges
+        condition: eq(variables['powerbi_changed'], 'true')
+        displayName: "Run Power BI Checks"
+        steps:
+          - script: echo "Run Power BI validations here"
+            # Add Power BI checks (e.g., file structure, lint, etc.)
+
+  # --- CD Stage: Runs only after PR merge ---
+  - stage: Release
+    condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
+    displayName: "CD - Deploy After Merge"
+    jobs:
+      - job: ReleasePython
+        displayName: "Release Python App"
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: "3.10"
+
+          - script: |
+              pip install twine
+              echo "Build and upload Python package"
+              # twine upload dist/* to Artifactory
+
+      - job: ReleasePowerBI
+        displayName: "Release Power BI Reports"
+        steps:
+          - script: |
+              echo "Deploy TMDL files to Power BI using pbi-tools"
+              # Add actual pbi-tools push logic

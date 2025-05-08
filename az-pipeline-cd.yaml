@@ -15,11 +15,6 @@ jobs:
     displayName: "DEV_PB_CD"
     condition: eq(variables['Build.SourceBranchName'], 'development')
     steps:
-      - checkout: self
-        persistCredentials: true
-        clean: true
-        fetchDepth: 0
-
       - template: cicd/az-pipeline-env.yaml
         parameters:
           cicd: cd
