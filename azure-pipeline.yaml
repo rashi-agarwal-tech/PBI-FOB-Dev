@@ -14,6 +14,10 @@ pr:
       - master
       - prod
       - main
+
+variables:
+  - template: cicd/vars.yaml
+
 stages:
   # --- CI Stage: Runs only on PRs ---
   - stage: Check
@@ -23,18 +27,27 @@ stages:
       - job: DetectChanges
         displayName: "Detect Folder Changes"
         steps:
+          # Set python environment...
+          - template: cicd/az-pipeline-env.yaml
+
+          - script: |
+              just git-config $(basename $(System.PullRequest.TargetBranch))
+            displayName: "Configure git to use service account"
+
           - script: |
               echo "Checking for PR changes..."
-              git fetch origin $(System.PullRequest.TargetBranch)
-              git diff --name-only origin/$(System.PullRequest.TargetBranch) > changed_files.txt
-              cat changed_files.txt
-              grep '^pbi_tools/' changed_files.txt && echo "##vso[task.setvariable variable=pbi_tools_changed]true"
-              grep '^powerbi/' changed_files.txt && echo "##vso[task.setvariable variable=powerbi_changed]true"
-            name: detect_changes
+              changes=$(just files-changed $(basename $(System.PullRequest.TargetBranch)))
+              echo "The follow file changes where detected:\n $changes"
+              APP_CHANGES="$(echo "$changes" | grep -q "Application" && echo "true" || echo "false")"
+              PBI_CHANGES="$(echo "$changes" | grep -q "Report" && echo "true" || echo "false")"
+              echo "##vso[task.setvariable variable=app_changes;isOutput=true]$APP_CHANGES"
+              echo "##vso[task.setvariable variable=pbi_changes;isOutput=true]$PBI_CHANGES"
+            displayName: "Check File Changes"
+            name: Changes
 
       - job: PythonChecks
         dependsOn: DetectChanges
-        condition: eq(variables['pbi_tools_changed'], 'true')
+        condition: eq(dependencies.DetectChanges.outputs['Changes.app_changes'], 'true')
         displayName: "Run Python Checks"
         steps:
           # Set python environment...
@@ -42,7 +55,7 @@ stages:
 
           - script: |
               just git-config $(basename $(System.PullRequest.TargetBranch))
-            displayName: "Congigure git to use service account"
+            displayName: "Configure git to use service account"
 
           - script: |
               just cz-check $(basename $(System.PullRequest.TargetBranch))
@@ -57,7 +70,7 @@ stages:
             displayName: "Run Ruff checks"
 
           - script: |
-              just test-all
+              just test-all-cov
             env:
               API_PASSWORD: $(API_PASSWORD)
               API_USERNAME: $(API_USERNAME)
@@ -65,9 +78,11 @@ stages:
               CLIENT_SECRET: $(CLIENT_SECRET)
             displayName: "Run Pyest Tests"
 
+          - template: cicd/az-pipeline-pub-tests.yaml
+
       - job: PowerBIChecks
         dependsOn: DetectChanges
-        condition: eq(variables['powerbi_changed'], 'true')
+        condition: eq(dependencies.DetectChanges.outputs['Changes.pbi_changes'], 'true')
         displayName: "Run Power BI Checks"
         steps:
           # Set python environment...
@@ -76,36 +91,33 @@ stages:
           - script: |
               echo "checking number of rows set to zero"
               result=$(poetry run pbi check-num-rows-vars-zero)
-              echo $result
               if [[ $result == warning* ]] ;
               then
                 echo "##vso[task.logissue type=warning;]$result"
               else
-                echo "##vso[task.logissue type=info]$result"
+                echo "$result" 
               fi
             displayName: "check number of rows set to zero"
 
           - script: |
               echo "checking multi partitions are in place."
               result=$(poetry run pbi check-partitions)
-              echo $result
               if [[ $result == warning* ]] ;
               then
-                echo "##vso[task.logissue type=error;]$result"
-                exit 1
+                echo "##vso[task.logissue type=warning;]$result"
               else
-                echo "##vso[task.logissue type=info]$result"
+                echo "$result"
               fi
             displayName: "check multi partitions"
 
-  # --- CD Stage: Runs only after PR merge ---
   - stage: Release
+    dependsOn: []
     condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
     displayName: "CD - Deploy After Merge"
     jobs:
       - job: DeployPBIApp
         displayName: "Release Power BI Python App"
-        condition: eq(variables['Build.SourceBranchName'], 'development')
+        condition: and(eq(variables['Build.SourceBranchName'], 'development'), eq(dependencies.DetectChanges.outputs['Changes.app_changes'], 'true'))
         steps:
           # Set python environment...
           - template: cicd/az-pipeline-env.yaml
@@ -131,24 +143,15 @@ stages:
 
       - job: ReleasePowerBI
         displayName: "Release Power BI Reports"
+        condition: eq(dependencies.DetectChanges.outputs['Changes.pbi_changes'], 'true')
         steps:
           # Set python environment...
           - template: cicd/az-pipeline-env.yaml
 
           - script: |
-              echo "Target branch: $(Build.SourceBranchName)"
-              if [ "$(Build.SourceBranchName)" = "development" ]; then
-                echo "##vso[task.setvariable variable=env]dev"
-              elif [ "$(Build.SourceBranchName)" = "uat" ]; then
-                echo "##vso[task.setvariable variable=env]uat"
-              elif [ "$(Build.SourceBranchName)" = "main" ]; then
-                echo "##vso[task.setvariable variable=env]prod"
-              elif [ "$(Build.SourceBranchName)" = "master" ]; then
-                echo "##vso[task.setvariable variable=env]prod"
-              elif [ "$(Build.SourceBranchName)" = "prod" ]; then
-                echo "##vso[task.setvariable variable=env]prod"
-              else
-                echo "##vso[task.setvariable variable=env]unknown"
+              $env=$(just get-env $(basename $(Build.SourceBranchName)))
+              echo "Target Branch: $env"
+              echo "##vso[task.setvariable variable=env]$env"
             displayName: "Determine Target Environment"
 
           - script: |

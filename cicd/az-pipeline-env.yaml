@@ -2,6 +2,10 @@ steps:
   - task: UsePythonVersion@0
     inputs:
       versionSpec: "$(PYTHON_VERSION)"
+  - checkout: self
+    persistCredentials: true
+    clean: true
+    fetchDepth: 0
 
   - script: |
       if [ -d "windermere_powerbi" ]; then

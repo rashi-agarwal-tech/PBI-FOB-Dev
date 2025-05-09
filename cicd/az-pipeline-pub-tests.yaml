@@ -1,0 +1,22 @@
+steps:
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: "JUnit"
+      testResultsFiles: "test-results.xml"
+      failTaskOnFailedTests: true
+    condition: succeededOrFailed()
+    displayName: "Publiish JUnit Test Results"
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: "coverage.xml"
+      ArtifactName: "codecoverage"
+      publishLocation: "Container"
+    displayName: "Publiish XML Coverage Test Results"
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: "htmlcov"
+      ArtifactName: "coverage-html"
+      publishLocation: "Container"
+    displayName: "Publiish HTML Coverage Test Results"

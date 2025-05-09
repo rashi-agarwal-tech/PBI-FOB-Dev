@@ -47,14 +47,18 @@ def get_current_fin_year_int() -> int:
     return fiscalyear.FiscalYear.current()._fiscal_year
 
 
-def get_fin_years(years:int=3, append_str="FY", future_years:int=0) -> list:
+def get_fin_years(years: int = 3, append_str="FY", future_years: int = 0) -> list:
     buffer = {}
     curr_fin_year = get_current_fin_year_int()
     today = datetime.today()
     if today.month in [3, 4]:
         buffer = {f"{append_str}{today.year}", f"{append_str}{today.year+1}"}
     future_years *= -1
-    return list({f"{append_str}{str(curr_fin_year-i)}" for i in range(future_years, years)}.union(buffer))
+    return list(
+        {
+            f"{append_str}{str(curr_fin_year-i)}" for i in range(future_years, years)
+        }.union(buffer)
+    )
 
 
 def get_cy_mm(months: int = 3, append_str="CY", future_months: int = 0) -> list:
@@ -84,17 +88,19 @@ def get_tables(dataset: str, partitioned: bool | None = None) -> list:
         if v["partitioned"] == partitioned or partitioned is None
     ]
 
+
 def get_latest_cy_qq_partition():
     month = datetime.now().month
-    if month in [1,2,3]:
-        quarter = 'Q1'
-    elif month in [4,5,6]:
-        quarter = 'Q2'
-    elif month in [7,8,9]:
-        quarter = 'Q3'
+    if month in [1, 2, 3]:
+        quarter = "Q1"
+    elif month in [4, 5, 6]:
+        quarter = "Q2"
+    elif month in [7, 8, 9]:
+        quarter = "Q3"
     else:
-        quarter = 'Q4'
+        quarter = "Q4"
     return f"CY{get_current_year()} {quarter}"
+
 
 if __name__ == "__main__":
     print(get_tables("DMA D2C", False))

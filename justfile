@@ -1,7 +1,9 @@
 default:
     @echo "Please specify a recipe to run."
     @just --list
-
+    
+test-all-cov:
+    poetry run pytest -s --cov=pbi_tools --cov-report=xml --cov-report=html --junitxml=test-results.xml
 test-all:
     poetry run pytest -s
 
@@ -69,7 +71,39 @@ list-tags:
 
 push-tags:
     git push --tags
-
+    
+files-changed branch:
+    #!/usr/bin/env bash
+    git fetch origin {{ branch }} > /dev/null 2>&1
+    git diff --name-only {{ branch }} HEAD > changed_files.txt
+    CHANGED_FILES=$(paste -sd " " changed_files.txt)
+    if [[ "$CHANGED_FILES" == *"powerbi/"* ]]; then
+    echo "Power BI Report Changes Detected"
+    fi
+    if [[ "$CHANGED_FILES" == *"pbi_tools/"* ]]; then
+    echo "Application Changes Detected"
+    fi
+    rm changed_files.txt
+    
+      
+get-env branch:
+    #!/usr/bin/env bash
+    if [ "{{branch}}" = "development" ]; then
+        echo "dev"
+    elif [ "{{branch}}" = "uat" ]; then
+        echo "uat"
+    elif [ "{{branch}}" = "main" ]; then
+        echo "prod"
+    elif [ "{{branch}}" = "master" ]; then
+        echo "prod"
+    elif [ "{{branch}}" = "prod" ]; then
+        echo "prod"
+    elif [ "{{branch}}" = "production" ]; then
+        echo "prod"
+    else
+        echo "unknown"
+    fi
+    
 push-all branch:
     git push --atomic origin {{branch}} tag --all
 
@@ -86,6 +120,7 @@ install-poetry:
 install-poetry-no-dev:
     just update-pip
     echo "Install poetry virtual environment and dependencies without dev"
+    poetry lock
     poetry install --sync --no-interaction --without dev
     
 check-ruff:

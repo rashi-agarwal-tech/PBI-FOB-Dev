@@ -1,27 +1,29 @@
-import typer
+import json
+from collections import defaultdict
 from itertools import islice
-from pbi_tools.api.auth import get_token, MSAuthToken, get_user_token
-from pbi_tools.api.dataset import MSApiDataset
-from pbi_tools.api.xmla import PowerBIDaxQuery, PowerBIParameters
-from pbi_tools.api.git import MSApiFabric
-from pbi_tools.partitions import partition_utils
-from pbi_tools.utils.constants import (
-    PBI_STATUS_MAP,
-    REPORT_DIR,
-    PBI_META_FILE,
-    PBI_AS_ENGINE_ID,
-    PARTITIONS_DIR,
-)
 from typing import List
-from pbi_tools import tmdl
+
+import typer
 from rich import print
-from typing_extensions import Annotated
 from rich.console import Console
 from rich.table import Table, box
 from rich.text import Text
-import json
-from collections import defaultdict
+from typing_extensions import Annotated
+
+from pbi_tools import tmdl
+from pbi_tools.api.auth import MSAuthToken, get_token, get_user_token
+from pbi_tools.api.dataset import MSApiDataset
+from pbi_tools.api.git import MSApiFabric
+from pbi_tools.api.xmla import PowerBIDaxQuery, PowerBIParameters
 from pbi_tools.dax.query import get_event_query
+from pbi_tools.partitions import partition_utils
+from pbi_tools.utils.constants import (
+    PARTITIONS_DIR,
+    PBI_AS_ENGINE_ID,
+    PBI_META_FILE,
+    PBI_STATUS_MAP,
+    REPORT_DIR,
+)
 
 app = typer.Typer()
 console = Console()
@@ -149,9 +151,10 @@ def save_meta_pbi_tools():
 
 @app.command()
 def save_model_metadata_db():
-    import pbi_tools.utils.sn_connector as sn
-    from snowflake.connector.pandas_tools import write_pandas
     import pandas as pd
+    from snowflake.connector.pandas_tools import write_pandas
+
+    import pbi_tools.utils.sn_connector as sn
 
     models = tmdl.get_models()
     models_flat = [

@@ -1,4 +1,5 @@
 ![banner](docs/images/readme_header.png)
+[![Build Status](https://projectreboot.visualstudio.com/Windermere%20Discovery/_apis/build/status%2Fwindermere_powerbi?branchName=development)](https://projectreboot.visualstudio.com/Windermere%20Discovery/_build/latest?definitionId=231&branchName=development)
 
 ## Introduction
 
@@ -6,6 +7,8 @@ All of the DMA Power BI datasets reside in this repository along with a helper c
 This repository is synced to the [D&A Dev - Dr. Martens Datasets](#https://app.powerbi.com/groups/e8649e55-b7f9-42aa-91f7-326ed4c8a36d/list?experience=power-bi) which is then deployed to higher level environments,
 
 ## Contents
+
+$(toc)
 
 - [Repository Structure:](#repository-structure)
   - [partitions directory:](#partitions-directory)
@@ -129,6 +132,8 @@ Clicking on `Compare` allows you to see the differences between the two environm
 ![pipline](docs/images/pipeline_compare_specific.PNG)
 
 ## Deployment Notes
+
+Deployment notes to go here.
 
 ### Pipeline Deployment Timing
 
@@ -453,7 +458,51 @@ As we need to run many API calls I have implemented the calls using multi thread
 
 We are only going to version the application and not power bi to start off with.
 
+### Power BI Partition Refresh
+
+If you want to refresh a partition of a Power BI model you currently have 3 options. You can use the SQL Server Management Studio, Airflow or the Power BI REST API via the Power BI Command Line Interface (CLI).
+
+#### Airflow
+
+You can currently refresh a partition or data set in Airflow but will be restricted to the current set of partitions that are being refreshed in the byod dag which we are running 3 times a day.
+To refresh a particular table and partition you can simple clear the task and it will run again, you can monitor the refresh in the logging log dialogue.
+
+#### SQL Server Management Studio
+
+You can view, modify and refresh in SQL Server, although we do not generally modify the partitions in SSMS.
+Create a connection to Analysis Services with the follow details below.
+
+```text
+Server name: powerbi://api.powerbi.com/v1.0/myorg/Dr.%20Martens%20Datasets
+Authentication:Microsoft Entra Password (AD authentication)
+User name: PowerBISA-SVC@drmartens.com
+Password: 
+```
+
+You do not have to use the service account listed above if you have refresh permission in Power BI.
+
+You can change the Server name to whichever workspace that you want to connect to, see [Power BI Workspaces:](#power-bi-workspaces) for available workspaces.
+
+Once logged on you can browse to the data set and table that you want to refresh and then right click on the table you want to refresh and select partition.
+
+You can then select the partitions that you would like to refresh, before finally refreshing the partitions click on the script button and select to window. You can then run the script and it will refresh the partitions, this gives you the benefit of receiving any logging messages and will give you the time taken for the refresh. If you refresh directly though the gui you will not receive any feedback!
+
+#### Power BI CLI
+
+Once you have installed the Power BI Command Line Interface (CLI) you can use it to refresh a partition of a Power BI model by running the following command:
+
+```bash
+pbi refresh-partition "DMA D2C" "Orders" --partition FY2023 --env prod 
+```
+
+You can refesh multiple partitions by running the following command:
+
+```bash
+pbi refresh-partition "DMA D2C" "Availability" --partition "\"CY2023 11\" \"CY2024 05\"" --env prod  
+```
+
+Note, as above you will need to add in back slash to escape double quotes which will be required if the partition name contains spaces or special characters.
+
 # Contribute
 
 Contributions should try to follow conventional commits if possible. As a minimum requirement a ticket number should be present in the branch and the commit message.
-

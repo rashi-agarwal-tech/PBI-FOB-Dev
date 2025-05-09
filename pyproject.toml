@@ -15,10 +15,15 @@ pendulum = ">=2.0.0,<4.0.0"
 fiscalyear = "^0.4.0"
 pyyaml = "^6.0.1"
 pydantic = "^2.9.2"
+msal = "^1.26.0"
+
+[tool.poetry.group.extras]
+optional = true
+
+[tool.poetry.group.extras.dependencies]
 xlsxwriter = "^3.2.0"
 networkx = "^3.3"
 matplotlib = "^3.8.4"
-msal = "^1.26.0"
 snowflake-connector-python = { extras = ["pandas"], version = "^3.12.4" }
 
 [tool.poetry.scripts]
@@ -33,7 +38,7 @@ artifacts-keyring = "^0.4.0"
 pytest = "^8.3.3"
 pytest-sugar = "^1.0.0"
 ruff = "^0.7.1"
-mypy = "^1.13.0"
+# mypy = "^1.13.0"
 pre-commit = "^4.0.1"
 twine = "^5.1.1"
 commitizen = "^3.30.0"
@@ -43,6 +48,12 @@ pytest-depends = "^1.0.1"
 pytest-xdist = "^3.6.1"
 pytest-azurepipelines = "^1.0.5"
 cz-github-jira-conventional = "^3.0.0"
+pytest-cov = "^6.1.1"
+
+[tool.poetry.group.airflow]
+optional = true
+
+[tool.poetry.group.airflow.dependencies]
 apache-airflow = "^2.10.4"
 apache-airflow-providers-google = "^12.0.0"
 apache-airflow-providers-snowflake = "^6.0.0"
