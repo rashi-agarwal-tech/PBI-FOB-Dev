@@ -2087,7 +2087,6 @@ table Orders
 					Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20250331 and [Date_Key] < 20260330)
 				in
 					Date_Key_Filter
-				
 
 	partition FY2027 = m
 		mode: import
@@ -2116,7 +2115,6 @@ table Orders
 					Date_Key_Filter = Table.SelectRows(#"Filtered Rows", each [Date_Key] >= 20270329 and [Date_Key] < 20280326)
 				in
 					Date_Key_Filter
-
 
 	annotation PBI_ResultType = Table
 
