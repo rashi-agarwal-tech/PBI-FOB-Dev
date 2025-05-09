@@ -3,36 +3,6 @@ steps:
     inputs:
       versionSpec: "$(PYTHON_VERSION)"
 
-  - checkout: self
-    persistCredentials: true
-    clean: true
-    fetchDepth: 0
-
-  - script: |
-      echo "Build reason is: $(Build.Reason)"
-
-      echo "Source branch: $(System.PullRequest.SourceBranch)"
-      echo "Target branch: $(System.PullRequest.TargetBranch)"
-      echo "Target branch: $(Build.TargetBranchName)"
-      echo "Source branch: $(Build.SourceBranchName)"
-      if [ "$(Build.TargetBranchName)" != "" ]; then
-        echo "Running Against Branch...."
-        echo "Target branch: $(Build.TargetBranchName)"
-        echo "Source branch: $(Build.SourceBranchName)"
-        echo "##vso[task.setvariable variable=sourceBranch]$(basename $(Build.SourceBranchName))"
-        echo "##vso[task.setvariable variable=targetBranch]$(basename $(Build.TargetBranchName))"
-      else
-        echo "Running in PR...."
-        echo "Source branch: $(System.PullRequest.SourceBranch)"
-        echo "Target branch: $(System.PullRequest.TargetBranch)"
-        echo "##vso[task.setvariable variable=sourceBranch]$(basename $(System.PullRequest.SourceBranch))"
-        echo "##vso[task.setvariable variable=targetBranch]$(basename $(System.PullRequest.TargetBranch)))"
-      fi
-
-      echo "Resolved source branch: $(sourceBranch)"
-      echo "Resolved target branch: $(targetBranch)"
-    displayName: "Determine Target Branch"
-
   - script: |
       if [ -d "windermere_powerbi" ]; then
       cd windermere_powerbi || exit 1
@@ -40,44 +10,3 @@ steps:
       pip install rust-just
       just install-poetry
     displayName: "Install Python requirements with Poetry"
-
-  - script: |
-      echo "Target Build branch is:$(Build.TargetBranchName)"
-      echo "Target branch is:$(System.PullRequest.TargetBranch)"
-      echo "Source Build branch is:$(Build.SourceBranchName)"
-      echo "Source Branch is: $(System.PullRequest.SourceBranch)"
-      targetBranch=$(basename $(System.PullRequest.TargetBranch))
-      just git-config $targetBranch
-      git diff --name-only $targetBranch HEAD > changed_files.txt
-      CHANGED_FILES=$(paste -sd " " changed_files.txt)
-      echo "Detected file changes:"
-      echo $CHANGED_FILES
-      echo "##vso[task.setvariable variable=changes;isOutput=true]$CHANGED_FILES"
-      if [[ "$CHANGED_FILES" == *"powerbi/"* ]]; then
-      PBI_CHANGES=true
-      else
-      PBI_CHANGES=false
-      fi
-      if [[ "$CHANGED_FILES" == *"pbi_tools/"* ]]; then
-      APP_CHANGES=true
-      else
-      APP_CHANGES=false
-      fi
-      echo "Changes in Power BI Reports: $PBI_CHANGES"
-      echo "Changes in Application: $APP_CHANGES"
-      echo "##vso[task.setvariable variable=app_changes;isOutput=true]$APP_CHANGES"
-      echo "##vso[task.setvariable variable=pbi_changes;isOutput=true]$PBI_CHANGES"
-    displayName: "Configure Git"
-    name: getChangedFiles
-
-  - script: |
-      echo "Target branch is:$(System.PullRequest.TargetBranch)"
-      targetBranch=$(basename $(System.PullRequest.TargetBranch))
-      just cz-check $targetBranch
-    displayName: "Check new commits follow conventional commits."
-
-  - script: |
-      echo "Test bumping the version."
-      just bump-dry
-    displayName: "Test bump version"
-    condition: contains(variables['Build.cicd'], 'cd')

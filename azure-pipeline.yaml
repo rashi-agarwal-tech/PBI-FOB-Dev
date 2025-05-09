@@ -16,7 +16,7 @@ pr:
       - main
 stages:
   # --- CI Stage: Runs only on PRs ---
-  - stage: Checks
+  - stage: Check
     condition: eq(variables['Build.Reason'], 'PullRequest')
     displayName: "CI - Run Checks on PR"
     jobs:
@@ -37,43 +37,130 @@ stages:
         condition: eq(variables['pbi_tools_changed'], 'true')
         displayName: "Run Python Checks"
         steps:
-          - task: UsePythonVersion@0
-            inputs:
-              versionSpec: "3.10"
+          # Set python environment...
+          - template: cicd/az-pipeline-env.yaml
 
           - script: |
-              pip install ruff commitizen
-              ruff check pbi_tools/
-              cz check
+              just git-config $(basename $(System.PullRequest.TargetBranch))
+            displayName: "Congigure git to use service account"
+
+          - script: |
+              just cz-check $(basename $(System.PullRequest.TargetBranch))
+            displayName: "Check new commits follow conventional commits."
+
+          - script: |
+              just bump-dry
+            displayName: "Test bump version"
+
+          - script: |
+              just check-ruff
+            displayName: "Run Ruff checks"
+
+          - script: |
+              just test-all
+            env:
+              API_PASSWORD: $(API_PASSWORD)
+              API_USERNAME: $(API_USERNAME)
+              CLIENT_ID: $(CLIENT_ID)
+              CLIENT_SECRET: $(CLIENT_SECRET)
+            displayName: "Run Pyest Tests"
 
       - job: PowerBIChecks
         dependsOn: DetectChanges
         condition: eq(variables['powerbi_changed'], 'true')
         displayName: "Run Power BI Checks"
         steps:
-          - script: echo "Run Power BI validations here"
-            # Add Power BI checks (e.g., file structure, lint, etc.)
+          # Set python environment...
+          - template: cicd/az-pipeline-env.yaml
+
+          - script: |
+              echo "checking number of rows set to zero"
+              result=$(poetry run pbi check-num-rows-vars-zero)
+              echo $result
+              if [[ $result == warning* ]] ;
+              then
+                echo "##vso[task.logissue type=warning;]$result"
+              else
+                echo "##vso[task.logissue type=info]$result"
+              fi
+            displayName: "check number of rows set to zero"
+
+          - script: |
+              echo "checking multi partitions are in place."
+              result=$(poetry run pbi check-partitions)
+              echo $result
+              if [[ $result == warning* ]] ;
+              then
+                echo "##vso[task.logissue type=error;]$result"
+                exit 1
+              else
+                echo "##vso[task.logissue type=info]$result"
+              fi
+            displayName: "check multi partitions"
 
   # --- CD Stage: Runs only after PR merge ---
   - stage: Release
     condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
     displayName: "CD - Deploy After Merge"
     jobs:
-      - job: ReleasePython
-        displayName: "Release Python App"
+      - job: DeployPBIApp
+        displayName: "Release Power BI Python App"
+        condition: eq(variables['Build.SourceBranchName'], 'development')
         steps:
-          - task: UsePythonVersion@0
-            inputs:
-              versionSpec: "3.10"
+          # Set python environment...
+          - template: cicd/az-pipeline-env.yaml
 
           - script: |
-              pip install twine
-              echo "Build and upload Python package"
-              # twine upload dist/* to Artifactory
+              echo "Running commitizen to bump version and update release log."
+              just bump-skip-ci
+            displayName: "Bump version and push tags."
+
+          - script: |
+              poetry build
+            displayName: "Build Python Package with Poetry"
+            condition: eq(variables['getChangedFiles.app_changes'], 'true')
+
+          - task: TwineAuthenticate@1
+            inputs:
+              artifactFeed: "$(ARTIFACT_FEED)"
+            displayName: "Twine Authenticate"
+
+          - script: |
+              poetry run python -m twine upload -r windermere_artifactory --config-file $(PYPIRC_PATH) dist/*
+            displayName: "Upload to artifactory feed"
 
       - job: ReleasePowerBI
         displayName: "Release Power BI Reports"
         steps:
+          # Set python environment...
+          - template: cicd/az-pipeline-env.yaml
+
           - script: |
-              echo "Deploy TMDL files to Power BI using pbi-tools"
-              # Add actual pbi-tools push logic
+              echo "Target branch: $(Build.SourceBranchName)"
+              if [ "$(Build.SourceBranchName)" = "development" ]; then
+                echo "##vso[task.setvariable variable=env]dev"
+              elif [ "$(Build.SourceBranchName)" = "uat" ]; then
+                echo "##vso[task.setvariable variable=env]uat"
+              elif [ "$(Build.SourceBranchName)" = "main" ]; then
+                echo "##vso[task.setvariable variable=env]prod"
+              elif [ "$(Build.SourceBranchName)" = "master" ]; then
+                echo "##vso[task.setvariable variable=env]prod"
+              elif [ "$(Build.SourceBranchName)" = "prod" ]; then
+                echo "##vso[task.setvariable variable=env]prod"
+              else
+                echo "##vso[task.setvariable variable=env]unknown"
+            displayName: "Determine Target Environment"
+
+          - script: |
+              poetry run pbi set-pipeline-variables ${env}
+              git commit -v -a --no-edit --amend
+              displayname: "Set Pipeline variables to env default"
+
+          - script: |
+              poetry run pbi sync-workspace-git --env ${env}
+            displayName: "Sync with Power BI workspace"
+            env:
+              API_PASSWORD: $(API_PASSWORD)
+              API_USERNAME: $(API_USERNAME)
+              CLIENT_ID: $(CLIENT_ID)
+              CLIENT_SECRET: $(CLIENT_SECRET)
