@@ -62,7 +62,6 @@ stages:
           - script: |
               just bump-dry
             displayName: "Test bump version"
-
           - script: |
               just check-ruff
             displayName: "Run Ruff checks"
@@ -153,7 +152,7 @@ stages:
           - script: |
               poetry run pbi set-pipeline-variables $(env)
               git commit -v -a --no-edit --amend
-              displayName: "Set Pipeline variables to env default"
+            displayName: "Set Pipeline variables to env default"
 
           - script: |
               poetry run pbi sync-workspace-git --env $(env)
