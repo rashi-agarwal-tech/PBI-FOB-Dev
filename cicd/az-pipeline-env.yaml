@@ -14,3 +14,21 @@ steps:
       pip install rust-just
       just install-poetry
     displayName: "Install Python requirements with Poetry"
+
+  - script: |
+      echo "Build reason: $(Build.Reason)"
+      if [ "$(Build.Reason)" = "PullRequest" ]; then
+        echo "##vso[task.setvariable variable=TargetBranch]$(basename $(System.PullRequest.TargetBranch))"
+        echo "##vso[task.setvariable variable=SourceBranch]$(basename $(System.PullRequest.SourceBranch))"
+      else
+        echo "##vso[task.setvariable variable=TargetBranch]$(basename $(Build.SourceBranch))"
+        echo "##vso[task.setvariable variable=SourceBranch]$(basename $(Build.SourceBranch))"
+      fi
+      echo "SourceBranch: $(SourceBranch)"
+      echo "TartgetBranch: $(TargetBranch)"
+    displayName: "Set target branch variable"
+    name: Branch
+
+  - script: |
+      just git-config $(TargetBranch)
+    displayName: "Configure git to use service account"

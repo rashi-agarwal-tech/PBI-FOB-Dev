@@ -7,5 +7,3 @@ All of the DMA Power BI dataset reside in this repository. The repository is aut
 # Contribute
 
 Just adding some data to trigger a pipeline run....
-Testing a powerbi change.
-

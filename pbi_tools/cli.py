@@ -559,38 +559,7 @@ def sync_workspace_git(env: str = "dev"):
 
 if __name__ == "__main__":
     app()
-    # refresh_d2c_availability_partition("dev", current=False)
-    # swap_partitions(original=False)
-    # partitions()
-    # status_all()
-    # TODO Parameters, set number of row if exists to some number!
-    # TODO Can we ensure that "Large semantic model storage format" is on...
-    # TODO Can we get a list of tables / objects in a dataset? Only via dax, permissions.
-    # TODO Add logic to look for advanced refresh and return detailed refresh as well.
-    # TODO View and set Parameters. Permissions issue?
-    # TODO Set / ensure {
+    # TODO: Can we ensure that "Large semantic model storage format" is on...
+    # TODO: Set / ensure {
     #   "targetStorageMode": "PremiumFiles"
     # }  PATCH https://api.powerbi.com/v1.0/myorg/groups/{groupId}/datasets/{datasetId}
-    # TODO Can we create a partition, test with datasets url and body...
-    # TODO if we can do above, how to automate creation of these partitions
-    # TODO Can we view partitions?
-    # TODO Add logging.....
-
-
-# Get Partitions, execute DAX
-#     select * from $system.TMSCHEMA_PARTITIONS
-# where mode = 2;
-# get tables via dax
-#     select * from $system.DBSCHEMA_TABLES
-# where table_type = 'TABLE';
-
-# Can you create a partition with dax? Does not look like it....
-
-
-# Parameters that need to be set dynamically.
-# env = "prod"
-
-# NumberOfRows = 0
-# Datasource_Server = f"drmartens{env}.west-europe.azure.snowflakecomputing.com"
-# Datasource_Warehouse = "REPORTER"
-# COUNTROWS('Orders')

@@ -21,7 +21,6 @@ variables:
 stages:
   # --- CI Stage: Runs only on PRs ---
   - stage: Check
-    condition: eq(variables['Build.Reason'], 'PullRequest')
     displayName: "CI - Run Checks on PR"
     jobs:
       - job: DetectChanges
@@ -31,17 +30,19 @@ stages:
           - template: cicd/az-pipeline-env.yaml
 
           - script: |
-              just git-config $(basename $(System.PullRequest.TargetBranch))
+              just git-config $(TargetBranch)
             displayName: "Configure git to use service account"
 
           - script: |
               echo "Checking for PR changes..."
-              changes=$(just files-changed $(basename $(System.PullRequest.TargetBranch)))
+              changes=$(just files-changed $(TargetBranch))
               echo "The follow file changes where detected:\n $changes"
               APP_CHANGES="$(echo "$changes" | grep -q "Application" && echo "true" || echo "false")"
               PBI_CHANGES="$(echo "$changes" | grep -q "Report" && echo "true" || echo "false")"
               echo "##vso[task.setvariable variable=app_changes;isOutput=true]$APP_CHANGES"
               echo "##vso[task.setvariable variable=pbi_changes;isOutput=true]$PBI_CHANGES"
+              echo "Application Changes: $APP_CHANGES"
+              echo "Report Changes: $PBI_CHANGES"
             displayName: "Check File Changes"
             name: Changes
 
@@ -54,12 +55,9 @@ stages:
           - template: cicd/az-pipeline-env.yaml
 
           - script: |
-              just git-config $(basename $(System.PullRequest.TargetBranch))
-            displayName: "Configure git to use service account"
-
-          - script: |
-              just cz-check $(basename $(System.PullRequest.TargetBranch))
+              just cz-check $(TargetBranch)
             displayName: "Check new commits follow conventional commits."
+            condition: eq(variables['Build.Reason'], 'PullRequest')
 
           - script: |
               just bump-dry
@@ -108,16 +106,15 @@ stages:
               else
                 echo "$result"
               fi
-            displayName: "check multi partitions"
+            displayName: "Check multi partitions"
 
   - stage: Release
-    dependsOn: []
     condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
     displayName: "CD - Deploy After Merge"
     jobs:
       - job: DeployPBIApp
         displayName: "Release Power BI Python App"
-        condition: and(eq(variables['Build.SourceBranchName'], 'development'), eq(dependencies.DetectChanges.outputs['Changes.app_changes'], 'true'))
+        condition: and(eq(variables['Build.SourceBranchName'], 'development'), eq(stageDependencies.Check.DetectChanges.outputs['Changes.app_changes'], 'true'))
         steps:
           # Set python environment...
           - template: cicd/az-pipeline-env.yaml
@@ -130,7 +127,6 @@ stages:
           - script: |
               poetry build
             displayName: "Build Python Package with Poetry"
-            condition: eq(variables['getChangedFiles.app_changes'], 'true')
 
           - task: TwineAuthenticate@1
             inputs:
@@ -143,7 +139,7 @@ stages:
 
       - job: ReleasePowerBI
         displayName: "Release Power BI Reports"
-        condition: eq(dependencies.DetectChanges.outputs['Changes.pbi_changes'], 'true')
+        condition: eq(stageDependencies.Check.DetectChanges.outputs['Changes.pbi_changes'], 'true')
         steps:
           # Set python environment...
           - template: cicd/az-pipeline-env.yaml

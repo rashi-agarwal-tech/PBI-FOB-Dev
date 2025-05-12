@@ -75,7 +75,8 @@ push-tags:
 files-changed branch:
     #!/usr/bin/env bash
     git fetch origin {{ branch }} > /dev/null 2>&1
-    git diff --name-only {{ branch }} HEAD > changed_files.txt
+    git diff --name-only {{ branch }}...HEAD > changed_files.txt
+    git diff --name-only $(git merge-base HEAD HEAD~1) HEAD >> changed_files.txt
     CHANGED_FILES=$(paste -sd " " changed_files.txt)
     if [[ "$CHANGED_FILES" == *"powerbi/"* ]]; then
     echo "Power BI Report Changes Detected"
