@@ -145,18 +145,18 @@ stages:
           - template: cicd/az-pipeline-env.yaml
 
           - script: |
-              $env=$(just get-env $(basename $(Build.SourceBranchName)))
+              env=$(just get-env $(basename $(Build.SourceBranchName)))
               echo "Target Branch: $env"
               echo "##vso[task.setvariable variable=env]$env"
             displayName: "Determine Target Environment"
 
           - script: |
-              poetry run pbi set-pipeline-variables ${env}
+              poetry run pbi set-pipeline-variables $(env)
               git commit -v -a --no-edit --amend
-              displayname: "Set Pipeline variables to env default"
+              displayName: "Set Pipeline variables to env default"
 
           - script: |
-              poetry run pbi sync-workspace-git --env ${env}
+              poetry run pbi sync-workspace-git --env $(env)
             displayName: "Sync with Power BI workspace"
             env:
               API_PASSWORD: $(API_PASSWORD)
