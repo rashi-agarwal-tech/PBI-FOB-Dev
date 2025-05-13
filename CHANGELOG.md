@@ -1,3 +1,9 @@
+## v0.8.1 (2025-05-13)
+
+### Fix
+
+- **[FP-2533](https://drmartens.atlassian.net/browse/FP-2533)**: fix pbi git sync when no changed to sync back to git [11ccd](https://github.com//https://projectreboot.visualstudio.com/Windermere%20Discovery/_git/windermere_powerbi/commit/11ccd08d6140019c3daa447e0604c4785737da5e)
+
 ## v0.8.0 (2025-05-12)
 
 ### Feat
