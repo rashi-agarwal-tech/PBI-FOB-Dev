@@ -1,13 +1,15 @@
-from pbi_tools.api.requester import MSApi
 from dataclasses import dataclass
-from requests import Response
-from pbi_tools.utils.constants import FABRIC_BASE_URL, ENV
-from pbi_tools.api.workspace import get_workspace_id
-from pydantic import BaseModel, Field, ConfigDict
-from typing import List, Annotated, TypeAlias, Literal
 from datetime import datetime
-from pbi_tools.api.models import ExportStatus
 from time import sleep
+from typing import Annotated, List, Literal, TypeAlias
+
+from pydantic import BaseModel, ConfigDict, Field
+from requests import Response
+
+from pbi_tools.api.models import ExportStatus
+from pbi_tools.api.requester import MSApi
+from pbi_tools.api.workspace import get_workspace_id
+from pbi_tools.utils.constants import ENV, FABRIC_BASE_URL
 
 
 class ItemIdentifier(BaseModel):
@@ -39,12 +41,22 @@ CommitMode: TypeAlias = Literal["All", "Selective"]
 
 
 class WorkspaceConflictResolution(BaseModel):
-    conflictResolutionType: str = ("Workspace",)
+    conflictResolutionType: str = "Workspace"
     conflictResolutionPolicy: conflictResolutionPolicy
 
 
 class UpdateOptions(BaseModel):
     allowOverrideItems: bool = True
+
+    #
+    # @model_serializer(mode="plain")
+    # def serialize_model(self):
+    #     # Convert booleans to lowercase strings
+    #     return {
+    #         key: "true" if value is True else "false" if value is False else value
+    #         for key, value in self.__dict__.items()
+    #     }
+    #
 
 
 class UpdateFromGitRequest(BaseModel):
@@ -143,52 +155,61 @@ class MSApiFabric(MSApi):
                 f"No changes to be synced from git {self.workspace_env} branch or conflicts exist"
             )
             return git_sts
-        print(f"Updating {self.workspace_env} workspace changes from git")
         return self.post_request(
             f"{self.get_git_url}/updateFromGit",
-            body=self.get_workspace_to_git_body(git_sts),
+            body=self.update_from_git_body(git_sts),
         )
 
     def commit_workspace_to_git(self, git_sts: GitStatusResponse | None = None):
         if git_sts is None:
             git_sts = self.get_git_status()
-        if not git_sts.changes or any(
-            [c for c in git_sts.changes if c.conflictType != "None"]
+        if (
+            not git_sts.changes
+            or any([c for c in git_sts.changes if c.conflictType != "None"])
+            or any([c.workspaceChange is None for c in git_sts.changes])
         ):
             print("No changes to be made or conflicts exist")
             return git_sts
         print(f"Committing {self.workspace_env} workspace changes to git")
+        print(self.commit_to_git_body(git_sts))
         return self.post_request(
             f"{self.get_git_url}/commitToGit",
-            body=self.get_workspace_to_git_body(git_sts),
+            body=self.commit_to_git_body(git_sts),
         )
 
-    def get_workspace_from_git_body(self, git_sts: GitStatusResponse | None = None):
+    def update_from_git_body(self, git_sts: GitStatusResponse | None = None):
         if git_sts is None:
             git_sts = self.get_git_status()
         return UpdateFromGitRequest(
-            git_sts.workspaceHead,
-            git_sts.remoteCommitHash,
-            WorkspaceConflictResolution(conflictResolutionPolicy="PreferRemote"),
-            UpdateOptions(),
+            workspaceHead=git_sts.workspaceHead,
+            remoteCommitHash=git_sts.remoteCommitHash,
+            conflictResolution=WorkspaceConflictResolution(
+                conflictResolutionPolicy="PreferRemote"
+            ),
+            options=UpdateOptions(),
         ).model_dump()
 
-    def get_workspace_to_git_body(self, git_sts: GitStatusResponse | None = None):
+    def commit_to_git_body(self, git_sts: GitStatusResponse | None = None):
         if git_sts is None:
             git_sts = self.get_git_status()
-        if git_sts.changes:
-            print(git_sts)
-            changes_msg = "\n".split(
-                [
-                    f"{c.workspaceChange}:{c.itemMetadata.itemType}, {c.itemMetadata.displayName}"
-                    for c in git_sts.changes
-                ]
+        if git_sts.changes is not None:
+            workspace_change = any(
+                [c.workspaceChange is not None for c in git_sts.changes]
             )
-            return CommitToGitRequest(
-                mode="All",
-                workspaceHead=git_sts.workspaceHead,
-                comment=f"feat: synced changes from workspace\n\n{changes_msg}",
-            ).model_dump()
+            print(f"Workspace Chnages: {workspace_change}")
+            if workspace_change:
+                print("Workspace changes detected.")
+                changes_msg = "\n".join(
+                    [
+                        f"{c.workspaceChange}:{c.itemMetadata.itemType}, {c.itemMetadata.displayName}"
+                        for c in git_sts.changes
+                    ]
+                )
+                return CommitToGitRequest(
+                    mode="All",
+                    workspaceHead=git_sts.workspaceHead,
+                    comment=f"feat: synced changes from workspace\n\n{changes_msg}",
+                ).model_dump()
 
     def sync_workspace_git(self):
         print(self.commit_workspace_to_git())

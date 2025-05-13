@@ -47,6 +47,7 @@ class MSApi(ABC):
     def post_request(self, url: str, body={}, parse_response: bool = True):
         headers = self.token.get_auth_header()
         print(f"POST: {url}")
+        print(f"Body: {body}")
         r = requests.post(url=url, headers=headers, json=body)
         return self.parse_response(r) if parse_response else r
 
