@@ -28,7 +28,7 @@ bump-version:
 bump-skip-ci:
     just bump-version
     just push-tags
-    just add-skip-ci
+    just add-skip-ci development
 
 git-config branch:
   echo "Fetching Target Branch: {{branch}}"
@@ -38,13 +38,13 @@ git-config branch:
   git config --global user.email "azuredevops@drmartens.com"
   git config --global user.name "Azure Devops PBI"
   
-add-skip-ci:
+add-skip-ci branch:
     #!/usr/bin/env bash
     current_message=$(git log -1 --pretty=%B)
     new_message="${current_message} [skip ci]"
     echo "New commit message: ${new_message}"
     git commit --amend -m "$new_message"
-    git push origin HEAD:development --force-with-lease
+    git push origin HEAD:{{ branch }} --force-with-lease
 
 bump:
     just bump-dry

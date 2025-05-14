@@ -43,7 +43,7 @@ def extract_fields(date: datetime = datetime.now(), delta_days: int = 0) -> list
                     row["Suboperation - Query[Start Date/Time]"][0:14] + "00:00",
                 ]
                 + re.findall(
-                    "\[[^\]]+\]\.\[[^\]]+\]", row["Suboperation - Query[EventText]"]
+                    r"\[[^\]]+\]\.\[[^\]]+\]", row["Suboperation - Query[EventText]"]
                 )
                 for row in data["results"][0]["tables"][0]["rows"]
             ]
@@ -55,7 +55,7 @@ def extract_fields(date: datetime = datetime.now(), delta_days: int = 0) -> list
                         (
                             row[0],
                             row[1],
-                            *re.sub("\ \(\d+\)", "", column).split("."),
+                            *re.sub(r"\ \(\d+\)", "", column).split("."),
                             row[2],
                         )
                         for row in rows

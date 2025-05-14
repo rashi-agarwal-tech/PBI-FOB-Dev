@@ -196,7 +196,7 @@ class MSApiFabric(MSApi):
             workspace_change = any(
                 [c.workspaceChange is not None for c in git_sts.changes]
             )
-            print(f"Workspace Chnages: {workspace_change}")
+            print(f"Workspace Changes: {workspace_change}")
             if workspace_change:
                 print("Workspace changes detected.")
                 changes_msg = "\n".join(
@@ -208,7 +208,7 @@ class MSApiFabric(MSApi):
                 return CommitToGitRequest(
                     mode="All",
                     workspaceHead=git_sts.workspaceHead,
-                    comment=f"feat: synced changes from workspace\n\n{changes_msg}",
+                    comment=f"feat: synced changes from workspace\n\n{changes_msg}\n[skip ci]",
                 ).model_dump()
 
     def sync_workspace_git(self):
