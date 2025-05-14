@@ -29,6 +29,7 @@ app = typer.Typer()
 console = Console()
 
 
+# Added a comment to generat a change for a pipeline test.
 def chunks(data, size=10000):
     it = iter(data)
     for _ in range(0, len(data), size):

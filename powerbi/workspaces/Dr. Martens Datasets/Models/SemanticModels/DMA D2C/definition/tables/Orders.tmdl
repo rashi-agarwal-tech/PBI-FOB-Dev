@@ -3,11 +3,14 @@ table Orders
 
 	column Product_Key
 		dataType: string
+		isHidden
 		sourceProviderType: nvarchar(32)
 		displayFolder: zz_Keys
 		lineageTag: 5f6505e7-b3aa-4617-a68c-849806c50f35
 		summarizeBy: none
 		sourceColumn: Product_Key
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
