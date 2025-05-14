@@ -31,7 +31,7 @@ console = Console()
 
 def chunks(data, size=10000):
     it = iter(data)
-    for i in range(0, len(data), size):
+    for _ in range(0, len(data), size):
         yield {k: data[k] for k in islice(it, size)}
 
 
