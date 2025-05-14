@@ -1,3 +1,10 @@
+## v0.8.2 (2025-05-14)
+
+### Fix
+
+- **[FP-2533](https://drmartens.atlassian.net/browse/FP-2533)**: non destructive changes to pbi to test pipeline [b0325](https://github.com//https://projectreboot.visualstudio.com/Windermere%20Discovery/_git/windermere_powerbi/commit/b0325a6622dbaf7186d0bc2666161589f3348f40)
+- **[FP-2533](https://drmartens.atlassian.net/browse/FP-2533)**: non destructive changes to pbi to test pipeline [709d0](https://github.com//https://projectreboot.visualstudio.com/Windermere%20Discovery/_git/windermere_powerbi/commit/709d0575491793e53d35cec954607a5736b0c292)
+
 ## v0.8.1 (2025-05-13)
 
 ### Fix
