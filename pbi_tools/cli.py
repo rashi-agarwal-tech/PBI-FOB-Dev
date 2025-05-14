@@ -10,6 +10,7 @@ from rich.table import Table, box
 from rich.text import Text
 from typing_extensions import Annotated
 
+from pbi_tools import pbi
 from pbi_tools import tmdl
 from pbi_tools.api.auth import MSAuthToken, get_token, get_user_token
 from pbi_tools.api.dataset import MSApiDataset
@@ -29,7 +30,6 @@ app = typer.Typer()
 console = Console()
 
 
-# Added a comment to generate a change for a pipeline test.
 def chunks(data, size=10000):
     it = iter(data)
     for _ in range(0, len(data), size):
@@ -543,7 +543,7 @@ def get_parameters(dataset: str, env: str = "dev"):
 
 @app.command()
 def validate_parameters(dataset: str, env: str = "dev") -> str:
-    tmdl.validate_parameters(dataset, env)
+    pbi.validate_parameters(dataset, env)
 
 
 @app.command()

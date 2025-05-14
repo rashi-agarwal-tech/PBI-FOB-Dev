@@ -28,12 +28,12 @@ bump-version:
 bump-skip-ci:
     just bump-version
     just push-tags
-    just add-skip-ci development
+    just add-skip-ci "development"
 
 git-config branch:
   echo "Fetching Target Branch: {{branch}}"
   git fetch origin {{branch}}
-  git pull origin {{branch}}:{{branch}}
+  git pull --rebase origin {{branch}}:{{branch}}
   echo "Set git user name and email to azuredevops"
   git config --global user.email "azuredevops@drmartens.com"
   git config --global user.name "Azure Devops PBI"

@@ -30,10 +30,6 @@ stages:
           - template: cicd/az-pipeline-env.yaml
 
           - script: |
-              just git-config $(TargetBranch)
-            displayName: "Configure git to use service account"
-
-          - script: |
               echo "Checking for PR changes..."
               changes=$(just files-changed $(TargetBranch))
               echo "The follow file changes where detected:\n $changes"
