@@ -131,7 +131,7 @@ stages:
 
           - script: |
               poetry run pbi set-pipeline-variables $(env)
-              just add-skip-ci $(env)
+              just add-skip-ci $(branch)
             displayName: "Set Pipeline variables to env default"
 
           - script: |
