@@ -217,9 +217,9 @@ table ga
 			
 			IF
 			(
-			    SUM(ga[GA Ads Cost Diff])=0
+			    ROUND(SUM(ga[GA Ads Cost Diff]),2)=0
 			    ,BLANK()
-			    ,SUM(ga[GA Ads Cost Diff])
+			    ,ROUND(SUM(ga[GA Ads Cost Diff]),2)
 			)
 		formatString: #,0.00
 		lineageTag: faf4f9bc-ac15-43d7-b052-03b6dcb56a01
@@ -1341,9 +1341,9 @@ table ga
 				        ,"GA Units",[GA Units]
 				        ,"Users",[Users]
 				        ,"New Users",[New Users]
-				        ,"Web Value",ROUND([Web Value],2)
+				        ,"Web Value",[Web Value]
 				        ,"GA Ads Impressions",[GA Ads Impressions]
-				        ,"GA Ads Cost",ROUND([GA Ads Cost],2)
+				        ,"GA Ads Cost",[GA Ads Cost]
 				        ,"GA Goal 01 Completion",[GA Goal 01 Completion]
 				        ,"GA Goal 02 Completion",[GA Goal 02 Completion]
 				        ,"GA Goal 03 Completion",[GA Goal 03 Completion]
@@ -1377,9 +1377,9 @@ table ga
 				        ,"GA Units",[GA Units 2]
 				        ,"Users",[Users 2]
 				        ,"New Users",[New Users 2]
-				        ,"Web Value",ROUND([Web Value 2],2)
+				        ,"Web Value",[Web Value 2]
 				        ,"GA Ads Impressions",[GA Ads Impressions 2]
-				        ,"GA Ads Cost",ROUND([GA Ads Cost 2],2)
+				        ,"GA Ads Cost",[GA Ads Cost 2]
 				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 2]
 				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 2]
 				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 2]
@@ -1413,9 +1413,9 @@ table ga
 				        ,"GA Units",[GA Units 3]
 				        ,"Users",[Users 3]
 				        ,"New Users",[New Users 3]
-				        ,"Web Value",ROUND([Web Value 3],2)
+				        ,"Web Value",[Web Value 3]
 				        ,"GA Ads Impressions",[GA Ads Impressions 3]
-				        ,"GA Ads Cost",ROUND([GA Ads Cost 3],2)
+				        ,"GA Ads Cost",[GA Ads Cost 3]
 				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 3]
 				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 3]
 				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 3]
@@ -1451,9 +1451,9 @@ table ga
 				        ,"GA Units",[GA Units]
 				        ,"Users",[Users]
 				        ,"New Users",[New Users]
-				        ,"Web Value",ROUND([Web Value],2)
+				        ,"Web Value",[Web Value]
 				        ,"GA Ads Impressions",[GA Ads Impressions]
-				        ,"GA Ads Cost",ROUND([GA Ads Cost],2)
+				        ,"GA Ads Cost",[GA Ads Cost]
 				        ,"GA Goal 01 Completion",[GA Goal 01 Completion]
 				        ,"GA Goal 02 Completion",[GA Goal 02 Completion]
 				        ,"GA Goal 03 Completion",[GA Goal 03 Completion]
@@ -1487,9 +1487,9 @@ table ga
 				        ,"GA Units",[GA Units 2]
 				        ,"Users",[Users 2]
 				        ,"New Users",[New Users 2]
-				        ,"Web Value",ROUND([Web Value 2],2)
+				        ,"Web Value",[Web Value 2]
 				        ,"GA Ads Impressions",[GA Ads Impressions 2]
-				        ,"GA Ads Cost",ROUND([GA Ads Cost 2],2)
+				        ,"GA Ads Cost",[GA Ads Cost 2]
 				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 2]
 				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 2]
 				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 2]
@@ -1523,9 +1523,9 @@ table ga
 				        ,"GA Units",[GA Units 3]
 				        ,"Users",[Users 3]
 				        ,"New Users",[New Users 3]
-				        ,"Web Value",ROUND([Web Value 3],2)
+				        ,"Web Value",[Web Value 3]
 				        ,"GA Ads Impressions",[GA Ads Impressions 3]
-				        ,"GA Ads Cost",ROUND([GA Ads Cost 3],2)
+				        ,"GA Ads Cost",[GA Ads Cost 3]
 				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 3]
 				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 3]
 				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 3]
@@ -1561,9 +1561,9 @@ table ga
 				        ,"GA Units",[GA Units]
 				        ,"Users",[Users]
 				        ,"New Users",[New Users]
-				        ,"Web Value",ROUND([Web Value],2)
+				        ,"Web Value",[Web Value]
 				        ,"GA Ads Impressions",[GA Ads Impressions]
-				        ,"GA Ads Cost",ROUND([GA Ads Cost],2)
+				        ,"GA Ads Cost",[GA Ads Cost]
 				        ,"GA Goal 01 Completion",[GA Goal 01 Completion]
 				        ,"GA Goal 02 Completion",[GA Goal 02 Completion]
 				        ,"GA Goal 03 Completion",[GA Goal 03 Completion]
@@ -1597,9 +1597,9 @@ table ga
 				        ,"GA Units",[GA Units 2]
 				        ,"Users",[Users 2]
 				        ,"New Users",[New Users 2]
-				        ,"Web Value",ROUND([Web Value 2],2)
+				        ,"Web Value",[Web Value 2]
 				        ,"GA Ads Impressions",[GA Ads Impressions 2]
-				        ,"GA Ads Cost",ROUND([GA Ads Cost 2],2)
+				        ,"GA Ads Cost",[GA Ads Cost 2]
 				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 2]
 				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 2]
 				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 2]
@@ -1633,9 +1633,9 @@ table ga
 				        ,"GA Units",[GA Units 3]
 				        ,"Users",[Users 3]
 				        ,"New Users",[New Users 3]
-				        ,"Web Value",ROUND([Web Value 3],2)
+				        ,"Web Value",[Web Value 3]
 				        ,"GA Ads Impressions",[GA Ads Impressions 3]
-				        ,"GA Ads Cost",ROUND([GA Ads Cost 3],2)
+				        ,"GA Ads Cost",[GA Ads Cost 3]
 				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 3]
 				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 3]
 				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 3]
@@ -1671,9 +1671,9 @@ table ga
 				        ,"GA Units",[GA Units]
 				        ,"Users",[Users]
 				        ,"New Users",[New Users]
-				        ,"Web Value",ROUND([Web Value],2)
+				        ,"Web Value",[Web Value]
 				        ,"GA Ads Impressions",[GA Ads Impressions]
-				        ,"GA Ads Cost",ROUND([GA Ads Cost],2)
+				        ,"GA Ads Cost",[GA Ads Cost]
 				        ,"GA Goal 01 Completion",[GA Goal 01 Completion]
 				        ,"GA Goal 02 Completion",[GA Goal 02 Completion]
 				        ,"GA Goal 03 Completion",[GA Goal 03 Completion]
@@ -1707,9 +1707,9 @@ table ga
 				        ,"GA Units",[GA Units 2]
 				        ,"Users",[Users 2]
 				        ,"New Users",[New Users 2]
-				        ,"Web Value",ROUND([Web Value 2],2)
+				        ,"Web Value",[Web Value 2]
 				        ,"GA Ads Impressions",[GA Ads Impressions 2]
-				        ,"GA Ads Cost",ROUND([GA Ads Cost 2],2)
+				        ,"GA Ads Cost",[GA Ads Cost 2]
 				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 2]
 				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 2]
 				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 2]
@@ -1743,9 +1743,9 @@ table ga
 				        ,"GA Units",[GA Units 3]
 				        ,"Users",[Users 3]
 				        ,"New Users",[New Users 3]
-				        ,"Web Value",ROUND([Web Value 3],2)
+				        ,"Web Value",[Web Value 3]
 				        ,"GA Ads Impressions",[GA Ads Impressions 3]
-				        ,"GA Ads Cost",ROUND([GA Ads Cost 3],2)
+				        ,"GA Ads Cost",[GA Ads Cost 3]
 				        ,"GA Goal 01 Completion",[GA Goal 01 Completion 3]
 				        ,"GA Goal 02 Completion",[GA Goal 02 Completion 3]
 				        ,"GA Goal 03 Completion",[GA Goal 03 Completion 3]
