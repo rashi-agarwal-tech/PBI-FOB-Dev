@@ -170,7 +170,7 @@ class MSApiFabric(MSApi):
         ):
             print("No changes to be made or conflicts exist")
             return git_sts
-        print(f"Committing {self.workspace_env} workspace changes to git")
+        print(f"chore: Committing {self.workspace_env} workspace changes to git")
         print(self.commit_to_git_body(git_sts))
         return self.post_request(
             f"{self.get_git_url}/commitToGit",

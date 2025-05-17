@@ -15,6 +15,7 @@ from pbi_tools import tmdl
 from pbi_tools.api.auth import MSAuthToken, get_token, get_user_token
 from pbi_tools.api.dataset import MSApiDataset
 from pbi_tools.api.git import MSApiFabric
+from pbi_tools.api.workspace import MSApiWorkspace
 from pbi_tools.api.xmla import PowerBIDaxQuery, PowerBIParameters
 from pbi_tools.dax.query import get_event_query
 from pbi_tools.partitions import partition_utils
@@ -448,6 +449,12 @@ def get_status(
 @app.command()
 def status_all(env: str = "dev", table=True):
     pass
+
+
+@app.command()
+def get_workspace_datasets(env: str = "dev"):
+    ws = MSApiWorkspace(token=get_token(), workspace_env=env)
+    print(ws.get_workspace_datasets())
 
 
 def get_status_all(
