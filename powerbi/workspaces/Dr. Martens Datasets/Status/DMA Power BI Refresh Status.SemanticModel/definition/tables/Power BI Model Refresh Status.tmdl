@@ -52,9 +52,12 @@ table 'Power BI Model Refresh Status'
 		dataType: dateTime
 		formatString: dd/mm/yyyy hh:nn:ss
 		lineageTag: fb7ffbea-ce7e-436a-834c-88282ecba979
+		summarizeBy: none
 		sourceColumn: Model Refresh Status DT (UTC)
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+		annotation SummarizationSetBy = Automatic
 
 	column 'Model Refresh Status Time (UTC)'
 		dataType: dateTime
@@ -71,14 +74,20 @@ table 'Power BI Model Refresh Status'
 		dataType: dateTime
 		formatString: dd/mm/yyyy hh:nn:ss
 		lineageTag: 09a4dbe5-47a4-4101-bcb7-2bdf72c7e0db
+		summarizeBy: none
 		sourceColumn: Airflow DAG Start DT (UTC)
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
+		annotation SummarizationSetBy = Automatic
+
 	column 'Model Refresh Status'
 		dataType: string
 		lineageTag: 4675c7a7-324c-4d74-888d-73f5dda5db97
+		summarizeBy: none
 		sourceColumn: Model Refresh Status
+
+		annotation SummarizationSetBy = Automatic
 
 	column 'Model Status Order Number'
 		dataType: double
@@ -92,7 +101,7 @@ table 'Power BI Model Refresh Status'
 		annotation SummarizationSetBy = User
 
 	column 'Model Status Refresh Order Number'
-		dataType: double
+		dataType: string
 		isHidden
 		lineageTag: 8cd37586-8b29-4c55-8173-32fda6823904
 		summarizeBy: none
@@ -100,7 +109,9 @@ table 'Power BI Model Refresh Status'
 
 		changedProperty = IsHidden
 
-		annotation SummarizationSetBy = User
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
 
 	column 'Model Refresh Start Time (UTC)'
 		dataType: dateTime
@@ -114,33 +125,50 @@ table 'Power BI Model Refresh Status'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Region Refresh Number'
-		dataType: double
+		dataType: int64
 		formatString: 0
 		lineageTag: 7c8fe75c-2015-4694-a57c-8d615712d48f
 		summarizeBy: none
 		sourceColumn: Region Refresh Number
+
+		changedProperty = DataType
 
 		annotation SummarizationSetBy = User
 
 	column 'Airflow Scheudle Id'
 		dataType: string
 		lineageTag: 131e563d-3bbf-4c68-802b-4ca66afce0b0
+		summarizeBy: none
 		sourceColumn: Airflow Scheudle Id
+
+		annotation SummarizationSetBy = Automatic
 
 	column Environment
 		dataType: string
 		lineageTag: bc409fc3-80f8-42c0-9b8e-ac35672f3f83
+		summarizeBy: none
 		sourceColumn: Environment
+		sortByColumn: EnvironmentOrder
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
 
 	column 'Model Name'
 		dataType: string
 		lineageTag: 8c54e148-717f-4235-81db-4023ea965c61
+		summarizeBy: none
 		sourceColumn: Model Name
+
+		annotation SummarizationSetBy = Automatic
 
 	column Region
 		dataType: string
 		lineageTag: d4d714c0-8f42-4beb-a5c6-e6b587e78d4a
+		summarizeBy: none
 		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
 
 	column 'SLA Time (Local)'
 		dataType: dateTime
@@ -175,36 +203,51 @@ table 'Power BI Model Refresh Status'
 	column 'Environment Short'
 		dataType: string
 		lineageTag: 4b434f02-b827-4657-bce8-aa3d50f0d989
+		summarizeBy: none
 		sourceColumn: Environment Short
+
+		annotation SummarizationSetBy = Automatic
 
 	column 'SLA DT (Local)'
 		dataType: dateTime
 		formatString: dd/mm/yyyy hh:nn:ss
 		lineageTag: ea7c4c15-c074-4b20-b56c-e0554175d07c
+		summarizeBy: none
 		sourceColumn: SLA DT (Local)
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+		annotation SummarizationSetBy = Automatic
 
 	column 'Model Refresh Status DT (Local)'
 		dataType: dateTime
 		formatString: dd/mm/yyyy hh:nn:ss
 		lineageTag: 91690ca7-3ab2-48f9-8e56-d0149fb5a2b8
+		summarizeBy: none
 		sourceColumn: Model Refresh Status DT (Local)
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
+		annotation SummarizationSetBy = Automatic
+
 	column 'Refresh Local Time Zone'
 		dataType: string
 		lineageTag: 75efd643-2d24-46e7-adb9-defd9568c933
+		summarizeBy: none
 		sourceColumn: Refresh Local Time Zone
+
+		annotation SummarizationSetBy = Automatic
 
 	column 'Airflow DAG Start DT (Local)'
 		dataType: dateTime
 		formatString: dd/mm/yyyy hh:nn:ss
 		lineageTag: b6ab2731-c2f7-454f-a960-f13023063d8c
+		summarizeBy: none
 		sourceColumn: Airflow DAG Start DT (Local)
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+		annotation SummarizationSetBy = Automatic
 
 	column 'Airflow DAG Start Date (Local)'
 		dataType: dateTime
@@ -216,6 +259,21 @@ table 'Power BI Model Refresh Status'
 		annotation UnderlyingDateTimeDataType = Date
 
 		annotation SummarizationSetBy = Automatic
+
+	column EnvironmentOrder = ```
+			
+			SWITCH([Environment Short],
+			    "dev", 1,
+			    "uat", 2,
+			    "prod", 3
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 9a6ca207-6c1f-43be-8438-77468915cd43
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
 
 	partition 'Power BI Refresh Status' = m
 		mode: import
