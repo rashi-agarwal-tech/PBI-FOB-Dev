@@ -32,13 +32,8 @@ table 'PO Daybook'
 		isHidden
 		sourceProviderType: nvarchar(16777216)
 		displayFolder: zz_Keys
-		lineageTag: c2910ec5-917d-40b0-a867-787be654ebcf
 		summarizeBy: none
-		sourceColumn: PONumberLine_Key
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
+		sourceColumn: 'Distributor PO Number Product Key' 
 
 	column OrderType_Key
 		dataType: string
