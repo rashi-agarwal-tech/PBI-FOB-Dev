@@ -27,14 +27,6 @@ table 'PO Daybook'
 
 		annotation SummarizationSetBy = Automatic
 
-	column PONumberLine_Key
-		dataType: string
-		isHidden
-		sourceProviderType: nvarchar(16777216)
-		displayFolder: zz_Keys
-		summarizeBy: none
-		sourceColumn: 'Distributor PO Number Product Key' 
-
 	column OrderType_Key
 		dataType: string
 		isHidden
@@ -2181,7 +2173,7 @@ table 'PO Daybook'
 			    )
 			)
 		lineageTag: 320ac2bf-80d0-4e3a-8bb6-8c4671fc6cde
-		summarizeBy: none
+		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic
 
@@ -3030,7 +3022,7 @@ table 'PO Daybook'
 		formatString: 0
 		displayFolder: ToBeRemovedGFF
 		lineageTag: 9b8d5ec4-7984-4a79-bda4-84cdf016ac8b
-		summarizeBy: sum
+		summarizeBy: none
 
 		changedProperty = IsHidden
 
@@ -3181,6 +3173,17 @@ table 'PO Daybook'
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Distributor PO Number Product Key'
+		dataType: string
+		isHidden
+		lineageTag: ca56ac12-050c-432b-a3a0-dfb7c51d869f
+		summarizeBy: none
+		sourceColumn: Distributor PO Number Product Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	partition 'PO Daybook' = m
 		mode: import

@@ -1,25 +1,23 @@
 table 'Purchase Orders'
 	lineageTag: ae51895a-4a4c-453f-a0fc-39c2d0b6c52a
 
-	column PONumberLine_Key 
-		dataType: string
-		isHidden
-		sourceProviderType: nvarchar(16777216)
-		displayFolder: zz_Misc
-		lineageTag: 3cb9dc4f-503d-4817-9803-e65e436b8706
-		summarizeBy: none
-		sourceColumn:'Distributor PO Number Product Key' 
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'PO Number'
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
 		lineageTag: 0a75026b-19ca-41c0-8f0f-a7d82c31bd6d
 		summarizeBy: none
 		sourceColumn: PO Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Distributor PO Number Product Key'
+		dataType: string
+		isHidden
+		lineageTag: 91139458-78f7-4b42-90d2-b00f1a1a9c04
+		summarizeBy: none
+		sourceColumn: Distributor PO Number Product Key
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

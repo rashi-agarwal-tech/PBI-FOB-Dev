@@ -2,11 +2,6 @@ relationship 26f6939a-e4b9-478e-a425-79bc54346bba
 	fromColumn: 'Construction Capacity'.Supplier_Key
 	toColumn: Supplier.Supplier_Key
 
-relationship 009b3aca-c462-4178-abfb-7c164cd9912c
-	crossFilteringBehavior: bothDirections
-	fromColumn: 'PO Details'.PONumberLine_Key
-	toColumn: 'Purchase Orders'.PONumberLine_Key
-
 relationship 8d0109d3-44bd-449e-8275-7693b535eaff
 	fromColumn: 'PO Details'.SizeCode
 	toColumn: Size.Size
@@ -40,11 +35,6 @@ relationship 19636650-079a-4829-8b8c-1ed4580d7a4b
 	fromColumn: 'PO Daybook'.Scheduled_Ex_Factory_Key
 	toColumn: 'Scheduled Ex-Factory Date'.'Date Key'
 
-relationship 3d74ce6d-af4d-4d22-955c-35162b0dd2fd
-	crossFilteringBehavior: bothDirections
-	fromColumn: 'PO Daybook'.PONumberLine_Key
-	toColumn: 'Purchase Orders'.PONumberLine_Key
-
 relationship 9a5c3b23-8f67-4a6c-b0f4-1bba43a60b22
 	fromColumn: 'PO Daybook'.Method_Key
 	toColumn: 'Shipment Method'.Shipment_Method_Key
@@ -74,11 +64,6 @@ relationship b836a001-a81a-4e77-9e51-4e8ed322095c
 	fromColumn: 'Construction Capacity'.Amended_StartDate_Key
 	toColumn: 'Scheduled Ex-Factory Date'.'Date Key'
 
-relationship b788d4a2-44b4-490a-8430-12b938d0da25
-	crossFilteringBehavior: bothDirections
-	fromColumn: 'Pack One'.PONumberLine_Key
-	toColumn: 'Purchase Orders'.PONumberLine_Key
-
 relationship c6ed95c6-ec29-4f13-b733-eeea60a8e552
 	fromColumn: 'PO Daybook'.Confirmed_Ex_Factory_Key
 	toColumn: 'Confirmed Ex-Factory Date'.'Date Key'
@@ -106,4 +91,21 @@ relationship b994a886-4b49-447d-8567-ad420158062f
 relationship 4aa7c772-fce2-4b02-85ce-2dd1eb646ae2
 	fromColumn: 'Pack One'.PackedDateKey
 	toColumn: 'Pack One Date'.'Date Key'
+
+relationship AutoDetected_0779419a-8a5e-4e41-b366-b57b7a645e07
+	fromColumn: 'PO Details'.'Distributor PO Number Product Key'
+	toColumn: 'Purchase Orders'.'Distributor PO Number Product Key'
+
+relationship AutoDetected_74123d09-c624-4bbb-b948-f27f7d6d3e9d
+	fromColumn: 'PO Details'.WAREHOUSE_KEY
+	toColumn: Warehouse.Warehouse_Key
+
+relationship AutoDetected_7dc8fac7-9670-4dda-a604-6432909fd998
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'PO Daybook'.'Distributor PO Number Product Key'
+	toColumn: 'Purchase Orders'.'Distributor PO Number Product Key'
+
+relationship AutoDetected_ddaea6fc-cceb-4a18-800f-54dbd1633228
+	fromColumn: 'Pack One'.'Distributor PO Number Product Key'
+	toColumn: 'Purchase Orders'.'Distributor PO Number Product Key'
 

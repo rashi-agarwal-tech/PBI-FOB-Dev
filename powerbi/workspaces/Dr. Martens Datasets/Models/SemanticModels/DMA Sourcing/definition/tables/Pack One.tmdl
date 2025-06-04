@@ -11,9 +11,7 @@ table 'Pack One'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Packed Date'
-		dataType: dateTime
-		formatString: Short Date
-		sourceProviderType: datetime2
+		dataType: string
 		lineageTag: 411e6ed3-4bb9-495e-beb6-d41f903c27b6
 		summarizeBy: none
 		sourceColumn: Packed Date
@@ -120,17 +118,6 @@ table 'Pack One'
 
 		annotation SummarizationSetBy = Automatic
 
-	column PONumberLine_Key
-		dataType: string
-		isHidden
-		lineageTag: 04802967-a9e0-4158-ae1b-2b0330455bd4
-		summarizeBy: none
-		sourceColumn: 'Distributor PO Number Product Key'
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column PackedDateKey
 		dataType: int64
 		isHidden
@@ -145,6 +132,17 @@ table 'Pack One'
 		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Distributor PO Number Product Key'
+		dataType: string
+		isHidden
+		lineageTag: b7ec3aba-b29c-4a91-aaef-42d0e6546d56
+		summarizeBy: none
+		sourceColumn: Distributor PO Number Product Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	partition 'Pack One' = m
 		mode: import

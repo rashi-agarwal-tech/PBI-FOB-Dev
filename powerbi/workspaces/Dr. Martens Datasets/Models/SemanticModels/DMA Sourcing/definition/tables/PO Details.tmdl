@@ -215,19 +215,6 @@ table 'PO Details'
 
 		annotation SummarizationSetBy = Automatic
 
-	column PONumberLine_Key
-		dataType: string
-		isHidden
-		sourceProviderType: nvarchar(16777216)
-		displayFolder: zz_Misc
-		lineageTag: 8a444879-1363-4fb7-8972-cafc943ed0a5
-		summarizeBy: none
-		sourceColumn: 'Distributor PO Number Product Key'
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	column UPC
 		dataType: string
 		sourceProviderType: nvarchar(16777216)
@@ -399,6 +386,25 @@ table 'PO Details'
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Distributor PO Number Product Key'
+		dataType: string
+		isHidden
+		lineageTag: ad805473-6d9c-4f0e-a5ad-d7705b272979
+		summarizeBy: none
+		sourceColumn: Distributor PO Number Product Key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column WAREHOUSE_KEY
+		dataType: string
+		lineageTag: 25ef4d7c-46b9-4392-89c9-a42483eeecba
+		summarizeBy: none
+		sourceColumn: WAREHOUSE_KEY
+
+		annotation SummarizationSetBy = Automatic
 
 	partition 'PO Details' = m
 		mode: import
