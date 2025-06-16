@@ -1,0 +1,770 @@
+table 'sourcing po number'
+	lineageTag: 9e3a5810-0f69-4045-8467-3dfc80a28863
+
+	column 'PO Number'
+		lineageTag: 84afe4ae-51c7-46cd-8ce5-3a329f22a1ac
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Purchase Orders[PO Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year'
+		lineageTag: 455c1a8f-4cd6-4ff3-a584-5baf8d2ac41a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year-Period'
+		lineageTag: 5cbfa2b8-6e7e-4135-8f9e-b7a61887cc4e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Year-Period]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Date'
+		formatString: 0
+		lineageTag: 8ec0f3ab-4a3c-4c68-b319-7d3b3f458548
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Invoice Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Dimension
+		lineageTag: 81ea945e-000b-4ff9-847a-d77b86464595
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Dimension]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source
+		lineageTag: 6f1cdc1b-7869-490a-b26f-9e346c49842c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Source]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '01. Ordered Units'
+		formatString: 0
+		lineageTag: 8af44118-e5b7-4572-b8ff-adbc8a57db6a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [01. Ordered Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '01. Ordered Value'
+		lineageTag: f8e3459f-3a60-411b-8243-67a2641d910f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [01. Ordered Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '02. Approved Units'
+		formatString: 0
+		lineageTag: bee53508-1f0d-472a-8ee1-f1bffaf03a9e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [02. Approved Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '02. Approved Value'
+		lineageTag: 777c32dc-2f41-404e-b468-e42512a34454
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [02. Approved Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '03. Confirmed Units'
+		formatString: 0
+		lineageTag: c0821987-4cf1-42fb-a2f7-5220ce68a6d2
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [03. Confirmed Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '03. Confirmed Value'
+		lineageTag: cd3b7af2-79bc-4865-9241-86b9e21f37e2
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [03. Confirmed Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '04. Unconfirmed Units'
+		formatString: 0
+		lineageTag: 5536e60a-faef-48d6-8d5d-1f6674734dbc
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [04. Unconfirmed Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '04. Unconfirmed Value'
+		lineageTag: e87946cf-a6e5-4d60-8942-5d7368a74eb3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [04. Unconfirmed Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '05. Placed to Factory Units'
+		formatString: 0
+		lineageTag: 4b8b8505-39b9-4895-b8df-7dd5d6288a47
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [05. Placed to Factory Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '05. Placed to Factory Value'
+		lineageTag: f1dee72c-a469-473f-b769-fa15636bfced
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [05. Placed to Factory Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '06. Rejected Units'
+		formatString: 0
+		lineageTag: 693909ba-7970-4379-9290-bc722890eddb
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [06. Rejected Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '06. Rejected Value'
+		lineageTag: ccc37bd8-ccea-4836-a186-476167f5bdce
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [06. Rejected Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '07. To Be Shipped Units'
+		formatString: 0
+		lineageTag: eb0b38e0-d8ad-4999-b3c1-9a6b5db40dfb
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [07. To Be Shipped Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '07. To Be Shipped Value'
+		lineageTag: f1c66ba4-8561-4348-97a9-1a724ecbccf8
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [07. To Be Shipped Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '08. Shipped Units'
+		formatString: 0
+		lineageTag: 460785f9-ead2-40d3-a1ca-2ce98aac8819
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [08. Shipped Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '08. Shipped Value'
+		lineageTag: 55e2d0a6-758a-4ecc-8333-64961eaf506f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [08. Shipped Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '09. Received Units'
+		formatString: 0
+		lineageTag: b45a1fb2-8a5d-488a-be1f-6ed58cb280f7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [09. Received Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '09. Received Value'
+		lineageTag: acf5dd89-7596-4d68-9e71-5b10a2bdeed3
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [09. Received Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '10. Invoiced Units'
+		formatString: 0
+		lineageTag: 8adb27fc-35c8-4cbf-899e-47b14aaa67a6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [10. Invoiced Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '10. Invoiced Value'
+		lineageTag: 5f57907b-a736-403e-a5d1-f988be025eba
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [10. Invoiced Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '11. Duty'
+		lineageTag: 5a281ed5-9bd3-447e-9faa-7f31ad7b57a1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [11. Duty]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Gross Weight'
+		lineageTag: 53e29199-2712-4fab-8e8d-b86bcd3982c0
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Gross Weight]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Capacity'
+		formatString: 0
+		lineageTag: 32b547dc-200a-4411-8045-1dfba50b39d9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Total Capacity]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Cube'
+		lineageTag: 9d04fca7-4596-4705-96d9-020c7ac1cff2
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Total Cube]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Welted Capacity'
+		formatString: 0
+		lineageTag: dc6ac05b-6e14-452b-ae28-0df3904b24d5
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Welted Capacity]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Booked on time (%)'
+		lineageTag: cbbea2dd-2f04-4063-88aa-1928f4cf8c97
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Booked on time (%)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '# Booked on time (units)'
+		formatString: 0
+		lineageTag: ec720535-e27b-4c3e-b4dd-49e73b7661d1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Booked on time (units)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Available)'
+		formatString: 0
+		lineageTag: 69233ac2-8698-4c8d-9903-c2f948da0cd6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Available)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Backlog Available)'
+		formatString: 0
+		lineageTag: 91ef4f93-6ccd-444c-8a89-748cc79ffbba
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Backlog Available)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Backlog)'
+		formatString: 0
+		lineageTag: 88249c0b-669c-4422-9ebb-148b6d1c3629
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Backlog)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Delayed)'
+		formatString: 0
+		lineageTag: ad90d0a7-fb70-43da-9701-42a1b5a8f1f1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Delayed)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Non-Prebuy)'
+		formatString: 0
+		lineageTag: 6d29e607-3bf7-4c30-8bf2-8f81f199abf5
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Non-Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (On Time)'
+		formatString: 0
+		lineageTag: 57e3e3d1-8637-4714-91ce-92b76e155695
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (On Time)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Past dues)'
+		formatString: 0
+		lineageTag: 0c0a55f5-a846-40cc-832d-0e926eb4e3af
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Past dues)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Prebuy)'
+		formatString: 0
+		lineageTag: 8d9faddd-1ff3-443a-88f8-037ef841543d
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (Shipped)'
+		formatString: 0
+		lineageTag: 0532cf47-75d0-4ca2-bb72-d51895f4e6e8
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (Shipped)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Ordered Units (To be Shipped)'
+		formatString: 0
+		lineageTag: d2102cd5-78fe-426a-a2a3-66db8b8e6be7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Ordered Units (To be Shipped)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Ackno (%)'
+		lineageTag: ccf439bb-e0c2-4184-b83e-bf5589be3d3c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Ackno (%)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '# OT Ackno (units)'
+		formatString: 0
+		lineageTag: b9f350b4-b3c0-444b-82bf-1a632551a244
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Ackno (units)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Availability (%)'
+		lineageTag: 8646aaaa-db96-4b82-b8e1-9317fd59d044
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Availability (%)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '# OT Availability (units)'
+		formatString: 0
+		lineageTag: 6d52366f-ce71-4a8d-880c-72b4117f1a99
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Availability (units)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Confirmed (%)'
+		lineageTag: 621bbdb7-0d0c-4b36-850f-59262162a6bf
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Confirmed (%)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '# OT Confirmed (units)'
+		formatString: 0
+		lineageTag: 83b4544c-161f-461f-90c9-b6e8e8e4ad50
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Confirmed (units)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Placement: (Subm vs Approved) (%)'
+		lineageTag: a6bae593-9914-4f32-9623-59aa327de95a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Placement: (Subm vs Approved) (%)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '# OT Placement: (Subm vs Approved) (units)'
+		formatString: 0
+		lineageTag: ef486c83-f612-44d7-ab23-20f10230d33b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Placement: (Subm vs Approved) (units)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# OT Supplier (%)'
+		lineageTag: eb4a1d23-25ce-4cbd-8469-686d64111767
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Supplier (%)]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '# OT Supplier (units)'
+		formatString: 0
+		lineageTag: ca126044-f93a-4b26-895d-a5aab95ef132
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# OT Supplier (units)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Packed Quantity'
+		lineageTag: 3cae57c1-c325-403e-868d-c35256ef985f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Packed Quantity]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column '# POs'
+		formatString: 0
+		lineageTag: fad2b746-ac3c-43f8-a6a5-db33aef82994
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# POs]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# POs (Non-Prebuy)'
+		formatString: 0
+		lineageTag: d12b3921-9a2e-44ea-bd84-6052917462f2
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# POs (Non-Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# POs (Prebuy)'
+		formatString: 0
+		lineageTag: 925bf051-f562-4fbe-969a-8c640510bb44
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# POs (Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Shipped Units (Non-Prebuy)'
+		formatString: 0
+		lineageTag: c213eabb-f170-4d19-bd18-96c75823f141
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Shipped Units (Non-Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# Shipped Units (Prebuy)'
+		formatString: 0
+		lineageTag: 3d52b008-48b9-44af-8fe1-2f01aae32d00
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# Shipped Units (Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# To be Shipped Units (Non-Prebuy)'
+		formatString: 0
+		lineageTag: 2e33eeb2-7c6e-40ab-a6f2-af4feaa4d3a0
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# To be Shipped Units (Non-Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column '# To be Shipped Units (Prebuy)'
+		formatString: 0
+		lineageTag: bd1ef18f-0e00-4677-bec3-c21ababbf342
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [# To be Shipped Units (Prebuy)]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'sourcing po number' = calculated
+		mode: import
+		source =
+				
+				UNION
+				(
+				    //PO Number
+				    SUMMARIZECOLUMNS
+				    (
+				        'Purchase Orders'[PO Number]
+				        ,"Fiscal Year",""
+				        ,"Fiscal Year-Period",""
+				        ,"Invoice Date",BLANK()
+				        ,"Dimension","PO Number"
+				        ,"Source","1 Footprint PROD"
+				        ,"01. Ordered Units",[01. Ordered Units]
+				        ,"01. Ordered Value",ROUND([01. Ordered Value],2)
+				        ,"02. Approved Units",[02. Approved Units]
+				        ,"02. Approved Value",ROUND([02. Approved Value],2)
+				        ,"03. Confirmed Units",[03. Confirmed Units]
+				        ,"03. Confirmed Value",ROUND([03. Confirmed Value],2)
+				        ,"04. Unconfirmed Units",[04. Unconfirmed Units]
+				        ,"04. Unconfirmed Value",ROUND([04. Unconfirmed Value],2)
+				        ,"05. Placed to Factory Units",[05. Placed to Factory Units]
+				        ,"05. Placed to Factory Value",ROUND([05. Placed to Factory Value],2)
+				        ,"06. Rejected Units",[06. Rejected Units]
+				        ,"06. Rejected Value",ROUND([06. Rejected Value],2)
+				        ,"07. To Be Shipped Units",[07. To Be Shipped Units]
+				        ,"07. To Be Shipped Value",ROUND([07. To Be Shipped Value],2)
+				        ,"08. Shipped Units",[08. Shipped Units]
+				        ,"08. Shipped Value",ROUND([08. Shipped Value],2)
+				        ,"09. Received Units",[09. Received Units]
+				        ,"09. Received Value",ROUND([09. Received Value],2)
+				        ,"10. Invoiced Units",[10. Invoiced Units]
+				        ,"10. Invoiced Value",ROUND([10. Invoiced Value],2)
+				        ,"11. Duty",ROUND([11. Duty],2)
+				        ,"Gross Weight",ROUND([Gross Weight],2)
+				        ,"Total Capacity",[Total Capacity]
+				        ,"Total Cube",ROUND([Total Cube],2)
+				        ,"Welted Capacity",[Welted Capacity]
+				        ,"# Booked on time (%)",ROUND([# Booked on time (%)],4)
+				        ,"# Booked on time (units)",[# Booked on time (units)]
+				        ,"# Ordered Units (Available)",[# Ordered Units (Available)]
+				        ,"# Ordered Units (Backlog Available)",[# Ordered Units (Backlog Available)]
+				        ,"# Ordered Units (Backlog)",[# Ordered Units (Backlog)]
+				        ,"# Ordered Units (Delayed)",[# Ordered Units (Delayed)]
+				        ,"# Ordered Units (Non-Prebuy)",[# Ordered Units (Non-Prebuy)]
+				        ,"# Ordered Units (On Time)",[# Ordered Units (On Time)]
+				        ,"# Ordered Units (Past dues)",[# Ordered Units (Past dues)]
+				        ,"# Ordered Units (Prebuy)",[# Ordered Units (Prebuy)]
+				        ,"# Ordered Units (Shipped)",[# Ordered Units (Shipped)]
+				        ,"# Ordered Units (To be Shipped)",[# Ordered Units (To be Shipped) ]
+				        ,"# OT Ackno (%)",ROUND([# OT Ackno (%)],4)
+				        ,"# OT Ackno (units)",[# OT Ackno (units)]
+				        ,"# OT Availability (%)",ROUND([# OT Availability (%)],4)
+				        ,"# OT Availability (units)",[# OT Availability (units)]
+				        ,"# OT Confirmed (%)",ROUND([# OT Confirmed (%)],4)
+				        ,"# OT Confirmed (units)",[# OT Confirmed (units)]
+				        ,"# OT Placement: (Subm vs Approved) (%)",ROUND([# OT Placement: (Subm vs Approved) (%)],4)
+				        ,"# OT Placement: (Subm vs Approved) (units)",[# OT Placement: (Subm vs Approved) (units)]
+				        ,"# OT Supplier (%)",ROUND([# OT Supplier (%)],4)
+				        ,"# OT Supplier (units)",[# OT Supplier (units)]
+				        ,"# Packed Quantity",[# Packed Quantity]
+				        ,"# POs",[# POs]
+				        ,"# POs (Non-Prebuy)",[# POs (Non-Prebuy)]
+				        ,"# POs (Prebuy)",[# POs (Prebuy)]
+				        ,"# Shipped Units (Non-Prebuy)",[# Shipped Units (Non-Prebuy)]
+				        ,"# Shipped Units (Prebuy)",[# Shipped Units (Prebuy)]
+				        ,"# To be Shipped Units (Non-Prebuy)",[# To be Shipped Units (Non-Prebuy)]
+				        ,"# To be Shipped Units (Prebuy)",[# To be Shipped Units (Prebuy)]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Purchase Orders 2'[PO Number]
+				        ,"Fiscal Year",""
+				        ,"Fiscal Year-Period",""
+				        ,"Invoice Date",BLANK()
+				        ,"Dimension","PO Number"
+				        ,"Source","2 Footprint UAT"
+				        ,"01. Ordered Units",[01. Ordered Units 2]
+				        ,"01. Ordered Value",ROUND([01. Ordered Value 2],2)
+				        ,"02. Approved Units",[02. Approved Units 2]
+				        ,"02. Approved Value",ROUND([02. Approved Value 2],2)
+				        ,"03. Confirmed Units",[03. Confirmed Units 2]
+				        ,"03. Confirmed Value",ROUND([03. Confirmed Value 2],2)
+				        ,"04. Unconfirmed Units",[04. Unconfirmed Units 2]
+				        ,"04. Unconfirmed Value",ROUND([04. Unconfirmed Value 2],2)
+				        ,"05. Placed to Factory Units",[05. Placed to Factory Units 2]
+				        ,"05. Placed to Factory Value",ROUND([05. Placed to Factory Value 2],2)
+				        ,"06. Rejected Units",[06. Rejected Units 2]
+				        ,"06. Rejected Value",ROUND([06. Rejected Value 2],2)
+				        ,"07. To Be Shipped Units",[07. To Be Shipped Units 2]
+				        ,"07. To Be Shipped Value",ROUND([07. To Be Shipped Value 2],2)
+				        ,"08. Shipped Units",[08. Shipped Units 2]
+				        ,"08. Shipped Value",ROUND([08. Shipped Value 2],2)
+				        ,"09. Received Units",[09. Received Units 2]
+				        ,"09. Received Value",ROUND([09. Received Value 2],2)
+				        ,"10. Invoiced Units",[10. Invoiced Units 2]
+				        ,"10. Invoiced Value",ROUND([10. Invoiced Value 2],2)
+				        ,"11. Duty",ROUND([11. Duty 2],2)
+				        ,"Gross Weight",ROUND([Gross Weight 2],2)
+				        ,"Total Capacity",[Total Capacity 2]
+				        ,"Total Cube",ROUND([Total Cube 2],2)
+				        ,"Welted Capacity",[Welted Capacity 2]
+				        ,"# Booked on time (%)",ROUND([# Booked on time (%) 2],4)
+				        ,"# Booked on time (units)",[# Booked on time (units) 2]
+				        ,"# Ordered Units (Available)",[# Ordered Units (Available) 2]
+				        ,"# Ordered Units (Backlog Available)",[# Ordered Units (Backlog Available) 2]
+				        ,"# Ordered Units (Backlog)",[# Ordered Units (Backlog) 2]
+				        ,"# Ordered Units (Delayed)",[# Ordered Units (Delayed) 2]
+				        ,"# Ordered Units (Non-Prebuy)",[# Ordered Units (Non-Prebuy) 2]
+				        ,"# Ordered Units (On Time)",[# Ordered Units (On Time) 2]
+				        ,"# Ordered Units (Past dues)",[# Ordered Units (Past dues) 2]
+				        ,"# Ordered Units (Prebuy)",[# Ordered Units (Prebuy) 2]
+				        ,"# Ordered Units (Shipped)",[# Ordered Units (Shipped) 2]
+				        ,"# Ordered Units (To be Shipped)",[# Ordered Units (To be Shipped)  2]
+				        ,"# OT Ackno (%)",ROUND([# OT Ackno (%) 2],4)
+				        ,"# OT Ackno (units)",[# OT Ackno (units) 2]
+				        ,"# OT Availability (%)",ROUND([# OT Availability (%) 2],4)
+				        ,"# OT Availability (units)",[# OT Availability (units) 2]
+				        ,"# OT Confirmed (%)",ROUND([# OT Confirmed (%) 2],4)
+				        ,"# OT Confirmed (units)",[# OT Confirmed (units) 2]
+				        ,"# OT Placement: (Subm vs Approved) (%)",ROUND([# OT Placement: (Subm vs Approved) (%) 2],4)
+				        ,"# OT Placement: (Subm vs Approved) (units)",[# OT Placement: (Subm vs Approved) (units) 2]
+				        ,"# OT Supplier (%)",ROUND([# OT Supplier (%) 2],4)
+				        ,"# OT Supplier (units)",[# OT Supplier (units) 2]
+				        ,"# Packed Quantity",[# Packed Quantity 2]
+				        ,"# POs",[# POs 2]
+				        ,"# POs (Non-Prebuy)",[# POs (Non-Prebuy) 2]
+				        ,"# POs (Prebuy)",[# POs (Prebuy) 2]
+				        ,"# Shipped Units (Non-Prebuy)",[# Shipped Units (Non-Prebuy) 2]
+				        ,"# Shipped Units (Prebuy)",[# Shipped Units (Prebuy) 2]
+				        ,"# To be Shipped Units (Non-Prebuy)",[# To be Shipped Units (Non-Prebuy) 2]
+				        ,"# To be Shipped Units (Prebuy)",[# To be Shipped Units (Prebuy) 2]
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Purchase Orders 3'[PO Number]
+				        ,"Fiscal Year",""
+				        ,"Fiscal Year-Period",""
+				        ,"Invoice Date",BLANK()
+				        ,"Dimension","PO Number"
+				        ,"Source","3 Footprint DEV"
+				        ,"01. Ordered Units",[01. Ordered Units 3]
+				        ,"01. Ordered Value",ROUND([01. Ordered Value 3],2)
+				        ,"02. Approved Units",[02. Approved Units 3]
+				        ,"02. Approved Value",ROUND([02. Approved Value 3],2)
+				        ,"03. Confirmed Units",[03. Confirmed Units 3]
+				        ,"03. Confirmed Value",ROUND([03. Confirmed Value 3],2)
+				        ,"04. Unconfirmed Units",[04. Unconfirmed Units 3]
+				        ,"04. Unconfirmed Value",ROUND([04. Unconfirmed Value 3],2)
+				        ,"05. Placed to Factory Units",[05. Placed to Factory Units 3]
+				        ,"05. Placed to Factory Value",ROUND([05. Placed to Factory Value 3],2)
+				        ,"06. Rejected Units",[06. Rejected Units 3]
+				        ,"06. Rejected Value",ROUND([06. Rejected Value 3],2)
+				        ,"07. To Be Shipped Units",[07. To Be Shipped Units 3]
+				        ,"07. To Be Shipped Value",ROUND([07. To Be Shipped Value 3],2)
+				        ,"08. Shipped Units",[08. Shipped Units 3]
+				        ,"08. Shipped Value",ROUND([08. Shipped Value 3],2)
+				        ,"09. Received Units",[09. Received Units 3]
+				        ,"09. Received Value",ROUND([09. Received Value 3],2)
+				        ,"10. Invoiced Units",[10. Invoiced Units 3]
+				        ,"10. Invoiced Value",ROUND([10. Invoiced Value 3],2)
+				        ,"11. Duty",ROUND([11. Duty 3],2)
+				        ,"Gross Weight",ROUND([Gross Weight 3],2)
+				        ,"Total Capacity",[Total Capacity 3]
+				        ,"Total Cube",ROUND([Total Cube 3],2)
+				        ,"Welted Capacity",[Welted Capacity 3]
+				        ,"# Booked on time (%)",ROUND([# Booked on time (%) 3],4)
+				        ,"# Booked on time (units)",[# Booked on time (units) 3]
+				        ,"# Ordered Units (Available)",[# Ordered Units (Available) 3]
+				        ,"# Ordered Units (Backlog Available)",[# Ordered Units (Backlog Available) 3]
+				        ,"# Ordered Units (Backlog)",[# Ordered Units (Backlog) 3]
+				        ,"# Ordered Units (Delayed)",[# Ordered Units (Delayed) 3]
+				        ,"# Ordered Units (Non-Prebuy)",[# Ordered Units (Non-Prebuy) 3]
+				        ,"# Ordered Units (On Time)",[# Ordered Units (On Time) 3]
+				        ,"# Ordered Units (Past dues)",[# Ordered Units (Past dues) 3]
+				        ,"# Ordered Units (Prebuy)",[# Ordered Units (Prebuy) 3]
+				        ,"# Ordered Units (Shipped)",[# Ordered Units (Shipped) 3]
+				        ,"# Ordered Units (To be Shipped)",[# Ordered Units (To be Shipped)  3]
+				        ,"# OT Ackno (%)",ROUND([# OT Ackno (%) 3],4)
+				        ,"# OT Ackno (units)",[# OT Ackno (units) 3]
+				        ,"# OT Availability (%)",ROUND([# OT Availability (%) 3],4)
+				        ,"# OT Availability (units)",[# OT Availability (units) 3]
+				        ,"# OT Confirmed (%)",ROUND([# OT Confirmed (%) 3],4)
+				        ,"# OT Confirmed (units)",[# OT Confirmed (units) 3]
+				        ,"# OT Placement: (Subm vs Approved) (%)",ROUND([# OT Placement: (Subm vs Approved) (%) 3],4)
+				        ,"# OT Placement: (Subm vs Approved) (units)",[# OT Placement: (Subm vs Approved) (units) 3]
+				        ,"# OT Supplier (%)",ROUND([# OT Supplier (%) 3],4)
+				        ,"# OT Supplier (units)",[# OT Supplier (units) 3]
+				        ,"# Packed Quantity",[# Packed Quantity 3]
+				        ,"# POs",[# POs 3]
+				        ,"# POs (Non-Prebuy)",[# POs (Non-Prebuy) 3]
+				        ,"# POs (Prebuy)",[# POs (Prebuy) 3]
+				        ,"# Shipped Units (Non-Prebuy)",[# Shipped Units (Non-Prebuy) 3]
+				        ,"# Shipped Units (Prebuy)",[# Shipped Units (Prebuy) 3]
+				        ,"# To be Shipped Units (Non-Prebuy)",[# To be Shipped Units (Non-Prebuy) 3]
+				        ,"# To be Shipped Units (Prebuy)",[# To be Shipped Units (Prebuy) 3]
+				    )
+				)
+
+	annotation PBI_Id = 05f621c89c7741ec8929c5ab256bb4b3
+

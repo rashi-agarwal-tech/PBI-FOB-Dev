@@ -43,10 +43,6 @@ relationship d84da3a2-a937-48f7-aed1-2ee9ea3c22bc
 	fromColumn: 'PO Daybook'.Territory_Key
 	toColumn: Region.Territory_Key
 
-relationship 0927973a-aa2e-4b56-820b-914646be8758
-	fromColumn: 'PO Daybook'.Warehouse_Key
-	toColumn: Warehouse.Warehouse_Key
-
 relationship 7c0b8217-26a6-4e2f-ad1b-03dc7c0a18dd
 	crossFilteringBehavior: bothDirections
 	fromColumn: 'PO Daybook'.Supplier_Key
@@ -93,6 +89,7 @@ relationship 4aa7c772-fce2-4b02-85ce-2dd1eb646ae2
 	toColumn: 'Pack One Date'.'Date Key'
 
 relationship AutoDetected_0779419a-8a5e-4e41-b366-b57b7a645e07
+	crossFilteringBehavior: bothDirections
 	fromColumn: 'PO Details'.'Distributor PO Number Product Key'
 	toColumn: 'Purchase Orders'.'Distributor PO Number Product Key'
 
@@ -106,6 +103,7 @@ relationship AutoDetected_7dc8fac7-9670-4dda-a604-6432909fd998
 	toColumn: 'Purchase Orders'.'Distributor PO Number Product Key'
 
 relationship AutoDetected_ddaea6fc-cceb-4a18-800f-54dbd1633228
+	crossFilteringBehavior: bothDirections
 	fromColumn: 'Pack One'.'Distributor PO Number Product Key'
 	toColumn: 'Purchase Orders'.'Distributor PO Number Product Key'
 

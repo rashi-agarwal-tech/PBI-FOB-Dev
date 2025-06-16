@@ -1322,35 +1322,6 @@ table sourcing
 		formatString: #,0.00
 		lineageTag: 41a155ee-61ed-46c3-a797-3865f9e9e2ee
 
-	column 'Fiscal Year'
-		lineageTag: 7c755c14-7569-4eb2-94fb-450997622456
-		summarizeBy: none
-		isNameInferred
-		sourceColumn: Invoice Date[Fiscal Year]
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Fiscal Year-Period'
-		lineageTag: e79709ae-8f86-4112-8347-0ad72eab31e2
-		summarizeBy: none
-		isNameInferred
-		sourceColumn: Invoice Date[Fiscal Year-Period]
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Invoice Date'
-		formatString: dd-mmm-yyyy
-		lineageTag: 6a5856be-8f54-4834-aa90-0e45ab311280
-		summarizeBy: none
-		isNameInferred
-		sourceColumn: Invoice Date[Invoice Date]
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
-		annotation PBI_FormatHint = {"isCustom":true}
-
 	column Attribute
 		lineageTag: f9651f4f-5e01-437a-8f53-077e71360b76
 		summarizeBy: none
@@ -2598,6 +2569,32 @@ table sourcing
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column 'Fiscal Year'
+		lineageTag: 516f93fd-1eaf-43f1-ad1a-bc3c451a8a5f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Invoice Date[Fiscal Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year-Period'
+		lineageTag: a514615e-f316-487d-8767-2ac85f8f6c9d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Invoice Date[Fiscal Year-Period]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoice Date'
+		lineageTag: 01b70c0e-c8c3-4922-ae66-afcbf5a90dcc
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: Invoice Date[Invoice Date]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition sourcing = calculated
 		mode: import
 		source =
@@ -3184,6 +3181,138 @@ table sourcing
 				        ,"# Shipped Units (Prebuy)",[# Shipped Units (Prebuy) 3]
 				        ,"# To be Shipped Units (Non-Prebuy)",[# To be Shipped Units (Non-Prebuy) 3]
 				        ,"# To be Shipped Units (Prebuy)",[# To be Shipped Units (Prebuy) 3]
+				    )
+				
+					//Warehouse ID
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'sourcing warehouse id'[Fiscal Year]
+				        ,'sourcing warehouse id'[Fiscal Year-Period]
+				        ,'sourcing warehouse id'[Invoice Date]
+				        ,'sourcing warehouse id'[Warehouse ID]
+				        ,'sourcing warehouse id'[Dimension]
+				        ,'sourcing warehouse id'[Source]
+				        ,'sourcing warehouse id'[01. Ordered Units]
+				        ,'sourcing warehouse id'[01. Ordered Value]
+				        ,'sourcing warehouse id'[02. Approved Units]
+				        ,'sourcing warehouse id'[02. Approved Value]
+				        ,'sourcing warehouse id'[03. Confirmed Units]
+				        ,'sourcing warehouse id'[03. Confirmed Value]
+				        ,'sourcing warehouse id'[04. Unconfirmed Units]
+				        ,'sourcing warehouse id'[04. Unconfirmed Value]
+				        ,'sourcing warehouse id'[05. Placed to Factory Units]
+				        ,'sourcing warehouse id'[05. Placed to Factory Value]
+				        ,'sourcing warehouse id'[06. Rejected Units]
+				        ,'sourcing warehouse id'[06. Rejected Value]
+				        ,'sourcing warehouse id'[07. To Be Shipped Units]
+				        ,'sourcing warehouse id'[07. To Be Shipped Value]
+				        ,'sourcing warehouse id'[08. Shipped Units]
+				        ,'sourcing warehouse id'[08. Shipped Value]
+				        ,'sourcing warehouse id'[09. Received Units]
+				        ,'sourcing warehouse id'[09. Received Value]
+				        ,'sourcing warehouse id'[10. Invoiced Units]
+				        ,'sourcing warehouse id'[10. Invoiced Value]
+				        ,'sourcing warehouse id'[11. Duty]
+				        ,'sourcing warehouse id'[Gross Weight]
+				        ,'sourcing warehouse id'[Total Capacity]
+				        ,'sourcing warehouse id'[Total Cube]
+				        ,'sourcing warehouse id'[Welted Capacity]
+				        ,'sourcing warehouse id'[# Booked on time (%)]
+				        ,'sourcing warehouse id'[# Booked on time (units)]
+				        ,'sourcing warehouse id'[# Ordered Units (Available)]
+				        ,'sourcing warehouse id'[# Ordered Units (Backlog Available)]
+				        ,'sourcing warehouse id'[# Ordered Units (Backlog)]
+				        ,'sourcing warehouse id'[# Ordered Units (Delayed)]
+				        ,'sourcing warehouse id'[# Ordered Units (Non-Prebuy)]
+				        ,'sourcing warehouse id'[# Ordered Units (On Time)]
+				        ,'sourcing warehouse id'[# Ordered Units (Past dues)]
+				        ,'sourcing warehouse id'[# Ordered Units (Prebuy)]
+				        ,'sourcing warehouse id'[# Ordered Units (Shipped)]
+				        ,'sourcing warehouse id'[# Ordered Units (To be Shipped)]
+				        ,'sourcing warehouse id'[# OT Ackno (%)]
+				        ,'sourcing warehouse id'[# OT Ackno (units)]
+				        ,'sourcing warehouse id'[# OT Availability (%)]
+				        ,'sourcing warehouse id'[# OT Availability (units)]
+				        ,'sourcing warehouse id'[# OT Confirmed (%)]
+				        ,'sourcing warehouse id'[# OT Confirmed (units)]
+				        ,'sourcing warehouse id'[# OT Placement: (Subm vs Approved) (%)]
+				        ,'sourcing warehouse id'[# OT Placement: (Subm vs Approved) (units)]
+				        ,'sourcing warehouse id'[# OT Supplier (%)]
+				        ,'sourcing warehouse id'[# OT Supplier (units)]
+				        ,'sourcing warehouse id'[# Packed Quantity]
+				        ,'sourcing warehouse id'[# POs]
+				        ,'sourcing warehouse id'[# POs (Non-Prebuy)]
+				        ,'sourcing warehouse id'[# POs (Prebuy)]
+				        ,'sourcing warehouse id'[# Shipped Units (Non-Prebuy)]
+				        ,'sourcing warehouse id'[# Shipped Units (Prebuy)]
+				        ,'sourcing warehouse id'[# To be Shipped Units (Non-Prebuy)]
+				        ,'sourcing warehouse id'[# To be Shipped Units (Prebuy)]
+				    )
+				
+					//PO Number
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'sourcing po number'[Fiscal Year]
+				        ,'sourcing po number'[Fiscal Year-Period]
+				        ,'sourcing po number'[Invoice Date]
+				        ,'sourcing po number'[PO Number]
+				        ,'sourcing po number'[Dimension]
+				        ,'sourcing po number'[Source]
+				        ,'sourcing po number'[01. Ordered Units]
+				        ,'sourcing po number'[01. Ordered Value]
+				        ,'sourcing po number'[02. Approved Units]
+				        ,'sourcing po number'[02. Approved Value]
+				        ,'sourcing po number'[03. Confirmed Units]
+				        ,'sourcing po number'[03. Confirmed Value]
+				        ,'sourcing po number'[04. Unconfirmed Units]
+				        ,'sourcing po number'[04. Unconfirmed Value]
+				        ,'sourcing po number'[05. Placed to Factory Units]
+				        ,'sourcing po number'[05. Placed to Factory Value]
+				        ,'sourcing po number'[06. Rejected Units]
+				        ,'sourcing po number'[06. Rejected Value]
+				        ,'sourcing po number'[07. To Be Shipped Units]
+				        ,'sourcing po number'[07. To Be Shipped Value]
+				        ,'sourcing po number'[08. Shipped Units]
+				        ,'sourcing po number'[08. Shipped Value]
+				        ,'sourcing po number'[09. Received Units]
+				        ,'sourcing po number'[09. Received Value]
+				        ,'sourcing po number'[10. Invoiced Units]
+				        ,'sourcing po number'[10. Invoiced Value]
+				        ,'sourcing po number'[11. Duty]
+				        ,'sourcing po number'[Gross Weight]
+				        ,'sourcing po number'[Total Capacity]
+				        ,'sourcing po number'[Total Cube]
+				        ,'sourcing po number'[Welted Capacity]
+				        ,'sourcing po number'[# Booked on time (%)]
+				        ,'sourcing po number'[# Booked on time (units)]
+				        ,'sourcing po number'[# Ordered Units (Available)]
+				        ,'sourcing po number'[# Ordered Units (Backlog Available)]
+				        ,'sourcing po number'[# Ordered Units (Backlog)]
+				        ,'sourcing po number'[# Ordered Units (Delayed)]
+				        ,'sourcing po number'[# Ordered Units (Non-Prebuy)]
+				        ,'sourcing po number'[# Ordered Units (On Time)]
+				        ,'sourcing po number'[# Ordered Units (Past dues)]
+				        ,'sourcing po number'[# Ordered Units (Prebuy)]
+				        ,'sourcing po number'[# Ordered Units (Shipped)]
+				        ,'sourcing po number'[# Ordered Units (To be Shipped)]
+				        ,'sourcing po number'[# OT Ackno (%)]
+				        ,'sourcing po number'[# OT Ackno (units)]
+				        ,'sourcing po number'[# OT Availability (%)]
+				        ,'sourcing po number'[# OT Availability (units)]
+				        ,'sourcing po number'[# OT Confirmed (%)]
+				        ,'sourcing po number'[# OT Confirmed (units)]
+				        ,'sourcing po number'[# OT Placement: (Subm vs Approved) (%)]
+				        ,'sourcing po number'[# OT Placement: (Subm vs Approved) (units)]
+				        ,'sourcing po number'[# OT Supplier (%)]
+				        ,'sourcing po number'[# OT Supplier (units)]
+				        ,'sourcing po number'[# Packed Quantity]
+				        ,'sourcing po number'[# POs]
+				        ,'sourcing po number'[# POs (Non-Prebuy)]
+				        ,'sourcing po number'[# POs (Prebuy)]
+				        ,'sourcing po number'[# Shipped Units (Non-Prebuy)]
+				        ,'sourcing po number'[# Shipped Units (Prebuy)]
+				        ,'sourcing po number'[# To be Shipped Units (Non-Prebuy)]
+				        ,'sourcing po number'[# To be Shipped Units (Prebuy)]
 				    )
 				)
 

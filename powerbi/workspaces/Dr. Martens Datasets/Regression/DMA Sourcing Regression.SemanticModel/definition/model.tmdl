@@ -10,7 +10,7 @@ annotation PBI_QueryOrder = ["RefreshDateTime","DirectQuery to AS - DMA Sourcing
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBIDesktopVersion = 2.138.1452.0 (24.11)
+annotation PBIDesktopVersion = 2.143.1378.0 (25.05)+4e1de9c957866bc5336e0d250838314aa54ff3a8
 
 annotation __PBIService_Versioning_SaveVersion = 2024-11-19T14:27:25.0496641Z
 
@@ -112,6 +112,9 @@ ref table 'PO Daybook 3'
 ref table 'Days Late Groupings 3'
 ref table 'Pack One Carton Dimensions 3'
 ref table sourcing
+ref table Table
+ref table 'sourcing warehouse id'
+ref table 'sourcing po number'
 
 ref cultureInfo en-GB
 

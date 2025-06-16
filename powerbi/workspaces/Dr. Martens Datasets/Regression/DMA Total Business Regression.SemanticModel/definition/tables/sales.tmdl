@@ -391,7 +391,6 @@ table sales
 		annotation SummarizationSetBy = Automatic
 
 	column 'Total Net Value'
-		formatString: #,0.00
 		lineageTag: 444a333c-dd50-4896-865c-88167cfb6974
 		summarizeBy: sum
 		isNameInferred
@@ -399,14 +398,17 @@ table sales
 
 		annotation SummarizationSetBy = Automatic
 
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column 'Net Value'
-		formatString: #,0.00
 		lineageTag: b44770b9-1feb-4238-b378-b7fdbbb755ca
 		summarizeBy: sum
 		isNameInferred
 		sourceColumn: [Net Value]
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Source
 		lineageTag: 9120e77a-9f5b-440a-9c65-73dd621799d9
@@ -443,7 +445,7 @@ table sales
 	column ' Date'
 		formatString: dd-mmm-yyyy
 		lineageTag: 634305d1-77e7-478d-9a58-e97ebe7a2a86
-		summarizeBy: none
+		summarizeBy: sum
 		isNameInferred
 		sourceColumn: Date[ Date]
 
@@ -1501,6 +1503,29 @@ table sales
 				        ,"Net Value",ROUND([Net Value 3],2)
 				        ,"Ordered Units",[Ordered Units 3]
 				        ,"Ordered Net Value",ROUND([Ordered Net Value 3],2)
+				    )
+				
+					//Warehouse ID
+					,SUMMARIZECOLUMNS
+				    (
+				        'sales warehouse id'[Fiscal Year (544)]
+				        ,'sales warehouse id'[Fiscal Year-Period (544)]
+				        ,'sales warehouse id'[ Date]
+					    ,'sales warehouse id'[Warehouse ID]
+				        ,'sales warehouse id'[Dimension]
+				        ,'sales warehouse id'[Source]
+				        ,'sales warehouse id'[Open Units]
+				        ,'sales warehouse id'[Invoiced Units]
+				        ,'sales warehouse id'[Returned Units]
+				        ,'sales warehouse id'[Total Units]
+				        ,'sales warehouse id'[Net Units]
+				        ,'sales warehouse id'[Open Net Value]
+				        ,'sales warehouse id'[Invoiced Net Value]
+				        ,'sales warehouse id'[Returned Net Value]
+				        ,'sales warehouse id'[Total Net Value]
+				        ,'sales warehouse id'[Net Value]
+				        ,'sales warehouse id'[Ordered Units]
+				        ,'sales warehouse id'[Ordered Net Value]
 				    )
 				)
 

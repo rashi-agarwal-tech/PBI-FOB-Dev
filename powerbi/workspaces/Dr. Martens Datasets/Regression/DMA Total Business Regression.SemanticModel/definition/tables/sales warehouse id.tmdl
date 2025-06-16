@@ -1,0 +1,240 @@
+table 'sales warehouse id'
+	lineageTag: 36e221ba-aa5f-4aa7-bd6d-230578336711
+
+	column Dimension
+		lineageTag: 5e85d848-a19b-467e-bb23-49794403c0c3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Dimension]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Source
+		lineageTag: 3556f580-03bd-474f-b484-d8531008c3f6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Source]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Open Units'
+		formatString: 0
+		lineageTag: 8f104be3-a8a0-4f91-bb1e-9ae3aef5f494
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Open Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Invoiced Units'
+		formatString: 0
+		lineageTag: f87f3500-e55a-4c86-bbaf-b8793ea9548b
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Invoiced Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Returned Units'
+		formatString: 0
+		lineageTag: 0d304686-8107-40f1-b2a8-399bb87e2110
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Returned Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Units'
+		formatString: 0
+		lineageTag: f5f9a576-6a8a-4d43-86d3-5fae2d86c0ff
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Total Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net Units'
+		formatString: 0
+		lineageTag: b2af0d57-f3a5-4bbe-990f-010b9d9bfaea
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Net Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Open Net Value'
+		lineageTag: 4ef0f077-89c0-4e32-8f32-40179b240817
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Open Net Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Invoiced Net Value'
+		lineageTag: 8d3adfad-770a-44ae-b48b-3aa809601e48
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Invoiced Net Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Returned Net Value'
+		lineageTag: e65a5d45-87ff-497a-8b75-125ef2a7843e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Returned Net Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Net Value'
+		lineageTag: 82dff07f-f3a9-4b63-a319-1df8bf70b7ee
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Total Net Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Net Value'
+		lineageTag: 77dc862d-0731-45ee-835d-334ec6e3007a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Net Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Ordered Units'
+		formatString: 0
+		lineageTag: fc667aaf-e3d2-49bb-8914-7b027edc95ca
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Ordered Units]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ordered Net Value'
+		lineageTag: c1a7c6af-155b-48cf-a68c-6f07a69c8a53
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Ordered Net Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Fiscal Year (544)'
+		lineageTag: 8268fca1-6706-4e33-80bf-1d12151b8beb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Year (544)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year-Period (544)'
+		lineageTag: 7924536b-4094-44c4-bd05-88a1b88cd27e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Year-Period (544)]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ' Date'
+		formatString: 0
+		lineageTag: b237ad5f-5d4e-4a10-9c32-3f5fe2df389a
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [ Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Warehouse ID'
+		lineageTag: c5440435-03a4-48e6-856f-cca8d2fc7aa8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Warehouse[Warehouse ID]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'sales warehouse id' = calculated
+		mode: import
+		source =
+				
+				UNION
+				(
+				    //Warehouse ID
+				    SUMMARIZECOLUMNS
+				    (
+				        'Warehouse'[Warehouse ID]
+				        ,"Fiscal Year (544)",""
+				        ,"Fiscal Year-Period (544)",""
+				        ," Date",BLANK()
+				        ,"Dimension","Warehouse ID"
+				        ,"Source","1 Footprint PROD"
+				        ,"Open Units",[Open Units]
+				        ,"Invoiced Units",[Invoiced Units]
+				        ,"Returned Units",[Returned Units]
+				        ,"Total Units",[Total Units]
+				        ,"Net Units",[Net Units]
+				        ,"Open Net Value",ROUND([Open Net Value],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value],2)
+				        ,"Total Net Value",ROUND([Total Net Value],2)
+				        ,"Net Value",ROUND([Net Value],2)
+				        ,"Ordered Units",[Ordered Units]
+				        ,"Ordered Net Value",ROUND([Ordered Net Value],2)
+				    )
+				    ,SUMMARIZECOLUMNS
+				    (
+				        'Warehouse 2'[Warehouse ID]
+				        ,"Fiscal Year (544)",""
+				        ,"Fiscal Year-Period (544)",""
+				        ," Date",BLANK()
+				        ,"Dimension","Warehouse ID"
+				        ,"Source","2 Footprint UAT"
+				        ,"Open Units",[Open Units 2]
+				        ,"Invoiced Units",[Invoiced Units 2]
+				        ,"Returned Units",[Returned Units 2]
+				        ,"Total Units",[Total Units 2]
+				        ,"Net Units",[Net Units 2]
+				        ,"Open Net Value",ROUND([Open Net Value 2],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 2],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 2],2)
+				        ,"Total Net Value",ROUND([Total Net Value 2],2)
+				        ,"Net Value",ROUND([Net Value 2],2)
+				        ,"Ordered Units",[Ordered Units 2]
+				        ,"Ordered Net Value",ROUND([Ordered Net Value 2],2)
+				    ),
+				    SUMMARIZECOLUMNS
+				    (
+				        'Warehouse 3'[Warehouse ID]
+				        ,"Fiscal Year (544)",""
+				        ,"Fiscal Year-Period (544)",""
+				        ," Date",BLANK()
+				        ,"Dimension","Warehouse ID"
+				        ,"Source","3 Footprint DEV"
+				        ,"Open Units",[Open Units 3]
+				        ,"Invoiced Units",[Invoiced Units 3]
+				        ,"Returned Units",[Returned Units 3]
+				        ,"Total Units",[Total Units 3]
+				        ,"Net Units",[Net Units 3]
+				        ,"Open Net Value",ROUND([Open Net Value 3],2)
+				        ,"Invoiced Net Value",ROUND([Invoiced Net Value 3],2)
+				        ,"Returned Net Value",ROUND([Returned Net Value 3],2)
+				        ,"Total Net Value",ROUND([Total Net Value 3],2)
+				        ,"Net Value",ROUND([Net Value 3],2)
+				        ,"Ordered Units",[Ordered Units 3]
+				        ,"Ordered Net Value",ROUND([Ordered Net Value 3],2)
+				    )
+				)
+
+	annotation PBI_Id = 0b509e3526b44a6191aa4f47a03200b0
+

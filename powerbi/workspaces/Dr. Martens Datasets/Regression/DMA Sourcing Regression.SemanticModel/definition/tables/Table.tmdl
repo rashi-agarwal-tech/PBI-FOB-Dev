@@ -1,0 +1,22 @@
+table Table
+	lineageTag: 77af1b33-0b94-4bbc-803e-6241c5f6f030
+
+	column Column
+		formatString: 0
+		lineageTag: 26025bd0-d599-4606-a461-ab7e437b4120
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Table = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = b9ce4b44634c4550a995f8aee909bc5c
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+
+	annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
