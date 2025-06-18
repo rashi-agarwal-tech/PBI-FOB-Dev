@@ -408,7 +408,7 @@ table 'PO Details'
 
 	column 'PO Line'
 		dataType: double
-		lineageTag: 04277a46-9af0-4834-a42b-6535d38d7093
+		lineageTag: 0db6f379-0210-46e6-a157-113ff9a6276e
 		summarizeBy: none
 		sourceColumn: PO Line
 
@@ -425,10 +425,9 @@ table 'PO Details'
 				    BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
 				    BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="SRC_BFN_VW_PPMFACTPODETAILS",Kind="View"]}[Data],
 					#"Kept First Rows" = Table.FirstN(BFN_Datatable_View,NumberOfRows),
-					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View,
-				    #"Renamed Columns" = Table.RenameColumns(ParameterFilter,{{"POLine", "PO Line"}})
+					ParameterFilter = if NumberOfRows > 0 then #"Kept First Rows" else BFN_Datatable_View
 				in
-					#"Renamed Columns"
+				    ParameterFilter
 
 	annotation PBI_ResultType = Table
 
