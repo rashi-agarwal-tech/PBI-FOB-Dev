@@ -11,12 +11,12 @@ table 'Pack One'
 		annotation SummarizationSetBy = Automatic
 
 	column 'Packed Date'
-		dataType: string
+		dataType: dateTime
+		formatString: Short Date
+		sourceProviderType: datetime2
 		lineageTag: 411e6ed3-4bb9-495e-beb6-d41f903c27b6
 		summarizeBy: none
 		sourceColumn: Packed Date
-
-		annotation SummarizationSetBy = Automatic
 
 	column 'Packed Qty'
 		dataType: double
@@ -160,4 +160,6 @@ table 'Pack One'
 	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navigation
+
+	annotation SummarizationSetBy = Automatic
 
