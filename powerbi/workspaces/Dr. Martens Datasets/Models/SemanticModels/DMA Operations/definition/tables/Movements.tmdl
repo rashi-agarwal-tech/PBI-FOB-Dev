@@ -1828,18 +1828,6 @@ table Movements
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	partition 'Null Dates' = m
-		mode: import
-		source =
-				let
-					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
-					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
-					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
-					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],
-					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] = null)
-				in
-					#"Filtered Rows"
-
 	partition 'CY2030 12' = m
 		mode: import
 		source =
@@ -2864,6 +2852,17 @@ table Movements
 				in
 					#"Filtered Rows2"
 
+	partition 'Null Dates' = m
+		mode: import
+		source =
+				let
+					Source = Snowflake.Databases(Datasource_Server, Datasource_Warehouse),
+					PRESENTATION_Database = Source{[Name=Datasource_Database,Kind="Database"]}[Data],
+					BFN_PRESENTATION_Schema = PRESENTATION_Database{[Name=Datasource_Schema,Kind="Schema"]}[Data],
+					BFN_Datatable_View = BFN_PRESENTATION_Schema{[Name="OPS_BFN_VW_D365FACTMOVEMENTS",Kind="View"]}[Data],
+					#"Filtered Rows" = Table.SelectRows(BFN_Datatable_View, each [Date_Key] = null)
+				in
+					#"Filtered Rows"
 
 	annotation PBI_ResultType = Table
 
