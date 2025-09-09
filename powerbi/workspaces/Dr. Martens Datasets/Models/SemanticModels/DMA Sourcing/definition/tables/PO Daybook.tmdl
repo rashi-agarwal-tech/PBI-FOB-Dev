@@ -2208,7 +2208,12 @@ table 'PO Daybook'
 
 		annotation SummarizationSetBy = Automatic
 
-	column '_OT Ackno n.of days' = DATEDIFF ( [06. First Xmit Date], [08. Acknowledgement Date], DAY )
+	column '_OT Ackno n.of days' = 			
+			IF(
+				ISBLANK ( [07. Last Xmit Date] ),
+				DATEDIFF ( [06. First Xmit Date], [08. Acknowledgement Date], DAY ),
+				DATEDIFF ( [07. Last Xmit Date], [08. Acknowledgement Date], DAY )
+			)
 		formatString: 0
 		lineageTag: 7a5607f3-a1d5-43b2-8a7f-7b832895c27b
 		summarizeBy: sum
