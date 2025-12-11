@@ -1,0 +1,660 @@
+table Size
+	lineageTag: bc6d5151-af39-4a31-bc6f-4e7da7a19126
+	sourceLineageTag: 593c69b0-7d56-498c-8d39-c8f4cc34bec4
+
+	measure 'Directs Input' =
+			
+			VAR A = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P01"))>0,160000,0)
+			VAR B = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P02"))>0,0,0)
+			VAR C = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P03"))>0,1442574,0)
+			VAR D = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P04"))>0,400000,0)
+			VAR E = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P05"))>0,2441000,0)
+			VAR F = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P06"))>0,2865000,0)
+			VAR G = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P07"))>0,422622,0)
+			VAR H = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P08"))>0,472520,0)
+			VAR I = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P09"))>0,0,0)
+			VAR J = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P10"))>0,467500,0)
+			VAR K = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P11"))>0,0,0)
+			VAR L = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P12"))>0,622000,0)
+			RETURN
+			0
+			//A+B+C+D+E+F+G+H+I+J+K+L
+		formatString: 0.00
+		lineageTag: b1848607-5ed6-4cf4-9ae9-11b6f6fa4dfe
+
+	measure 'Directs Forecast' =
+			
+			var a = [Directs Input]
+			var b = [Directs Open]+CALCULATE([Total Net Value],'Order Type'[Order Type]="Direct Delivery")
+			return
+			a
+		formatString: #,0.00
+		lineageTag: 403c7f6f-5c33-4dcb-9fa2-0378d516c362
+
+		changedProperty = FormatString
+
+	measure 'Directs Open' =
+			
+			0
+			//CALCULATE([directs open working],all('Date'))
+		formatString: 0
+		lineageTag: abe77686-c1c2-4b7c-b7bc-74b2fa1d2344
+
+	measure 'Yesterday Invoiced' =
+			
+			var tday = CALCULATE(FIRSTDATE('Date'[ Date]),filter('Date','Date'[- Is Yesterday?]="Yes"))+1
+			var dow = WEEKDAY(tday,2)
+			var srt = DATEADD('Date'[ Date],-4,day)
+			var end1 = DATEADD('Date'[ Date],-1,day)
+			
+			return
+			
+			if(dow=1,
+			CALCULATE([Invoiced Net Value],FILTER('Date','Date'[ Date]>=tday-3))
+			,CALCULATE([Invoiced Net Value],FILTER('Date','Date'[- Is Yesterday?]="Yes")))
+		formatString: #,0
+		lineageTag: 8d40b5ef-b229-4117-ac5f-87c8e5655ce5
+
+		changedProperty = FormatString
+
+	measure 'Forecast $' =
+			
+			[S&OP Forecast Invoiced $]+[S&OP Forecast Returned $]
+		formatString: #,0
+		lineageTag: bef052a0-4092-4f6c-8f81-6aca3eefdddd
+
+		changedProperty = FormatString
+
+	measure 'Balance to Forecast' = [Period Invoiced] - [Forecast $]
+		formatString: #,0
+		lineageTag: e864687a-b73f-4f92-8cc8-7d78875f745b
+
+		changedProperty = FormatString
+
+	measure 'Shipping Days' =
+			
+			var dat = CALCULATE(COUNTROWS('Date'),DATESBETWEEN('Date'[ Date],TODAY(),LASTDATE('Date'[ Date])),'Date'[- Is Weekend?]="Weekday",'Date'[Fiscal Week Number (544)]<53)
+			return
+			dat
+		lineageTag: 3b58236c-e074-4421-a3bd-c677d5178523
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Required Daily Average' = DIVIDE([S&OP Forecast Invoiced $]-[Invoiced Net Value],[Shipping Days])
+		formatString: 0
+		lineageTag: 0732fd54-393e-4b74-b6bc-163a8a211132
+
+	measure '% Complete' = DIVIDE([Period Invoiced],[Forecast $])
+		formatString: 0%;-0%;0%
+		lineageTag: 32c84ef3-6fd2-4610-955e-89c6623dff8b
+
+		changedProperty = FormatString
+
+	measure 'Shipping Moving Average' = ```
+			
+			var sel = SELECTEDVALUE('Date'[Fiscal Year-Period])
+			var fstdate = CALCULATE(FIRSTDATE('Date'[ Date]),filter(all('Date'),'Date'[Fiscal Year-Period]=sel))
+			var shpdays = [Shipping Days Elapsed]
+			var tday = LOOKUPVALUE('Date'[ Date],'Date'[- Is Today?],"Yes")
+			var tnv = 
+			
+			CALCULATE (
+			    [Invoiced Net Value], 'Date'[Fiscal Year-Period]=sel,
+			    FILTER (
+			        ALL ( 'Date'[ Date] ),
+			        'Date'[ Date] <= MAX ( 'Date'[ Date] )
+			    )
+			)
+			return
+			
+			IF(LASTDATE('Date'[ Date])<tday,divide(tnv,shpdays),BLANK())
+			```
+		formatString: 0
+		lineageTag: 660a4932-03ce-452e-950e-ed6343de30fa
+
+	measure 'Shipping Days Elapsed' =
+			
+			var selp = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])
+			var tday = LOOKUPVALUE('Date'[ Date],'Date'[- Is Today?],"Yes")
+			var seld = SELECTEDVALUE('Date'[ Date],tday)
+			var dat1 = CALCULATE(FIRSTDATE('Date'[ Date]),filter(ALL('Date'),'Date'[Fiscal Year-Period (544)]=selp))
+			var crows = CALCULATE(COUNTROWS('Date'),all('Date'[ Date]),'Date'[- Is Weekend?]="Weekday",DATESBETWEEN('Date'[ Date],dat1,SELD))
+			return
+			if(WEEKDAY(dat1,2)>5,crows+1,crows)
+		lineageTag: 0f558fa9-a59a-4e2c-8bd9-9314bf4958e1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Period Invoiced' =
+			
+			var offs = 0 // Colten replace the 0 with the offset amount
+			var reg = "USA Wholesale" //This is the region the offset applies to
+			return
+			[Total Net Value]
+		formatString: #,0
+		lineageTag: 1697fda6-bac9-4358-829e-1afe22575059
+
+		changedProperty = FormatString
+
+	measure 'Current Daily Average' =
+			
+			
+			var yday = LOOKUPVALUE('Date'[ Date],'Date'[- Is Yesterday?],"Yes")
+			return
+			CALCULATE([Shipping Moving Average],'Date'[ Date]=yday)
+		formatString: 0
+		lineageTag: 53c76fd7-8c6f-4c77-bb55-ed231b9ba25d
+
+	measure 'Open by Fill Date Order' =
+			
+			var selp = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])
+			var ldate = CALCULATE(LASTDATE('Date'[ Date]),all('Date'[ Date]),'Date'[Fiscal Year-Period]=selp)
+			RETURN
+			CALCULATE(sum(Orders[Open Net Value Col Cons GBP]),USERELATIONSHIP('Date'[ Date],Orders[Fill Date - Order]))*[XR]
+		formatString: 0.00
+		lineageTag: 780f4501-dfd1-4c96-beaa-cd9add5d87f9
+
+	measure 'Direct Unbound FC' =
+			
+			
+			CALCULATE([S&OP Forecast Invoiced $],ALL('Date'[Fiscal Week Number (544)]))
+		formatString: 0
+		lineageTag: 406184bd-6ba8-4fe6-a540-9d4aa53c5ba5
+
+	measure 'Next Period Open' =
+			
+			var selp = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])
+			var ldate = CALCULATE(LASTDATE('Date'[ Date]),all('Date'[ Date]),'Date'[Fiscal Year-Period]=selp)
+			RETURN
+			CALCULATE(sum(Orders[Open Net Value Col Cons GBP]),USERELATIONSHIP('Date'[ Date],Orders[Fill Date - Order]),Orders[Start Ship Date]<ldate)*[XR]
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 25c34cc1-9f59-4436-a024-681a3bbf0c5c
+
+	measure 'Cumulative Direct' =
+			
+			
+			var sel = SELECTEDVALUE('Date'[Fiscal Year-Period])
+			
+			return
+			CALCULATE (
+			    [Total Net Value]+[Open by Fill Date Order], 'Date'[Fiscal Year-Period]=sel,
+			    FILTER (
+			        ALL ( 'Date'[ Date] ),
+			        'Date'[ Date] <= MAX ( 'Date'[ Date] )
+			    )
+			)
+		lineageTag: c61ab176-0ff4-4546-89fa-20688aa83959
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'P2P Completion' =
+			
+			var inv = [Invoiced Net Value]
+			var picka = CALCULATE([Picked Activated Net Value],filter(all('Date'),'Date'[ Date]<=[lastperdate]))
+			var pickc = CALCULATE([Picked Complete Net Value],filter(all('Date'),'Date'[ Date]<=[lastperdate]))
+			return
+			divide(inv+picka+pickc,[S&OP Forecast Invoiced $])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 81b07e02-acb8-4a9e-8850-c7d19dc18b2d
+
+	measure 'P2P Date' = FORMAT(DATEADD(LASTDATE('Date'[ Date]),-14,DAY),"m/d")
+		formatString: m/d/yy
+		lineageTag: 0969a75f-c692-4bfe-b7ae-2dde1259febb
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure 'Open by Fill Date US Account' = ```
+			
+			var selp = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])
+			var ldate = CALCULATE(LASTDATE('Date'[ Date]),all('Date'[ Date]),'Date'[Fiscal Year-Period (544)]=selp)
+			RETURN
+			CALCULATE(sum(Orders[Open Net Value Col Cons GBP]),filter(Orders,Orders[Start Ship Date]<ldate),USERELATIONSHIP('Date'[ Date],Orders[Fill Date - US Account]))
+			
+			```
+		lineageTag: bf82e594-4f16-4250-ab18-afefd4fe177d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Selected Period' = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])
+		lineageTag: 360b4a21-09fe-4fad-839f-320d3b06968f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Balance - Pick - Directs' =
+			
+			
+			[Balance to Forecast] +[In Pick] +[Directs Open]
+		formatString: #,0
+		lineageTag: d011292b-d3f5-4bce-907f-215f7ff94f12
+
+		changedProperty = FormatString
+
+	measure 'Selected FC' =
+			
+			VAR A = SELECTEDVALUE('Forecast Version'[Forecast Version])
+			RETURN
+			IF(A = "Latest Projection","Latest Proj.",a)
+		lineageTag: 6ac85edf-6eca-4ffe-807d-06bb4ac24369
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'P2P FORMAT' =
+			
+			VAR P2PDate = DATEADD(LASTDATE('Date'[ Date]),-14,DAY)
+			RETURN
+			if([P2P Completion]>1,"#009E06","3F2C80F")
+		lineageTag: eb9c5f95-a47f-47a8-93a1-8f6605da49a2
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure FlashTtitle = [Selected Period]&" WHOLESALE FLASH"
+		lineageTag: a628baca-6b13-44fd-853a-aa5c567ceb5d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'ADD OPP TITLE' = SELECTEDVALUE('Date'[Fiscal Period])&" ADDITIONAL OPPOURTUNITY"
+		lineageTag: c3810287-e0a0-4783-916c-032568325325
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure 'In Pick' =
+			
+			var selp = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])
+			var ldate =CALCULATE(LASTDATE('Date'[ Date]),all('Date'[ Date]),'Date'[Fiscal Year-Period (544)]=selp)
+			var pick1 = CALCULATE([Picked Activated Net Value],filter(all('Date'),'Date'[ Date]<=ldate))+CALCULATE([Picked Complete Net Value],filter(all('Date'),'Date'[ Date]<=ldate))
+			return
+			pick1
+		formatString: #,0
+		lineageTag: 2d3c75e0-eff3-48e9-90bf-fc2771300e97
+
+		changedProperty = FormatString
+
+	measure Pairs = [Total Units]
+		formatString: 0.00
+		lineageTag: b63e6cb5-7cc0-4d9e-a9a1-6ba5c865b30b
+
+	measure 'Yesterday Invoiced Pairs' =
+			
+			var tday = CALCULATE(FIRSTDATE('Date'[ Date]),filter('Date','Date'[- Is Yesterday?]="Yes"))+1
+			var dow = WEEKDAY(tday,2)
+			var srt = DATEADD('Date'[ Date],-4,day)
+			var end1 = DATEADD('Date'[ Date],-1,day)
+			
+			return
+			
+			if(dow=1,
+			CALCULATE([Invoiced Units],FILTER('Date','Date'[ Date]>=tday-3))
+			,CALCULATE([Invoiced Units],FILTER('Date','Date'[- Is Yesterday?]="Yes")))
+		formatString: 0.00
+		lineageTag: 15bf346b-0394-4534-9560-49156641e2fc
+
+	measure 'Forecast Unit' =
+			
+			
+			[S&OP Forecast Invoiced Units]+[S&OP Forecast Returned Units]
+		formatString: 0.00
+		lineageTag: d9147868-701a-4111-a2cd-528a8ebaf8af
+
+		changedProperty = Name
+
+	measure 'Directs Forecast Pairs' =
+			
+			var a = [Directs Input Pairs]
+			var b = [Directs Open]+CALCULATE([Pairs],'Order Type'[Order Type]="Direct Delivery")
+			return
+			a
+		lineageTag: 10c8f87c-c47a-4bc1-93ff-57184f189e98
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Directs Input Pairs' =
+			
+			VAR A = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P01"))>0,3000,0)
+			VAR B = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P02"))>0,0,0)
+			VAR C = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P03"))>0,29068,0)
+			VAR D = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P04"))>0,13900,0)
+			VAR E = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P05"))>0,51304,0)
+			VAR F = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P06"))>0,53900,0)
+			VAR G = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P07"))>0,27138,0)
+			VAR H = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P08"))>0,6570,0)
+			VAR I = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P09"))>0,0,0)
+			VAR J = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P10"))>0,10000,0)
+			VAR K = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P11"))>0,0,0)
+			VAR L = if(CALCULATE(COUNTROWS('Date'),FILTER('Date',[Fiscal Year-Period (544)]="FY25-P12"))>0,11500,0)
+			RETURN
+			0
+			//A+B+C+D+E+F+G+H+I+J+K+L
+		lineageTag: 4ea7c90d-a5c7-453a-be6e-0b376ce674be
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Directs Open Pairs' =
+			
+			0
+			//CALCULATE([directs open working pairs],all('Date'))
+		formatString: 0
+		lineageTag: 18c29427-f5a1-437f-90bd-76cd270d38ca
+
+		changedProperty = FormatString
+
+	measure 'Balance to Forecast Pairs' =
+			
+			[Total Units]-[Forecast Unit]
+		formatString: 0.00
+		lineageTag: 5210cdfc-e0d8-468a-a584-7eefb0e48ef8
+
+	measure '% Complete Pairs' = DIVIDE([Total Units],[Forecast Units])
+		formatString: 0%;-0%;0%
+		lineageTag: b7c54fc5-293d-4cdc-8407-b2e4b6d20bc1
+
+		changedProperty = FormatString
+
+	measure 'Required Daily Average Pairs' = DIVIDE([S&OP Forecast Invoiced Units]-[Invoiced Units],[Shipping Days])
+		formatString: 0.00
+		lineageTag: 91bfe48f-7338-43da-8dbc-00addad263a2
+
+	measure 'Shipping Moving Average Pairs' = ```
+			
+			var sel = SELECTEDVALUE('Date'[Fiscal Year-Period])
+			var fstdate = CALCULATE(FIRSTDATE('Date'[ Date]),filter(all('Date'),'Date'[Fiscal Year-Period]=sel))
+			var shpdays = [Shipping Days Elapsed]
+			var tnv = 
+			
+			IF(LASTDATE('Date'[ Date])<[Today],
+			CALCULATE (
+			    [Pairs], 'Date'[Fiscal Year-Period]=sel,
+			    FILTER (
+			        ALL ( 'Date'[ Date] ),
+			        'Date'[ Date] <= MAX ( 'Date'[ Date] )
+			    )
+			),BLANK())
+			return
+			divide(tnv,shpdays)
+			```
+		lineageTag: 2cf26b72-3c1e-434d-b70b-52afe8a19202
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Current Daily Average Pairs' =
+			
+			
+			var yday = LOOKUPVALUE('Date'[ Date],'Date'[- Is Yesterday?],"Yes")
+			return
+			CALCULATE([Shipping Moving Average Pairs],'Date'[ Date]=yday)
+		formatString: 0.00
+		lineageTag: b7fd53b5-6518-46a3-9b27-2d76a8b0c9e4
+
+	measure 'In Pick Pairs' =
+			
+			var selp = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])
+			var ldate =CALCULATE(LASTDATE('Date'[ Date]),all('Date'[ Date]),'Date'[Fiscal Year-Period (544)]=selp)
+			var pick1 = CALCULATE([Pick Activated Units],Products[Product General]="Footwear",filter(all('Date'),'Date'[ Date]<ldate))+CALCULATE([Pick Complete Units],Products[Product General]="Footwear",filter(all('Date'),'Date'[ Date]<ldate))
+			return
+			pick1
+		formatString: 0.00
+		lineageTag: 1007e0ba-7c51-4966-b8bf-90c099a926b4
+
+	measure 'Balance - Pick - Directs Pairs' =
+			
+			[Balance to Forecast Pairs] +[In Pick Pairs] +[Directs Open Pairs]
+		formatString: 0.00
+		lineageTag: a61a3482-4c64-488f-a085-8445337ee6b4
+
+	measure 'Unbound Open' = CALCULATE([Open Net Value],ALL('Date'[Fiscal Year-Period (544)]))
+		lineageTag: 6496e79b-6bf8-4646-9127-e646b0478d50
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'directs open working' =
+			
+			
+			var selp = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])
+			var ldate =[lastpdate]
+			var ldatoffset = ldate-0
+			var openus = CALCULATE(SUM(Orders[Open Net Value Col Cons GBP]),FILTER(Orders,Orders[Start Ship Date]<=ldate&&Orders[Fill Date - Order]<ldatoffset&&Orders[Shipping Warehouse]="USDOMDD"))*[XR]
+			var openlatam = CALCULATE(SUM(Orders[Open Net Value Col Cons GBP]),FILTER(Orders,Orders[Credit Override]=TRUE()&&Orders[Fill Date - Order]<ldatoffset&&Orders[Shipping Warehouse]="201-DD"&&Orders[Start Ship Date]<=ldate))*[XR]
+			var directs = openUS+openlatam
+			return
+			directs
+		lineageTag: b19d2830-0217-44b3-bad6-75e542527251
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Moving Shipping Target' = ```
+			
+			VAR TDAY = LOOKUPVALUE('Date'[ Date],'Date'[- Is Today?],"Yes")
+			var sel = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])
+			var tnv = 
+			IF(LASTDATE('Date'[ Date])<TDAY,
+			CALCULATE (
+			    [Invoiced Net Value],
+			    FILTER (
+			        ALL ('Date'),
+			        'Date'[ Date] <= MAX ( 'Date'[ Date]) && 'Date'[Fiscal Year-Period (544)]=sel )
+			),BLANK())
+			var fc = CALCULATE([S&OP Forecast Invoiced $],ALLEXCEPT('Date','Date'[Fiscal Year-Period (544)]))
+			var target1 = divide((fc-tnv),[Shipping Days Lft])
+			var main = if(LASTDATE('Date'[ Date])<today()-1,target1,if(LASTDATE('Date'[ Date])<TDAY,CALCULATE([Required Daily Average],ALLEXCEPT('Date','Date'[Fiscal Year-Period (544)]),all(Orders[Shipping Warehouse])),BLANK()))
+			return
+			if(main<0,blank(),main)
+			```
+		formatString: 0
+		lineageTag: 4e639c14-13a4-4875-8b0f-08633fbb3c34
+
+	measure 'Shipping Days Lft' =
+			
+			var selp = SELECTEDVALUE('Date'[Fiscal Year-Period])
+			var seld = SELECTEDVALUE('Date'[ Date],today())
+			var dat1 = CALCULATE(LASTDATE('Date'[ Date]),filter(ALL('Date'),'Date'[Fiscal Year-Period]=selp))
+			var crows = CALCULATE(COUNTROWS('Date'),all('Date'[ Date]),'Date'[- Is Weekend?]="Weekday",DATESBETWEEN('Date'[ Date],seld,dat1))
+			
+			return
+			if(WEEKDAY(seld,2)>5,crows+1,crows)
+		lineageTag: 70fc6ab2-7676-4148-9eb3-e0a4ab119455
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Unbound Forecast' =
+			
+			var selp = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])
+			var ldat = CALCULATE(LASTDATE('Date'[ Date]),filter(ALL('Date'),'Date'[Fiscal Year-Period (544)]=selp))
+			var fdat = CALCULATE(FIRSTDATE('Date'[ Date]),filter(ALL('Date'),'Date'[Fiscal Year-Period (544)]=selp))
+			var crows = CALCULATE(COUNTROWS('Date'),all('Date'[ Date]),'Date'[- Is Weekend?]="Weekday",DATESBETWEEN('Date'[ Date],fdat,ldat))
+			return
+			DIVIDE([S&OP Forecast Invoiced $],crows)
+		formatString: 0
+		lineageTag: f11be7db-f13b-45dd-8f92-92c2a5f790e3
+
+	measure 'directs open working pairs' =
+			
+			
+			var selp = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])
+			var ldate =[lastpdate]
+			var ldatoffset = ldate-0
+			var openus = CALCULATE(SUM(Orders[Open Units Col]),FILTER(Orders,Orders[Start Ship Date]<=ldate&&Orders[Fill Date - Order]<ldatoffset&&Orders[Shipping Warehouse]="USDOMDD"))
+			var openlatam = CALCULATE(SUM(Orders[Open Units Col]),FILTER(Orders,Orders[Credit Override]=TRUE()&&Orders[Fill Date - Order]<ldatoffset&&Orders[Shipping Warehouse]="201-DD"&&Orders[Start Ship Date]<=ldate))
+			var directs = openUS+openlatam
+			return
+			directs
+		lineageTag: a5df5037-deed-48bb-950c-f954b4c31565
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Direct Unbound FC Pairs' =
+			
+			
+			CALCULATE([S&OP Forecast Invoiced Units],ALL('Date'[Fiscal Week Number (544)]))
+		lineageTag: b385ca5f-036a-4bed-9f68-b8b94ad40c96
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'P2P Completion Pairs' =
+			
+			var inv = [Invoiced Units]
+			var pickac = CALCULATE([Pick Activated Units],filter(all('Date'),'Date'[ Date]<=[lastperdate]))
+			var pickco = CALCULATE([Pick Complete Units],filter(all('Date'),'Date'[ Date]<=[lastperdate]))
+			RETURN
+			divide(inv+pickac+pickco,[S&OP Forecast Invoiced Units])
+		formatString: 0%;-0%;0%
+		lineageTag: 8ad17dab-78d3-45d2-b051-dba058a0daf9
+
+		changedProperty = FormatString
+
+	measure 'P2P FORMAT pairs' =
+			
+			VAR P2PDate = DATEADD(LASTDATE('Date'[ Date]),-14,DAY)
+			RETURN
+			if(AND([P2P Completion Pairs]>1,P2PDate>=today()),"#33D639",
+			if([P2P Completion Pairs]>1,"#33D639","3F2C80F"))
+		lineageTag: 38750d34-6d30-42ce-b71b-8b5da6f41990
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure 'In Pick Opp Pairs' = ```
+			
+			 var a = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])
+			 return
+			
+			 CALCULATE([Pick Activated Units]+[Pick Complete Units])
+			```
+		formatString: #,0
+		lineageTag: 3da98e17-6626-4872-a2ea-6cef8c241c80
+
+		changedProperty = FormatString
+
+	measure 'Unbound Forecast Pairs' =
+			
+			var selp = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])
+			var ldat = CALCULATE(LASTDATE('Date'[ Date]),filter(ALL('Date'),'Date'[Fiscal Year-Period (544)]=selp))
+			var fdat = CALCULATE(FIRSTDATE('Date'[ Date]),filter(ALL('Date'),'Date'[Fiscal Year-Period (544)]=selp))
+			var crows = CALCULATE(COUNTROWS('Date'),all('Date'[ Date]),'Date'[- Is Weekend?]="Weekday",DATESBETWEEN('Date'[ Date],fdat,ldat))
+			return
+			DIVIDE(CALCULATE([Forecast Unit],ALLEXCEPT('Date','Date'[Fiscal Year-Period (544)])),crows)
+		lineageTag: 2b6f0743-6d90-4021-810b-fb7322bf7b9b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Moving Shipping Target Pairs' = ```
+			
+			
+			VAR TDAY = LOOKUPVALUE('Date'[ Date],'Date'[- Is Today?],"Yes")
+			var sel = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])
+			var tnv = 
+			IF(LASTDATE('Date'[ Date])<TDAY,
+			CALCULATE (
+			    [Total Units],all(Products[Product General]),
+			    FILTER (
+			        ALL ('Date'),
+			        'Date'[ Date] <= MAX ( 'Date'[ Date]) && 'Date'[Fiscal Year-Period (544)]=sel )
+			),BLANK())
+			var fc = CALCULATE([Forecast Unit],ALLEXCEPT('Date','Date'[Fiscal Year-Period (544)]))
+			var target1 = divide((fc-tnv),[Shipping Days Lft])
+			var main = if(LASTDATE('Date'[ Date])<today()-1,target1,if(LASTDATE('Date'[ Date])<TDAY,CALCULATE([Required Daily Average Pairs],ALLEXCEPT('Date','Date'[Fiscal Year-Period (544)]),all(Orders[Shipping Warehouse])),BLANK()))
+			return
+			if(main<0,blank(),main)
+			```
+		lineageTag: a2193e23-a718-4fcc-8588-783f824aa4e5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Days left Text' =
+			if(LASTDATE('Date'[ Date])<[Today],"Period Complete",
+			if(FIRSTDATE('Date'[ Date])>[Today],"Future Period",
+			[Shipping Days Lft]&" shipping days left"))
+		lineageTag: 8c7b16f3-cfc2-4679-8d83-243e4297f445
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '% Complete Invoiced' = DIVIDE([Invoiced Net Value],[S&OP Forecast Invoiced $])
+		formatString: 0%;-0%;0%
+		lineageTag: f3577218-e273-4266-aaf6-a7917c201323
+
+		changedProperty = FormatString
+
+	measure '% Complete Returned' = DIVIDE([Returned Net Value],[S&OP Forecast Returned $])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e0427b5a-a528-4d7b-8c73-b342407e8eb8
+
+	measure ZERO = DIVIDE([Total Net Value Forecast],1000000)+2
+		lineageTag: 8dd62aa9-8c09-4a08-83b3-a83c6b35d0a8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SELCUST = SELECTEDVALUE(Customer[Invoice Acct Name])
+		lineageTag: 5232f1e7-f383-4247-9769-38712dc53a76
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure amtext = "TOTAL AMERICAS"
+		lineageTag: 07a25ca8-a320-459a-8934-abd93752f892
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MIN TNV FC' = min([Total Net Value],[Total Net Value Forecast])
+		lineageTag: e1e7bb46-8992-41e7-a977-e1e669d94012
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'TOP NET CUSTOMERS' = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])&" TOP CUSTOMERS BY "&[CURSIGN]&" NET"
+		lineageTag: 7d930cdd-b35d-4969-bc5f-68e1a7da4ccf
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	measure 'TOP UNIT CUSTOMERS' = SELECTEDVALUE('Date'[Fiscal Year-Period (544)])&" TOP CUSTOMERS BY UNITS"
+		lineageTag: 39200975-57f0-429d-ba9f-3ad9f9e39a6a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MIN UNITS FC' = min([Total UNITS],[Forecast Units])
+		lineageTag: b8a43463-dc6e-404a-acdb-cf7f5c875035
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'unbound forecast graph' = CALCULATE([Unbound Forecast],ALLEXCEPT('Date','Date'[Fiscal Year-Period (544)]))
+		lineageTag: a1965d0e-0c6c-4b37-8ff0-dbc147bca576
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Size_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Misc
+		lineageTag: 0542831c-f80b-4f22-9b62-657037672bd5
+		sourceLineageTag: aec64a7d-69f4-4729-8797-c894fae9c224
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	column Size
+		dataType: string
+		lineageTag: b3cc1cfe-edff-4422-8856-42d100543990
+		sourceLineageTag: 1974fe78-e3ec-421a-9bc5-7e8c232baeed
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = User
+
+	column DisplayOrder
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: fec3ab8a-a357-4f99-b83f-10e1416d158a
+		sourceLineageTag: b891bdb7-9ede-4ab7-8c58-6499a8e7ae08
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DisplayOrder
+
+		annotation SummarizationSetBy = User
+
+	partition Size = entity
+		mode: directQuery
+		source
+			entityName: Size
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

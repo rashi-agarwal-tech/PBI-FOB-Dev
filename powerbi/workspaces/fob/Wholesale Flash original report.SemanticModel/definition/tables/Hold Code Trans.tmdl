@@ -1,0 +1,61 @@
+table 'Hold Code Trans'
+	isHidden
+	lineageTag: 31c1ea51-1373-41e5-b67a-515ab8ac742f
+	sourceLineageTag: cae1b1a3-8718-4161-9081-9b1886e8dd8a
+
+	column SalesOrderNumber_Key
+		dataType: string
+		isHidden
+		isNullable: false
+		displayFolder: zz_Keys
+		lineageTag: 60e56588-1cef-4db1-95b9-1c010c89cb21
+		sourceLineageTag: 6bca5f98-3322-4268-ae21-4a262069e58c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SalesOrderNumber_Key
+
+		annotation SummarizationSetBy = User
+
+	column HOLDCODEDESCRIPTION
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: d7e00d37-38e7-4aac-9802-28c8a996eb2d
+		sourceLineageTag: ad4b7435-a158-4c15-8b79-085fea1aec7d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: HOLDCODEDESCRIPTION
+
+		annotation SummarizationSetBy = User
+
+	column MCRHOLDUSER
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 775a2e67-d458-4816-aa0a-7a5e95d69c9d
+		sourceLineageTag: 72e94b4c-3586-4f19-8017-eff5f9672c8a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MCRHOLDUSER
+
+		annotation SummarizationSetBy = User
+
+	column MCRHOLDDATETIME
+		dataType: dateTime
+		isHidden
+		formatString: Short Date
+		displayFolder: zz_Misc
+		lineageTag: b8970b81-3da1-44f8-8494-58697eea1f10
+		sourceLineageTag: 47fe0681-f0c3-4c81-9fd0-ccfc90823000
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MCRHOLDDATETIME
+
+		annotation SummarizationSetBy = User
+
+	partition 'Hold Code Trans' = entity
+		mode: directQuery
+		source
+			entityName: Hold Code Trans
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

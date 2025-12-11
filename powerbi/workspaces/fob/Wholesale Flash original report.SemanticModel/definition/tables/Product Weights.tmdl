@@ -1,0 +1,57 @@
+table 'Product Weights'
+	isHidden
+	lineageTag: 3d970c49-5909-489a-b751-d7d08122bebf
+	sourceLineageTag: be19eb8a-9cb5-4c48-b610-f0b54ed0375c
+
+	column Product_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 230d74f1-1be9-43e8-8e10-dad0dd81ede1
+		sourceLineageTag: 5632b5c8-ab12-4175-ae5c-c2706ff23017
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Net Weight'
+		dataType: decimal
+		isHidden
+		lineageTag: 3e1992c9-ddc1-44db-b172-c62cedc7b21a
+		sourceLineageTag: f57e3b6e-6d12-4ff4-a524-a40daac1cf54
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Net Weight
+
+		annotation SummarizationSetBy = User
+
+	column 'Pack Weight'
+		dataType: decimal
+		isHidden
+		lineageTag: 1b4a4375-ff31-4e4b-81ac-831c4097d4f6
+		sourceLineageTag: 35489a68-5711-49aa-86cf-bbfa6f807339
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pack Weight
+
+		annotation SummarizationSetBy = User
+
+	column Size_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 0563a7a8-f7be-420d-81bb-46e88cb5c381
+		sourceLineageTag: b72f4f1c-b1a0-4dff-bbaf-fc772e7456b2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Size_Key
+
+		annotation SummarizationSetBy = User
+
+	partition 'Product Weights' = entity
+		mode: directQuery
+		source
+			entityName: Product Weights
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

@@ -1,0 +1,11 @@
+expression 'DirectQuery to AS - DMA B2B' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/Dr.%20Martens%20Datasets", "DMA B2B"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: c1768407-7d7e-4c52-90ab-36f90874acce
+
+	annotation PBI_IncludeFutureArtifacts = True
+

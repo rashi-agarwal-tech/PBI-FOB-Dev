@@ -1,0 +1,63 @@
+table Pick
+	lineageTag: 4426547a-c9a4-4abb-8c07-eed1a6595d04
+	sourceLineageTag: 8f55b18f-d993-4dca-94d2-f18af6f17e4f
+
+	column HandlingStatusDesc
+		dataType: string
+		lineageTag: dde5a5d3-c616-4091-9505-259912b2d249
+		sourceLineageTag: ec3ac2ad-697c-48eb-8a5a-913cf6a2d1f2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: HandlingStatusDesc
+
+		annotation SummarizationSetBy = User
+
+	column INVENTTRANSID
+		dataType: string
+		lineageTag: 088a95e9-6fd6-49ed-a70a-8f00261b3399
+		sourceLineageTag: 1978f451-74fb-4216-bd89-9fe1a337537d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTTRANSID
+
+		annotation SummarizationSetBy = User
+
+	column 'Pick Qty'
+		dataType: int64
+		formatString: " \#\,\#\#\0"
+		lineageTag: 227f282d-124a-4384-8c96-9e57343827a3
+		sourceLineageTag: 8c0907c6-518a-4613-a85f-a00c373b08d6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Pick Qty
+
+		annotation SummarizationSetBy = User
+
+	column ACTIVATIONDATETIME
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: dd2a1d96-d897-4b86-8432-1ed8bcf5d00f
+		sourceLineageTag: e817820e-ed02-46ce-bcc7-0b0ea809bb06
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ACTIVATIONDATETIME
+
+		annotation SummarizationSetBy = User
+
+	column INVENTLOCATIONID_WMS
+		dataType: string
+		isHidden
+		lineageTag: 4c0036ad-71a1-44e1-ada5-239123211758
+		sourceLineageTag: ea97e7d3-a072-46db-842a-9903057839eb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: INVENTLOCATIONID_WMS
+
+		annotation SummarizationSetBy = User
+
+	partition Pick = entity
+		mode: directQuery
+		source
+			entityName: Pick
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

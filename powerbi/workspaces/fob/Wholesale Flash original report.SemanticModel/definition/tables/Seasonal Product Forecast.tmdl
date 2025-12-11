@@ -1,0 +1,69 @@
+table 'Seasonal Product Forecast'
+	lineageTag: 636c1cd4-8611-42f6-b25d-802b52c86a09
+	sourceLineageTag: 9c8e429b-989e-4c4e-a7f7-82762ec54e59
+
+	column Date_key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: e6d98fc6-c1ee-4eba-8f52-98101d04c4b7
+		sourceLineageTag: 7ed0631f-376f-4184-847b-b06631a51d4a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Date_key
+
+		annotation SummarizationSetBy = User
+
+	column Product_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 58ec4d8c-03fc-4c83-93b9-4d55d5e43f4c
+		sourceLineageTag: 06335d8e-57f1-4cc1-975f-4a9fa8bd33f6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Product_Key
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 1be61d6e-d7ac-4dd5-ad55-7f8f73622973
+		sourceLineageTag: f7f17065-725b-4b19-bfc8-4fe3816ccbcc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Forecast Quantity'
+		dataType: int64
+		displayFolder: zz_Values
+		lineageTag: 37dcda07-1b3e-4b97-b608-5fbf4aa0bab2
+		sourceLineageTag: 5e529a49-ffae-43ab-b6bc-c63010c5820b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Forecast Quantity
+
+		annotation SummarizationSetBy = User
+
+	column Order_Type
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 8d70ad7e-d790-4897-8033-835131edaa3e
+		sourceLineageTag: 33b1dec6-79a7-41c5-814d-acc17110927c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Order_Type
+
+		annotation SummarizationSetBy = User
+
+	partition 'Seasonal Product Forecast' = entity
+		mode: directQuery
+		source
+			entityName: Seasonal Product Forecast
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

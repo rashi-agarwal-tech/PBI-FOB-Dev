@@ -1,0 +1,1968 @@
+table Metrics
+	lineageTag: 98753284-367b-40a7-9481-258d1f71044a
+	sourceLineageTag: 736bd1e8-0939-4577-a749-4ebf445b6c75
+
+	measure 'Open Units' = EXTERNALMEASURE("Open Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 02. Open
+		lineageTag: ac2b7736-8fb3-4f84-94a9-1e53603ac983
+		sourceLineageTag: 3dde201c-645d-4fab-96c5-10be485a7ace
+		dataCategory: Uncategorized
+
+	measure 'Open Full Value' = EXTERNALMEASURE("Open Full Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 02. Open
+		lineageTag: 524ec620-8ed8-49e2-aef7-c7200fc60345
+		sourceLineageTag: 81268695-4ff9-4410-a47c-093d725fb2bb
+		dataCategory: Uncategorized
+
+	measure 'Open Discounts' = EXTERNALMEASURE("Open Discounts", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 02. Open
+		lineageTag: 1b4e05d4-0d6b-4855-a5d6-4186ed77b2e8
+		sourceLineageTag: 7c06e941-9ca4-4172-beaa-b90e089eb821
+		dataCategory: Uncategorized
+
+	measure 'Open Charges' = EXTERNALMEASURE("Open Charges", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 02. Open
+		lineageTag: 7824217b-8006-4683-bbd5-ce81bf9c6704
+		sourceLineageTag: fda53c0a-1780-49bc-8a3a-deaa78089369
+		dataCategory: Uncategorized
+
+	measure 'Open Net Value' = EXTERNALMEASURE("Open Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 02. Open
+		lineageTag: 3f2572be-d462-4209-8b18-79b36e0a0236
+		sourceLineageTag: b37ad367-9436-4b6e-ab2b-81bf493de84f
+		dataCategory: Uncategorized
+
+	measure 'All Picked' = EXTERNALMEASURE("All Picked", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		isHidden
+		displayFolder: 02. Open
+		lineageTag: cbaa63ab-8f94-400c-9602-cca411de146b
+		sourceLineageTag: d8c200fa-d755-45c9-abe4-4f9b1a2ce88b
+		dataCategory: Uncategorized
+
+	measure 'Open CoGS' = EXTERNALMEASURE("Open CoGS", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0"
+		displayFolder: 02. Open
+		lineageTag: 3c60fb3b-b699-4dd5-b960-85fce49d0563
+		sourceLineageTag: ae3af25d-8a51-4a33-98fa-e3ada7bf9c3d
+		dataCategory: Uncategorized
+
+	measure 'Pre-Cancel Units' = EXTERNALMEASURE("Pre-Cancel Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 02. Open\Open Breakdown\US
+		lineageTag: 7d93d9b8-af30-491f-9beb-c59e5f5ca3ea
+		sourceLineageTag: add9ad58-1259-439e-bc33-0d9cd93ec405
+		dataCategory: Uncategorized
+
+	measure 'Post-Cancel Units' = EXTERNALMEASURE("Post-Cancel Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 02. Open\Open Breakdown\US
+		lineageTag: e2f85d8e-76c3-4938-9a6c-58f657e6c891
+		sourceLineageTag: 10d742e0-639d-4f28-8705-7acdfef316e8
+		dataCategory: Uncategorized
+
+	measure 'Cancel Risk Fulfilment %' = EXTERNALMEASURE("Cancel Risk Fulfilment %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 02. Open\Open Breakdown\US
+		lineageTag: 3f29ea32-20e2-4c05-b0ac-2d7c755aec5e
+		sourceLineageTag: f804dd04-060d-4db9-a9d1-dda51a9ab0e9
+		dataCategory: Uncategorized
+
+	measure 'Pre-Cancel Net Value' = EXTERNALMEASURE("Pre-Cancel Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: #,0.00
+		displayFolder: 02. Open\Open Breakdown\US
+		lineageTag: ef1bb1ae-31a8-4f1b-8455-cbcaae4d593a
+		sourceLineageTag: 2a85af08-fa74-4b0b-a1aa-2e0967526a31
+		dataCategory: Uncategorized
+
+	measure 'Post-Cancel Net Value' = EXTERNALMEASURE("Post-Cancel Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: #,0.00
+		displayFolder: 02. Open\Open Breakdown\US
+		lineageTag: 4f06a80c-066b-40b2-b101-c06ce35a34ca
+		sourceLineageTag: 00be2df0-7686-4c6a-af2e-f0e489f94b52
+		dataCategory: Uncategorized
+
+	measure 'Allocated Units' = EXTERNALMEASURE("Allocated Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 4d4750eb-0237-4313-bc9e-d8b9b594809e
+		sourceLineageTag: a0192c06-93cf-4ee0-bae2-0133e1fbf144
+		dataCategory: Uncategorized
+
+	measure 'Reserved Units' = EXTERNALMEASURE("Reserved Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 7a2ba0fd-e30f-4a55-9fe2-d48471eb0ac9
+		sourceLineageTag: cf33a230-d98d-4eb3-958e-796e4a55aad5
+		dataCategory: Uncategorized
+
+	measure 'Outstanding Units' = EXTERNALMEASURE("Outstanding Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: b9007125-6902-48c3-a7a8-0ee90dfe5bac
+		sourceLineageTag: a8a56c53-be1e-41e0-8cb6-82952f35ab8f
+		dataCategory: Uncategorized
+
+	measure 'Outstanding Net Value' = EXTERNALMEASURE("Outstanding Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 8184762b-f5ba-421e-80cc-117c0ff6dd00
+		sourceLineageTag: 671227b4-517a-4dda-b8be-f0302c9ef20c
+		dataCategory: Uncategorized
+
+	measure 'Reserved Net Value' = EXTERNALMEASURE("Reserved Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 38072239-8b85-4644-854b-34d95d4ec042
+		sourceLineageTag: b990ae85-6802-4bd7-a258-af93dc42fa05
+		dataCategory: Uncategorized
+
+	measure 'Allocated Net Value' = EXTERNALMEASURE("Allocated Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 9a265530-17f2-4680-96be-6eb96fd6f36a
+		sourceLineageTag: 4e06d2b7-f4dc-4f85-bd1c-8aa06425dbc9
+		dataCategory: Uncategorized
+
+	measure 'Picked Complete Net Value' = EXTERNALMEASURE("Picked Complete Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 8997d081-26dd-42ef-a648-4d93599987eb
+		sourceLineageTag: 0e7e55a7-e521-437e-abea-6ccc259b658b
+		dataCategory: Uncategorized
+
+	measure 'Picked Activated Net Value' = EXTERNALMEASURE("Picked Activated Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 4c928fba-5ade-41b1-be84-5ebd9fc9f77d
+		sourceLineageTag: a452874f-90c8-4116-849a-6d395085aa66
+		dataCategory: Uncategorized
+
+	measure 'Allocated Units On-Time' = EXTERNALMEASURE("Allocated Units On-Time", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 8f84a38b-fc5d-4ecb-bd37-5a5cf51a68da
+		sourceLineageTag: d6ceaba4-e600-4110-ae02-10b9f57c93ec
+		dataCategory: Uncategorized
+
+	measure 'Allocated Units Late' = EXTERNALMEASURE("Allocated Units Late", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: e0f91d5a-36d2-42ba-bb44-424839771e7f
+		sourceLineageTag: 90654a4e-b03b-4679-b11f-1221bd7d38e0
+		dataCategory: Uncategorized
+
+	measure 'Last Fill Date' = EXTERNALMEASURE("Last Fill Date", DATETIME, "DirectQuery to AS - DMA B2B")
+		formatString: Short Date
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: d81cf368-b8fa-45c4-b3ac-2e91cfe5a199
+		sourceLineageTag: 516096f2-9c1a-4296-a75b-bcd6f075aeb7
+		dataCategory: Uncategorized
+
+	measure 'Pick Complete Units' = EXTERNALMEASURE("Pick Complete Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: 0
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 1a40b105-49a4-4d80-8cdd-ffc4c0af438a
+		sourceLineageTag: 2faa5408-cbf4-4ca1-8a42-130cf685e46f
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+	measure 'Pick Activated Units' = EXTERNALMEASURE("Pick Activated Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: 0
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 02c7786d-cbda-40e3-8528-c1d0f69a3895
+		sourceLineageTag: 9595d4a9-a480-4cab-a5b3-74692507712a
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+	measure 'Allocated Late Net Value' = EXTERNALMEASURE("Allocated Late Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 5b86fe0a-6264-43b5-ae11-f7f788174a76
+		sourceLineageTag: d493b6fa-9c25-4ec1-8ee1-2d209d63ff9e
+		dataCategory: Uncategorized
+
+	measure 'Allocated On-Time Net Value' = EXTERNALMEASURE("Allocated On-Time Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 9fe71a24-b7d4-4281-a390-0be78bcd7850
+		sourceLineageTag: a2fffd64-270e-4d03-b0bb-c41ddbc894bb
+		dataCategory: Uncategorized
+
+	measure 'Allocated Units Arrived' = EXTERNALMEASURE("Allocated Units Arrived", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: c9aae34c-fa9a-467f-9ba7-470024dad454
+		sourceLineageTag: 1e5f4326-866b-4444-b684-a5163e966597
+		dataCategory: Uncategorized
+
+	measure 'Allocated Arrived Net Value' = EXTERNALMEASURE("Allocated Arrived Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: b170e005-b7ac-4ebc-bdf5-8b05feefb096
+		sourceLineageTag: a1b1981f-8055-4a38-9ed8-88815fd51e9e
+		dataCategory: Uncategorized
+
+	measure 'Allocated Units Outside Of Time Fence' = EXTERNALMEASURE("Allocated Units Outside Of Time Fence", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: c056a236-c6a4-4678-9a97-6833fc812028
+		sourceLineageTag: 57511da4-6b6f-4fef-aefb-74438085c9a5
+		dataCategory: Uncategorized
+
+	measure 'Allocated Outside Of Time Fence Net Value' = EXTERNALMEASURE("Allocated Outside Of Time Fence Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 081615da-f5ac-4c09-bdc0-b0395584afee
+		sourceLineageTag: 1565e570-4158-4431-bde9-38f96b9cf22f
+		dataCategory: Uncategorized
+
+	measure '% Fulfilment' = EXTERNALMEASURE("% Fulfilment", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 0b386354-140a-4b2c-9166-7bbda9351f3d
+		sourceLineageTag: 7f6803f8-6400-407c-9659-89761faaa4ab
+		dataCategory: Uncategorized
+
+	measure 'Allocated Detail Units' = EXTERNALMEASURE("Allocated Detail Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 6ad5874d-4ba8-45f5-921f-5daae0bae8d1
+		sourceLineageTag: f44f4e2a-4d9d-45df-9886-b848b24aa6e6
+		dataCategory: Uncategorized
+
+	measure 'Allocated Units Late by Delay Buckets' = EXTERNALMEASURE("Allocated Units Late by Delay Buckets", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 02. Open\Open Breakdown
+		lineageTag: 483ba7ee-af67-4a90-b693-25b9d99b3fdf
+		sourceLineageTag: 60aa72c5-77a3-409c-9527-a3eb72737270
+		dataCategory: Uncategorized
+
+	measure 'Invoiced Units' = EXTERNALMEASURE("Invoiced Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: 0
+		displayFolder: 03. Invoiced
+		lineageTag: 7b3695ba-4ccf-4f70-9596-03ac43962cb8
+		sourceLineageTag: 4a14513c-583b-4b81-afc8-0960742113bb
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+	measure 'Invoiced Full Value' = EXTERNALMEASURE("Invoiced Full Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 03. Invoiced
+		lineageTag: 6e1657a7-a4ea-4155-a56d-9e53343a6ad6
+		sourceLineageTag: c0cb18aa-b60c-4ce0-bd42-ac823020cf0e
+		dataCategory: Uncategorized
+
+	measure 'Invoiced Discounts' = EXTERNALMEASURE("Invoiced Discounts", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 03. Invoiced
+		lineageTag: 6357e75e-f4eb-4952-a4f1-f3c824e1c9e6
+		sourceLineageTag: 59e1060a-1372-4da9-aaa7-bf3266225355
+		dataCategory: Uncategorized
+
+	measure 'Invoiced Charges' = EXTERNALMEASURE("Invoiced Charges", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 03. Invoiced
+		lineageTag: d79576cd-823a-47c8-98d4-cd5a2920e876
+		sourceLineageTag: 089676dd-7089-4a47-b516-dbc2ae6e3a99
+		dataCategory: Uncategorized
+
+	measure 'Invoiced Net Value' = EXTERNALMEASURE("Invoiced Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: 0
+		displayFolder: 03. Invoiced
+		lineageTag: 2c4e11f5-cc39-45bc-a98a-c99b90ba4962
+		sourceLineageTag: 58fc7e4d-f413-4307-9d70-c81f33cfe0b1
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+	measure 'Invoiced COGs' = EXTERNALMEASURE("Invoiced COGs", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 03. Invoiced
+		lineageTag: 69b10430-b695-4050-a8cd-107e308715de
+		sourceLineageTag: 2c0a9296-f2bb-412f-9f6e-eeb9a550833c
+		dataCategory: Uncategorized
+
+	measure 'Returned Units LW' = EXTERNALMEASURE("Returned Units LW", INTEGER, "DirectQuery to AS - DMA B2B")
+		displayFolder: 04. Returns\vs.\vs LW
+		lineageTag: b993a783-48e2-4d3f-88f5-f79918686bdd
+		sourceLineageTag: b2b7ca83-5c70-499d-a721-6869decf0a78
+		dataCategory: Uncategorized
+
+	measure 'Returned Units vs LW %' = EXTERNALMEASURE("Returned Units vs LW %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 04. Returns\vs.\vs LW
+		lineageTag: a3b978b5-d9a1-4163-b745-a1ebeb339eec
+		sourceLineageTag: bc06a4d2-4a34-4154-b308-dea6950cc53b
+		dataCategory: Uncategorized
+
+	measure 'Returned Net Value LW' = EXTERNALMEASURE("Returned Net Value LW", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 04. Returns\vs.\vs LW
+		lineageTag: f96313ed-d7b2-4d90-8869-7445577e8cf4
+		sourceLineageTag: 2f6061ed-17c2-4388-a7e0-16f11cb0fff2
+		dataCategory: Uncategorized
+
+	measure 'Returned Net Value vs LW %' = EXTERNALMEASURE("Returned Net Value vs LW %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 04. Returns\vs.\vs LW
+		lineageTag: 205d2c14-63f3-4f73-8a6b-637effddac7b
+		sourceLineageTag: 211304da-4f9f-4ac2-91b7-c2fe1d1530a2
+		dataCategory: Uncategorized
+
+	measure 'Returned Units LY' = EXTERNALMEASURE("Returned Units LY", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: #,0
+		displayFolder: 04. Returns\vs.\vs LY
+		lineageTag: 79255cdf-a1ca-4872-b1a3-0a9c1944ccc6
+		sourceLineageTag: f28c8ce2-df05-45ac-a85e-c28485d6b2b9
+		dataCategory: Uncategorized
+
+	measure 'Returned Units vs LY %' = EXTERNALMEASURE("Returned Units vs LY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		displayFolder: 04. Returns\vs.\vs LY
+		lineageTag: f64c6d44-df1e-4b3f-abe3-aafaa8e2ee7f
+		sourceLineageTag: 7dd00857-235d-406b-96b1-9ebfca735b71
+		dataCategory: Uncategorized
+
+	measure 'Returned Net Value LY' = EXTERNALMEASURE("Returned Net Value LY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 04. Returns\vs.\vs LY
+		lineageTag: 9c1bff35-6637-4c48-ae6a-ea18c8d4aa7d
+		sourceLineageTag: 1eb7e7d8-b086-4baf-b5ed-01151b0ac93d
+		dataCategory: Uncategorized
+
+	measure 'Returned Net Value vs LY %' = EXTERNALMEASURE("Returned Net Value vs LY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		displayFolder: 04. Returns\vs.\vs LY
+		lineageTag: 196e892c-342d-4528-b467-b472a2256e01
+		sourceLineageTag: bb512e66-d037-4a55-ae3a-7f5457597fa3
+		dataCategory: Uncategorized
+
+	measure 'Returned % LY' = EXTERNALMEASURE("Returned % LY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: #,0.0%;-#,0.0%;#,0.0%
+		displayFolder: 04. Returns\vs.\vs LY
+		lineageTag: 03696ec7-7a85-483b-8a75-9c80daea11a3
+		sourceLineageTag: b9309525-9d4d-44c9-be4f-badbe1aad4f1
+		dataCategory: Uncategorized
+
+	measure 'Returned Units LFY' = EXTERNALMEASURE("Returned Units LFY", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 04. Returns\vs.\vs EMEA LFY
+		lineageTag: 8dd829ca-dfef-4a05-aa18-08aa8bd44151
+		sourceLineageTag: 13b6495f-4fa6-466e-b4f1-85fbcc3365de
+		dataCategory: Uncategorized
+
+	measure 'Returned Units vs LFY %' = EXTERNALMEASURE("Returned Units vs LFY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		displayFolder: 04. Returns\vs.\vs EMEA LFY
+		lineageTag: 58c31548-f2b7-40c6-bc4f-0976cc61291d
+		sourceLineageTag: 168409d1-5c30-44c4-a344-7173368466ed
+		dataCategory: Uncategorized
+
+	measure 'Returned Net Value LFY' = EXTERNALMEASURE("Returned Net Value LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 04. Returns\vs.\vs EMEA LFY
+		lineageTag: 57e7540e-e97e-4158-ad82-4c7b38e1fa51
+		sourceLineageTag: 76840c50-21f4-435f-b996-ebba250cce1d
+		dataCategory: Uncategorized
+
+	measure 'Returned Net Value vs LFY %' = EXTERNALMEASURE("Returned Net Value vs LFY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		displayFolder: 04. Returns\vs.\vs EMEA LFY
+		lineageTag: 07b7829e-0afb-45d8-b9d7-5c4cf32d4ec0
+		sourceLineageTag: 401cb9ae-7f3f-48a1-8e5c-f97d7009663e
+		dataCategory: Uncategorized
+
+	measure 'Returned % LFY' = EXTERNALMEASURE("Returned % LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\;-\#\,\0.\0\;\#\,\0.\0"
+		displayFolder: 04. Returns\vs.\vs EMEA LFY
+		lineageTag: 6f52eb4f-71cc-47cf-9bf6-ba4d77bb20a0
+		sourceLineageTag: 2b368433-743a-40eb-8c50-d807ff05d553
+		dataCategory: Uncategorized
+
+	measure 'Returned Units US LFY' = EXTERNALMEASURE("Returned Units US LFY", INTEGER, "DirectQuery to AS - DMA B2B")
+		displayFolder: 04. Returns\vs.\vs US LFY
+		lineageTag: fad48194-2bea-45a7-8b26-5161b45d105f
+		sourceLineageTag: 457bae3b-463d-4fa6-a0f5-e8111b9c986b
+		dataCategory: Uncategorized
+
+	measure 'Returned Net Value US LFY' = EXTERNALMEASURE("Returned Net Value US LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 04. Returns\vs.\vs US LFY
+		lineageTag: 53311b1d-ea1c-4143-8788-def400bc3514
+		sourceLineageTag: f9e7e49a-294a-4a95-8d64-9b9423d8c417
+		dataCategory: Uncategorized
+
+	measure 'Returned % US LFY' = EXTERNALMEASURE("Returned % US LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 04. Returns\vs.\vs US LFY
+		lineageTag: 7bdc9931-b7f3-451e-bf1e-b3c906779758
+		sourceLineageTag: 531010c5-ff5e-46e1-b2f0-cf5b572e5c02
+		dataCategory: Uncategorized
+
+	measure 'Returned Units' = EXTERNALMEASURE("Returned Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: 0
+		displayFolder: 04. Returns
+		lineageTag: 9f79c12e-2681-4380-8454-7f2a2f0d0d06
+		sourceLineageTag: 78818cf5-8567-47ed-b185-29fcac48e084
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+	measure 'Returned Full Value' = EXTERNALMEASURE("Returned Full Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 04. Returns
+		lineageTag: 0ec6d6fc-e949-481a-82c8-d3788931ec8c
+		sourceLineageTag: 0d922816-a986-43b7-b591-e3fe488ca49b
+		dataCategory: Uncategorized
+
+	measure 'Returned Discounts' = EXTERNALMEASURE("Returned Discounts", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 04. Returns
+		lineageTag: 32ed227c-8b14-48e3-b204-398c790dfe38
+		sourceLineageTag: d587dc61-0f23-4a29-a48b-b34e69e19358
+		dataCategory: Uncategorized
+
+	measure 'Returned Net Value' = EXTERNALMEASURE("Returned Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 04. Returns
+		lineageTag: a7593ad6-5f58-4f9b-b3ce-f1a33a623c6f
+		sourceLineageTag: b291aaba-2438-4a7d-be8f-2a1451a1729e
+		dataCategory: Uncategorized
+
+	measure 'Returned COGs' = EXTERNALMEASURE("Returned COGs", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 04. Returns
+		lineageTag: 5abb8cda-6206-4679-bcbf-683958185bfd
+		sourceLineageTag: 3981b1aa-8359-4d5c-a5cb-970bbfbc9d5d
+		dataCategory: Uncategorized
+
+	measure 'Returned %' = EXTERNALMEASURE("Returned %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 04. Returns
+		lineageTag: 9ee75e6e-a67f-4973-8db9-c7c71c2c8fe3
+		sourceLineageTag: edd6c309-0e51-46c7-b85e-e3b95a75f982
+		dataCategory: Uncategorized
+
+	measure 'Return Units' = EXTERNALMEASURE("Return Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 04. Returns
+		lineageTag: 3f23ecd7-b922-4436-b1c6-818f0630e3b7
+		sourceLineageTag: 176e07dd-2352-49e7-a895-a93faf33b1a4
+		dataCategory: Uncategorized
+
+	measure 'Return Net Value' = EXTERNALMEASURE("Return Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 04. Returns
+		lineageTag: 455d5df0-cde6-4b2a-aa2c-526081fc9df9
+		sourceLineageTag: 68f4854b-7306-421f-816b-9160bf3afad5
+		dataCategory: Uncategorized
+
+	measure 'Return Full Value' = EXTERNALMEASURE("Return Full Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 04. Returns
+		lineageTag: 2b535393-6d61-44c3-a216-15286e724379
+		sourceLineageTag: ed952c07-9dda-4624-9ea1-ca6513f276f5
+		dataCategory: Uncategorized
+
+	measure 'Return Discounts' = EXTERNALMEASURE("Return Discounts", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 04. Returns
+		lineageTag: 7c312df0-4256-4fe5-8afc-c6d7a9f4f856
+		sourceLineageTag: b9e6bba3-dfe9-4bdb-a9ab-05901ffebc14
+		dataCategory: Uncategorized
+
+	measure 'Return %' = EXTERNALMEASURE("Return %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0"
+		displayFolder: 04. Returns
+		lineageTag: 88893fb6-80fc-4365-ba70-b61603fcd47c
+		sourceLineageTag: 093daca9-cb79-41c1-ba84-96b359b5c420
+		dataCategory: Uncategorized
+
+	measure 'Open Return Units' = EXTERNALMEASURE("Open Return Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 04. Returns
+		lineageTag: d2a97d4b-2a7b-435f-9b53-612582a0da7d
+		sourceLineageTag: cea30e9b-422b-497d-b895-d0657aca891f
+		dataCategory: Uncategorized
+
+	measure 'Open Return Net Value' = EXTERNALMEASURE("Open Return Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 04. Returns
+		lineageTag: 7eb4cc37-3b93-497d-961b-b2746b5e8ef9
+		sourceLineageTag: 7c87b6ab-d737-4f3b-a1fe-47a68821a37e
+		dataCategory: Uncategorized
+
+	measure 'Open Return Full Value' = EXTERNALMEASURE("Open Return Full Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 04. Returns
+		lineageTag: 31259af3-4c84-4114-b0bd-dd82e074cc01
+		sourceLineageTag: d809ff2d-3798-4f3d-9091-9dcc2c60112f
+		dataCategory: Uncategorized
+
+	measure 'Open Return Discounts' = EXTERNALMEASURE("Open Return Discounts", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 04. Returns
+		lineageTag: 09195e12-7aed-4806-b924-2833afe6df1e
+		sourceLineageTag: fbf13689-3cba-4755-9514-74783fbf7791
+		dataCategory: Uncategorized
+
+	measure 'Open Return CoGS' = EXTERNALMEASURE("Open Return CoGS", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 04. Returns
+		lineageTag: 44f98d1b-9f41-4fc4-a6f8-1f8de812fd08
+		sourceLineageTag: b66c9325-f12a-416e-bd89-2e30cd53e35e
+		dataCategory: Uncategorized
+
+	measure 'Net Units LY' = EXTERNALMEASURE("Net Units LY", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 05. Net\vs.\vs LY
+		lineageTag: 4dcff302-390e-46a4-b43f-e02583f6a1fa
+		sourceLineageTag: e9d3d649-2a4d-423c-a51c-951f74feecd0
+		dataCategory: Uncategorized
+
+	measure 'Net Units vs LY %' = EXTERNALMEASURE("Net Units vs LY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\;-\#\,\0.\0\;\#\,\0.\0"
+		displayFolder: 05. Net\vs.\vs LY
+		lineageTag: 3afe9eb4-241b-4b8d-9a77-1fbf1cab5189
+		sourceLineageTag: 97a7df8e-3d19-41bb-8855-af152c04a876
+		dataCategory: Uncategorized
+
+	measure 'Net Units % of LY' = EXTERNALMEASURE("Net Units % of LY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\;-\#\,\0.\0\;\#\,\0.\0"
+		displayFolder: 05. Net\vs.\vs LY
+		lineageTag: e3b75c42-b2ee-4819-a83f-ad01b059c127
+		sourceLineageTag: 2b87ddb7-53df-4e46-95a3-69272971b170
+		dataCategory: Uncategorized
+
+	measure 'Net Units vs LFY %' = EXTERNALMEASURE("Net Units vs LFY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\;-\#\,\0.\0\;\#\,\0.\0"
+		displayFolder: 05. Net\vs.\vs EMEA LFY
+		lineageTag: 8d709450-b8ec-450f-8a69-d272511a9325
+		sourceLineageTag: 6140eed3-aeb0-41ba-a747-8bde4d4cf936
+		dataCategory: Uncategorized
+
+	measure 'Net Units LFY' = EXTERNALMEASURE("Net Units LFY", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 05. Net\vs.\vs EMEA LFY
+		lineageTag: dd2a3d35-7812-4730-9059-e073ee2b6f38
+		sourceLineageTag: 42885211-7e43-48fe-bb05-d35c2604963b
+		dataCategory: Uncategorized
+
+	measure 'Net Units' = EXTERNALMEASURE("Net Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 05. Net
+		lineageTag: 4761b92d-8e43-4bd7-954c-cea4fc8fcbfb
+		sourceLineageTag: 3c2171f7-4e5e-4a9d-9955-77ead051eca4
+		dataCategory: Uncategorized
+
+	measure 'Net Full Value' = EXTERNALMEASURE("Net Full Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 05. Net
+		lineageTag: 64b328ca-aa7a-4d84-882a-b8b439515fe3
+		sourceLineageTag: c3502892-5442-49a1-98e8-5e94585ee4c8
+		dataCategory: Uncategorized
+
+	measure 'Net Discounts' = EXTERNALMEASURE("Net Discounts", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 05. Net
+		lineageTag: 502b7902-22be-4d64-8148-40cad02b8fc9
+		sourceLineageTag: a542b527-979a-4422-b876-879157317365
+		dataCategory: Uncategorized
+
+	measure 'Net Charges' = EXTERNALMEASURE("Net Charges", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 05. Net
+		lineageTag: 363486d8-11e7-40fd-a825-d337a529cc98
+		sourceLineageTag: 12afd4f2-a7b9-4888-bc54-eec05b6162eb
+		dataCategory: Uncategorized
+
+	measure 'Net Value' = EXTERNALMEASURE("Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 05. Net
+		lineageTag: 257139e7-3663-47c8-a89a-236999450f0a
+		sourceLineageTag: dc387bad-2401-4863-abc8-ae7bb6f5326c
+		dataCategory: Uncategorized
+
+	measure 'Open Invoiced Units' = EXTERNALMEASURE("Open Invoiced Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 05. Net
+		lineageTag: a11abb8a-3145-487f-8c14-fc74ac84d729
+		sourceLineageTag: ed0c0e7c-4587-40f3-9ea9-41fce05b02d6
+		dataCategory: Uncategorized
+
+	measure 'Open Invoiced Net Value' = EXTERNALMEASURE("Open Invoiced Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 05. Net
+		lineageTag: 19db4cc2-60cf-45b5-a215-a504add9c3db
+		sourceLineageTag: 9f068edc-e878-45ff-90b4-ce9dc664a925
+		dataCategory: Uncategorized
+
+	measure 'FC Returned Units' = EXTERNALMEASURE("FC Returned Units", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		isHidden
+		displayFolder: 06. Total\vs.\FC Calcs
+		lineageTag: 1175553c-eac3-4afb-a614-60dc078a8777
+		sourceLineageTag: e980dddc-1a48-4f66-a027-8e2f48d5e6b0
+		dataCategory: Uncategorized
+
+	measure 'ACP vs LFY %' = EXTERNALMEASURE("ACP vs LFY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: e91eefcc-b4f6-4639-bd24-b9f1b279446b
+		sourceLineageTag: 5e453051-c724-4254-93c6-a323cdc7a2e5
+		dataCategory: Uncategorized
+
+	measure 'FC Invoiced Units' = EXTERNALMEASURE("FC Invoiced Units", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		isHidden
+		displayFolder: 06. Total\vs.\FC Calcs
+		lineageTag: ff158eb7-936f-46df-be0c-cb2b1e0140c5
+		sourceLineageTag: 398a4038-30f7-4442-9970-f05a307adfa0
+		dataCategory: Uncategorized
+
+	measure 'FC Total Net Value' = EXTERNALMEASURE("FC Total Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		isHidden
+		displayFolder: 06. Total\vs.\FC Calcs
+		lineageTag: 1fbc1f5e-f1dc-44eb-99c4-88bc4b2f2a17
+		sourceLineageTag: b28f9e4a-f39e-455f-8dc3-296a03b340f0
+		dataCategory: Uncategorized
+
+	measure LatestForecastVersion = EXTERNALMEASURE("LatestForecastVersion", STRING, "DirectQuery to AS - DMA B2B")
+		isHidden
+		displayFolder: 06. Total\vs.\FC Calcs
+		lineageTag: b8879173-d371-48b3-b28d-968eda6f19cb
+		sourceLineageTag: 0f81ff07-4473-4cd8-a988-def6731579f4
+		dataCategory: Uncategorized
+
+	measure 'FC Total CoGS' = EXTERNALMEASURE("FC Total CoGS", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		isHidden
+		displayFolder: 06. Total\vs.\FC Calcs
+		lineageTag: feb5402b-e342-4528-8466-9c7fa619d10b
+		sourceLineageTag: b4711c53-76c5-460b-a257-ad4c5ffd5379
+		dataCategory: Uncategorized
+
+	measure 'Total Units LY' = EXTERNALMEASURE("Total Units LY", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 78cb22c5-83fd-4e2b-a202-483b26eb9091
+		sourceLineageTag: 53b2e3a3-34bb-497e-8653-8adb8911fe83
+		dataCategory: Uncategorized
+
+	measure 'Total Units vs LY %' = EXTERNALMEASURE("Total Units vs LY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 1a4e7c99-6181-41ab-8084-70e24f2f5b1c
+		sourceLineageTag: 21a0d1bb-61f7-4362-93df-23b062031ca9
+		dataCategory: Uncategorized
+
+	measure 'Total Units LY-1' = EXTERNALMEASURE("Total Units LY-1", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: efd2fb6c-b520-4e42-b933-3989ef708a00
+		sourceLineageTag: 428cd19d-ee16-493b-bb60-422657e4b9db
+		dataCategory: Uncategorized
+
+	measure 'Total Units vs LY -1 %' = EXTERNALMEASURE("Total Units vs LY -1 %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: ab6dc6f7-7e2c-4a23-9a8c-959607af5f76
+		sourceLineageTag: 92a5af55-3aff-4f56-8c68-90352a4585d6
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value LY' = EXTERNALMEASURE("Total Net Value LY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 5d810ae7-97be-4f1d-becf-71511198315e
+		sourceLineageTag: 2d7925d0-a8eb-4169-ae17-68b5c061c631
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value vs LY %' = EXTERNALMEASURE("Total Net Value vs LY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \+\0\;\(\0\)\;-"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 44f27677-a62f-41a5-b4ca-8ad3e5809a28
+		sourceLineageTag: 2a6f7edd-3c2f-4a02-b000-9c36f816cb5b
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value LY-1' = EXTERNALMEASURE("Total Net Value LY-1", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 69fcb4b7-cc1b-42cd-b9cf-15ce3b5f31d6
+		sourceLineageTag: 47fab480-f57b-4a0b-88b5-c9924c5aee0d
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value vs LY -1 %' = EXTERNALMEASURE("Total Net Value vs LY -1 %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \+\0\;\(\0\)\;-"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: fc59e5eb-4959-46d1-9c11-27d933e21fb6
+		sourceLineageTag: 801634a2-8276-473e-88e4-2124bba4994e
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin LY' = EXTERNALMEASURE("Gross Margin LY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 9f160323-5863-4de2-921b-23814ff99921
+		sourceLineageTag: 99297060-9da2-4ae6-83ce-0796585e651a
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin vs LY %' = EXTERNALMEASURE("Gross Margin vs LY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 51391d4a-8681-482c-a579-0b9a79da8cbb
+		sourceLineageTag: e1f1d252-cec2-440e-a7db-0e3c779c4cc4
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin % LY' = EXTERNALMEASURE("Gross Margin % LY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 58a1fbb6-366e-4df0-887c-129a0f968e5d
+		sourceLineageTag: c4dbf2a3-053f-4685-acf6-0cc149002123
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin % vs LY %' = EXTERNALMEASURE("Gross Margin % vs LY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: a62c360d-bf93-4996-8a71-331b48cfa93b
+		sourceLineageTag: 5c638b6b-d302-4afd-84fd-a457463921b1
+		dataCategory: Uncategorized
+
+	measure 'Buy In Margin % LY' = EXTERNALMEASURE("Buy In Margin % LY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 7b14f7a3-d45c-4fcd-b48f-e32894263818
+		sourceLineageTag: 2526567c-f631-4021-9b55-8f84ca3895b0
+		dataCategory: Uncategorized
+
+	measure 'Buy In Margin LY' = EXTERNALMEASURE("Buy In Margin LY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: a80d9ab9-1ad5-4a1d-b75d-1280834982ea
+		sourceLineageTag: 896e5711-ab3d-40a8-adec-6be3f087fbae
+		dataCategory: Uncategorized
+
+	measure 'Buy In Margin vs LY %' = EXTERNALMEASURE("Buy In Margin vs LY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 48b352c5-f537-4d1a-9a90-0056fbc3d2c3
+		sourceLineageTag: 7091b5dd-db1c-4525-ba4d-6243e908f1ad
+		dataCategory: Uncategorized
+
+	measure 'Buy In Margin % vs LY %' = EXTERNALMEASURE("Buy In Margin % vs LY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: d252a0f4-9e27-4888-a4d7-d89424bf6a26
+		sourceLineageTag: 02ac1643-3b52-4912-aa25-74bbf154993e
+		dataCategory: Uncategorized
+
+	measure 'ASP LY' = EXTERNALMEASURE("ASP LY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 60fe967f-37cc-4ae9-a362-344f7364c125
+		sourceLineageTag: 0fe25275-68f1-420b-9500-712e72b8047f
+		dataCategory: Uncategorized
+
+	measure 'ACP LY' = EXTERNALMEASURE("ACP LY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: bf903b37-10e9-4777-96bd-738e99bc5005
+		sourceLineageTag: ea4c0b3c-79dc-405a-86bd-c22be37bd9a1
+		dataCategory: Uncategorized
+
+	measure 'ASP vs LY %' = EXTERNALMEASURE("ASP vs LY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: d896bbfe-fc13-4fb0-b30f-e6291ccee21b
+		sourceLineageTag: 522ab147-1883-4344-a2ba-b92fb033c77e
+		dataCategory: Uncategorized
+
+	measure 'ACP vs LY %' = EXTERNALMEASURE("ACP vs LY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 5f7dc0fe-e1a6-42a0-a001-9ee7a6f26795
+		sourceLineageTag: ec8ef39c-c74b-4d1b-8c71-fb2da22f637e
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value % of LY' = EXTERNALMEASURE("Total Net Value % of LY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 245de7d5-d670-42a3-89d9-e1ef560ed274
+		sourceLineageTag: 5e5c40ef-fa51-4cd6-bec8-0f2c68b164fa
+		dataCategory: Uncategorized
+
+	measure 'Total Units % of LY' = EXTERNALMEASURE("Total Units % of LY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: 67bb3d4c-2e78-494c-8674-25f4ae166899
+		sourceLineageTag: eac7ac5e-6552-4405-956b-00cdbdb784bc
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin (ex Sett Disc) LY' = EXTERNALMEASURE("Gross Margin (ex Sett Disc) LY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: fa3373b8-2011-4459-b1cd-fd2f5089eff1
+		sourceLineageTag: 8751e62d-22fa-4da9-a2de-616120773250
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin (ex Sett Disc) vs LY %' = EXTERNALMEASURE("Gross Margin (ex Sett Disc) vs LY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs LY
+		lineageTag: d3258d35-50e8-4e47-aab2-dbe703014c23
+		sourceLineageTag: 36faba44-0f9f-4175-860d-1a45802405f8
+		dataCategory: Uncategorized
+
+	measure 'Total Units LFY' = EXTERNALMEASURE("Total Units LFY", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 487a0604-601a-4ed6-acd7-0348ef9cbb20
+		sourceLineageTag: 826ff8ee-7f55-43eb-aa4a-219c2ed1fcc8
+		dataCategory: Uncategorized
+
+	measure 'Total Units vs LFY %' = EXTERNALMEASURE("Total Units vs LFY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 3b9e1550-9481-4e57-8a3a-ea7ab7d757b8
+		sourceLineageTag: 97e1118c-f52c-447a-a916-1687eab78d42
+		dataCategory: Uncategorized
+
+	measure 'Total Units LFY-1' = EXTERNALMEASURE("Total Units LFY-1", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: ff0bd484-d419-48cf-a46a-50c065cce91e
+		sourceLineageTag: 06475f71-9f74-42de-a124-a888b61f01a8
+		dataCategory: Uncategorized
+
+	measure 'Total Units vs LFY -1 %' = EXTERNALMEASURE("Total Units vs LFY -1 %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: b3dcd5b1-13da-49ba-8f56-491dae4a30a6
+		sourceLineageTag: 61eaae86-72b4-4914-a45a-03610819066f
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value LFY' = EXTERNALMEASURE("Total Net Value LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 7927311e-5725-4806-8c88-be79bd3820c6
+		sourceLineageTag: f61df8d9-f085-46c0-8df9-c2f059728ec0
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value vs LFY %' = EXTERNALMEASURE("Total Net Value vs LFY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \+\0\;\(\0\)\;-"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 40303a9c-8987-410b-9b01-716fffb9bcd5
+		sourceLineageTag: dd06daa4-2166-420d-a101-59dc23e240dc
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value LFY-1' = EXTERNALMEASURE("Total Net Value LFY-1", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 8400d9bc-711d-4fea-ad21-41fb4ecddbf3
+		sourceLineageTag: b5df4e31-0260-4026-af2a-8e3402d7765c
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value vs LFY -1 %' = EXTERNALMEASURE("Total Net Value vs LFY -1 %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \+\0\;\(\0\)\;-"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 76315890-2919-4ee2-b03d-62810f9a7e50
+		sourceLineageTag: 2c9dbd8f-6317-4ce9-9b92-7d49d31943e4
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin LFY' = EXTERNALMEASURE("Gross Margin LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 0c1eee21-503f-42b1-ab38-42af0fd5e341
+		sourceLineageTag: ef9c3bfa-39de-416b-b2d3-4286f9ecd2c7
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin vs LFY %' = EXTERNALMEASURE("Gross Margin vs LFY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: d06b78a9-31e9-4571-bb18-5ed149790271
+		sourceLineageTag: e2464e46-0db2-4285-9a94-b5c3915c83b0
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin % LFY' = EXTERNALMEASURE("Gross Margin % LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 21cad2e1-941b-463d-9b74-3a80cf93ff71
+		sourceLineageTag: 3482078f-ac2d-4b1d-bb16-2e39a30c239f
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin % vs LFY %' = EXTERNALMEASURE("Gross Margin % vs LFY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 966849bc-c900-4b3b-83ee-c917174045e6
+		sourceLineageTag: 126ffa1b-a482-406c-873a-d732719e92eb
+		dataCategory: Uncategorized
+
+	measure 'Buy In Margin LFY' = EXTERNALMEASURE("Buy In Margin LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 5834bb23-a393-4116-b341-46559fc037c6
+		sourceLineageTag: 2b0792d5-35ab-4c6c-9014-a89a1578c390
+		dataCategory: Uncategorized
+
+	measure 'Buy In Margin % LFY' = EXTERNALMEASURE("Buy In Margin % LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 9244b988-431f-4bb7-8c9d-9b8f40388386
+		sourceLineageTag: bf1d2c51-e3f6-4a15-be31-944ca33be54d
+		dataCategory: Uncategorized
+
+	measure 'Buy In Margin vs LFY %' = EXTERNALMEASURE("Buy In Margin vs LFY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 237227eb-c270-4ff7-b191-916c85404559
+		sourceLineageTag: 821a4563-a848-4cdc-8ab7-9e91026b6e3a
+		dataCategory: Uncategorized
+
+	measure 'Buy In Margin % vs LFY %' = EXTERNALMEASURE("Buy In Margin % vs LFY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 8b9d1b1b-2f88-49a7-9d39-bee72f399ceb
+		sourceLineageTag: d38e0ac9-ebb2-4be2-a0f5-082804767edf
+		dataCategory: Uncategorized
+
+	measure 'ASP LFY' = EXTERNALMEASURE("ASP LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 2e3e58d4-2d72-4986-a7ba-774d1e014872
+		sourceLineageTag: fb477322-365d-4efb-9b3d-fe059f39e333
+		dataCategory: Uncategorized
+
+	measure 'ACP LFY' = EXTERNALMEASURE("ACP LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 03cb9ffd-5033-48d8-8adb-267208632f3c
+		sourceLineageTag: a6538607-628e-4974-bd26-4e4c1fe8e445
+		dataCategory: Uncategorized
+
+	measure 'ASP vs LFY %' = EXTERNALMEASURE("ASP vs LFY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 52d6c607-3e99-4d97-b238-e0f2a7718f88
+		sourceLineageTag: b4d5ac7f-c0b3-4d68-b975-0851346e0923
+		dataCategory: Uncategorized
+
+	measure 'Total Units % of LFY' = EXTERNALMEASURE("Total Units % of LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: efa3bddc-ac84-4ab6-8627-b8c69cff4a6f
+		sourceLineageTag: 61639659-d7b0-4f18-876d-06509b884142
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value % of LFY' = EXTERNALMEASURE("Total Net Value % of LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: b5517cee-ec24-412e-b53f-a9c16ed6648b
+		sourceLineageTag: cad20174-ea25-4375-aca0-d9dc53b5a433
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin (ex Sett Disc) LFY' = EXTERNALMEASURE("Gross Margin (ex Sett Disc) LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: f9364005-5956-448d-80d6-ffc6d34ca03b
+		sourceLineageTag: 72caf5b3-82d3-47df-923c-67741b16975e
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin (ex Sett Disc) vs LFY %' = EXTERNALMEASURE("Gross Margin (ex Sett Disc) vs LFY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0\;-\#\,\0.\0\0\;\#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 74b289db-eeac-49d4-9889-bf520deb7ef6
+		sourceLineageTag: 89c9f105-931c-4101-ade9-636c2f887b12
+		dataCategory: Uncategorized
+
+	measure 'Discount % LFY' = EXTERNALMEASURE("Discount % LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 0480cd09-9c2f-44dc-9d95-cfe891c45d9f
+		sourceLineageTag: 739d46e0-2285-4946-97ff-02c40c763ac1
+		dataCategory: Uncategorized
+
+	measure 'Total Units PY' = EXTERNALMEASURE("Total Units PY", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: #,0
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 32907343-2ffa-4a8a-bac7-e71ce44b41c6
+		sourceLineageTag: 9ca72789-e414-4662-a7f2-8eed05b8b8c0
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value PY' = EXTERNALMEASURE("Total Net Value PY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: #,0.00
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 5fb1d80c-6cb0-4979-8576-66b56da84d0e
+		sourceLineageTag: a9b98836-4f14-4386-a405-c94bd354e339
+		dataCategory: Uncategorized
+
+	measure 'ASP PY' = EXTERNALMEASURE("ASP PY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: #,0.00
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 83244575-c4af-43bd-8f71-2acf8a97c046
+		sourceLineageTag: 6f0b83a4-916d-439b-b03f-2ad62958e620
+		dataCategory: Uncategorized
+
+	measure 'Buy In Margin % PY' = EXTERNALMEASURE("Buy In Margin % PY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: b69a2da0-6b28-4b35-84da-83e9a38e30b8
+		sourceLineageTag: 4d2bb783-880c-4b50-a562-999a9bd44b14
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin % PY' = EXTERNALMEASURE("Gross Margin % PY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		displayFolder: 06. Total\vs.\vs EMEA LFY
+		lineageTag: 2afbd2d0-df7e-44a3-b80b-d3c3ee9d9126
+		sourceLineageTag: f6985f08-736e-493e-8174-99b3d6fbc851
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value Budget' = EXTERNALMEASURE("Total Net Value Budget", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: 8fa1ddcf-a2e1-43dd-b5eb-0e723f47a5b5
+		sourceLineageTag: f674e973-aa87-4f9d-85e2-968d3463d772
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value vs Bud %' = EXTERNALMEASURE("Total Net Value vs Bud %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \+\0\;\(\0\)\;-"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: e19d438d-254a-4de0-a17d-2bf8d05dc00c
+		sourceLineageTag: 259eab76-f8a4-45d0-838c-bc725f817130
+		dataCategory: Uncategorized
+
+	measure 'Total Units Budget' = EXTERNALMEASURE("Total Units Budget", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: 32b7c7f3-e7ab-4b70-8693-41ca2aebd95f
+		sourceLineageTag: 5eab6fa9-cb88-450a-8087-2c60d0aea3cc
+		dataCategory: Uncategorized
+
+	measure 'Total Units vs Bud %' = EXTERNALMEASURE("Total Units vs Bud %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: 6eb42e17-d2df-40ae-861c-42c407bda8bf
+		sourceLineageTag: 404bb3ee-ddb2-41b4-8ca4-9c5f4104fa42
+		dataCategory: Uncategorized
+
+	measure 'Total CoGS Budget' = EXTERNALMEASURE("Total CoGS Budget", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: 88469f29-d7cb-4fe8-816d-de5d7101b89b
+		sourceLineageTag: 4277bdd7-ed2b-4d64-b545-116770a84cd0
+		dataCategory: Uncategorized
+
+	measure 'Invoiced Units Budget' = EXTERNALMEASURE("Invoiced Units Budget", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: c96ca63f-7332-468a-bfd3-98edcc9911eb
+		sourceLineageTag: b61cb4b5-4462-4adf-b952-d4f916b3e5d9
+		dataCategory: Uncategorized
+
+	measure 'Returned Units Budget' = EXTERNALMEASURE("Returned Units Budget", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: 28a175f5-1d87-48f4-8ad8-7752dd24c9a9
+		sourceLineageTag: cf141cc3-c73f-4ec9-a695-4ab28ceadc76
+		dataCategory: Uncategorized
+
+	measure 'Total CoGS vs Bud %' = EXTERNALMEASURE("Total CoGS vs Bud %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: c52b44bb-3545-4aa3-84f4-831da25e9733
+		sourceLineageTag: 0c4129bb-11d7-4370-8373-e7abd0a18ad5
+		dataCategory: Uncategorized
+
+	measure 'Invoiced Units vs Bud %' = EXTERNALMEASURE("Invoiced Units vs Bud %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: 4fd68d11-1b27-4d77-92ae-53fb002f03e9
+		sourceLineageTag: 7813c943-5b78-4bfa-bafd-1797b541c135
+		dataCategory: Uncategorized
+
+	measure 'Returned Units vs Bud %' = EXTERNALMEASURE("Returned Units vs Bud %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total\vs.\vs Budget
+		lineageTag: 4b0f0a91-e22f-4d39-ad82-6c796056a83d
+		sourceLineageTag: c6ed5508-6d94-4996-8249-c831943524f4
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value Forecast' = EXTERNALMEASURE("Total Net Value Forecast", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: #,0.00
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: 9cc9a762-d902-458d-93e6-93e00306b62c
+		sourceLineageTag: be6b6f9d-d649-47e6-8720-744bc59ee369
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value vs Fcst %' = EXTERNALMEASURE("Total Net Value vs Fcst %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \+\0\;\(\0\)\;-"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: 2cb9d456-e891-4eb9-8e0c-27fcd73cf69f
+		sourceLineageTag: 8192b5a1-561c-4249-8583-06fd6d2faee7
+		dataCategory: Uncategorized
+
+	measure 'Total Units Forecast' = EXTERNALMEASURE("Total Units Forecast", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: 353959c9-ba51-4460-ad6d-c4c82d0d8487
+		sourceLineageTag: ac0048c3-6996-4503-9db3-c7e381b5a29f
+		dataCategory: Uncategorized
+
+	measure 'Total Units vs Fcst %' = EXTERNALMEASURE("Total Units vs Fcst %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: 68c875e3-2cf3-423e-a539-53e38a4055d5
+		sourceLineageTag: aeccac2d-1b45-426e-a479-a908badd0001
+		dataCategory: Uncategorized
+
+	measure 'Total CoGS Forecast' = EXTERNALMEASURE("Total CoGS Forecast", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: #,0.00
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: 640f0476-f15a-4f55-8f49-bb8bb6d1531f
+		sourceLineageTag: 65b250b8-60bf-4935-ab72-d9538d0b09aa
+		dataCategory: Uncategorized
+
+	measure 'Invoiced Units Forecast' = EXTERNALMEASURE("Invoiced Units Forecast", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: a261abcb-38dc-4260-b518-c0c076da3db0
+		sourceLineageTag: b4c3021a-151e-4b13-8ee0-37805c49d4e0
+		dataCategory: Uncategorized
+
+	measure 'Returned Units Forecast' = EXTERNALMEASURE("Returned Units Forecast", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: 8646d939-4fc6-4167-90ed-922f2e2a2b39
+		sourceLineageTag: 0480535f-55e5-400f-985a-584ce8d2859e
+		dataCategory: Uncategorized
+
+	measure 'Total CoGS vs Fcst %' = EXTERNALMEASURE("Total CoGS vs Fcst %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: c14bad79-443e-42ba-908a-a2308a404679
+		sourceLineageTag: 81f66179-d4d3-4993-85b3-273139542965
+		dataCategory: Uncategorized
+
+	measure 'Invoiced Units vs Fcst %' = EXTERNALMEASURE("Invoiced Units vs Fcst %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: ca6e9308-bef5-4365-a463-e7bb9d535a5a
+		sourceLineageTag: bc99b2e3-009e-4fed-8dcf-445704e14630
+		dataCategory: Uncategorized
+
+	measure 'Returned Units vs Fcst %' = EXTERNALMEASURE("Returned Units vs Fcst %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: 1751d6d7-7f15-475c-b84d-921ab7945ed4
+		sourceLineageTag: cf8f2036-0f75-4613-9518-607348044266
+		dataCategory: Uncategorized
+
+	measure 'ASP vs Forecast %' = EXTERNALMEASURE("ASP vs Forecast %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: 4350112d-529f-4474-ab49-8441c7d58a55
+		sourceLineageTag: d69b9900-4c7e-426e-93f4-d92b53443da2
+		dataCategory: Uncategorized
+
+	measure 'ASP (Footwear) Forecast' = EXTERNALMEASURE("ASP (Footwear) Forecast", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: f6464ee6-a146-4586-aadc-7d68820e30d3
+		sourceLineageTag: a9ab2399-6ab7-4ae9-a721-49009ec75eb1
+		dataCategory: Uncategorized
+
+	measure 'ASP (Footwear) vs Forecast %' = EXTERNALMEASURE("ASP (Footwear) vs Forecast %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: 0447f990-83ba-4903-93ed-a6864cee98a9
+		sourceLineageTag: ff3be5ff-7b05-4594-b3be-97580fd6789b
+		dataCategory: Uncategorized
+
+	measure 'ASP Forecast' = EXTERNALMEASURE("ASP Forecast", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0"
+		displayFolder: 06. Total\vs.\vs Forecast
+		lineageTag: 33404341-0f20-4867-a4db-499ff807854f
+		sourceLineageTag: 4864ae76-2c29-46ff-8862-bc57bea5508e
+		dataCategory: Uncategorized
+
+	measure 'Total Units LW' = EXTERNALMEASURE("Total Units LW", INTEGER, "DirectQuery to AS - DMA B2B")
+		displayFolder: 06. Total\vs.\vs LW
+		lineageTag: bdfc6341-1754-4aeb-aa8d-3e8c2e1f176f
+		sourceLineageTag: 2a0e5998-ca4f-4c0c-9e5a-b21627c25158
+		dataCategory: Uncategorized
+
+	measure 'Total Units vs LW %' = EXTERNALMEASURE("Total Units vs LW %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total\vs.\vs LW
+		lineageTag: 13204530-5fef-4dfc-b92a-49e1a7d0c065
+		sourceLineageTag: 627a7b13-d580-4db2-ba65-9f837a377536
+		dataCategory: Uncategorized
+
+	measure 'Total Units' = EXTERNALMEASURE("Total Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: 0
+		displayFolder: 06. Total
+		lineageTag: 9ac36874-c52a-4689-98f9-175c74ee60e2
+		sourceLineageTag: e34e86c4-31d7-4500-9ff3-7f94005941d8
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+	measure 'Total Full Value' = EXTERNALMEASURE("Total Full Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: #,##0.00
+		displayFolder: 06. Total
+		lineageTag: b6511f96-225a-4f68-852f-284cd59498e2
+		sourceLineageTag: 0d5c9818-5e2c-4169-a61e-c5e61cc1fe12
+		dataCategory: Uncategorized
+
+	measure 'Total Discounts' = EXTERNALMEASURE("Total Discounts", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: #,##0.00
+		displayFolder: 06. Total
+		lineageTag: e6756749-b69b-490f-a0a3-3a06ca94c3f3
+		sourceLineageTag: 246e4f66-f5b0-4759-adcb-e4e5d5480167
+		dataCategory: Uncategorized
+
+	measure 'Total Charges' = EXTERNALMEASURE("Total Charges", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total
+		lineageTag: 235c5984-ef88-4374-ba73-5208291ea970
+		sourceLineageTag: 53da0abe-6f07-4cec-b106-f7a232544e55
+		dataCategory: Uncategorized
+
+	measure 'Total Sett Discount' = EXTERNALMEASURE("Total Sett Discount", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total
+		lineageTag: c87d7c5b-7ce2-45ce-8f00-47b88d126589
+		sourceLineageTag: 56d06bf5-300b-49e5-8dbd-db82726b86c6
+		dataCategory: Uncategorized
+
+	measure 'Total COGs' = EXTERNALMEASURE("Total COGs", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total
+		lineageTag: b439e7c5-f23b-47ef-828f-03226b02f2db
+		sourceLineageTag: d8a14303-2c91-4b38-9e53-78de33b256f8
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin' = EXTERNALMEASURE("Gross Margin", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total
+		lineageTag: 85bc698b-d857-45eb-9341-f11d2669c442
+		sourceLineageTag: cd9556f6-329e-4200-ab0f-93d8d8898d6d
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin %' = EXTERNALMEASURE("Gross Margin %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total
+		lineageTag: 1eac55ed-d1b5-456a-ba48-8294e54ff89d
+		sourceLineageTag: 01078eab-353d-4326-9a66-5242239d7d56
+		dataCategory: Uncategorized
+
+	measure 'Buy In Margin %' = EXTERNALMEASURE("Buy In Margin %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total
+		lineageTag: 3b3f9305-eb96-4e74-b20c-11979cb70ba4
+		sourceLineageTag: 1a58bc45-b0a7-4b76-ae29-96218a4a767d
+		dataCategory: Uncategorized
+
+	measure 'Buy In Margin' = EXTERNALMEASURE("Buy In Margin", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total
+		lineageTag: 9bae7adb-fe40-4ce1-b55c-3e1fc0e3e7aa
+		sourceLineageTag: a3f74db6-acf0-4c15-a517-887ef3e3217f
+		dataCategory: Uncategorized
+
+	measure 'Discount %' = EXTERNALMEASURE("Discount %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		displayFolder: 06. Total
+		lineageTag: c71bcc1b-2e4b-4629-9455-0bf2a30e4d0f
+		sourceLineageTag: 4878ba9c-f6ae-4044-a080-5a45ca51e58d
+		dataCategory: Uncategorized
+
+	measure ASP = EXTERNALMEASURE("ASP", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0"
+		displayFolder: 06. Total
+		lineageTag: adca2d18-3b0e-4c19-93bc-a6ad4b56fb2e
+		sourceLineageTag: c08d5055-afc3-4e3e-8614-bc45ba94c96d
+		dataCategory: Uncategorized
+
+	measure ACP = EXTERNALMEASURE("ACP", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0"
+		displayFolder: 06. Total
+		lineageTag: c63a4198-ec26-42ae-9c60-b928ec83e4fe
+		sourceLineageTag: e97bb9ea-13ae-4346-993d-30665be8ee73
+		dataCategory: Uncategorized
+
+	measure 'Av Unit Price' = EXTERNALMEASURE("Av Unit Price", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total
+		lineageTag: 2254e90a-2e0c-4ba8-a45e-b3eba16f49fa
+		sourceLineageTag: 54feb64c-5768-4865-830f-04914f159dfa
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value' = EXTERNALMEASURE("Total Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: 0
+		displayFolder: 06. Total
+		lineageTag: 3caa8d3b-82cb-496a-8659-89ea479ded1c
+		sourceLineageTag: 488b8bcf-30d5-4a4d-8652-902a5b2e2c54
+		dataCategory: Uncategorized
+
+		changedProperty = FormatString
+
+	measure 'Gross Margin (ex Sett Disc)' = EXTERNALMEASURE("Gross Margin (ex Sett Disc)", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 06. Total
+		lineageTag: 3f8b1788-ee51-4d86-badb-5522bcc2732e
+		sourceLineageTag: 83c02b1d-dbef-4e1e-b28e-0e944f887eb4
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin % (ex Sett Disc)' = EXTERNALMEASURE("Gross Margin % (ex Sett Disc)", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\;-\0.\0\;\0.\0"
+		displayFolder: 06. Total
+		lineageTag: 98f67916-b4e7-4fa8-b6f1-55e2790f5a09
+		sourceLineageTag: b0076e65-bcf2-4cfe-9cbc-330b4d359714
+		dataCategory: Uncategorized
+
+	measure 'ASP (Footwear)' = EXTERNALMEASURE("ASP (Footwear)", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0"
+		displayFolder: 06. Total
+		lineageTag: 646ac1b2-93a3-4f75-b01f-8ad1bbf44f99
+		sourceLineageTag: ae7acd84-984c-44a4-ae88-9cbca9b12192
+		dataCategory: Uncategorized
+
+	measure 'ACP US LFY' = EXTERNALMEASURE("ACP US LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: ed5e2e84-d387-4132-a26b-1c5d9a6a4082
+		sourceLineageTag: ebcfd4d7-8d17-4040-8429-a6c852f11d08
+		dataCategory: Uncategorized
+
+	measure 'ACP US LFY-1' = EXTERNALMEASURE("ACP US LFY-1", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: e4d076e6-13dc-40a9-bcde-28df93038298
+		sourceLineageTag: 006bdc68-e6d2-440d-a919-ffdae85ecdbe
+		dataCategory: Uncategorized
+
+	measure 'ASP US LFY' = EXTERNALMEASURE("ASP US LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 076b2cb3-cc8b-4b35-90ce-1f85e27e5b66
+		sourceLineageTag: 5df6cd8f-dd57-493b-a637-2e6b6b370a65
+		dataCategory: Uncategorized
+
+	measure 'ASP US LFY-1' = EXTERNALMEASURE("ASP US LFY-1", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: c4ab98c1-b9ca-4e4d-b0ab-aa9c2a6edd33
+		sourceLineageTag: 591bb522-205e-499a-8970-4465b8577c9f
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin US LFY' = EXTERNALMEASURE("Gross Margin US LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 2536934f-b135-448e-a54d-e2235c045460
+		sourceLineageTag: 4ac5034b-7003-4294-9afb-7e83412415c0
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin US LFY-1' = EXTERNALMEASURE("Gross Margin US LFY-1", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 441b2a97-c9ce-4db8-86e0-db574c3bdb53
+		sourceLineageTag: 4b059b43-b64c-4186-a3bf-06e9ff978849
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin % US LFY' = EXTERNALMEASURE("Gross Margin % US LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 1a3c0cc5-bace-4077-b408-d843d0554fbd
+		sourceLineageTag: dac8e0c9-cd83-43bb-a291-d6e230f45d61
+		dataCategory: Uncategorized
+
+	measure 'Gross Margin % US LFY-1' = EXTERNALMEASURE("Gross Margin % US LFY-1", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: afab316d-33cb-4599-a8ab-ff2c2260999a
+		sourceLineageTag: 3b0615fa-7a28-4f70-9569-4db6ac570a86
+		dataCategory: Uncategorized
+
+	measure 'Total Units US LFY' = EXTERNALMEASURE("Total Units US LFY", INTEGER, "DirectQuery to AS - DMA B2B")
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 92fff30b-2ddb-42b5-9342-37888b46a7b1
+		sourceLineageTag: e14af039-48a3-4e72-ad5d-c530b03837f3
+		dataCategory: Uncategorized
+
+	measure 'Total Units US LFY-1' = EXTERNALMEASURE("Total Units US LFY-1", INTEGER, "DirectQuery to AS - DMA B2B")
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 830b71fe-0955-4071-a5d6-1f5f8fd920e0
+		sourceLineageTag: 28ad6658-e1e5-4dd0-b4c4-b518a6ab430a
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value US LFY' = EXTERNALMEASURE("Total Net Value US LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 674fdc68-76dc-433e-92b9-1b150e8cb8f6
+		sourceLineageTag: 95bc239b-705d-4a78-bfab-2fa24734c40b
+		dataCategory: Uncategorized
+
+	measure 'Total Net Value US LFY-1' = EXTERNALMEASURE("Total Net Value US LFY-1", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: 79f4dd39-7bd1-4367-a637-a098a8f98b47
+		sourceLineageTag: 67fecb9a-ada0-4b4d-972b-2271f2e00960
+		dataCategory: Uncategorized
+
+	measure 'Discount % US LFY' = EXTERNALMEASURE("Discount % US LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		displayFolder: 06. Total\vs.\vs US LFY
+		lineageTag: f5187407-8a9c-4f80-9f93-fedd1c483423
+		sourceLineageTag: 17a77fa0-1063-4fd5-8218-8b82ae98d0b8
+		dataCategory: Uncategorized
+
+	measure 'Cancelled Units by Canc Date LY' = EXTERNALMEASURE("Cancelled Units by Canc Date LY", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: #,0
+		displayFolder: 07. Cancelled\.vs\LY
+		lineageTag: 256f1da2-569f-496c-a53e-092eee884439
+		sourceLineageTag: 08d2095b-6eba-4105-a920-01aabb288ec4
+		dataCategory: Uncategorized
+
+	measure 'Cancelled Net Value by Canc Date LY' = EXTERNALMEASURE("Cancelled Net Value by Canc Date LY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: 0.00
+		displayFolder: 07. Cancelled\.vs\LY
+		lineageTag: ed14b845-0c40-4d4f-a4d2-b57b1eb56180
+		sourceLineageTag: 54995388-2d29-48ee-a33d-d5387c029bca
+		dataCategory: Uncategorized
+
+	measure 'Cancelled Units' = EXTERNALMEASURE("Cancelled Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 07. Cancelled
+		lineageTag: 3b73711b-aaaf-4e27-af73-064a3498bb83
+		sourceLineageTag: 59ebb5bd-a2ad-4591-ae60-a5f70c04b357
+		dataCategory: Uncategorized
+
+	measure 'Cancelled Net Value' = EXTERNALMEASURE("Cancelled Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 07. Cancelled
+		lineageTag: b446c38f-73c8-46b1-911d-be549bf64931
+		sourceLineageTag: 42c69770-3f98-41ea-9410-8c54128e2d2b
+		dataCategory: Uncategorized
+
+	measure 'Cancelled Units by Canc Date' = EXTERNALMEASURE("Cancelled Units by Canc Date", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 07. Cancelled
+		lineageTag: 2a9843e1-8ee6-4c5f-8293-ac50aa11fbdb
+		sourceLineageTag: 36f29ab3-3b42-4f62-bee4-c637227c4a7f
+		dataCategory: Uncategorized
+
+	measure 'Cancelled Net Value by Canc Date' = EXTERNALMEASURE("Cancelled Net Value by Canc Date", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 07. Cancelled
+		lineageTag: 69bd8ddd-ed02-4c32-8a6e-89e4a8627b05
+		sourceLineageTag: ee63898d-b27d-48c4-a35e-c3c4c6030437
+		dataCategory: Uncategorized
+
+	measure 'Estimated Net Sell Out Units' = EXTERNALMEASURE("Estimated Net Sell Out Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		isHidden
+		displayFolder: 11. Others\Sell Out\EMEA
+		lineageTag: d69d5ce0-19ec-480e-9ecf-d4b69fd4a1cf
+		sourceLineageTag: 8fa0db31-9b2b-4137-9581-4d506bae8aa6
+		dataCategory: Uncategorized
+
+	measure 'Seasonal Product FC Units' = EXTERNALMEASURE("Seasonal Product FC Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 11. Others\1. Seasonal Product FC
+		lineageTag: 41a1bf0c-c2f2-4c7e-920b-5fd767781fe1
+		sourceLineageTag: bc7ac82b-6040-46b1-93f8-a533f4a78cad
+		dataCategory: Uncategorized
+
+	measure 'Framework Order Consumption %' = EXTERNALMEASURE("Framework Order Consumption %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0\;-\#\,\0\;\#\,\0"
+		displayFolder: 11. Others\3. Framework Order
+		lineageTag: bbd28122-7511-42f9-adc8-0077def71faf
+		sourceLineageTag: 122951c2-1fec-4187-a430-f84fb281be3f
+		dataCategory: Uncategorized
+
+	measure 'Write-Offs (non-MDF)' = EXTERNALMEASURE("Write-Offs (non-MDF)", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 11. Others\2. Deductions
+		lineageTag: 5d4b1017-eaff-4bbc-94c5-8faa0ea6cb9f
+		sourceLineageTag: 4941dbf7-8b59-4c7c-bbc2-187680d90e1b
+		dataCategory: Uncategorized
+
+	measure XR = EXTERNALMEASURE("XR", DOUBLE, "DirectQuery to AS - DMA B2B")
+		isHidden
+		displayFolder: 11. Others
+		lineageTag: 590bb59d-500e-4dea-ba76-d011e5487905
+		sourceLineageTag: 43e2c5dc-6cff-47f3-bdc6-d4d38e2701f4
+		dataCategory: Uncategorized
+
+	measure 'Avg Req. Inv Days' = EXTERNALMEASURE("Avg Req. Inv Days", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0"
+		displayFolder: 11. Others
+		lineageTag: 1f7d1017-1b39-43c1-9d1c-885d142924ea
+		sourceLineageTag: 9cbcb956-816a-46ee-90b0-875fa9724d06
+		dataCategory: Uncategorized
+
+	measure 'Avg Order Duration' = EXTERNALMEASURE("Avg Order Duration", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0"
+		displayFolder: 11. Others
+		lineageTag: d44f132a-269e-42d2-ac18-9934125eee37
+		sourceLineageTag: 6a4ec1e1-ff5c-4036-a566-71da99c432aa
+		dataCategory: Uncategorized
+
+	measure 'Shipped Units' = EXTERNALMEASURE("Shipped Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 11. Others
+		lineageTag: 8ead77da-b4dc-4367-8c3d-5c8104eddc1f
+		sourceLineageTag: 2eead023-1367-4486-91a8-fde2630b46cd
+		dataCategory: Uncategorized
+
+	measure 'Requested Order Duration' = EXTERNALMEASURE("Requested Order Duration", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0"
+		displayFolder: 11. Others
+		lineageTag: 5ed6a508-d1a9-408c-a527-c9d9c354586a
+		sourceLineageTag: e95b1c93-b073-4347-b6db-69de0b436f32
+		dataCategory: Uncategorized
+
+	measure 'Shipped Net Value' = EXTERNALMEASURE("Shipped Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 11. Others
+		lineageTag: 89e6800a-8cda-4b79-8750-d7cdfce51dc2
+		sourceLineageTag: fc7fc30e-54f1-4db7-b1b6-937e916057a7
+		dataCategory: Uncategorized
+
+	measure 'Orderbook Conversion %' = EXTERNALMEASURE("Orderbook Conversion %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0\;-\0\;\0"
+		displayFolder: 11. Others
+		lineageTag: 1620ba09-8a9d-4d60-a013-f9c3e226053b
+		sourceLineageTag: edd39a73-bf57-4b36-8e82-6aa21073e2b8
+		dataCategory: Uncategorized
+
+	measure 'Max. Net Weight' = EXTERNALMEASURE("Max. Net Weight", CURRENCY, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0\0"
+		displayFolder: 11. Others
+		lineageTag: ce0dac55-eca3-427b-81bd-267f4d348a06
+		sourceLineageTag: eeac33c0-97ea-412b-bb5c-0d040ff7832d
+		dataCategory: Uncategorized
+
+	measure 'Max. Pack Weight' = EXTERNALMEASURE("Max. Pack Weight", CURRENCY, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0\0"
+		displayFolder: 11. Others
+		lineageTag: af2acd5c-e090-42ca-a40b-74d169435e00
+		sourceLineageTag: 90351b93-b9a5-4253-9b59-274cda9c14f0
+		dataCategory: Uncategorized
+
+	measure 'Ordered Units by OE Date LY' = EXTERNALMEASURE("Ordered Units by OE Date LY", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 01. Ordered\vs.\vs LY
+		lineageTag: f735a7c3-835d-408b-98b8-9374a61d37c5
+		sourceLineageTag: a30cca4c-cb83-4e67-9424-642ffe55ac22
+		dataCategory: Uncategorized
+
+	measure 'Ordered Net Value by OE Date LY' = EXTERNALMEASURE("Ordered Net Value by OE Date LY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0"
+		displayFolder: 01. Ordered\vs.\vs LY
+		lineageTag: 1edca544-0107-4cf2-897c-e6c440b89667
+		sourceLineageTag: a7dd5cbd-257c-40df-9b15-36e9159c78ba
+		dataCategory: Uncategorized
+
+	measure 'Ordered Units by OE Date vs LY %' = EXTERNALMEASURE("Ordered Units by OE Date vs LY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		displayFolder: 01. Ordered\vs.\vs LY
+		lineageTag: 24614e60-cd9a-4636-8358-b58e0851a866
+		sourceLineageTag: 4f0d3e56-33a9-491f-bcb3-34871ea3c09e
+		dataCategory: Uncategorized
+
+	measure 'Ordered Net Value by OE Date vs LY %' = EXTERNALMEASURE("Ordered Net Value by OE Date vs LY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \0.\0\0\;-\0.\0\0\;\0.\0\0"
+		displayFolder: 01. Ordered\vs.\vs LY
+		lineageTag: ea4ca302-54d9-4042-a2a1-52515943eee9
+		sourceLineageTag: 13151930-7d7b-46aa-af4e-dc719477a6ac
+		dataCategory: Uncategorized
+
+	measure 'Ordered Units by OE Date LFY' = EXTERNALMEASURE("Ordered Units by OE Date LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: #,0
+		displayFolder: 01. Ordered\vs.\vs EMEA LFY
+		lineageTag: c9571279-2269-46d6-a999-c34c460858be
+		sourceLineageTag: cf8fad90-9cde-4f37-96c2-f8c563d126a6
+		dataCategory: Uncategorized
+
+	measure 'Ordered Net Value by OE Date LFY' = EXTERNALMEASURE("Ordered Net Value by OE Date LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: 0.00
+		displayFolder: 01. Ordered\vs.\vs EMEA LFY
+		lineageTag: c03508c6-ffc4-49a6-9b1d-c1a3ce5f69dc
+		sourceLineageTag: 7b6e2215-ac7a-49a1-8537-6e31d14a6b7f
+		dataCategory: Uncategorized
+
+	measure 'Ordered Units by OE Date vs LFY %' = EXTERNALMEASURE("Ordered Units by OE Date vs LFY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 01. Ordered\vs.\vs EMEA LFY
+		lineageTag: b0dd6714-43af-4d68-b1e1-0aa07b29afe0
+		sourceLineageTag: 3156391d-11c4-4156-9e7a-02ce55a1a824
+		dataCategory: Uncategorized
+
+	measure 'Ordered Net Value by OE Date vs LFY %' = EXTERNALMEASURE("Ordered Net Value by OE Date vs LFY %", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 01. Ordered\vs.\vs EMEA LFY
+		lineageTag: 5c359a1a-0d44-4716-a011-a35d0df978cb
+		sourceLineageTag: 1c80c477-723d-4705-888d-7d790d3eb866
+		dataCategory: Uncategorized
+
+	measure 'Ordered Units' = EXTERNALMEASURE("Ordered Units", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 01. Ordered
+		lineageTag: 24c3bea1-95e3-4a47-9cf3-8fd92b19ea4d
+		sourceLineageTag: 7fc4d447-6136-477b-8dca-79f18aa35a30
+		dataCategory: Uncategorized
+
+	measure 'Ordered Units by OE Date' = EXTERNALMEASURE("Ordered Units by OE Date", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 01. Ordered
+		lineageTag: 774b5878-482c-4801-9ae2-07a136c364a2
+		sourceLineageTag: 1a848c2c-cce1-4eda-83e7-381a41aa4969
+		dataCategory: Uncategorized
+
+	measure 'Ordered Net Value by OE Date' = EXTERNALMEASURE("Ordered Net Value by OE Date", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 01. Ordered
+		lineageTag: b50b0317-0728-42ff-a30b-299345a683ee
+		sourceLineageTag: 17678c17-dc47-4199-802a-d6a18213ca63
+		dataCategory: Uncategorized
+
+	measure 'Ordered Net Value' = EXTERNALMEASURE("Ordered Net Value", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 01. Ordered
+		lineageTag: 3a99f5ad-89f1-4f7b-9272-a4c088406531
+		sourceLineageTag: c27f1b34-c3e6-456b-8485-b38a5aa262cd
+		dataCategory: Uncategorized
+
+	measure 'Ordered Units by Req Ship Date' = EXTERNALMEASURE("Ordered Units by Req Ship Date", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		isHidden
+		displayFolder: 01. Ordered
+		lineageTag: 6c881d93-4a58-4375-ae94-3a8840ebc328
+		sourceLineageTag: e1f4d080-b1d3-492c-b26d-33a1d62170b7
+		dataCategory: Uncategorized
+
+	measure 'Ordered Net Value by Req Ship Date' = EXTERNALMEASURE("Ordered Net Value by Req Ship Date", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		isHidden
+		displayFolder: 01. Ordered
+		lineageTag: 506d1505-a2b2-41d7-bab8-812718844e5e
+		sourceLineageTag: 734ad73c-fde7-4a0c-a2f1-a629d2883f99
+		dataCategory: Uncategorized
+
+	measure 'Ordered Units by Start Ship Date' = EXTERNALMEASURE("Ordered Units by Start Ship Date", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 01. Ordered
+		lineageTag: 747ee129-8676-4773-844d-9444e85189b6
+		sourceLineageTag: 1084fa89-d37c-4a79-ac06-49e36902aff8
+		dataCategory: Uncategorized
+
+	measure 'Ordered Net Value by Start Ship Date' = EXTERNALMEASURE("Ordered Net Value by Start Ship Date", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 01. Ordered
+		lineageTag: ed6db3d0-b65b-488f-b40d-ef3bc140ade8
+		sourceLineageTag: 520a0012-3e82-404f-87a4-5a03fcff1735
+		dataCategory: Uncategorized
+
+	measure 'On Hand Available To Sell' = EXTERNALMEASURE("On Hand Available To Sell", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 10. Stock
+		lineageTag: 039418b8-41c1-4b32-a3f8-5917acc00358
+		sourceLineageTag: f1fc997f-595b-4fec-bd2d-4b1a6af133ec
+		dataCategory: Uncategorized
+
+	measure 'Intake Available to Sell' = EXTERNALMEASURE("Intake Available to Sell", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0"
+		displayFolder: 10. Stock
+		lineageTag: 24a2e247-9a28-46d8-ac26-ceb829252b34
+		sourceLineageTag: 2281c841-ce4a-4911-88b8-c64225cccc75
+		dataCategory: Uncategorized
+
+	measure 'Customer Ageing 0-30 Days' = EXTERNALMEASURE("Customer Ageing 0-30 Days", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: 88e4d2bd-6935-4c56-aaac-2fbef39d3abd
+		sourceLineageTag: 07fe0742-422c-4c71-81ae-0dcabdd688ff
+		dataCategory: Uncategorized
+
+	measure 'Customer Ageing 31-60 Days' = EXTERNALMEASURE("Customer Ageing 31-60 Days", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: fdec61cd-bdae-48eb-9cc8-01e16fad27cd
+		sourceLineageTag: 272a4941-ab15-4b30-aaf6-2f5e0774cd82
+		dataCategory: Uncategorized
+
+	measure 'Customer Ageing 61-90 Days' = EXTERNALMEASURE("Customer Ageing 61-90 Days", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: de916cd8-7f18-46b4-8bd8-691c8fab95e4
+		sourceLineageTag: 7be25cca-34bc-432b-b8ef-d1d1ad9e2cbf
+		dataCategory: Uncategorized
+
+	measure 'Customer Ageing 90+ Days' = EXTERNALMEASURE("Customer Ageing 90+ Days", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: 675e46d8-d925-4e81-b022-57cd552d0a3c
+		sourceLineageTag: 070dec86-ed3f-48d1-a8b5-bcea15649404
+		dataCategory: Uncategorized
+
+	measure 'Customer Ageing Current Balance' = EXTERNALMEASURE("Customer Ageing Current Balance", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: ef541421-b305-4e52-a42e-cd610888ce96
+		sourceLineageTag: 3bb261e8-ebf0-46fe-83eb-4830ca9feb00
+		dataCategory: Uncategorized
+
+	measure 'Total Customer Ageing Balance' = EXTERNALMEASURE("Total Customer Ageing Balance", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: 45056308-5eda-40f8-ad9d-88574b3aaac0
+		sourceLineageTag: 476eccd4-353b-48ec-b03d-7072c936d155
+		dataCategory: Uncategorized
+
+	measure 'Number of Open Invoices' = EXTERNALMEASURE("Number of Open Invoices", INTEGER, "DirectQuery to AS - DMA B2B")
+		formatString: " \0"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: fa4f1343-1165-4f63-8d74-3308d50dec97
+		sourceLineageTag: 65bd1432-c658-4347-bc3d-1d9576d36f54
+		dataCategory: Uncategorized
+
+	measure 'Last Payment Amount' = EXTERNALMEASURE("Last Payment Amount", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\0"
+		displayFolder: 08. Accounts Receivable\1. Customer Ageing
+		lineageTag: ac4baf27-7704-4d3a-86fb-8f76d68fb588
+		sourceLineageTag: f3f26f99-2ea7-4ab9-a12d-94fdcfb5dad5
+		dataCategory: Uncategorized
+
+	measure 'Invoice Value' = EXTERNALMEASURE("Invoice Value", CURRENCY, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 22b2964f-3065-4f42-b66e-ffd45a953448
+		sourceLineageTag: 4ffd8626-1821-40a2-b6b9-701649bc802c
+		dataCategory: Uncategorized
+
+	measure 'Invoice Settle Value' = EXTERNALMEASURE("Invoice Settle Value", CURRENCY, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: b097a693-890e-4619-9169-d90ee90371d3
+		sourceLineageTag: d331d95b-08bc-4024-a6a2-6c9143bb80ea
+		dataCategory: Uncategorized
+
+	measure 'Invoice Dispute Value' = EXTERNALMEASURE("Invoice Dispute Value", CURRENCY, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 3b92660f-ae4d-49f9-a4dc-a6e77c8aa415
+		sourceLineageTag: f25be5fb-314f-479c-8385-5520cb3e3cd7
+		dataCategory: Uncategorized
+
+	measure 'Invoice Outstanding Value by Due Date' = EXTERNALMEASURE("Invoice Outstanding Value by Due Date", CURRENCY, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: e8661dfa-7b16-4e23-a7a7-4f3e351eacc8
+		sourceLineageTag: 5914d6bb-ea0f-44da-9532-118d46b51127
+		dataCategory: Uncategorized
+
+	measure 'Invoice Outstanding Value by Trans Date' = EXTERNALMEASURE("Invoice Outstanding Value by Trans Date", CURRENCY, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: debf7665-f6fc-4f89-850f-ea730f1b88e9
+		sourceLineageTag: 39cb57c0-ab31-42fa-8032-fb50322cad58
+		dataCategory: Uncategorized
+
+	measure ADP = EXTERNALMEASURE("ADP", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: 0
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 76be795d-10fc-4e35-9bfe-7e069fbb8602
+		sourceLineageTag: 0837e386-1cb6-459c-9125-ffa503608125
+		dataCategory: Uncategorized
+
+	measure ADD = EXTERNALMEASURE("ADD", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: 0
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 6ea71901-8234-4ed6-9566-54dcfb31e4d5
+		sourceLineageTag: 146724b5-271d-4db7-a4d7-68cc87bbaad7
+		dataCategory: Uncategorized
+
+	measure 'Invoice Value by Expected Payment Date' = EXTERNALMEASURE("Invoice Value by Expected Payment Date", CURRENCY, "DirectQuery to AS - DMA B2B")
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 808d8918-d45b-4967-8891-e4e15651dcb0
+		sourceLineageTag: f460c7c9-e352-465a-a7da-3dea03797981
+		dataCategory: Uncategorized
+
+	measure 'Invoice Outstanding Value by Expected Payment Date' = EXTERNALMEASURE("Invoice Outstanding Value by Expected Payment Date", CURRENCY, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 7bc7748c-02a3-4eef-b655-1c9f95cff2ed
+		sourceLineageTag: caa02464-e8e3-4332-b401-f2ac04f6decd
+		dataCategory: Uncategorized
+
+	measure 'Last Payment Date' = EXTERNALMEASURE("Last Payment Date", DATETIME, "DirectQuery to AS - DMA B2B")
+		formatString: Short Date
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 4a10891e-6d7a-45fc-93c1-624ace5529b3
+		sourceLineageTag: f66b8af0-8c89-4b23-9c6b-e9103c86ec06
+		dataCategory: Uncategorized
+
+	measure 'Invoice Outstanding Value by Inv Acct Expected Payment Date' = EXTERNALMEASURE("Invoice Outstanding Value by Inv Acct Expected Payment Date", CURRENCY, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 1a2a79bf-0b1e-4070-97be-804cca50542a
+		sourceLineageTag: bf955cc6-8c62-4f66-8576-3810a9ff0327
+		dataCategory: Uncategorized
+
+	measure 'Invoice Value by Inv Acct Expected Payment Date' = EXTERNALMEASURE("Invoice Value by Inv Acct Expected Payment Date", CURRENCY, "DirectQuery to AS - DMA B2B")
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 5caecae8-b9a1-448a-9cff-36b8ad263cc8
+		sourceLineageTag: b7085a16-3956-428e-a018-5b9e53b4bbea
+		dataCategory: Uncategorized
+
+	measure 'CoGS Manual Finance Adjustments' = EXTERNALMEASURE("CoGS Manual Finance Adjustments", CURRENCY, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 09. Finance Adjustments
+		lineageTag: 88bcd468-c14a-4020-8179-ae4bba398619
+		sourceLineageTag: 789f418e-9fcd-42e7-b72b-2954d4909b8c
+		dataCategory: Uncategorized
+
+	measure 'Sales Manual Finance Adjustments' = EXTERNALMEASURE("Sales Manual Finance Adjustments", CURRENCY, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 09. Finance Adjustments
+		lineageTag: 6518bace-5473-4f77-a425-88a58794f414
+		sourceLineageTag: c016ba0c-c97b-4417-9918-ce806cf46abc
+		dataCategory: Uncategorized
+
+	measure lastpdate = EXTERNALMEASURE("lastpdate", DATETIME, "DirectQuery to AS - DMA B2B")
+		formatString: General Number
+		isHidden
+		lineageTag: e2ffff3f-beed-43f1-89b4-2a76a533ed9b
+		sourceLineageTag: 72e7d033-57ad-4f52-880a-34427c03df35
+		dataCategory: Uncategorized
+
+	measure 'Invoice Value (Transaction)' = EXTERNALMEASURE("Invoice Value (Transaction)", CURRENCY, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: 08. Accounts Receivable
+		lineageTag: 8b991508-0496-4d87-9c2e-9a55774bd51a
+		sourceLineageTag: 458dd59b-8618-418e-a7d7-1556b386fe95
+		dataCategory: Uncategorized
+
+	measure 'Cancelled Payment' = EXTERNALMEASURE("Cancelled Payment", CURRENCY, "DirectQuery to AS - DMA B2B")
+		isHidden
+		lineageTag: d57d2b4a-2607-41c5-ba75-13fe3e59c30e
+		sourceLineageTag: 823e8961-7801-4166-9bb6-d4a83a26d893
+		dataCategory: Uncategorized
+
+	measure 'Fulfilment Buckets' = EXTERNALMEASURE("Fulfilment Buckets", STRING, "DirectQuery to AS - DMA B2B")
+		isHidden
+		lineageTag: 652cd6d4-93cd-44d0-954f-478c2c33b017
+		sourceLineageTag: b9695bfa-8f05-4d7a-923e-cd5d6b95c362
+		dataCategory: Uncategorized
+
+	measure firstpdate = EXTERNALMEASURE("firstpdate", DATETIME, "DirectQuery to AS - DMA B2B")
+		formatString: General Number
+		isHidden
+		lineageTag: b88f006d-7141-41a6-bb50-7eb9e2a66192
+		sourceLineageTag: 4616b97e-b544-43bc-9294-4d28a3424361
+		dataCategory: Uncategorized
+
+	measure 'Net Units % of LFY' = EXTERNALMEASURE("Net Units % of LFY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: " \#\,\0.\0\;-\#\,\0.\0\;\#\,\0.\0"
+		displayFolder: 05. Net\vs.\vs EMEA LFY
+		lineageTag: 4ddca3d4-f30b-4892-9e56-5469f134e14d
+		sourceLineageTag: fc630aec-7d7f-433b-b6a7-1530e2d34688
+		dataCategory: Uncategorized
+
+	measure 'Returned Net Value PY' = EXTERNALMEASURE("Returned Net Value PY", DOUBLE, "DirectQuery to AS - DMA B2B")
+		formatString: #,0.00
+		displayFolder: 04. Returns\vs.\vs EMEA LFY
+		lineageTag: 8746181a-aec4-4463-bffe-210b8bcb9c6e
+		sourceLineageTag: 59fedcb4-cec8-4801-a009-482996377096
+		dataCategory: Uncategorized
+
+	measure Measure = if([% Complete]>1,1,blank())
+		lineageTag: 536cd112-65c9-41fe-b65e-bb50792b6f57
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure tday = lookupvalue('Date'[ Date],'Date'[- Is Today?],"Yes")
+		formatString: m/d/yy
+		lineageTag: 98c08d4d-49e2-4333-a69e-ddfe863b1827
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	measure redateshort = FORMAT(Metrics[tday]-1,"m/d")
+		lineageTag: e1088e91-2c20-4e1b-9df9-3b1fcbf12763
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'asp fc' = DIVIDE([Forecast $],[Forecast Unit])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: c80f5a4c-7888-42ec-800c-1bdf4ebec518
+
+	measure 'ASP Invoiced' = DIVIDE([Period Invoiced],CALCULATE([Total Units],Products[Product General]="fOOTWEAR"))
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 27de3620-323a-462e-85ef-5dd3eb5ecadb
+
+	measure 'asp obk' = DIVIDE([Net Value],CALCULATE([Net Units],Products[Product General]="fOOTWEAR"))
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: c270810b-72ca-4136-b881-9bcc1827ac9d
+
+	measure 'WriteOffs (Non-MDF)' = -[Write-Offs (non-MDF)]
+		formatString: 0
+		displayFolder: 11. Others\2. Deductions
+		lineageTag: d2a4d536-98d3-4b20-a43a-1d20654b471d
+
+	measure MAX = MAX([Total Net Value],[Total Net Value Forecast])
+		displayFolder: 11. Others
+		lineageTag: d9007e98-9b95-4c35-9dbd-c1bc2bd01e6e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MAX UNITS' = MAX([Total Units],[Forecast Units])
+		displayFolder: 11. Others
+		lineageTag: 2b1dd04f-088d-45ed-ba4b-73b023f3c25a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'inv units complete' = DIVIDE([Invoiced Units],[S&OP Forecast Invoiced Units])
+		formatString: 0%;-0%;0%
+		displayFolder: 11. Others
+		lineageTag: 9c8d7a46-af10-4946-91a4-e39ec14c7b1d
+
+		changedProperty = FormatString
+
+	measure 'Forecast Units' = [S&OP Forecast Invoiced Units]+[S&OP Forecast Returned Units]
+		displayFolder: 11. Others
+		lineageTag: 89db5b62-7394-47ac-919e-f5f124f90f9a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CURNOTE = "Values in "&SELECTEDVALUE('Display Currency'[Currency Symbol],"GBP")
+		lineageTag: 71207b82-fb9c-4185-9868-49db858d1ff6
+
+		changedProperty = Name
+
+	measure 'Return Units -' = -[Returned Units]
+		formatString: 0
+		displayFolder: 04. Returns
+		lineageTag: 19d2aeb4-2560-4d21-ba40-1f16b4f9db41
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+	measure lastperdate = CALCULATE(LASTDATE('Date'[ Date]),FILTER(ALL('Date'),'Date'[Relative Fiscal Period (544)]="Current FP"))
+		formatString: General Date
+		lineageTag: 701d533b-bb62-4085-814a-6781a78143a8
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	column Column
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1704d332-55cc-4cd6-8f94-2999cd150152
+		sourceLineageTag: 16027cc0-6dfa-4595-844d-bc888161746c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Column
+
+		annotation SummarizationSetBy = User
+
+	partition Metrics = entity
+		mode: directQuery
+		source
+			entityName: Metrics
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+

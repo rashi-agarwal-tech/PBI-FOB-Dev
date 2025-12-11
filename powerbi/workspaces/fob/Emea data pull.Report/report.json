@@ -1,0 +1,42 @@
+{
+  "config": "{\"version\":\"5.68\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY25SU11\",\"version\":{\"visual\":\"2.4.0\",\"report\":\"3.0.0\",\"page\":\"2.3.0\"},\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY25SU11",
+            "path": "BaseThemes/CY25SU11.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ab5bb1225b614721070c",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"81ac73a854bead676892\",\"layouts\":[{\"id\":0,\"position\":{\"x\":415.6684419482909,\"y\":47.5956231238501,\"z\":0,\"width\":685.3769729834414,\"height\":577.4935605693812}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Date.Full Date\"},{\"queryRef\":\"Metrics.eCom Demand Gross Value\"},{\"queryRef\":\"Display Currency.Currency Code\"},{\"queryRef\":\"Display Currency.XRMultiplier\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Metrics\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Date\",\"Type\":0},{\"Name\":\"d1\",\"Entity\":\"Display Currency\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"eCom Demand Gross Value\"},\"Name\":\"Metrics.eCom Demand Gross Value\",\"NativeReferenceName\":\"eCom Demand Gross Value\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Full Date\"},\"Name\":\"Date.Full Date\",\"NativeReferenceName\":\"Full Date\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"Currency Code\"},\"Name\":\"Display Currency.Currency Code\",\"NativeReferenceName\":\"Currency Code\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d1\"}},\"Property\":\"XRMultiplier\"},\"Name\":\"Display Currency.XRMultiplier\",\"NativeReferenceName\":\"XRMultiplier\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[{\"name\":\"7ff9e3ac0b3a38c18bc0\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Region\"}},\"Property\":\"Region\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Region\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Region\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'EMEA'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}},{\"name\":\"5540e0560692a5595d54\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Region\"}},\"Property\":\"Sub-Region\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"r\",\"Entity\":\"Region\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"r\"}},\"Property\":\"Sub-Region\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'EU'\"}}],[{\"Literal\":{\"Value\":\"'UK'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}},{\"name\":\"519db8d3a3137d7e1ba8\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Display Currency\"}},\"Property\":\"Currency Code\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Display Currency\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Currency Code\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'GBP'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{}}]",
+          "height": 577.49,
+          "width": 685.38,
+          "x": 415.67,
+          "y": 47.60,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

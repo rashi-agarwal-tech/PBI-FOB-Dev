@@ -1,0 +1,59 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.143.878.0 (25.05)+b20aa3b866ec1b70879135a4e60e4b1301c75b21
+
+annotation PBI_QueryOrder = ["DirectQuery to AS - DMA B2B","S&OP Forecast"]
+
+ref table 'Customer Ageing'
+ref table 'Accounts Receivable'
+ref table Deductions
+ref table 'Hold Code Trans'
+ref table SmartRes
+ref table 'On Hand Stock'
+ref table Intake
+ref table 'Adjustments Sales'
+ref table 'Exchange Rates'
+ref table 'Purchase Orders'
+ref table 'Product Weights'
+ref table 'Seasonal Product Info'
+ref table 'Invoice Number'
+ref table Customer
+ref table Forecast
+ref table 'Allocation Details'
+ref table POCountry
+ref table Regions
+ref table 'Seasonal Product Forecast'
+ref table 'Financial Channel'
+ref table Region
+ref table 'Display Currency'
+ref table 'Product Class'
+ref table 'Selling Status - Order Entry'
+ref table 'Sales Order Type'
+ref table Size
+ref table Warehouse
+ref table Products
+ref table 'Selling Status - Invoice'
+ref table 'Date Slicer'
+ref table Seasons
+ref table 'Order Type'
+ref table 'Adjustments CoGS'
+ref table Metrics
+ref table Date
+ref table 'Forecast Version'
+ref table Orders
+ref table Vendor
+ref table Pick
+ref table 'Sales Packing Slip'
+ref table 'Bridge InventTransID'
+ref table 'S&OP Forecast'
+
+ref cultureInfo en-US
+

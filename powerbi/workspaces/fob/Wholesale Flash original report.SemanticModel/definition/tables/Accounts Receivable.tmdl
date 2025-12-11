@@ -1,0 +1,380 @@
+table 'Accounts Receivable'
+	lineageTag: 4da810bb-1f9d-4092-9ee1-4f71f151f4c4
+	sourceLineageTag: 608a5a3b-37e5-44b7-84ee-d900e200d0ad
+
+	column AMOUNT_CONS_GBP
+		dataType: decimal
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: c79555d9-86e1-46ed-a50a-e99abe4e1a93
+		sourceLineageTag: 2febe2ec-7025-4e51-8173-4d7b96bbc63c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AMOUNT_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column SETTLEAMOUNT_CONS_GBP
+		dataType: decimal
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: 1fa48183-991c-4df7-b88a-db9388a41738
+		sourceLineageTag: 10ff4bd5-e233-41d7-98f9-00553a79ce1c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SETTLEAMOUNT_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column Voucher
+		dataType: string
+		lineageTag: 9f9ee57b-5c10-43b6-b95d-9e0f200c54a6
+		sourceLineageTag: 1ff6bbaf-8fcc-418e-9678-8355c373f03e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Voucher
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: d8037e49-afba-4f5f-a43c-e2e508653a12
+		sourceLineageTag: ba4c90c0-3218-4402-bd9f-789e0d3e9720
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Due Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 8725da39-2148-42a6-8332-62ba458f0f48
+		sourceLineageTag: d2ee9bba-5616-4489-9be1-cc178be88292
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Due Date
+
+		annotation SummarizationSetBy = User
+
+	column Description
+		dataType: string
+		lineageTag: bdfed28c-d642-4f24-b704-51231531ce3b
+		sourceLineageTag: f1d7dcc2-3c1c-4c6f-9211-80315498e490
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = User
+
+	column Currency
+		dataType: string
+		lineageTag: c079cc66-b371-4272-afae-27e1597a0bc2
+		sourceLineageTag: c779652a-89c2-491d-a324-ee5ebfd74e09
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Number'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 9424e41b-552d-42cd-ba34-999690d0d0a0
+		sourceLineageTag: 28351573-0dd4-4eb8-b14e-327a29b78e13
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Number
+
+		annotation SummarizationSetBy = User
+
+	column Company_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 6bce0577-80ea-417f-af59-ba2c4634e0c0
+		sourceLineageTag: 98c3b40b-0a7d-48e1-b478-c90c1543fec6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Company_Key
+
+		annotation SummarizationSetBy = User
+
+	column Customer_Key
+		dataType: string
+		isHidden
+		displayFolder: zz_Keys
+		lineageTag: 971fbaaa-d945-4b33-8a2f-823c6ba6cbe3
+		sourceLineageTag: b56adba3-b9d2-478a-81a2-1387f0c26a33
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Customer_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Transaction Type'
+		dataType: string
+		lineageTag: 52385f16-44e7-437e-bc37-e754e19ee5cd
+		sourceLineageTag: 719479ef-528b-4cbc-97d7-8f074fbf2f92
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Transaction Type
+
+		annotation SummarizationSetBy = User
+
+	column TransDate_Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Keys
+		lineageTag: 8ef95fc7-d667-4fe1-8c79-dfaf55daf4ef
+		sourceLineageTag: 0d7d2c43-e195-4917-aa96-24bf6232bcba
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: TransDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column DueDate_Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Keys
+		lineageTag: 466e4879-5cd1-4370-9b5d-16b826d8ae65
+		sourceLineageTag: 611afe90-f4fd-48f3-852f-4b3c5d9d2be3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DueDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Dispute Follow-up Date'
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: 1. Disputes
+		lineageTag: 30e70041-40cb-46a1-82ff-833477440170
+		sourceLineageTag: ddf55908-e453-4563-a38e-c442592e0a97
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dispute Follow-up Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Dispute Note'
+		dataType: string
+		displayFolder: 1. Disputes
+		lineageTag: 8f414ff6-7ee6-408d-bd4b-64f9e621788f
+		sourceLineageTag: 74c04ae9-8bcc-4ffb-913b-56ce3b3b37b0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dispute Note
+
+		annotation SummarizationSetBy = User
+
+	column 'Dispute Reason'
+		dataType: string
+		displayFolder: 1. Disputes
+		lineageTag: 6d13543f-5a4e-41fa-9b6d-4931088cd8f3
+		sourceLineageTag: 399de39a-b5a1-473c-8036-3d1457bf7f6b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Dispute Reason
+
+		annotation SummarizationSetBy = User
+
+	column 'Cost Centre'
+		dataType: string
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: ffd11d8a-98ba-46d5-9623-2f1e6a489fab
+		sourceLineageTag: bc3633c2-0ab9-4c80-b797-b13f8dbb22ad
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Cost Centre
+
+		annotation SummarizationSetBy = User
+
+	column DISP_AMOUNT_CONS_GBP
+		dataType: decimal
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: ac0dff3f-a0db-4aa2-848d-33b306490d33
+		sourceLineageTag: e46f9524-ef29-4beb-bdbc-63eb70cb3cdb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DISP_AMOUNT_CONS_GBP
+
+		annotation SummarizationSetBy = User
+
+	column ClosedDate_Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		displayFolder: zz_Keys
+		lineageTag: db693875-e70c-41d8-9901-626a55ba7d39
+		sourceLineageTag: 13a3d8aa-5ab6-4f82-b2d2-5a0123fd1f22
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ClosedDate_Key
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Closed Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: d3785bb4-6975-4dc2-ac61-b89422840c8a
+		sourceLineageTag: f0311f80-c2fb-4d4c-bf6c-81618781052f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Closed Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Days To Pay'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: dccfabb2-3024-4dee-9f60-d79e965cf250
+		sourceLineageTag: ed8c9120-a7d5-46be-9204-c70e86a2eb67
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Days To Pay
+
+		annotation SummarizationSetBy = User
+
+	column 'Write-Off Reason'
+		dataType: string
+		lineageTag: 1529439f-b5c4-45ce-9e12-fef3ea816ed1
+		sourceLineageTag: 1f985d47-8fc4-454e-9617-2497ec8d3387
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Write-Off Reason
+
+		annotation SummarizationSetBy = User
+
+	column AMOUNT_TRANS
+		dataType: decimal
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Values
+		lineageTag: b7df49a8-186c-4adb-ad1c-bb86a6ccbe40
+		sourceLineageTag: e3f94a63-edb7-421b-9c75-4c5d4066fb4d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: AMOUNT_TRANS
+
+		annotation SummarizationSetBy = User
+
+	column 'Expected Payment Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: f00fab02-a56f-4cf2-a157-e187500bbfb4
+		sourceLineageTag: 5761f717-e929-44da-aa32-1f0ce5c67706
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Expected Payment Date
+
+		annotation SummarizationSetBy = User
+
+	column Open/Closed?
+		dataType: string
+		lineageTag: 4082cccd-327f-44a7-868e-891375b46939
+		sourceLineageTag: 427bac39-40e4-4965-bd1c-e540ee255d2d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Open/Closed?
+
+		annotation SummarizationSetBy = User
+
+	column '15 Day Ageing Buckets'
+		dataType: string
+		lineageTag: e98a231e-27e5-4633-8df3-ee8ac52f7539
+		sourceLineageTag: 1b2951a7-5c33-41f5-bbab-cf85857ae44d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: 15 Day Ageing Buckets
+
+		annotation SummarizationSetBy = User
+
+	column 'Payment Amount (Transaction)'
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: 3c6aa9dc-40d0-4ffc-b612-ebb6ae7a0a0d
+		sourceLineageTag: 95315821-d3e3-4adb-97e2-d3b4e7f039fb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Payment Amount (Transaction)
+
+		annotation SummarizationSetBy = User
+
+	column 'Invoice Acct Expected Payment Date'
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 3f3fbaa5-e0b9-4de7-a82b-f905a612ee8b
+		sourceLineageTag: f83aed9a-3590-4c7b-ae73-4040d942ec93
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Invoice Acct Expected Payment Date
+
+		annotation SummarizationSetBy = User
+
+	column 'Days Delinquent'
+		dataType: int64
+		isHidden
+		displayFolder: zz_Misc
+		lineageTag: 353e5e5d-ddcb-4e2f-8f3a-68c03772e816
+		sourceLineageTag: 65d3a50e-4223-481f-9280-bc27da59d1be
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: Days Delinquent
+
+		annotation SummarizationSetBy = User
+
+	column InvValue*DaysToPay
+		dataType: decimal
+		isHidden
+		formatString: #,##0.00
+		displayFolder: zz_Misc
+		lineageTag: 629c5808-0911-4c40-b318-ebc7a9c0260c
+		sourceLineageTag: 24d554ac-bec4-4a10-a08b-b75c88993be5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: InvValue*DaysToPay
+
+		annotation SummarizationSetBy = User
+
+	column InvValue*DaysDelinquent
+		dataType: decimal
+		isHidden
+		formatString: " \#\,\#\#\0.\0\0"
+		displayFolder: zz_Misc
+		lineageTag: b1deecec-18dd-4c0f-a519-9c6c87783c91
+		sourceLineageTag: 4414fd98-5bee-4ff2-a0db-002f9cb40cda
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: InvValue*DaysDelinquent
+
+		annotation SummarizationSetBy = User
+
+	column CUSTOMERGROUPID
+		dataType: string
+		isHidden
+		lineageTag: 5c07b0b7-f9c5-4ecf-9b49-29efe73b9031
+		sourceLineageTag: 4eb83a7e-9d80-48f8-9945-2cbd8b5ed93b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: CUSTOMERGROUPID
+
+		annotation SummarizationSetBy = User
+
+	partition 'Accounts Receivable' = entity
+		mode: directQuery
+		source
+			entityName: Accounts Receivable
+			expressionSource: 'DirectQuery to AS - DMA B2B'
+
