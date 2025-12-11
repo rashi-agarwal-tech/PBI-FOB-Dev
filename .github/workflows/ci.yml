@@ -1,0 +1,117 @@
+name: CI - Pull Request Checks
+
+on:
+  pull_request:
+    branches: 
+      - main
+      - development
+      - uat
+
+jobs:
+  detect-changes:
+    name: Detect File Changes
+    runs-on: ubuntu-latest
+    outputs:
+      pbi_changes: ${{ steps.changes.outputs.pbi }}
+      app_changes: ${{ steps.changes.outputs.app }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Detect file changes
+        id: changes
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            pbi:
+              - 'powerbi/**'
+            app:
+              - 'pbi_tools/**'
+
+  python-checks:
+    name: Python Checks
+    needs: detect-changes
+    if: needs.detect-changes.outputs.app_changes == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install Poetry
+        run: |
+          pip install --upgrade pip
+          pip install poetry
+      
+      - name: Install dependencies
+        run: poetry install --with dev
+      
+      - name: Run Ruff linting
+        run: poetry run ruff check .
+      
+      - name: Run tests
+        run: poetry run pytest -s --cov=pbi_tools --cov-report=xml
+        env:
+          API_PASSWORD: ${{ secrets.API_PASSWORD }}
+          API_USERNAME: ${{ secrets.API_USERNAME }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+
+  powerbi-checks:
+    name: Power BI Checks
+    needs: detect-changes
+    if: needs.detect-changes.outputs.pbi_changes == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install Poetry
+        run: |
+          pip install --upgrade pip
+          pip install poetry
+      
+      - name: Install dependencies
+        run: poetry install
+      
+      - name: Check partition configuration
+        run: |
+          result=$(poetry run pbi check-partitions)
+          if [[ $result == warning* ]]; then
+            echo "::warning::$result"
+          else
+            echo "$result"
+          fi
+      
+      - name: Check num rows variables
+        run: |
+          result=$(poetry run pbi check-num-rows-vars-zero)
+          if [[ $result == warning* ]]; then
+            echo "::warning::$result"
+          else
+            echo "$result"
+          fi
+      
+      - name: Validate FOB folder structure
+        run: |
+          echo "Checking FOB folder structure..."
+          if [ -d "powerbi/workspaces/fob" ]; then
+            echo "✅ FOB folder exists"
+            # List any TMDL files if they exist
+            tmdl_count=$(find powerbi/workspaces/fob -name "*.tmdl" 2>/dev/null | wc -l)
+            echo "Found $tmdl_count TMDL files in FOB"
+          else
+            echo "⚠️ FOB folder not found"
+          fi
+
