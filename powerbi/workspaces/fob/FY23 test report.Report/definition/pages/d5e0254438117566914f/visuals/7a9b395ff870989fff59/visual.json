@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "7a9b395ff870989fff59",
   "position": {
     "x": 179.80208510718813,
@@ -55,6 +55,20 @@
               },
               "queryRef": "Account Details.Cost Centre",
               "nativeQueryRef": "Cost Centre"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Account Details"
+                    }
+                  },
+                  "Property": "Store Name"
+                }
+              },
+              "queryRef": "Account Details.Store Name",
+              "nativeQueryRef": "Store Name"
             },
             {
               "field": {
@@ -403,6 +417,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "a7d38f1b413184a43191",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Account Details"
+              }
+            },
+            "Property": "Store Name"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }
