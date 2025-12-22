@@ -3,8 +3,14 @@
 
 ## Introduction
 
-All of the DMA Power BI datasets reside in this repository along with a helper cli tool to aid with parsing of the models and swapping multi partitions in and out for report development.
-This repository is synced to the [D&A Dev - Dr. Martens Datasets](#https://app.powerbi.com/groups/e8649e55-b7f9-42aa-91f7-326ed4c8a36d/list?experience=power-bi) which is then deployed to higher level environments,
+This repository contains Power BI datasets for two main projects:
+
+1. **Dr. Martens Datasets (DMA)** - Existing reports synced via Azure DevOps
+2. **FOB Project** - New reports synced via GitHub ([PBI-FOB-Dev](https://github.com/rashi-agarwal-tech/PBI-FOB-Dev))
+
+The repository also includes a helper CLI tool (`pbi`) to aid with parsing of the models and swapping multi partitions in and out for report development.
+
+The Dr. Martens Datasets are synced to the [D&A Dev - Dr. Martens Datasets](https://app.powerbi.com/groups/e8649e55-b7f9-42aa-91f7-326ed4c8a36d/list?experience=power-bi) which is then deployed to higher level environments.
 
 ## Contents
 
@@ -15,7 +21,11 @@ $(toc)
   - [reports directory:](#reports-directory)
   - [utils directory:](#utils-directory)
   - [docs directory:](#docs-directory)
-  - [Power BI Workspaces:](#power-bi-workspaces)
+- [FOB Project:](#fob-project)
+  - [FOB Folder Structure:](#fob-folder-structure)
+  - [FOB Power BI Workspaces:](#fob-power-bi-workspaces)
+  - [FOB Deployment Workflow:](#fob-deployment-workflow)
+- [Power BI Workspaces:](#power-bi-workspaces)
   - [Deployment:](#deployment)
   - [Deployment Notes](#deployment-notes)
     - [Pipeline Deployment Timing](#pipeline-deployment-timing)
@@ -54,11 +64,15 @@ $(toc)
 
 ```
 .
+├── .github
+│   └── workflows          # GitHub Actions CI/CD
 ├── docs
 │   └── images
 └── powerbi
-    ├── partitions
-    ├── reports
+    ├── partitions         # Multi-partition configs for Dr. Martens Datasets
+    ├── workspaces
+    │   ├── Dr. Martens Datasets   # Existing DMA reports & models
+    │   └── fob                     # NEW: FOB reports & models
     └── utils
 ```
 
@@ -94,6 +108,79 @@ Contains helper python code including cli tool to remove and add partitions.
 ### docs directory
 
 At the minute this is just used for `images` in the README.md, but can be used for any addition documentation.
+
+---
+
+## FOB Project
+
+The `fob` folder contains Power BI reports and semantic models for the FOB (Freight on Board) project. This is a separate project with its own dedicated Power BI workspaces.
+
+### FOB Folder Structure
+
+```
+powerbi/workspaces/fob/
+├── README.md
+├── YourReport.Report/
+│   ├── definition.pbir
+│   ├── report.json
+│   └── StaticResources/
+└── YourReport.SemanticModel/
+    ├── definition.pbism
+    └── definition/
+        ├── database.tmdl
+        ├── model.tmdl
+        └── tables/
+```
+
+### FOB Power BI Workspaces
+
+| Environment | Workspace | Description |
+|-------------|-----------|-------------|
+| DEV | FOB DEV | Development workspace - synced to GitHub |
+| UAT | FOB UAT | User Acceptance Testing |
+| PROD | FOB PROD | Production |
+
+### FOB Deployment Workflow
+
+The FOB project uses **GitHub** for version control and **Power BI Deployment Pipelines** for promotion:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                     FOB DEPLOYMENT FLOW                          │
+└─────────────────────────────────────────────────────────────────┘
+
+  👨‍💻 Developer           📂 GitHub              ☁️ Power BI
+  (PBI Desktop)           Repo                   Workspaces
+       │                    │                        │
+       │  Save .pbip        │                        │
+       └──────────────────► │                        │
+                            │   Auto-sync            │
+                            └──────────────────────► │ FOB DEV
+                                                     │    │
+                                          ┌──────────┘    │ (Manual via
+                                          │               │  Deployment
+                                          │               ▼  Pipeline)
+                                          │          FOB UAT
+                                          │               │
+                                          │               │ (Manual)
+                                          │               ▼
+                                          │          FOB PROD
+                                          └───────────────┘
+```
+
+**Steps:**
+1. Make changes in Power BI Desktop
+2. Save report as `.pbip` format in `powerbi/workspaces/fob/`
+3. Commit and push to GitHub
+4. Create Pull Request for review
+5. Merge to main branch → FOB DEV workspace auto-syncs
+6. Use Power BI Deployment Pipeline to promote DEV → UAT → PROD
+
+### GitHub Repository
+
+The FOB project is hosted on GitHub: [https://github.com/rashi-agarwal-tech/PBI-FOB-Dev](https://github.com/rashi-agarwal-tech/PBI-FOB-Dev)
+
+---
 
 ## Power BI Workspaces
 
@@ -454,9 +541,23 @@ Due to limitations we and the size of the dataset we can only extract one hour o
 DAX query. Ideally this would be parsed down to just the table and column to reduce the size of the query, given the limitations, but it appears that DAX does not have regular expression function that can perform this action.
 As we need to run many API calls I have implemented the calls using multi threading to minimise the time taking to extract the data as we have to run 24 calls to get a days data.
 
-### CI/ CD Notes
+### CI/CD Notes
 
-We are only going to version the application and not power bi to start off with.
+#### Azure Pipelines (Dr. Martens Datasets)
+
+The existing Dr. Martens Datasets use Azure Pipelines (`azure-pipeline.yaml`) for CI/CD.
+
+#### GitHub Actions (FOB Project)
+
+The FOB project uses GitHub Actions (`.github/workflows/ci.yml`) for CI/CD:
+
+- **Pull Request Checks**: Automatically runs linting and validation when a PR is created
+- **Power BI Checks**: Validates partition configurations and model settings
+- **Auto-sync**: FOB DEV workspace syncs automatically from GitHub when changes are merged
+
+The CI workflow detects what type of files changed:
+- `powerbi/**` changes → runs Power BI validation checks
+- `pbi_tools/**` changes → runs Python linting and tests
 
 ### Power BI Partition Refresh
 
